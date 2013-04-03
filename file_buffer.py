@@ -20,10 +20,10 @@
 #
 ###############################################################################
 
-from openerp.osv import fields
-from openerp.osv.orm import Model
+from openerp.osv import fields, orm
 
-class file_buffer(Model):
+
+class file_buffer(orm.Model):
     _inherit = "file.buffer"
 
     def _prepare_data_for_file_buffer(self, cr, uid, msg, context=None):
@@ -44,14 +44,8 @@ class file_buffer(Model):
                 file_id = self.create(cr, uid, vals, context=context)
                 self.create_file_buffer_attachment(cr, uid, file_id,
                                                    datas, file_name,
-                                                   context=context, 
+                                                   context=context,
                                                    extension=vals['extension'])
                 create_ids = file_id
             return create_ids
         return None
-
-
-
-
-
-
