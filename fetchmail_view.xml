@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_email_server_form">
+            <field name="name">fetchmail.server.form</field>
+            <field name="model">fetchmail.server</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="fetchmail.view_email_server_form"/>
+            <field name="arch" type="xml">
+                <field name="object_id" position="after">
+                    <field name="file_type"/> <!-- TODO attrs="{'invisible': [('object_id','!=', 'file.document')]}"/>-->
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+ 

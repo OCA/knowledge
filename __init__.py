@@ -20,5 +20,5 @@
 #
 ###############################################################################
 
-import file_buffer
-
+import file_document
+import fetchmail

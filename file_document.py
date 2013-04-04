@@ -23,29 +23,27 @@
 from openerp.osv import fields, orm
 
 
-class file_buffer(orm.Model):
-    _inherit = "file.buffer"
+class file_document(orm.Model):
+    _inherit = "file.document"
 
-    def _prepare_data_for_file_buffer(self, cr, uid, msg, context=None):
-        """Method to prepare the data for creating a file buffer.
+    def _prepare_data_for_file_document(self, cr, uid, msg, context=None):
+        """Method to prepare the data for creating a file document.
         :param msg: a dictionnary with the email data
         :type: dict
 
-        :return: a list of dictionnary that containt the file buffer data
+        :return: a list of dictionnary that containt the file document data
         :rtype: list
         """
         return []
 
     def message_new(self, cr, uid, msg, custom_values, context=None):
-        create_ids = []
-        res = self._get_vals_for_file_buffer(cr, uid, msg, context=context)
+        created_ids = []
+        res = self._prepare_data_for_file_document(cr, uid, msg, context=context)
         if res:
             for vals in res:
-                file_id = self.create(cr, uid, vals, context=context)
-                self.create_file_buffer_attachment(cr, uid, file_id,
-                                                   datas, file_name,
-                                                   context=context,
-                                                   extension=vals['extension'])
-                create_ids = file_id
-            return create_ids
+                if context.get('default_file_document_vals'):
+                    vals.update(context['default_file_document_vals'])
+                created_ids.append(self.create(cr, uid, vals, context=context))
+                print "create message", vals['date']
+            return created_ids
         return None
