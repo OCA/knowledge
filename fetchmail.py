@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ###############################################################################
 #
-#   file_email for OpenERP 
+#   file_email for OpenERP
 #   Copyright (C) 2013 Akretion (http://www.akretion.com).
 #   @author Sébastien BEAU <sebastien.beau@akretion.com>
 #
@@ -20,11 +20,10 @@
 #
 ###############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from openerp.osv import fields, orm
 
 
-class fetchmail_server(Model):
+class fetchmail_server(orm.Model):
     _inherit = 'fetchmail.server'
 
     def get_file_type(self, cr, uid, context=None):
