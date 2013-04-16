@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="workflow" id="wkf_document_page_history_aproval">
+            <field name="name">document.page.history.aproval.wkf</field>
+            <field name="osv">document.page.history</field>
+            <field name="on_create">True</field>
+        </record>
+        
+        <record model="workflow.activity" id="act_draft">
+            <field name="wkf_id" ref="wkf_document_page_history_aproval" />
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+            <field name="kind">function</field>
+            <field name="action">page_approval_draft()</field>
+        </record>
+        
+        <record model="workflow.activity" id="act_approved">
+            <field name="wkf_id" ref="wkf_document_page_history_aproval" />
+            <field name="name">approved</field>
+            <field name="kind">function</field>
+            <field name="action">page_approval_approved()</field>
+            <field name="flow_stop">True</field>
+        </record>
+        
+        <record model="workflow.transition" id="tda">
+            <field name="act_from" ref="act_draft" />
+            <field name="act_to" ref="act_approved" />
+            <field name="signal">page_approval_approve</field>
+        </record>
+        
+        <record model="workflow.transition" id="tad">
+            <field name="act_from" ref="act_approved" />
+            <field name="act_to" ref="act_draft" />
+            <field name="signal">edit</field>
+        </record>
+        
+        <record id="email_template_new_draft_need_approval" model="email.template">
+            <field name="name">Automated new draft need approval Notification Mail</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+            <field name="subject">New version of "${object.page_id.name}" to approve</field>
+            <field name="email_to">${object.get_approvers_email}</field>
+            <field name="model_id" ref="model_document_page_history"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.employee_id.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+<p>Hello,</p>
+
+<p>The page "${object.page_id.name}" has been modified and need aprobation.</p>
+
+<p>You can view the new version there: <a href="${object.get_page_url}"> ${object.get_page_url} </a></p>
+            
+                ]]>
+            </field>
+            <field name="body_text">
+                <![CDATA[
+Hello,
+
+The page "${object.page_id.name}" has been modified and need aprobation.
+
+You can view the new version there: ${object.get_page_url}
+            ]]></field>
+        </record>
+    </data>
+</openerp>
