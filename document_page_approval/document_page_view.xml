@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- wiki Form view  -->
+        <record id="view_wiki_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.form</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_form"/>
+            <field name="arch" type="xml">
+                <field name="type" position="before" >
+                    <header>
+                        <button name="page_approval_approve" string="Approve" states="draft" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+                    </header>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
