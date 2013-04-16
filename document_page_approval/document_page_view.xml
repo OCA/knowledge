@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="wiki_history_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.history.form</field>
+            <field name="model">document.page.history</field>
+            <field name="inherit_id" ref="document_page.wiki_history_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/label[@for='page_id']" position="before">
+                    <header attrs="{'invisible':[('is_parent_approval_required','=',False)]}">
+                        <span attrs="{'invisible':[('can_user_approve_page','=',False)]}">
+                            <button name="page_approval_approve" string="Approve" states="draft"/>
+                        </span>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+                        <field name="is_parent_approval_required" invisible="1"/>
+                        <field name="can_user_approve_page" invisible="1"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="wiki_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.form</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_form"/>
+            <field name="arch" type="xml">
+                <field name="display_content" position="before">
+                    <field name="approved_date" class="oe_view_only"/>
+                    <field name="approved_uid" class="oe_view_only"/>
+                </field>
+                <field name="parent_id" position="after">
+                    <field name="approval_required" attrs="{'invisible':[('type','=','content')]}"/>
+                    <field name="approver_gid" attrs="{'invisible':['|',('type','=','content'), ('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="view_wiki_history_tree_inherit" model="ir.ui.view">
+            <field name="name">document.page.history.tree</field>
+            <field name="model">document.page.history</field>
+            <field name="inherit_id" ref="document_page.view_wiki_history_tree"/>
+            <field name="arch" type="xml">
+                <field name="page_id" position="after">
+                    <field name="state" attrs="{'invisible':[('is_parent_approval_required','=',False)]}"/>
+                    <field name="is_parent_approval_required" invisible="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
