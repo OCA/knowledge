@@ -20,8 +20,8 @@
 ##############################################################################
 from openerp.osv import fields, orm
 
-class document_page_wkfl(orm.Model):
-    _inherit = 'document.page'
+class document_page_history_wkfl(orm.Model):
+    _inherit = 'document.page.history'
     _columns = {
         'state': fields.selection([
             ('draft','Draft'),
@@ -35,5 +35,21 @@ class document_page_wkfl(orm.Model):
     def page_approval_approved(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'approved' })
         return True
-
+        
+        
+class document_page_approval(orm.Model):
+    _inherit = 'document.page'
+    def _get_display_content(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for page in self.browse(cr, uid, ids, context=context):
+            if page.type == "category":
+               content = self._get_page_index(cr, uid, page, link=False)
+            else:
+               content = page.content
+            res[page.id] =  content
+        return res
+            
+    _columns = {
+        'display_content': fields.function(_get_display_content, string='Displayed Content', type='text')
+    }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

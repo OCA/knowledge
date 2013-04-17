@@ -2,17 +2,17 @@
 <openerp>
     <data>
         <!-- wiki Form view  -->
-        <record id="view_wiki_form_inherit" model="ir.ui.view">
-            <field name="name">document.page.form</field>
-            <field name="model">document.page</field>
-            <field name="inherit_id" ref="document_page.view_wiki_form"/>
+        <record id="wiki_history_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.history.form</field>
+            <field name="model">document.page.history</field>
+            <field name="inherit_id" ref="document_page.wiki_history_form"/>
             <field name="arch" type="xml">
-                <field name="type" position="before" >
+                <xpath expr="//form/label[@for='page_id']" position="before">
                     <header>
                         <button name="page_approval_approve" string="Approve" states="draft" />
                         <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
                     </header>
-                </field>
+                </xpath>
             </field>
         </record>
 
