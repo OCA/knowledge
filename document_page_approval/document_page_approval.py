@@ -25,7 +25,7 @@ class document_page_wkfl(orm.Model):
     _columns = {
         'state': fields.selection([
             ('draft','Draft'),
-            ('approved','Approved')], 'State', readonly=True),
+            ('approved','Approved')], 'Status', readonly=True),
         }
     
     def page_approval_draft(self, cr, uid, ids):
