@@ -19,6 +19,7 @@
 #
 ##############################################################################
 from openerp.osv import fields, orm
+from datetime import *
 
 class document_page_history_wkfl(orm.Model):
     _inherit = 'document.page.history'
@@ -26,6 +27,8 @@ class document_page_history_wkfl(orm.Model):
         'state': fields.selection([
             ('draft','Draft'),
             ('approved','Approved')], 'Status', readonly=True),
+        'approved_date': fields.datetime("Approved Date"),
+        'approved_uid': fields.many2one('res.users', "Approved By"),
         }
     
     def page_approval_draft(self, cr, uid, ids):
@@ -33,7 +36,10 @@ class document_page_history_wkfl(orm.Model):
         return True
     
     def page_approval_approved(self, cr, uid, ids):
-        self.write(cr, uid, ids, { 'state' : 'approved' })
+        self.write(cr, uid, ids, { 'state' : 'approved',
+                                  'approved_date' : datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                  'approved_uid': uid
+                                  })
         return True
         
         
@@ -45,11 +51,39 @@ class document_page_approval(orm.Model):
             if page.type == "category":
                content = self._get_page_index(cr, uid, page, link=False)
             else:
-               content = page.content
+                history = self.pool.get('document.page.history')
+                history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                for h in history.browse(cr, uid, history_ids):
+                    content = h.content
             res[page.id] =  content
         return res
-            
+    
+    def _get_approved_date(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for i in ids:
+            history = self.pool.get('document.page.history')
+            history_ids = history.search(cr, uid,[('page_id', '=', i), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+            for h in history.browse(cr, uid, history_ids):
+                approved_date = h.approved_date
+            res[i] =  approved_date
+        
+        return res
+        
+    def _get_approved_uid(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for i in ids:
+            history = self.pool.get('document.page.history')
+            history_ids = history.search(cr, uid,[('page_id', '=', i), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+            for h in history.browse(cr, uid, history_ids):
+                approved_uid = h.approved_uid.id
+            res[i] =  approved_uid
+        
+        return res
+        
+        
     _columns = {
-        'display_content': fields.function(_get_display_content, string='Displayed Content', type='text')
+        'display_content': fields.function(_get_display_content, string='Displayed Content', type='text'),
+        'approved_date': fields.function(_get_approved_date, string="Approved Date", type='datetime'),
+        'approved_uid': fields.function(_get_approved_uid, string="Approved By", type='many2one', obj='res.users'),
     }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

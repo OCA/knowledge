@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
-        <!-- wiki Form view  -->
         <record id="wiki_history_form_inherit" model="ir.ui.view">
             <field name="name">document.page.history.form</field>
             <field name="model">document.page.history</field>
@@ -13,6 +12,18 @@
                         <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
                     </header>
                 </xpath>
+            </field>
+        </record>
+        
+        <record id="wiki_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.form</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_form"/>
+            <field name="arch" type="xml">
+                <field name="display_content" position="before">
+                    <field name="approved_date" class="oe_view_only"/>
+                    <field name="approved_uid" class="oe_view_only"/>
+                </field>
             </field>
         </record>
 
