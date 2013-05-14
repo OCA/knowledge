@@ -48,6 +48,7 @@ class document_page_approval(orm.Model):
     def _get_display_content(self, cr, uid, ids, name, args, context=None):
         res = {}
         for page in self.browse(cr, uid, ids, context=context):
+            content=""
             if page.type == "category":
                content = self._get_page_index(cr, uid, page, link=False)
             else:
@@ -63,6 +64,7 @@ class document_page_approval(orm.Model):
         for i in ids:
             history = self.pool.get('document.page.history')
             history_ids = history.search(cr, uid,[('page_id', '=', i), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+            approved_date = False
             for h in history.browse(cr, uid, history_ids):
                 approved_date = h.approved_date
             res[i] =  approved_date
@@ -74,12 +76,12 @@ class document_page_approval(orm.Model):
         for i in ids:
             history = self.pool.get('document.page.history')
             history_ids = history.search(cr, uid,[('page_id', '=', i), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+            approved_uid = False
             for h in history.browse(cr, uid, history_ids):
                 approved_uid = h.approved_uid.id
             res[i] =  approved_uid
         
-        return res
-        
+        return res    
         
     _columns = {
         'display_content': fields.function(_get_display_content, string='Displayed Content', type='text'),
