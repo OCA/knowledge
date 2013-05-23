@@ -26,6 +26,16 @@
                 </field>
             </field>
         </record>
-
+        
+        <record id="view_wiki_history_tree_inherit" model="ir.ui.view">
+            <field name="name">document.page.history.tree</field>
+            <field name="model">document.page.history</field>
+            <field name="inherit_id" ref="document_page.view_wiki_history_tree"/>
+            <field name="arch" type="xml">
+                <field name="page_id" position="after">
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
     </data>
 </openerp>
