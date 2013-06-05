@@ -7,9 +7,10 @@
             <field name="inherit_id" ref="document_page.wiki_history_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//form/label[@for='page_id']" position="before">
-                    <header>
+                    <header attrs="{'invisible':[('is_parent_approval_required','=',False)]}">
                         <button name="page_approval_approve" string="Approve" states="draft" />
                         <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+                        <field name="is_parent_approval_required" invisible="1"/>
                     </header>
                 </xpath>
             </field>
@@ -24,6 +25,10 @@
                     <field name="approved_date" class="oe_view_only"/>
                     <field name="approved_uid" class="oe_view_only"/>
                 </field>
+                <field name="parent_id" position="after">
+                    <field name="approval_required" attrs="{'invisible':[('type','=','content')]}"/>
+                    <field name="approver_gid" attrs="{'invisible':[('type','=','content')], 'required':[('approval_required','=', 'true')]}"/>
+                </field>
             </field>
         </record>
         
@@ -33,7 +38,8 @@
             <field name="inherit_id" ref="document_page.view_wiki_history_tree"/>
             <field name="arch" type="xml">
                 <field name="page_id" position="after">
-                    <field name="state"/>
+                    <field name="state" attrs="{'invisible':[('is_parent_approval_required','=',False)]}"/>
+                    <field name="is_parent_approval_required" invisible="1"/>
                 </field>
             </field>
         </record>

@@ -23,13 +23,6 @@ from datetime import *
 
 class document_page_history_wkfl(orm.Model):
     _inherit = 'document.page.history'
-    _columns = {
-        'state': fields.selection([
-            ('draft','Draft'),
-            ('approved','Approved')], 'Status', readonly=True),
-        'approved_date': fields.datetime("Approved Date"),
-        'approved_uid': fields.many2one('res.users', "Approved By"),
-        }
     
     def page_approval_draft(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'draft' })
@@ -41,6 +34,21 @@ class document_page_history_wkfl(orm.Model):
                                   'approved_uid': uid
                                   })
         return True
+    
+    def _is_parent_approval_required(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for page in self.browse(cr, uid, ids, context=context):
+            res[page.id] = page.page_id.is_parent_approval_required
+        return res
+        
+    _columns = {
+        'state': fields.selection([
+            ('draft','Draft'),
+            ('approved','Approved')], 'Status', readonly=True),
+        'approved_date': fields.datetime("Approved Date"),
+        'approved_uid': fields.many2one('res.users', "Approved By"),
+        'is_parent_approval_required': fields.function(_is_parent_approval_required, string="parent approval", type='boolean'),
+        }
         
         
 class document_page_approval(orm.Model):
@@ -53,39 +61,67 @@ class document_page_approval(orm.Model):
                content = self._get_page_index(cr, uid, page, link=False)
             else:
                 history = self.pool.get('document.page.history')
-                history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
-                for h in history.browse(cr, uid, history_ids):
-                    content = h.content
+                if self.is_approval_required(page):
+                    history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                    for h in history.browse(cr, uid, history_ids):
+                        content = h.content
+                else:
+                    content = page.content
             res[page.id] =  content
         return res
     
     def _get_approved_date(self, cr, uid, ids, name, args, context=None):
         res = {}
-        for i in ids:
-            history = self.pool.get('document.page.history')
-            history_ids = history.search(cr, uid,[('page_id', '=', i), ('state', '=', 'approved')], limit=1, order='create_date DESC')
-            approved_date = False
-            for h in history.browse(cr, uid, history_ids):
-                approved_date = h.approved_date
-            res[i] =  approved_date
-        
+        for page in self.browse(cr, uid, ids, context=context):
+            if self.is_approval_required(page):
+                history = self.pool.get('document.page.history')
+                history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                approved_date = False
+                for h in history.browse(cr, uid, history_ids):
+                    approved_date = h.approved_date
+                res[page.id] =  approved_date
+            else:
+                res[page.id] =  ""
+                
         return res
         
     def _get_approved_uid(self, cr, uid, ids, name, args, context=None):
         res = {}
-        for i in ids:
-            history = self.pool.get('document.page.history')
-            history_ids = history.search(cr, uid,[('page_id', '=', i), ('state', '=', 'approved')], limit=1, order='create_date DESC')
-            approved_uid = False
-            for h in history.browse(cr, uid, history_ids):
-                approved_uid = h.approved_uid.id
-            res[i] =  approved_uid
+        for page in self.browse(cr, uid, ids, context=context):
+            if self.is_approval_required(page):
+                history = self.pool.get('document.page.history')
+                history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                approved_uid = False
+                for h in history.browse(cr, uid, history_ids):
+                    approved_uid = h.approved_uid.id
+                res[page.id] =  approved_uid
+            else:
+                res[page.id] =  ""
         
-        return res    
+        return res
+        
+    def _is_parent_approval_required(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for page in self.browse(cr, uid, ids, context=context):
+            res[page.id]= self.is_approval_required(page)
+        
+        return res
+    
+    def is_approval_required(self, page):
+        if page:
+            res = page.approval_required
+            res = res or self.is_approval_required(page.parent_id)
+        else:
+            res=False
+            
+        return res
         
     _columns = {
         'display_content': fields.function(_get_display_content, string='Displayed Content', type='text'),
         'approved_date': fields.function(_get_approved_date, string="Approved Date", type='datetime'),
         'approved_uid': fields.function(_get_approved_uid, string="Approved By", type='many2one', obj='res.users'),
+        'approval_required': fields.boolean("Require approval"),
+        'is_parent_approval_required': fields.function(_is_parent_approval_required, string="parent approval", type='boolean'),
+        'approver_gid': fields.many2one("res.groups", "Approver group"),
     }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
