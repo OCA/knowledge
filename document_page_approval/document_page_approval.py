@@ -35,10 +35,11 @@ class document_page_history_wkfl(orm.Model):
                                   })
         return True
     
-    def _is_parent_approval_required(self, cr, uid, ids, name, args, context=None):
-        res = {}
+    def can_user_approve_page(self, cr, uid, ids, name, args, context=None):
+        user = self.pool.get('res.users').browse(cr,uid,uid)
         for page in self.browse(cr, uid, ids, context=context):
-            res[page.id] = page.page_id.is_parent_approval_required
+            res[page.id] = page.approver_gid in user.groups_id
+        
         return res
         
     _columns = {
@@ -47,7 +48,9 @@ class document_page_history_wkfl(orm.Model):
             ('approved','Approved')], 'Status', readonly=True),
         'approved_date': fields.datetime("Approved Date"),
         'approved_uid': fields.many2one('res.users', "Approved By"),
-        'is_parent_approval_required': fields.function(_is_parent_approval_required, string="parent approval", type='boolean'),
+        'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', string="parent approval", type='boolean', store=False),
+        'approver_gid': fields.related('page_id', 'approver_gid', string="Approver group", type='many2one', relation='res.groups', store=False),
+        'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean'),
         }
         
         

@@ -34,5 +34,9 @@ Add a workflow to approve page modification and show the approved version by def
     'installable': True,
     'auto_install': False,
     'images': [],
+    'data': [
+        'security/document_page_security.xml',
+        'security/ir.model.access.csv',
+        ]
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
