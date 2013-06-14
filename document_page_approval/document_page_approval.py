@@ -37,9 +37,19 @@ class document_page_history_wkfl(orm.Model):
     
     def can_user_approve_page(self, cr, uid, ids, name, args, context=None):
         user = self.pool.get('res.users').browse(cr,uid,uid)
+        res = {}
         for page in self.browse(cr, uid, ids, context=context):
-            res[page.id] = page.approver_gid in user.groups_id
+            res[page.id]= self.can_user_approve_this_page(page.page_id, user)
         
+        return res
+    
+    def can_user_approve_this_page(self, page, user):
+        if page:
+            res = page.approver_gid in user.groups_id
+            res = res or self.can_user_approve_this_page(page.parent_id, user)
+        else:
+            res=False
+            
         return res
         
     _columns = {
@@ -50,9 +60,8 @@ class document_page_history_wkfl(orm.Model):
         'approved_uid': fields.many2one('res.users', "Approved By"),
         'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', string="parent approval", type='boolean', store=False),
         'approver_gid': fields.related('page_id', 'approver_gid', string="Approver group", type='many2one', relation='res.groups', store=False),
-        'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean'),
+        'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean', store=False),
         }
-        
         
 class document_page_approval(orm.Model):
     _inherit = 'document.page'
