@@ -26,8 +26,14 @@ class document_page_history_wkfl(orm.Model):
     
     def page_approval_draft(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'draft' })
+        if is_parent_approval_required:
+            for page in self.browse(cr, uid, ids):
+                self.send_email_to_approvers(page, page.parent_id)
         return True
     
+    def send_email_to_approvers(self, page_hystory, page):
+        pass
+        
     def page_approval_approved(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'approved',
                                   'approved_date' : datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
@@ -59,7 +65,6 @@ class document_page_history_wkfl(orm.Model):
         'approved_date': fields.datetime("Approved Date"),
         'approved_uid': fields.many2one('res.users', "Approved By"),
         'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', string="parent approval", type='boolean', store=False),
-        'approver_gid': fields.related('page_id', 'approver_gid', string="Approver group", type='many2one', relation='res.groups', store=False),
         'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean', store=False),
         }
         
