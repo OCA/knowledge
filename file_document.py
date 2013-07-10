@@ -26,6 +26,15 @@ from openerp.osv import fields, orm
 class file_document(orm.Model):
     _inherit = "file.document"
 
+    _columns = {
+        'fetchmail_server_id': fields.many2one('fetchmail.server', 'Email Server'),
+    }
+
+    _sql_constraints = [
+        ('fecthmail_server_ext_id_uniq', 'unique(fetchmail_server_id, ext_id)',
+            'The combination of Email Server and External id must be unique !'),
+    ]
+
     def _prepare_data_for_file_document(self, cr, uid, msg, context=None):
         """Method to prepare the data for creating a file document.
         :param msg: a dictionnary with the email data
@@ -41,9 +50,11 @@ class file_document(orm.Model):
         res = self._prepare_data_for_file_document(cr, uid, msg, context=context)
         if res:
             for vals in res:
-                if context.get('default_file_document_vals'):
-                    vals.update(context['default_file_document_vals'])
+                default = context.get('default_file_document_vals')
+                if default:
+                    for key in default:
+                        if not key in vals:
+                            vals[key] = default[key]
                 created_ids.append(self.create(cr, uid, vals, context=context))
-                print "create message", vals['date']
             return created_ids
         return None

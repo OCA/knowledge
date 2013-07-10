@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- SEARCH -->
+        <record id="file_document_view_search" model="ir.ui.view">
+            <field name="name">file.document.search</field>
+            <field name="model">file.document</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="file_document.file_document_view_search"/>
+            <field name="arch" type="xml">
+                <field name="ext_id" position="after">
+                    <field name="fetchmail_server_id"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
+ 

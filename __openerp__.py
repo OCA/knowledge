@@ -36,6 +36,7 @@
     'init_xml': [],
     'update_xml': [
         "fetchmail_view.xml",
+        "file_document_view.xml",
         ],
     'demo_xml': [],
     'installable': True,
