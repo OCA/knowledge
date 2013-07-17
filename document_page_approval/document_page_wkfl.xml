@@ -35,5 +35,32 @@
             <field name="signal">edit</field>
         </record>
         
+        <record id="email_template_new_draft_need_approval" model="email.template">
+            <field name="name">Automated new draft need approval Notification Mail</field>
+            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+            <field name="subject">New version of "${object.page_id.name}" to approve</field>
+            <field name="email_to">${object.get_approvers_email}</field>
+            <field name="model_id" ref="model_document_page_history"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.employee_id.partner_id.lang}</field>
+            <field name="body_html">
+                <![CDATA[
+<p>Hello,</p>
+
+<p>The page "${object.page_id.name}" has been modified and need aprobation.</p>
+
+<p>You can view the new version there: <a href="${object.get_page_url}"> ${object.get_page_url} </a></p>
+            
+                ]]>
+            </field>
+            <field name="body_text">
+                <![CDATA[
+Hello,
+
+The page "${object.page_id.name}" has been modified and need aprobation.
+
+You can view the new version there: ${object.get_page_url}
+            ]]></field>
+        </record>
     </data>
 </openerp>

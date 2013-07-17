@@ -26,14 +26,14 @@ class document_page_history_wkfl(orm.Model):
     
     def page_approval_draft(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'draft' })
-        if is_parent_approval_required:
-            for page in self.browse(cr, uid, ids):
-                self.send_email_to_approvers(page, page.parent_id)
+        
+        template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'document_page_approval', 'email_template_new_draft_need_approval')[1]
+        for page in self.browse(cr, uid, ids):
+            if page.is_parent_approval_required:
+                self.pool.get('email.template').send_mail(cr, uid, template_id, page.id, force_send=True)
+
         return True
     
-    def send_email_to_approvers(self, page_hystory, page):
-        pass
-        
     def page_approval_approved(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'approved',
                                   'approved_date' : datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
@@ -57,7 +57,58 @@ class document_page_history_wkfl(orm.Model):
             res=False
             
         return res
+    
+    def get_approvers_guids(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for page in self.browse(cr, uid, ids, context=context):
+            res[page.id]= self.get_approvers_guids_for_page(page.page_id)
         
+        return res
+    
+    def get_approvers_guids_for_page(self, page):
+        if page:
+            if page.approver_gid:
+                res = [page.approver_gid.id]
+            else:
+                res=[]
+            res.extend(self.get_approvers_guids_for_page(page.parent_id))
+        else:
+            res=[]
+        
+        return res
+    
+    def get_approvers_email(self, cr, uid, ids, name, args, context):
+        res  = {}
+        for id in ids:
+            emails = ''
+            guids = self.get_approvers_guids(cr, uid, ids, name, args, context=context)
+            uids = self.pool.get('res.users').search(cr, uid, [('groups_id','in',guids[id])])
+            users = self.pool.get('res.users').browse(cr, uid, uids)
+
+            for user in users:
+                if user.user_email:
+                    emails += user.user_email
+                    emails += ','
+                else:
+                    empl_id = self.pool.get('hr.employee').search(cr, uid,[('login','=',user.login)])[0]
+                    empl = self.pool.get('hr.employee').browse(cr, uid, empl_id)
+                    if empl.work_email:
+                        emails += empl.work_email
+                        emails += ','
+
+            emails  = emails[:-1]
+            res[id] = emails
+        return res
+        
+    def get_page_url(self, cr, uid, ids, name, args, context):
+        res  = {}
+        for id in ids:
+            base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
+            
+            res[id] = base_url + '/#db=%s&id=%s&view_type=form&model=document.page.history' % (cr.dbname, id);
+                
+        return res
+
     _columns = {
         'state': fields.selection([
             ('draft','Draft'),
@@ -66,6 +117,8 @@ class document_page_history_wkfl(orm.Model):
         'approved_uid': fields.many2one('res.users', "Approved By"),
         'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', string="parent approval", type='boolean', store=False),
         'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean', store=False),
+        'get_approvers_email': fields.function(get_approvers_email, string="get all approvers email", type='text', store=False),
+        'get_page_url': fields.function(get_page_url, string="get page url", type='text', store=False),
         }
         
 class document_page_approval(orm.Model):

@@ -29,7 +29,7 @@
     'description': """
 Add a workflow to approve page modification and show the approved version by default
     """,
-    'depends': ['document_page'],
+    'depends': ['document_page', 'email_template'],
     'update_xml': ['document_page_wkfl.xml','document_page_view.xml'],
     'installable': True,
     'auto_install': False,
