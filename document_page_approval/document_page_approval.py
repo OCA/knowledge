@@ -86,8 +86,8 @@ class document_page_history_wkfl(orm.Model):
             users = self.pool.get('res.users').browse(cr, uid, uids)
 
             for user in users:
-                if user.user_email:
-                    emails += user.user_email
+                if user.email:
+                    emails += user.email
                     emails += ','
                 else:
                     empl_id = self.pool.get('hr.employee').search(cr, uid,[('login','=',user.login)])[0]
@@ -118,7 +118,7 @@ class document_page_history_wkfl(orm.Model):
         'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', string="parent approval", type='boolean', store=False),
         'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean', store=False),
         'get_approvers_email': fields.function(get_approvers_email, string="get all approvers email", type='text', store=False),
-        'get_page_url': fields.function(get_page_url, string="get page url", type='text', store=False),
+        'get_page_url': fields.function(get_page_url, string="URL", type='text', store=False),
         }
         
 class document_page_approval(orm.Model):
