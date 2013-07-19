@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
+
         <record model="workflow" id="wkf_document_page_history_aproval">
             <field name="name">document.page.history.aproval.wkf</field>
             <field name="osv">document.page.history</field>
@@ -34,6 +35,12 @@
             <field name="act_to" ref="act_draft" />
             <field name="signal">edit</field>
         </record>
+
+    </data>
+
+    <!-- Allow user to make upgrade-proof customizations to email template -->
+
+    <data noupdate="1">
         
         <record id="email_template_new_draft_need_approval" model="email.template">
             <field name="name">Automated new draft need approval Notification Mail</field>
@@ -42,25 +49,29 @@
             <field name="email_to">${object.get_approvers_email}</field>
             <field name="model_id" ref="model_document_page_history"/>
             <field name="auto_delete" eval="True"/>
-            <field name="lang">${object.employee_id.partner_id.lang}</field>
-            <field name="body_html">
-                <![CDATA[
+            <field name="lang">${object.create_uid.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
 <p>Hello,</p>
 
-<p>The page "${object.page_id.name}" has been modified and need aprobation.</p>
+<p>The page "${object.page_id.name}" has been modified and need your approval.</p>
 
-<p>You can view the new version there: <a href="${object.get_page_url}"> ${object.get_page_url} </a></p>
-            
-                ]]>
+<p>You can review the new version here : <a href="${object.get_page_url}">${object.get_page_url}</a></p>
+ 
+<p>Have a great day.<br/>
+--<br/>
+OpenERP</p>]]>
             </field>
-            <field name="body_text">
-                <![CDATA[
+            <field name="body_text"><![CDATA[
 Hello,
 
-The page "${object.page_id.name}" has been modified and need aprobation.
+The page "${object.page_id.name}" has been modified and need your approval.
 
-You can view the new version there: ${object.get_page_url}
-            ]]></field>
+You can review the new version here: ${object.get_page_url}
+
+Have a great day.
+--
+OpenERP]]></field>
         </record>
+
     </data>
 </openerp>

@@ -27,16 +27,31 @@
     "license" : "AGPL-3",
     'category': 'Knowledge Management',
     'description': """
-Add a workflow to approve page modification and show the approved version by default
+This module adds a workflow to approve page modification and show the approved version by default.
+
+Scenario
+========
+
+* Set a valid email address on the company settings.
+* Create a new page category and set an approver group. Make sure users belonging to that group 
+  have valid email addresses.
+* Create a new page and choose the previously created category.
+* A notification is sent to the group with a link to the page history to review.
+* Depending on the review, the page history is approved or not.
+* Users reading the page see the last approved version.
     """,
-    'depends': ['document_page', 'email_template'],
-    'update_xml': ['document_page_wkfl.xml','document_page_view.xml'],
+    'depends': [
+        'document_page',
+        'email_template',
+        ],
+    'data': [
+        'document_page_wkfl.xml',
+        'document_page_view.xml',
+        'security/document_page_security.xml',
+        'security/ir.model.access.csv',
+        ],
     'installable': True,
     'auto_install': False,
     'images': [],
-    'data': [
-        'security/document_page_security.xml',
-        'security/ir.model.access.csv',
-        ]
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
