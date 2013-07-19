@@ -27,18 +27,20 @@ class document_page_history_wkfl(orm.Model):
     def page_approval_draft(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'draft' })
         
-        template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'document_page_approval', 'email_template_new_draft_need_approval')[1]
+        template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 
+                'document_page_approval', 'email_template_new_draft_need_approval')[1]
         for page in self.browse(cr, uid, ids):
             if page.is_parent_approval_required:
-                self.pool.get('email.template').send_mail(cr, uid, template_id, page.id, force_send=True)
+                self.pool.get('email.template').send_mail(cr, uid, template_id,
+                        page.id, force_send=True)
 
         return True
     
     def page_approval_approved(self, cr, uid, ids):
         self.write(cr, uid, ids, { 'state' : 'approved',
-                                  'approved_date' : datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                                  'approved_uid': uid
-                                  })
+                'approved_date' : datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'approved_uid': uid
+                })
         return True
     
     def can_user_approve_page(self, cr, uid, ids, name, args, context=None):
@@ -90,7 +92,8 @@ class document_page_history_wkfl(orm.Model):
                     emails += user.email
                     emails += ','
                 else:
-                    empl_id = self.pool.get('hr.employee').search(cr, uid,[('login','=',user.login)])[0]
+                    empl_id = self.pool.get('hr.employee').search(cr, uid,
+                            [('login','=',user.login)])[0]
                     empl = self.pool.get('hr.employee').browse(cr, uid, empl_id)
                     if empl.work_email:
                         emails += empl.work_email
@@ -103,7 +106,8 @@ class document_page_history_wkfl(orm.Model):
     def get_page_url(self, cr, uid, ids, name, args, context):
         res  = {}
         for id in ids:
-            base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 'web.base.url', default='http://localhost:8069', context=context)
+            base_url = self.pool.get('ir.config_parameter').get_param(cr, uid, 
+                    'web.base.url', default='http://localhost:8069', context=context)
             
             res[id] = base_url + '/#db=%s&id=%s&view_type=form&model=document.page.history' % (cr.dbname, id);
                 
@@ -115,10 +119,14 @@ class document_page_history_wkfl(orm.Model):
             ('approved','Approved')], 'Status', readonly=True),
         'approved_date': fields.datetime("Approved Date"),
         'approved_uid': fields.many2one('res.users', "Approved By"),
-        'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', string="parent approval", type='boolean', store=False),
-        'can_user_approve_page': fields.function(can_user_approve_page, string="can user approve this page", type='boolean', store=False),
-        'get_approvers_email': fields.function(get_approvers_email, string="get all approvers email", type='text', store=False),
-        'get_page_url': fields.function(get_page_url, string="URL", type='text', store=False),
+        'is_parent_approval_required': fields.related('page_id', 'is_parent_approval_required', 
+                string="parent approval", type='boolean', store=False),
+        'can_user_approve_page': fields.function(can_user_approve_page, 
+                string="can user approve this page", type='boolean', store=False),
+        'get_approvers_email': fields.function(get_approvers_email, 
+                string="get all approvers email", type='text', store=False),
+        'get_page_url': fields.function(get_page_url, string="URL", type='text',
+                store=False),
         }
         
 class document_page_approval(orm.Model):
@@ -132,7 +140,8 @@ class document_page_approval(orm.Model):
             else:
                 history = self.pool.get('document.page.history')
                 if self.is_approval_required(page):
-                    history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                    history_ids = history.search(cr, uid,[('page_id', '=', page.id), 
+                            ('state', '=', 'approved')], limit=1, order='create_date DESC')
                     for h in history.browse(cr, uid, history_ids):
                         content = h.content
                 else:
@@ -145,7 +154,8 @@ class document_page_approval(orm.Model):
         for page in self.browse(cr, uid, ids, context=context):
             if self.is_approval_required(page):
                 history = self.pool.get('document.page.history')
-                history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                history_ids = history.search(cr, uid,[('page_id', '=', page.id), 
+                        ('state', '=', 'approved')], limit=1, order='create_date DESC')
                 approved_date = False
                 for h in history.browse(cr, uid, history_ids):
                     approved_date = h.approved_date
@@ -160,7 +170,8 @@ class document_page_approval(orm.Model):
         for page in self.browse(cr, uid, ids, context=context):
             if self.is_approval_required(page):
                 history = self.pool.get('document.page.history')
-                history_ids = history.search(cr, uid,[('page_id', '=', page.id), ('state', '=', 'approved')], limit=1, order='create_date DESC')
+                history_ids = history.search(cr, uid,[('page_id', '=', page.id), 
+                        ('state', '=', 'approved')], limit=1, order='create_date DESC')
                 approved_uid = False
                 for h in history.browse(cr, uid, history_ids):
                     approved_uid = h.approved_uid.id
@@ -187,11 +198,15 @@ class document_page_approval(orm.Model):
         return res
         
     _columns = {
-        'display_content': fields.function(_get_display_content, string='Displayed Content', type='text'),
-        'approved_date': fields.function(_get_approved_date, string="Approved Date", type='datetime'),
-        'approved_uid': fields.function(_get_approved_uid, string="Approved By", type='many2one', obj='res.users'),
+        'display_content': fields.function(_get_display_content, 
+                string='Displayed Content', type='text'),
+        'approved_date': fields.function(_get_approved_date, string="Approved Date", 
+                type='datetime'),
+        'approved_uid': fields.function(_get_approved_uid, string="Approved By", 
+                type='many2one', obj='res.users'),
         'approval_required': fields.boolean("Require approval"),
-        'is_parent_approval_required': fields.function(_is_parent_approval_required, string="parent approval", type='boolean'),
+        'is_parent_approval_required': fields.function(_is_parent_approval_required, 
+                string="parent approval", type='boolean'),
         'approver_gid': fields.many2one("res.groups", "Approver group"),
     }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
