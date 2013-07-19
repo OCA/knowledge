@@ -30,7 +30,8 @@
                 </field>
                 <field name="parent_id" position="after">
                     <field name="approval_required" attrs="{'invisible':[('type','=','content')]}"/>
-                    <field name="approver_gid" attrs="{'invisible':['|',('type','=','content'), ('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
+                    <field name="approver_gid" attrs="{'invisible':['|',('type','=','content'), 
+                            ('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
                 </field>
             </field>
         </record>
