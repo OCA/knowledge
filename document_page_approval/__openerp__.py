@@ -52,6 +52,6 @@ Scenario
         ],
     'installable': True,
     'auto_install': False,
-    'images': [],
+    'images': ['images/category.png','images/page_history_list.png','images/page_history.png'],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
