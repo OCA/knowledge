@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	<!-- History -->
+
+        <record id="wiki_history_tree_inherit" model="ir.ui.view">
+            <field name="name">document.page.history.tree</field>
+            <field name="model">document.page.history</field>
+            <field name="inherit_id" ref="document_page.view_wiki_history_tree"/>
+            <field name="arch" type="xml">
+                <field name="page_id" position="after">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="wiki_history_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.history.form</field>
+            <field name="model">document.page.history</field>
+            <field name="inherit_id" ref="document_page.wiki_history_form"/>
+            <field name="arch" type="xml">
+                <field name="create_date" position="after">
+                    <label for="company_id" class="oe_edit_only" groups="base.group_multi_company"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </field>
+            </field>
+        </record>
+        
+	<!-- Page -->
+
+        <record id="wiki_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.form</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_form"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="view_wiki_tree_inherit" model="ir.ui.view">
+            <field name="name">document.page.tree</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_tree"/>
+            <field name="arch" type="xml">
+                <field name="write_date" position="after">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
