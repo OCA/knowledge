@@ -35,7 +35,13 @@ class fetchmail_server(orm.Model):
     _columns = {
         'file_type': fields.selection(_get_file_type, 'File Type',
                 help='The file type will show some special option'),
+        'company_id': fields.many2one('res.company', 'Company', required=True),#Why this field do not exist by default?
     }
+
+    _defaults = {
+        'company_id': lambda s, cr, uid, c: s.pool.get('res.company')._company_default_get(cr, uid, 'fetchmail.server', context=c),
+    }
+
 
     def get_context_for_server(self, cr, uid, server_id, context=None):
         if context is None:
@@ -43,6 +49,9 @@ class fetchmail_server(orm.Model):
         else:
             ctx = context.copy()
         ctx['default_file_document_vals'] = {}
+        server = self.browse(cr, uid, server_id, context=context)
+        ctx['default_company_id'] = server.company_id.id
+        ctx['default_fetchmail_server_id'] = server_id
         return ctx
 
     def fetch_mail(self, cr, uid, ids, context=None):

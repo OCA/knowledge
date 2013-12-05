@@ -32,10 +32,11 @@
     """,
     'author': 'Akretion',
     'website': 'http://www.akretion.com/',
-    'depends': ['file_document','fetchmail_server'],
+    'depends': ['file_document', 'fetchmail'],
     'init_xml': [],
     'update_xml': [
         "fetchmail_view.xml",
+        "file_document_view.xml",
         ],
     'demo_xml': [],
     'installable': True,

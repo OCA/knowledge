@@ -26,6 +26,48 @@ from openerp.osv import fields, orm
 class file_document(orm.Model):
     _inherit = "file.document"
 
+    _columns = {
+        'fetchmail_server_id': fields.many2one('fetchmail.server', 'Email Server'),
+    }
+
+    _sql_constraints = [
+        ('fecthmail_server_ext_id_uniq', 'unique(fetchmail_server_id, ext_id)',
+            'The combination of Email Server and External id must be unique !'),
+    ]
+
+
+    def message_process(self, cr, uid, model, message, custom_values=None,
+                        save_original=False, strip_attachments=False,
+                        thread_id=None, context=None):
+        if context is None:
+            context = {}
+        context['no_post'] = True
+        return super(file_document, self).message_process(self, cr, uid, model,
+                message,
+                custom_values=custom_values,
+                save_original=save_original,
+                strip_attachments=strip_attachments,
+                thread_id=thread_id,
+                context=context)
+
+    def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification',
+                        subtype=None, parent_id=False, attachments=None, context=None,
+                        content_subtype='html', **kwargs):
+        if context.get('no_post'):
+            return None
+        return super(file_document, self).message_post(cr, uid, thread_id,
+                    body=body,
+                    subject=subject,
+                    type='notification',
+                    subtype=subtype,
+                    parent_id=parent_id,
+                    attachments=attachments,
+                    context=context,
+                    content_subtype=content_subtype,
+                    **kwargs)
+ 
+
+
     def _prepare_data_for_file_document(self, cr, uid, msg, context=None):
         """Method to prepare the data for creating a file document.
         :param msg: a dictionnary with the email data
@@ -41,9 +83,14 @@ class file_document(orm.Model):
         res = self._prepare_data_for_file_document(cr, uid, msg, context=context)
         if res:
             for vals in res:
-                if context.get('default_file_document_vals'):
-                    vals.update(context['default_file_document_vals'])
+                default = context.get('default_file_document_vals')
+                if default:
+                    for key in default:
+                        if not key in vals:
+                            vals[key] = default[key]
                 created_ids.append(self.create(cr, uid, vals, context=context))
-                print "create message", vals['date']
-            return created_ids
+                cr.commit()
+            context['created_ids'] = created_ids
+            return created_ids[0]
         return None
+
