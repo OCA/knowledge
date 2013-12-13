@@ -21,6 +21,7 @@
 ###############################################################################
 
 from openerp.osv import fields, orm
+import base64
 
 
 class file_document(orm.Model):
@@ -30,10 +31,6 @@ class file_document(orm.Model):
         'fetchmail_server_id': fields.many2one('fetchmail.server', 'Email Server'),
     }
 
-    _sql_constraints = [
-        ('fecthmail_server_ext_id_uniq', 'unique(fetchmail_server_id, ext_id)',
-            'The combination of Email Server and External id must be unique !'),
-    ]
 
 
     def message_process(self, cr, uid, model, message, custom_values=None,
@@ -66,6 +63,12 @@ class file_document(orm.Model):
                     content_subtype=content_subtype,
                     **kwargs)
  
+    def custom_data_for_file_document(self, cr, uid, msg, context=None):
+        return {}
+
+
+    def add_more_fields(self, cr, uid, vals, msg, context=None):
+        return {}
 
 
     def _prepare_data_for_file_document(self, cr, uid, msg, context=None):
@@ -76,7 +79,31 @@ class file_document(orm.Model):
         :return: a list of dictionnary that containt the file document data
         :rtype: list
         """
-        return []
+        res = []
+        doc_file_condition_obj = self.pool.get('prepare.file.document')
+        cond_ids = context.get('default_file_document_condition_ids', False)
+        for cond in doc_file_condition_obj.browse(cr, uid, cond_ids):
+            vals = {}
+            if cond.type == 'normal':
+                if cond.from_email in msg['from'] and cond.mail_subject == msg['subject']:
+                    vals = {
+                        'name': msg['subject'],
+                        'direction': 'input',
+                        'date': msg['date'],
+                        'ext_id': msg['message_id'],
+            }
+                    #attachment_names = [att[0] for att in msg['attachments']]
+                    for att in msg['attachments']:
+                        if cond.file_extension in att[0]:
+                            vals['datas_fname'] = att[0]
+                            vals['datas'] = base64.b64encode(att[0][1])
+                            pass
+                    vals.update(self.add_more_fields(cr, uid, vals, msg, context=context)) 
+            else:
+                vals = eval('self.'+cond.type)(cr, uid, msg, context=context)
+            if 'datas_fname' in vals:
+                res.append(vals) 
+        return res
 
     def message_new(self, cr, uid, msg, custom_values, context=None):
         created_ids = []
@@ -93,4 +120,29 @@ class file_document(orm.Model):
             context['created_ids'] = created_ids
             return created_ids[0]
         return None
+
+
+class prepare_file_document(orm.Model):
+    _name = "prepare.file.document"
+    _description = "Prepare File Document"
+
+    def _get_prepare_file_document_type(self, cr, uid, context=None):
+        return self.get_prepare_file_document_type(cr, uid, context=context)
+
+    def get_prepare_file_document_type(self, cr, uid, context=None):
+        return [('normal', 'Normal')]
+
+    _columns = {
+        'from_email': fields.char('Email', size=64),
+        'mail_subject': fields.char('Mail Subject', size=64),
+        'type': fields.selection(_get_prepare_file_document_type,
+               'Type', help="Create your own type if the normal type do not correspond to your need", required=True),
+        'file_extension' : fields.char('File Extension', size=64, help="File extension or file name", required=True),
+        'server_id': fields.many2one('fetchmail.server', 'Server Mail'),
+    }
+
+
+    _defaults = {
+        'type': 'normal'
+    }
 

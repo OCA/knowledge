@@ -36,6 +36,7 @@ class fetchmail_server(orm.Model):
         'file_type': fields.selection(_get_file_type, 'File Type',
                 help='The file type will show some special option'),
         'company_id': fields.many2one('res.company', 'Company', required=True),#Why this field do not exist by default?
+        'file_document_condition_ids': fields.one2many('prepare.file.document', 'server_id', 'File Document ')
     }
 
     _defaults = {
@@ -49,9 +50,11 @@ class fetchmail_server(orm.Model):
         else:
             ctx = context.copy()
         ctx['default_file_document_vals'] = {}
+        ctx['default_file_document_condition_ids'] = {}
         server = self.browse(cr, uid, server_id, context=context)
         ctx['default_company_id'] = server.company_id.id
         ctx['default_fetchmail_server_id'] = server_id
+        ctx['default_file_document_condition_ids'] = [cond.id for cond in server.file_document_condition_ids]
         return ctx
 
     def fetch_mail(self, cr, uid, ids, context=None):

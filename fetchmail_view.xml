@@ -12,6 +12,9 @@
                 <field name="object_id" position="after">
                     <field name="file_type"/> <!-- TODO attrs="{'invisible': [('object_id','!=', 'file.document')]}"/>-->
                 </field>
+                <field name="action_id" position="after">
+                    <field name="file_document_condition_ids" nolabel="1"/>
+                </field>
             </field>
         </record>
 

@@ -15,6 +15,32 @@
             </field>
         </record>
 
+        <!-- Views and menus for the new object prepare.file.document -->
+        <record id="view_prepare_file_document_tree" model="ir.ui.view">
+            <field name="name">view_prepare_file_document_tree</field>
+            <field name="model">prepare.file.document</field>
+            <field name="arch" type="xml">
+                <tree string="Configuration for File Document">
+                    <field name="from_email"/>
+                    <field name="mail_subject"/>
+                    <field name="type"/>
+                    <field name="file_extension"/>
+                    <field name="server_id"/>
+                </tree>
+           </field>
+        </record>
+
+        <record id="action_file_document_configuration" model="ir.actions.act_window">
+            <field name="name">Configuration</field>
+            <field name="res_model">prepare.file.document</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_file_document_configuration"
+                  action="action_file_document_configuration"
+                  parent="file_document.menu_file_exchange_root"
+                  sequence="50" />
 
     </data>
 </openerp>
