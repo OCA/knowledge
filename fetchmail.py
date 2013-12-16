@@ -55,7 +55,7 @@ class fetchmail_server(orm.Model):
         return ctx
 
     def fetch_mail(self, cr, uid, ids, context=None):
-        for id in ids:
-            ctx = self.get_context_for_server(cr, uid, id, context=context)
-            super(fetchmail_server, self).fetch_mail(cr, uid, ids, context=ctx)
+        for server_id in ids:
+            ctx = self.get_context_for_server(cr, uid, server_id, context=context)
+            super(fetchmail_server, self).fetch_mail(cr, uid, [server_id], context=ctx)
         return True
