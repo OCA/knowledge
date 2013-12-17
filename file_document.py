@@ -128,13 +128,16 @@ class file_document_condition(orm.Model):
         return self.get_file_document_condition_type(cr, uid, context=context)
 
     def get_file_document_condition_type(self, cr, uid, context=None):
-        return [('normal', 'Normal'), ('test', 'TEST')]
+        return [('normal', 'Normal')]
     _columns = {
         'from_email': fields.char('Email', size=64),
         'mail_subject': fields.char('Mail Subject', size=64),
         'type': fields.selection(_get_file_document_condition_type,
-               'Type', help="Create your own type if the normal type do not correspond to your need", required=True),
-        'file_extension' : fields.char('File Extension', size=64, help="File extension or file name", required=True),
+               'Type', help="Create your own type if the normal type \
+                            do not correspond to your need", required=True),
+        'file_extension' : fields.char('File Extension', size=64, 
+                                       help="File extension or file name",
+                                       required=True),
         'server_id': fields.many2one('fetchmail.server', 'Server Mail'),
     }
 
