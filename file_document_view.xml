@@ -16,9 +16,9 @@
         </record>
 
         <!-- Views and menus for the new object prepare.file.document -->
-        <record id="view_prepare_file_document_tree" model="ir.ui.view">
-            <field name="name">view_prepare_file_document_tree</field>
-            <field name="model">prepare.file.document</field>
+        <record id="view_file_document_condition_tree" model="ir.ui.view">
+            <field name="name">view_file_document_condition_tree</field>
+            <field name="model">file.document.condition</field>
             <field name="arch" type="xml">
                 <tree string="Configuration for File Document">
                     <field name="from_email"/>
@@ -32,7 +32,7 @@
 
         <record id="action_file_document_configuration" model="ir.actions.act_window">
             <field name="name">Configuration</field>
-            <field name="res_model">prepare.file.document</field>
+            <field name="res_model">file.document.condition</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
