@@ -36,6 +36,7 @@ class fetchmail_server(orm.Model):
         'file_type': fields.selection(_get_file_type, 'File Type',
                 help='The file type will show some special option'),
         'company_id': fields.many2one('res.company', 'Company', required=True),#Why this field do not exist by default?
+        'file_document_condition_ids': fields.one2many('file.document.condition', 'server_id', 'File Document ')
     }
 
     _defaults = {
