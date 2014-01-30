@@ -75,7 +75,7 @@ class file_document(orm.Model):
                         'date': msg['date'],
                         'ext_id': msg['message_id'],
                         'datas_fname': att[0],
-                        'datas': base64.b64encode(att[0][1])
+                        'datas': base64.b64encode(att[1])
                     }
                     break
         return vals
