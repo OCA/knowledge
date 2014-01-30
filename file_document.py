@@ -66,7 +66,7 @@ class file_document(orm.Model):
 
     def prepare_data_from_basic_condition(self, cr, uid, condition, msg, context=None):
         vals = {}
-        if condition.from_email in msg['from'] and condition.mail_subject == msg['subject']:
+        if condition.from_email in msg['from'] and condition.mail_subject in msg['subject']:
             for att in msg['attachments']:
                 if condition.file_extension in att[0]:
                     vals = {
@@ -129,6 +129,7 @@ class file_document_condition(orm.Model):
 
     def get_file_document_condition_type(self, cr, uid, context=None):
         return [('normal', 'Normal')]
+
     _columns = {
         'from_email': fields.char('Email', size=64),
         'mail_subject': fields.char('Mail Subject', size=64),
