@@ -9,7 +9,6 @@ var _t = instance.web._t,
             self.$el.find('.oe_sidebar_add_attachment').after(QWeb.render('AddDocfromserver', {widget: self}))
             self.$el.find('.open').on('click', function (e) {
                 self.on_call_new_view_function();
-                //this.$('.oe_btn_class_name').on('click', this.on_call_new_view_function);
             });
         },
         on_call_new_view_function: function(state) {
@@ -23,7 +22,7 @@ var _t = instance.web._t,
             };
             // the action dictionary variable sends data in the "self.do_action" method
             var action = {
-                name: _t("Add Document"),
+                name: _t("Add existing document/attachment"),
                 type: 'ir.actions.act_window',
                 res_model: 'ir.attachment.wizard',
                 view_mode: 'form',

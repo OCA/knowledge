@@ -36,6 +36,7 @@ class document_file(orm.Model):
             context = {}
         for line in self.browse(cr, uid, ids, context=context):
             if line.attachmentdocument_ids:
+                # Get the first document
                 first_id = min(line.attachmentdocument_ids)
 
                 result = self.write(cr, uid, ids, {'res_id': first_id.res_id,
