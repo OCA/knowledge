@@ -25,12 +25,14 @@ from openerp.tools.translate import _
 
 
 class document_wizard(orm.Model):
-    _name = "ir.attachment.wizard"
-    _description = "Attachment wizard"
+    _name = "ir.attachment.existing.doc"
+    _description = "Add existing document/attachment wizard"
     _columns = {
         'attachment_ids': fields.many2many('ir.attachment',
                                            'document_attachment_rel',
-                                           'wizard_id', 'attachment_id', 'Attachments'),
+                                           'wizard_id',
+                                           'attachment_id',
+                                           'Attachments'),
     }
 
     def action_apply(self, cr, uid, ids, context=None):
@@ -38,17 +40,17 @@ class document_wizard(orm.Model):
             context = {}
         ir_attach_obj = self.pool.get('ir.attachment')
         ir_attach_doc_obj = self.pool.get('ir.attachment.document')
-        ir_model_obj = self.pool.get(context['model'])
+        ir_model_obj = self.pool.get(context.get('model') or context.get('active_model'))
 
-        name = ir_model_obj.browse(cr, uid, context['ids'], context=context)[0]['name']
+        name = ir_model_obj.browse(cr, uid, context.get('ids') or context.get('active_ids'), context=context)[0]['name']
         data = self.read(cr, uid, ids, [], context=context)[0]
         if not data['attachment_ids']:
             raise orm.except_orm(_('Error'),
                                  _('You have to select at least 1 Document. And try again'))
         for attach in ir_attach_obj.browse(cr, uid, data['attachment_ids'], context=context):
             data_attach = {
-                'res_model': context['model'],
-                'res_id': context['ids'][0],
+                'res_model': context.get('model') or context.get('active_model'),
+                'res_id': context.get('ids') and context.get('ids')[0] or context.get('active_id'),
                 'res_name': name,
                 'attachment_id': attach.id,
             }
@@ -61,4 +63,3 @@ class document_wizard(orm.Model):
         return {'type': 'ir.actions.act_window_close'}
 
 # vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
-

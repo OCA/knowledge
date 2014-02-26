@@ -9,7 +9,7 @@
       <field name="arch" type="xml">
         <group string="Indexed Content" position="after">
           <group col="2" colspan="4">
-            <field name="attachmentdocument_ids" nolabel="1">
+            <field name="attachment_document_ids" nolabel="1">
               <tree string="AttachmentDocumentTree" create="false" version="7.0">
                 <field name="res_model"/>
                 <field name="res_id"/>

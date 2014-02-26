@@ -3,10 +3,10 @@
 <data>
 
   <record id="document_form_view" model="ir.ui.view">
-    <field name="name">Add Document</field>
-    <field name="model">ir.attachment.wizard</field>
+    <field name="name">Add existing document/attachment</field>
+    <field name="model">ir.attachment.existing.doc</field>
     <field name="arch" type="xml">
-      <form string="Add Document" version="7.0">
+      <form string="Add existing document/attachment" version="7.0">
         <group string="Select document(s)" colspan="4">
           <field name="attachment_ids" nolabel="1">
             <tree string="AttachmentDocumentWizardTree">
@@ -28,8 +28,8 @@
 
   <!-- Actions -->
   <record model="ir.actions.act_window" id="action_view_document">
-    <field name="name">Add Document</field>
-    <field name="res_model">ir.attachment.wizard</field>
+    <field name="name">Add existing document/attachment</field>
+    <field name="res_model">ir.attachment.existing.doc</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
     <field name="view_id" ref="document_form_view"/>

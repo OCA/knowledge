@@ -24,7 +24,7 @@ var _t = instance.web._t,
             var action = {
                 name: _t("Add existing document/attachment"),
                 type: 'ir.actions.act_window',
-                res_model: 'ir.attachment.wizard',
+                res_model: 'ir.attachment.existing.doc',
                 view_mode: 'form',
                 view_type: 'form',
                 views: [[false, 'form']],
