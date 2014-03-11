@@ -33,6 +33,21 @@ var _t = instance.web._t,
             };
             // self.do_action accepts the action parameter and opens the new view
             self.do_action(action);
-        }
+        },
+	do_attachement_update: function(dataset, model_id, args) {
+            var self = this;
+            this.dataset = dataset;
+            this.model_id = model_id;
+            if (args && args[0].error) {
+		this.do_warn(_t('Uploading Error'), args[0].error);
+            }
+            if (!model_id) {
+		this.on_attachments_loaded([]);
+            } else {
+		var dom = [ ['attachment_document_ids.res_model', '=', dataset.model], ['attachment_document_ids.res_id', '=', model_id], ['type', 'in', ['binary', 'url']] ];
+		var ds = new instance.web.DataSetSearch(this, 'ir.attachment', dataset.get_context(), dom);
+		ds.read_slice(['name', 'url', 'type', 'create_uid', 'create_date', 'write_uid', 'write_date'], {}).done(this.on_attachments_loaded);
+            }
+	}
     });
 };
