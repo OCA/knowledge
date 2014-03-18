@@ -41,10 +41,15 @@ Contributors
     ],
     'data': [
         'document_view.xml',
+        'security/ir.model.access.csv',
         'wizard/document_wizard_view.xml',
     ],
-    'js': ['static/src/js/document.js'],
-    'qweb': ['static/src/xml/document.xml'],
+    'js': [
+        'static/src/js/document.js'
+    ],
+    'qweb': [
+        'static/src/xml/document.xml'
+    ],
     'test': [],
     'demo': [
     ],

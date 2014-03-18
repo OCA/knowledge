@@ -17,12 +17,12 @@ var _t = instance.web._t,
             var ids = ( view.fields_view.type != "form" )? view.groups.get_selection().ids : [ view.datarecord.id ];
             // you can pass in other data using the context dictionary variable
             var context = {
-            'model': view.dataset.model,
-            'ids': ids,
+                'model': view.dataset.model,
+                'ids': ids,
             };
             // the action dictionary variable sends data in the "self.do_action" method
             var action = {
-                name: _t("Add existing document/attachment"),
+                name: _t("Add existing document"),
                 type: 'ir.actions.act_window',
                 res_model: 'ir.attachment.existing.doc',
                 view_mode: 'form',
@@ -32,22 +32,48 @@ var _t = instance.web._t,
                 context: context,
             };
             // self.do_action accepts the action parameter and opens the new view
-            self.do_action(action);
+            self.do_action(action, {
+                // refresh list of documents
+                on_close: function () {
+                    self.do_attachement_update(self.dataset, self.model_id);
+                }
+            });
+
         },
-	do_attachement_update: function(dataset, model_id, args) {
+        on_attachment_delete: function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var self = this;
+            var view = self.getParent();
+            self.model_view = view.dataset.model
+            var ids = ( view.fields_view.type != "form" )? view.groups.get_selection().ids : [ view.datarecord.id ];
+            // Context dictionary variable
+            var context = {
+                'res_model':  self.model_view,
+                'res_id': ids[0],
+            };
+            var $e = $(e.currentTarget);
+            if (confirm(_t("Do you really want to delete this attachment ?"))) {
+                (new instance.web.DataSet(this, 'ir.attachment', context)).unlink([parseInt($e.attr('data-id'), 10)]).done(function() {
+                self.do_attachement_update(self.dataset, self.model_id);
+                });
+            }
+        },
+        do_attachement_update: function(dataset, model_id, args) {
             var self = this;
             this.dataset = dataset;
             this.model_id = model_id;
             if (args && args[0].error) {
-		this.do_warn(_t('Uploading Error'), args[0].error);
+                this.do_warn(_t('Uploading Error'), args[0].error);
             }
             if (!model_id) {
-		this.on_attachments_loaded([]);
-            } else {
-		var dom = [ ['attachment_document_ids.res_model', '=', dataset.model], ['attachment_document_ids.res_id', '=', model_id], ['type', 'in', ['binary', 'url']] ];
-		var ds = new instance.web.DataSetSearch(this, 'ir.attachment', dataset.get_context(), dom);
-		ds.read_slice(['name', 'url', 'type', 'create_uid', 'create_date', 'write_uid', 'write_date'], {}).done(this.on_attachments_loaded);
+                this.on_attachments_loaded([]);
             }
-	}
+            else {
+                var dom = [ ['attachment_document_ids.res_model', '=', dataset.model], ['attachment_document_ids.res_id', '=', model_id], ['type', 'in', ['binary', 'url']] ];
+                var ds = new instance.web.DataSetSearch(this, 'ir.attachment', dataset.get_context(), dom);
+                ds.read_slice(['name', 'url', 'type', 'create_uid', 'create_date', 'write_uid', 'write_date'], {}).done(this.on_attachments_loaded);
+            }
+        }
     });
 };

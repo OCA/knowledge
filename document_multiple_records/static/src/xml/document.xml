@@ -4,7 +4,7 @@
 <templates id="template" xml:space="preserve">
 
 <t t-name="AddDocfromserver">
-     <li class="open"><span><b>Add existing document/attachment...</b></span></li>
+     <li class="open"><span><b>Add existing document...</b></span></li>
 </t>
 
 </templates>

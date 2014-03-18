@@ -55,11 +55,7 @@ class document_wizard(orm.Model):
                 'attachment_id': attach.id,
             }
             #Created attachment_document_ids
-            if attach.res_model:
-                ir_attach_doc_obj.create(cr, uid, data_attach, context=context)
-            # Updated attachment line
-            else:
-                ir_attach_obj.write(cr, uid, [attach.id], data_attach, context=context)
+            ir_attach_doc_obj.create(cr, uid, data_attach, context=context)
         return {'type': 'ir.actions.act_window_close'}
 
 # vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
