@@ -36,12 +36,10 @@ class document_file(orm.Model):
         ir_attachment_document_obj = self.pool.get('ir.attachment.document')
         original_data = {key: data[key] for key in data.keys()}
         # Don't save this information below
-        if data['res_model']:
-            data['res_model'] = ''
-        if data['res_id']:
-            data['res_id'] = ''
-        if data['res_name']:
-            data['res_name'] = ''
+        if ('res_name', 'res_id', 'res_name') in data.keys():
+            data['res_model'] = False
+            data['res_id'] = False
+            data['res_name'] = False
         res = super(document_file, self).create(cr, uid, data, context=context)
         # Create attachment_document_ids with res_model, res_id and res_name
         if 'res_model' and 'res_id' in original_data:
