@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_attachment_dms_group_user,ir.attachment.dms user,model_ir_attachment_dms,base.group_document_user,1,1,1,1
