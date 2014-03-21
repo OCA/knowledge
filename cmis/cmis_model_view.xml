@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="view_cmis_backend_form" model="ir.ui.view">
+        <field name="name">cmis.backend.form</field>
+        <field name="model">cmis.backend</field>
+        <field name="arch" type="xml">
+          <form string="CMIS Backend" version="7.0">
+            <sheet>
+              <label for="name" class="oe_edit_only"/>
+              <h1>
+                <field name="name" class="oe_inline" />
+              </h1>
+              <group name="cmis" string="Cmis Configuration">
+                <group colspan="4" col="4">
+                  <field name="version" colspan="4"/>
+                  <field name="location" placeholder="e.g. http://localhost:8081/alfresco/s/cmis"
+                      colspan="4"/>
+                  <field name="username" colspan="2"/>
+                  <field name="password" colspan="2" password="True"/>
+                </group>
+              </group>
+              <group name="directory_conf" string="Directory Configuration">
+                <group colspan="4" col="4">
+                  <field name="initial_directory_read" colspan="2"/>
+                  <field name="initial_directory_write" colspan="2"/>
+                </group>
+              </group>
+              <group colspan="4" col="4">
+              <div>
+                <button name="test_directory_of_read"
+                        type="object"
+                        class="oe_highlight"
+                        string="Test Directory of read"/>
+                <button name="test_directory_of_write"
+                        type="object"
+                        class="oe_highlight"
+                        string="Test Directory of write"/>
+              </div>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <record id="view_cmis_backend_tree" model="ir.ui.view">
+          <field name="name">cmis.backend.tree</field>
+          <field name="model">cmis.backend</field>
+          <field name="arch" type="xml">
+            <tree string="CMIS Backend" version="7.0">
+              <field name="name"/>
+              <field name="username"/>
+              <field name="location"/>
+            </tree>
+          </field>
+      </record>
+
+      <record id="action_cmis_backend" model="ir.actions.act_window">
+        <field name="name">CMIS Backends</field>
+        <field name="res_model">cmis.backend</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_cmis_backend_tree"/>
+      </record>
+    </data>
+</openerp>

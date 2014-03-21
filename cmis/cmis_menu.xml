@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <menuitem id="menu_cmis_root"
+              parent="connector.menu_connector_root"
+              name="Cmis"
+              sequence="10"
+              groups="connector.group_connector_manager"/>
+
+    <menuitem id="menu_cmis_backend"
+              name="Backends"
+              parent="menu_cmis_root"
+              action="action_cmis_backend"/>
+
+  </data>
+</openerp>
