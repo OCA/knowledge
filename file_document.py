@@ -70,6 +70,7 @@ class file_document(orm.Model):
             for att in msg['attachments']:
                 if condition.file_extension in att[0]:
                     vals = {
+                        'file_type': condition.server_id.file_type,
                         'name': msg['subject'],
                         'direction': 'input',
                         'date': msg['date'],
