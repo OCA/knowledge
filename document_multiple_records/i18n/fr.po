@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-06 19:28+0000\n"
-"PO-Revision-Date: 2014-03-25 02:56-0500\n"
+"POT-Creation-Date: 2014-03-25 18:24+0000\n"
+"PO-Revision-Date: 2014-03-25 14:27-0500\n"
 "Last-Translator: Marc Cassuto <marc.cassuto@savoirfairelinux.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,16 +23,9 @@ msgid "Resource ID"
 msgstr "Identifiant de la ressource"
 
 #. module: document_multiple_records
-#: view:ir.attachment.wizard:0
+#: view:ir.attachment.existing.doc:0
 msgid "Select document(s)"
 msgstr "Choisir un(des) document(s)"
-
-#. module: document_multiple_records
-#. openerp-web
-#: code:addons/document_multiple_records/static/src/xml/document.xml:7
-#, python-format
-msgid "Add existing Doc..."
-msgstr "Ajouter un document existant..."
 
 #. module: document_multiple_records
 #: field:ir.attachment.document,attachment_id:0
@@ -39,18 +33,16 @@ msgid "Attachment"
 msgstr "Document joint"
 
 #. module: document_multiple_records
-#: view:ir.attachment.wizard:0
+#: view:ir.attachment.existing.doc:0
 msgid "AttachmentDocumentWizardTree"
 msgstr "AttachmentDocumentWizardTree"
 
 #. module: document_multiple_records
 #. openerp-web
-#: code:addons/document_multiple_records/static/src/js/document.js:26
-#: model:ir.actions.act_window,name:document_multiple_records.action_view_document
-#: view:ir.attachment.wizard:0
+#: code:addons/document_multiple_records/static/src/js/document.js:42
 #, python-format
-msgid "Add Document"
-msgstr "Ajouter un document"
+msgid "Uploading Error"
+msgstr "Erreur lors du transfert"
 
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_name:0
@@ -63,7 +55,7 @@ msgid "Attachment Documents"
 msgstr "Documents joints"
 
 #. module: document_multiple_records
-#: field:ir.attachment,attachmentdocument_ids:0
+#: field:ir.attachment,attachment_document_ids:0
 msgid "Records"
 msgstr "Enregistrements"
 
@@ -83,17 +75,12 @@ msgid "Indexed Content"
 msgstr "Contenu indexé"
 
 #. module: document_multiple_records
-#: model:ir.model,name:document_multiple_records.model_ir_attachment_wizard
-msgid "Attachment wizard"
-msgstr "Assistant"
-
-#. module: document_multiple_records
 #: view:ir.attachment:0
 msgid "AttachmentDocumentForm"
 msgstr "AttachmentDocumentForm"
 
 #. module: document_multiple_records
-#: code:addons/document_multiple_records/wizard/document_wizard.py:46
+#: code:addons/document_multiple_records/wizard/document_wizard.py:48
 #, python-format
 msgid "Error"
 msgstr "Erreur"
@@ -109,9 +96,30 @@ msgid "The record id this is attached to."
 msgstr "L'identifiant de l'enregistrement auquel est ce document est joint."
 
 #. module: document_multiple_records
-#: field:ir.attachment.wizard,attachment_ids:0
+#. openerp-web
+#: code:addons/document_multiple_records/static/src/js/document.js:25
+#: model:ir.actions.act_window,name:document_multiple_records.action_view_document
+#: view:ir.attachment.existing.doc:0
+#, python-format
+msgid "Add existing document/attachment"
+msgstr "Ajouter un document déjà joint dans le système"
+
+#. module: document_multiple_records
+#: model:ir.model,name:document_multiple_records.model_ir_attachment_existing_doc
+msgid "Add existing document/attachment wizard"
+msgstr "Assistant pour ajouter un document déjà joint dans le système"
+
+#. module: document_multiple_records
+#: field:ir.attachment.existing.doc,attachment_ids:0
 msgid "Attachments"
 msgstr "Documents joints"
+
+#. module: document_multiple_records
+#. openerp-web
+#: code:addons/document_multiple_records/static/src/xml/document.xml:7
+#, python-format
+msgid "Add existing document/attachment..."
+msgstr "Ajouter un document déjà joint dans le système..."
 
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_model:0
@@ -119,23 +127,25 @@ msgid "Resource Model"
 msgstr "Modèle"
 
 #. module: document_multiple_records
-#: view:ir.attachment.wizard:0
+#: view:ir.attachment.existing.doc:0
 msgid "Cancel"
 msgstr "Annuler"
 
 #. module: document_multiple_records
-#: view:ir.attachment.wizard:0
+#: view:ir.attachment.existing.doc:0
 msgid "Apply"
 msgstr "Appliquer"
 
 #. module: document_multiple_records
-#: view:ir.attachment.wizard:0
+#: view:ir.attachment.existing.doc:0
 msgid "or"
 msgstr "ou"
 
 #. module: document_multiple_records
-#: code:addons/document_multiple_records/wizard/document_wizard.py:47
+#: code:addons/document_multiple_records/wizard/document_wizard.py:49
 #, python-format
 msgid "You have to select at least 1 Document. And try again"
 msgstr "Vous devez sélectionner au moins un document et essayer de nouveau."
 
+#~ msgid "Add Document"
+#~ msgstr "Ajouter un document"
