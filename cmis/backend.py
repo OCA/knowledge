@@ -26,7 +26,7 @@ import openerp.addons.connector.backend as backend
 cmis = backend.Backend('cmis')
 """ Generic CMIS Backend """
 
-cmis1700 = backend.Backend(parent=cmis, version='1.7')
-""" CMIS Backend for version 1.7 """
+cmis1000 = backend.Backend(parent=cmis, version='1.0')
+""" CMIS Backend for version 1.0 """
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
