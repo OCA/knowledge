@@ -36,7 +36,7 @@ class cmis_backend(orm.Model):
     _backend_type = 'cmis'
 
     def _select_versions(self, cr, uid, context=None):
-        return [('1.7', '1.7')]
+        return [('1.0', '1.0')]
 
     # Test connection with GED
     def _auth(self, cr, uid, context=None):
