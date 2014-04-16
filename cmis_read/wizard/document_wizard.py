@@ -32,9 +32,15 @@ class ir_attachment_dms(osv.TransientModel):
     _name = 'ir.attachment.dms'
 
     _columns = {
-        'name': fields.char('File name', size=150, readonly=True, help="File name"),
-        'owner': fields.char('Owner', size=150, readonly=True, help="Owner"),
-        'file_id': fields.char('File ID', size=150, readonly=True, help="File Id"),
+        'name': fields.char('File name', size=150,
+                            readonly=True,
+                            help="File name"),
+        'owner': fields.char('Owner', size=150,
+                             readonly=True,
+                             help="Owner"),
+        'file_id': fields.char('File ID', size=150,
+                               readonly=True,
+                               help="File Id"),
     }
 
 
@@ -45,7 +51,8 @@ class ir_attachment_edm_wizard(orm.Model):
         'name': fields.char('File name', size=150, help="File name"),
         'attachment_ids': fields.many2many('ir.attachment.dms',
                                            'document_attachment_dms_rel',
-                                           'wizard_id', 'attachment_id', 'Attachments'),
+                                           'wizard_id', 'attachment_id',
+                                           'Attachments'),
     }
 
     # Search documents from dms.
@@ -56,13 +63,15 @@ class ir_attachment_edm_wizard(orm.Model):
         data = self.read(cr, uid, ids, [], context=context)[0]
         if not data['name']:
             raise orm.except_orm(_('Error'),
-                                 _('You have to fill in the file name. And try again'))
+                                 _('You have to fill in the file name.' +
+                                   'And try again'))
         if not hasattr(ids, '__iter__'):
             ids = [ids]
         session = ConnectorSession(cr, uid, context=context)
         file_name = data['name']
         for backend_id in ids:
-            search_doc_from_dms(session, 'ir.attachment', backend_id, file_name)
+            search_doc_from_dms(session, 'ir.attachment',
+                                backend_id, file_name)
         return {
             'type': 'ir.actions.act_window',
             'res_model': 'ir.attachment.dms.wizard',
@@ -80,18 +89,21 @@ class ir_attachment_edm_wizard(orm.Model):
         model = context['model']
         res_id = context['ids'][0]
         ir_model_obj = self.pool.get(context['model'])
-        name = ir_model_obj.browse(cr, uid, context['ids'], context=context)[0]['name']
+        name = ir_model_obj.browse(cr, uid, context['ids'],
+                                   context=context)[0]['name']
         data = self.read(cr, uid, ids, [], context=context)[0]
         if not data['attachment_ids']:
             raise orm.except_orm(_('Error'),
-                                 _('You have to select at least 1 Document. And try again'))
+                                 _('You have to select at least 1 Document.' +
+                                   'And try again'))
         if not hasattr(ids, '__iter__'):
             ids = [ids]
         session = ConnectorSession(cr, uid, context=context)
         file_name = data['name']
         for backend_id in ids:
             # Create doc in OE from DMS.
-            create_doc_from_dms.delay(session, 'ir.attachment', backend_id, data, name, model, res_id)
+            create_doc_from_dms.delay(session, 'ir.attachment', backend_id,
+                                      data, name, model, res_id)
         return {'type': 'ir.actions.act_window_close'}
 
 
@@ -101,14 +113,18 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
     if session.context is None:
         session.context = {}
     #login with the cmis account
-    client = cmis_backend_obj._auth(session.cr, session.uid, context=session.context)
+    client = cmis_backend_obj._auth(session.cr, session.uid,
+                                    context=session.context)
     repo = client.getDefaultRepository()
 
      # Search name of doc and delete it if the document is already existed
     attachment_ids = ir_attach_dms_obj.search(session.cr, session.uid, [])
-    ir_attach_dms_obj.unlink(session.cr, session.uid, attachment_ids, context=session.context)
+    ir_attach_dms_obj.unlink(session.cr, session.uid,
+                             attachment_ids, context=session.context)
     # Get results from name of document
-    results = repo.query("SELECT cmis:name', cmis:createdBy, cmis:objectId  FROM  cmis:document WHERE cmis:name LIKE '%" + file_name + "%'")
+    results = repo.query(" SELECT cmis:name, cmis:createdBy, cmis:objectId, \
+                         cmis:contentStreamLength FROM  cmis:document \
+                         WHERE cmis:name LIKE '%" + file_name + "%'")
     for result in results:
         info = result.getProperties()
         if info['cmis:contentStreamLength'] != 0:
@@ -117,36 +133,42 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
                 'owner': info['cmis:createdBy'],
                 'file_id': info['cmis:objectId'],
             }
-        ir_attach_dms_obj.create(session.cr, session.uid, data_attach, context=session.context)
+        ir_attach_dms_obj.create(session.cr, session.uid, data_attach,
+                                 context=session.context)
 
 
 @job
-def create_doc_from_dms(session, model_name, backend_id, data, name, model, res_id, filters=None):
+def create_doc_from_dms(session, model_name, backend_id, data, name,
+                        model, res_id, filters=None):
     ir_attach_obj = session.pool.get('ir.attachment')
     ir_attach_dms_obj = session.pool.get('ir.attachment.dms')
     cmis_backend_obj = session.pool.get('cmis.backend')
     if session.context is None:
         session.context = {}
     #login with the cmis account
-    client = cmis_backend_obj._auth(session.cr, session.uid, context=session.context)
+    client = cmis_backend_obj._auth(session.cr, session.uid,
+                                    context=session.context)
     repo = client.getDefaultRepository()
 
-    for attach in ir_attach_dms_obj.browse(session.cr, session.uid, data['attachment_ids'],
+    for attach in ir_attach_dms_obj.browse(session.cr, session.uid,
+                                           data['attachment_ids'],
                                            context=session.context):
         # Get results from id of document
-        results = repo.query("SELECT * FROM  cmis:document WHERE cmis:objectId ='" + attach.file_id + "'")
+        results = repo.query(" SELECT * FROM  cmis:document WHERE \
+                             cmis:objectId ='" + attach.file_id + "'")
         for result in results:
             info = result.getProperties()
             data_attach = {
                 'name': info['cmis:name'],
                 'type': 'binary',
-                'datas': result.getContentStream().read().encode("base64"),
+                'datas': result.getContentStream().read().encode('base64'),
                 'res_model': model,
                 'res_name': name,
                 'res_id': session.context['ids'][0],
                 'user_id': session.uid,
             }
-            ir_attach_obj.create(session.cr, session.uid, data_attach, context=session.context)
+            ir_attach_obj.create(session.cr, session.uid,
+                                 data_attach, context=session.context)
     return True
 
 # vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
