@@ -29,11 +29,11 @@
               </group>
               <group colspan="4" col="4">
               <div>
-                <button name="test_directory_of_read"
+                <button name="check_directory_of_read"
                         type="object"
                         class="oe_highlight"
                         string="Test Directory of read"/>
-                <button name="test_directory_of_write"
+                <button name="check_directory_of_write"
                         type="object"
                         class="oe_highlight"
                         string="Test Directory of write"/>

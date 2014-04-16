@@ -26,6 +26,7 @@ from openerp.addons.connector.queue.job import job
 from cmislib.model import CmisClient
 import openerp.addons.connector as connector
 from openerp.addons.connector.session import ConnectorSession
+import base64
 
 
 class cmis_backend(orm.Model):
@@ -36,7 +37,7 @@ class cmis_backend(orm.Model):
     _backend_type = 'cmis'
 
     def _select_versions(self, cr, uid, context=None):
-        return [('1.0', '1.0')]
+        return [('1.7', '1.7')]
 
     # Test connection with GED
     def _auth(self, cr, uid, context=None):
@@ -57,35 +58,65 @@ class cmis_backend(orm.Model):
                                  _("Check your cmis account configuration."))
         return client
 
-    def test_directory_of_write(self, cr, uid, ids, context=None):
+    def check_directory_of_write(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
         cmis_backend_obj = self.pool.get('cmis.backend')
+        datas_fname = 'testdoc'
         #login with the cmis account
         client = cmis_backend_obj._auth(cr, uid, context=context)
         repo = client.defaultRepository
-        folder_path_write = cmis_backend_obj.read(cr, uid, ids, ['initial_directory_write'],
-                                                  context=context)[0]['initial_directory_write']
+        folder_path_write = cmis_backend_obj.read(
+            cr, uid, ids, ['initial_directory_write'],
+            context=context)[0]['initial_directory_write']
         # Testing the path
-        rs = repo.query("SELECT cmis:path FROM  cmis:folder ")
-        bool_path_write = self.test_existing_path(rs, folder_path_write)
+        rs = repo.query("SELECT cmis:path FROM  cmis:folder")
+        bool_path_write = self.check_existing_path(rs, folder_path_write)
+        # Check if we can create a doc from OE to EDM
+        # Document properties
+        if bool_path_write:
+            sub = repo.getObjectByPath(folder_path_write)
+            someDoc = sub.createDocumentFromString(
+                datas_fname,
+                contentString='hello, world',
+                contentType='text/plain')
         self.get_error_for_path(bool_path_write, folder_path_write)
 
-    def test_directory_of_read(self, cr, uid, ids, context=None):
+    def check_directory_of_read(self, cr, uid, ids, context=None):
+        ir_attach_obj = self.pool.get('ir.attachment')
+        ir_attach_dms_obj = self.pool.get('ir.attachment.dms')
         if context is None:
             context = {}
         cmis_backend_obj = self.pool.get('cmis.backend')
         #login with the cmis account
         client = cmis_backend_obj._auth(cr, uid, context=context)
         repo = client.defaultRepository
-        folder_path_read = cmis_backend_obj.read(cr, uid, ids, ['initial_directory_read'],
-                                                 context=context)[0]['initial_directory_read']
+        folder_path_read = cmis_backend_obj.read(
+            cr, uid, ids, ['initial_directory_read'],
+            context=context)[0]['initial_directory_read']
         # Testing the path
         rs = repo.query("SELECT cmis:path FROM  cmis:folder ")
-        bool_path_read = self.test_existing_path(rs, folder_path_read)
+        bool_path_read = self.check_existing_path(rs, folder_path_read)
+        file_name = 'testdoc'
+        # Add testdoc in the context just to check if it is as test
+        context['bool_testdoc'] = True
+        if bool_path_read:
+            # Get results from name of document
+            results = repo.query(" SELECT * FROM  cmis:document \
+                         WHERE cmis:name LIKE '%" + file_name + "%'")
+            for result in results:
+                info = result.getProperties()
+                data_attach = {
+                    'name': info['cmis:name'],
+                    'datas_fname': info['cmis:name'],
+                    'type': 'binary',
+                    'datas': result.getContentStream().read().encode('base64'),
+                }
+                res = ir_attach_obj.create(cr, uid, data_attach,
+                                           context=context)
         self.get_error_for_path(bool_path_read, folder_path_read)
 
-    def test_existing_path(self, rs, folder_path):
+    def check_existing_path(self, rs, folder_path):
         for one_rs in rs:
             # Print name of files
             props = one_rs.getProperties()
@@ -112,10 +143,14 @@ class cmis_backend(orm.Model):
         'location': fields.char('Location', size=128, help="Location."),
         'username': fields.char('Username', size=64, help="Username."),
         'password': fields.char('Password', size=64, help="Password."),
-        'initial_directory_read': fields.char('Initial directory of read',
-                                              size=128, help="Initial directory of read."),
-        'initial_directory_write': fields.char('Initial directory of write',
-                                               size=128, help="Initial directory of write."),
+        'initial_directory_read': fields.char(
+            'Initial directory of read',
+            size=128,
+            help="Initial directory of read."),
+        'initial_directory_write': fields.char(
+            'Initial directory of write',
+            size=128,
+            help="Initial directory of write."),
     }
 
 # vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
