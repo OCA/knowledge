@@ -69,12 +69,12 @@ class ir_attachment(orm.Model):
         # Create Job
         # if bool_testdoc in context, we don't need to create
         # the doc in the DMS
-        if not context['bool_testdoc']:
-            create_doc_in_edm.delay(session,
-                                    'ir.attachment',
-                                    value,
-                                    res,
-                                    dict_metadata,
+        if not context.get('bool_testdoc'):
+            create_doc_in_edm.delay(session, 
+                                    'ir.attachment', 
+                                    value, 
+                                    res, 
+                                    dict_metadata, 
                                     user_login)
         return res
 
