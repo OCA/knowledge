@@ -49,8 +49,8 @@ var _t = instance.web._t,
             var ids = ( view.fields_view.type != "form" )? view.groups.get_selection().ids : [ view.datarecord.id ];
             // Context dictionary variable
             var context = {
-                'res_model':  self.model_view,
-                'res_id': ids[0],
+                'multiple_records_res_model':  self.model_view,
+                'multiple_records_res_id': ids[0],
             };
             var $e = $(e.currentTarget);
             if (confirm(_t("Do you really want to delete this attachment ?"))) {
