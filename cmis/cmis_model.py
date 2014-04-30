@@ -27,6 +27,7 @@ from cmislib.model import CmisClient
 import openerp.addons.connector as connector
 from openerp.addons.connector.session import ConnectorSession
 import base64
+import cmislib.exceptions
 
 
 class cmis_backend(orm.Model):
@@ -37,7 +38,7 @@ class cmis_backend(orm.Model):
     _backend_type = 'cmis'
 
     def _select_versions(self, cr, uid, context=None):
-        return [('1.1', '1.1')]
+        return [('1.0', '1.0')]
 
     # Test connection with GED
     def _auth(self, cr, uid, context=None):
@@ -53,10 +54,14 @@ class cmis_backend(orm.Model):
         user_name = res['username']
         user_password = res['password']
         client = CmisClient(url, user_name, user_password)
-        if not client:
+        try:
+            return client.defaultRepository
+        except cmislib.exceptions.ObjectNotFoundException:
             raise osv.except_osv(_('Cmis connection Error!'),
                                  _("Check your cmis account configuration."))
-        return client
+        except cmislib.exceptions.PermissionDeniedException:
+            raise osv.except_osv(_('Cmis connection Error!'),
+                                 _("Check your cmis account configuration."))
 
     def check_directory_of_write(self, cr, uid, ids, context=None):
         if context is None:
@@ -64,8 +69,8 @@ class cmis_backend(orm.Model):
         cmis_backend_obj = self.pool.get('cmis.backend')
         datas_fname = 'testdoc'
         #login with the cmis account
-        client = cmis_backend_obj._auth(cr, uid, context=context)
-        repo = client.defaultRepository
+        repo = self._auth(cr, uid, context=context)
+
         folder_path_write = cmis_backend_obj.read(
             cr, uid, ids, ['initial_directory_write'],
             context=context)[0]['initial_directory_write']
@@ -89,8 +94,8 @@ class cmis_backend(orm.Model):
             context = {}
         cmis_backend_obj = self.pool.get('cmis.backend')
         #login with the cmis account
-        client = cmis_backend_obj._auth(cr, uid, context=context)
-        repo = client.defaultRepository
+        #login with the cmis account
+        repo = self._auth(cr, uid, context=context)
         folder_path_read = cmis_backend_obj.read(
             cr, uid, ids, ['initial_directory_read'],
             context=context)[0]['initial_directory_read']
