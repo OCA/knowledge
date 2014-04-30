@@ -157,5 +157,9 @@ class cmis_backend(orm.Model):
             size=128,
             help="Initial directory of write."),
     }
+    _default = {
+        'initial_directory_read': '/',
+        'initial_directory_write': '/',
+    }
 
 # vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
