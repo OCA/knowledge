@@ -20,13 +20,9 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields, osv
+from openerp.osv import orm, fields
 from openerp.tools.translate import _
-from openerp.addons.connector.queue.job import job
 from cmislib.model import CmisClient
-import openerp.addons.connector as connector
-from openerp.addons.connector.session import ConnectorSession
-import base64
 import cmislib.exceptions
 
 
@@ -57,10 +53,10 @@ class cmis_backend(orm.Model):
         try:
             return client.defaultRepository
         except cmislib.exceptions.ObjectNotFoundException:
-            raise osv.except_osv(_('Cmis connection Error!'),
+            raise orm.except_orm(_('Cmis connection Error!'),
                                  _("Check your cmis account configuration."))
         except cmislib.exceptions.PermissionDeniedException:
-            raise osv.except_osv(_('Cmis connection Error!'),
+            raise orm.except_orm(_('Cmis connection Error!'),
                                  _("Check your cmis account configuration."))
 
     def check_directory_of_write(self, cr, uid, ids, context=None):
@@ -68,7 +64,7 @@ class cmis_backend(orm.Model):
             context = {}
         cmis_backend_obj = self.pool.get('cmis.backend')
         datas_fname = 'testdoc'
-        #login with the cmis account
+        # login with the cmis account
         repo = self._auth(cr, uid, context=context)
 
         folder_path_write = cmis_backend_obj.read(
@@ -81,7 +77,7 @@ class cmis_backend(orm.Model):
         # Document properties
         if bool_path_write:
             sub = repo.getObjectByPath(folder_path_write)
-            someDoc = sub.createDocumentFromString(
+            sub.createDocumentFromString(
                 datas_fname,
                 contentString='hello, world',
                 contentType='text/plain')
@@ -89,12 +85,10 @@ class cmis_backend(orm.Model):
 
     def check_directory_of_read(self, cr, uid, ids, context=None):
         ir_attach_obj = self.pool.get('ir.attachment')
-        ir_attach_dms_obj = self.pool.get('ir.attachment.dms')
         if context is None:
             context = {}
         cmis_backend_obj = self.pool.get('cmis.backend')
-        #login with the cmis account
-        #login with the cmis account
+        # login with the cmis account
         repo = self._auth(cr, uid, context=context)
         folder_path_read = cmis_backend_obj.read(
             cr, uid, ids, ['initial_directory_read'],
@@ -117,8 +111,7 @@ class cmis_backend(orm.Model):
                     'type': 'binary',
                     'datas': result.getContentStream().read().encode('base64'),
                 }
-                res = ir_attach_obj.create(cr, uid, data_attach,
-                                           context=context)
+                ir_attach_obj.create(cr, uid, data_attach, context=context)
         self.get_error_for_path(bool_path_read, folder_path_read)
 
     def check_existing_path(self, rs, folder_path):
@@ -134,10 +127,10 @@ class cmis_backend(orm.Model):
 
     def get_error_for_path(self, bool, path):
         if bool:
-            raise osv.except_osv(_('Cmis  Message'),
+            raise orm.except_orm(_('Cmis  Message'),
                                  _("Path is correct for : " + path))
         else:
-            raise osv.except_osv(_('Cmis  Error!'),
+            raise orm.except_orm(_('Cmis  Error!'),
                                  _("Error path for : " + path))
 
     _columns = {
