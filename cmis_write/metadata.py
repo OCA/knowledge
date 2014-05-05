@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields, osv
+from openerp.osv import orm, fields
 
 
 class metadata_list(orm.Model):
@@ -38,10 +38,12 @@ class metadata(orm.Model):
     _description = "Metadata"
     _columns = {
         'name': fields.char("Name", size=64, required=True, select=1),
-        'model_id': fields.many2one('ir.model', 'Model', required=True, select=1),
+        'model_id': fields.many2one('ir.model', 'Model',
+                                    required=True, select=1),
         'field_ids': fields.many2many('ir.model.fields', 'metadata_field_rel',
                                       'meta_id', 'field_id', 'Fields'),
-        'metadata_list_ids': fields.one2many('metadata.list', 'metadata_id', 'List of fields'),
+        'metadata_list_ids': fields.one2many('metadata.list', 'metadata_id',
+                                             'List of fields'),
         'model_ids': fields.many2many('ir.model', string='Model List'),
     }
 
@@ -52,10 +54,13 @@ class metadata(orm.Model):
             return {'value': {'model_ids': [(6, 0, [])]}}
         model_ids = [model_id]
         model_obj = self.pool.get('ir.model')
-        active_model_obj = self.pool.get(model_obj.browse(cr, uid, model_id).model)
+        active_model_obj = self.pool.get(model_obj.browse(cr, uid,
+                                                          model_id).model)
         if active_model_obj._inherits:
             for key, val in active_model_obj._inherits.items():
-                found_model_ids = model_obj.search(cr, uid, [('model', '=', key)], context=context)
+                found_model_ids = model_obj.search(cr,
+                                                   uid, [('model', '=', key)],
+                                                   context=context)
                 model_ids += found_model_ids
         return {'value': {'model_ids': [(6, 0, model_ids)]}}
 
