@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields, osv
+from openerp.osv import orm, fields
 from openerp.tools.translate import _
 from openerp.addons.connector.session import ConnectorSession
 from openerp.addons.connector.queue.job import job
@@ -28,7 +28,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class ir_attachment_dms(osv.TransientModel):
+class ir_attachment_dms(orm.TransientModel):
     _name = 'ir.attachment.dms'
 
     _columns = {
@@ -99,11 +99,10 @@ class ir_attachment_edm_wizard(orm.Model):
         if not hasattr(ids, '__iter__'):
             ids = [ids]
         session = ConnectorSession(cr, uid, context=context)
-        file_name = data['name']
         for backend_id in ids:
             # Create doc in OE from DMS.
             create_doc_from_dms.delay(session, 'ir.attachment', backend_id,
-                                      data, name, model, res_id)
+                                      data, name, model, res_id, uid)
         return {'type': 'ir.actions.act_window_close'}
 
 
@@ -112,12 +111,11 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
     cmis_backend_obj = session.pool.get('cmis.backend')
     if session.context is None:
         session.context = {}
-    #login with the cmis account
-    client = cmis_backend_obj._auth(session.cr, session.uid,
-                                    context=session.context)
-    repo = client.getDefaultRepository()
+    # login with the cmis account
+    repo = cmis_backend_obj._auth(session.cr, session.uid,
+                                  context=session.context)
 
-     # Search name of doc and delete it if the document is already existed
+    # Search name of doc and delete it if the document is already existed
     attachment_ids = ir_attach_dms_obj.search(session.cr, session.uid, [])
     ir_attach_dms_obj.unlink(session.cr, session.uid,
                              attachment_ids, context=session.context)
@@ -139,17 +137,15 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
 
 @job
 def create_doc_from_dms(session, model_name, backend_id, data, name,
-                        model, res_id, filters=None):
+                        model, res_id, uid, filters=None):
     ir_attach_obj = session.pool.get('ir.attachment')
     ir_attach_dms_obj = session.pool.get('ir.attachment.dms')
     cmis_backend_obj = session.pool.get('cmis.backend')
     if session.context is None:
         session.context = {}
-    #login with the cmis account
-    client = cmis_backend_obj._auth(session.cr, session.uid,
-                                    context=session.context)
-    repo = client.getDefaultRepository()
-
+    # login with the cmis account
+    repo = cmis_backend_obj._auth(
+        session.cr, session.uid, context=session.context)
     for attach in ir_attach_dms_obj.browse(session.cr, session.uid,
                                            data['attachment_ids'],
                                            context=session.context):
@@ -160,13 +156,15 @@ def create_doc_from_dms(session, model_name, backend_id, data, name,
             info = result.getProperties()
             data_attach = {
                 'name': info['cmis:name'],
+                'description': info['cmis:description'],
                 'type': 'binary',
                 'datas': result.getContentStream().read().encode('base64'),
                 'res_model': model,
                 'res_name': name,
-                'res_id': session.context['ids'][0],
-                'user_id': session.uid,
+                'res_id': res_id,
+                'user_id': uid,
             }
+            session.context['bool_read_doc'] = True
             ir_attach_obj.create(session.cr, session.uid,
                                  data_attach, context=session.context)
     return True
