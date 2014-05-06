@@ -45,6 +45,21 @@ Usage
 * Upload your documents
 * Uploaded documents will be enqueued for storage in the DMS
 
+Add Metadata
+============
+
+To manage a custom aspect using CMIS (and all the other supported ways)
+you have to:
+
+* Define a new custom model configuring Alfresco. To do this I suggest you
+http://wiki.alfresco.com/wiki/Step-By-Step:_Creating_A_Custom_Model.
+
+* Add the custom aspect to the document you upload or create in Alfresco.
+Using CMIS I suggest you: 
+http://docs.alfresco.com/4.1/index.jsp?topic=%2Fcom.alfresco.enterprise.doc%2Fconcepts%2Fopencmis-ext-adding.html.
+
+* Set the custom property in the way you probably know using CMIS.
+
 Contributors
 ------------
 * El Hadji Dem (elhadji.dem@savoirfairelinux.com)
