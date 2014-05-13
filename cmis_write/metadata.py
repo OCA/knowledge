@@ -54,8 +54,8 @@ class metadata(orm.Model):
             return {'value': {'model_ids': [(6, 0, [])]}}
         model_ids = [model_id]
         model_obj = self.pool.get('ir.model')
-        active_model_obj = self.pool.get(model_obj.browse(cr, uid,
-                                                          model_id).model)
+        active_model_obj = self.pool.get(model_obj.browse(
+            cr, uid, model_id, context=context).model)
         if active_model_obj._inherits:
             for key, val in active_model_obj._inherits.items():
                 found_model_ids = model_obj.search(cr,

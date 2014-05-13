@@ -24,9 +24,9 @@
     'name': 'CMIS Write',
     'version': '0.1',
     'category': 'Knowledge Management',
-    'summary': 'Create Document in DMS from OpenErp',
+    'summary': 'Create Document in DMS from OpenERP',
     'description': """
-Add Documents from OpenErp
+Add Documents from OpenERP
 ==========================
 
 This module allows you to store OpenERP document in the DMS repository.
@@ -55,7 +55,7 @@ you have to:
 http://wiki.alfresco.com/wiki/Step-By-Step:_Creating_A_Custom_Model.
 
 * Add the custom aspect to the document you upload or create in Alfresco.
-Using CMIS I suggest you: 
+Using CMIS I suggest you:
 http://docs.alfresco.com/4.1/index.jsp?topic=%2Fcom.alfresco.enterprise.doc%2Fconcepts%2Fopencmis-ext-adding.html.
 
 * Set the custom property in the way you probably know using CMIS.
