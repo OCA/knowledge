@@ -4,7 +4,7 @@
 
     <menuitem id="menu_cmis_root"
               parent="connector.menu_connector_root"
-              name="Cmis"
+              name="CMIS"
               sequence="10"
               groups="connector.group_connector_manager"/>
 

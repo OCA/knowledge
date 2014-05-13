@@ -53,11 +53,11 @@ class cmis_backend(orm.Model):
         try:
             return client.defaultRepository
         except cmislib.exceptions.ObjectNotFoundException:
-            raise orm.except_orm(_('Cmis connection Error!'),
-                                 _("Check your cmis account configuration."))
+            raise orm.except_orm(_('CMIS connection Error!'),
+                                 _("Check your CMIS account configuration."))
         except cmislib.exceptions.PermissionDeniedException:
-            raise orm.except_orm(_('Cmis connection Error!'),
-                                 _("Check your cmis account configuration."))
+            raise orm.except_orm(_('CMIS connection Error!'),
+                                 _("Check your CMIS account configuration."))
 
     def check_directory_of_write(self, cr, uid, ids, context=None):
         if context is None:
@@ -71,7 +71,7 @@ class cmis_backend(orm.Model):
             context=context)[0]
         folder_path_write = cmis_backend_rec['initial_directory_write']
         # Testing the path
-        rs = repo.query("SELECT cmis:path FROM  cmis:folder")
+        rs = repo.query("SELECT cmis:path FROM cmis:folder")
         bool_path_write = self.check_existing_path(rs, folder_path_write)
         # Check if we can create a doc from OE to EDM
         # Document properties
@@ -105,7 +105,7 @@ class cmis_backend(orm.Model):
         repo = self._auth(cr, uid, context=context)
         folder_path_read = cmis_backend_rec['initial_directory_read']
         # Testing the path
-        rs = repo.query("SELECT cmis:path FROM  cmis:folder ")
+        rs = repo.query("SELECT cmis:path FROM cmis:folder ")
         bool_path_read = self.check_existing_path(rs, folder_path_read)
         file_name = 'testdoc'
         # Add testdoc in the context just to check if it is as test
@@ -141,10 +141,10 @@ class cmis_backend(orm.Model):
 
     def get_error_for_path(self, bool, path):
         if bool:
-            raise orm.except_orm(_('Cmis  Message'),
+            raise orm.except_orm(_('CMIS Message'),
                                  _("Path is correct for : " + path))
         else:
-            raise orm.except_orm(_('Cmis  Error!'),
+            raise orm.except_orm(_('CMIS Error!'),
                                  _("Error path for : " + path))
 
     _columns = {
@@ -173,5 +173,3 @@ class cmis_backend(orm.Model):
         'initial_directory_read': '/',
         'initial_directory_write': '/',
     }
-
-# vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
