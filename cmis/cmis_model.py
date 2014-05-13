@@ -66,10 +66,10 @@ class cmis_backend(orm.Model):
         datas_fname = 'testdoc'
         # login with the cmis account
         repo = self._auth(cr, uid, context=context)
-
-        folder_path_write = cmis_backend_obj.read(
+        cmis_backend_rec = cmis_backend_obj.read(
             cr, uid, ids, ['initial_directory_write'],
-            context=context)[0]['initial_directory_write']
+            context=context)[0]
+        folder_path_write = cmis_backend_rec['initial_directory_write']
         # Testing the path
         rs = repo.query("SELECT cmis:path FROM  cmis:folder")
         bool_path_write = self.check_existing_path(rs, folder_path_write)
@@ -77,10 +77,20 @@ class cmis_backend(orm.Model):
         # Document properties
         if bool_path_write:
             sub = repo.getObjectByPath(folder_path_write)
-            sub.createDocumentFromString(
-                datas_fname,
-                contentString='hello, world',
-                contentType='text/plain')
+            try:
+                sub.createDocumentFromString(
+                    datas_fname,
+                    contentString='hello, world',
+                    contentType='text/plain')
+            except cmislib.exceptions.UpdateConflictException:
+                raise orm.except_orm(
+                    _('Cmis  Error!'),
+                    _("The test file is already existed in DMS. "
+                      "Please remove it and try again."))
+            except cmislib.exceptions.RuntimeException:
+                raise orm.except_orm(
+                    _('Cmis access right Error!'),
+                    ("Please check your access right."))
         self.get_error_for_path(bool_path_write, folder_path_write)
 
     def check_directory_of_read(self, cr, uid, ids, context=None):
@@ -88,11 +98,12 @@ class cmis_backend(orm.Model):
         if context is None:
             context = {}
         cmis_backend_obj = self.pool.get('cmis.backend')
+        cmis_backend_rec = cmis_backend_obj.read(
+            cr, uid, ids, ['initial_directory_read'],
+            context=context)[0]
         # login with the cmis account
         repo = self._auth(cr, uid, context=context)
-        folder_path_read = cmis_backend_obj.read(
-            cr, uid, ids, ['initial_directory_read'],
-            context=context)[0]['initial_directory_read']
+        folder_path_read = cmis_backend_rec['initial_directory_read']
         # Testing the path
         rs = repo.query("SELECT cmis:path FROM  cmis:folder ")
         bool_path_read = self.check_existing_path(rs, folder_path_read)
@@ -101,8 +112,8 @@ class cmis_backend(orm.Model):
         context['bool_testdoc'] = True
         if bool_path_read:
             # Get results from name of document
-            results = repo.query(" SELECT * FROM  cmis:document \
-                         WHERE cmis:name LIKE '%" + file_name + "%'")
+            results = repo.query(" SELECT * FROM  cmis:document "
+                                 "WHERE cmis:name LIKE '%" + file_name + "%'")
             for result in results:
                 info = result.getProperties()
                 data_attach = {
@@ -112,6 +123,9 @@ class cmis_backend(orm.Model):
                     'datas': result.getContentStream().read().encode('base64'),
                 }
                 ir_attach_obj.create(cr, uid, data_attach, context=context)
+        # Remove the test doc
+        doc_to_remove = repo.getObjectByPath(folder_path_read
+                                             + file_name).delete()
         self.get_error_for_path(bool_path_read, folder_path_read)
 
     def check_existing_path(self, rs, folder_path):
@@ -138,19 +152,24 @@ class cmis_backend(orm.Model):
             _select_versions,
             string='Version',
             required=True),
-        'location': fields.char('Location', size=128, help="Location."),
-        'username': fields.char('Username', size=64, help="Username."),
-        'password': fields.char('Password', size=64, help="Password."),
+        'location': fields.char('Location', size=128, required=True,
+                                help="Location."),
+        'username': fields.char('Username', size=64, required=True,
+                                help="Username."),
+        'password': fields.char('Password', size=64, required=True,
+                                help="Password."),
         'initial_directory_read': fields.char(
             'Initial directory of read',
             size=128,
+            required=True,
             help="Initial directory of read."),
         'initial_directory_write': fields.char(
             'Initial directory of write',
             size=128,
+            required=True,
             help="Initial directory of write."),
     }
-    _default = {
+    _defaults = {
         'initial_directory_read': '/',
         'initial_directory_write': '/',
     }

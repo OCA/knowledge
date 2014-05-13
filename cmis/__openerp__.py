@@ -47,9 +47,6 @@ Contributors
     'depends': [
         'connector',
     ],
-    'external_dependencies': {
-        'python': ['cmislib'],
-    },
     'data': [
         'cmis_model_view.xml',
         'cmis_menu.xml',

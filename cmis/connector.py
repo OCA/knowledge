@@ -20,7 +20,6 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
 from openerp.addons.connector.connector import (Environment,
                                                 install_in_connector)
 
