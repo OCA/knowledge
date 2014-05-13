@@ -119,10 +119,12 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
     attachment_ids = ir_attach_dms_obj.search(session.cr, session.uid, [])
     ir_attach_dms_obj.unlink(session.cr, session.uid,
                              attachment_ids, context=session.context)
+    # Escape the name for characters not supported in filenames
+    file_name = file_name.replace('/', '_')
     # Get results from name of document
-    results = repo.query(" SELECT cmis:name, cmis:createdBy, cmis:objectId, \
-                         cmis:contentStreamLength FROM  cmis:document \
-                         WHERE cmis:name LIKE '%" + file_name + "%'")
+    results = repo.query(" SELECT cmis:name, cmis:createdBy, cmis:objectId, "
+                         "cmis:contentStreamLength FROM  cmis:document "
+                         "WHERE cmis:name LIKE '%" + file_name + "%'")
     for result in results:
         info = result.getProperties()
         if info['cmis:contentStreamLength'] != 0:
