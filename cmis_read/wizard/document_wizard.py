@@ -166,7 +166,8 @@ def create_doc_from_dms(session, model_name, backend_id, data, name,
                 'res_id': res_id,
                 'user_id': uid,
             }
-            session.context['bool_read_doc'] = True
+            # Don't create doc again in DMS
+            session.context['bool_testdoc'] = True
             ir_attach_obj.create(session.cr, session.uid,
                                  data_attach, context=session.context)
     return True
