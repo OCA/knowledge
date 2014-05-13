@@ -30,10 +30,12 @@ class test_model(TransactionCase):
         # Clean up registries
         self.registry('ir.model').clear_caches()
         self.registry('ir.model.data').clear_caches()
+        self.user_model = self.registry("res.users")
+
         # Get registries
         self.model = self.registry("cmis.backend")
         # Get context
-        self.context = self.model.context_get(self.cr, self.uid)
+        self.context = self.user_model.context_get(self.cr, self.uid)
 
         self.vals = {
             'name': "Test cmis",
