@@ -61,25 +61,8 @@ class test_attachment(TransactionCase):
 
     def test_create_test_attachment(self):
         cr, uid, vals, context = self.cr, self.uid, self.vals, self.context
-        metadata_ids = self.metadata_model.search(cr, uid, [], context=context)
-        dict_metadata = {}
-        list_fields = []
-
-        # Get list of metadata
-        if vals['res_model']:
-            for line in self.metadata_obj.browse(
-                    cr, uid, metadata_ids, context=context):
-                if line.model_id.model == vals['res_model']:
-                    if line.metadata_list_ids:
-                        for one_field in line.metadata_list_ids:
-                            list_fields.append(one_field.field_id.name)
-            result = self.pool.get(vals['res_model']).read(cr, uid, [
-                vals['res_id']], list_fields, context=context)[0]
-
-            for one_field in list_fields:
-                dict_metadata['cmis:' + one_field] = result[one_field]
+        vals['datas'] = None
         context['bool_testdoc'] = True
-
         ir_attachment_id = self.ir_attachment_model.create(
             cr, uid, vals, context=context)
         ir_attachment_pool = self.ir_attachment_model.browse(
