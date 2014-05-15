@@ -106,6 +106,15 @@ class ir_attachment_edm_wizard(orm.Model):
         return {'type': 'ir.actions.act_window_close'}
 
 
+def sanitize_input_filename_field(file_name):
+    # Escape the name for characters not supported in filenames
+    # for avoiding SQL Injection
+    file_name = file_name.replace("'", "\\'")
+    file_name = file_name.replace("%", "\%")
+    file_name = file_name.replace("_", "\_")
+    return file_name
+
+
 def search_doc_from_dms(session, model_name, backend_id, file_name):
     ir_attach_dms_obj = session.pool.get('ir.attachment.dms')
     cmis_backend_obj = session.pool.get('cmis.backend')
@@ -120,10 +129,7 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
     ir_attach_dms_obj.unlink(session.cr, session.uid,
                              attachment_ids, context=session.context)
     # Escape the name for characters not supported in filenames
-    # for avoiding SQL Injection
-    file_name = file_name.replace("'", "\\'")
-    file_name = file_name.replace("%", "\%")
-    file_name = file_name.replace("_", "\_")
+    file_name = sanitize_input_filename_field(file_name)
     # Get results from name of document
     results = repo.query(" SELECT cmis:name, cmis:createdBy, cmis:objectId, "
                          "cmis:contentStreamLength FROM  cmis:document "
