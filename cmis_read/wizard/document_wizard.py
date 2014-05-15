@@ -120,7 +120,10 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
     ir_attach_dms_obj.unlink(session.cr, session.uid,
                              attachment_ids, context=session.context)
     # Escape the name for characters not supported in filenames
-    file_name = file_name.replace('/', '_')
+    # for avoiding SQL Injection
+    file_name = file_name.replace("'", "\\'")
+    file_name = file_name.replace("%", "\%")
+    file_name = file_name.replace("_", "\_")
     # Get results from name of document
     results = repo.query(" SELECT cmis:name, cmis:createdBy, cmis:objectId, "
                          "cmis:contentStreamLength FROM  cmis:document "
@@ -166,8 +169,7 @@ def create_doc_from_dms(session, model_name, backend_id, data, name,
                 'res_id': res_id,
                 'user_id': uid,
             }
-            # Don't create doc again in DMS
-            session.context['bool_testdoc'] = True
+            session.context['bool_read_doc'] = True
             ir_attach_obj.create(session.cr, session.uid,
                                  data_attach, context=session.context)
     return True
