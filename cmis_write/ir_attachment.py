@@ -116,8 +116,7 @@ def create_doc_in_edm(session, model_name, value, res,
         sub1 = repo.getObjectByPath(folder_path)
     else:
         sub1 = root
-
-    someDoc = sub1.createDocumentFromString(value['datas_fname'],
+    someDoc = sub1.createDocumentFromString(file_name,
                                             contentString=base64.b64decode(
                                                 value['datas']),
                                             contentType=value['file_type'])
