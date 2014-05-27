@@ -53,12 +53,13 @@ class cmis_backend(orm.Model):
         try:
             return client.defaultRepository
         except cmislib.exceptions.ObjectNotFoundException:
-            raise orm.except_orm(_('CMIS connection Error!'),
-                                 _("Check your CMIS account configuration."))
+            raise orm.except_orm(_('Cmis connection Error!'),
+                                 _("Check your cmis account configuration."))
         except cmislib.exceptions.PermissionDeniedException:
-            raise orm.except_orm(_('CMIS connection Error!'),
-                                 _("Check your CMIS account configuration."))
+            raise orm.except_orm(_('Cmis connection Error!'),
+                                 _("Check your cmis account configuration."))
 
+    # Function to check if we have access right to write from the path
     def check_directory_of_write(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
@@ -71,7 +72,7 @@ class cmis_backend(orm.Model):
             context=context)[0]
         folder_path_write = cmis_backend_rec['initial_directory_write']
         # Testing the path
-        rs = repo.query("SELECT cmis:path FROM cmis:folder")
+        rs = repo.query("SELECT cmis:path FROM  cmis:folder")
         bool_path_write = self.check_existing_path(rs, folder_path_write)
         # Check if we can create a doc from OE to EDM
         # Document properties
@@ -93,6 +94,7 @@ class cmis_backend(orm.Model):
                     ("Please check your access right."))
         self.get_error_for_path(bool_path_write, folder_path_write)
 
+    # Function to check if we have access right to read from the path
     def check_directory_of_read(self, cr, uid, ids, context=None):
         ir_attach_obj = self.pool.get('ir.attachment')
         if context is None:
@@ -101,33 +103,15 @@ class cmis_backend(orm.Model):
         cmis_backend_rec = cmis_backend_obj.read(
             cr, uid, ids, ['initial_directory_read'],
             context=context)[0]
-        # login with the cmis account
+        # Login with the cmis account
         repo = self._auth(cr, uid, context=context)
         folder_path_read = cmis_backend_rec['initial_directory_read']
         # Testing the path
-        rs = repo.query("SELECT cmis:path FROM cmis:folder ")
+        rs = repo.query("SELECT cmis:path FROM  cmis:folder ")
         bool_path_read = self.check_existing_path(rs, folder_path_read)
-        file_name = 'testdoc'
-        # Add testdoc in the context just to check if it is as test
-        context['bool_testdoc'] = True
-        if bool_path_read:
-            # Get results from name of document
-            results = repo.query(" SELECT * FROM  cmis:document "
-                                 "WHERE cmis:name LIKE '%" + file_name + "%'")
-            for result in results:
-                info = result.getProperties()
-                data_attach = {
-                    'name': info['cmis:name'],
-                    'datas_fname': info['cmis:name'],
-                    'type': 'binary',
-                    'datas': result.getContentStream().read().encode('base64'),
-                }
-                ir_attach_obj.create(cr, uid, data_attach, context=context)
-        # Remove the test doc
-        doc_to_remove = repo.getObjectByPath(folder_path_read
-                                             + file_name).delete()
         self.get_error_for_path(bool_path_read, folder_path_read)
 
+    # Function to check if the path is correct
     def check_existing_path(self, rs, folder_path):
         for one_rs in rs:
             # Print name of files
@@ -139,12 +123,13 @@ class cmis_backend(orm.Model):
                 break
         return bool
 
+    # Function to return following the boolean the right error message
     def get_error_for_path(self, bool, path):
         if bool:
-            raise orm.except_orm(_('CMIS Message'),
+            raise orm.except_orm(_('Cmis  Message'),
                                  _("Path is correct for : " + path))
         else:
-            raise orm.except_orm(_('CMIS Error!'),
+            raise orm.except_orm(_('Cmis  Error!'),
                                  _("Error path for : " + path))
 
     _columns = {
@@ -168,6 +153,10 @@ class cmis_backend(orm.Model):
             size=128,
             required=True,
             help="Initial directory of write."),
+        'browsing_ok': fields.boolean('Allow browsing in this backend',
+                                      help="Allow browsing in this backend."),
+        'storing_ok': fields.boolean('Allow storing in this backend',
+                                     help="Allow storing in this backend."),
     }
     _defaults = {
         'initial_directory_read': '/',

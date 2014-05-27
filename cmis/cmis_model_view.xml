@@ -12,7 +12,7 @@
               <h1>
                 <field name="name" class="oe_inline" />
               </h1>
-              <group name="cmis" string="CMIS Configuration">
+              <group name="cmis" string="Cmis Configuration">
                 <group colspan="4" col="4">
                   <field name="version" colspan="4"/>
                   <field name="location" placeholder="e.g. http://localhost:8081/alfresco/s/cmis"
@@ -22,20 +22,29 @@
                 </group>
               </group>
               <group name="directory_conf" string="Directory Configuration">
-                <group colspan="4" col="4">
-                  <field name="initial_directory_write" colspan="2"/>
-                  <field name="initial_directory_read" colspan="2"/>
+                <group >
+                  <field name="browsing_ok"/>
+                  <newline/>
+                  <group attrs="{'invisible':[('browsing_ok','=',False)]}"
+                         colspan="4" col="4">
+                    <field name="initial_directory_read"/>
+                    <button name="check_directory_of_read"
+                          type="object"
+                          class="oe_highlight"
+                          string="Test Directory of read"/>
+                  </group>
+                  <newline/>
+                  <field name="storing_ok"/>
+                  <newline/>
+                  <group attrs="{'invisible':[('storing_ok','=',False)]}"
+                         colspan="4" col="4">
+                    <field name="initial_directory_write"/>
+                    <button name="check_directory_of_write"
+                          type="object"
+                          class="oe_highlight"
+                          string="Test Directory of write"/>
+                   </group>
                 </group>
-              </group>
-              <group colspan="4" col="4">
-                <button name="check_directory_of_write"
-                        type="object"
-                        class="oe_highlight"
-                        string="Test Directory of write"/>
-                <button name="check_directory_of_read"
-                        type="object"
-                        class="oe_highlight"
-                        string="Test Directory of read"/>
               </group>
             </sheet>
           </form>

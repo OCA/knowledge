@@ -24,9 +24,9 @@
     'name': 'CMIS',
     'version': '0.1',
     'category': 'Connector',
-    'summary': 'CMIS Connector',
+    'summary': 'Cmis Connector',
     'description': """
-CMIS Connector
+Cmis Connector
 ==============
 
 This module is the base for OpenERP modules implementing different integration scenario with a CMIS server.
@@ -39,8 +39,7 @@ Create a new CMIS backend with the host, login and password.
 
 Contributors
 ------------
-* El Hadji Dem <elhadji.dem@savoirfairelinux.com>
-* Maxime Chambreuil <maxime.chambreuil@savoirfairelinux.com>
+* El Hadji Dem (elhadji.dem@savoirfairelinux.com)
 """,
     'author': 'Savoir-faire Linux',
     'website': 'www.savoirfairelinux.com',
