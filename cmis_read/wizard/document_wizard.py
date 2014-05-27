@@ -24,24 +24,9 @@ from openerp.osv import orm, fields
 from openerp.tools.translate import _
 from openerp.addons.connector.session import ConnectorSession
 from openerp.addons.connector.queue.job import job
+from openerp import SUPERUSER_ID
 import logging
 _logger = logging.getLogger(__name__)
-
-
-class ir_attachment_dms(orm.TransientModel):
-    _name = 'ir.attachment.dms'
-
-    _columns = {
-        'name': fields.char('File name', size=150,
-                            readonly=True,
-                            help="File name"),
-        'owner': fields.char('Owner', size=150,
-                             readonly=True,
-                             help="Owner"),
-        'file_id': fields.char('File ID', size=150,
-                               readonly=True,
-                               help="File Id"),
-    }
 
 
 class ir_attachment_edm_wizard(orm.Model):
@@ -49,10 +34,8 @@ class ir_attachment_edm_wizard(orm.Model):
 
     _columns = {
         'name': fields.char('File name', size=150, help="File name"),
-        'attachment_ids': fields.many2many('ir.attachment.dms',
-                                           'document_attachment_dms_rel',
-                                           'wizard_id', 'attachment_id',
-                                           'Attachments'),
+        'attachment_ids': fields.one2many('ir.attachment.dms',
+                                          'wizard_id'),
     }
 
     # Search documents from dms.
@@ -71,7 +54,7 @@ class ir_attachment_edm_wizard(orm.Model):
         file_name = data['name']
         for backend_id in ids:
             search_doc_from_dms(session, 'ir.attachment',
-                                backend_id, file_name)
+                                backend_id, file_name, this.id)
         return {
             'type': 'ir.actions.act_window',
             'res_model': 'ir.attachment.dms.wizard',
@@ -84,6 +67,7 @@ class ir_attachment_edm_wizard(orm.Model):
 
     # Adding documents from Document Management (EDM) to OE.
     def action_apply(self, cr, uid, ids, context=None):
+        ir_attachment_dms_obj = self.pool.get('ir.attachment.dms')
         if context is None:
             context = {}
         model = context['model']
@@ -92,18 +76,45 @@ class ir_attachment_edm_wizard(orm.Model):
         name = ir_model_obj.browse(cr, uid, context['ids'],
                                    context=context)[0]['name']
         data = self.read(cr, uid, ids, [], context=context)[0]
+
+        if not hasattr(ids, '__iter__'):
+            ids = [ids]
+        session = ConnectorSession(cr, uid, context=context)
+        # Just take the lines we select in the tree view
+        selected_data = [one_attachment.id for one_attachment in
+                         ir_attachment_dms_obj.browse(
+                             cr, uid, data['attachment_ids'], context)
+                         if one_attachment.selectable_ok]
+        data['attachment_ids'] = selected_data
         if not data['attachment_ids']:
             raise orm.except_orm(_('Error'),
                                  _('You have to select at least 1 Document.' +
                                    'And try again'))
-        if not hasattr(ids, '__iter__'):
-            ids = [ids]
-        session = ConnectorSession(cr, uid, context=context)
         for backend_id in ids:
             # Create doc in OE from DMS.
             create_doc_from_dms.delay(session, 'ir.attachment', backend_id,
                                       data, name, model, res_id, uid)
         return {'type': 'ir.actions.act_window_close'}
+
+
+class ir_attachment_dms(orm.TransientModel):
+    _name = 'ir.attachment.dms'
+
+    _columns = {
+        'name': fields.char('File name', size=150,
+                            readonly=True,
+                            help="File name"),
+        'owner': fields.char('Owner', size=150,
+                             readonly=True,
+                             help="Owner"),
+        'file_id': fields.char('File ID', size=150,
+                               readonly=True,
+                               help="File Id"),
+        'wizard_id': fields.many2one('ir.attachment.dms.wizard',
+                                     string='Wizard',
+                                     required=True),
+        'selectable_ok': fields.boolean('Selected', help="Selected."),
+    }
 
 
 def sanitize_input_filename_field(file_name):
@@ -115,7 +126,7 @@ def sanitize_input_filename_field(file_name):
     return file_name
 
 
-def search_doc_from_dms(session, model_name, backend_id, file_name):
+def search_doc_from_dms(session, model_name, backend_id, file_name, wizard_id):
     ir_attach_dms_obj = session.pool.get('ir.attachment.dms')
     cmis_backend_obj = session.pool.get('cmis.backend')
     if session.context is None:
@@ -141,6 +152,7 @@ def search_doc_from_dms(session, model_name, backend_id, file_name):
                 'name': info['cmis:name'],
                 'owner': info['cmis:createdBy'],
                 'file_id': info['cmis:objectId'],
+                'wizard_id': wizard_id,
             }
         ir_attach_dms_obj.create(session.cr, session.uid, data_attach,
                                  context=session.context)
@@ -175,7 +187,7 @@ def create_doc_from_dms(session, model_name, backend_id, data, name,
                 'res_id': res_id,
                 'user_id': uid,
             }
-            session.context['bool_read_doc'] = True
+            session.context['bool_testdoc'] = True
             ir_attach_obj.create(session.cr, session.uid,
                                  data_attach, context=session.context)
     return True
