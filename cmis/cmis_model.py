@@ -24,6 +24,7 @@ from openerp.osv import orm, fields
 from openerp.tools.translate import _
 from cmislib.model import CmisClient
 import cmislib.exceptions
+import urllib2
 
 
 class cmis_backend(orm.Model):
@@ -50,6 +51,7 @@ class cmis_backend(orm.Model):
         user_name = res['username']
         user_password = res['password']
         client = CmisClient(url, user_name, user_password)
+
         try:
             return client.defaultRepository
         except cmislib.exceptions.ObjectNotFoundException:
@@ -58,6 +60,9 @@ class cmis_backend(orm.Model):
         except cmislib.exceptions.PermissionDeniedException:
             raise orm.except_orm(_('Cmis connection Error!'),
                                  _("Check your cmis account configuration."))
+        except urllib2.URLError:
+            raise orm.except_orm(_('Cmis connection Error!'),
+                                 _("SERVER is down."))
 
     # Function to check if we have access right to write from the path
     def check_directory_of_write(self, cr, uid, ids, context=None):
@@ -153,8 +158,8 @@ class cmis_backend(orm.Model):
             size=128,
             required=True,
             help="Initial directory of write."),
-        'browsing_ok': fields.boolean('Allow browsing in this backend',
-                                      help="Allow browsing in this backend."),
+        'browsing_ok': fields.boolean('Allow browsing this backend',
+                                      help="Allow browsing this backend."),
         'storing_ok': fields.boolean('Allow storing in this backend',
                                      help="Allow storing in this backend."),
     }
