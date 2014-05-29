@@ -75,7 +75,9 @@ Contributors
         'metadata_view.xml',
         'security/ir.model.access.csv',
     ],
-    'js': [],
+    'js': [
+        'static/src/js/document.js'
+    ],
     'qweb': [],
     'test': [],
     'demo': [],
