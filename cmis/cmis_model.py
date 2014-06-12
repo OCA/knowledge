@@ -137,6 +137,18 @@ class cmis_backend(orm.Model):
             raise orm.except_orm(_('Cmis  Error!'),
                                  _("Error path for : " + path))
 
+    # Escape the name for characters not supported in filenames
+    def sanitize_input(self, file_name):
+        # for avoiding SQL Injection
+        file_name = file_name.replace("'", "\\'")
+        file_name = file_name.replace("%", "\%")
+        file_name = file_name.replace("_", "\_")
+        return file_name
+
+    def safe_query(self, query, file_name, repo):
+        args = map(self.sanitize_input, file_name)
+        return repo.query(query % ''.join(args))
+
     _columns = {
         'version': fields.selection(
             _select_versions,
