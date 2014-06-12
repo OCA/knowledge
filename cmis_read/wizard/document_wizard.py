@@ -117,15 +117,6 @@ class ir_attachment_dms(orm.TransientModel):
     }
 
 
-def sanitize_input_filename_field(file_name):
-    # Escape the name for characters not supported in filenames
-    # for avoiding SQL Injection
-    file_name = file_name.replace("'", "\\'")
-    file_name = file_name.replace("%", "\%")
-    file_name = file_name.replace("_", "\_")
-    return file_name
-
-
 def search_doc_from_dms(session, model_name, backend_id, file_name, wizard_id):
     ir_attach_dms_obj = session.pool.get('ir.attachment.dms')
     cmis_backend_obj = session.pool.get('cmis.backend')
@@ -139,12 +130,10 @@ def search_doc_from_dms(session, model_name, backend_id, file_name, wizard_id):
     attachment_ids = ir_attach_dms_obj.search(session.cr, session.uid, [])
     ir_attach_dms_obj.unlink(session.cr, session.uid,
                              attachment_ids, context=session.context)
-    # Escape the name for characters not supported in filenames
-    file_name = sanitize_input_filename_field(file_name)
-    # Get results from name of document
-    results = repo.query(" SELECT cmis:name, cmis:createdBy, cmis:objectId, "
-                         "cmis:contentStreamLength FROM  cmis:document "
-                         "WHERE cmis:name LIKE '%" + file_name + "%'")
+    results = cmis_backend_obj.safe_query(
+        "SELECT cmis:name, cmis:createdBy, cmis:objectId, "
+        "cmis:contentStreamLength FROM cmis:document "
+        "WHERE cmis:name LIKE '%%%s%%'", file_name, repo)
     for result in results:
         info = result.getProperties()
         if info['cmis:contentStreamLength'] != 0:
