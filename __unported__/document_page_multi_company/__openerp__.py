@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,10 +15,28 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-import document_page_approval
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+{
+    'name': 'Document Page Multi-Company',
+    'version': '1.0',
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    'category': 'Knowledge Management',
+    'description': """
+This module adds a company field to document page and the multi-company rule.
+    """,
+    'depends': [
+        'document_page',
+        ],
+    'data': [
+        'security/document_page_security.xml',
+        'document_page_multi_company_view.xml',
+        ],
+    'installable': False,
+    'auto_install': False,
+    'images': [],
+}
