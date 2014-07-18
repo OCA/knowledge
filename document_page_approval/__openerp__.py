@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
@@ -15,16 +15,16 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
 {
     'name': 'Document Page Approval',
     'version': '1.0',
-    "author" : "Savoir-faire Linux",
-    "website" : "http://www.savoirfairelinux.com",
-    "license" : "AGPL-3",
+    "author": "Savoir-faire Linux",
+    "website": "http://www.savoirfairelinux.com",
+    "license": "AGPL-3",
     'category': 'Knowledge Management',
     'description': """
 This module adds a workflow to approve page modification and show the approved version by default.
@@ -33,7 +33,7 @@ Scenario
 ========
 
 * Set a valid email address on the company settings.
-* Create a new page category and set an approver group. Make sure users belonging to that group 
+* Create a new page category and set an approver group. Make sure users belonging to that group
   have valid email addresses.
 * Create a new page and choose the previously created category.
 * A notification is sent to the group with a link to the page history to review.
@@ -52,6 +52,5 @@ Scenario
         ],
     'installable': True,
     'auto_install': False,
-    'images': ['images/category.png','images/page_history_list.png','images/page_history.png'],
+    'images': ['images/category.png', 'images/page_history_list.png', 'images/page_history.png'],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
