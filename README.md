@@ -15,5 +15,5 @@ Here you should find all community modules that
 document\_page\_approval (unported)
 -----------------------------------
 
-document\_page\_multi\_company
-------------------------------
+document\_page\_multi\_company (unported)
+-----------------------------------------
