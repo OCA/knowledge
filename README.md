@@ -12,8 +12,8 @@ Here you should find all community modules that
 - provide access to knowledge/documents
 
 
-document\_page\_approval
-------------------------
+document\_page\_approval (unported)
+-----------------------------------
 
 document\_page\_multi\_company
 ------------------------------
