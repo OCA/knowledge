@@ -54,8 +54,6 @@ class document_wizard(orm.Model):
                 'res_name': name,
                 'attachment_id': attach.id,
             }
-            #Created attachment_document_ids
+            # Created attachment_document_ids
             ir_attach_doc_obj.create(cr, uid, data_attach, context=context)
         return {'type': 'ir.actions.act_window_close'}
-
-# vim:expandtab:smartindent:toabstop=4:softtabstop=4:shiftwidth=4:
