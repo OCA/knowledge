@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+    <!--Add model list field-->
+    <record model="ir.ui.view" id="view_document_file_multiple_models_form">
+      <field name="name">ir.attachment.multiple.models</field>
+      <field name="model">ir.attachment</field>
+      <field name="inherit_id" ref="document.view_document_file_form"/>
+      <field name="arch" type="xml">
+        <group string="Indexed Content" position="after">
+          <group col="2" colspan="4">
+            <field name="attachment_document_ids" nolabel="1">
+              <tree string="AttachmentDocumentTree" create="false" version="7.0">
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="res_name"/>
+              </tree>
+              <form string="AttachmentDocumentForm">
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="res_name"/>
+              </form>
+            </field>
+          </group>
+        </group>
+      </field>
+    </record>
+</data>
+</openerp>
+

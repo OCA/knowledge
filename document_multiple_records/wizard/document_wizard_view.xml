@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+  <record id="document_form_view" model="ir.ui.view">
+    <field name="name">Add existing document/attachment</field>
+    <field name="model">ir.attachment.existing.doc</field>
+    <field name="arch" type="xml">
+      <form string="Add existing document/attachment" version="7.0">
+        <group string="Select document(s)" colspan="4">
+          <field name="attachment_ids" nolabel="1">
+            <tree string="AttachmentDocumentWizardTree">
+                <field name="name"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="type"/>
+            </tree>
+          </field>
+        </group>
+        <footer>
+            <button string="Apply" name="action_apply" type="object" class="oe_highlight"/>
+            or
+            <button string="Cancel" class="oe_link" special="cancel" />
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <!-- Actions -->
+  <record model="ir.actions.act_window" id="action_view_document">
+    <field name="name">Add existing document/attachment</field>
+    <field name="res_model">ir.attachment.existing.doc</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="document_form_view"/>
+    <field name="target">new</field>
+  </record>
+
+</data>
+</openerp>
+
