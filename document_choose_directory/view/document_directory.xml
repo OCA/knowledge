@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_document_directory_form" model="ir.ui.view">
+            <field name="model">document.directory</field>
+            <field name="inherit_id" ref="document.view_document_directory_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Definition']/group[2]" position="attributes">
+                    <attribute name="attrs" />
+                </xpath>
+                <xpath expr="//page[@string='Definition']/group[2]/field[@name='resource_field']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('type', '!=', 'ressource')]}</attribute>
+                </xpath>
+                <xpath expr="//page[@string='Definition']/group[2]/field[@name='ressource_tree']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('type', '!=', 'ressource')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
