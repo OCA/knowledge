@@ -39,7 +39,6 @@ class DocumentDirectory(Model):
                     ],
                     context=context),
                 context=context):
-            #TODO: add write tests
             result.append(this)
         return result
 
@@ -60,6 +59,7 @@ class DocumentDirectory(Model):
         from openerp.addons.web.http import httprequest
         from openerp.addons.web.controllers.main import Binary
         original = Binary.upload_attachment
+
         @httprequest
         def upload_attachment(self, req, callback, model, id, ufile,
                               directory_id=None):

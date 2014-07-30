@@ -19,7 +19,6 @@
 #
 ##############################################################################
 from openerp.osv.orm import Model
-from openerp.osv import fields
 
 
 class IrAttachment(Model):
@@ -28,7 +27,8 @@ class IrAttachment(Model):
     def _auto_init(self, cr, context=None):
         '''drop filename_unique if it exists and prevent it from being
         created'''
-        cr.execute('''SELECT
+        cr.execute(
+            '''SELECT
             conname, pg_catalog.pg_get_constraintdef(oid, true) as condef
             FROM pg_constraint where conname=%s''',
             ('ir_attachment_filename_unique',))
@@ -51,5 +51,3 @@ class IrAttachment(Model):
             cr, uid, ids, fields_to_read=fields_to_read, context=context,
             load=load)
         return result
-
-
