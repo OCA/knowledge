@@ -36,7 +36,7 @@ This module adds a company field to document page and the multi-company rule.
         'security/document_page_security.xml',
         'document_page_multi_company_view.xml',
         ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'images': [],
 }

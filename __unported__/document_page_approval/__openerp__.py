@@ -52,7 +52,7 @@ Scenario
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
         ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'images': [
         'images/category.png',
