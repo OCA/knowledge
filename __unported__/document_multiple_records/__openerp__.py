@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    This module copyright (C) 2014 Savoir-faire Linux
+#    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,24 +21,40 @@
 ##############################################################################
 
 {
-    'name': 'Document Page Multi-Company',
-    'version': '1.0',
-    "author": "Savoir-faire Linux",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
+    'name': 'Document Management System for Multiple Records',
+    'version': '0.1',
     'category': 'Knowledge Management',
+    'summary': 'Document Management System for Multiple Records',
     'description': """
-This module adds a company field to document page and the multi-company rule.
-    """,
+Document Management System for Multiple Records
+==============================================
+
+Contributors
+------------
+* El Hadji Dem (elhadji.dem@savoirfairelinux.com)
+""",
+    'author': 'Savoir-faire Linux',
+    'website': 'www.savoirfairelinux.com',
+    'license': 'AGPL-3',
     'depends': [
-        'document_page',
-        ],
+        'document',
+    ],
     'data': [
-        'security/document_page_security.xml',
-        'document_page_multi_company_view.xml',
-        ],
+        'document_view.xml',
+        'security/ir.model.access.csv',
+        'wizard/document_wizard_view.xml',
+    ],
+    'js': [
+        'static/src/js/document.js'
+    ],
+    'qweb': [
+        'static/src/xml/document.xml'
+    ],
+    'test': [],
+    'demo': [
+    ],
     'installable': True,
     'auto_install': False,
-    'images': [],
 }
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
