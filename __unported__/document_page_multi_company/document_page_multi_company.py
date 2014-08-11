@@ -45,4 +45,3 @@ class document_page(orm.Model):
         ._company_default_get(cr, uid, 'document_page', context=c)
     }
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

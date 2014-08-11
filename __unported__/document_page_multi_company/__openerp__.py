@@ -40,4 +40,4 @@ This module adds a company field to document page and the multi-company rule.
     'auto_install': False,
     'images': [],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
