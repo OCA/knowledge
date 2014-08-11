@@ -67,7 +67,8 @@ class document_file(orm.Model):
                 cr, uid, ids_to_unlink, context=context)
         else:
             # Normal delete
-            result = super(document_file, self).unlink(cr, uid, ids, context=context)
+            result = super(document_file, self).unlink(
+                cr, uid, ids, context=context)
         return result
 
 
@@ -78,9 +79,9 @@ class ir_attachment_document(orm.Model):
     _columns = {
         'res_id': fields.integer('Resource ID', readonly=True,
                                  help="The record id this is attached to."),
-        'res_model': fields.char('Resource Model', size=64,
-                                 readonly=True,
-                                 help="The database object this attachment will be attached to"),
+        'res_model': fields.char(
+            'Resource Model', size=64, readonly=True,
+            help="The database object this attachment will be attached to"),
         'res_name': fields.char('Resource Name', type='char',
                                 size=128,
                                 readonly=True),

@@ -40,17 +40,24 @@ class document_wizard(orm.Model):
             context = {}
         ir_attach_obj = self.pool.get('ir.attachment')
         ir_attach_doc_obj = self.pool.get('ir.attachment.document')
-        ir_model_obj = self.pool.get(context.get('model') or context.get('active_model'))
+        ir_model_obj = self.pool.get(
+            context.get('model') or context.get('active_model'))
 
-        name = ir_model_obj.browse(cr, uid, context.get('ids') or context.get('active_ids'), context=context)[0]['name']
+        name = ir_model_obj.browse(
+            cr, uid, context.get('ids') or context.get('active_ids'),
+            context=context)[0]['name']
         data = self.read(cr, uid, ids, [], context=context)[0]
         if not data['attachment_ids']:
-            raise orm.except_orm(_('Error'),
-                                 _('You have to select at least 1 Document. And try again'))
-        for attach in ir_attach_obj.browse(cr, uid, data['attachment_ids'], context=context):
+            raise orm.except_orm(
+                _('Error'),
+                _('You have to select at least 1 Document. And try again'))
+        for attach in ir_attach_obj.browse(cr, uid, data['attachment_ids'],
+                                           context=context):
             data_attach = {
-                'res_model': context.get('model') or context.get('active_model'),
-                'res_id': context.get('ids') and context.get('ids')[0] or context.get('active_id'),
+                'res_model': context.get('model') or
+                context.get('active_model'),
+                'res_id': context.get('ids') and context.get('ids')[0] or
+                context.get('active_id'),
                 'res_name': name,
                 'attachment_id': attach.id,
             }
