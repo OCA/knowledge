@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    This module copyright (C) 2014 Savoir-faire Linux
+#    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,27 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+###############################################################################
 
-{
-    'name': 'Document Page Multi-Company',
-    'version': '1.0',
-    "author": "Savoir-faire Linux",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "AGPL-3",
-    'category': 'Knowledge Management',
-    'description': """
-This module adds a company field to document page and the multi-company rule.
-    """,
-    'depends': [
-        'document_page',
-        ],
-    'data': [
-        'security/document_page_security.xml',
-        'document_page_multi_company_view.xml',
-        ],
-    'installable': False,
-    'auto_install': False,
-    'images': [],
-}
+from . import document
+from . import wizard
 

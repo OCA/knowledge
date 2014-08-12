@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+#    This module copyright (C) 2014 Savoir-faire Linux
+#    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,29 +20,5 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
-
-
-class document_page_history(orm.Model):
-    _inherit = 'document.page.history'
-    _columns = {
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.company')
-        ._company_default_get(cr, uid, 'document_page_history', context=c)
-    }
-
-
-class document_page(orm.Model):
-    _inherit = 'document.page'
-    _columns = {
-        'company_id': fields.many2one('res.company', 'Company')
-    }
-
-    _defaults = {
-        'company_id': lambda self, cr, uid, c: self.pool.get('res.company')
-        ._company_default_get(cr, uid, 'document_page', context=c)
-    }
+from . import document_wizard
 
