@@ -37,7 +37,7 @@ class IrAttachment(Model):
                 filename, extension = os.path.splitext(this.datas_fname)
                 extension = extension.lstrip('.')
             if not extension:
-                #TODO: lookup the extension via mimetype
+                # TODO: lookup the extension via mimetype
                 pass
             result[this.id] = extension
         return result if isinstance(ids, collections.Iterable) else result[ids]
