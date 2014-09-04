@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="FormView.sidebar.attachments">
+        <t t-jquery="a.oe-sidebar-attachment-delete" t-operation="before">
+            <a href="#" class="oe-sidebar-attachment-preview" t-att-data-id="attachment.id" t-att-data-url="attachment.url" t-att-title="attachment_title_preview(attachment.name)">
+                <img t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"' width="12" height="12" border="0"/>
+            </a>
+        </t>
+    </t>
+</templates>
