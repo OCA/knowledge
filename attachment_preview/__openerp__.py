@@ -29,6 +29,9 @@ This addons allows to preview attachments supported by http://viewerjs.org.
 
 Currently, that's most Libreoffice files and PDFs.
 
+For filetype recognition, you'll get the best results by installing
+``python-magic``.
+
 Acknowledgements
 ================
 

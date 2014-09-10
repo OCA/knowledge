@@ -20,6 +20,8 @@
 ##############################################################################
 import collections
 import os.path
+import mimetypes
+import base64
 from openerp.osv.orm import Model
 
 
@@ -35,9 +37,18 @@ class IrAttachment(Model):
             extension = ''
             if this.datas_fname:
                 filename, extension = os.path.splitext(this.datas_fname)
-                extension = extension.lstrip('.')
             if not extension:
-                # TODO: lookup the extension via mimetype
-                pass
-            result[this.id] = extension
+                try:
+                    import magic
+                    ms = magic.open(magic.MAGIC_MIME_TYPE)
+                    ms.load()
+                    mimetype = ms.buffer(
+                        base64.b64decode(this.datas))
+                except ImportError:
+                    (mimetype, encoding) = mimetypes.guess_type(
+                        'data:;base64,' + this.datas, strict=False)
+                extension = mimetypes.guess_extension(
+                    mimetype, strict=False)
+
+            result[this.id] = (extension or '').lstrip('.').lower()
         return result if isinstance(ids, collections.Iterable) else result[ids]
