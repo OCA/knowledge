@@ -34,6 +34,9 @@ class IrAttachment(Model):
                 cr, uid,
                 ids if isinstance(ids, collections.Iterable) else [ids],
                 context=context):
+            if not this.id:
+                result[this.id] = False
+                continue
             extension = ''
             if this.datas_fname:
                 filename, extension = os.path.splitext(this.datas_fname)
