@@ -49,7 +49,7 @@ openerp.attachment_preview = function(instance)
                 attachment_id = parseInt($target.attr('data-id')),
                 attachment_url = $target.attr('data-url'),
                 attachment_extension = $target.attr('data-extension'),
-                attachment_title = $target.attr('title');
+                attachment_title = $target.attr('original-title');
             if(attachment_extension)
             {
                 this.show_preview(
