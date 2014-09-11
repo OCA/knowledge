@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    Copyright (c) 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
+#                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -25,6 +25,7 @@ try:
 except:
     from urlparse import urlparse
 
+
 class AddUrlWizard(orm.TransientModel):
     _name = 'ir.attachment.add_url'
 
@@ -34,9 +35,7 @@ class AddUrlWizard(orm.TransientModel):
     }
 
     def action_add_url(self, cr, uid, ids, context=None):
-        """
-        Adds the URL with the given name as an ir.attachment record.
-        """
+        """Adds the URL with the given name as an ir.attachment record."""
         if context is None:
             context = {}
         if not context.get('active_model'):
@@ -56,4 +55,4 @@ class AddUrlWizard(orm.TransientModel):
                     'res_model': context['active_model'],
                 }
                 attachment_obj.create(cr, uid, attachment, context=context)
-        return { 'type' :  'ir.actions.act_close_wizard_and_reload_view' }
+        return {'type':  'ir.actions.act_close_wizard_and_reload_view'}

@@ -13,7 +13,7 @@ openerp.document_url = function(instance, m) {
     });
 
     var _t = instance.web._t,
-    QWeb = instance.web.qweb;
+        QWeb = instance.web.qweb;
     instance.web.Sidebar.include({
         redraw: function() {
             var self = this;
