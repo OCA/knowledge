@@ -28,27 +28,33 @@ from openerp.osv.orm import Model
 class IrAttachment(Model):
     _inherit = 'ir.attachment'
 
-    def get_attachment_extension(self, cr, uid, ids, context=None):
+    def get_binary_extension(
+            self, cr, uid, model, ids, binary_field, filename_field=None,
+            context=None):
         result = {}
-        for this in self.browse(
+        for this in self.pool[model].browse(
                 cr, uid,
                 ids if isinstance(ids, collections.Iterable) else [ids],
                 context=context):
             extension = ''
-            if this.datas_fname:
-                filename, extension = os.path.splitext(this.datas_fname)
+            if filename_field and this[filename_field]:
+                filename, extension = os.path.splitext(this[filename_field])
             if not extension:
                 try:
                     import magic
                     ms = magic.open(magic.MAGIC_MIME_TYPE)
                     ms.load()
                     mimetype = ms.buffer(
-                        base64.b64decode(this.datas))
+                        base64.b64decode(this[binary_field]))
                 except ImportError:
                     (mimetype, encoding) = mimetypes.guess_type(
-                        'data:;base64,' + this.datas, strict=False)
+                        'data:;base64,' + this[binary_field], strict=False)
                 extension = mimetypes.guess_extension(
                     mimetype, strict=False)
 
             result[this.id] = (extension or '').lstrip('.').lower()
         return result if isinstance(ids, collections.Iterable) else result[ids]
+
+    def get_attachment_extension(self, cr, uid, ids, context=None):
+        return self.get_binary_extension(
+            cr, uid, self._name, ids, 'datas', 'datas_fname', context=context)
