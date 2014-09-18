@@ -55,7 +55,7 @@ class IrAttachment(Model):
                     (mimetype, encoding) = mimetypes.guess_type(
                         'data:;base64,' + this[binary_field], strict=False)
                 extension = mimetypes.guess_extension(
-                    mimetype, strict=False)
+                    mimetype.split(';')[0], strict=False)
 
             result[this.id] = (extension or '').lstrip('.').lower()
         return result if isinstance(ids, collections.Iterable) else result[ids]
