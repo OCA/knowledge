@@ -25,7 +25,7 @@ openerp.attachment_preview = function(instance)
     openerp.attachment_preview.show_preview = function(
         attachment_id, attachment_url, attachment_extension, attachment_title)
     {
-        var url = window.location.origin +
+        var url = (window.location.origin || '') +
             '/attachment_preview/static/lib/ViewerJS/index.html#' +
             attachment_url.replace(window.location.origin, '') +
             '&title=' + encodeURIComponent(attachment_title || _t('Preview')) +
