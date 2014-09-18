@@ -7,4 +7,11 @@
             </a>
         </t>
     </t>
+    <t t-extend="FieldURI.readonly">
+        <t t-jquery="a.oe_form_uri" t-operation="after">
+            <t t-if="widget.on_save_as">
+                <img class="oe-binary-preview" t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"'/>
+            </t>
+        </t>
+    </t>
 </templates>

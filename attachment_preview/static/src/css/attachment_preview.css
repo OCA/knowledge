@@ -14,3 +14,8 @@
 {
     display: inherit;
 }
+.openerp .oe_form_field_binary .oe-binary-preview
+{
+    cursor: pointer;
+    vertical-align: middle;
+}

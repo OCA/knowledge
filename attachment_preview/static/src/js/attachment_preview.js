@@ -21,13 +21,14 @@
 
 openerp.attachment_preview = function(instance)
 {
+    var _t = instance.web._t;
     openerp.attachment_preview.show_preview = function(
         attachment_id, attachment_url, attachment_extension, attachment_title)
     {
         var url = window.location.origin +
             '/attachment_preview/static/lib/ViewerJS/index.html#' +
             attachment_url.replace(window.location.origin, '') +
-            '&title=' + encodeURIComponent(attachment_title) +
+            '&title=' + encodeURIComponent(attachment_title || _t('Preview')) +
             '&ext=.' + encodeURIComponent(attachment_extension);
         window.open(url);
     };
@@ -111,6 +112,50 @@ openerp.attachment_preview = function(instance)
                         }
                     });
                 });
+        },
+    });
+    instance.web.page.FieldBinaryFileReadonly.include(
+    {
+        set_value: function(value)
+        {
+            var self = this;
+            (new instance.web.Model('ir.attachment')).call(
+                'get_binary_extension',
+                [
+                    this.view.dataset.model,
+                    this.view.datarecord.id ? [this.view.datarecord.id] : [],
+                    this.name,
+                    this.node.attrs.filename,
+                ],
+                {})
+            .then(function(extensions)
+            {
+                _(extensions).each(function(extension)
+                {
+                    var $element = self.$element.find('.oe-binary-preview');
+                    if(openerp.attachment_preview.can_preview(extension))
+                    {
+                        $element.click(function()
+                        {
+                            openerp.attachment_preview.show_preview(
+                                null,
+                                _.str.sprintf(
+                                    '/web/binary/saveas?session_id=%s&model=%s&field=%s&id=%d',
+                                    instance.connection.session_id,
+                                    self.view.dataset.model,
+                                    self.name,
+                                    self.view.datarecord.id),
+                                extension,
+                                self.view.datarecord[self.node.attrs.filename]);
+                        });
+                    }
+                    else
+                    {
+                        $element.remove();
+                    }
+                });
+            });
+            return this._super.apply(this, arguments);
         },
     });
 }    
