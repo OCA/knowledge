@@ -21,6 +21,21 @@
 
 openerp.attachment_preview = function(instance)
 {
+    openerp.attachment_preview.show_preview = function(
+        attachment_id, attachment_url, attachment_extension, attachment_title)
+    {
+        var url = window.location.origin +
+            '/attachment_preview/static/lib/ViewerJS/index.html#' +
+            attachment_url.replace(window.location.origin, '') +
+            '&title=' + encodeURIComponent(attachment_title) +
+            '&ext=.' + encodeURIComponent(attachment_extension);
+        window.open(url);
+    };
+    openerp.attachment_preview.can_preview = function(extension)
+    {
+        return jQuery.inArray(
+            extension, ['odt', 'odp', 'ods', 'fodt', 'pdf']) > -1;
+    },
     instance.web.form.SidebarAttachments.include(
     {
         init: function(parent, form_view)
@@ -50,7 +65,7 @@ openerp.attachment_preview = function(instance)
                 attachment_title = $target.attr('title');
             if(attachment_extension)
             {
-                this.show_preview(
+                openerp.attachment_preview.show_preview(
                     attachment_id, attachment_url, attachment_extension,
                     attachment_title);
             }
@@ -60,20 +75,10 @@ openerp.attachment_preview = function(instance)
                     'get_attachment_extension', [attachment_id], {})
                 .then(function(extension)
                 {
-                    self.show_preview(
+                    openerp.attachment_preview.show_preview(
                         attachment_id, attachment_url, extension);
                 });
             }
-        },
-        show_preview: function(attachment_id, attachment_url,
-                               attachment_extension, attachment_title)
-        {
-            var url = window.location.origin +
-                '/attachment_preview/static/lib/ViewerJS/index.html#' +
-                attachment_url.replace(window.location.origin, '') +
-                '&title=' + encodeURIComponent(attachment_title) +
-                '&ext=.' + encodeURIComponent(attachment_extension);
-            window.open(url);
         },
         update_preview_buttons: function()
         {
@@ -96,7 +101,7 @@ openerp.attachment_preview = function(instance)
                         var $element = jQuery(
                             'a.oe-sidebar-attachment-preview[data-id="'
                             + id + '"]');
-                        if(self.can_preview(extension))
+                        if(openerp.attachment_preview.can_preview(extension))
                         {
                             $element.attr('data-extension', extension);
                         }
@@ -106,11 +111,6 @@ openerp.attachment_preview = function(instance)
                         }
                     });
                 });
-        },
-        can_preview: function(extension)
-        {
-            return jQuery.inArray(
-                extension, ['odt', 'odp', 'ods', 'fodt', 'pdf']) > -1;
         },
     });
 }    
