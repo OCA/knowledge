@@ -39,10 +39,15 @@ class IrAttachment(Model):
             extension = ''
             if filename_field and this[filename_field]:
                 filename, extension = os.path.splitext(this[filename_field])
+            if not this[binary_field]:
+                result[this.id] = False
+                continue
             if not extension:
                 try:
                     import magic
-                    ms = magic.open(magic.MAGIC_MIME_TYPE)
+                    ms = magic.open(
+                        hasattr(magic, 'MAGIC_MIME_TYPE')
+                        and magic.MAGIC_MIME_TYPE or magic.MAGIC_MIME)
                     ms.load()
                     mimetype = ms.buffer(
                         base64.b64decode(this[binary_field]))
