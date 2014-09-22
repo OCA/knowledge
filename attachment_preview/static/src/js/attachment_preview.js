@@ -125,7 +125,8 @@ openerp.attachment_preview = function(instance)
                 self = this;
             deferred.then(function()
             {
-                self.$el.find('.oe-binary-preview').click(function(e)
+                var $elements = self.$el.find('.oe-binary-preview');
+                $elements.click(function(e)
                 {
                     e.stopPropagation();
                     var $target = jQuery(e.currentTarget),
@@ -138,23 +139,24 @@ openerp.attachment_preview = function(instance)
                         _t('Preview'));
                 });
                 return (new instance.web.Model('ir.attachment')).call(
-                    'get_attachment_extension',
+                    'get_binary_extension',
                     [
-                        self.$el.find('.oe-binary-preview')
+                        $elements.attr('data-model'),
+                        $elements
                         .map(function()
                         {
                             return parseInt(jQuery(this).attr('data-id'));
                         })
-                        .get()
+                        .get(),
+                        $elements.attr('data-field'),
                     ],
                     {})
                     .then(function(extensions)
                     {
                         _(extensions).each(function(extension, id)
                         {
-                            var $element = jQuery(
-                                'img.oe-binary-preview[data-id="'
-                                + id + '"]');
+                            var $element = $elements.filter(
+                                '[data-id="' + id + '"]');
                             if(openerp.attachment_preview.can_preview(extension))
                             {
                                 $element.attr('data-extension', extension);
@@ -175,10 +177,12 @@ openerp.attachment_preview = function(instance)
         {
             var link = this._super.apply(this, arguments);
             link += _.template(
-                '<img class="oe-binary-preview" alt="<%-preview_text%>" data-id="<%-preview_id%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
+                '<img class="oe-binary-preview" alt="<%-preview_text%>" data-id="<%-preview_id%>" data-model="<%-preview_model%>" data-field="<%-preview_field%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
                 {
                     preview_id: options.id,
                     preview_text: _t('Preview'),
+                    preview_model: options.model,
+                    preview_field: this.id,
                 });
             return link;
         }
