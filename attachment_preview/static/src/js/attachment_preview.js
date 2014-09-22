@@ -153,6 +153,7 @@ openerp.attachment_preview = function(instance)
                         })
                         .get(),
                         $elements.attr('data-field'),
+                        $elements.attr('data-filename'),
                     ],
                     {})
                     .then(function(extensions)
@@ -181,12 +182,13 @@ openerp.attachment_preview = function(instance)
         {
             var link = this._super.apply(this, arguments);
             link += _.template(
-                '<img class="oe-binary-preview" alt="<%-preview_text%>" data-id="<%-preview_id%>" data-model="<%-preview_model%>" data-field="<%-preview_field%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
+                '<img class="oe-binary-preview" alt="<%-preview_text%>" data-id="<%-preview_id%>" data-model="<%-preview_model%>" data-field="<%-preview_field%>" data-filename="<%-preview_filename%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
                 {
                     preview_id: options.id,
                     preview_text: _t('Preview'),
                     preview_model: options.model,
                     preview_field: this.id,
+                    preview_filename: this.filename or '',
                 });
             return link;
         }
