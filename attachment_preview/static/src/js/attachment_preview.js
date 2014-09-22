@@ -188,7 +188,7 @@ openerp.attachment_preview = function(instance)
                     preview_text: _t('Preview'),
                     preview_model: options.model,
                     preview_field: this.id,
-                    preview_filename: this.filename or '',
+                    preview_filename: this.filename || '',
                 });
             return link;
         }
