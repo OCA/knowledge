@@ -19,3 +19,8 @@
     -webkit-border-radius: 2px;
     border-radius: 2px;
 }
+.openerp .oe-binary-preview
+{
+    cursor: pointer;
+    vertical-align: middle;
+}

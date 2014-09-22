@@ -7,4 +7,9 @@
             </a>
         </t>
     </t>
+    <t t-extend="FieldBinaryFile">
+        <t t-jquery="a.oe_form_uri" t-operation="after">
+            <img class="oe-binary-preview" t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"'/>
+        </t>
+    </t>
 </templates>
