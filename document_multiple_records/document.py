@@ -37,14 +37,18 @@ class document_file(orm.Model):
         res = super(document_file, self).create(cr, uid, data, context=context)
         # Create attachment_document_ids with res_model, res_id and res_name
         if 'res_model' in data and 'res_id' in data:
+            res_model_lines = self.pool.get(data['res_model']).browse(
+                cr, uid, data['res_id'], context=context)
+            # Default value
+            res_name = res_model_lines.name_get()[0][1]
+            # For account.voucher model, take the name field
+            if data['res_model'] == 'account.voucher':
+                res_name = res_model_lines.name
             ir_attachment_document_obj.create(cr, uid, {
                 'attachment_id': res,
                 'res_model': data['res_model'],
                 'res_id': data['res_id'],
-                'res_name': data.get(
-                    'res_name', self.pool.get(data['res_model']).browse(
-                        cr, uid, data['res_id'],
-                        context=context).name_get()[0][1]),
+                'res_name': data.get('res_name', res_name),
             }, context=context)
         return res
 
