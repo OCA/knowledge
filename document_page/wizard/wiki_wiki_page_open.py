@@ -21,6 +21,7 @@
 
 from osv import osv
 
+
 class wiki_wiki_page_open(osv.osv_memory):
     """ wizard Open Page """
 
@@ -38,7 +39,8 @@ class wiki_wiki_page_open(osv.osv_memory):
         if context is None:
             context = {}
         group_ids = context.get('active_ids', [])
-        for group in self.pool.get('wiki.groups').browse(cr, uid, group_ids, context=context):
+        for group in self.pool.get('wiki.groups').browse(cr, uid, group_ids,
+                                                         context=context):
             value = {
                 'domain': "[('group_id','=',%d)]" % (group.id),
                 'name': 'Wiki Page',
@@ -54,9 +56,12 @@ class wiki_wiki_page_open(osv.osv_memory):
             value['view_type'] = 'form'
             value['view_mode'] = 'tree,form'
         elif group.method == 'tree':
-            view_id = self.pool.get('ir.ui.view').search(cr, uid, [('name', '=', 'wiki.wiki.tree.children')])
+            view_id = self.pool.get('ir.ui.view').\
+                search(cr, uid, [('name', '=',
+                                  'wiki.wiki.tree.children')])
             value['view_id'] = view_id
-            value['domain'] = [('group_id', '=', group.id), ('parent_id', '=', False)]
+            value['domain'] = [('group_id', '=', group.id), ('parent_id', '=',
+                                                             False)]
             value['view_type'] = 'tree'
 
         return value
