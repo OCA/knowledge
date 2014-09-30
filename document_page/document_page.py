@@ -22,7 +22,7 @@
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 import difflib
-from openerp import tools
+
 
 class document_page(osv.osv):
     _name = "document.page"
@@ -32,10 +32,11 @@ class document_page(osv.osv):
     def _get_page_index(self, cr, uid, page, link=True):
         index = []
         for subpage in page.child_ids:
-            index += ["<li>"+ self._get_page_index(cr, uid, subpage) +"</li>"]
+            index += ["<li>" + self._get_page_index(cr, uid, subpage) +
+                      "</li>"]
         r = ''
         if link:
-            r = '<a href="#id=%s">%s</a>'%(page.id,page.name)
+            r = '<a href="#id=%s">%s</a>' % (page.id, page.name)
         if index:
             r += "<ul>" + "".join(index) + "</ul>"
         return r
@@ -44,35 +45,43 @@ class document_page(osv.osv):
         res = {}
         for page in self.browse(cr, uid, ids, context=context):
             if page.type == "category":
-               content = self._get_page_index(cr, uid, page, link=False)
+                content = self._get_page_index(cr, uid, page, link=False)
             else:
-               content = page.content
-            res[page.id] =  content
+                content = page.content
+            res[page.id] = content
         return res
 
     _columns = {
         'name': fields.char('Title', required=True),
-        'type':fields.selection([('content','Content'), ('category','Category')], 'Type', help="Page type"), 
-
-        'parent_id': fields.many2one('document.page', 'Category', domain=[('type','=','category')]),
+        'type': fields.selection([('content', 'Content'),
+                                 ('category', 'Category')],
+                                 'Type', help="Page type"),
+        'parent_id': fields.many2one('document.page', 'Category',
+                                     domain=[('type', '=', 'category')]),
         'child_ids': fields.one2many('document.page', 'parent_id', 'Children'),
-
         'content': fields.text("Content"),
-        'display_content': fields.function(_get_display_content, string='Displayed Content', type='text'),
-
-        'history_ids': fields.one2many('document.page.history', 'page_id', 'History'),
+        'display_content': fields.function(_get_display_content,
+                                           string='Displayed Content',
+                                           type='text'),
+        'history_ids': fields.one2many('document.page.history', 'page_id',
+                                       'History'),
         'menu_id': fields.many2one('ir.ui.menu', "Menu", readonly=True),
 
-        'create_date': fields.datetime("Created on", select=True, readonly=True),
-        'create_uid': fields.many2one('res.users', 'Author', select=True, readonly=True),
-        'write_date': fields.datetime("Modification Date", select=True, readonly=True),
-        'write_uid': fields.many2one('res.users', "Last Contributor", select=True, readonly=True),
+        'create_date': fields.datetime("Created on", select=True,
+                                       readonly=True),
+        'create_uid': fields.many2one('res.users', 'Author', select=True,
+                                      readonly=True),
+        'write_date': fields.datetime("Modification Date", select=True,
+                                      readonly=True),
+        'write_uid': fields.many2one('res.users', "Last Contributor",
+                                     select=True, readonly=True),
     }
     _defaults = {
-        'type':'content',
+        'type': 'content',
     }
 
-    def onchange_parent_id(self, cr, uid, ids, parent_id, content, context=None):
+    def onchange_parent_id(self, cr, uid, ids, parent_id, content,
+                           context=None):
         res = {}
         if parent_id and not content:
             parent = self.browse(cr, uid, parent_id, context=context)
@@ -102,6 +111,7 @@ class document_page(osv.osv):
         self.create_history(cr, uid, ids, vals, context)
         return result
 
+
 class document_page_history(osv.osv):
     _name = "document.page.history"
     _description = "Document Page History"
@@ -109,11 +119,11 @@ class document_page_history(osv.osv):
     _rec_name = "create_date"
 
     _columns = {
-          'page_id': fields.many2one('document.page', 'Page'),
-          'summary': fields.char('Summary', size=256, select=True),
-          'content': fields.text("Content"),
-          'create_date': fields.datetime("Date"),
-          'create_uid': fields.many2one('res.users', "Modified By"),
+        'page_id': fields.many2one('document.page', 'Page'),
+        'summary': fields.char('Summary', size=256, select=True),
+        'content': fields.text("Content"),
+        'create_date': fields.datetime("Date"),
+        'create_uid': fields.many2one('res.users', "Modified By"),
     }
 
     def getDiff(self, cr, uid, v1, v2, context=None):
@@ -126,8 +136,8 @@ class document_page_history(osv.osv):
         if text2:
             line2 = text2.splitlines(1)
         if (not line1 and not line2) or (line1 == line2):
-            raise osv.except_osv(_('Warning!'), _('There are no changes in revisions.'))
+            raise osv.except_osv(_('Warning!'),
+                                 _('There are no changes in revisions.'))
         diff = difflib.HtmlDiff()
-        return diff.make_table(line1, line2, "Revision-%s" % (v1), "Revision-%s" % (v2), context=True)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+        return diff.make_table(line1, line2, "Revision-%s" % (v1),
+                               "Revision-%s" % (v2), context=True)
