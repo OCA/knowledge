@@ -21,7 +21,7 @@
 
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
-import base64
+
 
 class showdiff(osv.osv_memory):
     """ Disp[ay Difference for History """
@@ -47,7 +47,9 @@ class showdiff(osv.osv_memory):
             nids.sort()
             diff = history.getDiff(cr, uid, ids[0], nids[-1])
         else:
-            raise osv.except_osv(_('Warning!'), _('You need to select minimum one or maximum two history revisions!'))
+            raise osv.except_osv(_('Warning!'), _('You need to select minimum \
+                                                  one or maximum two history \
+                                                  revisions!'))
         return diff
 
     _columns = {
