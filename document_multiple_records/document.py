@@ -26,10 +26,38 @@ from openerp.osv import orm, fields
 class document_file(orm.Model):
     _inherit = 'ir.attachment'
 
+    def _name_get_resname(self, cr, uid, ids, object, method, context):
+        data = {}
+        context = context or {}
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        for attachment in self.browse(cr, uid, ids, context=context):
+            model_object = attachment.res_model
+            res_id = attachment.res_id
+            if model_object and res_id:
+                model_pool = self.pool.get(model_object)
+                res = model_pool.name_get(cr, uid, [res_id], context=context)
+                res_name = res and res[0][1] or False
+                # For account.voucher model, take the name field
+                if model_object == 'account.voucher':
+                    res_name = model_pool.browse(
+                        cr, uid, res_id, context=context).name
+                if res_name:
+                    field = self._columns.get('res_name', False)
+                    if field and len(res_name) > field.size:
+                        res_name = res_name[:field.size - 3] + '...'
+                data[attachment.id] = res_name
+            else:
+                data[attachment.id] = False
+        return data
+
     _columns = {
         'attachment_document_ids': fields.one2many('ir.attachment.document',
                                                    'attachment_id',
                                                    'Records'),
+        'res_name': fields.function(_name_get_resname, type='char',
+                                    size=128, string='Resource Name',
+                                    store=True),
     }
 
     def create(self, cr, uid, data, context=None):
@@ -37,13 +65,7 @@ class document_file(orm.Model):
         res = super(document_file, self).create(cr, uid, data, context=context)
         # Create attachment_document_ids with res_model, res_id and res_name
         if 'res_model' in data and 'res_id' in data:
-            res_model_lines = self.pool.get(data['res_model']).browse(
-                cr, uid, data['res_id'], context=context)
-            # Default value
-            res_name = res_model_lines.name_get()[0][1]
-            # For account.voucher model, take the name field
-            if data['res_model'] == 'account.voucher':
-                res_name = res_model_lines.name
+            res_name = self.browse(cr, uid, res, context=context).res_name
             ir_attachment_document_obj.create(cr, uid, {
                 'attachment_id': res,
                 'res_model': data['res_model'],
