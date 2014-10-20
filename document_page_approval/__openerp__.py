@@ -45,13 +45,13 @@ Scenario
     'depends': [
         'document_page',
         'email_template',
-        ],
+    ],
     'data': [
         'document_page_wkfl.xml',
         'document_page_view.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
-        ],
+    ],
     'installable': True,
     'auto_install': False,
     'images': [

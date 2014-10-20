@@ -145,7 +145,7 @@ class document_page_history_wkfl(orm.Model):
             type='text', store=False),
         'get_page_url': fields.function(get_page_url, string="URL",
                                         type='text', store=False),
-        }
+    }
 
 
 class document_page_approval(orm.Model):
