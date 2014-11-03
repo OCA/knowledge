@@ -1,0 +1,21 @@
+.openerp .oe-sidebar-attachment-preview
+{
+    position: absolute;
+    right: 20px;
+    top: 3px;
+    display: none;
+}
+.openerp .oe-sidebar-attachments-items .oe-sidebar-attachment-delete
+{
+    display: none;
+}
+.openerp .oe-sidebar-attachments-items:hover .oe-sidebar-attachment-preview,
+.openerp .oe-sidebar-attachments-items:hover .oe-sidebar-attachment-delete
+{
+    display: inherit;
+}
+.openerp .oe_form_field_binary .oe-binary-preview
+{
+    cursor: pointer;
+    vertical-align: middle;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="FormView.sidebar.attachments">
+        <t t-jquery="a.oe-sidebar-attachment-delete" t-operation="before">
+            <a href="#" class="oe-sidebar-attachment-preview" t-att-data-id="attachment.id" t-att-data-url="attachment.url" t-att-title="attachment_title_preview(attachment.name)">
+                <img t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"' width="12" height="12" border="0"/>
+            </a>
+        </t>
+    </t>
+    <t t-extend="FieldURI.readonly">
+        <t t-jquery="a.oe_form_uri" t-operation="after">
+            <t t-if="widget.on_save_as">
+                <img class="oe-binary-preview" t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"'/>
+            </t>
+        </t>
+    </t>
+</templates>
