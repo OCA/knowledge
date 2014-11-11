@@ -21,7 +21,7 @@
 
 {
     'name': 'Document Page',
-    'version': '1.0.1',
+    'version': '8.0.1.0.1',
     'category': 'Knowledge Management',
     'description': """
 Pages
@@ -30,7 +30,10 @@ Web pages
     """,
     'author': ['OpenERP SA'],
     'website': 'http://www.openerp.com/',
-    'depends': ['knowledge'],
+    'license': 'AGPL-3',
+    'depends': [
+        'knowledge'
+    ],
     'data': [
         'wizard/document_page_create_menu_view.xml',
         'wizard/document_page_show_diff_view.xml',
@@ -38,8 +41,12 @@ Web pages
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
-    'demo': ['document_page_demo.xml'],
-    'test': ['test/document_page_test00.yml'],
+    'demo': [
+        'document_page_demo.xml'
+    ],
+    'test': [
+        'test/document_page_test00.yml'
+    ],
     'installable': True,
     'auto_install': False,
     'images': [],
