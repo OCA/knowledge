@@ -27,24 +27,24 @@ class showdiff(models.TransientModel):
 
     _name = 'wizard.document.page.history.show_diff'
 
-    def get_diff(self, cr, uid, context=None):
-        if context is None:
-            context = {}
-        history = self.pool.get('document.page.history')
-        ids = context.get('active_ids', [])
+    def get_diff(self):
+        history = self.env["document.page.history"]
+        ids = self.env.context.get('active_ids', [])
 
         diff = ""
         if len(ids) == 2:
             if ids[0] > ids[1]:
-                diff = history.getDiff(cr, uid, ids[1], ids[0])
+                diff = history.getDiff(ids[1], ids[0])
             else:
-                diff = history.getDiff(cr, uid, ids[0], ids[1])
-
+                diff = history.getDiff(ids[0], ids[1])
         elif len(ids) == 1:
-            old = history.browse(cr, uid, ids[0])
-            nids = history.search(cr, uid, [('page_id', '=', old.page_id.id)])
-            nids.sort()
-            diff = history.getDiff(cr, uid, ids[0], nids[-1])
+            old = history.browse(ids[0])
+            nids = history.search(
+                [('page_id', '=', old.page_id.id)],
+                order='id DESC',
+                limit=1
+            )
+            diff = history.getDiff(ids[0], nids.id)
         else:
             raise exceptions.Warning(
                 _("You need to select minimum one or maximum "
