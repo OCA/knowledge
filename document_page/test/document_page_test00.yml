@@ -30,13 +30,16 @@
 
       Wiki text can easily be edited
       '
+
 -
     I check the page history for the current page by clicking on "Page History".After that find difference between history.
 -
-    !python {model: wizard.document.page.history.show_diff}: |
-      hist_obj = model.pool.get('document.page.history')
-      ids = hist_obj.search(cr, uid, [('page_id', '=', ref("test_page0"))])
-      model.get_diff(cr, uid, {'active_ids': ids[:] })
+    !python {model: wizard.document.page.history.show_diff, id: False}: |
+      hist_obj = self.env['document.page.history']
+      ids = hist_obj.search([('page_id', '=', ref("test_page0"))])
+      self.with_context(active_ids=[i.id for i in ids]).get_diff()
+
+
 -
     I click the "create menu" link and i fill the form.
 -
@@ -46,9 +49,7 @@
 -
     I create a Menu by clicking on "create menu"
 -
-    !python {model: document.page.create.menu}: |
-      ids = [ref("test_create_menu0")]
-      context['active_id'] = ref('test_page0')
-      self.document_page_menu_create(cr, uid, ids, context)
-
+    !python {model: document.page.create.menu, id: False}: |
+      menu = self.search([('id', '=', ref("test_create_menu0"))])
+      menu.with_context(active_id=[ref('test_page0')]).document_page_menu_create()
 
