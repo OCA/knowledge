@@ -30,7 +30,9 @@ Web pages
     """,
     'author': ['OpenERP SA'],
     'website': 'http://www.openerp.com/',
-    'depends': ['knowledge'],
+    'depends': [
+        'knowledge'
+    ],
     'data': [
         'wizard/document_page_create_menu_view.xml',
         'wizard/document_page_show_diff_view.xml',
