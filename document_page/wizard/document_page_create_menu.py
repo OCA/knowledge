@@ -18,9 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from openerp import SUPERUSER_ID
 from openerp import models, fields
+from openerp import SUPERUSER_ID
 
 
 class document_page_create_menu(models.TransientModel):
