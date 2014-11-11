@@ -38,8 +38,12 @@ Web pages
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
-    'demo': ['document_page_demo.xml'],
-    'test': ['test/document_page_test00.yml'],
+    'demo': [
+        'document_page_demo.xml'
+    ],
+    'test': [
+        'test/document_page_test00.yml'
+    ],
     'installable': True,
     'auto_install': False,
     'images': [],
