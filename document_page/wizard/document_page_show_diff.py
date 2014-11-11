@@ -18,13 +18,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp import models, fields, _
+from openerp import exceptions
 
-from openerp.osv import fields, osv
-from openerp.tools.translate import _
 
-
-class showdiff(osv.osv_memory):
-    """ Disp[ay Difference for History """
+class showdiff(models.TransientModel):
+    """ Display Difference for History """
 
     _name = 'wizard.document.page.history.show_diff'
 
@@ -47,17 +46,16 @@ class showdiff(osv.osv_memory):
             nids.sort()
             diff = history.getDiff(cr, uid, ids[0], nids[-1])
         else:
-            raise osv.except_osv(_('Warning!'), _('You need to select minimum \
-                                                  one or maximum two history \
-                                                  revisions!'))
+            raise exceptions.Warning(
+                _("You need to select minimum one or maximum "
+                  "two history revisions!")
+            )
         return diff
 
-    _columns = {
-        'diff': fields.text('Diff', readonly=True),
-    }
-
-    _defaults = {
-        'diff': get_diff
-    }
+    diff = fields.Text(
+        'Diff',
+        readonly=True,
+        default=get_diff
+    )
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
