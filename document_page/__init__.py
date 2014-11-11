@@ -18,8 +18,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from . import (
-    document_page,
-    wizard
-    )
+from . import document_page
+from . import wizard

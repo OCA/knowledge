@@ -2,7 +2,8 @@
 <openerp>
     <data noupdate="1">
         <record id="base.user_demo" model="res.users">
-            <field eval="[(4, ref('base.group_sale_salesman')),(4, ref('base.group_document_user'))]" name="groups_id"/>
+            <field eval="[(4, ref('base.group_document_user'))]"
+                   name="groups_id"/>
         </record>
         <record id="demo_category1" model="document.page">
             <field name="name">OpenERP Features</field>
