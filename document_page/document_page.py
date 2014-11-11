@@ -20,7 +20,6 @@
 ##############################################################################
 import difflib
 from openerp import models, fields, api, _
-from openerp import exceptions
 
 
 class document_page(models.Model):
@@ -122,25 +121,30 @@ class document_page(models.Model):
             if self.parent_id.type == "category":
                 self.content = self.parent_id.content
 
-    def create_history(self, cr, uid, ids, vals, context=None):
-        for i in ids:
-            history = self.pool.get('document.page.history')
-            if vals.get('content'):
-                res = {
-                    'content': vals.get('content', ''),
-                    'page_id': i,
-                }
-                history.create(cr, uid, res)
+    def create_history(self, page_id, content):
+        history = self.env['document.page.history']
+        return history.create({
+            "content": content,
+            "page_id": page_id
+        })
 
-    def create(self, cr, uid, vals, context=None):
-        page_id = super(document_page, self).create(cr, uid, vals, context)
-        self.create_history(cr, uid, [page_id], vals, context)
-        return page_id
-
-    def write(self, cr, uid, ids, vals, context=None):
-        result = super(document_page, self).write(cr, uid, ids, vals, context)
-        self.create_history(cr, uid, ids, vals, context)
+    @api.multi
+    def write(self, vals):
+        result = super(document_page, self).write(vals)
+        content = vals.get('content')
+        if content:
+            for page in self:
+                self.create_history(page.id, content)
         return result
+
+    @api.model
+    @api.returns('self', lambda value: value.id)
+    def create(self, vals):
+        page_id = super(document_page, self).create(vals)
+        content = vals.get('content')
+        if content:
+            self.create_history(page_id.id, content)
+        return page_id
 
 
 class document_page_history(models.Model):
@@ -155,19 +159,21 @@ class document_page_history(models.Model):
     create_date = fields.Datetime("Date")
     create_uid = fields.Many2one('res.users', "Modified By")
 
-    def getDiff(self, cr, uid, v1, v2, context=None):
-        history_pool = self.pool.get('document.page.history')
-        text1 = history_pool.read(cr, uid, [v1], ['content'])[0]['content']
-        text2 = history_pool.read(cr, uid, [v2], ['content'])[0]['content']
+    def getDiff(self, v1, v2):
+        text1 = self.browse(v1).content
+        text2 = self.browse(v2).content
         line1 = line2 = ''
         if text1:
             line1 = text1.splitlines(1)
         if text2:
             line2 = text2.splitlines(1)
         if (not line1 and not line2) or (line1 == line2):
-            raise exceptions.Warning(
-                _('There are no changes in revisions.')
+            return _('There are no changes in revisions.')
+        else:
+            diff = difflib.HtmlDiff()
+            return diff.make_table(
+                line1, line2,
+                "Revision-{}".format(v1),
+                "Revision-{}".format(v2),
+                context=True
             )
-        diff = difflib.HtmlDiff()
-        return diff.make_table(line1, line2, "Revision-%s" % (v1),
-                               "Revision-%s" % (v2), context=True)

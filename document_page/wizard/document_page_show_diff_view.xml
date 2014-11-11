@@ -12,7 +12,7 @@
                            widget="html"
                            options='{"safe": True}' />
                     <footer>
-                        <button string="Cancel"
+                        <button string="Close"
                                 class="oe_link"
                                 special="cancel" />
                     </footer>
