@@ -49,16 +49,22 @@
                     <h1><field name="name" placeholder="Name"/></h1>
                     <group class="oe_edit_only">
                         <group>
-                            <field name="parent_id" on_change="onchange_parent_id(parent_id,content)" string="Category" context="{'default_type':'category'}"/>
+                            <field name="parent_id"
+                                   string="Category"
+                                   context="{'default_type':'category'}"/>
                         </group>
                         <group>
-                            <field name="write_uid" groups="base.group_no_one"/>
-                            <field name="write_date" groups="base.group_no_one"/>
-                            <field name="menu_id" groups="base.group_no_one"/>
+                            <field name="write_uid"
+                                   groups="base.group_no_one"/>
+                            <field name="write_date"
+                                   groups="base.group_no_one"/>
+                            <field name="menu_id"
+                                   groups="base.group_no_one"/>
                         </group>
                     </group>
 
-                    <div class="oe_edit_only" attrs="{'invisible':[('type','=','content')]}">
+                    <div class="oe_edit_only"
+                         attrs="{'invisible':[('type','=','content')]}">
                         <label for="content" string="Template"/>
                         that will be used as a content template for all new page of this category.
                     </div>

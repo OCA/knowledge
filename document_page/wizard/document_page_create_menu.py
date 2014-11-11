@@ -20,27 +20,33 @@
 ##############################################################################
 
 from openerp import SUPERUSER_ID
-from openerp.osv import fields, osv
+from openerp import models, fields
 
 
-class document_page_create_menu(osv.osv_memory):
+class document_page_create_menu(models.TransientModel):
     """ Create Menu """
     _name = "document.page.create.menu"
     _description = "Wizard Create Menu"
 
-    _columns = {
-        'menu_name': fields.char('Menu Name', size=256, required=True),
-        'menu_parent_id': fields.many2one('ir.ui.menu', 'Parent Menu',
-                                          required=True),
-    }
+    menu_name = fields.Char(
+        'Menu Name',
+        required=True
+    )
+
+    menu_parent_id = fields.Many2one(
+        'ir.ui.menu',
+        'Parent Menu',
+        required=True
+    )
 
     def default_get(self, cr, uid, fields, context=None):
         if context is None:
             context = {}
-        res = super(document_page_create_menu, self).default_get(cr, uid,
-                                                                 fields,
-                                                                 context=
-                                                                 context)
+        res = super(document_page_create_menu, self).default_get(
+            cr, uid,
+            fields,
+            context=context
+        )
         page_id = context.get('active_id')
         obj_page = self.pool.get('document.page')
         page = obj_page.browse(cr, uid, page_id, context=context)

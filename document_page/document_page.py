@@ -18,10 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, _
-from openerp import exceptions
-# , fields, api, _
 import difflib
+from openerp import models, fields, api, _
+from openerp import exceptions
 
 
 class document_page(models.Model):
@@ -117,16 +116,11 @@ class document_page(models.Model):
                 display_content = page.content
             page.display_content = display_content
 
-    def onchange_parent_id(self, cr, uid, ids, parent_id, content,
-                           context=None):
-        res = {}
-        if parent_id and not content:
-            parent = self.browse(cr, uid, parent_id, context=context)
-            if parent.type == "category":
-                res['value'] = {
-                    'content': parent.content,
-                }
-        return res
+    @api.onchange("parent_id")
+    def do_set_content(self):
+        if self.parent_id and not self.content:
+            if self.parent_id.type == "category":
+                self.content = self.parent_id.content
 
     def create_history(self, cr, uid, ids, vals, context=None):
         for i in ids:
