@@ -36,22 +36,18 @@
             <field name="arch" type="xml">
                 <field name="display_content"
                        position="before">
-                    <group>
-                        <!-- TODO display only to content" -->
-                        <field name="approved_date"
-                               class="oe_view_only" />
-                        <field name="approved_uid"
-                               class="oe_view_only" />
+                    <group class="oe_read_only"
+                           attrs="{'invisible':[('type','!=','content')]}">
+                        <field name="approved_date" />
+                        <field name="approved_uid" />
                     </group>
                 </field>
                 <field name="parent_id" position="after">
-                    <group>
-                        <field name="approval_required"
-                               attrs="{'invisible':[('type','=','content')]}"/>
-                        <field name="approver_gid"
-                               attrs="{'invisible':['|',('type','=','content'),
-                            ('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
-                    </group>
+                    <field name="approval_required"
+                           attrs="{'invisible':[('type','=','content')]}"/>
+                    <field name="approver_gid"
+                           attrs="{'invisible':['|',('type','=','content'),
+                        ('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
                 </field>
             </field>
         </record>

@@ -29,19 +29,19 @@ class document_page_history_wkfl(models.Model):
 
     def page_approval_draft(self, cr, uid, ids, context=None):
         self.write(cr, uid, ids, {'state': 'draft'})
-        import pdb; pdb.set_trace( )
         template_id = self.pool.get('ir.model.data').get_object_reference(
             cr, uid,
             'document_page_approval',
             'email_template_new_draft_need_approval')[1]
-        for page in self:
+        for page in self.browse(cr, uid, ids, context=context):
             if page.is_parent_approval_required:
                 self.pool.get('email.template').send_mail(
+                    cr,
+                    uid,
                     template_id,
                     page.id,
                     force_send=True
                 )
-
         return True
 
     def page_approval_approved(self, cr, uid, ids, context=None):
@@ -92,41 +92,39 @@ class document_page_history_wkfl(models.Model):
         for page in self:
             emails = ''
             guids = self.get_approvers_guids()
-            import pdb; pdb.set_trace( )
-            uids = self.pool.get('res.users').search(
-                cr, uid, [('groups_id', 'in', guids[id])])
-            users = self.pool.get('res.users').browse(
-                cr, uid, uids, context=context)
+            uids = [i.id for i in self.env['res.users'].search([
+                ('groups_id', 'in', guids[page.id])
+            ])]
+            users = self.env['res.users'].browse(uids)
 
             for user in users:
                 if user.email:
                     emails += user.email
                     emails += ','
                 else:
-                    empl_id = self.pool.get('hr.employee').search(
-                        cr, uid, [('login', '=', user.login)])[0]
-                    empl = self.pool.get('hr.employee').browse(
-                        cr, uid, empl_id, context=context)
+                    empl = self.env['hr.employee'].search([
+                        ('login', '=', user.login)
+                    ])
                     if empl.work_email:
                         emails += empl.work_email
                         emails += ','
 
-            emails = emails[:-1]
-            page.get_approvers_email = emails
+            page.get_approvers_email = emails[:-1]
 
     def _get_page_url(self):
-        res = {}
         for page in self:
-            import pdb; pdb.set_trace( )
             base_url = self.env['ir.config_parameter'].get_param(
-                cr, uid, 'web.base.url', default='http://localhost:8069',
-                context=context)
+                'web.base.url',
+                default='http://localhost:8069'
+            )
 
-            res[id] = base_url + (
-                '/#db=%s&id=%s&view_type=form&model=document.page.history' %
-                (cr.dbname, id))
-
-        return res
+            page.get_page_url = (
+                '{}/#db={}&id={}&view_type=form&'
+                'model=document.page.history').format(
+                    base_url,
+                    self.env.cr.dbname,
+                    page.id
+                )
 
     state = fields.Selection(
         [('draft', 'Draft'), ('approved', 'Approved')],
