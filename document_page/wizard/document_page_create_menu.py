@@ -49,12 +49,6 @@ class document_page_create_menu(models.TransientModel):
 
     @api.multi
     def document_page_menu_create(self):
-    #     events = self.env['event.event'].browse(self._context.get('event_ids', []))
-    #     events.do_confirm()
-    #     return {'type': 'ir.actions.act_window_close'}
-    # def document_page_menu_create(self, cr, uid, ids, context=None):
-    #     if context is None:
-    #         context = {}
         obj_page = self.env['document.page']
         obj_menu = self.env['ir.ui.menu']
         obj_action = self.env['ir.actions.act_window']
