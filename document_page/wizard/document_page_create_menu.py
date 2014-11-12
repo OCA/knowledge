@@ -19,7 +19,6 @@
 #
 ##############################################################################
 from openerp import models, fields, api
-from openerp import SUPERUSER_ID
 
 
 class document_page_create_menu(models.TransientModel):
