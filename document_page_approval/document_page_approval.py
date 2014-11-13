@@ -88,7 +88,6 @@ class document_page_history_wkfl(models.Model):
         return res
 
     def _get_approvers_email(self):
-        res = {}
         for page in self:
             emails = ''
             guids = self.get_approvers_guids()
@@ -166,7 +165,6 @@ class document_page_approval(models.Model):
     _inherit = 'document.page'
 
     def _get_display_content(self):
-        res = {}
         for page in self:
             content = ""
             if page.type == "category":
