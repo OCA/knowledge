@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-import document_page_approval
+from . import document_page_approval
