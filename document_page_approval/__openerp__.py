@@ -47,9 +47,9 @@ Scenario
         'email_template',
     ],
     'data': [
+        'data/email_template.xml',
         'document_page_wkfl.xml',
         'document_page_view.xml',
-        'data/email_template.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
