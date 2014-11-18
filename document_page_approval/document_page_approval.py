@@ -89,12 +89,12 @@ class document_page_history_wkfl(orm.Model):
 
     def get_approvers_email(self, cr, uid, ids, name, args, context):
         res = {}
-        for id in ids:
+        for rec_id in ids:
             emails = ''
             guids = self.get_approvers_guids(
                 cr, uid, ids, name, args, context=context)
             uids = self.pool.get('res.users').search(
-                cr, uid, [('groups_id', 'in', guids[id])])
+                cr, uid, [('groups_id', 'in', guids[rec_id])])
             users = self.pool.get('res.users').browse(
                 cr, uid, uids, context=context)
 
@@ -112,19 +112,19 @@ class document_page_history_wkfl(orm.Model):
                         emails += ','
 
             emails = emails[:-1]
-            res[id] = emails
+            res[rec_id] = emails
         return res
 
     def get_page_url(self, cr, uid, ids, name, args, context):
         res = {}
-        for id in ids:
+        for rec_id in ids:
             base_url = self.pool.get('ir.config_parameter').get_param(
                 cr, uid, 'web.base.url', default='http://localhost:8069',
                 context=context)
 
-            res[id] = base_url + (
+            res[rec_id] = base_url + (
                 '/#db=%s&id=%s&view_type=form&model=document.page.history' %
-                (cr.dbname, id))
+                (cr.dbname, rec_id))
 
         return res
 
