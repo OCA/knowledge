@@ -26,7 +26,7 @@ from openerp.osv import orm, fields
 class document_file(orm.Model):
     _inherit = 'ir.attachment'
 
-    def _name_get_resname(self, cr, uid, ids, object, method, context):
+    def _name_get_resname(self, cr, uid, ids, obj, method, context):
         data = {}
         context = context or {}
         if isinstance(ids, (int, long)):
