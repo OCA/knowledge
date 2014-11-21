@@ -1,0 +1,32 @@
+.openerp .oe_sidebar .oe_dropdown_menu .oe_sidebar_add_attachment .oe_hidden_input_file,
+.oe_sidebar_add_attachment .oe_form_binary_form
+{
+    width: 100%;
+}
+.oe_sidebar_add_attachment .oe_form_binary_form select
+{
+    display: block;
+    min-width: 100%;
+}
+.openerp .oe_sidebar_add_attachment .oe_hidden_input_file input.oe_form_binary_file
+{
+    top: 2em;
+}
+.openerp .oe_sidebar .oe_dropdown_menu .oe_sidebar_add_attachment
+{
+    height: 3.5em;
+}
+li.oe_attachment_directory
+{
+        font-weight: bold;
+}
+.openerp .oe_dropdown_menu > li.oe_attachment_directory:hover
+{
+    background-color: inherit;
+    background-image: inherit;
+    box-shadow: none;
+}
+.openerp .oe_dropdown_menu > li.oe_attachment_directory a:hover
+{
+    cursor: default !important;
+}
