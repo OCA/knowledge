@@ -63,21 +63,24 @@ class file_document(orm.Model):
                     content_subtype=content_subtype,
                     **kwargs)
 
+    def _get_file_document_data(self, cr, uid, condition, msg, att, context=None):
+        values = {
+            'file_type': condition.server_id.file_type,
+            'name': msg['subject'],
+            'direction': 'input',
+            'date': msg['date'],
+            'ext_id': msg['message_id'],
+            'datas_fname': att[0],
+            'datas': base64.b64encode(att[1])
+        }
+        return values
 
     def prepare_data_from_basic_condition(self, cr, uid, condition, msg, context=None):
         vals = {}
         if condition.from_email in msg['from'] and condition.mail_subject in msg['subject']:
             for att in msg['attachments']:
                 if condition.file_extension in att[0]:
-                    vals = {
-                        'file_type': condition.server_id.file_type,
-                        'name': msg['subject'],
-                        'direction': 'input',
-                        'date': msg['date'],
-                        'ext_id': msg['message_id'],
-                        'datas_fname': att[0],
-                        'datas': base64.b64encode(att[1])
-                    }
+                    vals = self._get_file_document_data(cr, uid, condition, msg, att, context=context)
                     break
         return vals
 
