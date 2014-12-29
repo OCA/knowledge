@@ -43,6 +43,7 @@ Scenario
 * Users reading the page see the last approved version.
     """,
     'depends': [
+        'knowledge',
         'document_page',
         'email_template',
     ],
