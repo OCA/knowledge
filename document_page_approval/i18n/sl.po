@@ -1,0 +1,130 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* document_page_approval
+#
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-19 03:58+0000\n"
+"PO-Revision-Date: 2015-04-13 07:38+0200\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian <translate@matmoz.si>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+"Language: sl\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. module: document_page_approval
+#: field:document.page.history,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: document_page_approval
+#: field:document.page,approval_required:0
+msgid "Require approval"
+msgstr "Zahtevana odobritev"
+
+#. module: document_page_approval
+#: field:document.page,is_parent_approval_required:0
+#: field:document.page.history,is_parent_approval_required:0
+msgid "parent approval"
+msgstr "Nadrejena odobritev"
+
+#. module: document_page_approval
+#: model:email.template,body_html:document_page_approval.email_template_new_draft_need_approval
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>The page \"${object.page_id.name}\" has been modified and need your "
+"approval.</p>\n"
+"\n"
+"<p>You can review the new version here : <a href=\"${object.get_page_url}\">"
+"${object.get_page_url}</a></p>\n"
+" \n"
+"<p>Have a great day.<br/>\n"
+"--<br/>\n"
+"OpenERP</p>\n"
+"            "
+msgstr ""
+"\n"
+"<p>Pozdravljeni,</p>\n"
+"\n"
+"<p>Stran \"${object.page_id.name}\" vsebuje spremembe, ki potrebujejo vašo "
+"odobritev.</p>\n"
+"\n"
+"<p>Novo različico lahko pregledate tukaj: <a href=\"${object.get_page_url}\">"
+"${object.get_page_url}</a></p>\n"
+" \n"
+"<p>Lep dan.<br/>\n"
+"--<br/>\n"
+"OpenERP</p>\n"
+"            "
+
+#. module: document_page_approval
+#: model:ir.model,name:document_page_approval.model_document_page
+msgid "Document Page"
+msgstr "Stran dokumenta"
+
+#. module: document_page_approval
+#: field:document.page,approved_uid:0
+#: field:document.page.history,approved_uid:0
+msgid "Approved By"
+msgstr "Odobril"
+
+#. module: document_page_approval
+#: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval
+msgid "New version of \"${object.page_id.name}\" to approve"
+msgstr "Nova različica \"${object.page_id.name}\" za odobritev"
+
+#. module: document_page_approval
+#: selection:document.page.history,state:0
+msgid "Draft"
+msgstr "Osnutek"
+
+#. module: document_page_approval
+#: field:document.page.history,get_page_url:0
+msgid "URL"
+msgstr "URL povezava"
+
+#. module: document_page_approval
+#: field:document.page,approved_date:0
+#: field:document.page.history,approved_date:0
+msgid "Approved Date"
+msgstr "Datum odobritve"
+
+#. module: document_page_approval
+#: field:document.page.history,can_user_approve_page:0
+msgid "can user approve this page"
+msgstr "uporabnik lahko odobri to stran"
+
+#. module: document_page_approval
+#: field:document.page,approver_gid:0
+msgid "Approver group"
+msgstr "Skupina pooblaščenih za odobritev"
+
+#. module: document_page_approval
+#: model:ir.model,name:document_page_approval.model_document_page_history
+msgid "Document Page History"
+msgstr "Zgodovina strani dokumentov"
+
+#. module: document_page_approval
+#: view:document.page.history:0
+msgid "Approve"
+msgstr "Odobri"
+
+#. module: document_page_approval
+#: selection:document.page.history,state:0
+msgid "Approved"
+msgstr "Odobreno"
+
+#. module: document_page_approval
+#: field:document.page.history,get_approvers_email:0
+msgid "get all approvers email"
+msgstr "pridobi vse e-poštne naslove pooblaščenih za odobritve "
+
+
