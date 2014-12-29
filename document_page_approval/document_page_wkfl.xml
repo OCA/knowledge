@@ -8,15 +8,6 @@
             <field name="on_create">True</field>
         </record>
 
-        <record model="workflow.activity" id="act_draft">
-            <field name="wkf_id"
-                   ref="wkf_document_page_history_aproval" />
-            <field name="flow_start">True</field>
-            <field name="name">draft</field>
-            <field name="kind">function</field>
-            <field name="action">page_approval_draft()</field>
-        </record>
-
         <record model="workflow.activity" id="act_approved">
             <field name="wkf_id"
                    ref="wkf_document_page_history_aproval" />
@@ -24,6 +15,15 @@
             <field name="kind">function</field>
             <field name="action">page_approval_approved()</field>
             <field name="flow_stop">True</field>
+        </record>
+
+        <record model="workflow.activity" id="act_draft">
+            <field name="wkf_id"
+                   ref="wkf_document_page_history_aproval" />
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+            <field name="kind">function</field>
+            <field name="action">page_approval_draft()</field>
         </record>
 
         <record model="workflow.transition" id="tda">
