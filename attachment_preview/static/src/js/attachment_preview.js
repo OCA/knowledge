@@ -36,7 +36,11 @@ openerp.attachment_preview = function(instance)
     openerp.attachment_preview.can_preview = function(extension)
     {
         return jQuery.inArray(
-            extension, ['odt', 'odp', 'ods', 'fodt', 'pdf']) > -1;
+            extension,
+            [
+                'odt', 'odp', 'ods', 'fodt', 'pdf', 'ott', 'fodp', 'otp',
+                'fods', 'ots'
+            ]) > -1;
     };
     instance.web.Sidebar.include(
     {
