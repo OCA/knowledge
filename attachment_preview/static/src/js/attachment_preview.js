@@ -131,7 +131,7 @@ openerp.attachment_preview = function(instance)
                         attachment_id,
                         $target.siblings('a').attr('href'),
                         attachment_extension,
-                        _t('Preview'));
+                        $target.attr('alt'));
                 });
                 return (new instance.web.Model('ir.attachment')).call(
                     'get_binary_extension',
@@ -173,10 +173,10 @@ openerp.attachment_preview = function(instance)
         {
             var link = this._super.apply(this, arguments);
             link += _.template(
-                '<img class="oe-binary-preview" alt="<%-preview_text%>" data-id="<%-preview_id%>" data-model="<%-preview_model%>" data-field="<%-preview_field%>" data-filename="<%-preview_filename%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
+                '<img class="oe-binary-preview" title="<%-preview_text%>" alt="<%-preview_text%>" data-id="<%-preview_id%>" data-model="<%-preview_model%>" data-field="<%-preview_field%>" data-filename="<%-preview_filename%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
                 {
                     preview_id: options.id,
-                    preview_text: _t('Preview'),
+                    preview_text: _.str.sprintf(_t('Preview %s'), this.string),
                     preview_model: options.model,
                     preview_field: this.id,
                     preview_filename: this.filename || '',
@@ -218,8 +218,9 @@ openerp.attachment_preview = function(instance)
                                         self.name,
                                         self.view.datarecord.id),
                                     extension,
-                                    self.view.datarecord[self.node.attrs.filename]);
+                                    _.str.sprintf(_t('Preview %s'), self.field.string));
                             });
+                            $element.attr('title', _.str.sprintf(_t('Preview %s'), self.field.string));
                         }
                         else
                         {
@@ -228,6 +229,10 @@ openerp.attachment_preview = function(instance)
                     });
                 });
             }
+            else
+            {
+                this.$el.find('.oe-binary-preview').remove();
+            };
         },
     });
 }    
