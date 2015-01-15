@@ -40,7 +40,6 @@ Addon icon courtesy of http://commons.wikimedia.org/wiki/Crystal_Clear
     "category": "Knowledge Management",
     "depends": [
         'web',
-        'document',
     ],
     "data": [
         "view/attachment_preview.xml",
