@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="attachment_preview assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/attachment_preview/static/src/js/attachment_preview.js"></script>
+                <link rel="stylesheet" type="text/css" href="/attachment_preview/static/src/css/attachment_preview.css" />
+            </xpath>
+        </template>
+    </data>
+</openerp>
