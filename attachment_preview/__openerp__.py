@@ -24,19 +24,7 @@
     "author": "Therp BV",
     "license": "AGPL-3",
     "complexity": "normal",
-    "description": """
-This addon allows to preview attachments supported by http://viewerjs.org.
-
-Currently, that's most Libreoffice files and PDFs.
-
-For filetype recognition, you'll get the best results by installing
-``python-magic``.
-
-Acknowledgements
-================
-
-Addon icon courtesy of http://commons.wikimedia.org/wiki/Crystal_Clear
-    """,
+    'summary': 'Preview attachments supported by Viewer.js',
     "category": "Knowledge Management",
     "depends": [
         'web',
