@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery="a.oe_sidebar_delete_item" t-operation="before">
+            <a t-if="section.name == 'files' and !item.callback and item.url" href="#" class="oe-sidebar-attachment-preview" t-att-data-id="item.id" t-att-data-url="item.url" t-attf-title="Preview #{item.name}">
+                <img t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"' width="12" height="12" border="0"/>
+            </a>
+        </t>
+    </t>
+    <t t-extend="FieldBinaryFile">
+        <t t-jquery="a.oe_form_uri" t-operation="after">
+            <img class="oe-binary-preview" t-att-src='_s + "/web/static/src/img/icons/gtk-print-preview.png"'/>
+        </t>
+    </t>
+</templates>
