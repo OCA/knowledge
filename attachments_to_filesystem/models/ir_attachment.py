@@ -92,7 +92,14 @@ class IrAttachment(Model):
         # attachments can be big, so we read every attachment on its own
         for attachment_id in attachment_ids:
             attachment_data = ir_attachment.read(
-                cr, uid, [attachment_id], ['datas'], context=context)[0]
+                cr, uid, [attachment_id], ['datas', 'res_model'],
+                context=context)[0]
+            if attachment_data['res_model'] and not self.pool.get(
+                    attachment_data['res_model']):
+                logging.warning(
+                    'not moving attachment %d because it links to unknown '
+                    'model %s', attachment_id, attachment_data['res_model'])
+                continue
             ir_attachment.write(
                 cr, uid, [attachment_id],
                 {
