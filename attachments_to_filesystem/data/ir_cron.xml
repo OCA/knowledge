@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="cron_move_attachments" model="ir.cron">
+            <field name="name">Move attachments to filestore</field>
+            <field name="active" eval="True" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="priority" eval="-1" />
+            <field name="numbercall" eval="1" />
+            <field name="nextcall">2000-01-01</field>
+            <field name="doall" eval="False" />
+            <field name="model">ir.attachment</field>
+            <field name="function">_attachments_to_filesystem_cron</field>
+            <field name="args">()</field>
+        </record>
+    </data>
+</openerp>
