@@ -95,6 +95,7 @@ class IrAttachment(Model):
                 cr, uid, [attachment_data['id']],
                 {
                     'datas': attachment_data['datas'],
+                    'db_datas': False,
                 },
                 context=context)
             if not counter % (len(attachment_ids) / 100 or limit):
