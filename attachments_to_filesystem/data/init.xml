@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <function name="_attachments_to_filesystem_init" model="ir.attachment" />
+    </data>
+</openerp>
