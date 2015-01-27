@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="asset_document_choose_directory" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/document_choose_directory/static/src/js/document_choose_directory.js"></script>
+                <link rel="stylesheet" type="text/css" href="/document_choose_directory/static/src/css/document_choose_directory.css" />
+            </xpath>
+        </template>
+    </data>
+</openerp>
