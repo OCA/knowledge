@@ -91,7 +91,7 @@ class IrAttachment(Model):
             cr, uid, [('db_datas', '!=', False)], limit=limit, context=context)
         logging.info('moving %d attachments to filestore', len(attachment_ids))
         # attachments can be big, so we read every attachment on its own
-        for counter, attachment_id in enumerate(attachment_ids, start=1)
+        for counter, attachment_id in enumerate(attachment_ids, start=1):
             attachment_data = ir_attachment.read(
                 cr, uid, [attachment_id], ['datas', 'res_model'],
                 context=context)[0]
