@@ -75,6 +75,8 @@ class IrAttachment(Model):
                 'nextcall':
                 next_night.strftime(DEFAULT_SERVER_DATETIME_FORMAT),
                 'doall': True,
+                'interval_type': 'days',
+                'interval_number': 1,
             },
             context=context)
 
@@ -110,36 +112,3 @@ class IrAttachment(Model):
             if not counter % (len(attachment_ids) / 100 or limit):
                 logging.info('moving attachments: %d done', counter)
             counter += 1
-        # see if we need to create a new cronjob for the next batch
-        if ir_attachment.search(
-                cr, uid, [('db_datas', '!=', False)], limit=1,
-                context=context):
-            module_name = __name__.split('.')[-3]
-            ir_cron = self.pool['ir.cron']
-            last_job_id = ir_cron.search(
-                cr, uid,
-                [
-                    ('model', '=', 'ir.attachment'),
-                    ('function', '=', '_attachments_to_filesystem_cron'),
-                ],
-                order='nextcall desc',
-                limit=1,
-                context=context)
-            if not last_job_id:
-                return
-            new_job_data = ir_cron.copy_data(
-                cr, uid, last_job_id[0], context=context)
-            new_job_data.update(
-                nextcall=(
-                    datetime.strptime(
-                        new_job_data['nextcall'],
-                        DEFAULT_SERVER_DATETIME_FORMAT) +
-                    relativedelta(days=1)
-                ).strftime(DEFAULT_SERVER_DATETIME_FORMAT),
-            )
-            self.pool['ir.model.data']._update(
-                cr, uid, 'ir.cron', module_name,
-                new_job_data,
-                xml_id='config_parameter_ir_attachment_location' + str(
-                    last_job_id[0]),
-                context=context)
