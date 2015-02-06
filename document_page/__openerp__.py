@@ -30,6 +30,7 @@ Web pages
     """,
     'author': ['OpenERP SA'],
     'website': 'http://www.openerp.com/',
+    'license': 'AGPL-3',
     'depends': [
         'knowledge'
     ],
