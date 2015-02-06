@@ -29,6 +29,7 @@ Module that allows to attach an URL as a document.
     """,
     'author': 'Serv. Tecnolog. Avanzados - Pedro M. Baeza',
     'website': 'http://www.serviciosbaeza.com',
+    'license': 'AGPL-3',
     'depends': [
         'document',
     ],
