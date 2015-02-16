@@ -49,7 +49,7 @@ class IrAttachment(Model):
                     'value': 'file:///filestore',
                 },
                 xml_id='config_parameter_ir_attachment_location',
-                context=context)
+                noupdate=True, context=context)
 
         # synchronous behavior
         if self.pool['ir.config_parameter'].get_param(
