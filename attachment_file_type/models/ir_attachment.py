@@ -30,7 +30,8 @@ class Attachment(orm.Model):
         ids = self.search(
             cr, uid, [('file_type', '=', False)], context=context)
         logging.getLogger('openerp.addons.attachment_file_type').info(
-            'Found %s attachments without file type in the database.', len(ids))
+            'Found %s attachments without file type in the database.',
+            len(ids))
         self.update_file_type(cr, uid, ids, force=True, context=None)
 
     def update_file_type(self, cr, uid, ids, force=False, context=None):
@@ -55,7 +56,8 @@ class Attachment(orm.Model):
             magic.MAGIC_MIME_TYPE if hasattr(magic, 'MAGIC_MIME_TYPE')
             else magic.MAGIC_MIME)
         ms.load()
-        for attachment in self.browse(cr, uid, ids, context=context):
+        for attachment_id in ids:
+            attachment = self.browse(cr, uid, attachment_id, context=context)
             file_type = ms.buffer(
                 b64decode(attachment.datas)).split(';')[0]
             logger.debug(
