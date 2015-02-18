@@ -58,6 +58,8 @@ class Attachment(orm.Model):
         ms.load()
         for attachment_id in ids:
             attachment = self.browse(cr, uid, attachment_id, context=context)
+            if not attachment.datas:
+                continue
             file_type = ms.buffer(
                 b64decode(attachment.datas)).split(';')[0]
             logger.debug(
