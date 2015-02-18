@@ -11,7 +11,7 @@
             <field name="doall" eval="False" />
             <field name="model">ir.attachment</field>
             <field name="function">update_file_type_from_cron</field>
-            <field name="args">(1000,)</field>
+            <field name="args">(10000,)</field>
         </record>
 
     </data>

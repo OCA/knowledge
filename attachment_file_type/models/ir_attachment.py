@@ -26,13 +26,19 @@ from base64 import b64decode
 class Attachment(orm.Model):
     _inherit = 'ir.attachment'
 
-    def update_file_type_from_cron(self, cr, uid, count=1000, context=None):
+    def update_file_type_from_cron(self, cr, uid, count=10000, context=None):
         ids = self.search(
             cr, uid, [('file_type', '=', False)], context=context)
         logging.getLogger('openerp.addons.attachment_file_type').info(
             'Found %s attachments without file type in the database.',
             len(ids))
-        self.update_file_type(cr, uid, ids, force=True, context=None)
+        if ids:
+            logging.getLogger('openerp.addons.attachment_file_type').info(
+                'Providing file types for a maximum of %s of them',
+                count)
+            return self.update_file_type(
+                cr, uid, ids[:count], force=True, context=None)
+        return False
 
     def update_file_type(self, cr, uid, ids, force=False, context=None):
         """ Write the file types for these attachments. If the document module
