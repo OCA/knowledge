@@ -63,7 +63,12 @@ class Attachment(orm.Model):
             logger.debug(
                 'Found file type %s for attachment with id %s',
                 file_type, attachment.id)
-            attachment.write({'file_type': file_type})
+            # Use SQL, not ORM, to prevent write triggers which are harmful
+            # in 6.1 on attachments of which the model or the record no longer
+            # exists
+            cr.execute(
+                "UPDATE ir_attachment SET file_type = %s WHERE id = %s",
+                (file_type, attachment_id))
         return True
 
     def write(self, cr, uid, ids, vals, context=None):
