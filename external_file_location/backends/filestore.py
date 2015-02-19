@@ -1,24 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from ..backend import AbstractConnection
+from ..backend import AbstractTask
 import sys
 import os
 from tempfile import TemporaryFile
 
-class AbtractTask()
 
-    def __init__(self, cr, uid):
-
-
-
-class FileStoreConnection(AbstractTask):
+class FileStore(AbstractTask):
     _key = "filestore"
     _name = "Filestore"
     _synchronize_type = None
 
-    def __init__(self, host, user, pwd, port=None, allow_dir_creation=False):
-        super(FilestoreConnection, self).__init__(host, user, pwd, port, allow_dir_creation)
+    def __init__(self, config):
+        # super(FilestoreConnection, self).__init__(host, user, pwd, port, allow_dir_creation)
+        self.host = config.get('host', '')
+        self.user = config.get('user', '')
+        self.pwd = config.get('pwd', '')
+        self.port = config.get('port', '')
+        self.allow_dir_creation = config.get('allow_dir_creation', '')
+        self.filename = config.get('filename', '')
+        self.path = config.get('path', '')
 
     def connect(self):
         return NotImplemented
@@ -26,41 +28,46 @@ class FileStoreConnection(AbstractTask):
     def close(self):
         return NotImplemented
 
-    def get(self, filename, path=None):
-        if path:
-            filepath = "{}/{}".format(path, filename)
+    def get(self):
+        if self.path:
+            filepath = "{}/{}".format(self.path, self.filename)
         else:
-            filepath = filename
+            filepath = self.filename
         return open(filepath, 'r+b')
 
-    def put(self, fileobject, filename, path=None):
-        if path:
-            filepath = "{}/{}".format(path, filename)
+    def put(self):
+        if self.path:
+            filepath = "{}/{}".format(self.path, self.filename)
         else:
-            filepath = filename
+            filepath = self.filename
         output = open(filepath, 'w+b')
         return True
 
-    def search(self, filename, path=None):
-        if path:
-            filepath = "{}/{}".format(path, filename)
+    def search(self):
+        if self.path:
+            filepath = "{}/{}".format(self.path, self.filename)
         else:
-            filepath = filename
+            filepath = self.filename
         connection_list_result = os.listdir(filepath)
         return [x for x in connection_list_result if filename in x]
 
-    def move(self, filename, oldpath, newpath):
-        os.rename(
-                os.path.join(oldpath, filename),
-                os.path.join(newpath, filename)
-                )
 
-    def rename(self, oldfilename, newfilename, path=None):
-        return NotImplemented
-
-class ImportFileStore(FileStoreConnection):
+class ImportFileStore(FileStore):
     _synchronize_type = "import"
 
 
     def run():
+        self.connect()
+        file = self.get(self.filename)
+        self.close()
+        return file
+
+class ExportFileStore(FileStore):
+    _synchronize_type = "export"
+
+
+    def run():
+        self.connect()
+        self.put(self.filename)
+        self.close()
 
