@@ -20,12 +20,10 @@
 #
 ###############################################################################
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning
-import hashlib
+from openerp import models, fields
 
 
-class AttachmentMetadata(models.Model):
+class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
     sync_date = fields.Datetime()
@@ -34,4 +32,3 @@ class AttachmentMetadata(models.Model):
         ('failed', 'Failed'),
         ('done', 'Done'),
         ], readonly=True, required=True, default='pending')
-

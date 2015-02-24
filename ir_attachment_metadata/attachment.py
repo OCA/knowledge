@@ -2,8 +2,8 @@
 ###############################################################################
 #
 #   Module for OpenERP
-#   Copyright (C) 2014 Akretion (http://www.akretion.com).
-#   @author Sébastien BEAU <sebastien.beau@akretion.com>
+#   Copyright (C) 2015 Akretion (http://www.akretion.com).
+#   @author Valentin CHEMIERE <valentin.chemiere@akretion.com>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as
@@ -25,18 +25,17 @@ from openerp.exceptions import Warning
 import hashlib
 
 
-class AttachmentMetadata(models.Model):
+class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
     internal_hash = fields.Char(store=True, compute='_compute_hash')
     external_hash = fields.Char()
 
-
-    @api.depends('datas')
+    @api.depends('datas', 'external_hash')
     def _compute_hash(self):
         if self.datas:
-            print hashlib.md5(self.datas).hexdigest()
             self.internal_hash = hashlib.md5(self.datas).hexdigest()
         if self.external_hash and self.internal_hash != self.external_hash:
-            raise Warning(_('File corrupted'), _("Something was wrong with the retreived file, please relaunch the task."))
-
+            raise Warning(_('File corrupted'),
+                          _("Something was wrong with the retreived file, "
+                              "please relaunch the task."))

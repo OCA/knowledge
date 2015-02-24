@@ -20,26 +20,4 @@
 #
 ###############################################################################
 
-{'name': 'ir_attachment_metadata',
- 'version': '0.0.1',
- 'author': 'Akretion',
- 'website': 'www.akretion.com',
- 'license': 'AGPL-3',
- 'category': 'Generic Modules',
- 'description': """
- Add some useful field to ir.attachment object like:
- internal and external hash for coherence verification
- """,
- 'depends': [
-     'base',
- ],
- 'data': [
-     'attachment_view.xml',
- ],
- 'installable': True,
- 'application': False,
-}
-
-
-
-
+from . import ftp

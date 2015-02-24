@@ -20,7 +20,8 @@
 #
 ###############################################################################
 
-import attachment
-import location
-import task
+from . import attachment
+from . import location
+from . import task
+from . import tasks
 

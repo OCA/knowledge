@@ -2,8 +2,8 @@
 ###############################################################################
 #
 #   Module for OpenERP
-#   Copyright (C) 2014 Akretion (http://www.akretion.com).
-#   @author Sébastien BEAU <sebastien.beau@akretion.com>
+#   Copyright (C) 2015 Akretion (http://www.akretion.com).
+#   @author Valentin CHEMIERE <valentin.chemiere@akretion.com>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as
@@ -20,5 +20,4 @@
 #
 ###############################################################################
 
-import attachment
-
+from . import attachment

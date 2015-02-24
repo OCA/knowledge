@@ -10,8 +10,10 @@
                         <group col="4">
                             <field name="name" select="1" colspan="4"/>
                             <field name="method" colspan="4"/>
+                            <field name="location_id" colspan="4"/>
                             <field name="filename" colspan="4"/>
                             <field name="filepath" colspan="4"/>
+                            <button name="run" type="object" string="Run"/>
                         </group>
                     </sheet>
                 </form>

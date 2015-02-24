@@ -18,15 +18,19 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
-from ..AbstractTask import AbstractTask
+from ..abstract_task import AbstractTask
 from base64 import b64decode
 import ftputil
 import ftputil.session
 import logging
 _logger = logging.getLogger(__name__)
 
+
 class FtpTask(AbstractTask):
+
+    _key = 'ftp'
+    _name = 'FTP'
+    _synchronize_type = None
 
     def __init__(self, env, config):
         self.env = env
@@ -51,6 +55,8 @@ class FtpImportTask(FtpTask):
      - delete_files:  If true, files will be deleted on the FTP server
                       after download.
     """
+
+    _synchronize_type = 'import'
 
     def _handle_new_source(self, ftp_conn, download_directory, file_name,
                            move_directory):
@@ -82,16 +88,17 @@ class FtpImportTask(FtpTask):
                              self.pwd,
                              session_factory=port_session_factory) as ftp_conn:
 
-            file_list = ftp_conn.listdir(path)
+            file_list = ftp_conn.listdir(self.path)
             downloaded_files = []
             for ftpfile in file_list:
-                if ftp_conn.path.isfile(self._source_name(self.path,
-                                                          self.file_name)):
-                    file_id = self._handle_new_source(ftp_conn,
-                                                      self.path,
-                                                      self.file_name,
-                                                      self.move_path)
-                    self.run_successor_tasks(file_id=file_id, async=async)
+                source_name = self._source_name(self.path, self.file_name)
+                if ftp_conn.path.isfile(source_name) and \
+                        ftpfile == self.file_name:
+                    self._handle_new_source(
+                            ftp_conn,
+                            self.path,
+                            self.file_name,
+                            self.move_path)
                     downloaded_files.append(self.file_name)
 
             # Move/delete files only after all files have been processed.
@@ -110,13 +117,14 @@ class FtpImportTask(FtpTask):
                         self._source_name(self.move_path, ftpfile))
 
 
-
 class FtpExportTask(FtpTask):
     """FTP Configuration options:
      - host, user, password, port
      - upload_directory:  directory on the FTP server where files are
                           uploaded to
     """
+
+    _synchronize_type = 'export'
 
     def _handle_existing_target(self, ftp_conn, target_name, filedata):
         raise Exception("%s already exists" % target_name)
@@ -125,6 +133,7 @@ class FtpExportTask(FtpTask):
         with ftp_conn.open(target_name, mode='wb') as fileobj:
             fileobj.write(filedata)
             _logger.info('wrote %s, size %d', target_name, len(filedata))
+        return file_id
 
     def _target_name(self, ftp_conn, upload_directory, filename):
         return upload_directory + '/' + filename
