@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    This module copyright (C) 2014 Therp BV (<http://therp.nl>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,37 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    'name': 'Document Page',
-    'version': '1.0.1',
-    'category': 'Knowledge Management',
-    'description': """
-Pages
-=====
-Web pages
-    """,
-    'author': ['OpenERP SA'],
-    'website': 'http://www.openerp.com/',
-    'license': 'AGPL-3',
-    'depends': [
-        'knowledge'
-    ],
-    'data': [
-        'wizard/document_page_create_menu_view.xml',
-        'wizard/document_page_show_diff_view.xml',
-        'document_page_view.xml',
-        'security/document_page_security.xml',
-        'security/ir.model.access.csv',
-    ],
-    'demo': [
-        'document_page_demo.xml'
-    ],
-    'test': [
-        'test/document_page_test00.yml'
-    ],
-    'installable': True,
-    'auto_install': False,
-    'images': [],
-    'css': ['static/src/css/document_page.css'],
-}
+from . import ir_attachment
