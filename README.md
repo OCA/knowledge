@@ -1,2 +1,2 @@
 # ir_attachment_exchange
-Work in Progress
+Working! (with FTP only for the moment)
