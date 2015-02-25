@@ -34,6 +34,7 @@ class Task(models.Model):
     filename = fields.Char()
     filepath = fields.Char()
     location_id = fields.Many2one('external.file.location', string='Location')
+    attachment_id = fields.Many2one('ir.attachment', string='Attachment')
 
     def _get_method(self):
         res = []
@@ -57,8 +58,8 @@ class Task(models.Model):
                 'port': self.location_id.port,
                 'allow_dir_creation': False,
                 'file_name': self.filename,
-                'path': self.filepath
+                'path': self.filepath,
+                'attachment_id': self.attachment_id,
                 }
         conn = method_class(self.env, config)
-        file_id = conn.run()
-
+        conn.run()

@@ -2,6 +2,7 @@
 ##############################################################################
 #
 #    Copyright (C) 2014 initOS GmbH & Co. KG (<http://www.initos.com>).
+#    @author Valentin CHEMIERE <valentin.chemiere@akretion.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -43,6 +44,7 @@ class FtpTask(AbstractTask):
         self.path = config.get('path', '')
         self.move_path = config.get('move_path', '')
         self.delete_file = config.get('delete_file', False)
+        self.attachment_id = config.get('attachment_id', False)
 
 
 class FtpImportTask(FtpTask):
@@ -133,19 +135,15 @@ class FtpExportTask(FtpTask):
         with ftp_conn.open(target_name, mode='wb') as fileobj:
             fileobj.write(filedata)
             _logger.info('wrote %s, size %d', target_name, len(filedata))
-        return file_id
+        # return file_id
 
     def _target_name(self, ftp_conn, upload_directory, filename):
         return upload_directory + '/' + filename
 
-    def _upload_file(self, config, filename, filedata):
-        ftp_config = config['ftp']
-        upload_directory = ftp_config.get('upload_directory', '')
-        port_session_factory = ftputil.session.session_factory(
-            port=int(ftp_config.get('port', 21))
-            )
-        with ftputil.FTPHost(ftp_config['host'], ftp_config['user'],
-                             ftp_config['password'],
+    def _upload_file(self, host, port, user, pwd, path, filename, filedata):
+        upload_directory = path
+        port_session_factory = ftputil.session.session_factory(port=port)
+        with ftputil.FTPHost(host, user, pwd,
                              session_factory=port_session_factory) as ftp_conn:
             target_name = self._target_name(ftp_conn,
                                             upload_directory,
@@ -155,10 +153,7 @@ class FtpExportTask(FtpTask):
             else:
                 self._handle_new_target(ftp_conn, target_name, filedata)
 
-    def run(self, config=None, file_id=None, async=True):
-        #TODO change when object was made
-        f = self.env.get('impexp.file') \
-                .browse(self.env.cr, self.env.uid, file_id)
-        self._upload_file(config, f.attachment_id.datas_fname,
-                          b64decode(f.attachment_id.datas))
-
+    def run(self, async=True):
+        self._upload_file(self.host, self.port, self.user, self.pwd, self.path,
+                          self.attachment_id.datas_fname,
+                          b64decode(self.attachment_id.datas))

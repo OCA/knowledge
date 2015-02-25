@@ -13,6 +13,7 @@
                             <field name="location_id" colspan="4"/>
                             <field name="filename" colspan="4"/>
                             <field name="filepath" colspan="4"/>
+                            <field name="attachment_id" colspan="4"/>
                             <button name="run" type="object" string="Run"/>
                         </group>
                     </sheet>
@@ -41,7 +42,7 @@
         </record>
 
         <menuitem id="menu_ir_location_task" 
-            parent="base.next_id_9"
+            parent="menu_file_exchange"
             sequence="20"
             action="action_task"/>
 

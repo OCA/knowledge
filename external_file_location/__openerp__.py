@@ -2,8 +2,8 @@
 ###############################################################################
 #
 #   Module for OpenERP
-#   Copyright (C) 2014 Akretion (http://www.akretion.com).
-#   @author Sébastien BEAU <sebastien.beau@akretion.com>
+#   Copyright (C) 2015 Akretion (http://www.akretion.com).
+#   @author Valentin CHEMIERE <valentin.chemiere@akretion.com>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as
@@ -20,27 +20,25 @@
 #
 ###############################################################################
 
-{'name': 'external_file_location',
+{
+ 'name': 'external_file_location',
  'version': '0.0.1',
  'author': 'Akretion',
  'website': 'www.akretion.com',
  'license': 'AGPL-3',
  'category': 'Generic Modules',
  'description': """
- 
+ File exchange system with multiple protocol (SFTP, FTP, Filestore)
  """,
  'depends': [
      'base',
  ],
  'data': [
      'attachment_view.xml',
+     'menu.xml',
      'location_view.xml',
      'task_view.xml',
  ],
  'installable': True,
  'application': True,
 }
-
-
-
-
