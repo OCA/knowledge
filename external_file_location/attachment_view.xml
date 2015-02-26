@@ -43,6 +43,13 @@
 
         <record id="ir_attachment_view1" model="ir.actions.act_window.view">
             <field eval="1" name="sequence"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="mail.view_document_file_kanban"/>
+            <field name="act_window_id" ref="action_attachment"/>
+        </record>
+
+        <record id="ir_attachment_view2" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_external_attachment_tree"/>
             <field name="act_window_id" ref="action_attachment"/>
