@@ -3,7 +3,7 @@
     <data>
 
         <record id="view_task_form" model="ir.ui.view">
-            <field name="model">ir.location.task</field>
+            <field name="model">external.file.task</field>
             <field name="arch" type="xml">
                 <form string="Tasks" version="7.0">
                     <sheet>
@@ -22,7 +22,7 @@
         </record>
 
         <record id="view_task_tree" model="ir.ui.view">
-            <field name="model">ir.location.task</field>
+            <field name="model">external.file.task</field>
             <field name="arch" type="xml">
                 <tree string="Tasks" >
                     <field name="name" select="1"/>
@@ -36,12 +36,12 @@
         <record id="action_task" model="ir.actions.act_window">
             <field name="name">Tasks</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">ir.location.task</field>
+            <field name="res_model">external.file.task</field>
             <field name="view_type">form</field>
             <field name="view_id" eval="False"/>
         </record>
 
-        <menuitem id="menu_ir_location_task" 
+        <menuitem id="menu_external_file_task" 
             parent="menu_file_exchange"
             sequence="20"
             action="action_task"/>

@@ -14,7 +14,17 @@
                             <field name="address" colspan="2"/>
                             <field name="port" colspan="2"/>
                             <field name="login" colspan="4"/>
-                            <field name="password" colspan="4"/>
+                            <field name="password" password="1" colspan="4"/>
+                            <separator string="Tasks" colspan="4"/>
+                            <field name="task_ids" colspan="4" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="method"/>
+                                    <field name="filename"/>
+                                    <field name="filepath"/>
+                                    <button name="run" type="object" string="Run"/>
+                                </tree>
+                            </field>
                         </group>
                     </sheet>
                 </form>
@@ -28,9 +38,7 @@
                     <field name="name" select="1"/>
                     <field name="protocol"/>
                     <field name="address"/>
-                    <field name="port"/>
                     <field name="login"/>
-                    <field name="password"/>
                 </tree>
             </field>
         </record>

@@ -26,7 +26,7 @@ from abstract_task import AbstractTask
 
 
 class Task(models.Model):
-    _name = 'ir.location.task'
+    _name = 'external.file.task'
     _description = 'Description'
 
     name = fields.Char()

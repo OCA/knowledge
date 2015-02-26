@@ -34,6 +34,7 @@ class Location(models.Model):
     port = fields.Integer()
     login = fields.Char()
     password = fields.Char()
+    task_ids = fields.One2many('external.file.task', 'location_id')
 
 
     def _get_protocol(self):

@@ -23,6 +23,7 @@ from ..abstract_task import AbstractTask
 from base64 import b64decode
 import ftputil
 import ftputil.session
+from ftputil.error import FTPIOError
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -132,16 +133,21 @@ class FtpExportTask(FtpTask):
         raise Exception("%s already exists" % target_name)
 
     def _handle_new_target(self, ftp_conn, target_name, filedata):
-        with ftp_conn.open(target_name, mode='wb') as fileobj:
-            fileobj.write(filedata)
-            _logger.info('wrote %s, size %d', target_name, len(filedata))
-        # return file_id
+        try:
+            with ftp_conn.open(target_name, mode='wb') as fileobj:
+                fileobj.write(filedata)
+                _logger.info('wrote %s, size %d', target_name, len(filedata))
+            self.attachment_id.state = 'done'
+        except FTPIOError:
+            self.attachment_id.state = 'failed'
+            self.attachment_id.state_message = (
+                'The directory doesn\'t exist or had insufficient rights')
 
     def _target_name(self, ftp_conn, upload_directory, filename):
         return upload_directory + '/' + filename
 
     def _upload_file(self, host, port, user, pwd, path, filename, filedata):
-        upload_directory = path
+        upload_directory = path or './'
         port_session_factory = ftputil.session.session_factory(port=port)
         with ftputil.FTPHost(host, user, pwd,
                              session_factory=port_session_factory) as ftp_conn:

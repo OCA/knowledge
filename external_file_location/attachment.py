@@ -27,8 +27,9 @@ class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
     sync_date = fields.Datetime()
-    parse_state = fields.Selection([
+    state = fields.Selection([
         ('pending', 'Pending'),
         ('failed', 'Failed'),
         ('done', 'Done'),
         ], readonly=True, required=True, default='pending')
+    state_message = fields.Text()

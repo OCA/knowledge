@@ -8,11 +8,50 @@
 	        <field name="arch" type="xml">
 		    <field name="url" position="after">
 			    <field name="sync_date"/>
-			    <field name="parse_state"/>
+			    <field name="state"/>
+			    <field name="state_message"/>
 	    	    </field>
 	    		
 	        </field>
 	    </record>
+
+        <record id="view_external_attachment_tree" model="ir.ui.view">
+            <field name="model">ir.attachment</field>
+            <field name="arch" type="xml">
+                <tree string="Attachments" >
+                    <field name="name"/>
+                    <field name="datas_fname"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                    <field name="type"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_attachment" model="ir.actions.act_window">
+            <field name="name">Attachments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="ir_attachment_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_external_attachment_tree"/>
+            <field name="act_window_id" ref="action_attachment"/>
+        </record>
+
+        <menuitem id="menu_ir_attachment" 
+            parent="menu_file_exchange"
+            sequence="20"
+            action="action_attachment"/>
 
     </data>
 </openerp>
