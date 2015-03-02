@@ -21,7 +21,7 @@
 {
     "name": "Preview attachments",
     "version": "1.1",
-    "author": "Therp BV",
+    "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "complexity": "normal",
     'summary': 'Preview attachments supported by Viewer.js',
