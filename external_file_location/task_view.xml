@@ -13,7 +13,7 @@
                             <field name="location_id" colspan="4"/>
                             <field name="filename" colspan="4"/>
                             <field name="filepath" colspan="4"/>
-                            <field name="attachment_id" colspan="4"/>
+                            <field name="attachment_ids" colspan="4"/>
                             <button name="run" type="object" string="Run"/>
                         </group>
                     </sheet>

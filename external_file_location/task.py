@@ -34,7 +34,8 @@ class Task(models.Model):
     filename = fields.Char()
     filepath = fields.Char()
     location_id = fields.Many2one('external.file.location', string='Location')
-    attachment_id = fields.Many2one('ir.attachment', string='Attachment')
+    attachment_ids = fields.One2many('ir.attachment', 'task_id',
+                                    string='Attachment')
 
     def _get_method(self):
         res = []
@@ -45,7 +46,14 @@ class Task(models.Model):
                 res.append(cls_info)
         return res
 
-    @api.multi
+    @api.model
+    def _run(self, domain=None):
+        if not domain:
+            domain = []
+        tasks = self.env['external.file.task'].search(domain)
+        tasks.run()
+
+    @api.one
     def run(self):
         for cls in itersubclasses(AbstractTask):
             if cls._synchronize_type and \

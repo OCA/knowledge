@@ -42,7 +42,7 @@ class FtpTask(AbstractTask):
         self.port = config.get('port', '')
         self.allow_dir_creation = config.get('allow_dir_creation', '')
         self.file_name = config.get('file_name', '')
-        self.path = config.get('path', '')
+        self.path = config.get('path', './')
         self.move_path = config.get('move_path', '')
         self.delete_file = config.get('delete_file', False)
         self.attachment_id = config.get('attachment_id', False)
@@ -138,6 +138,7 @@ class FtpExportTask(FtpTask):
                 fileobj.write(filedata)
                 _logger.info('wrote %s, size %d', target_name, len(filedata))
             self.attachment_id.state = 'done'
+            self.attachment_id.state_message = ''
         except FTPIOError:
             self.attachment_id.state = 'failed'
             self.attachment_id.state_message = (

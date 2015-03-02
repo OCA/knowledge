@@ -38,6 +38,7 @@
      'menu.xml',
      'location_view.xml',
      'task_view.xml',
+     'cron.xml',
  ],
  'installable': True,
  'application': True,
