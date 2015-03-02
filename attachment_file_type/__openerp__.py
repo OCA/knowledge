@@ -21,7 +21,7 @@
 {
     "name": "File types for attachments",
     "version": "1.0",
-    "author": "Therp BV",
+    "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "description": """
 File types for attachments

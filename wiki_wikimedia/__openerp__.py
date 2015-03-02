@@ -26,7 +26,7 @@
     'description': """
     Replace the standard parser by one that understands (more) wikimedia syntax
     """,
-    'author': 'Therp BV',
+    'author': "Therp BV,Odoo Community Association (OCA)",
     'website': 'http://therp.nl',
     'depends': ['wiki'],
     'init_xml': [],
