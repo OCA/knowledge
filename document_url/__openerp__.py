@@ -27,7 +27,7 @@
     'description': """
 Module that allows to attach an URL as a document.
     """,
-    'author': 'Serv. Tecnolog. Avanzados - Pedro M. Baeza',
+    'author': "Serv. Tecnolog. Avanzados - Pedro M. Baeza,Odoo Community Association (OCA)",
     'website': 'http://www.serviciosbaeza.com',
     'depends': [
         'document',
