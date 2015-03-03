@@ -49,8 +49,8 @@ class IrAttachment(Model):
                 try:
                     import magic
                     ms = magic.open(
-                        hasattr(magic, 'MAGIC_MIME_TYPE')
-                        and magic.MAGIC_MIME_TYPE or magic.MAGIC_MIME)
+                        hasattr(magic, 'MAGIC_MIME_TYPE') and
+                        magic.MAGIC_MIME_TYPE or magic.MAGIC_MIME)
                     ms.load()
                     mimetype = ms.buffer(
                         base64.b64decode(this[binary_field]))
