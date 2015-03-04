@@ -28,8 +28,9 @@ class IrAttachment(Model):
              load='_classic_read'):
         '''inject the extra field we need in the web client. This saves us a
         couple of extra client side calls'''
-        if fields_to_read == ['name', 'url', 'type', 'create_uid',
-                              'create_date', 'write_uid', 'write_date']:
+        if set(fields_to_read).issuperset(
+                ['name', 'url', 'type', 'create_uid', 'create_date',
+                 'write_uid', 'write_date']):
             fields_to_read = fields_to_read + ['parent_id']
         result = super(IrAttachment, self).read(
             cr, uid, ids, fields_to_read=fields_to_read, context=context,
