@@ -67,7 +67,8 @@ class Task(models.Model):
                 'allow_dir_creation': False,
                 'file_name': self.filename,
                 'path': self.filepath,
-                'attachment_id': self.attachment_id,
+                'attachment_ids': self.attachment_ids,
+                'task': self,
                 }
         conn = method_class(self.env, config)
         conn.run()

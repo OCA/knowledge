@@ -11,13 +11,9 @@ class AbstractTask(object):
                 {
                     'name': filename,
                     'datas': b64encode(data),
-                    'datas_fname': filename
+                    'datas_fname': filename,
+                    'task_id': self.task.id,
+                    'location_id': self.task.location_id.id
                 }
                 )
         return ir_attachment_id
-
-    # def load_file(self, file_id):
-    #     f = self.session.browse('impexp.file', file_id)
-    #     if not f.attachment_id.datas:
-    #         return None
-    #     return b64decode(f.attachment_id.datas)

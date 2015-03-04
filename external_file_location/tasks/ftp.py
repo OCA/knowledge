@@ -42,10 +42,11 @@ class FtpTask(AbstractTask):
         self.port = config.get('port', '')
         self.allow_dir_creation = config.get('allow_dir_creation', '')
         self.file_name = config.get('file_name', '')
-        self.path = config.get('path', './')
+        self.path = config.get('path', '.')
         self.move_path = config.get('move_path', '')
         self.delete_file = config.get('delete_file', False)
-        self.attachment_id = config.get('attachment_id', False)
+        self.attachment_ids = config.get('attachment_ids', False)
+        self.task = config.get('task', False)
 
 
 class FtpImportTask(FtpTask):
@@ -91,15 +92,16 @@ class FtpImportTask(FtpTask):
                              self.pwd,
                              session_factory=port_session_factory) as ftp_conn:
 
-            file_list = ftp_conn.listdir(self.path)
+            path = self.path or '.'
+            file_list = ftp_conn.listdir(path)
             downloaded_files = []
             for ftpfile in file_list:
-                source_name = self._source_name(self.path, self.file_name)
+                source_name = self._source_name(path, self.file_name)
                 if ftp_conn.path.isfile(source_name) and \
                         ftpfile == self.file_name:
                     self._handle_new_source(
                             ftp_conn,
-                            self.path,
+                            path,
                             self.file_name,
                             self.move_path)
                     downloaded_files.append(self.file_name)
@@ -148,7 +150,7 @@ class FtpExportTask(FtpTask):
         return upload_directory + '/' + filename
 
     def _upload_file(self, host, port, user, pwd, path, filename, filedata):
-        upload_directory = path or './'
+        upload_directory = path or '.'
         port_session_factory = ftputil.session.session_factory(port=port)
         with ftputil.FTPHost(host, user, pwd,
                              session_factory=port_session_factory) as ftp_conn:
@@ -161,6 +163,10 @@ class FtpExportTask(FtpTask):
                 self._handle_new_target(ftp_conn, target_name, filedata)
 
     def run(self, async=True):
-        self._upload_file(self.host, self.port, self.user, self.pwd, self.path,
-                          self.attachment_id.datas_fname,
-                          b64decode(self.attachment_id.datas))
+        for attachment in self.attachment_ids:
+            if attachment.state in ('pending', 'failed'):
+                self.attachment_id = attachment
+                self._upload_file(self.host, self.port, self.user, self.pwd,
+                                  self.path,
+                                  attachment.datas_fname,
+                                  b64decode(attachment.datas))

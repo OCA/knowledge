@@ -31,7 +31,7 @@ class IrAttachment(models.Model):
         ('pending', 'Pending'),
         ('failed', 'Failed'),
         ('done', 'Done'),
-        ], readonly=True, required=True, default='pending')
+        ], readonly=False, required=True, default='pending')
     state_message = fields.Text()
     task_id = fields.Many2one('external.file.task', string='Task')
     location_id = fields.Many2one('external.file.location', string='Location',
