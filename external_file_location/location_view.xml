@@ -8,13 +8,17 @@
                 <form string="Location" version="7.0">
                     <sheet>
                         <group col="4">
-                            <field name="name" select="1" colspan="4"/>
+                            <div class="oe_title" style="width: 390px;" colspan="4">
+                                <label class="oe_edit_only" for="name" string="Location Name"/>
+                                <h1><field name="name" class="oe_inline"/></h1>
+                            </div>
+                            <newline/>
                             <field name="protocol" colspan="2"/>
                             <newline/>
                             <field name="address" colspan="2"/>
                             <field name="port" colspan="2"/>
-                            <field name="login" colspan="4"/>
-                            <field name="password" password="1" colspan="4"/>
+                            <field name="login" colspan="2"/>
+                            <field name="password" password="1" colspan="2"/>
                             <separator string="Tasks" colspan="4"/>
                             <field name="task_ids" colspan="4" nolabel="1">
                                 <tree>
@@ -22,7 +26,7 @@
                                     <field name="method"/>
                                     <field name="filename"/>
                                     <field name="filepath"/>
-                                    <button name="run" type="object" string="Run"/>
+                                    <button name="run" type="object" string="Run" icon="gtk-execute"/>
                                 </tree>
                             </field>
                         </group>

@@ -8,14 +8,17 @@
                 <form string="Tasks" version="7.0">
                     <sheet>
                         <group col="4">
-                            <field name="name" select="1" colspan="4"/>
-                            <field name="method" colspan="4"/>
-                            <field name="location_id" colspan="4"/>
+                            <div class="oe_title" style="width: 390px;" colspan="4">
+                                <label class="oe_edit_only" for="name" string="Product Name"/>
+                                <h1><field name="name" class="oe_inline"/></h1>
+                            </div>
+                            <field name="method" colspan="2"/>
+                            <field name="location_id" colspan="2"/>
                             <field name="filename" colspan="4"/>
                             <field name="filepath" colspan="4"/>
                             <separator string="Attachments" colspan="4"/>
                             <field name="attachment_ids" colspan="4" nolabel="1"/>
-                            <button name="run" type="object" string="Run"/>
+                            <button name="run" type="object" string="Run" icon="gtk-execute"/>
                         </group>
                     </sheet>
                 </form>
