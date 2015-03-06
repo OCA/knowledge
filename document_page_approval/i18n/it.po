@@ -18,18 +18,18 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 #. module: document_page_approval
 #: field:document.page,approval_required:0
 msgid "Require approval"
-msgstr ""
+msgstr "Richiede approvazione"
 
 #. module: document_page_approval
 #: field:document.page,is_parent_approval_required:0
 #: field:document.page.history,is_parent_approval_required:0
 msgid "parent approval"
-msgstr ""
+msgstr "Approvazione padre"
 
 #. module: document_page_approval
 #: model:email.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -44,67 +44,77 @@ msgid "\n"
 "--<br/>\n"
 "OpenERP</p>\n"
 "            "
-msgstr ""
+msgstr "\n"
+"<p>Salve,</p>\n"
+"\n"
+"<p>La pagina \"${object.page_id.name}\" è stata modificata e necessita di approvazione.</p>\n"
+"\n"
+"<p>Puoi accedere alla nuova versione qui : <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
+" \n"
+"<p>Buona giornata.<br/>\n"
+"--<br/>\n"
+"OpenERP</p>\n"
+"            "
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr ""
+msgstr "Pagina Documento"
 
 #. module: document_page_approval
 #: field:document.page,approved_uid:0
 #: field:document.page.history,approved_uid:0
 msgid "Approved By"
-msgstr ""
+msgstr "Approvato da"
 
 #. module: document_page_approval
 #: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of \"${object.page_id.name}\" to approve"
-msgstr ""
+msgstr "Nuova versione di \"${object.page_id.name}\" da approvare"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Bozza"
 
 #. module: document_page_approval
 #: field:document.page.history,get_page_url:0
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_page_approval
 #: field:document.page,approved_date:0
 #: field:document.page.history,approved_date:0
 msgid "Approved Date"
-msgstr ""
+msgstr "Data Approvazione"
 
 #. module: document_page_approval
 #: field:document.page.history,can_user_approve_page:0
 msgid "can user approve this page"
-msgstr ""
+msgstr "l'utente può approvare questa pagina"
 
 #. module: document_page_approval
 #: field:document.page,approver_gid:0
 msgid "Approver group"
-msgstr ""
+msgstr "Gruppo Approvatori"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr ""
+msgstr "Storico Pagina Documento"
 
 #. module: document_page_approval
 #: view:document.page.history:0
 msgid "Approve"
-msgstr ""
+msgstr "Approva"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr ""
+msgstr "Approvato"
 
 #. module: document_page_approval
 #: field:document.page.history,get_approvers_email:0
 msgid "get all approvers email"
-msgstr ""
+msgstr "ottieni tutte le email degli approvatori"
 
