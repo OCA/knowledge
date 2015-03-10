@@ -17,7 +17,6 @@
             <field name="flow_stop">True</field>
         </record>
 
-        <!-- 
         <record model="workflow.activity" id="act_draft">
             <field name="wkf_id"
                    ref="wkf_document_page_history_aproval" />
@@ -38,7 +37,6 @@
             <field name="act_to" ref="act_draft" />
             <field name="signal">edit</field>
         </record>
-        -->
 
     </data>
 
