@@ -32,7 +32,7 @@ Web pages
     'website': 'http://www.openerp.com/',
     'license': 'AGPL-3',
     'depends': [
-        'knowledge'
+        'knowledge',
     ],
     'data': [
         'wizard/document_page_create_menu_view.xml',
