@@ -18,8 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+import logging
 import difflib
 from openerp import models, fields, api, _
+
+_logger = logging.getLogger(__name__)
 
 
 class document_page(models.Model):
@@ -177,3 +180,14 @@ class document_page_history(models.Model):
                 "Revision-{}".format(v2),
                 context=True
             )
+
+    def __getattr__(self, attr):
+        """Return a dummy callabale"""
+        if attr in ['_sql', 'init', '_ids']:
+            raise AttributeError
+
+        _logger.warning(
+            "Trying to access attribute %s on document_page_history",
+            attr
+        )
+        return (lambda *a, **b: None)
