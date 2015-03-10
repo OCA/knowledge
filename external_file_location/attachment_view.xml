@@ -25,8 +25,6 @@
                     <field name="task_id"/>
                     <field name="location_id"/>
                     <field name="type"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                    <field name="create_uid"/>
                     <field name="create_date"/>
                     <field name="state"/>
                 </tree>

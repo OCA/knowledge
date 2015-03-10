@@ -32,6 +32,7 @@
  """,
  'depends': [
      'base',
+     'ir_attachment_metadata',
  ],
  'data': [
      'attachment_view.xml',

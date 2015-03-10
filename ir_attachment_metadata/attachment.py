@@ -23,6 +23,7 @@
 from openerp import models, fields, api, _
 from openerp.exceptions import Warning
 import hashlib
+from base64 import b64decode
 
 
 class IrAttachment(models.Model):
@@ -34,7 +35,7 @@ class IrAttachment(models.Model):
     @api.depends('datas', 'external_hash')
     def _compute_hash(self):
         if self.datas:
-            self.internal_hash = hashlib.md5(self.datas).hexdigest()
+            self.internal_hash = hashlib.md5(b64decode(self.datas)).hexdigest()
         if self.external_hash and self.internal_hash != self.external_hash:
             raise Warning(_('File corrupted'),
                           _("Something was wrong with the retreived file, "

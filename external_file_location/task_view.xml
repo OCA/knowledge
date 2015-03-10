@@ -16,6 +16,9 @@
                             <field name="location_id" colspan="2"/>
                             <field name="filename" colspan="4"/>
                             <field name="filepath" colspan="4"/>
+                            <field name="move_file" colspan="2"/>
+                            <field name="move_path" colspan="2"/>
+                            <field name="delete_file" colspan="2"/>
                             <separator string="Attachments" colspan="4"/>
                             <field name="attachment_ids" colspan="4" nolabel="1"/>
                             <button name="run" type="object" string="Run" icon="gtk-execute"/>
@@ -33,6 +36,7 @@
                     <field name="method"/>
                     <field name="filename"/>
                     <field name="filepath"/>
+                    <button name="run" type="object" string="Run" icon="gtk-execute"/>
                 </tree>
             </field>
         </record>

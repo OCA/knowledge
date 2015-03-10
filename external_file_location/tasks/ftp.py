@@ -25,6 +25,8 @@ import ftputil
 import ftputil.session
 from ftputil.error import FTPIOError
 import logging
+from base64 import b64encode
+import hashlib
 _logger = logging.getLogger(__name__)
 
 
@@ -44,9 +46,11 @@ class FtpTask(AbstractTask):
         self.file_name = config.get('file_name', '')
         self.path = config.get('path', '.')
         self.move_path = config.get('move_path', '')
+        self.move_file = config.get('move_file', False)
         self.delete_file = config.get('delete_file', False)
         self.attachment_ids = config.get('attachment_ids', False)
         self.task = config.get('task', False)
+        self.ext_hash = False
 
 
 class FtpImportTask(FtpTask):
@@ -85,6 +89,11 @@ class FtpImportTask(FtpTask):
         _logger.info('Deleting file %s' % source)
         ftp_conn.remove(source)
 
+    @staticmethod
+    def _get_hash(file_name, ftp_conn):
+        with ftp_conn.open(file_name, 'rb') as f:
+            return hashlib.md5(f.read()).hexdigest()
+
     def run(self):
         port_session_factory = ftputil.session.session_factory(
             port=self.port)
@@ -99,6 +108,7 @@ class FtpImportTask(FtpTask):
                 source_name = self._source_name(path, self.file_name)
                 if ftp_conn.path.isfile(source_name) and \
                         ftpfile == self.file_name:
+                    self.ext_hash = self._get_hash(source_name, ftp_conn)
                     self._handle_new_source(
                             ftp_conn,
                             path,
@@ -110,7 +120,7 @@ class FtpImportTask(FtpTask):
             if self.delete_file:
                 for ftpfile in downloaded_files:
                     self._delete_file(ftp_conn,
-                                      self._source_name(self.path,
+                                      self._source_name(path,
                                                         ftpfile))
             elif self.move_path:
                 if not ftp_conn.path.exists(self.move_path):
@@ -118,7 +128,7 @@ class FtpImportTask(FtpTask):
                 for ftpfile in downloaded_files:
                     self._move_file(
                         ftp_conn,
-                        self._source_name(self.path, ftpfile),
+                        self._source_name(path, ftpfile),
                         self._source_name(self.move_path, ftpfile))
 
 

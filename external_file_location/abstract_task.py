@@ -13,7 +13,8 @@ class AbstractTask(object):
                     'datas': b64encode(data),
                     'datas_fname': filename,
                     'task_id': self.task.id,
-                    'location_id': self.task.location_id.id
+                    'location_id': self.task.location_id.id,
+                    'external_hash': self.ext_hash
                 }
                 )
         return ir_attachment_id

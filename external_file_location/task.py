@@ -36,6 +36,9 @@ class Task(models.Model):
     location_id = fields.Many2one('external.file.location', string='Location')
     attachment_ids = fields.One2many('ir.attachment', 'task_id',
                                     string='Attachment')
+    delete_file = fields.Boolean(string='Delete file')
+    move_file = fields.Boolean(string='Move file')
+    move_path = fields.Char(string='Move path')
 
     def _get_method(self):
         res = []
@@ -69,6 +72,9 @@ class Task(models.Model):
                 'path': self.filepath,
                 'attachment_ids': self.attachment_ids,
                 'task': self,
+                'move_path': self.move_path,
+                'delete_file': self.delete_file,
+                'move_file': self.move_file,
                 }
         conn = method_class(self.env, config)
         conn.run()
