@@ -1,2 +1,4 @@
 # ir_attachment_exchange
-Working! (with FTP only for the moment)
+It's now totally functionnal with FTP protocol
+
+Any remarks, advices or critics are welcome to make this module better.
