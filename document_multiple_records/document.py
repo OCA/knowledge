@@ -51,6 +51,29 @@ class document_file(orm.Model):
                 data[attachment.id] = False
         return data
 
+    def _get_related_model_documents(
+            self, cr, uid, ids, field_name, args, context=None):
+        """ This function allows to get only related documents with a specific
+        model and model_id.
+        """
+        context = context or {}
+        ir_attachment_doc_obj = self.pool.get('ir.attachment.document')
+        res = [('id', 'in', [])]
+        # Format query with the res_model and res_id to search
+        # in ir.attachment.document model.
+        query = [
+            ('res_model', '=', context.get('model')),
+            ('res_id', '=', context.get('model_id'))]
+        ir_attachment_doc_ids = ir_attachment_doc_obj.search(
+            cr, uid, query, context=context)
+
+        ir_attachment_ids = self.search(
+            cr, uid, [
+                ('attachment_document_ids.id', 'in', ir_attachment_doc_ids)],
+            context=context)
+        res = [('id', 'in', ir_attachment_ids)]
+        return res
+
     _columns = {
         'attachment_document_ids': fields.one2many('ir.attachment.document',
                                                    'attachment_id',
@@ -58,6 +81,9 @@ class document_file(orm.Model):
         'res_name': fields.function(_name_get_resname, type='char',
                                     size=128, string='Resource Name',
                                     store=True),
+        'related_document': fields.function(
+            lambda self, *a, **kw: True, type='boolean',
+            fnct_search=_get_related_model_documents),
     }
 
     def create(self, cr, uid, data, context=None):
