@@ -183,6 +183,9 @@ class document_page_history(models.Model):
 
     def __getattr__(self, attr):
         """Return a dummy callabale"""
+        if attr in ['_sql']:
+            raise AttributeError
+
         _logger.warning(
             "Trying to access attribute %s on document_page_history",
             attr
