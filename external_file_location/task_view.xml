@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_task_form" model="ir.ui.view">
+            <field name="model">external.file.task</field>
+            <field name="arch" type="xml">
+                <form string="Tasks" version="7.0">
+                    <sheet>
+                        <field name="method_type" invisible="1"/>
+                        <group col="4">
+                            <div class="oe_title" style="width: 390px;" colspan="4">
+                                <label class="oe_edit_only" for="name" string="Product Name"/>
+                                <h1><field name="name" class="oe_inline"/></h1>
+                            </div>
+                            <field name="method" colspan="2"/>
+                            <field name="location_id" colspan="2"/>
+                            <field name="filename" colspan="4" attrs="{'invisible':[('method_type','!=','import')]}"/>
+                            <field name="filepath" colspan="4" />
+                            <field name="move_file" colspan="2" attrs="{'invisible':[('method_type','!=','import')]}"/>
+                            <field name="move_path" colspan="2" attrs="{'invisible':['|', ('move_file','=',False), ('method_type','!=','import')]}"/>
+                            <field name="delete_file" colspan="2" attrs="{'invisible':[('method_type','!=','import')]}"/>
+                            <group attrs="{'invisible':[('method_type','!=','export')]}" colspan="4">
+                                <separator string="Attachments" colspan="4" />
+                                <field name="attachment_ids" colspan="4" nolabel="1"/>
+                            </group>
+                            <button name="run" type="object" string="Run" icon="gtk-execute"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_task_tree" model="ir.ui.view">
+            <field name="model">external.file.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tasks" >
+                    <field name="name" select="1"/>
+                    <field name="method"/>
+                    <field name="filename"/>
+                    <field name="filepath"/>
+                    <button name="run" type="object" string="Run" icon="gtk-execute"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_task" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">external.file.task</field>
+            <field name="view_type">form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="menu_external_file_task" 
+            parent="menu_file_exchange"
+            sequence="20"
+            action="action_task"/>
+
+    </data>
+</openerp>
