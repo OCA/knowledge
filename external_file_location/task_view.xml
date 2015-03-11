@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Tasks" version="7.0">
                     <sheet>
+                        <field name="method_type" invisible="1"/>
                         <group col="4">
                             <div class="oe_title" style="width: 390px;" colspan="4">
                                 <label class="oe_edit_only" for="name" string="Product Name"/>
@@ -14,13 +15,15 @@
                             </div>
                             <field name="method" colspan="2"/>
                             <field name="location_id" colspan="2"/>
-                            <field name="filename" colspan="4"/>
-                            <field name="filepath" colspan="4"/>
-                            <field name="move_file" colspan="2"/>
-                            <field name="move_path" colspan="2"/>
-                            <field name="delete_file" colspan="2"/>
-                            <separator string="Attachments" colspan="4"/>
-                            <field name="attachment_ids" colspan="4" nolabel="1"/>
+                            <field name="filename" colspan="4" attrs="{'invisible':[('method_type','!=','import')]}"/>
+                            <field name="filepath" colspan="4" />
+                            <field name="move_file" colspan="2" attrs="{'invisible':[('method_type','!=','import')]}"/>
+                            <field name="move_path" colspan="2" attrs="{'invisible':['|', ('move_file','=',False), ('method_type','!=','import')]}"/>
+                            <field name="delete_file" colspan="2" attrs="{'invisible':[('method_type','!=','import')]}"/>
+                            <group attrs="{'invisible':[('method_type','!=','export')]}" colspan="4">
+                                <separator string="Attachments" colspan="4" />
+                                <field name="attachment_ids" colspan="4" nolabel="1"/>
+                            </group>
                             <button name="run" type="object" string="Run" icon="gtk-execute"/>
                         </group>
                     </sheet>

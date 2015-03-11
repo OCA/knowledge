@@ -31,6 +31,7 @@ class Task(models.Model):
 
     name = fields.Char()
     method = fields.Selection(selection='_get_method')
+    method_type = fields.Char()
     filename = fields.Char()
     filepath = fields.Char()
     location_id = fields.Many2one('external.file.location', string='Location')
@@ -48,6 +49,13 @@ class Task(models.Model):
                             cls._name + ' ' + cls._synchronize_type)
                 res.append(cls_info)
         return res
+
+    @api.onchange('method')
+    def onchage_method(self):
+        if 'import' in self.method:
+            self.method_type = 'import'
+        elif 'export' in self.method:
+            self.method_type = 'export'
 
     @api.model
     def _run(self, domain=None):
