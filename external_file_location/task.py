@@ -36,7 +36,7 @@ class Task(models.Model):
     filepath = fields.Char()
     location_id = fields.Many2one('external.file.location', string='Location')
     attachment_ids = fields.One2many('ir.attachment', 'task_id',
-                                    string='Attachment')
+                                     string='Attachment')
     delete_file = fields.Boolean(string='Delete file')
     move_file = fields.Boolean(string='Move file')
     move_path = fields.Char(string='Move path')
@@ -69,21 +69,21 @@ class Task(models.Model):
     def run(self):
         for cls in itersubclasses(AbstractTask):
             if cls._synchronize_type and \
-              cls._key + '_' + cls._synchronize_type == self.method:
-                method_class = cls
+                    cls._key + '_' + cls._synchronize_type == self.method:
+                        method_class = cls
         config = {
-                'host': self.location_id.address,
-                'user': self.location_id.login,
-                'pwd': self.location_id.password,
-                'port': self.location_id.port,
-                'allow_dir_creation': False,
-                'file_name': self.filename,
-                'path': self.filepath,
-                'attachment_ids': self.attachment_ids,
-                'task': self,
-                'move_path': self.move_path,
-                'delete_file': self.delete_file,
-                'move_file': self.move_file,
-                }
+            'host': self.location_id.address,
+            'user': self.location_id.login,
+            'pwd': self.location_id.password,
+            'port': self.location_id.port,
+            'allow_dir_creation': False,
+            'file_name': self.filename,
+            'path': self.filepath,
+            'attachment_ids': self.attachment_ids,
+            'task': self,
+            'move_path': self.move_path,
+            'delete_file': self.delete_file,
+            'move_file': self.move_file,
+            }
         conn = method_class(self.env, config)
         conn.run()
