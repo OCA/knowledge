@@ -21,8 +21,8 @@
 ###############################################################################
 
 from openerp import models, fields
-from abstract_task import AbstractTask
-from helper import itersubclasses
+from knowledge.external_file_location.abstract_task import AbstractTask
+from knowledge.external_file_location.helper import itersubclasses
 
 class Location(models.Model):
     _name = 'external.file.location'

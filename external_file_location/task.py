@@ -21,8 +21,8 @@
 ###############################################################################
 
 from openerp import models, fields, api
-from helper import itersubclasses
-from abstract_task import AbstractTask
+from knowledge.external_file_location.helper import itersubclasses
+from knowledge.external_file_location.abstract_task import AbstractTask
 
 
 class Task(models.Model):
