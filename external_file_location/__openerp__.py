@@ -35,8 +35,8 @@
      'ir_attachment_metadata',
  ],
  'data': [
-     'attachment_view.xml',
      'menu.xml',
+     'attachment_view.xml',
      'location_view.xml',
      'task_view.xml',
      'cron.xml',

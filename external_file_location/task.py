@@ -21,8 +21,8 @@
 ###############################################################################
 
 from openerp import models, fields, api
-from knowledge.external_file_location.helper import itersubclasses
-from knowledge.external_file_location.abstract_task import AbstractTask
+from .helper import itersubclasses
+from .abstract_task import AbstractTask
 
 
 class Task(models.Model):
@@ -52,10 +52,11 @@ class Task(models.Model):
 
     @api.onchange('method')
     def onchage_method(self):
-        if 'import' in self.method:
-            self.method_type = 'import'
-        elif 'export' in self.method:
-            self.method_type = 'export'
+        if self.method:
+            if 'import' in self.method:
+                self.method_type = 'import'
+            elif 'export' in self.method:
+                self.method_type = 'export'
 
     @api.model
     def _run(self, domain=None):
