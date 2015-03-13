@@ -20,7 +20,7 @@
 #
 ###############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, api
 from .abstract_task import AbstractTask
 from .helper import itersubclasses
 
@@ -28,11 +28,11 @@ class Location(models.Model):
     _name = 'external.file.location'
     _description = 'Description'
 
-    name = fields.Char(string='Name')
-    protocol = fields.Selection(selection='_get_protocol')
-    address = fields.Char(string='Address')
-    port = fields.Integer()
-    login = fields.Char()
+    name = fields.Char(string='Name', required=True)
+    protocol = fields.Selection(selection='_get_protocol', required=True)
+    address = fields.Char(string='Address', required=True)
+    port = fields.Integer(required=True)
+    login = fields.Char(required=True)
     password = fields.Char()
     task_ids = fields.One2many('external.file.task', 'location_id')
 
@@ -44,4 +44,10 @@ class Location(models.Model):
                 cls_info = (cls._key, cls._name)
                 res.append(cls_info)
         return res
+
+    @api.onchange('protocol')
+    def get_default_port(self):
+        for cls in itersubclasses(AbstractTask):
+            if cls._key == self.protocol:
+                self.port = cls._default_port
 

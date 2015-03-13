@@ -27,13 +27,14 @@
  'website': 'www.akretion.com',
  'license': 'AGPL-3',
  'category': 'Generic Modules',
- 'description': """
- File exchange system with multiple protocol (SFTP, FTP, Filestore)
- """,
  'depends': [
-     'base',
      'ir_attachment_metadata',
  ],
+ 'external_dependencies': {
+     'python': [
+         'ftputil',
+     ],
+ },
  'data': [
      'menu.xml',
      'attachment_view.xml',

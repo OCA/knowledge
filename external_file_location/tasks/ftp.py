@@ -25,8 +25,7 @@ import ftputil
 import ftputil.session
 from ftputil.error import FTPIOError
 import logging
-from base64 import b64encode
-import hashlib
+import os
 _logger = logging.getLogger(__name__)
 
 
@@ -35,6 +34,7 @@ class FtpTask(AbstractTask):
     _key = 'ftp'
     _name = 'FTP'
     _synchronize_type = None
+    _default_port = 21
 
     def __init__(self, env, config):
         self.env = env
@@ -44,13 +44,13 @@ class FtpTask(AbstractTask):
         self.port = config.get('port', '')
         self.allow_dir_creation = config.get('allow_dir_creation', '')
         self.file_name = config.get('file_name', '')
-        self.path = config.get('path', '.')
+        self.path = config.get('path') or '.'
         self.move_path = config.get('move_path', '')
-        self.move_file = config.get('move_file', False)
-        self.delete_file = config.get('delete_file', False)
+        self.after_import = config.get('after_import', False)
         self.attachment_ids = config.get('attachment_ids', False)
         self.task = config.get('task', False)
         self.ext_hash = False
+        self.md5_check = config.get('md5_check', False)
 
 
 class FtpImportTask(FtpTask):
@@ -77,22 +77,55 @@ class FtpImportTask(FtpTask):
 
     def _source_name(self, download_directory, file_name):
         """helper to get the full name"""
-        return download_directory + '/' + file_name
+        return os.path.join(download_directory, file_name)
 
     def _move_file(self, ftp_conn, source, target):
         """Moves a file on the FTP server"""
         _logger.info('Moving file %s %s' % (source, target))
         ftp_conn.rename(source, target)
+        if self.md5_check:
+            ftp_conn.rename(source + '.md5', target + '.md5')
 
     def _delete_file(self, ftp_conn, source):
         """Deletes a file from the FTP server"""
         _logger.info('Deleting file %s' % source)
         ftp_conn.remove(source)
+        if self.md5_check:
+            ftp_conn.remove(source + '.md5')
 
-    @staticmethod
-    def _get_hash(file_name, ftp_conn):
-        with ftp_conn.open(file_name, 'rb') as f:
-            return hashlib.md5(f.read()).hexdigest()
+    def _get_hash(self, file_name, ftp_conn):
+        hash_file_name = file_name + '.md5'
+        with ftp_conn.open(hash_file_name, 'rb') as f:
+            return f.read().rstrip('\r\n')
+
+    def _get_files(self, conn, path):
+        process_files = []
+        files_list = conn.listdir(path)
+        for file in files_list:
+            if file == self.file_name:
+                source_name = self._source_name(self.path, self.file_name)
+                process_files.append((file, source_name))
+        return process_files
+
+    def _process_file(self, conn, file_to_process):
+            if self.md5_check:
+                self.ext_hash = self._get_hash(file_to_process[1], conn)
+            self._handle_new_source(
+                conn,
+                self.path,
+                self.file_name,
+                self.move_path)
+
+            # Move/delete files only after all files have been processed.
+            if self.after_import == 'delete':
+                self._delete_file(conn, file_to_process[1])
+            elif self.after_import == 'move':
+                if not conn.path.exists(self.move_path):
+                    conn.mkdir(self.move_path)
+                self._move_file(
+                    conn,
+                    file_to_process[1],
+                    self._source_name(self.move_path, file_to_process[0]))
 
     def run(self):
         port_session_factory = ftputil.session.session_factory(
@@ -102,34 +135,9 @@ class FtpImportTask(FtpTask):
                              session_factory=port_session_factory) as ftp_conn:
 
             path = self.path or '.'
-            file_list = ftp_conn.listdir(path)
-            downloaded_files = []
-            for ftpfile in file_list:
-                source_name = self._source_name(path, self.file_name)
-                if ftp_conn.path.isfile(source_name) and \
-                        ftpfile == self.file_name:
-                    self.ext_hash = self._get_hash(source_name, ftp_conn)
-                    self._handle_new_source(
-                            ftp_conn,
-                            path,
-                            self.file_name,
-                            self.move_path)
-                    downloaded_files.append(self.file_name)
-
-            # Move/delete files only after all files have been processed.
-            if self.delete_file:
-                for ftpfile in downloaded_files:
-                    self._delete_file(ftp_conn,
-                                      self._source_name(path,
-                                                        ftpfile))
-            elif self.move_path:
-                if not ftp_conn.path.exists(self.move_path):
-                    ftp_conn.mkdir(self.move_path)
-                for ftpfile in downloaded_files:
-                    self._move_file(
-                        ftp_conn,
-                        self._source_name(path, ftpfile),
-                        self._source_name(self.move_path, ftpfile))
+            files_to_process = self._get_files(ftp_conn, path)
+            for file_to_process in files_to_process:
+                self._process_file(ftp_conn, file_to_process)
 
 
 class FtpExportTask(FtpTask):

@@ -41,7 +41,6 @@ def itersubclasses(cls, _seen=None):
     >>> [cls.__name__ for cls in itersubclasses(object)] #doctest: +ELLIPSIS
     ['type', ...'tuple', ...]
     """
-    #import pdb; pdb.set_trace()
     if not isinstance(cls, type):
         raise TypeError('itersubclasses must be called with '
                'new-style classes, not %.100r' % cls

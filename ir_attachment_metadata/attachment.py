@@ -2,6 +2,8 @@
 ###############################################################################
 #
 #   Module for OpenERP
+#   Copyright 2011-2012 Camptocamp SA
+#   @author: Joel Grand-Guillaume
 #   Copyright (C) 2015 Akretion (http://www.akretion.com).
 #   @author Valentin CHEMIERE <valentin.chemiere@akretion.com>
 #

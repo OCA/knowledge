@@ -29,17 +29,25 @@ class Task(models.Model):
     _name = 'external.file.task'
     _description = 'Description'
 
-    name = fields.Char()
-    method = fields.Selection(selection='_get_method')
+    name = fields.Char(required=True)
+    method = fields.Selection(selection='_get_method', required=True,
+                              help='procotol and trasmitting info')
     method_type = fields.Char()
-    filename = fields.Char()
-    filepath = fields.Char()
-    location_id = fields.Many2one('external.file.location', string='Location')
+    filename = fields.Char(help='File name which is imported')
+    filepath = fields.Char(help='Path to imported file')
+    location_id = fields.Many2one('external.file.location', string='Location',
+                                  required=True)
     attachment_ids = fields.One2many('ir.attachment', 'task_id',
                                      string='Attachment')
-    delete_file = fields.Boolean(string='Delete file')
-    move_file = fields.Boolean(string='Move file')
-    move_path = fields.Char(string='Move path')
+    move_path = fields.Char(string='Move path',
+                            help='Imported File will be moved to this path')
+    md5_check = fields.Boolean(help='Control file integrity after import with'
+                               ' a md5 file')
+    after_import = fields.Selection(selection='_get_action',
+                                    help='Action after import a file')
+    
+    def _get_action(self):
+        return [('move', 'Move'), ('delete', 'Delete')]
 
     def _get_method(self):
         res = []
@@ -51,7 +59,7 @@ class Task(models.Model):
         return res
 
     @api.onchange('method')
-    def onchage_method(self):
+    def onchange_method(self):
         if self.method:
             if 'import' in self.method:
                 self.method_type = 'import'
@@ -70,7 +78,7 @@ class Task(models.Model):
         for cls in itersubclasses(AbstractTask):
             if cls._synchronize_type and \
                     cls._key + '_' + cls._synchronize_type == self.method:
-                        method_class = cls
+                method_class = cls
         config = {
             'host': self.location_id.address,
             'user': self.location_id.login,
@@ -82,8 +90,8 @@ class Task(models.Model):
             'attachment_ids': self.attachment_ids,
             'task': self,
             'move_path': self.move_path,
-            'delete_file': self.delete_file,
-            'move_file': self.move_file,
+            'after_import': self.after_import,
+            'md5_check': self.md5_check,
             }
         conn = method_class(self.env, config)
         conn.run()
