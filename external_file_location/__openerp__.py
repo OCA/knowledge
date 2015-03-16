@@ -41,6 +41,7 @@
         'location_view.xml',
         'task_view.xml',
         'cron.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': True,

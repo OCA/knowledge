@@ -35,6 +35,7 @@
  ],
  'data': [
      'attachment_view.xml',
+     'security/ir.model.access.csv',
  ],
  'installable': True,
  'application': False,
