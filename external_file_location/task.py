@@ -45,7 +45,7 @@ class Task(models.Model):
                                ' a md5 file')
     after_import = fields.Selection(selection='_get_action',
                                     help='Action after import a file')
-    
+
     def _get_action(self):
         return [('move', 'Move'), ('delete', 'Delete')]
 
