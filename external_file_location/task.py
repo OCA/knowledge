@@ -37,7 +37,7 @@ class Task(models.Model):
     filepath = fields.Char(help='Path to imported file')
     location_id = fields.Many2one('external.file.location', string='Location',
                                   required=True)
-    attachment_ids = fields.One2many('ir.attachment', 'task_id',
+    attachment_ids = fields.One2many('ir.attachment.metadata', 'task_id',
                                      string='Attachment')
     move_path = fields.Char(string='Move path',
                             help='Imported File will be moved to this path')

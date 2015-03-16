@@ -28,11 +28,14 @@ import hashlib
 from base64 import b64decode
 
 
-class IrAttachment(models.Model):
-    _inherit = 'ir.attachment'
+class IrAttachmentMetadata(models.Model):
+    _name = 'ir.attachment.metadata'
+    _inherits = {'ir.attachment': 'attachment_id'}
 
     internal_hash = fields.Char(store=True, compute='_compute_hash')
     external_hash = fields.Char()
+    attachment_id = fields.Many2one('ir.attachment', required=True,
+                                    ondelete='cascade')
 
     @api.depends('datas', 'external_hash')
     def _compute_hash(self):

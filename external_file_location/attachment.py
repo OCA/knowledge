@@ -23,8 +23,8 @@
 from openerp import models, fields
 
 
-class IrAttachment(models.Model):
-    _inherit = 'ir.attachment'
+class IrAttachmentMetadata(models.Model):
+    _inherit = 'ir.attachment.metadata'
 
     sync_date = fields.Datetime()
     state = fields.Selection([

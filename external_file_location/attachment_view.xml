@@ -3,8 +3,8 @@
     <data>
 
         <record id="view_attachment_improved_form" model="ir.ui.view">
-            <field name="model">ir.attachment</field>
-            <field name="inherit_id" ref="base.view_attachment_form" />
+            <field name="model">ir.attachment.metadata</field>
+            <field name="inherit_id" ref="ir_attachment_metadata.view_attachment_improved_form" />
             <field name="arch" type="xml">
             <field name="url" position="after">
                 <field name="sync_date"/>
@@ -17,7 +17,7 @@
         </record>
 
         <record id="view_external_attachment_tree" model="ir.ui.view">
-            <field name="model">ir.attachment</field>
+            <field name="model">ir.attachment.metadata</field>
             <field name="arch" type="xml">
                 <tree string="Attachments" >
                     <field name="name"/>
@@ -32,7 +32,7 @@
         </record>
 
         <record id="view_external_attachment_search" model="ir.ui.view">
-            <field name="model">ir.attachment</field>
+            <field name="model">ir.attachment.metadata</field>
             <field name="arch" type="xml">
                 <search string="Attachments">
                     <field name="name" filter_domain="['|', ('name','ilike',self), ('datas_fname','ilike',self)]" string="Attachment"/>
@@ -68,7 +68,7 @@
         <record id="action_attachment" model="ir.actions.act_window">
             <field name="name">Attachments</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">ir.attachment</field>
+            <field name="res_model">ir.attachment.metadata</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" eval="False"/>
@@ -80,6 +80,13 @@
             <field eval="10" name="sequence"/>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_external_attachment_tree"/>
+            <field name="act_window_id" ref="action_attachment"/>
+        </record>
+
+        <record id="ir_attachment_view3" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_attachment_improved_form"/>
             <field name="act_window_id" ref="action_attachment"/>
         </record>
 
