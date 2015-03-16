@@ -21,27 +21,27 @@
 ###############################################################################
 
 {
- 'name': 'external_file_location',
- 'version': '0.0.1',
- 'author': 'Akretion',
- 'website': 'www.akretion.com',
- 'license': 'AGPL-3',
- 'category': 'Generic Modules',
- 'depends': [
-     'ir_attachment_metadata',
- ],
- 'external_dependencies': {
-     'python': [
-         'ftputil',
-     ],
- },
- 'data': [
-     'menu.xml',
-     'attachment_view.xml',
-     'location_view.xml',
-     'task_view.xml',
-     'cron.xml',
- ],
- 'installable': True,
- 'application': True,
+    'name': 'external_file_location',
+    'version': '0.0.1',
+    'author': 'Akretion',
+    'website': 'www.akretion.com',
+    'license': 'AGPL-3',
+    'category': 'Generic Modules',
+    'depends': [
+        'ir_attachment_metadata',
+    ],
+    'external_dependencies': {
+        'python': [
+            'ftputil',
+        ],
+    },
+    'data': [
+        'menu.xml',
+        'attachment_view.xml',
+        'location_view.xml',
+        'task_view.xml',
+        'cron.xml',
+    ],
+    'installable': True,
+    'application': True,
  }
