@@ -128,8 +128,8 @@ class SftpImportTask(SftpTask):
     def run(self):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh_conn = ssh.connect(self.host, self.port, 
-                               username=self.user, password=self.pwd)
+        ssh.connect(self.host, self.port,
+                    username=self.user, password=self.pwd)
         ftp_conn = ssh.open_sftp()
         path = self.path or '.'
         files_to_process = self._get_files(ftp_conn, path)
@@ -168,8 +168,8 @@ class SftpExportTask(SftpTask):
         upload_directory = path or '.'
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(self.host, self.port, 
-                               username=self.user, password=self.pwd)
+        ssh.connect(self.host, self.port,
+                    username=self.user, password=self.pwd)
         ftp_conn = ssh.open_sftp()
         target_name = self._target_name(ftp_conn,
                                         upload_directory,
