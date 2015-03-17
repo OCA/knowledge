@@ -43,6 +43,8 @@ class Location(models.Model):
             if not cls._synchronize_type:
                 cls_info = (cls._key, cls._name)
                 res.append(cls_info)
+            elif not cls._synchronize_type and cls._key and cls._name:
+                pass
         return res
 
     @api.onchange('protocol')

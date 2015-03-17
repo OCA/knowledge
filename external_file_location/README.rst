@@ -11,7 +11,7 @@ Installation
 
 To install this module, you need to:
 
-* FTPUtil python module
+* fs python module
 * Paramiko python module
 
 Usage
@@ -30,7 +30,6 @@ For further information, please visit:
 Known issues / Roadmap
 ======================
 
-* add FILESTORE protocol
 
 Credits
 =======

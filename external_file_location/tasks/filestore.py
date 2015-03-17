@@ -21,21 +21,23 @@
 
 from .abstract_fs import AbstractFSTask
 from base64 import b64decode
-from fs.sftpfs import SFTPFS
+import fs
+from fs.osfs import OSFS
+from ftputil.error import FTPIOError
 import logging
 import os
 _logger = logging.getLogger(__name__)
 
 
-class SftpTask(AbstractFSTask):
+class FileStoreTask(AbstractFSTask):
 
-    _key = 'sftp'
-    _name = 'SFTP'
+    _key = 'filestore'
+    _name = 'File Store'
     _synchronize_type = None
-    _default_port = 22
+    _default_port = None
 
 
-class SftpImportTask(SftpTask):
+class FileStoreImportTask(FileStoreTask):
     """FTP Configuration options:
      - host, user, password, port
      - download_directory:  directory on the FTP server where files are
@@ -49,16 +51,13 @@ class SftpImportTask(SftpTask):
     _synchronize_type = 'import'
 
     def run(self):
-        connection_string = "{}:{}".format(self.host, self.port)
-        root = "/home/{}".format(self.user)
-        with SFTPFS(connection=connection_string, root_path=root,
-                    username=self.user, password=self.pwd) as sftp_conn:
-            files_to_process = self._get_files(sftp_conn, self.path)
+        with OSFS(self.host) as fs_conn:
+            files_to_process = self._get_files(fs_conn, self.path)
             for file_to_process in files_to_process:
-                self._process_file(sftp_conn, file_to_process)
+                self._process_file(fs_conn, file_to_process)
 
 
-class SftpExportTask(SftpTask):
+class FileStoreExportTask(FileStoreTask):
     """FTP Configuration options:
      - host, user, password, port
      - upload_directory:  directory on the FTP server where files are
@@ -71,14 +70,12 @@ class SftpExportTask(SftpTask):
         for attachment in self.attachment_ids:
             if attachment.state in ('pending', 'failed'):
                 self.attachment_id = attachment
-                connection_string = "{}:{}".format(self.host, self.port)
-                root = "/home/{}".format(self.user)
-                with SFTPFS(connection=connection_string, root_path=root,
-                            username=self.user, 
-                            password=self.pwd) as sftp_conn:
-                    self._upload_file(sftp_conn, self.host, self.port,
-                                      self.user,
+                with OSFS(host) as fs_conn:
+                    self._upload_file(fs_conn,
+                                      self.host, 
+                                      self.port, 
+                                      self.user, 
                                       self.pwd,
                                       self.path,
                                       attachment.datas_fname,
-                                      b64decode(attachment.datas))
+                                  b64decode(attachment.datas))

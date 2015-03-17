@@ -50,10 +50,11 @@ class Task(models.Model):
         return [('move', 'Move'), ('delete', 'Delete')]
 
     def _get_method(self):
+        print 'get method'
         res = []
         for cls in itersubclasses(AbstractTask):
-            if cls._synchronize_type \
-               and cls._key == self._context.get('protocol'):
+            if cls._synchronize_type: #\
+               # and cls._key == self._context.get('protocol'):
                 cls_info = (cls._key + '_' + cls._synchronize_type,
                             cls._name + ' ' + cls._synchronize_type)
                 res.append(cls_info)
