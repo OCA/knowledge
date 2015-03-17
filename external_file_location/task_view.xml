@@ -20,7 +20,7 @@
                             <span colspan="2"/>
                             <field name="filename" colspan="4" attrs="{'invisible':[('method_type','!=','import')], 'required':[('method_type', '=', 'import')]}"/>
                             <field name="filepath" colspan="4" />
-                            <field name="after_import" colspan="2"/>
+                            <field name="after_import" colspan="2" attrs="{'invisible':[('method_type','!=','import')]}"/>
                             <field name="move_path" colspan="2" attrs="{'invisible':['|', ('after_import','!=','move'), ('method_type','!=','import')]}"/>
                             <field name="md5_check" colspan="2" attrs="{'invisible':[('method_type','!=','import')]}"/>
                         </group>

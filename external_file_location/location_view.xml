@@ -20,7 +20,7 @@
                             <field name="login" colspan="2"/>
                             <field name="password" password="1" colspan="2"/>
                             <separator string="Tasks" colspan="4"/>
-                            <field name="task_ids" colspan="4" nolabel="1" context="{'hide_location': True}">
+                            <field name="task_ids" colspan="4" nolabel="1" context="{'hide_location': True, 'protocol': protocol}">
                                 <tree>
                                     <field name="name"/>
                                     <field name="name"/>
