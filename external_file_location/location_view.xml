@@ -16,9 +16,9 @@
                             <field name="protocol" colspan="2"/>
                             <newline/>
                             <field name="address" colspan="2"/>
-                            <field name="port" colspan="2"/>
-                            <field name="login" colspan="2"/>
-                            <field name="password" password="1" colspan="2"/>
+                            <field name="port" colspan="2" attrs="{'invisible': [('hide_port', '=', True)], 'required': [('hide_port', '=', False)]}"/>
+                            <field name="login" colspan="2" attrs="{'invisible': [('hide_login', '=', True)], 'required': [('hide_login', '=', False)]}"/>
+                            <field name="password" password="1" colspan="2" attrs="{'invisible': [('hide_password', '=', True)]}"/>
                             <separator string="Tasks" colspan="4"/>
                             <field name="task_ids" colspan="4" nolabel="1" context="{'hide_location': True, 'protocol': protocol}">
                                 <tree>
@@ -30,6 +30,9 @@
                                     <button name="run" type="object" string="Run" icon="gtk-execute"/>
                                 </tree>
                             </field>
+                            <field name="hide_login" invisible="1"/>
+                            <field name="hide_password" invisible="1"/>
+                            <field name="hide_port" invisible="1"/>
                         </group>
                     </sheet>
                 </form>

@@ -10,6 +10,9 @@ class AbstractTask(object):
     _key = None
     _synchronize_type = None
     _default_port = None
+    _hide_login = False
+    _hide_password = False
+    _hide_port = False
 
     def create_file(self, filename, data):
         ir_attachment_id = self.env['ir.attachment.metadata'].create({

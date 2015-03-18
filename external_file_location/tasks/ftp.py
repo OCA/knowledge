@@ -32,6 +32,9 @@ class FtpTask(AbstractFSTask):
     _name = 'FTP'
     _synchronize_type = None
     _default_port = 21
+    _hide_login = False
+    _hide_password = False
+    _hide_port = False
 
 
 class FtpImportTask(FtpTask):

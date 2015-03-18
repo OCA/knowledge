@@ -32,6 +32,9 @@ class SftpTask(AbstractFSTask):
     _name = 'SFTP'
     _synchronize_type = None
     _default_port = 22
+    _hide_login = False
+    _hide_password = False
+    _hide_port = False
 
 
 class SftpImportTask(SftpTask):

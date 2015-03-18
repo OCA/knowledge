@@ -102,8 +102,8 @@ class AbstractFSTask(AbstractTask):
             if self.after_import == 'delete':
                 self._delete_file(conn, file_to_process[1])
             elif self.after_import == 'move':
-                if not conn.path.exists(self.move_path):
-                    conn.mkdir(self.move_path)
+                if not conn.exists(self.move_path):
+                    conn.makedir(self.move_path)
                 self._move_file(
                     conn,
                     file_to_process[1],

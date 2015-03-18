@@ -32,10 +32,13 @@ class Location(models.Model):
     name = fields.Char(string='Name', required=True)
     protocol = fields.Selection(selection='_get_protocol', required=True)
     address = fields.Char(string='Address', required=True)
-    port = fields.Integer(required=True)
-    login = fields.Char(required=True)
+    port = fields.Integer()
+    login = fields.Char()
     password = fields.Char()
     task_ids = fields.One2many('external.file.task', 'location_id')
+    hide_login = fields.Boolean()
+    hide_password = fields.Boolean()
+    hide_port = fields.Boolean()
 
     def _get_protocol(self):
         res = []
@@ -48,7 +51,19 @@ class Location(models.Model):
         return res
 
     @api.onchange('protocol')
-    def get_default_port(self):
+    def onchange_protocol(self):
         for cls in itersubclasses(AbstractTask):
             if cls._key == self.protocol:
                 self.port = cls._default_port
+                if cls._hide_login:
+                    self.hide_login = True
+                else:
+                    self.hide_login = False
+                if cls._hide_password:
+                    self.hide_password = True
+                else:
+                    self.hide_password = False
+                if cls._hide_port:
+                    self.hide_port = True
+                else:
+                    self.hide_port = False

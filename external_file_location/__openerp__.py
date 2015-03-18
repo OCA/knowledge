@@ -28,7 +28,7 @@
     'license': 'AGPL-3',
     'category': 'Generic Modules',
     'depends': [
-        'ir_attachment_metadata',
+        'attachment_metadata',
     ],
     'external_dependencies': {
         'python': [

@@ -32,6 +32,9 @@ class FileStoreTask(AbstractFSTask):
     _name = 'File Store'
     _synchronize_type = None
     _default_port = None
+    _hide_login = True
+    _hide_password = True
+    _hide_port = True
 
 
 class FileStoreImportTask(FileStoreTask):
