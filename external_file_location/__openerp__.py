@@ -32,7 +32,8 @@
     ],
     'external_dependencies': {
         'python': [
-            'ftputil',
+            'fs',
+            'paramiko',
         ],
     },
     'data': [
