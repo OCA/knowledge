@@ -20,7 +20,7 @@
 #
 ###############################################################################
 
-{'name': 'ir_attachment_metadata',
+{'name': 'attachment_metadata',
  'version': '0.0.1',
  'author': 'Akretion',
  'website': 'www.akretion.com',
