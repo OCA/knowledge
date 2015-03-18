@@ -23,7 +23,6 @@ from .abstract_fs import AbstractFSTask
 from base64 import b64decode
 from fs.ftpfs import FTPFS
 import logging
-import os
 _logger = logging.getLogger(__name__)
 
 
@@ -68,7 +67,7 @@ class FtpExportTask(FtpTask):
         for attachment in self.attachment_ids:
             if attachment.state in ('pending', 'failed'):
                 self.attachment_id = attachment
-                with FTPFS(self.host, self.user, self.pwd, 
+                with FTPFS(self.host, self.user, self.pwd,
                            port=self.port) as ftp_conn:
                     self._upload_file(ftp_conn, self.host, self.port,
                                       self.user,

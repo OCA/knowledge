@@ -6,6 +6,11 @@ from base64 import b64encode
 
 class AbstractTask(object):
 
+    _name = None
+    _key = None
+    _synchronize_type = None
+    _default_port = None
+
     def create_file(self, filename, data):
         ir_attachment_id = self.env['ir.attachment.metadata'].create({
             'name': filename,

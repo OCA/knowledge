@@ -23,7 +23,6 @@ from .abstract_fs import AbstractFSTask
 from base64 import b64decode
 from fs.sftpfs import SFTPFS
 import logging
-import os
 _logger = logging.getLogger(__name__)
 
 
@@ -72,9 +71,8 @@ class SftpExportTask(SftpTask):
             if attachment.state in ('pending', 'failed'):
                 self.attachment_id = attachment
                 connection_string = "{}:{}".format(self.host, self.port)
-                root = "/home/{}".format(self.user)
-                with SFTPFS(connection=connection_string, root_path=root,
-                            username=self.user, 
+                with SFTPFS(connection=connection_string,
+                            username=self.user,
                             password=self.pwd) as sftp_conn:
                     self._upload_file(sftp_conn, self.host, self.port,
                                       self.user,

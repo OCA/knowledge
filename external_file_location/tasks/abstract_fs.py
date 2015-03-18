@@ -20,7 +20,6 @@
 ##############################################################################
 
 from ..abstract_task import AbstractTask
-from base64 import b64decode
 import logging
 import os
 _logger = logging.getLogger(__name__)
@@ -31,6 +30,7 @@ class AbstractFSTask(AbstractTask):
     _name = None
     _key = None
     _synchronize_type = None
+    _default_port = None
 
     def __init__(self, env, config):
         self.env = env
@@ -53,7 +53,7 @@ class AbstractFSTask(AbstractTask):
         """open and read given file into create_file method,
            move file if move_directory is given"""
         with fs_conn.open(self._source_name(download_directory, file_name),
-                           "rb") as fileobj:
+                          "rb") as fileobj:
             data = fileobj.read()
         return self.create_file(file_name, data)
 
@@ -127,7 +127,8 @@ class AbstractFSTask(AbstractTask):
     def _target_name(self, fs_conn, upload_directory, filename):
         return os.path.join(upload_directory, filename)
 
-    def _upload_file(self, conn, host, port, user, pwd, path, filename, filedata):
+    def _upload_file(self, conn, host, port, user, pwd, 
+                     path, filename, filedata):
         upload_directory = path or '.'
         target_name = self._target_name(conn,
                                         upload_directory,

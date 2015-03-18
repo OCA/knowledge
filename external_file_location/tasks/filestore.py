@@ -21,11 +21,8 @@
 
 from .abstract_fs import AbstractFSTask
 from base64 import b64decode
-import fs
 from fs.osfs import OSFS
-from ftputil.error import FTPIOError
 import logging
-import os
 _logger = logging.getLogger(__name__)
 
 
@@ -70,12 +67,12 @@ class FileStoreExportTask(FileStoreTask):
         for attachment in self.attachment_ids:
             if attachment.state in ('pending', 'failed'):
                 self.attachment_id = attachment
-                with OSFS(host) as fs_conn:
+                with OSFS(self.host) as fs_conn:
                     self._upload_file(fs_conn,
-                                      self.host, 
-                                      self.port, 
-                                      self.user, 
+                                      self.host,
+                                      self.port,
+                                      self.user,
                                       self.pwd,
                                       self.path,
                                       attachment.datas_fname,
-                                  b64decode(attachment.datas))
+                                      b64decode(attachment.datas))
