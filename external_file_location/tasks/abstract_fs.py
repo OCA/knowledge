@@ -127,7 +127,7 @@ class AbstractFSTask(AbstractTask):
     def _target_name(self, fs_conn, upload_directory, filename):
         return os.path.join(upload_directory, filename)
 
-    def _upload_file(self, conn, host, port, user, pwd, 
+    def _upload_file(self, conn, host, port, user, pwd,
                      path, filename, filedata):
         upload_directory = path or '.'
         target_name = self._target_name(conn,
