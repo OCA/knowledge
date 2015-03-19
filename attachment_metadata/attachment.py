@@ -31,6 +31,7 @@ from base64 import b64decode
 class IrAttachmentMetadata(models.Model):
     _name = 'ir.attachment.metadata'
     _inherits = {'ir.attachment': 'attachment_id'}
+    _inherit = ['mail.thread', 'ir.needaction_mixin']
 
     internal_hash = fields.Char(store=True, compute='_compute_hash')
     external_hash = fields.Char()

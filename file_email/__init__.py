@@ -20,5 +20,5 @@
 #
 ###############################################################################
 
-import file_document
+import attachment_metadata
 import fetchmail

@@ -24,13 +24,12 @@ from openerp.osv import fields, orm
 import base64
 
 
-class file_document(orm.Model):
-    _inherit = "file.document"
+class IrAttachmentMetadata(orm.Model):
+    _inherit = "ir.attachment.metadata"
 
     _columns = {
         'fetchmail_server_id': fields.many2one('fetchmail.server', 'Email Server'),
     }
-
 
 
     def message_process(self, cr, uid, model, message, custom_values=None,
@@ -39,7 +38,7 @@ class file_document(orm.Model):
         if context is None:
             context = {}
         context['no_post'] = True
-        return super(file_document, self).message_process(self, cr, uid, model,
+        return super(IrAttachmentMetadata, self).message_process(self, cr, uid, model,
                 message,
                 custom_values=custom_values,
                 save_original=save_original,
@@ -52,7 +51,7 @@ class file_document(orm.Model):
                         content_subtype='html', **kwargs):
         if context.get('no_post'):
             return None
-        return super(file_document, self).message_post(cr, uid, thread_id,
+        return super(IrAttachmentMetadata, self).message_post(cr, uid, thread_id,
                     body=body,
                     subject=subject,
                     type='notification',
@@ -63,7 +62,7 @@ class file_document(orm.Model):
                     content_subtype=content_subtype,
                     **kwargs)
 
-    def _get_file_document_data(self, cr, uid, condition, msg, att, context=None):
+    def _get_attachment_metadata_data(self, cr, uid, condition, msg, att, context=None):
         values = {
             'file_type': condition.server_id.file_type,
             'name': msg['subject'],
@@ -80,22 +79,22 @@ class file_document(orm.Model):
         if condition.from_email in msg['from'] and condition.mail_subject in msg['subject']:
             for att in msg['attachments']:
                 if condition.file_extension in att[0]:
-                    vals = self._get_file_document_data(cr, uid, condition, msg, att, context=context)
+                    vals = self._get_attachment_metadata_data(cr, uid, condition, msg, att, context=context)
                     break
         return vals
 
 
-    def _prepare_data_for_file_document(self, cr, uid, msg, context=None):
-        """Method to prepare the data for creating a file document.
+    def _prepare_data_for_attachment_metadata(self, cr, uid, msg, context=None):
+        """Method to prepare the data for creating a attachment metadata.
         :param msg: a dictionnary with the email data
         :type: dict
 
-        :return: a list of dictionnary that containt the file document data
+        :return: a list of dictionnary that containt the attachment metadata data
         :rtype: list
         """
         res = []
         server_id = context.get('default_fetchmail_server_id', False)
-        doc_file_condition_obj = self.pool.get('file.document.condition')
+        doc_file_condition_obj = self.pool.get('ir.attachment.metadata.condition')
         cond_ids = doc_file_condition_obj.search(cr, uid, [('server_id', '=', server_id)])
         if cond_ids:
             for cond in doc_file_condition_obj.browse(cr, uid, cond_ids):
@@ -109,10 +108,10 @@ class file_document(orm.Model):
 
     def message_new(self, cr, uid, msg, custom_values, context=None):
         created_ids = []
-        res = self._prepare_data_for_file_document(cr, uid, msg, context=context)
+        res = self._prepare_data_for_attachment_metadata(cr, uid, msg, context=context)
         if res:
             for vals in res:
-                default = context.get('default_file_document_vals')
+                default = context.get('default_attachment_metadata_vals')
                 if default:
                     for key in default:
                         if not key in vals:
@@ -124,20 +123,20 @@ class file_document(orm.Model):
         return None
 
 
-class file_document_condition(orm.Model):
-    _name = "file.document.condition"
-    _description = "File Document Conditions"
+class IrAttachmentMetadataCondition(orm.Model):
+    _name = "ir.attachment.metadata.condition"
+    _description = "Attachment Metadata Conditions"
 
-    def _get_file_document_condition_type(self, cr, uid, context=None):
-        return self.get_file_document_condition_type(cr, uid, context=context)
+    def _get_attachment_metadata_condition_type(self, cr, uid, context=None):
+        return self.get_attachment_metadata_condition_type(cr, uid, context=context)
 
-    def get_file_document_condition_type(self, cr, uid, context=None):
+    def get_attachment_metadata_condition_type(self, cr, uid, context=None):
         return [('normal', 'Normal')]
 
     _columns = {
         'from_email': fields.char('Email', size=64),
         'mail_subject': fields.char('Mail Subject', size=64),
-        'type': fields.selection(_get_file_document_condition_type,
+        'type': fields.selection(_get_attachment_metadata_condition_type,
                'Type', help="Create your own type if the normal type \
                             do not correspond to your need", required=True),
         'file_extension' : fields.char('File Extension', size=64, 

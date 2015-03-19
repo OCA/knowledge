@@ -32,6 +32,7 @@
  """,
  'depends': [
      'base',
+     'mail'
  ],
  'data': [
      'attachment_view.xml',
