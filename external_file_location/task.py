@@ -53,8 +53,8 @@ class Task(models.Model):
         res = []
         for cls in itersubclasses(AbstractTask):
             if cls._synchronize_type \
-              and ('protocol' not in self._context 
-                   or cls._key == self._context['protocol']):
+                and ('protocol' not in self._context
+                    or cls._key == self._context['protocol']):
                 cls_info = (cls._key + '_' + cls._synchronize_type,
                             cls._name + ' ' + cls._synchronize_type)
                 res.append(cls_info)
