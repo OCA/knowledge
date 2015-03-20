@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery=".oe_sidebar_add_attachment span" t-operation="before">
+            <select name="directory_id">
+                <option value="" selected="selected">Choose directory</option>
+                <option t-foreach="widget.directory_candidates" t-as="directory" t-att-value="directory.id">
+                    <t t-esc="directory.name" />
+                </option>
+            </select>
+        </t>
+        <t t-jquery=".oe_sidebar_delete_item">
+            this.attr('t-if', "section.name == 'files' and !item.callback and item.classname != 'oe_attachment_directory'");
+        </t>
+        <t t-jquery="button.oe_dropdown_toggle t[t-if]">
+            this.attr('t-raw', "(widget.items[section.name].length - widget.get_directory_items(widget.items[section.name]).length) || ''");
+        </t>
+    </t>
+</templates>
