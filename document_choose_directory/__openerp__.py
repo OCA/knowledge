@@ -22,7 +22,7 @@
     "name": "Choose document's directory",
     "summary": "Choose a document's directory during upload",
     "version": "1.0",
-    "author": "Therp BV",
+    "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "complexity": "normal",
     "category": "Knowledge",
