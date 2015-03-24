@@ -27,44 +27,24 @@ import base64
 class IrAttachmentMetadata(models.Model):
     _inherit = "ir.attachment.metadata"
 
-    fetchmail_server_id = fields.Many2one('fetchmail.server', string='Email Server')
-
+    fetchmail_server_id = fields.Many2one('fetchmail.server',
+                                          string='Email Server')
 
     def message_process(self, cr, uid, model, message, custom_values=None,
                         save_original=False, strip_attachments=False,
                         thread_id=None, context=None):
-        print "message process"
         if context is None:
-           context = {}
+            context = {}
         context['no_post'] = True
         return True
-        # return super(IrAttachmentMetadata, self).message_process(self, cr, uid,
-        #         model,
-        #         message,
-        #         custom_values=custom_values,
-        #         save_original=save_original,
-        #         strip_attachments=strip_attachments,
-        #         thread_id=thread_id,
-        #         context=context
-        #         )
 
-    def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification',
-                        subtype=None, parent_id=False, attachments=None,
-                        content_subtype='html', context=None, **kwargs):
-        print "message post"
+    def message_post(self, cr, uid, thread_id, body='', subject=None,
+                     type='notification', subtype=None, parent_id=False,
+                     attachments=None, content_subtype='html', context=None,
+                     **kwargs):
         if context.get('no_post'):
             return None
         return True
-        # return super(IrAttachmentMetadata, self).message_post(cr, uid, thread_id,
-        #             body=body,
-        #             subject=subject,
-        #             type='notification',
-        #             subtype=subtype,
-        #             parent_id=parent_id,
-        #             attachments=attachments,
-        #             content_subtype=content_subtype,
-        #             context=context,
-        #             **kwargs)
 
     @api.model
     def _get_attachment_metadata_data(self, condition, msg, att):
@@ -83,13 +63,14 @@ class IrAttachmentMetadata(models.Model):
     @api.model
     def prepare_data_from_basic_condition(self, condition, msg):
         vals = {}
-        if condition.from_email in msg['from'] and condition.mail_subject in msg['subject']:
+        if (condition.from_email in msg['from']
+                and condition.mail_subject in msg['subject']):
             for att in msg['attachments']:
                 if condition.file_extension in att[0]:
-                    vals = self._get_attachment_metadata_data(condition, msg, att)
+                    vals = self._get_attachment_metadata_data(condition,
+                                                              msg, att)
                     break
         return vals
-
 
     @api.model
     def _prepare_data_for_attachment_metadata(self, msg):
@@ -97,7 +78,8 @@ class IrAttachmentMetadata(models.Model):
         :param msg: a dictionnary with the email data
         :type: dict
 
-        :return: a list of dictionnary that containt the attachment metadata data
+        :return: a list of dictionnary that containt
+            the attachment metadata data
         :rtype: list
         """
         res = []
@@ -111,7 +93,7 @@ class IrAttachmentMetadata(models.Model):
                 else:
                     vals = getattr(self, cond.type)(cond, msg)
                 if vals:
-                    res.append(vals) 
+                    res.append(vals)
         return res
 
     @api.model
@@ -124,11 +106,10 @@ class IrAttachmentMetadata(models.Model):
                 default = self._context.get('default_attachment_metadata_vals')
                 if default:
                     for key in default:
-                        if not key in vals:
+                        if key not in vals:
                             vals[key] = default[key]
                 created_ids.append(self.create(vals))
                 self._cr.commit()
-            #self._context['created_ids'] = created_ids
             return created_ids[0].id
         return None
 
@@ -147,13 +128,13 @@ class IrAttachmentMetadataCondition(models.Model):
     from_email = fields.Char(string='Email', size=64)
     mail_subject = fields.Char(size=64)
     type = fields.Selection(
-            selection='_get_attachment_metadata_condition_type',
-            help="Create your own type if the normal type \
-                        do not correspond to your need",
-            required=True,
-            default='normal'
-            )
-    file_extension = fields.Char(size=64, 
-                                   help="File extension or file name",
-                                   required=True)
+        selection='_get_attachment_metadata_condition_type',
+        help="Create your own type if the normal type \
+                    do not correspond to your need",
+        required=True,
+        default='normal'
+        )
+    file_extension = fields.Char(size=64,
+                                 help="File extension or file name",
+                                 required=True)
     server_id = fields.Many2one('fetchmail.server', string='Server Mail')

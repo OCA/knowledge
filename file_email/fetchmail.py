@@ -29,21 +29,25 @@ class fetchmail_server(models.Model):
     @api.model
     def get_file_type(self):
         return []
-    
+
     @api.model
     def _get_file_type(self):
         return self.get_file_type()
 
     def company_default_get(self):
-        company_id = self.env['res.company']._company_default_get('fetchmail.server')
+        company_id = (self.env['res.company'].
+                      _company_default_get('fetchmail.server'))
         return self.env['res.company'].browse(company_id)
 
-    file_type = fields.Selection(selection='_get_file_type',
-                                 help='The file type will show some special option')
-    company_id = fields.Many2one('res.company', string='Company', 
-            # required=True,
-            default=company_default_get
-            )  #Why this field do not exist by default?
+    file_type = fields.Selection(
+        selection='_get_file_type',
+        help='The file type will show some special option')
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        required=True,
+        default=company_default_get
+        )  # Why this field do not exist by default?
     attachment_metadata_condition_ids = fields.One2many(
         'ir.attachment.metadata.condition', 'server_id', string='Attachment')
 
@@ -61,6 +65,5 @@ class fetchmail_server(models.Model):
     @api.multi
     def fetch_mail(self):
         for server in self:
-            ctx = server.get_context_for_server()
             super(fetchmail_server, server).fetch_mail()
         return True
