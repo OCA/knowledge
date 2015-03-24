@@ -20,43 +20,47 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields, api
 
 
-class fetchmail_server(orm.Model):
+class fetchmail_server(models.Model):
     _inherit = 'fetchmail.server'
 
-    def get_file_type(self, cr, uid, context=None):
+    @api.model
+    def get_file_type(self):
         return []
+    
+    @api.model
+    def _get_file_type(self):
+        return self.get_file_type()
 
-    def _get_file_type(self, cr, uid, context=None):
-        return self.get_file_type(cr, uid, context=context)
+    def company_default_get(self):
+        company_id = self.env['res.company']._company_default_get('fetchmail.server')
+        return self.env['res.company'].browse(company_id)
 
-    _columns = {
-        'file_type': fields.selection(_get_file_type, 'File Type',
-                help='The file type will show some special option'),
-        'company_id': fields.many2one('res.company', 'Company', required=True),#Why this field do not exist by default?
-        'attachment_metadata_condition_ids': fields.one2many('ir.attachment.metadata.condition', 'server_id', 'Attachment')
-    }
+    file_type = fields.Selection(selection='_get_file_type',
+                                 help='The file type will show some special option')
+    company_id = fields.Many2one('res.company', string='Company', 
+            # required=True,
+            default=company_default_get
+            )  #Why this field do not exist by default?
+    attachment_metadata_condition_ids = fields.One2many(
+        'ir.attachment.metadata.condition', 'server_id', string='Attachment')
 
-    _defaults = {
-        'company_id': lambda s, cr, uid, c: s.pool.get('res.company')._company_default_get(cr, uid, 'fetchmail.server', context=c),
-    }
-
-
-    def get_context_for_server(self, cr, uid, server_id, context=None):
-        if context is None:
+    @api.one
+    def get_context_for_server(self):
+        if self._context is None:
             ctx = {}
         else:
-            ctx = context.copy()
+            ctx = self._context.copy()
         ctx['default_attachment_metadata_vals'] = {}
-        server = self.browse(cr, uid, server_id, context=context)
-        ctx['default_company_id'] = server.company_id.id
-        ctx['default_fetchmail_server_id'] = server_id
+        ctx['default_company_id'] = self.company_id.id
+        ctx['default_fetchmail_server_id'] = self.id
         return ctx
 
-    def fetch_mail(self, cr, uid, ids, context=None):
-        for server_id in ids:
-            ctx = self.get_context_for_server(cr, uid, server_id, context=context)
-            super(fetchmail_server, self).fetch_mail(cr, uid, [server_id], context=ctx)
+    @api.multi
+    def fetch_mail(self):
+        for server in self:
+            ctx = server.get_context_for_server()
+            super(fetchmail_server, server).fetch_mail()
         return True
