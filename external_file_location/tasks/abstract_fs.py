@@ -62,14 +62,14 @@ class AbstractFSTask(AbstractTask):
         return os.path.join(download_directory, file_name)
 
     def _move_file(self, fs_conn, source, target):
-        """Moves a file on the FTP server"""
+        """Moves a file on the server"""
         _logger.info('Moving file %s %s' % (source, target))
         fs_conn.rename(source, target)
         if self.md5_check:
             fs_conn.rename(source + '.md5', target + '.md5')
 
     def _delete_file(self, fs_conn, source):
-        """Deletes a file from the FTP server"""
+        """Deletes a file from the server"""
         _logger.info('Deleting file %s' % source)
         fs_conn.remove(source)
         if self.md5_check:

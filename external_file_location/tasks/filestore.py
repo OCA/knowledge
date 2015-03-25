@@ -38,15 +38,6 @@ class FileStoreTask(AbstractFSTask):
 
 
 class FileStoreImportTask(FileStoreTask):
-    """FTP Configuration options:
-     - host, user, password, port
-     - download_directory:  directory on the FTP server where files are
-                            downloaded from
-     - move_directory:  If present, files will be moved to this directory
-                        on the FTP server after download.
-     - delete_files:  If true, files will be deleted on the FTP server
-                      after download.
-    """
 
     _synchronize_type = 'import'
 
@@ -58,11 +49,6 @@ class FileStoreImportTask(FileStoreTask):
 
 
 class FileStoreExportTask(FileStoreTask):
-    """FTP Configuration options:
-     - host, user, password, port
-     - upload_directory:  directory on the FTP server where files are
-                          uploaded to
-    """
 
     _synchronize_type = 'export'
 
