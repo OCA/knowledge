@@ -98,7 +98,6 @@ class IrAttachmentMetadata(models.Model):
 
     @api.model
     def message_new(self, msg, custom_values):
-        print "message new"
         created_ids = []
         res = self._prepare_data_for_attachment_metadata(msg)
         if res:

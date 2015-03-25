@@ -20,5 +20,5 @@
 #
 ###############################################################################
 
-import attachment_metadata
-import fetchmail
+from . import attachment_metadata
+from . import fetchmail
