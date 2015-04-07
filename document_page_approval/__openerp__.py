@@ -43,16 +43,18 @@ Scenario
 * Users reading the page see the last approved version.
     """,
     'depends': [
+        'knowledge',
         'document_page',
         'email_template',
-        ],
+    ],
     'data': [
+        'data/email_template.xml',
         'document_page_wkfl.xml',
         'document_page_view.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
-        ],
-    'installable': False,
+    ],
+    'installable': True,
     'auto_install': False,
     'images': [
         'images/category.png',
