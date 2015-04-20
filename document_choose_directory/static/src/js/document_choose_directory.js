@@ -57,6 +57,9 @@ openerp.document_choose_directory = function(instance)
             _.chain(attachments)
                 .groupBy(
                     function(a) { return a.parent_id[0] })
+                .sortBy(function(attachments) {
+                    return attachments[0].parent_id[1];
+                })
                 .each(
                     function(group)
                     {
