@@ -52,7 +52,8 @@ openerp.document_choose_directory = function(instance)
         },
         on_attachments_loaded: function(attachments)
         {
-            var attachments_per_directory = [];
+            var self = this,
+                attachments_per_directory = [];
             _.chain(attachments)
                 .groupBy(
                     function(a) { return a.parent_id[0] })
@@ -64,7 +65,7 @@ openerp.document_choose_directory = function(instance)
                                 instance.web._t('No directory'),
                             classname: 'oe_attachment_directory',
                         });
-                        _(group).each(function(a)
+                        self.sort_attachments(group).each(function(a)
                         {
                             attachments_per_directory.push(a);
                         });
@@ -79,6 +80,10 @@ openerp.document_choose_directory = function(instance)
                 {
                     return i.classname == 'oe_attachment_directory';
                 });
+        },
+        sort_attachments: function(attachments)
+        {
+            return _.chain(attachments).sortBy('name');
         },
     });
 }
