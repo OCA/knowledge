@@ -21,7 +21,7 @@
 
 from .abstract_fs import AbstractFSTask
 from base64 import b64decode
-from fs.osfs import OSFS
+from fs import osfs
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -42,7 +42,7 @@ class FileStoreImportTask(FileStoreTask):
     _synchronize_type = 'import'
 
     def run(self):
-        with OSFS(self.host) as fs_conn:
+        with osfs.OSFS(self.host) as fs_conn:
             files_to_process = self._get_files(fs_conn, self.path)
             for file_to_process in files_to_process:
                 self._process_file(fs_conn, file_to_process)
@@ -56,7 +56,7 @@ class FileStoreExportTask(FileStoreTask):
         for attachment in self.attachment_ids:
             if attachment.state in ('pending', 'failed'):
                 self.attachment_id = attachment
-                with OSFS(self.host) as fs_conn:
+                with osfs.OSFS(self.host) as fs_conn:
                     self._upload_file(fs_conn,
                                       self.host,
                                       self.port,

@@ -19,8 +19,8 @@ class AbstractTask(object):
             'name': filename,
             'datas': b64encode(data),
             'datas_fname': filename,
-            'task_id': self.task.id,
-            'location_id': self.task.location_id.id,
+            'task_id': self.task and self.task.id or False,
+            'location_id': self.task and self.task.location_id.id or False,
             'external_hash': self.ext_hash
             })
         return ir_attachment_id
