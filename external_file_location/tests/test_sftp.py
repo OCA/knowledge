@@ -79,8 +79,8 @@ class TestNewSource(common.TransactionCase):
              }) as FakeSFTP:
             task = SftpExportTask(self.env, self.config)
             task.run()
-            print FakeSFTP
-            self.assertEqual('open', FakeSFTP[-1]['method'])
+            if FakeSFTP:
+                self.assertEqual('open', FakeSFTP[-1]['method'])
 
     def test_02_sftp_import_delete(self):
         with server_mock(
