@@ -44,8 +44,10 @@ class SftpImportTask(SftpTask):
     def run(self):
         connection_string = "{}:{}".format(self.host, self.port)
         root = "/home/{}".format(self.user)
-        with sftpfs.SFTPFS(connection=connection_string, root_path=root,
-                    username=self.user, password=self.pwd) as sftp_conn:
+        with sftpfs.SFTPFS(connection=connection_string,
+                           root_path=root,
+                           username=self.user,
+                           password=self.pwd) as sftp_conn:
             files_to_process = self._get_files(sftp_conn, self.path)
             for file_to_process in files_to_process:
                 self._process_file(sftp_conn, file_to_process)
@@ -61,12 +63,9 @@ class SftpExportTask(SftpTask):
                 self.attachment_id = attachment
                 connection_string = "{}:{}".format(self.host, self.port)
                 with sftpfs.SFTPFS(connection=connection_string,
-                            username=self.user,
-                            password=self.pwd) as sftp_conn:
+                                   username=self.user,
+                                   password=self.pwd) as sftp_conn:
                     datas = b64decode(attachment.datas)
                     self._upload_file(sftp_conn, self.host, self.port,
-                                      self.user,
-                                      self.pwd,
-                                      self.path,
-                                      attachment.datas_fname,
-                                      datas)
+                                      self.user, self.pwd, self.path,
+                                      attachment.datas_fname, datas)

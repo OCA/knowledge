@@ -42,7 +42,8 @@ class FtpImportTask(FtpTask):
     _synchronize_type = 'import'
 
     def run(self):
-        with ftpfs.FTPFS(self.host, self.user, self.pwd, port=self.port) as ftp_conn:
+        with ftpfs.FTPFS(self.host, self.user, self.pwd,
+                         port=self.port) as ftp_conn:
             files_to_process = self._get_files(ftp_conn, self.path)
             for file_to_process in files_to_process:
                 self._process_file(ftp_conn, file_to_process)
@@ -57,10 +58,8 @@ class FtpExportTask(FtpTask):
             if attachment.state in ('pending', 'failed'):
                 self.attachment_id = attachment
                 with ftpfs.FTPFS(self.host, self.user, self.pwd,
-                           port=self.port) as ftp_conn:
+                                 port=self.port) as ftp_conn:
                     self._upload_file(ftp_conn, self.host, self.port,
-                                      self.user,
-                                      self.pwd,
-                                      self.path,
+                                      self.user, self.pwd, self.path,
                                       attachment.datas_fname,
                                       b64decode(attachment.datas))
