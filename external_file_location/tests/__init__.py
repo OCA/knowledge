@@ -20,6 +20,6 @@
 #
 ###############################################################################
 
-import mock_server
-import test_sftp
+from . import mock_server
+from . import test_sftp
 
