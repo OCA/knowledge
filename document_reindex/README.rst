@@ -10,6 +10,11 @@ To reindex a single document, open its form and click the `Reindex document` but
 
 To reindex all documents, go to Settings / Configuration / Knowledge, check the box `Reindex all documents` or `Reindex all unindexed documents` and click apply. Those are done in the background, so watch your logs for the process to finish.
 
+Known issues / Roadmap
+======================
+
+* Currently, this module is not fit for huge amounts of documents
+
 Credits
 =======
 
