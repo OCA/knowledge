@@ -1,0 +1,22 @@
+.openerp .oe_sidebar .oe_dropdown_menu li .oe-sidebar-attachment-edit
+{
+    position: absolute;
+    right: 32px;
+    top: 0px;
+    display: none;
+}
+.openerp .oe_sidebar .oe_dropdown_menu li:hover .oe-sidebar-attachment-edit
+{
+    display: inherit;
+}
+.openerp .oe_sidebar .oe_dropdown_menu li .oe-sidebar-attachment-edit:hover
+{
+    text-decoration: none;
+    color: white;
+    background: #8786b7;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
