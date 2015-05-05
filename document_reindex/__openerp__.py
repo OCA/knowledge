@@ -21,7 +21,7 @@
 {
     "name": "Reindex documents",
     "version": "1.0",
-    "author": "Therp BV",
+    "author": "Therp BV, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Knowledge Management",
     "summary": "Reindex your already uploaded documents",
