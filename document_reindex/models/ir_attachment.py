@@ -18,7 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+import logging
 from openerp import models, api
+_logger = logging.getLogger(__name__)
 
 
 class IrAttachment(models.Model):
@@ -29,22 +31,47 @@ class IrAttachment(models.Model):
         for this in self:
             if not this.datas:
                 continue
-            mimetype, indexed_content = this._index(
-                this.datas.decode('base64'), this.datas_fname, this.file_type)
-            this.write({
-                'file_type': mimetype,
-                'index_content': indexed_content,
-            })
+            try:
+                mimetype, indexed_content = this._index(
+                    this.datas.decode('base64'),
+                    this.datas_fname, this.file_type)
+                this.write({
+                    'file_type': mimetype,
+                    'index_content': indexed_content,
+                })
+            except:
+                self.env.clear()
+                self.env.clear_recompute_old()
+                _logger.exception('ignoring attachment id %d', this.id)
+                continue
+
+    @api.model
+    def document_reindex_domain(self, domain, limit=100):
+        offset = 0
+        counter = 0
+        limit = int(
+            self.env['ir.config_parameter'].get_param(
+                'document_reindex.limit', '0')) or limit
+        logging.info(
+            'reindexing %d attachments', self.search(domain, count=True))
+        while True:
+            attachments = self.search(domain, limit=limit, offset=offset)
+            if not attachments:
+                return
+            attachments.document_reindex()
+            logging.info('%d done', counter * limit + len(attachments))
+            offset += len(attachments)
+            counter += 1
 
     @api.model
     def document_reindex_all(self):
-        self.search([('datas', '!=', False)]).document_reindex()
+        return self.document_reindex_domain([('datas', '!=', False)])
 
     @api.model
     def document_reindex_unindexed(self):
-        self.search([
+        return self.document_reindex_domain([
             ('datas', '!=', False),
             '|',
             ('index_content', '=', False),
             ('index_content', '=', ''),
-        ]).document_reindex()
+        ])
