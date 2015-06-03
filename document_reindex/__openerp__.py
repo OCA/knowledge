@@ -32,6 +32,7 @@
         "views/knowledge_config_settings.xml",
         "views/ir_attachment.xml",
     ],
+    "post_init_hook": 'post_init_hook',
     "auto_install": False,
     "installable": True,
     "application": False,

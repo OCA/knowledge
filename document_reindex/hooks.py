@@ -18,5 +18,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
-from .hooks import post_init_hook
+from openerp import SUPERUSER_ID, api
+
+
+def post_init_hook(cr, pool):
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    with env.manage():
+        func = None
+        if env['ir.config_parameter'].get_param(
+                'document_reindex.reindex_all_on_init'):
+            func = 'document_reindex_all'
+        if env['ir.config_parameter'].get_param(
+                'document_reindex.reindex_unindexed_on_init'):
+            func = 'document_reindex_unindexed'
+        if func:
+            getattr(env['ir.attachment'], func)()
