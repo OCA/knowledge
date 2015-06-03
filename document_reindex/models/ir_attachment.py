@@ -65,12 +65,12 @@ class IrAttachment(models.Model):
 
     @api.model
     def document_reindex_all(self):
-        return self.document_reindex_domain([('datas', '!=', False)])
+        return self.document_reindex_domain([('type', '=', 'binary')])
 
     @api.model
     def document_reindex_unindexed(self):
         return self.document_reindex_domain([
-            ('datas', '!=', False),
+            ('type', '=', 'binary'),
             '|',
             ('index_content', '=', False),
             ('index_content', '=', ''),
