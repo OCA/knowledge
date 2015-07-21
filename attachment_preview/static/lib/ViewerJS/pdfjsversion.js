@@ -1,1 +1,1 @@
-var /**@const{!string}*/pdfjs_version = "d45d7bc";
+var /**@const{!string}*/pdfjs_version = "v1.0.1040";
