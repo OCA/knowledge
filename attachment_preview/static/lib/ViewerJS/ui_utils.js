@@ -16,6 +16,14 @@
 
 'use strict';
 
+var CSS_UNITS = 96.0 / 72.0;
+var DEFAULT_SCALE = 'auto';
+var UNKNOWN_SCALE = 0;
+var MAX_AUTO_SCALE = 1.25;
+var SCROLLBAR_PADDING = 40;
+var VERTICAL_PADDING = 5;
+var DEFAULT_CACHE_SIZE = 10;
+
 // optimised CSS custom property getter/setter
 var CustomStyle = (function CustomStyleClosure() {
 
@@ -24,14 +32,13 @@ var CustomStyle = (function CustomStyleClosure() {
   // in some versions of IE9 it is critical that ms appear in this list
   // before Moz
   var prefixes = ['ms', 'Moz', 'Webkit', 'O'];
-  var _cache = { };
+  var _cache = {};
 
-  function CustomStyle() {
-  }
+  function CustomStyle() {}
 
   CustomStyle.getProp = function get(propName, element) {
     // check cache only when no element is given
-    if (arguments.length == 1 && typeof _cache[propName] == 'string') {
+    if (arguments.length === 1 && typeof _cache[propName] === 'string') {
       return _cache[propName];
     }
 
@@ -39,7 +46,7 @@ var CustomStyle = (function CustomStyleClosure() {
     var style = element.style, prefixed, uPropName;
 
     // test standard property first
-    if (typeof style[propName] == 'string') {
+    if (typeof style[propName] === 'string') {
       return (_cache[propName] = propName);
     }
 
@@ -49,7 +56,7 @@ var CustomStyle = (function CustomStyleClosure() {
     // test vendor specific properties
     for (var i = 0, l = prefixes.length; i < l; i++) {
       prefixed = prefixes[i] + uPropName;
-      if (typeof style[prefixed] == 'string') {
+      if (typeof style[prefixed] === 'string') {
         return (_cache[propName] = prefixed);
       }
     }
@@ -60,8 +67,9 @@ var CustomStyle = (function CustomStyleClosure() {
 
   CustomStyle.setProp = function set(propName, element, str) {
     var prop = this.getProp(propName);
-    if (prop != 'undefined')
+    if (prop !== 'undefined') {
       element.style[prop] = str;
+    }
   };
 
   return CustomStyle;
@@ -93,7 +101,7 @@ function getOutputScale(ctx) {
   return {
     sx: pixelRatio,
     sy: pixelRatio,
-    scaled: pixelRatio != 1
+    scaled: pixelRatio !== 1
   };
 }
 
@@ -139,6 +147,91 @@ function scrollIntoView(element, spot) {
 }
 
 /**
+ * Helper function to start monitoring the scroll event and converting them into
+ * PDF.js friendly one: with scroll debounce and scroll direction.
+ */
+function watchScroll(viewAreaElement, callback) {
+  var debounceScroll = function debounceScroll(evt) {
+    if (rAF) {
+      return;
+    }
+    // schedule an invocation of scroll for next animation frame.
+    rAF = window.requestAnimationFrame(function viewAreaElementScrolled() {
+      rAF = null;
+
+      var currentY = viewAreaElement.scrollTop;
+      var lastY = state.lastY;
+      if (currentY > lastY) {
+        state.down = true;
+      } else if (currentY < lastY) {
+        state.down = false;
+      }
+      state.lastY = currentY;
+      // else do nothing and use previous value
+      callback(state);
+    });
+  };
+
+  var state = {
+    down: true,
+    lastY: viewAreaElement.scrollTop,
+    _eventHandler: debounceScroll
+  };
+
+  var rAF = null;
+  viewAreaElement.addEventListener('scroll', debounceScroll, true);
+  return state;
+}
+
+/**
+ * Generic helper to find out what elements are visible within a scroll pane.
+ */
+function getVisibleElements(scrollEl, views, sortByVisibility) {
+  var top = scrollEl.scrollTop, bottom = top + scrollEl.clientHeight;
+  var left = scrollEl.scrollLeft, right = left + scrollEl.clientWidth;
+
+  var visible = [], view;
+  var currentHeight, viewHeight, hiddenHeight, percentHeight;
+  var currentWidth, viewWidth;
+  for (var i = 0, ii = views.length; i < ii; ++i) {
+    view = views[i];
+    currentHeight = view.el.offsetTop + view.el.clientTop;
+    viewHeight = view.el.clientHeight;
+    if ((currentHeight + viewHeight) < top) {
+      continue;
+    }
+    if (currentHeight > bottom) {
+      break;
+    }
+    currentWidth = view.el.offsetLeft + view.el.clientLeft;
+    viewWidth = view.el.clientWidth;
+    if ((currentWidth + viewWidth) < left || currentWidth > right) {
+      continue;
+    }
+    hiddenHeight = Math.max(0, top - currentHeight) +
+      Math.max(0, currentHeight + viewHeight - bottom);
+    percentHeight = ((viewHeight - hiddenHeight) * 100 / viewHeight) | 0;
+
+    visible.push({ id: view.id, x: currentWidth, y: currentHeight,
+      view: view, percent: percentHeight });
+  }
+
+  var first = visible[0];
+  var last = visible[visible.length - 1];
+
+  if (sortByVisibility) {
+    visible.sort(function(a, b) {
+      var pc = a.percent - b.percent;
+      if (Math.abs(pc) > 0.001) {
+        return -pc;
+      }
+      return a.id - b.id; // ensure stability
+    });
+  }
+  return {first: first, last: last, views: visible};
+}
+
+/**
  * Event handler to suppress context menu.
  */
 function noContextMenuHandler(e) {
@@ -161,7 +254,7 @@ function getPDFFileNameFromURL(url) {
                            reFilename.exec(splitURI[3]);
   if (suggestedFilename) {
     suggestedFilename = suggestedFilename[0];
-    if (suggestedFilename.indexOf('%') != -1) {
+    if (suggestedFilename.indexOf('%') !== -1) {
       // URL-encoded %2Fpath%2Fto%2Ffile.pdf should be file.pdf
       try {
         suggestedFilename =
@@ -182,6 +275,7 @@ var ProgressBar = (function ProgressBarClosure() {
   }
 
   function ProgressBar(id, opts) {
+    this.visible = true;
 
     // Fetch the sub-elements for later.
     this.div = document.querySelector(id + ' .progress');
@@ -235,8 +329,21 @@ var ProgressBar = (function ProgressBarClosure() {
     },
 
     hide: function ProgressBar_hide() {
+      if (!this.visible) {
+        return;
+      }
+      this.visible = false;
       this.bar.classList.add('hidden');
-      this.bar.removeAttribute('style');
+      document.body.classList.remove('loadingInProgress');
+    },
+
+    show: function ProgressBar_show() {
+      if (this.visible) {
+        return;
+      }
+      this.visible = true;
+      document.body.classList.add('loadingInProgress');
+      this.bar.classList.remove('hidden');
     }
   };
 
@@ -247,24 +354,18 @@ var Cache = function cacheCache(size) {
   var data = [];
   this.push = function cachePush(view) {
     var i = data.indexOf(view);
-    if (i >= 0)
-      data.splice(i);
+    if (i >= 0) {
+      data.splice(i, 1);
+    }
     data.push(view);
-    if (data.length > size)
+    if (data.length > size) {
       data.shift().destroy();
+    }
+  };
+  this.resize = function (newSize) {
+    size = newSize;
+    while (data.length > size) {
+      data.shift().destroy();
+    }
   };
 };
-
-//#if !(FIREFOX || MOZCENTRAL || B2G)
-var isLocalStorageEnabled = (function isLocalStorageEnabledClosure() {
-  // Feature test as per http://diveintohtml5.info/storage.html
-  // The additional localStorage call is to get around a FF quirk, see
-  // bug #495747 in bugzilla
-  try {
-    return ('localStorage' in window && window['localStorage'] !== null &&
-            localStorage);
-  } catch (e) {
-    return false;
-  }
-})();
-//#endif
