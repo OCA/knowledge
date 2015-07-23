@@ -33,6 +33,7 @@ Web pages
     'license': 'AGPL-3',
     'depends': [
         'knowledge',
+        'mail',
     ],
     'data': [
         'wizard/document_page_create_menu_view.xml',
