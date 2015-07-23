@@ -171,7 +171,8 @@
                     <label for="create_date" class="oe_edit_only"/>
                     <field name="create_date" readonly="1"/>
                     <label for="content" class="oe_edit_only"/>
-                    <field name="content" colspan="4"/>
+                    <field name="content" colspan="4"
+                        widget="html" options='{"safe": True}'/>
                 </form>
             </field>
         </record>
