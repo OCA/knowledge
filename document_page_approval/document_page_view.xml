@@ -36,18 +36,41 @@
             <field name="arch" type="xml">
                 <field name="display_content"
                        position="before">
-                    <group class="oe_read_only"
-                           attrs="{'invisible':[('type','!=','content')]}">
+                    <group class="oe_read_only">
                         <field name="approved_date" />
                         <field name="approved_uid" />
                     </group>
                 </field>
+            </field>
+        </record>
+
+        <record id="view_wiki_menu_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.form</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id"
+                   ref="document_page.view_wiki_menu_form" />
+            <field name="arch" type="xml">
+                <field name="display_content"
+                       position="before">
+                    <group class="oe_read_only"
+                        attrs="{'invisible':[('type','!=','content')]}">
+                        <field name="approved_date" />
+                        <field name="approved_uid" />
+                    </group>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_category_form_inherit" model="ir.ui.view">
+            <field name="name">document.page.category.form</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id"
+                   ref="document_page.view_category_form" />
+            <field name="arch" type="xml">
                 <field name="parent_id" position="after">
-                    <field name="approval_required"
-                           attrs="{'invisible':[('type','=','content')]}"/>
+                    <field name="approval_required"/>
                     <field name="approver_gid"
-                           attrs="{'invisible':['|',('type','=','content'),
-                        ('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
+                           attrs="{'invisible':[('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"/>
                 </field>
             </field>
         </record>
