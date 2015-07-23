@@ -6,14 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-30 14:20-0600\n"
-"PO-Revision-Date: 2015-07-30 14:20-0600\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian <translate@matmoz.si>\n"
-"Language: sl\n"
+"POT-Creation-Date: 2015-07-30 15:19+0000\n"
+"PO-Revision-Date: 2015-07-30 15:19+0000\n"
+"Last-Translator: Glen Sojo <glen.sojo@clearcorp.co.cr>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #. module: document_page_approval
@@ -30,13 +29,13 @@ msgid "\n"
 "Odoo</p>\n"
 "            "
 msgstr "\n"
-"<p>Pozdravljeni,</p>\n"
+"<p>Hola,</p>\n"
 "\n"
-"<p>Stran \"${object.page_id.name}\" vsebuje spremembe, ki potrebujejo vašo odobritev.</p>\n"
+"<p>La página \"${object.page_id.name}\" ha sido modificada y necesita tu aprobación.</p>\n"
 "\n"
-"<p>Novo različico lahko pregledate tukaj: <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
+"<p>Puedes revisar la nueva versión aquí: <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
 "\n"
-"<p>Lep dan.<br/>\n"
+"<p>Que tenga un buen día.<br/>\n"
 "--<br/>\n"
 "Odoo</p>\n"
 "            "
@@ -44,60 +43,60 @@ msgstr "\n"
 #. module: document_page_approval
 #: view:document.page.history:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr "Odobri"
+msgstr "Aprobar"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr "Odobreno"
+msgstr "Aprobado"
 
 #. module: document_page_approval
 #: field:document.page.history,approved_uid:0
 msgid "Approved By"
-msgstr "Odobril"
+msgstr "Aprobado por"
 
 #. module: document_page_approval
 #: field:document.page.history,approved_date:0
 msgid "Approved Date"
-msgstr "Datum odobritve"
+msgstr "Fecha de aprobación"
 
 #. module: document_page_approval
 #: field:document.page,approver_gid:0
 msgid "Approver group"
-msgstr "Skupina pooblaščenih za odobritev"
+msgstr "Grupo aprobador"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr "Stran dokumenta"
+msgstr "Página de documento"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr "Zgodovina strani dokumentov"
+msgstr "Historia de página de documento"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr "Osnutek"
+msgstr "Borrador"
 
 #. module: document_page_approval
 #: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of \"${object.page_id.name}\" to approve"
-msgstr "Nova različica \"${object.page_id.name}\" za odobritev"
+msgstr "Nueva versión de \"${object.page_id.name}\" para aprobar"
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/document_page_approval.py:66
 #, python-format
 msgid "New version of the document %s approved."
-msgstr ""
+msgstr "Nueva versión del documento %s aprobada."
 
 #. module: document_page_approval
 #: field:document.page,approval_required:0
 msgid "Require approval"
-msgstr "Zahtevana odobritev"
+msgstr "Requiere aprobación"
 
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr "Status"
+msgstr "Estado"
