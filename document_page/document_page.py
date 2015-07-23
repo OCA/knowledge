@@ -27,6 +27,7 @@ _logger = logging.getLogger(__name__)
 
 class document_page(models.Model):
     _name = "document.page"
+    _inherit = ['mail.thread']
     _description = "Document Page"
     _order = 'name'
 
