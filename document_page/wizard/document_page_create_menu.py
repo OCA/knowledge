@@ -51,16 +51,19 @@ class document_page_create_menu(models.TransientModel):
         obj_page = self.env['document.page']
         obj_menu = self.env['ir.ui.menu']
         obj_action = self.env['ir.actions.act_window']
+        obj_model_data = self.env['ir.model.data']
         page_id = self.env.context.get('active_id', False)
         page = obj_page.browse(page_id)
 
         data = self[0]
+        view_id = obj_model_data.sudo().get_object_reference(
+            'document_page', 'view_wiki_menu_form')[1]
         value = {
             'name': 'Document Page',
             'view_type': 'form',
             'view_mode': 'form,tree',
             'res_model': 'document.page',
-            'view_id': False,
+            'view_id': view_id,
             'type': 'ir.actions.act_window',
             'target': 'inlineview',
         }
