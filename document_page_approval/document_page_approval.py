@@ -20,8 +20,9 @@
 ##############################################################################
 
 from datetime import datetime
+from openerp.tools.translate import _
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
-from openerp import models, fields
+from openerp import models, fields, SUPERUSER_ID
 
 
 class document_page_history_wkfl(models.Model):
@@ -45,12 +46,27 @@ class document_page_history_wkfl(models.Model):
         return True
 
     def page_approval_approved(self, cr, uid, ids, context=None):
+        model_data_obj = self.pool.get('ir.model.data')
+        message_obj = self.pool.get('mail.message')
         self.write(cr, uid, ids, {
             'state': 'approved',
             'approved_date': datetime.now().strftime(
                 DEFAULT_SERVER_DATETIME_FORMAT),
             'approved_uid': uid
         }, context=context)
+        # Notify followers a new version is available
+        for page_history in self.browse(cr, uid, ids, context=context):
+            subtype_id = model_data_obj.get_object_reference(
+                cr, SUPERUSER_ID, 'mail', 'mt_comment')[1]
+            message_obj.create(
+                cr, uid,
+                {'res_id': page_history.page_id.id,
+                 'model': 'document.page',
+                 'subtype_id': subtype_id,
+                 'body': _('New version of the document %s'
+                           ' approved.') % page_history.page_id.name
+                 }
+            )
         return True
 
     def _can_user_approve_page(self):
