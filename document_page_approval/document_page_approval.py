@@ -59,13 +59,14 @@ class document_page_history_wkfl(models.Model):
             subtype_id = model_data_obj.get_object_reference(
                 cr, SUPERUSER_ID, 'mail', 'mt_comment')[1]
             message_obj.create(
-                cr, uid, {
-                    'res_id': page_history.page_id.id,
-                    'model': 'document.page',
-                    'subtype_id': subtype_id,
-                    'body': _('New version of the document %s'
-                              ' approved.') % page_history.page_id.name
-                          })
+                cr, uid,
+                {'res_id': page_history.page_id.id,
+                 'model': 'document.page',
+                 'subtype_id': subtype_id,
+                 'body': _('New version of the document %s'
+                           ' approved.') % page_history.page_id.name
+                 }
+            )
         return True
 
     def _can_user_approve_page(self):
