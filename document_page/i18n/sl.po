@@ -7,222 +7,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2015-03-27 11:27+0100\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-02 08:04+0200\n"
+"PO-Revision-Date: 2015-08-03 13:36+0200\n"
+"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian <translate@matmoz.si>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-11-21 06:08+0000\n"
-"X-Generator: Lokalize 1.5\n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%"
-"100==4 ? 3 : 0);\n"
-
-#. module: document_page
-#: view:document.page:0
-#: field:document.page,parent_id:0
-#: selection:document.page,type:0
-#: model:ir.actions.act_window,name:document_page.action_category
-msgid "Category"
-msgstr "Kategorija"
-
-#. module: document_page
-#: view:document.page:0
-#: field:document.page,write_uid:0
-msgid "Last Contributor"
-msgstr "Zadnji prispeval"
-
-#. module: document_page
-#: view:document.page:0
-#: field:document.page,create_uid:0
-msgid "Author"
-msgstr "Avtor"
-
-#. module: document_page
-#: field:document.page,menu_id:0
-msgid "Menu"
-msgstr "Meni"
-
-#. module: document_page
-#: view:document.page:0
-#: model:ir.model,name:document_page.model_document_page
-msgid "Document Page"
-msgstr "Stran dokumenta"
-
-#. module: document_page
-#: model:ir.actions.act_window,name:document_page.action_related_page_history
-msgid "Page History"
-msgstr "Zgodovina strani"
-
-#. module: document_page
-#: view:document.page:0
-#: field:document.page,content:0
-#: selection:document.page,type:0
-#: field:document.page.history,content:0
-msgid "Content"
-msgstr "Vsebina"
-
-#. module: document_page
-#: view:document.page:0
-msgid "Group By..."
-msgstr "Združi po..."
-
-#. module: document_page
-#: view:document.page:0
-msgid "Template"
-msgstr "Predloga"
-
-#. module: document_page
-#: view:document.page:0
-msgid ""
-"that will be used as a content template for all new page of this category."
-msgstr ""
-"ki bo uporabljeno kot vsebinska predloga za vse nove strani v tej kategoriji"
-
-#. module: document_page
-#: field:document.page,name:0
-msgid "Title"
-msgstr "Naslov"
-
-#. module: document_page
-#: model:ir.model,name:document_page.model_document_page_create_menu
-msgid "Wizard Create Menu"
-msgstr "čarovnik za kreiranje menija"
-
-#. module: document_page
-#: field:document.page,type:0
-msgid "Type"
-msgstr "Tip"
-
-#. module: document_page
-#: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
-msgid "wizard.document.page.history.show_diff"
-msgstr "wizard.document.page.history.show_diff"
-
-#. module: document_page
-#: field:document.page.history,create_uid:0
-msgid "Modified By"
-msgstr "Spremenil"
-
-#. module: document_page
-#: view:document.page.create.menu:0
-msgid "or"
-msgstr "ali"
-
-#. module: document_page
-#: help:document.page,type:0
-msgid "Page type"
-msgstr "Tip strani"
-
-#. module: document_page
-#: view:document.page.create.menu:0
-msgid "Menu Information"
-msgstr "Informacije o meniju"
-
-#. module: document_page
-#: view:document.page.history:0
-#: model:ir.model,name:document_page.model_document_page_history
-msgid "Document Page History"
-msgstr "Zgodovina strani dokumenta"
-
-#. module: document_page
-#: model:ir.ui.menu,name:document_page.menu_page_history
-msgid "Pages history"
-msgstr "Zgodovina strani"
-
-#. module: document_page
-#: code:addons/document_page/document_page.py:129
-#, python-format
-msgid "There are no changes in revisions."
-msgstr "V reviziji ni sprememb."
-
-#. module: document_page
-#: field:document.page.history,create_date:0
-msgid "Date"
-msgstr "Datum"
-
-#. module: document_page
-#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
-#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
-#: view:wizard.document.page.history.show_diff:0
-msgid "Difference"
-msgstr "Razlika"
-
-#. module: document_page
-#: model:ir.actions.act_window,name:document_page.action_page
-#: model:ir.ui.menu,name:document_page.menu_page
-#: model:ir.ui.menu,name:document_page.menu_wiki
-msgid "Pages"
-msgstr "Strani"
-
-#. module: document_page
-#: model:ir.ui.menu,name:document_page.menu_category
-msgid "Categories"
-msgstr "Kategorije"
-
-#. module: document_page
-#: view:document.page:0
-msgid "Name"
-msgstr "Naziv"
-
-#. module: document_page
-#: field:document.page.create.menu,menu_parent_id:0
-msgid "Parent Menu"
-msgstr "Nadmenu"
-
-#. module: document_page
-#: field:document.page,write_date:0
-msgid "Modification Date"
-msgstr "Datum spremembe"
-
-#. module: document_page
-#: field:document.page,create_date:0
-msgid "Created on"
-msgstr "Izdelano"
-
-#. module: document_page
-#: code:addons/document_page/wizard/document_page_show_diff.py:50
-#, python-format
-msgid "You need to select minimum one or maximum two history revisions!"
-msgstr "Izbrati morate vsaj eno ali največ dve pretekli reviziji!"
-
-#. module: document_page
-#: model:ir.actions.act_window,name:document_page.action_history
-msgid "Page history"
-msgstr "Zgodovina strani"
-
-#. module: document_page
-#: field:document.page.history,summary:0
-msgid "Summary"
-msgstr "Povzetek"
-
-#. module: document_page
-#: view:document.page:0
-msgid "e.g. Once upon a time..."
-msgstr "npr. Nekoč pred davnimi časi..."
-
-#. module: document_page
-#: view:document.page.history:0
-msgid "Document History"
-msgstr "Zgodovina dokumenta"
-
-#. module: document_page
-#: field:document.page.create.menu,menu_name:0
-msgid "Menu Name"
-msgstr "Naziv menuja"
-
-#. module: document_page
-#: field:document.page.history,page_id:0
-msgid "Page"
-msgstr "Stran"
-
-#. module: document_page
-#: field:document.page,history_ids:0
-msgid "History"
-msgstr "Zgodovina"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -233,34 +30,80 @@ msgid ""
 "            "
 msgstr ""
 "<p class=\"oe_view_nocontent_create\">\n"
-"                Kliknite za kreiranje nove spletne strani.\n"
+"                Ustvarjanje nove spletne strani.\n"
 "              </p>\n"
 "            "
 
 #. module: document_page
-#: view:document.page.create.menu:0
+#: view:document.page:document_page.view_wiki_filter
+#: field:document.page,create_uid:0
+msgid "Author"
+msgstr "Avtor"
+
+#. module: document_page
+#: view:document.page.create.menu:document_page.view_wiki_create_menu
+msgid "Cancel"
+msgstr "Preklic"
+
+#. module: document_page
+#: view:document.page:document_page.view_category_tree
+#: model:ir.ui.menu,name:document_page.menu_category
+msgid "Categories"
+msgstr "Kategorije"
+
+#. module: document_page
+#: view:document.page:document_page.view_category_form
+#: view:document.page:document_page.view_wiki_form field:document.page,parent_id:0
+#: selection:document.page,type:0
+#: model:ir.actions.act_window,name:document_page.action_category
+msgid "Category"
+msgstr "Kategorija"
+
+#. module: document_page
+#: field:document.page,child_ids:0
+msgid "Children"
+msgstr "Podrejeno"
+
+#. module: document_page
+#: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
+msgid "Close"
+msgstr "Zaključi"
+
+#. module: document_page
+#: view:document.page:document_page.view_wiki_filter
+#: view:document.page:document_page.view_wiki_form field:document.page,content:0
+#: selection:document.page,type:0 field:document.page.history,content:0
+msgid "Content"
+msgstr "Vsebina"
+
+#. module: document_page
+#: view:document.page.create.menu:document_page.view_wiki_create_menu
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
 msgid "Create Menu"
-msgstr "Ustvari menu"
+msgstr "Ustvari meni"
 
 #. module: document_page
-#: field:document.page,display_content:0
-msgid "Displayed Content"
-msgstr "Prikazana vsebina"
+#: field:document.page.create.menu,create_uid:0
+#: field:wizard.document.page.history.show_diff,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
 
 #. module: document_page
-#: code:addons/document_page/document_page.py:129
-#: code:addons/document_page/wizard/document_page_show_diff.py:50
-#, python-format
-msgid "Warning!"
-msgstr "Opozorilo!"
+#: field:document.page,create_date:0 field:document.page.create.menu,create_date:0
+#: field:wizard.document.page.history.show_diff,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
 
 #. module: document_page
-#: view:document.page.create.menu:0
-#: view:wizard.document.page.history.show_diff:0
-msgid "Cancel"
-msgstr "Prekliči"
+#: field:document.page.history,create_date:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: document_page
+#: help:document.page,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Datum zadnjega sporočila vpisanega na to vknjižbo."
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -268,12 +111,260 @@ msgid "Diff"
 msgstr "Razlika"
 
 #. module: document_page
-#: view:document.page:0
+#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
+#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
+#: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
+msgid "Difference"
+msgstr "Razlika"
+
+#. module: document_page
+#: view:document.page.history:document_page.view_wiki_history_tree
+msgid "Document History"
+msgstr "Zgodovina dokumenta"
+
+#. module: document_page
+#: view:document.page:document_page.view_wiki_filter
+#: view:document.page:document_page.view_wiki_form
+#: view:document.page:document_page.view_wiki_menu_form
+#: view:document.page:document_page.view_wiki_tree
+#: view:document.page:document_page.view_wiki_tree_children
+#: model:ir.model,name:document_page.model_document_page
+msgid "Document Page"
+msgstr "Stran dokumenta"
+
+#. module: document_page
+#: view:document.page.history:document_page.wiki_history_form
+#: model:ir.model,name:document_page.model_document_page_history
+msgid "Document Page History"
+msgstr "Zgodovina strani dokumenta"
+
+#. module: document_page
+#: view:document.page:document_page.view_wiki_filter
 msgid "Document Type"
 msgstr "Tip dokumenta"
 
 #. module: document_page
-#: field:document.page,child_ids:0
-msgid "Children"
-msgstr "Podrejeno"
+#: view:document.page:document_page.view_category_form
+msgid "Documents"
+msgstr "Dokumenti"
 
+#. module: document_page
+#: field:document.page,message_follower_ids:0
+msgid "Followers"
+msgstr "Sledilci"
+
+#. module: document_page
+#: view:document.page:document_page.view_wiki_filter
+msgid "Group By..."
+msgstr "Združi po..."
+
+#. module: document_page
+#: field:document.page,history_ids:0
+msgid "History"
+msgstr "Zgodovina"
+
+#. module: document_page
+#: help:document.page,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is directly in "
+"html format in order to be inserted in kanban views."
+msgstr ""
+"Povzetek (število sporočil,..) v html formatu, da se lahko neposredno vstavi v "
+"poglede tipa kanban."
+
+#. module: document_page
+#: field:document.page,id:0 field:document.page.create.menu,id:0
+#: field:document.page.history,id:0
+#: field:wizard.document.page.history.show_diff,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: document_page
+#: help:document.page,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Če označeno, zahtevajo nova sporočila vašo pozornost."
+
+#. module: document_page
+#: field:document.page,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Je sledilec"
+
+#. module: document_page
+#: view:document.page:document_page.view_wiki_form
+msgid "Last Content"
+msgstr "Zadnja vsebina"
+
+#. module: document_page
+#: view:document.page:document_page.view_wiki_filter
+#: field:document.page,write_uid:0
+msgid "Last Contributor"
+msgstr "Zadnji prispeval"
+
+#. module: document_page
+#: field:document.page,message_last_post:0
+msgid "Last Message Date"
+msgstr "Datum zadnjega sporočila"
+
+#. module: document_page
+#: field:document.page.create.menu,write_uid:0
+#: field:document.page.history,write_uid:0
+#: field:wizard.document.page.history.show_diff,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnjič posodobil"
+
+#. module: document_page
+#: field:document.page.create.menu,write_date:0
+#: field:document.page.history,write_date:0
+#: field:wizard.document.page.history.show_diff,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: document_page
+#: field:document.page,menu_id:0
+msgid "Menu"
+msgstr "Meni"
+
+#. module: document_page
+#: view:document.page.create.menu:document_page.view_wiki_create_menu
+msgid "Menu Information"
+msgstr "Informacije o meniju"
+
+#. module: document_page
+#: field:document.page.create.menu,menu_name:0
+msgid "Menu Name"
+msgstr "Nadrejeni meni"
+
+#. module: document_page
+#: field:document.page,message_ids:0
+msgid "Messages"
+msgstr "Sporočila"
+
+#. module: document_page
+#: help:document.page,message_ids:0
+msgid "Messages and communication history"
+msgstr "Sporočila in kronologija komunikacij"
+
+#. module: document_page
+#: field:document.page,write_date:0
+msgid "Modification Date"
+msgstr "Datum spremembe"
+
+#. module: document_page
+#: field:document.page.history,create_uid:0
+msgid "Modified By"
+msgstr "Spremenil"
+
+#. module: document_page
+#: view:document.page:document_page.view_category_form
+#: view:document.page:document_page.view_wiki_form
+#: view:document.page:document_page.view_wiki_menu_form
+msgid "Name"
+msgstr "Naziv"
+
+#. module: document_page
+#: field:document.page.history,page_id:0
+msgid "Page"
+msgstr "Stran"
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_related_page_history
+msgid "Page History"
+msgstr "Zgodovina strani"
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_history
+msgid "Page history"
+msgstr "Zgodovina strani"
+
+#. module: document_page
+#: help:document.page,type:0
+msgid "Page type"
+msgstr "Tip strani"
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_page
+#: model:ir.ui.menu,name:document_page.menu_page
+#: model:ir.ui.menu,name:document_page.menu_wiki
+msgid "Pages"
+msgstr "Strani"
+
+#. module: document_page
+#: model:ir.ui.menu,name:document_page.menu_page_history
+msgid "Pages history"
+msgstr "Zgodovina strani"
+
+#. module: document_page
+#: field:document.page.create.menu,menu_parent_id:0
+msgid "Parent Menu"
+msgstr "Nadmenu"
+
+#. module: document_page
+#: field:document.page,message_summary:0 field:document.page.history,summary:0
+msgid "Summary"
+msgstr "Povzetek"
+
+#. module: document_page
+#: view:document.page:document_page.view_category_form
+msgid "Template"
+msgstr "Predloga"
+
+#. module: document_page
+#: view:document.page:document_page.view_category_form
+msgid ""
+"Template that will be used as a content template for all new page of this "
+"category."
+msgstr ""
+"Predloga, ki bo uporabljena kot vsebinska predloga za vse nove strani v tej "
+"kategoriji"
+
+#. module: document_page
+#: code:addons/document_page/document_page.py:175
+#, python-format
+msgid "There are no changes in revisions."
+msgstr "V reviziji ni sprememb."
+
+#. module: document_page
+#: field:document.page,name:0
+msgid "Title"
+msgstr "Naslov"
+
+#. module: document_page
+#: field:document.page,type:0
+msgid "Type"
+msgstr "Tip"
+
+#. module: document_page
+#: field:document.page,message_unread:0
+msgid "Unread Messages"
+msgstr "Neprebrana sporočila"
+
+#. module: document_page
+#: model:ir.model,name:document_page.model_document_page_create_menu
+msgid "Wizard Create Menu"
+msgstr "Čarovnik za ustvarjanje menija"
+
+#. module: document_page
+#: code:addons/document_page/wizard/document_page_show_diff.py:50
+#, python-format
+msgid "You need to select minimum one or maximum two history revisions!"
+msgstr "Izbrati morate vsaj eno ali največ dve pretekli reviziji!"
+
+#. module: document_page
+#: view:document.page:document_page.view_category_form
+#: view:document.page:document_page.view_wiki_form
+msgid "e.g. Once upon a time..."
+msgstr "npr. Nekoč pred davnimi časi..."
+
+#. module: document_page
+#: view:document.page.create.menu:document_page.view_wiki_create_menu
+msgid "or"
+msgstr "ali"
+
+#~ msgid "wizard.document.page.history.show_diff"
+#~ msgstr "wizard.document.page.history.show_diff"
+
+#~ msgid "Displayed Content"
+#~ msgstr "Prikazana vsebina"
+
+#~ msgid "Warning!"
+#~ msgstr "Opozorilo!"
