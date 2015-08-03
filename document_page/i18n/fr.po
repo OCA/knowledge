@@ -8,32 +8,30 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-08-22 07:35+0000\n"
+"PO-Revision-Date: 2015-08-03 13:36+0200\n"
 "Last-Translator: Florian Hatat <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-11-21 06:07+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Generator: Poedit 1.8.2\n"
+"Language: fr\n"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,parent_id:0
+#: view:document.page:0 field:document.page,parent_id:0
 #: selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
 msgstr "Catégorie"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,write_uid:0
+#: view:document.page:0 field:document.page,write_uid:0
 msgid "Last Contributor"
 msgstr "Dernier contributeur"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,create_uid:0
+#: view:document.page:0 field:document.page,create_uid:0
 msgid "Author"
 msgstr "Auteur"
 
@@ -43,8 +41,7 @@ msgid "Menu"
 msgstr "Menu"
 
 #. module: document_page
-#: view:document.page:0
-#: model:ir.model,name:document_page.model_document_page
+#: view:document.page:0 model:ir.model,name:document_page.model_document_page
 msgid "Document Page"
 msgstr "Gestion documentaire de pages Web"
 
@@ -54,10 +51,8 @@ msgid "Page History"
 msgstr "Historique de la page"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,content:0
-#: selection:document.page,type:0
-#: field:document.page.history,content:0
+#: view:document.page:0 field:document.page,content:0
+#: selection:document.page,type:0 field:document.page.history,content:0
 msgid "Content"
 msgstr "Contenu"
 
@@ -73,11 +68,10 @@ msgstr "Modèle"
 
 #. module: document_page
 #: view:document.page:0
-msgid ""
-"that will be used as a content template for all new page of this category."
+msgid "that will be used as a content template for all new page of this category."
 msgstr ""
-"Ceci sera utilisé comment contenu initial de toutes les nouvelles pages de "
-"cette catégorie."
+"Ceci sera utilisé comment contenu initial de toutes les nouvelles pages de cette "
+"catégorie."
 
 #. module: document_page
 #: field:document.page,name:0
@@ -185,8 +179,7 @@ msgstr "Créé le"
 #, python-format
 msgid "You need to select minimum one or maximum two history revisions!"
 msgstr ""
-"Vous devez sélectionner au minimum une et au maximum deux versions "
-"d'historique"
+"Vous devez sélectionner au minimum une et au maximum deux versions d'historique"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
@@ -256,8 +249,7 @@ msgid "Warning!"
 msgstr "Avertissement!"
 
 #. module: document_page
-#: view:document.page.create.menu:0
-#: view:wizard.document.page.history.show_diff:0
+#: view:document.page.create.menu:0 view:wizard.document.page.history.show_diff:0
 msgid "Cancel"
 msgstr "Annuler"
 
