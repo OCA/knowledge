@@ -1,6 +1,6 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* document_url
+# 	* document_url
 #
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-05 01:48+0000\n"
-"PO-Revision-Date: 2015-04-05 09:05+0200\n"
+"PO-Revision-Date: 2015-08-03 13:36+0200\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian <translate@matmoz.si>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: sl\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 1.8.2\n"
 
 #. module: document_url
 #: view:ir.attachment.add_url:0
@@ -62,5 +62,3 @@ msgstr "ir.attachment.add_url"
 #: view:ir.attachment.add_url:0
 msgid "or"
 msgstr "ali"
-
-

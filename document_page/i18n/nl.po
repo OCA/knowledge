@@ -8,32 +8,30 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-06-08 11:21+0000\n"
+"PO-Revision-Date: 2015-08-03 13:36+0200\n"
 "Last-Translator: Erwin van der Ploeg (BAS Solutions) <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2013-11-21 06:07+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Generator: Poedit 1.8.2\n"
+"Language: nl\n"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,parent_id:0
+#: view:document.page:0 field:document.page,parent_id:0
 #: selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
 msgstr "Categorie"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,write_uid:0
+#: view:document.page:0 field:document.page,write_uid:0
 msgid "Last Contributor"
 msgstr "Laatste bijdrage"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,create_uid:0
+#: view:document.page:0 field:document.page,create_uid:0
 msgid "Author"
 msgstr "Auteur"
 
@@ -43,8 +41,7 @@ msgid "Menu"
 msgstr "Menu"
 
 #. module: document_page
-#: view:document.page:0
-#: model:ir.model,name:document_page.model_document_page
+#: view:document.page:0 model:ir.model,name:document_page.model_document_page
 msgid "Document Page"
 msgstr "Document pagina"
 
@@ -54,10 +51,8 @@ msgid "Page History"
 msgstr "Pagina geschiedenis"
 
 #. module: document_page
-#: view:document.page:0
-#: field:document.page,content:0
-#: selection:document.page,type:0
-#: field:document.page.history,content:0
+#: view:document.page:0 field:document.page,content:0
+#: selection:document.page,type:0 field:document.page.history,content:0
 msgid "Content"
 msgstr "Inhoud"
 
@@ -73,11 +68,10 @@ msgstr "Sjabloon"
 
 #. module: document_page
 #: view:document.page:0
-msgid ""
-"that will be used as a content template for all new page of this category."
+msgid "that will be used as a content template for all new page of this category."
 msgstr ""
-"dit zal worden gebruikt als een inhoud sjabloon voor alle nieuwe pagina;s "
-"van deze categorie."
+"dit zal worden gebruikt als een inhoud sjabloon voor alle nieuwe pagina;s van "
+"deze categorie."
 
 #. module: document_page
 #: field:document.page,name:0
@@ -184,8 +178,7 @@ msgstr "Aangemaakt op"
 #: code:addons/document_page/wizard/document_page_show_diff.py:50
 #, python-format
 msgid "You need to select minimum one or maximum two history revisions!"
-msgstr ""
-"U dient minimaal één en maximaal twee historie revisies te selecteren.!"
+msgstr "U dient minimaal één en maximaal twee historie revisies te selecteren.!"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
@@ -255,8 +248,7 @@ msgid "Warning!"
 msgstr "Waarschuwing!"
 
 #. module: document_page
-#: view:document.page.create.menu:0
-#: view:wizard.document.page.history.show_diff:0
+#: view:document.page.create.menu:0 view:wizard.document.page.history.show_diff:0
 msgid "Cancel"
 msgstr "Annuleren"
 

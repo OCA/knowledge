@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-25 18:24+0000\n"
-"PO-Revision-Date: 2014-03-25 14:27-0500\n"
+"PO-Revision-Date: 2015-08-03 13:36+0200\n"
 "Last-Translator: Marc Cassuto <marc.cassuto@savoirfairelinux.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.2\n"
 
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_id:0
