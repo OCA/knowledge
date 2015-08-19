@@ -134,7 +134,7 @@ class document_page_history_wkfl(models.Model):
             )
 
             page.get_page_url = (
-                '{}/#db={}&id={}&view_type=form&'
+                '{}/web#db={}&id={}&view_type=form&'
                 'model=document.page.history').format(
                     base_url,
                     self.env.cr.dbname,
