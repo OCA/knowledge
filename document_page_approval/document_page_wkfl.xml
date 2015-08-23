@@ -61,16 +61,6 @@
 --<br/>
 OpenERP</p>]]>
             </field>
-            <field name="body_text"><![CDATA[
-Hello,
-
-The page "${object.page_id.name}" has been modified and need your approval.
-
-You can review the new version here: ${object.get_page_url}
-
-Have a great day.
---
-OpenERP]]></field>
         </record>
 
     </data>
