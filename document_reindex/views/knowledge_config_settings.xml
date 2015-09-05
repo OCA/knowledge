@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_knowledge_configuration" model="ir.ui.view">
+            <field name="model">knowledge.config.settings</field>
+            <field name="inherit_id" ref="knowledge.view_knowledge_configuration" />
+            <field name="arch" type="xml">
+                <xpath expr="//group/div" position="inside">
+                    <div attrs="{'invisible': [('document_reindex_unindexed', '=', True)]}">
+                        <field name="document_reindex_all" class="oe_inline" />
+                        <label for="document_reindex_all" />
+                    </div>
+                    <div attrs="{'invisible': [('document_reindex_all', '=', True)]}">
+                        <field name="document_reindex_unindexed" class="oe_inline" />
+                        <label for="document_reindex_unindexed" />
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
