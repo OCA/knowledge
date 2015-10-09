@@ -21,7 +21,7 @@
 {
     "name": "Choose document's directory",
     "summary": "Choose a document's directory during upload",
-    "version": "1.0",
+    "version": "8.0.1.0.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "complexity": "normal",

@@ -22,7 +22,7 @@
 
 {
     'name': 'URL attachment',
-    'version': '1.0',
+    'version': '8.0.1.0.0',
     'category': 'Tools',
     'description': """
 Module that allows to attach an URL as a document.

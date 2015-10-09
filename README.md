@@ -23,14 +23,14 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[attachment_preview](attachment_preview/) | 1.1 | Preview attachments supported by Viewer.js
-[attachments_to_filesystem](attachments_to_filesystem/) | 1.0 | Move existing attachments to filesystem
-[document_choose_directory](document_choose_directory/) | 1.0 | Choose a document's directory during upload
-[document_no_unique_filenames](document_no_unique_filenames/) | 1.0 | Drop the uniquness constraint on filenames for directories
-[document_page](document_page/) | 1.0.1 | Document Page
-[document_page_approval](document_page_approval/) | 1.0 | Document Page Approval
-[document_reindex](document_reindex/) | 1.0 | Reindex your already uploaded documents
-[document_url](document_url/) | 1.0 | URL attachment
+[attachment_preview](attachment_preview/) | 8.0.1.1.0 | Preview attachments supported by Viewer.js
+[attachments_to_filesystem](attachments_to_filesystem/) | 8.0.1.0.0 | Move existing attachments to filesystem
+[document_choose_directory](document_choose_directory/) | 8.0.1.0.0 | Choose a document's directory during upload
+[document_no_unique_filenames](document_no_unique_filenames/) | 8.0.1.0.0 | Drop the uniquness constraint on filenames for directories
+[document_page](document_page/) | 8.0.1.0.1 | Document Page
+[document_page_approval](document_page_approval/) | 8.0.1.0.0 | Document Page Approval
+[document_reindex](document_reindex/) | 8.0.1.0.0 | Reindex your already uploaded documents
+[document_url](document_url/) | 8.0.1.0.0 | URL attachment
 
 Unported addons
 ---------------

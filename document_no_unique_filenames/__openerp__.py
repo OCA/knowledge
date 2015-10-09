@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "No unique filenames in directories",
-    "version": "1.0",
+    "version": "8.0.1.0.0",
     "author": "Therp BV",
     "license": "AGPL-3",
     "category": "Knowledge Management",
