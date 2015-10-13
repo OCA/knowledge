@@ -36,7 +36,7 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[document_multiple_records](__unported__/document_multiple_records/) | 0.1 (unported) | Document Management System for Multiple Records
-[document_page_multi_company](__unported__/document_page_multi_company/) | 1.0 (unported) | Document Page Multi-Company
+[document_multiple_records](document_multiple_records/) | 0.1 (unported) | Document Management System for Multiple Records
+[document_page_multi_company](document_page_multi_company/) | 1.0 (unported) | Document Page Multi-Company
 
 [//]: # (end addons)
