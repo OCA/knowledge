@@ -40,5 +40,5 @@ Module that allows to attach an URL as a document.
     'qweb': [
         'static/src/xml/url.xml',
     ],
-    "installable": True,
+    'installable': False,
 }
