@@ -48,7 +48,7 @@ Web pages
     'test': [
         'test/document_page_test00.yml'
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'images': [],
     'css': ['static/src/css/document_page.css'],
