@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,5 +18,30 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
-from . import wizard
+
+
+{
+    'name' : 'Knowledge Management System',
+    'version' : '1.0',
+    'depends' : ['base','base_setup'],
+    'author' : 'OpenERP SA',
+    'category': 'Hidden/Dependency',
+    'description': """
+Installer for knowledge-based Hidden.
+=====================================
+
+Makes the Knowledge Application Configuration available from where you can install
+document and Wiki based Hidden.
+    """,
+    'website': 'https://www.odoo.com',
+    'data': [
+        'security/knowledge_security.xml',
+        'security/ir.model.access.csv',
+        'knowledge_view.xml',
+        'res_config_view.xml',
+    ],
+    'demo': ['knowledge_demo.xml'],
+    'installable': True,
+    'auto_install': False,
+}
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    OpenERP, Open Source Business Applications
+#    Copyright (C) 2004-2012 OpenERP S.A. (<http://openerp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,5 +18,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
-from . import wizard
+
+from openerp.osv import fields, osv
+
+class knowledge_config_settings(osv.osv_memory):
+    _name = 'knowledge.config.settings'
+    _inherit = 'res.config.settings'
+    _columns = {
+        'module_document': fields.boolean('Manage documents',
+            help='Document indexation, full text search of attachements.\n'
+                 '-This installs the module document.'),
+    }
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
