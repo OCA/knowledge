@@ -36,19 +36,19 @@ Web pages
         'mail',
     ],
     'data': [
-        'wizard/document_page_create_menu_view.xml',
-        'wizard/document_page_show_diff_view.xml',
-        'document_page_view.xml',
+        'wizard/document_page_create_menu.xml',
+        'wizard/document_page_show_diff.xml',
+        'views/document_page.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
     'demo': [
-        'document_page_demo.xml'
+        'demo/document_page.xml'
     ],
     'test': [
         'test/document_page_test00.yml'
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'images': [],
     'css': ['static/src/css/document_page.css'],
