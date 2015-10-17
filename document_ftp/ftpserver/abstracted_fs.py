@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import os
 import time
@@ -11,7 +11,6 @@ import fnmatch
 
 from openerp import pooler, netsvc, sql_db
 from openerp.service import security
-from openerp.osv import osv
 
 from openerp.addons.document.document import get_node_context
 
@@ -30,10 +29,10 @@ def _get_month_name(month):
     elif month == 11:return 'Nov'
     elif month == 12:return 'Dec'
 
-from ftpserver import _to_decode, _to_unicode
+from document_ftp.ftpserver.ftpserver import _to_decode, _to_unicode
 
 
-class abstracted_fs(object):
+class AbstractedFs(object):
     """A class used to interact with the file system, providing a high
     level, cross-platform interface compatible with both Windows and
     UNIX style filesystems.
@@ -190,21 +189,19 @@ class abstracted_fs(object):
         """
         raise NotImplementedError  # TODO
 
-        text = not 'b' in mode
-        # for unique file , maintain version if duplicate file
-        if dir:
-            cr = dir.cr
-            uid = dir.uid
-            pool = pooler.get_pool(node.context.dbname)
-            object = dir and dir.object or False
-            object2 = dir and dir.object2 or False
-            res = pool.get('ir.attachment').search(cr, uid, [('name', 'like', prefix), ('parent_id', '=', object and object.type in ('directory', 'ressource') and object.id or False), ('res_id', '=', object2 and object2.id or False), ('res_model', '=', object2 and object2._name or False)])
-            if len(res):
-                pre = prefix.split('.')
-                prefix = pre[0] + '.v' + str(len(res)) + '.' + pre[1]
-        return self.create(dir, suffix + prefix, text)
-
-
+#         text = not 'b' in mode
+#         # for unique file , maintain version if duplicate file
+#         if dir:
+#             cr = dir.cr
+#             uid = dir.uid
+#             pool = pooler.get_pool(node.context.dbname)
+#             object = dir and dir.object or False
+#             object2 = dir and dir.object2 or False
+#             res = pool.get('ir.attachment').search(cr, uid, [('name', 'like', prefix), ('parent_id', '=', object and object.type in ('directory', 'ressource') and object.id or False), ('res_id', '=', object2 and object2.id or False), ('res_model', '=', object2 and object2._name or False)])
+#             if len(res):
+#                 pre = prefix.split('.')
+#                 prefix = pre[0] + '.v' + str(len(res)) + '.' + pre[1]
+#         return self.create(dir, suffix + prefix, text)
 
     # Ok
     def chdir(self, datacr):
@@ -341,7 +338,7 @@ class abstracted_fs(object):
 
     def listdir(self, datacr):
         """List the content of a directory."""
-        class false_node(object):
+        class FalseNode(object):
             write_date = 0.0
             create_date = 0.0
             unixperms = 040550
@@ -357,8 +354,8 @@ class abstracted_fs(object):
             result = []
             for db in self.db_list():
                 try:
-                    result.append(false_node(db))
-                except osv.except_osv:
+                    result.append(FalseNode(db))
+                except:
                     pass
             return result
         cr, node, rem = datacr

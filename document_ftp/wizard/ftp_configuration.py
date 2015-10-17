@@ -22,9 +22,10 @@
 ##############################################################################
 
 from openerp.osv import fields, osv
+from openerp.osv.orm import TransientModel
 from openerp.tools import config
 
-class document_ftp_configuration(osv.osv_memory):
+class DocumentFtpConfiguration(TransientModel):
 
     _name = 'document.ftp.configuration'
     _description = 'Auto Directory Configuration'
@@ -49,5 +50,5 @@ class document_ftp_configuration(osv.osv_memory):
         self.pool.get('ir.actions.act_url').write(cr, uid, [aid],
                 {'url': 'ftp://' + (conf.host or 'localhost:8021') + '/' + cr.dbname + '/'})
 
-document_ftp_configuration()
+DocumentFtpConfiguration()
 

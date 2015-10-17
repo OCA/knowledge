@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # ftpserver.py
 #
 #  pyftpdlib is released under the MIT license, reproduced below:
@@ -1579,29 +1579,29 @@ class FTPHandler(asynchat.async_chat):
 
     def __check_perm(self, cmd, line, datacr):
         """Check permissions depending on issued command."""
-        map = {'CWD':'e', 'XCWD':'e', 'CDUP':'e', 'XCUP':'e',
-               'LIST':'l', 'NLST':'l', 'MLSD':'l', 'STAT':'l',
-               'RETR':'r',
-               'APPE':'a',
-               'DELE':'d', 'RMD':'d', 'XRMD':'d',
-               'RNFR':'f',
-               'MKD':'m', 'XMKD':'m',
-               'STOR':'w'}
+        map = {'CWD': 'e', 'XCWD':'e', 'CDUP':'e', 'XCUP':'e',
+               'LIST': 'l', 'NLST':'l', 'MLSD':'l', 'STAT':'l',
+               'RETR': 'r',
+               'APPE': 'a',
+               'DELE': 'd', 'RMD':'d', 'XRMD':'d',
+               'RNFR': 'f',
+               'MKD': 'm', 'XMKD':'m',
+               'STOR': 'w'}
         raise NotImplementedError
-        if cmd in map:
-            if cmd == 'STAT' and not line:
-                return True
-            perm = map[cmd]
-            if not line and (cmd in ('LIST', 'NLST', 'MLSD')):
-                path = self.fs.ftp2fs(self.fs.cwd, datacr)
-            else:
-                path = self.fs.ftp2fs(line, datacr)
-            if not self.authorizer.has_perm(self.username, perm, path):
-                self.log('FAIL %s "%s". Not enough privileges.' \
-                         % (cmd, self.fs.ftpnorm(line)))
-                self.respond("550 Can't %s. Not enough privileges." % cmd)
-                return False
-        return True
+#         if cmd in map:
+#             if cmd == 'STAT' and not line:
+#                 return True
+#             perm = map[cmd]
+#             if not line and (cmd in ('LIST', 'NLST', 'MLSD')):
+#                 path = self.fs.ftp2fs(self.fs.cwd, datacr)
+#             else:
+#                 path = self.fs.ftp2fs(line, datacr)
+#             if not self.authorizer.has_perm(self.username, perm, path):
+#                 self.log('FAIL %s "%s". Not enough privileges.' \
+#                          % (cmd, self.fs.ftpnorm(line)))
+#                 self.respond("550 Can't %s. Not enough privileges." % cmd)
+#                 return False
+#         return True
 
     def handle_expt(self):
         """Called when there is out of band (OOB) data for the socket
@@ -2098,7 +2098,7 @@ class FTPHandler(asynchat.async_chat):
         data = ''
         if listing:
             listing.sort()
-            data = ''.join([ _to_decode(x) + '\r\n' for x in listing ])
+            data = ''.join([_to_decode(x) + '\r\n' for x in listing])
         self.log('OK NLST "%s". Transfer starting.' % line)
         self.push_dtp_data(data)
 
@@ -2287,7 +2287,7 @@ class FTPHandler(asynchat.async_chat):
             basedir = self.fs.ftp2fs(self.fs.cwd, datacr)
             prefix = 'ftpd.'
         try:
-            fd = self.try_as_current_user(self.fs.mkstemp, kwargs={'prefix':prefix,
+            fd = self.try_as_current_user(self.fs.mkstemp, kwargs={'prefix': prefix,
                                           'dir': basedir}, line=line)
         except FTPExceptionSent:
             self.fs.close_cr(datacr)
@@ -2479,7 +2479,6 @@ class FTPHandler(asynchat.async_chat):
         # Note: RFC-959 erroneously mention "220" as the correct response
         # code to be given in this case, but this is wrong...
         self.respond("230 Ready for new user.")
-
 
         # --- filesystem operations
 

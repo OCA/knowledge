@@ -1,6 +1,6 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-class authorizer:
+class Authorizer:
     read_perms = "elr"
     write_perms = "adfmw"
 

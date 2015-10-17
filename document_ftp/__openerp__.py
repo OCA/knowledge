@@ -26,7 +26,8 @@
     'name': 'Shared Repositories (FTP)',
     'version': '8.0.0.0.1',
     'category': 'Knowledge Management',
-    'author': 'OpenERP SA',
+    'author': 'Community Association (OCA)',
+    "license": "AGPL-3",
     'website': 'http://www.openerp.com',
     'depends': ['base', 'document'],
     'data': [
@@ -42,7 +43,9 @@
     ],
     'installable': True,
     'auto_install': False,
-    'images': ['images/1_configure_ftp.jpeg', 'images/2_document_browse.jpeg', 'images/3_document_ftp.jpeg'],
+    'images': ['images/1_configure_ftp.jpeg',
+               'images/2_document_browse.jpeg',
+               'images/3_document_ftp.jpeg'],
     'post_load': 'post_load',
 }
 

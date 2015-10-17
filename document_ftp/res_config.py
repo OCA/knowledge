@@ -24,12 +24,12 @@
 from openerp.osv import fields, osv
 from openerp.tools import config
 
-class documnet_ftp_setting(osv.osv_memory):
+class DocumentFtpSetting(osv.osv_memory):
     _name = 'knowledge.config.settings'
     _inherit = 'knowledge.config.settings'
     _columns = {
-        'ftp_server_host' : fields.char(string='Host'),
-        'ftp_server_port' : fields.char(string='Port'),
+        'ftp_server_host': fields.char(string='Host'),
+        'ftp_server_port': fields.char(string='Port'),
         'document_ftp_url': fields.char('Browse Documents', size=128,
             help="""Click the url to browse the documents""", readonly=True),
     }

@@ -24,9 +24,9 @@
 import threading
 import logging
 
-import authorizer
-import abstracted_fs
-import ftpserver
+import document_ftp.ftpserver.Authorizer
+import document_ftp.ftpserver.AbstractedFs
+import document_ftp.ftpserver.ftpserver
 
 import openerp
 from openerp.tools import config
@@ -37,7 +37,8 @@ def start_server():
     if openerp.multi_process:
         _logger.info("FTP disabled in multiprocess mode")
         return
-    ip_address = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
+    ip_address = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) \
+           for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
     if not ip_address:
         ip_address = '127.0.0.1'
     HOST = config.get('ftp_server_host', str(ip_address))
@@ -47,10 +48,10 @@ def start_server():
     if len(pps) == 2:
         PASSIVE_PORTS = int(pps[0]), int(pps[1])
 
-    class ftp_server(threading.Thread):
+    class FtpServer(threading.Thread):
         
         def run(self):
-            autho = authorizer.authorizer()
+            autho = authorizer.Authorizer()
             ftpserver.FTPHandler.authorizer = autho
             ftpserver.max_cons = 300
             ftpserver.max_cons_per_ip = 50
@@ -69,6 +70,6 @@ def start_server():
         _logger.info("\n Server FTP Not Started\n")
     else:
         _logger.info("\n Serving FTP on %s:%s\n" % (HOST, PORT))
-        ds = ftp_server()
+        ds = FtpServer()
         ds.daemon = True
         ds.start()

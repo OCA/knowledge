@@ -24,7 +24,7 @@
 from openerp.osv import fields, osv
 from .. import ftpserver
 
-class document_ftp_browse(osv.osv_memory):
+class DocumentFtpBrowse(osv.osv_memory):
     _name = 'document.ftp.browse'
     _description = 'Document FTP Browse'
 
@@ -61,5 +61,5 @@ class document_ftp_browse(osv.osv_memory):
         'target': 'new'
         }
 
-document_ftp_browse()
+DocumentFtpBrowse()
 
