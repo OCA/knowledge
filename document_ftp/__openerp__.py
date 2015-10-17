@@ -48,4 +48,3 @@
                'images/3_document_ftp.jpeg'],
     'post_load': 'post_load',
 }
-

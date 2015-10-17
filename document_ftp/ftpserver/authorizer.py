@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import pooler
+import security
+
+
 class Authorizer:
     read_perms = "elr"
     write_perms = "adfmw"
@@ -67,4 +71,3 @@ class Authorizer:
     def get_msg_quit(self, username):
         """Return the user's quitting message."""
         return 'Bye.'
-

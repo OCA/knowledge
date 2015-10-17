@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 
@@ -17,7 +17,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -26,18 +26,19 @@ import logging
 
 import document_ftp.ftpserver.Authorizer
 import document_ftp.ftpserver.AbstractedFs
-import document_ftp.ftpserver.ftpserver
+import document_ftp.ftpserver.FtpServer
 
 import openerp
 from openerp.tools import config
 _logger = logging.getLogger(__name__)
 import socket
 
+
 def start_server():
     if openerp.multi_process:
         _logger.info("FTP disabled in multiprocess mode")
         return
-    ip_address = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) \
+    ip_address = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) 
            for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
     if not ip_address:
         ip_address = '127.0.0.1'
@@ -49,21 +50,21 @@ def start_server():
         PASSIVE_PORTS = int(pps[0]), int(pps[1])
 
     class FtpServer(threading.Thread):
-        
+
         def run(self):
-            autho = authorizer.Authorizer()
-            ftpserver.FTPHandler.authorizer = autho
-            ftpserver.max_cons = 300
-            ftpserver.max_cons_per_ip = 50
-            ftpserver.FTPHandler.abstracted_fs = abstracted_fs.AbstractedFs
+            autho = Authorizer.Authorizer()
+            FtpServer.FTPHandler.Authorizer = autho
+            FtpServer.max_cons = 300
+            FtpServer.max_cons_per_ip = 50
+            FtpServer.FTPHandler.AbstractedFs = AbstractedFs.AbstractedFs
             if PASSIVE_PORTS:
-                ftpserver.FTPHandler.passive_ports = PASSIVE_PORTS
+                FtpServer.FTPHandler.passive_ports = PASSIVE_PORTS
 
-            ftpserver.log = lambda msg: _logger.info(msg)
-            ftpserver.logline = lambda msg: None
-            ftpserver.logerror = lambda msg: _logger.error(msg)
+            FtpServer.log = lambda msg: _logger.info(msg)
+            FtpServer.logline = lambda msg: None
+            FtpServer.logerror = lambda msg: _logger.error(msg)
 
-            ftpd = ftpserver.FTPServer((HOST, PORT), ftpserver.FTPHandler)
+            ftpd = FtpServer.FTPServer((HOST, PORT), FtpServer.FTPHandler)
             ftpd.serve_forever()
 
     if HOST.lower() == 'none':
