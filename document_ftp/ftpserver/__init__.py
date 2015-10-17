@@ -24,9 +24,9 @@
 import threading
 import logging
 
-import document_ftp.ftpserver.Authorizer
-import document_ftp.ftpserver.AbstractedFs
-import document_ftp.ftpserver.FtpServer
+import document_ftp.ftpserver.authorizer
+import document_ftp.ftpserver.abstracted_fs
+import document_ftp.ftpserver.ftp_server
 
 import openerp
 from openerp.tools import config
@@ -38,8 +38,9 @@ def start_server():
     if openerp.multi_process:
         _logger.info("FTP disabled in multiprocess mode")
         return
-    ip_address = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) 
-           for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
+    ip_address = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close())
+                   for s in [socket.socket(socket.AF_INET,
+                                           socket.SOCK_DGRAM)]][0][1])
     if not ip_address:
         ip_address = '127.0.0.1'
     HOST = config.get('ftp_server_host', str(ip_address))
@@ -52,19 +53,19 @@ def start_server():
     class FtpServer(threading.Thread):
 
         def run(self):
-            autho = Authorizer.Authorizer()
-            FtpServer.FTPHandler.Authorizer = autho
-            FtpServer.max_cons = 300
-            FtpServer.max_cons_per_ip = 50
-            FtpServer.FTPHandler.AbstractedFs = AbstractedFs.AbstractedFs
+            autho = authorizer.Authorizer()
+            ftp_server.FTPHandler.Authorizer = autho
+            ftp_server.max_cons = 300
+            ftp_server.max_cons_per_ip = 50
+            ftp_server.FTPHandler.AbstractedFs = abstracted_fs.AbstractedFs
             if PASSIVE_PORTS:
-                FtpServer.FTPHandler.passive_ports = PASSIVE_PORTS
+                ftp_server.FTPHandler.passive_ports = PASSIVE_PORTS
 
-            FtpServer.log = lambda msg: _logger.info(msg)
-            FtpServer.logline = lambda msg: None
-            FtpServer.logerror = lambda msg: _logger.error(msg)
+            ftp_server.log = lambda msg: _logger.info(msg)
+            ftp_server.logline = lambda msg: None
+            ftp_server.logerror = lambda msg: _logger.error(msg)
 
-            ftpd = FtpServer.FTPServer((HOST, PORT), FtpServer.FTPHandler)
+            ftpd = ftp_server.FTPServer((HOST, PORT), ftp_server.FTPHandler)
             ftpd.serve_forever()
 
     if HOST.lower() == 'none':
