@@ -24,9 +24,9 @@
 import threading
 import logging
 
-import document_ftp.ftpserver.authorizer
-import document_ftp.ftpserver.abstracted_fs
-import document_ftp.ftpserver.ftp_server
+from . import authorizer
+from . import abstracted_fs
+from . import ftp_server
 
 import openerp
 from openerp.tools import config
