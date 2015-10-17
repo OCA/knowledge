@@ -123,6 +123,7 @@ import random
 import stat
 from collections import deque
 from tarfile import filemode
+import logging
 
 LOG_ACTIVE = True
 
@@ -239,12 +240,12 @@ class AuthorizerError(Error):
 def log(msg):
     """Log messages intended for the end user."""
     if LOG_ACTIVE:
-        print msg
+        logger.info('%s', msg)
 
 def logline(msg):
     """Log commands and responses passing through the command channel."""
     if LOG_ACTIVE:
-        print msg
+        logger.info('%s', msg)
 
 def logerror(msg):
     """Log traceback outputs occurring in case of errors."""
@@ -1400,7 +1401,7 @@ class FTPHandler(asynchat.async_chat):
         self.set_terminator("\r\n")
 
         # session attributes
-        self.fs = self.abstracted_fs()
+        self.fs = self.AbstractedFs()
         self.authenticated = False
         self.username = ""
         self.password = ""

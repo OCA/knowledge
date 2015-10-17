@@ -21,10 +21,11 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp.osv import fields
+from openerp.osv.orm import TransientModel
 from openerp.tools import config
 
-class DocumentFtpSetting(osv.osv_memory):
+class DocumentFtpSetting(TransientModel):
     _name = 'knowledge.config.settings'
     _inherit = 'knowledge.config.settings'
     _columns = {

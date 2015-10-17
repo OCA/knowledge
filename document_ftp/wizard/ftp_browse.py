@@ -21,10 +21,11 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp.osv import fields
+from openerp.osv.orm import TransientModel
 from .. import ftpserver
 
-class DocumentFtpBrowse(osv.osv_memory):
+class DocumentFtpBrowse(TransientModel):
     _name = 'document.ftp.browse'
     _description = 'Document FTP Browse'
 

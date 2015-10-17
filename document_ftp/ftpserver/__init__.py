@@ -55,7 +55,7 @@ def start_server():
             ftpserver.FTPHandler.authorizer = autho
             ftpserver.max_cons = 300
             ftpserver.max_cons_per_ip = 50
-            ftpserver.FTPHandler.abstracted_fs = abstracted_fs.abstracted_fs
+            ftpserver.FTPHandler.abstracted_fs = abstracted_fs.AbstractedFs
             if PASSIVE_PORTS:
                 ftpserver.FTPHandler.passive_ports = PASSIVE_PORTS
 
