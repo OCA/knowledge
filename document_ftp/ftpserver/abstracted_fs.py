@@ -461,7 +461,7 @@ class AbstractedFs(object):
         a broken or circular symbolic link.
         """
         raise DeprecationWarning()
-        return path and True or False
+#         return path and True or False
 
     exists = lexists
 

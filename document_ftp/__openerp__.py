@@ -26,7 +26,7 @@
     'name': 'Shared Repositories (FTP)',
     'version': '8.0.0.0.1',
     'category': 'Knowledge Management',
-    'author': 'Community Association (OCA)',
+    'author': 'Odoo Community Association (OCA)',
     "license": "AGPL-3",
     'website': 'http://www.openerp.com',
     'depends': ['base', 'document'],
