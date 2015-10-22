@@ -21,8 +21,9 @@
 from openerp import models, fields, api
 
 
-class document_page_create_menu(models.TransientModel):
-    """ Create Menu """
+class DocumentPageCreateMenu(models.TransientModel):
+    """Create Menu."""
+
     _name = "document.page.create.menu"
     _description = "Wizard Create Menu"
 
@@ -39,7 +40,8 @@ class document_page_create_menu(models.TransientModel):
 
     @api.model
     def default_get(self, fields_list):
-        res = super(document_page_create_menu, self).default_get(fields_list)
+        """Get Page name of the menu."""
+        res = super(DocumentPageCreateMenu, self).default_get(fields_list)
         page_id = self.env.context.get('active_id')
         obj_page = self.env['document.page']
         page = obj_page.browse(page_id)
@@ -48,6 +50,7 @@ class document_page_create_menu(models.TransientModel):
 
     @api.multi
     def document_page_menu_create(self):
+        """Menu creation."""
         obj_page = self.env['document.page']
         obj_menu = self.env['ir.ui.menu']
         obj_action = self.env['ir.actions.act_window']
@@ -86,6 +89,3 @@ class document_page_create_menu(models.TransientModel):
             'type': 'ir.actions.client',
             'tag': 'reload',
         }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
