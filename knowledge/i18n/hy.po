@@ -1,0 +1,155 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * knowledge
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-09 18:03+0000\n"
+"PO-Revision-Date: 2015-12-09 18:05+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Armenian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/hy/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hy\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page_approval
+msgid ""
+"Add workflow on documents per category.\n"
+"-This installs the module document_page_approval."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Apply"
+msgstr "Ավելացնել"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Cancel"
+msgstr "Հրաժարվել"
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document2
+msgid "Collaborative Content"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document_configuration
+msgid "Configuration"
+msgstr "Կոնֆիգուրացիա"
+
+#. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Configure Knowledge"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
+msgid ""
+"Document indexation, full text search of attachements.\n"
+"-This installs the module document."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Document page approval"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Document pages"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Documents"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
+msgid "ID"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document
+msgid "Knowledge"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Knowledge and Documents Management"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
+msgid "Manage document pages (Wiki)"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document
+msgid "Manage documents"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
+msgid "Manage documents approval"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
+msgid ""
+"Provide document page and category as a wiki.\n"
+"-This installs the module document_page."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
+msgid "Settings"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_knowledge_config_settings
+msgid "knowledge.config.settings"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "or"
+msgstr ""

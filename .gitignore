@@ -48,3 +48,6 @@ coverage.xml
 # Backup files
 *~
 *.swp
+
+# Ignore Mac DS_Store Files
+.DS_Store
