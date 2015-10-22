@@ -22,12 +22,13 @@ from openerp import models, fields, _
 from openerp import exceptions
 
 
-class showdiff(models.TransientModel):
-    """ Display Difference for History """
+class DocumentPageShowDiff(models.TransientModel):
+    """Display Difference for History."""
 
     _name = 'wizard.document.page.history.show_diff'
 
     def get_diff(self):
+        """Return the Difference between two document."""
         history = self.env["document.page.history"]
         ids = self.env.context.get('active_ids', [])
 
@@ -47,8 +48,7 @@ class showdiff(models.TransientModel):
             diff = history.getDiff(ids[0], nids.id)
         else:
             raise exceptions.Warning(
-                _("You need to select minimum one or maximum "
-                  "two history revisions!")
+                _("Select one or maximum two history revisions!")
             )
         return diff
 
@@ -57,5 +57,3 @@ class showdiff(models.TransientModel):
         readonly=True,
         default=get_diff
     )
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
