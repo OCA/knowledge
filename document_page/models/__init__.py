@@ -18,32 +18,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    'name': 'Document Page',
-    'version': '9.0.1.0.1',
-    'category': 'Knowledge Management',
-    'author': 'OpenERP SA, Odoo Community Association (OCA)',
-    'images': ['images/category_list.png', 'images/create_category.png',
-                'images/page_list.png', 'images/create_page.png',
-                'images/customer_invoice.jpeg', 'images/page_history.png'],
-    'website': 'http://www.openerp.com/',
-    'license': 'AGPL-3',
-    'depends': [
-        'mail',
-        'knowledge',
-    ],
-    'data': [
-        'wizard/document_page_create_menu.xml',
-        'wizard/document_page_show_diff.xml',
-        'views/document_page.xml',
-        'security/document_page_security.xml',
-        'security/ir.model.access.csv',
-    ],
-    'demo': [
-        'demo/document_page.xml'
-    ],
-    'installable': True,
-    'auto_install': False,
-    'css': ['static/src/css/document_page.css'],
-}
+from . import document_page
+from . import document_page_history

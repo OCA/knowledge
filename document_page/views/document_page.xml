@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
-<openerp>
+<odoo>
     <data>
-       <menuitem name="Knowledge"
-                 id="knowledge.menu_document" />
-
        <menuitem name="Pages"
                  id="menu_wiki"
                  parent="knowledge.menu_document"
@@ -316,4 +313,4 @@
             src_model="document.page"/>
 
     </data>
-</openerp>
+</odoo>

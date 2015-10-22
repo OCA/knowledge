@@ -19,13 +19,14 @@
 #
 ##############################################################################
 import logging
-import difflib
-from openerp import models, fields, api, _
+from openerp import models, fields, api
 
 _logger = logging.getLogger(__name__)
 
 
-class document_page(models.Model):
+class DocumentPage(models.Model):
+    """This class is use to manage Document."""
+
     _name = "document.page"
     _inherit = ['mail.thread']
     _description = "Document Page"
@@ -99,6 +100,7 @@ class document_page(models.Model):
     )
 
     def _get_page_index(self, page, link=True):
+        """Return the index of a document."""
         index = []
         for subpage in page.child_ids:
             index += ["<li>" + self._get_page_index(subpage) +
@@ -112,6 +114,7 @@ class document_page(models.Model):
         return r
 
     def _get_display_content(self):
+        """Return the content of a document."""
         for page in self:
             if page.type == "category":
                 display_content = self._get_page_index(page, link=False)
@@ -121,11 +124,13 @@ class document_page(models.Model):
 
     @api.onchange("parent_id")
     def do_set_content(self):
+        """We Set it the right content to the new parent."""
         if self.parent_id and not self.content:
             if self.parent_id.type == "category":
                 self.content = self.parent_id.content
 
     def create_history(self, page_id, content):
+        """Create the first history of a newly created document."""
         history = self.env['document.page.history']
         return history.create({
             "content": content,
@@ -134,7 +139,8 @@ class document_page(models.Model):
 
     @api.multi
     def write(self, vals):
-        result = super(document_page, self).write(vals)
+        """Write the content and set the history."""
+        result = super(DocumentPage, self).write(vals)
         content = vals.get('content')
         if content:
             for page in self:
@@ -144,51 +150,9 @@ class document_page(models.Model):
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
-        page_id = super(document_page, self).create(vals)
+        """Create the first history of a document."""
+        page_id = super(DocumentPage, self).create(vals)
         content = vals.get('content')
         if content:
             self.create_history(page_id.id, content)
         return page_id
-
-
-class document_page_history(models.Model):
-    _name = "document.page.history"
-    _description = "Document Page History"
-    _order = 'id DESC'
-    _rec_name = "create_date"
-
-    page_id = fields.Many2one('document.page', 'Page')
-    summary = fields.Char('Summary', size=256, select=True)
-    content = fields.Text("Content")
-    create_date = fields.Datetime("Date")
-    create_uid = fields.Many2one('res.users', "Modified By")
-
-    def getDiff(self, v1, v2):
-        text1 = self.browse(v1).content
-        text2 = self.browse(v2).content
-        line1 = line2 = ''
-        if text1:
-            line1 = text1.splitlines(1)
-        if text2:
-            line2 = text2.splitlines(1)
-        if (not line1 and not line2) or (line1 == line2):
-            return _('There are no changes in revisions.')
-        else:
-            diff = difflib.HtmlDiff()
-            return diff.make_table(
-                line1, line2,
-                "Revision-{}".format(v1),
-                "Revision-{}".format(v2),
-                context=True
-            )
-
-    def __getattr__(self, attr):
-        """Return a dummy callabale"""
-        if attr in ['_sql', 'init', '_ids']:
-            raise AttributeError
-
-        _logger.warning(
-            "Trying to access attribute %s on document_page_history",
-            attr
-        )
-        return (lambda *a, **b: None)

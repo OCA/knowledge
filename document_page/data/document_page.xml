@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
         <record id="wiki_wiki_main" model="document.page">
-            <field name="name">The OpenERP wiki</field>
+            <field name="name">The Odoo wiki</field>
             <field name="tags">help, quick start, wiki, formatting</field>
             <field name="minor_edit">0</field>
             <field name="index">1</field>
             <field name="summary">Initial Page</field>
-            <field  name="content">==The OpenERP wiki==
-            	
-[[File:http://www.openerp.com/sites/all/themes/openerp/logo.png OpenERP]]            	
+            <field  name="content">== The Odoo wiki ==
 
-The OpenERP wiki allows you to manage your enterprise's contents using wiki
+[[File:https://www.odoo.com/openerp_website/static/src/img/logo_transparent_198px.png Odoo]]
+
+The Odoo wiki allows you to manage your enterprise's contents using wiki
 restructured texts. This module provides a collaborative way to manage internal
 FAQs, quality manuals, technical references, etc.
 
@@ -38,4 +38,4 @@ FAQs, quality manuals, technical references, etc.
             <field name="parent_id" ref="wiki_groups_wikiformatting0"/>
         </record>
     </data>
-</openerp>
+</odoo>
