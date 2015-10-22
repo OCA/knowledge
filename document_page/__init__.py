@@ -1,3 +1,4 @@
+"""Import of other document page submodule."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -18,5 +19,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import document_page
+from . import models
 from . import wizard

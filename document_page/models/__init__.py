@@ -1,4 +1,4 @@
-"""wizard's models registration."""
+"""Data's models registration."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -19,5 +19,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import document_page_create_menu
-from . import document_page_show_diff
+from . import document_page
+from . import document_page_history

@@ -1,3 +1,4 @@
+"""Document Page configuration's file."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -21,35 +22,29 @@
 
 {
     'name': 'Document Page',
-    'version': '8.0.1.0.1',
+    'version': '9.0.1.0.0',
     'category': 'Knowledge Management',
-    'description': """
-Pages
-=====
-Web pages
-    """,
-    'author': ['OpenERP SA'],
+    'author': 'OpenERP SA, Odoo Community Association (OCA)',
     'website': 'http://www.openerp.com/',
     'license': 'AGPL-3',
     'depends': [
-        'knowledge',
         'mail',
+        'knowledge',
     ],
     'data': [
-        'wizard/document_page_create_menu_view.xml',
-        'wizard/document_page_show_diff_view.xml',
-        'document_page_view.xml',
+        'wizard/document_page_create_menu.xml',
+        'wizard/document_page_show_diff.xml',
+        'views/document_page.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
     'demo': [
-        'document_page_demo.xml'
+        'demo/document_page.xml'
     ],
     'test': [
         'test/document_page_test00.yml'
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
-    'images': [],
     'css': ['static/src/css/document_page.css'],
 }
