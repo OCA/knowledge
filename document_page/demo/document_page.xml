@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
         <record id="base.user_demo" model="res.users">
             <field eval="[(4, ref('base.group_document_user'))]"
@@ -128,4 +128,4 @@ Think of it as an out-of-the-box solution to boost your business' productivity.<
         </record>
 
     </data>
-</openerp>
+</odoo>
