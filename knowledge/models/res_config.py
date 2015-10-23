@@ -28,6 +28,3 @@ class KnowledgeConfigSettings(models.TransientModel):
     module_document = fields.Boolean('Manage documents',
             help='Document indexation, full text search of attachements.\n'
                  '-This installs the module document.')
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
