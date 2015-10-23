@@ -21,14 +21,13 @@
 
 from openerp import models, fields
 
-class knowledge_config_settings(models.TransientModel):
+class knowledgeConfigSettings(models.TransientModel):
     _name = 'knowledge.config.settings'
     _inherit = 'res.config.settings'
 
-    _fields = {
-        'module_document': fields.boolean('Manage documents',
+    module_document = fields.Boolean('Manage documents',
             help='Document indexation, full text search of attachements.\n'
-                 '-This installs the module document.'),
-    }
+                 '-This installs the module document.')
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

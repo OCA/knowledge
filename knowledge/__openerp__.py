@@ -22,9 +22,9 @@
 
 {
     'name' : 'Knowledge Management System',
-    'version' : '9.0.1.0',
+    'version' : '9.0.1.0.0',
     'depends' : ['base','base_setup'],
-    'author' : 'OpenERP SA',
+    'author' : ['OpenERP SA','Odoo Community Association (OCA)'],
     'category': 'Hidden/Dependency',
     'description': """
 Installer for knowledge-based Hidden.
