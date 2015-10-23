@@ -26,13 +26,7 @@
     'depends' : ['base','base_setup'],
     'author' : ['OpenERP SA','Odoo Community Association (OCA)'],
     'category': 'Hidden/Dependency',
-    'description': """
-Installer for knowledge-based Hidden.
-=====================================
-
-Makes the Knowledge Application Configuration available from where you can install
-document and Wiki based Hidden.
-    """,
+    'license': 'AGPL3',
     'website': 'https://www.odoo.com',
     'data': [
         'security/knowledge_security.xml',
@@ -44,4 +38,3 @@ document and Wiki based Hidden.
     'installable': True,
     'auto_install': False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
