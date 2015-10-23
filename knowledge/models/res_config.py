@@ -21,10 +21,13 @@
 
 from openerp import models, fields
 
+
 class KnowledgeConfigSettings(models.TransientModel):
     _name = 'knowledge.config.settings'
     _inherit = 'res.config.settings'
 
-    module_document = fields.Boolean('Manage documents',
-            help='Document indexation, full text search of attachements.\n'
-                 '-This installs the module document.')
+    module_document = fields.Boolean(
+        'Manage documents',
+        help='Document indexation, full text search of attachements.\n'
+        '-This installs the module document.'
+    )

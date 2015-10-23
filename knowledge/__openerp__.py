@@ -21,10 +21,10 @@
 
 
 {
-    'name' : 'Knowledge Management System',
-    'version' : '9.0.1.0.0',
-    'depends' : ['base','base_setup'],
-    'author' : ['OpenERP SA','Odoo Community Association (OCA)'],
+    'name': 'Knowledge Management System',
+    'version': '9.0.1.0.0',
+    'depends': ['base', 'base_setup'],
+    'author': ['OpenERP SA', 'Odoo Community Association (OCA)'],
     'category': 'Hidden/Dependency',
     'license': 'AGPL3',
     'website': 'https://www.odoo.com',
