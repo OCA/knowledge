@@ -21,7 +21,7 @@
 
 from openerp import models, fields
 
-class knowledgeConfigSettings(models.TransientModel):
+class KnowledgeConfigSettings(models.TransientModel):
     _name = 'knowledge.config.settings'
     _inherit = 'res.config.settings'
 
