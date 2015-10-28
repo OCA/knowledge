@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<openerp>
-    <data>
+<odoo>
         <record id="wiki_history_form_inherit" model="ir.ui.view">
             <field name="name">document.page.history.form</field>
             <field name="model">document.page.history</field>
@@ -89,5 +88,4 @@
                 </field>
             </field>
         </record>
-    </data>
-</openerp>
+</odoo>
