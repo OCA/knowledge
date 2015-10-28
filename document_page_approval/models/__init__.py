@@ -1,4 +1,4 @@
-"""Project initialisation."""
+"""Data models initialisation."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -19,4 +19,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
+from . import document_page_approval, document_page_history_workflow

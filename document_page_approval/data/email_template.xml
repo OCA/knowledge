@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<openerp>
+<odoo>
 
     <!-- Allow user to make upgrade-proof customizations to email template -->
 
     <data noupdate="1">
 
         <record id="email_template_new_draft_need_approval"
-                model="email.template">
+                model="mail.template">
             <field name="name">Automated new draft need approval Notification Mail</field>
             <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
             <field name="subject">New version of "${object.page_id.name}" to approve</field>
@@ -28,4 +28,4 @@ Odoo</p>]]>
         </record>
 
     </data>
-</openerp>
+</odoo>
