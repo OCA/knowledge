@@ -31,7 +31,7 @@
             <field name="view_mode">form</field>
             <field name="target">inline</field>
         </record>
-        <menuitem id="menu_knowledge_configuration" name="settings" parent="knowledge.menu_document_configuration"
+        <menuitem id="menu_knowledge_configuration" name="Settings" parent="knowledge.menu_document_configuration"
             sequence="19" action="action_knowledge_configuration"/>
 
     </data>
