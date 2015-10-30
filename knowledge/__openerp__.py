@@ -26,7 +26,7 @@
     'depends': ['base', 'base_setup'],
     'author': ['OpenERP SA', 'Odoo Community Association (OCA)'],
     'category': 'Hidden/Dependency',
-    'license': 'AGPL3',
+    'license': 'AGPL-3',
     'website': 'https://www.odoo.com',
     'data': [
         'security/knowledge_security.xml',
