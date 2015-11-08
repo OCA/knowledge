@@ -1,22 +1,22 @@
-# Japanese translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
+"Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 14:32+0200\n"
-"PO-Revision-Date: 2015-08-03 14:32+0200\n"
-"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
-"Language-Team: Japanese <ja@li.org>\n"
-"Language: ja\n"
+"POT-Creation-Date: 2015-11-07 12:44+0000\n"
+"PO-Revision-Date: 2015-11-07 12:45+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Japanese (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:07+0000\n"
-"X-Generator: Poedit 1.8.2\n"
+"Content-Transfer-Encoding: \n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -46,8 +46,8 @@ msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
-#: view:document.page:document_page.view_wiki_form field:document.page,parent_id:0
-#: selection:document.page,type:0
+#: view:document.page:document_page.view_wiki_form
+#: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
 msgstr ""
@@ -64,8 +64,9 @@ msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
-#: view:document.page:document_page.view_wiki_form field:document.page,content:0
-#: selection:document.page,type:0 field:document.page.history,content:0
+#: view:document.page:document_page.view_wiki_form
+#: field:document.page,content:0 selection:document.page,type:0
+#: field:document.page.history,content:0
 msgid "Content"
 msgstr "コンテンツ"
 
@@ -79,12 +80,12 @@ msgstr "メニューの作成"
 #. module: document_page
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
-#, fuzzy
 msgid "Created by"
-msgstr "作成日"
+msgstr ""
 
 #. module: document_page
-#: field:document.page,create_date:0 field:document.page.create.menu,create_date:0
+#: field:document.page,create_date:0
+#: field:document.page.create.menu,create_date:0
 #: field:wizard.document.page.history.show_diff,create_date:0
 msgid "Created on"
 msgstr "作成日"
@@ -160,8 +161,8 @@ msgstr ""
 #. module: document_page
 #: help:document.page,message_summary:0
 msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is directly in "
-"html format in order to be inserted in kanban views."
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
 msgstr ""
 
 #. module: document_page
@@ -183,9 +184,8 @@ msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_form
-#, fuzzy
 msgid "Last Content"
-msgstr "コンテンツ"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -229,9 +229,8 @@ msgstr "メニュー名"
 
 #. module: document_page
 #: field:document.page,message_ids:0
-#, fuzzy
 msgid "Messages"
-msgstr "ページ"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,message_ids:0

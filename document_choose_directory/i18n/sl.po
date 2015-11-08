@@ -1,22 +1,22 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* document_choose_directory
-#
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
+# * document_choose_directory
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-30 11:27+0000\n"
-"PO-Revision-Date: 2015-08-03 13:36+0200\n"
+"POT-Creation-Date: 2015-11-07 12:44+0000\n"
+"PO-Revision-Date: 2015-11-08 05:36+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian <translate@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: \n"
 "Language: sl\n"
-"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: document_choose_directory
 #. openerp-web
@@ -32,12 +32,12 @@ msgstr "Imenik"
 
 #. module: document_choose_directory
 #. openerp-web
-#: code:addons/document_choose_directory/static/src/js/document_choose_directory.js:64
+#: code:addons/document_choose_directory/static/src/js/document_choose_directory.js:68
 #, python-format
 msgid "No directory"
 msgstr "Ni imenika"
 
 #. module: document_choose_directory
-#: model:ir.model,name:document_choose_directory.model_ir_attachment
-msgid "ir.attachment"
-msgstr "ir.attachment"
+#: view:document.directory:document_choose_directory.view_document_directory_form
+msgid "{'invisible': [('type', '!=', 'ressource')]}"
+msgstr "{'invisible': [('type', '!=', 'ressource')]}"

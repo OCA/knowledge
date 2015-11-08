@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page_approval
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-07 12:44+0000\n"
+"PO-Revision-Date: 2015-11-07 12:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Hungarian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/hu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: document_page_approval
+#: model:email.template,body_html:document_page_approval.email_template_new_draft_need_approval
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"\n"
+"<p>The page \"${object.page_id.name}\" has been modified and need your approval.</p>\n"
+"\n"
+"<p>You can review the new version here : <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
+"\n"
+"<p>Have a great day.<br/>\n"
+"--<br/>\n"
+"Odoo</p>\n"
+"            "
+msgstr ""
+
+#. module: document_page_approval
+#: view:document.page.history:document_page_approval.wiki_history_form_inherit
+msgid "Approve"
+msgstr ""
+
+#. module: document_page_approval
+#: selection:document.page.history,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page.history,approved_uid:0
+msgid "Approved By"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page.history,approved_date:0
+msgid "Approved Date"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page,approver_gid:0
+msgid "Approver group"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model,name:document_page_approval.model_document_page
+msgid "Document Page"
+msgstr "Documentum oldal"
+
+#. module: document_page_approval
+#: model:ir.model,name:document_page_approval.model_document_page_history
+msgid "Document Page History"
+msgstr "Dokumantum oldal előzmény"
+
+#. module: document_page_approval
+#: selection:document.page.history,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: document_page_approval
+#: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval
+msgid "New version of \"${object.page_id.name}\" to approve"
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/document_page_approval.py:66
+#, python-format
+msgid "New version of the document %s approved."
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page,approval_required:0
+msgid "Require approval"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page.history,state:0
+msgid "Status"
+msgstr ""

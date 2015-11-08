@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_reindex
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-07 12:44+0000\n"
+"PO-Revision-Date: 2015-11-07 12:46+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-knowledge-8-0/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: document_reindex
+#: field:knowledge.config.settings,document_reindex_all:0
+msgid "Reindex all documents"
+msgstr "Reindex all documents"
+
+#. module: document_reindex
+#: view:ir.attachment:document_reindex.view_attachment_form
+msgid "Reindex document"
+msgstr "Reindex document"
+
+#. module: document_reindex
+#: field:knowledge.config.settings,document_reindex_unindexed:0
+msgid "Reindex unindexed documents"
+msgstr "Reindex unindexed documents"
