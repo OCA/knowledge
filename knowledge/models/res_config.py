@@ -1,3 +1,4 @@
+"""KnowledgeConfigSettings class."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -23,6 +24,8 @@ from openerp import models, fields
 
 
 class KnowledgeConfigSettings(models.TransientModel):
+    """This class in needed to activate document management."""
+
     _name = 'knowledge.config.settings'
     _inherit = 'res.config.settings'
 
