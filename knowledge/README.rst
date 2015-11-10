@@ -6,18 +6,15 @@
 Knowledge Management System base
 ================================
 
-This module allows you to write web pages for internal documentation.
+This module is the base for any knowledge and document management application.
 
 Installation
 ============
 
-Makes the Knowledge Application Configuration available from where you can install
-document and Wiki based Hidden.
-
 Configuration
 =============
 
-Go to Knowledge / Configuration / Settings.
+* Go to Knowledge / Configuration / Settings
 
 Usage
 =====
@@ -31,6 +28,8 @@ To use this module, you need to:
 
 Known issues / Roadmap
 ======================
+
+* Add options for other OCA extension modules as they are made available.
 
 Bug Tracker
 ===========
