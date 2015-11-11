@@ -14,12 +14,12 @@ Installation
 Configuration
 =============
 
-* Go to Knowledge / Configuration / Settings
-
 Usage
 =====
 
 To use this module, you need to:
+
+* Go to Knowledge / Configuration / Settings
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
