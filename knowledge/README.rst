@@ -11,8 +11,12 @@ This module is the base for any knowledge and document management application.
 Installation
 ============
 
+* None
+
 Configuration
 =============
+
+* None
 
 Usage
 =====
