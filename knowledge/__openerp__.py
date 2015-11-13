@@ -1,4 +1,3 @@
-"""Knowledge Management System module."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -20,20 +19,20 @@
 #
 ##############################################################################
 {
-    'name': 'Knowledge Management System',
-    'version': '9.0.1.0.0',
-    'depends': ['base', 'base_setup'],
-    'author': 'OpenERP SA, Odoo Community Association (OCA)',
-    'category': 'Hidden/Dependency',
-    'license': 'AGPL-3',
-    'website': 'https://www.odoo.com',
-    'data': [
-        'security/knowledge.xml',
-        'security/ir.model.access.csv',
-        'views/knowledge.xml',
-        'views/res_config.xml',
+    "name": "Knowledge Management System",
+    "version": "9.0.1.0.0",
+    "depends": ["base", "base_setup"],
+    "author": "OpenERP SA, Odoo Community Association (OCA)",
+    "category": "Hidden/Dependency",
+    "license": "AGPL-3",
+    "website": "https://www.odoo.com",
+    "data": [
+        "security/knowledge.xml",
+        "security/ir.model.access.csv",
+        "views/knowledge.xml",
+        "views/res_config.xml",
     ],
-    'demo': ['demo/knowledge.xml'],
-    'installable': True,
-    'auto_install': False,
+    "demo": ["demo/knowledge.xml"],
+    "installable": True,
+    "auto_install": False,
 }

@@ -32,4 +32,4 @@ script:
 
 
 after_success:
-  coveralls
+  - travis_after_tests_success
