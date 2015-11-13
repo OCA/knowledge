@@ -34,3 +34,15 @@ class KnowledgeConfigSettings(models.TransientModel):
         help='Document indexation, full text search of attachements.\n'
         '-This installs the module document.'
     )
+
+    module_document_page = fields.Boolean(
+        'Manage document pages (Wiki)',
+        help='Provide document page and category as a wiki.\n'
+        '-This installs the module document_page.'
+    )
+
+    module_document_page_approval = fields.Boolean(
+        'Manage documents approval',
+        help='Add workflow on documents per category.\n'
+        '-This installs the module document_page_approval.'
+    )

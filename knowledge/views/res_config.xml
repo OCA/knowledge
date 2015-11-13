@@ -21,6 +21,22 @@
                                 <label for="module_document"/>
                             </div>
                         </div>
+
+                        <label for="id" string="Document pages"/>
+                        <div>
+                            <div>
+                                <field name="module_document_page" class="oe_inline"/>
+                                <label for="module_document_page"/>
+                            </div>
+                        </div>
+
+                        <label for="id" string="Document page approval"/>
+                        <div>
+                            <div>
+                                <field name="module_document_page_approval" class="oe_inline"/>
+                                <label for="module_document_page_approval"/>
+                            </div>
+                        </div>
                     </group>
                 </form>
             </field>
