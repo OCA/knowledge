@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -21,40 +21,40 @@
 ##############################################################################
 
 {
-    'name': 'Document Management System for Multiple Records',
-    'version': '0.1',
-    'category': 'Knowledge Management',
-    'summary': 'Document Management System for Multiple Records',
-    'description': """
+    "name": "Document Management System for Multiple Records",
+    "version": "7.0.1.0.0",
+    "category": "Knowledge Management",
+    "summary": "Document Management System for Multiple Records",
+    "description": """
+===============================================
 Document Management System for Multiple Records
-==============================================
+===============================================
 
 Contributors
 ------------
 * El Hadji Dem (elhadji.dem@savoirfairelinux.com)
+* Maxime Chambreuil (maxime.chambreuil@savoirfairelinux.com)
 """,
-    'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
-    'website': 'www.savoirfairelinux.com',
-    'license': 'AGPL-3',
-    'depends': [
-        'document',
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
+    "website": "www.savoirfairelinux.com",
+    "license": "AGPL-3",
+    "depends": [
+        "document",
     ],
-    'data': [
-        'document_view.xml',
-        'security/ir.model.access.csv',
-        'wizard/document_wizard_view.xml',
+    "data": [
+        "views/document_view.xml",
+        "security/ir.model.access.csv",
+        "wizard/document_wizard_view.xml",
     ],
-    'js': [
-        'static/src/js/document.js'
+    "js": [
+        "static/src/js/document.js"
     ],
-    'qweb': [
-        'static/src/xml/document.xml'
+    "qweb": [
+        "static/src/xml/document.xml"
     ],
-    'test': [],
-    'demo': [
+    "test": [],
+    "demo": [
     ],
-    'installable': True,
-    'auto_install': False,
+    "installable": True,
+    "auto_install": False,
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

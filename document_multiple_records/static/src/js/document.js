@@ -63,6 +63,11 @@ var _t = instance.web._t,
             var self = this;
             this.dataset = dataset;
             this.model_id = model_id;
+            // Add the model and the model_id in the context
+            var context = {
+                'model': dataset.model,
+                'model_id': model_id
+            };
             if (args && args[0].error) {
                 this.do_warn(_t('Uploading Error'), args[0].error);
             }
@@ -70,8 +75,8 @@ var _t = instance.web._t,
                 this.on_attachments_loaded([]);
             }
             else {
-                var dom = [ ['attachment_document_ids.res_model', '=', dataset.model], ['attachment_document_ids.res_id', '=', model_id], ['type', 'in', ['binary', 'url']] ];
-                var ds = new instance.web.DataSetSearch(this, 'ir.attachment', dataset.get_context(), dom);
+                var dom = [ ['related_document', '=', true] ];
+                var ds = new instance.web.DataSetSearch(this, 'ir.attachment', context, dom);
                 ds.read_slice(['name', 'url', 'type', 'create_uid', 'create_date', 'write_uid', 'write_date'], {}).done(this.on_attachments_loaded);
             }
         }

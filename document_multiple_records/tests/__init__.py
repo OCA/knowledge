@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2014 Savoir-faire Linux
-#    (<http://www.savoirfairelinux.com>).
+#    Copyright (C) 2015 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,7 +18,12 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+##############################################################################
 
-from . import document
-from . import wizard
+from . import (
+    test_ir_attachment,
+)
+
+checks = [
+    test_ir_attachment,
+]
