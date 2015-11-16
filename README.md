@@ -19,6 +19,12 @@ document\_page\_multi\_company (unported)
 -----------------------------------------
 
 [//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[knowledge](knowledge/) | 9.0.1.0.0 | Knowledge Management System
+
 Unported addons
 ---------------
 addon | version | summary
