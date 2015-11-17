@@ -24,6 +24,10 @@
 var original_Viewer = Viewer;
 Viewer = function(plugin, parameters)
 {
+    if(!plugin)
+    {
+        alert('Unsupported file type');
+    }
     var matches = (/&title=([^&]+)&/).exec(window.location.hash);
     if(matches && matches.length > 1)
     {
