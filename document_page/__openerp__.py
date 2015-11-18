@@ -27,6 +27,7 @@
     'website': 'http://www.openerp.com/',
     'license': 'AGPL-3',
     'depends': [
+        'mail',
         'knowledge',
     ],
     'data': [
