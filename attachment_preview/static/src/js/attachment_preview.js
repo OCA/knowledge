@@ -28,10 +28,10 @@ openerp.attachment_preview = function(instance)
     {
         var url = (window.location.origin || '') +
             '/attachment_preview/static/lib/ViewerJS/index.html' +
-            '&type=' + encodeURIComponent(attachment_extension) +
-            '#' +
-            attachment_url.replace(window.location.origin, '') +
+            '?type=' + encodeURIComponent(attachment_extension) +
             '&title=' + encodeURIComponent(attachment_title) +
+            '#' +
+            attachment_url.replace(window.location.origin, '')
         window.open(url);
     };
     openerp.attachment_preview.can_preview = function(extension)
