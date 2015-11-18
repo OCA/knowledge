@@ -11,7 +11,7 @@ This module allows you to write web pages for internal documentation.
 Installation
 ============
 
-This module depends on module knowledge. So make sure to have available it in your addons list
+This module depends on module knowledge. So make sure to have it in your addons list.
 
 Configuration
 =============
@@ -22,6 +22,7 @@ Usage
 =====
 
 To use this module, you need to:
+
 * Go to Knowledge menu
 * Click on Categories to create the document's category you need with the template
 * Click on Pages to create pages and select the previous category to use the template
@@ -66,25 +67,3 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit http://odoo-community.org.
-
-Changelog
----------
-
-v 9.0.1.0.0
-
-Creation of folders models, views, data and demo
-document_page_view.xml moved to views and renamed to document_page
-document_page_data.xml moved to data and renamed to document_page
-document_page_demo.xml moved to demo and renamed to document_page
-document_page.py moved to models and renamed to document_page
-
-Module models initialise by the creation of the file __init__.py
-
-wizard file reorganized
-folder wizard created
-document_page_create_menu.py and document_page_create_show_diff.py moved to wizard
-document_page_create_menu_view.xml moved to document_page_create_menu.xml
-document_page_create_show_diff_view.xml en document_page_create_show_diff.xml
-
-
-__openerp_.py et __init__.py file edited in order to reflect the module organization
