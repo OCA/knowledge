@@ -1,4 +1,3 @@
-"""Document Page configuration's file."""
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -28,7 +27,6 @@
     'website': 'http://www.openerp.com/',
     'license': 'AGPL-3',
     'depends': [
-        'mail',
         'knowledge',
     ],
     'data': [
