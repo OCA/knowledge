@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:39+0000\n"
-"PO-Revision-Date: 2015-11-07 12:39+0000\n"
+"POT-Creation-Date: 2015-11-14 18:02+0000\n"
+"PO-Revision-Date: 2015-11-14 18:02+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-knowledge-7-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "AttachmentDocumentWizardTree"
 
 #. module: document_multiple_records
 #. openerp-web
-#: code:addons/document_multiple_records/static/src/js/document.js:67
+#: code:addons/document_multiple_records/static/src/js/document.js:72
 #, python-format
 msgid "Uploading Error"
 msgstr "Uploading Error"
@@ -60,6 +60,11 @@ msgstr "Resource Name"
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_document
 msgid "Attachment Documents"
 msgstr "Attachment Documents"
+
+#. module: document_multiple_records
+#: field:ir.attachment,related_document:0
+msgid "unknown"
+msgstr "unknown"
 
 #. module: document_multiple_records
 #: field:ir.attachment,attachment_document_ids:0
