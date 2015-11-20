@@ -46,9 +46,8 @@ class IrAttachment(models.Model):
                 continue
 
     @api.model
-    def document_reindex_domain(self, domain, limit=100):
+    def document_reindex_domain(self, domain, limit=100, max_records=0):
         offset = 0
-        counter = 0
         limit = int(
             self.env['ir.config_parameter'].get_param(
                 'document_reindex.limit', '0')) or limit
@@ -59,9 +58,10 @@ class IrAttachment(models.Model):
             if not attachments:
                 return
             attachments.document_reindex()
-            logging.info('%d done', counter * limit + len(attachments))
+            logging.info('%d done', offset + len(attachments))
             offset += len(attachments)
-            counter += 1
+            if max_records and offset > max_records:
+                break
 
     @api.model
     def document_reindex_all(self):
