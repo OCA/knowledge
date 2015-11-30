@@ -1,0 +1,28 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * attachment_preview
+# 
+# Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-20 14:33+0000\n"
+"PO-Revision-Date: 2015-11-25 09:41+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-8-0/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:183
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:225
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:227
+#, python-format
+msgid "Preview %s"
+msgstr "Vorschau %s"
