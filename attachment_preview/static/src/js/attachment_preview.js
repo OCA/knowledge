@@ -27,10 +27,11 @@ openerp.attachment_preview = function(instance)
             attachment_title)
     {
         var url = (window.location.origin || '') +
-            '/attachment_preview/static/lib/ViewerJS/index.html#' +
-            attachment_url.replace(window.location.origin, '') +
+            '/attachment_preview/static/lib/ViewerJS/index.html' +
+            '?type=' + encodeURIComponent(attachment_extension) +
             '&title=' + encodeURIComponent(attachment_title) +
-            '&ext=.' + encodeURIComponent(attachment_extension);
+            '#' +
+            attachment_url.replace(window.location.origin, '')
         window.open(url);
     };
     openerp.attachment_preview.can_preview = function(extension)

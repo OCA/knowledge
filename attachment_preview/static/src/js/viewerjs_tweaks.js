@@ -24,10 +24,9 @@
 var original_Viewer = Viewer;
 Viewer = function(plugin, parameters)
 {
-    var matches = (/&title=([^&]+)&/).exec(window.location.hash);
-    if(matches && matches.length > 1)
+    if(!plugin)
     {
-        parameters.title = decodeURIComponent(matches[1]);
+        alert('Unsupported file type');
     }
     return original_Viewer(plugin, parameters);
 }
