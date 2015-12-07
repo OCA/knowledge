@@ -9,7 +9,7 @@
             <field name="summary">Initial Page</field>
             <field  name="content">== The Odoo wiki ==
 
-[[File:http://www.openerp.com/sites/all/themes/openerp/logo.png OpenERP]]
+[[File:https://www.odoo.com/openerp_website/static/src/img/logo_transparent_198px.png Odoo]]
 
 The Odoo wiki allows you to manage your enterprise's contents using wiki
 restructured texts. This module provides a collaborative way to manage internal
