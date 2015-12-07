@@ -24,7 +24,9 @@
     'version': '9.0.1.0.0',
     'category': 'Knowledge Management',
     'author': 'OpenERP SA, Odoo Community Association (OCA)',
-    'images': ['images/category_list.png', 'images/create_category.png', 'images/page_list.png', 'images/create_page.png', 'images/customer_invoice.jpeg', 'images/page_history.png'],
+    'images': ['images/category_list.png', 'images/create_category.png',
+                'images/page_list.png', 'images/create_page.png',
+                'images/customer_invoice.jpeg', 'images/page_history.png'],
     'website': 'http://www.openerp.com/',
     'license': 'AGPL-3',
     'depends': [
