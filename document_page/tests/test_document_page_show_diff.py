@@ -20,7 +20,8 @@ class TestDocumentPageShowDiff(common.TransactionCase):
                 active_ids=[i.id for i in history_pages]
             ).get_diff())
 
-        page.content = 'Test content updated'
+        page.write({'content': 'Text content updated'})
+        page.write({'content': 'Text updated'})
 
         history_pages = history_document.search([('page_id', '=', page.id)])
 
