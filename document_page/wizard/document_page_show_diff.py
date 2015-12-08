@@ -48,7 +48,7 @@ class DocumentPageShowDiff(models.TransientModel):
             diff = history.getDiff(ids[0], nids.id)
         else:
             raise exceptions.Warning(
-                _("You need to select minimum one or maximum two history revisions!")
+                _("Select one or maximum two history revisions!")
             )
         return diff
 
