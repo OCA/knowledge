@@ -16,9 +16,11 @@ class TestDocumentPageShowDiff(common.TransactionCase):
         history_document = self.env['document.page.history']
         history_pages = history_document.search([('page_id', '=', page.id)])
 
-        self.assertTrue(show_diff_object.with_context(
+        self.assertTrue(
+            show_diff_object.with_context(
                 active_ids=[i.id for i in history_pages]
-            ).get_diff())
+            ).get_diff()
+        )
 
         page.write({'content': 'Text content updated'})
         page.write({'content': 'Text updated'})
@@ -27,7 +29,8 @@ class TestDocumentPageShowDiff(common.TransactionCase):
 
         with self.assertRaises(Exception) as context:
             show_diff_object.with_context(
-                    active_ids=[i.id for i in history_pages]
-                ).get_diff()
+                active_ids=[i.id for i in history_pages]
+            ).get_diff()
 
-        self.assertTrue(_("You need to select minimum one or maximum two history revisions!") in context.exception)
+        self.assertTrue(_("Select one or maximum two history revisions!")
+                        in context.exception)
