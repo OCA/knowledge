@@ -40,7 +40,7 @@ class DocumentPageCreateMenu(models.TransientModel):
 
     @api.model
     def default_get(self, fields_list):
-        """Add page to the menu."""
+        """Get Page name of the menu."""
         res = super(DocumentPageCreateMenu, self).default_get(fields_list)
         page_id = self.env.context.get('active_id')
         obj_page = self.env['document.page']

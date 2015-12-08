@@ -20,3 +20,11 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
         menu.with_context(
             active_id=[self.ref('document_page.demo_page1')]
         ).document_page_menu_create()
+
+        fields_list = ["menu_name", "menu_name"]
+
+        res = menu.with_context(
+            active_id=[self.ref('document_page.demo_page1')]
+        ).default_get(fields_list)
+
+        self.assertEqual(res['menu_name'], 'OpenERP 6.1. Functional Demo')
