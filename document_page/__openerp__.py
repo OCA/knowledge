@@ -43,9 +43,6 @@
     'demo': [
         'demo/document_page.xml'
     ],
-    'test': [
-        'test/document_page_test00.yml'
-    ],
     'installable': True,
     'auto_install': False,
     'css': ['static/src/css/document_page.css'],
