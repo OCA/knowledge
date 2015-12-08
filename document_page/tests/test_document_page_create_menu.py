@@ -10,8 +10,9 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
         """Test page menu creation."""
         menu_parent = self.env.ref('base.menu_base_partner')
 
-        menu_created = self.env['document.page.create.menu'].create({
-             'menu_name': 'Wiki Test menu', 'menu_parent_id': menu_parent.id})
+        menu_created = self.env['document.page.create.menu'].create(
+            {'menu_name': 'Wiki Test menu', 'menu_parent_id': menu_parent.id}
+        )
 
         menu = self.env['document.page.create.menu'].search(
             [('id', '=', menu_created.id)]
