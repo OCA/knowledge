@@ -9,14 +9,16 @@ class TestDocumentPageApproval(common.TransactionCase):
     def test_get_display_content(self):
         """Test page display content."""
         # Check content of a category
-        category = self.env['document.page'].search(
-                [('name', '=', 'OpenERP Features')])
+        category = self.env['document.page'].search([
+            ('name', '=', 'OpenERP Features')
+            ])
 
         self.assertIsNotNone(category.display_content, 'a category')
 
         # Check content of a page
-        pages = self.env['document.page'].search(
-                [('parent_id', '=', category.id)])
+        pages = self.env['document.page'].search([
+            ('parent_id', '=', category.id)
+            ])
         page = pages[0]
         self.assertIsNotNone(page.display_content, 'Page content')
 
@@ -32,4 +34,4 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.assertTrue(page.is_approval_required(page))
 
         # Check if parent approval is required
-        self.assertFalse(page.is_parent_approval_required)
+        self.assertTrue(page.is_parent_approval_required)
