@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================
+======================
 Document Page Approval
-========================
+======================
 
 This module adds a workflow to approve page modification and show the approved
 version by default.
