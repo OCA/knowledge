@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-20 14:33+0000\n"
+"POT-Creation-Date: 2015-12-08 08:32+0000\n"
 "PO-Revision-Date: 2015-11-25 09:41+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-8-0/language/de/)\n"
@@ -20,9 +20,9 @@ msgstr ""
 
 #. module: attachment_preview
 #. openerp-web
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:183
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:225
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:227
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:184
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:226
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:228
 #, python-format
 msgid "Preview %s"
 msgstr "Vorschau %s"
