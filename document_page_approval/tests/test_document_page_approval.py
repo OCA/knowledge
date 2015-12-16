@@ -9,11 +9,9 @@ class TestDocumentPageApproval(common.TransactionCase):
     def test_get_display_content(self):
         """Test page display content."""
         # Check content of a category
-        category = self.env['document.page'].search([
-            ('name', '=', 'OpenERP Features')
-            ])
+        category = self.ref('document_page.demo_category1')
 
-        self.assertIsNotNone(category.display_content, 'a category')
+        self.assertIsNotNone(category.display_content)
 
         # Check content of a page
         pages = self.env['document.page'].search([
