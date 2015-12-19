@@ -1,0 +1,30 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page_partner_id
+# 
+# Translators:
+# Paolo Valier, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-05 11:50+0000\n"
+"PO-Revision-Date: 2016-03-13 17:00+0000\n"
+"Last-Translator: Paolo Valier\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: document_page_partner_id
+#: model:ir.model,name:document_page_partner_id.model_document_page
+msgid "Document Page"
+msgstr "Pagina documento"
+
+#. module: document_page_partner_id
+#: view:document.page:document_page_partner_id.view_wiki_filter
+#: field:document.page,partner_id:0
+msgid "Partner"
+msgstr "Partner"
