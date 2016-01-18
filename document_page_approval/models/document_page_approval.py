@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class DocumentPageApproval(models.Model):
@@ -27,6 +27,7 @@ class DocumentPageApproval(models.Model):
 
     _inherit = 'document.page'
 
+    @api.multi
     def _get_display_content(self):
         """Display the content of document."""
         for page in self:
@@ -49,6 +50,7 @@ class DocumentPageApproval(models.Model):
                     content = page.content
             page.display_content = content
 
+    @api.multi
     def _get_approved_date(self):
         """Return the approved date of a document."""
         for page in self:
@@ -66,6 +68,7 @@ class DocumentPageApproval(models.Model):
                 approved_date = history_ids.approved_date
             page.approved_date = approved_date
 
+    @api.multi
     def _get_approved_uid(self):
         """Return the user's id of the approved user."""
         for page in self:

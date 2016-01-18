@@ -1,4 +1,3 @@
-"""DocumentPageApproval test."""
 # -*- coding: utf-8 -*-
 from openerp.tests import common
 

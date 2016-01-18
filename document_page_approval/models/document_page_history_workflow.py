@@ -30,40 +30,39 @@ class DocumentPageHistoryWorkflow(models.Model):
 
     _inherit = 'document.page.history'
 
-    def page_approval_draft(self, cr, uid, ids, context=None):
+    def page_approval_draft(self):
         """Set a document state as draft and notified the reviewers."""
-        self.write(cr, uid, ids, {'state': 'draft'})
+        self.write({'state': 'draft'})
         template_id = self.pool.get('ir.model.data').get_object_reference(
-            cr, uid,
+            self.env.cr, self.env.uid,
             'document_page_approval',
             'email_template_new_draft_need_approval')[1]
-        for page in self.browse(cr, uid, ids, context=context):
+        for page in self:
             if page.is_parent_approval_required:
                 self.pool.get('mail.template').send_mail(
-                    cr,
-                    uid,
+                    self.env.cr, self.env.uid,
                     template_id,
                     page.id,
                     force_send=True
                 )
         return True
 
-    def page_approval_approved(self, cr, uid, ids, context=None):
+    def page_approval_approved(self):
         """Set a document state as approve."""
         model_data_obj = self.pool.get('ir.model.data')
         message_obj = self.pool.get('mail.message')
-        self.write(cr, uid, ids, {
+        self.write({
             'state': 'approved',
             'approved_date': datetime.now().strftime(
                 DEFAULT_SERVER_DATETIME_FORMAT),
-            'approved_uid': uid
-        }, context=context)
+            'approved_uid': self.env.uid
+        })
         # Notify followers a new version is available
-        for page_history in self.browse(cr, uid, ids, context=context):
+        for page_history in self:
             subtype_id = model_data_obj.get_object_reference(
-                cr, SUPERUSER_ID, 'mail', 'mt_comment')[1]
+                self.env.cr, SUPERUSER_ID, 'mail', 'mt_comment')[1]
             message_obj.create(
-                cr, uid,
+                self.env.cr, self.env.uid,
                 {'res_id': page_history.page_id.id,
                  'model': 'document.page',
                  'subtype_id': subtype_id,
