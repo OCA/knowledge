@@ -58,14 +58,3 @@ class DocumentPageHistory(models.Model):
                 "Revision-{}".format(v2),
                 context=True
             )
-
-    def __getattr__(self, attr):
-        """Return a dummy callabale."""
-        if attr in ['_sql', 'init', '_ids']:
-            raise AttributeError
-
-        _logger.warning(
-            "Trying to access attribute %s on document_page_history",
-            attr
-        )
-        return (lambda *a, **b: None)
