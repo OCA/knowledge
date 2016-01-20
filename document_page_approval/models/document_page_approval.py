@@ -86,6 +86,7 @@ class DocumentPageApproval(models.Model):
                 approved_uid = history_ids.approved_uid.id
             page.approved_uid = approved_uid
 
+    @api.multi
     def _is_parent_approval_required(self):
         """Check if the document required approval base on his parrent."""
         for page in self:

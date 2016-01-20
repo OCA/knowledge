@@ -22,7 +22,7 @@
 from datetime import datetime
 from openerp.tools.translate import _
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
-from openerp import models, fields, SUPERUSER_ID
+from openerp import models, fields, api
 
 
 class DocumentPageHistoryWorkflow(models.Model):
@@ -30,27 +30,21 @@ class DocumentPageHistoryWorkflow(models.Model):
 
     _inherit = 'document.page.history'
 
+    @api.multi
     def page_approval_draft(self):
         """Set a document state as draft and notified the reviewers."""
         self.write({'state': 'draft'})
-        template_id = self.pool.get('ir.model.data').get_object_reference(
-            self.env.cr, self.env.uid,
-            'document_page_approval',
-            'email_template_new_draft_need_approval')[1]
+        template = self.env.ref(
+            'document_page_approval.email_template_new_draft_need_approval')
         for page in self:
             if page.is_parent_approval_required:
-                self.pool.get('mail.template').send_mail(
-                    self.env.cr, self.env.uid,
-                    template_id,
-                    page.id,
-                    force_send=True
-                )
+                template.send_mail(page.id, force_send=True)
         return True
 
+    @api.multi
     def page_approval_approved(self):
         """Set a document state as approve."""
-        model_data_obj = self.pool.get('ir.model.data')
-        message_obj = self.pool.get('mail.message')
+        message_obj = self.env['mail.message']
         self.write({
             'state': 'approved',
             'approved_date': datetime.now().strftime(
@@ -59,19 +53,18 @@ class DocumentPageHistoryWorkflow(models.Model):
         })
         # Notify followers a new version is available
         for page_history in self:
-            subtype_id = model_data_obj.get_object_reference(
-                self.env.cr, SUPERUSER_ID, 'mail', 'mt_comment')[1]
+            subtype = self.env.ref('mail.mt_comment')
             message_obj.create(
-                self.env.cr, self.env.uid,
                 {'res_id': page_history.page_id.id,
                  'model': 'document.page',
-                 'subtype_id': subtype_id,
+                 'subtype_id': subtype.id,
                  'body': _('New version of the document %s'
                            ' approved.') % page_history.page_id.name
                  }
             )
         return True
 
+    @api.multi
     def _can_user_approve_page(self):
         """Check if a user cas approve the page."""
         user = self.env.user
@@ -90,6 +83,7 @@ class DocumentPageHistoryWorkflow(models.Model):
             res = False
         return res
 
+    @api.multi
     def get_approvers_guids(self):
         """Return the approvers group."""
         res = {}
@@ -110,6 +104,7 @@ class DocumentPageHistoryWorkflow(models.Model):
 
         return res
 
+    @api.multi
     def _get_approvers_email(self):
         """Get the approvers email."""
         for page in self:
@@ -134,6 +129,7 @@ class DocumentPageHistoryWorkflow(models.Model):
 
             page.get_approvers_email = emails[:-1]
 
+    @api.multi
     def _get_page_url(self):
         """Get the page url."""
         for page in self:
