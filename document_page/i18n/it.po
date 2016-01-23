@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:04+0000\n"
+"POT-Creation-Date: 2016-01-09 11:27+0000\n"
+"PO-Revision-Date: 2016-01-09 11:27+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -264,11 +264,6 @@ msgstr "Nome Menu"
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
 msgstr "Messaggi"
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_ids
-msgid "Messages and communication history"
-msgstr "Messaggi e cronologia communicazioni"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
