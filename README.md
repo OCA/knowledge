@@ -23,7 +23,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[document_page](document_page/) | 9.0.1.0.0 | Document Page
+[document_page](document_page/) | 9.0.1.0.1 | Document Page
 [knowledge](knowledge/) | 9.0.1.0.0 | Knowledge Management System
 
 Unported addons
