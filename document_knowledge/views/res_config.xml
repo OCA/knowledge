@@ -20,35 +20,46 @@
                                 <field name="module_document" class="oe_inline"/>
                                 <label for="module_document"/>
                             </div>
-                        </div>
-
-                        <label for="id" string="Document pages"/>
-                        <div>
                             <div>
                                 <field name="module_document_page" class="oe_inline"/>
                                 <label for="module_document_page"/>
                             </div>
-                        </div>
-
-                        <label for="id" string="Document page approval"/>
-                        <div>
                             <div>
                                 <field name="module_document_page_approval" class="oe_inline"/>
                                 <label for="module_document_page_approval"/>
                             </div>
                         </div>
                     </group>
+                    <separator string="Connect with an external DMS"/>
+                    <group>
+                        <label for="id" string="Using CMIS"/>
+                        <div>
+                            <div>
+                                <field name="module_cmis_read" class="oe_inline"/>
+                                <label for="module_cmis_read"/>
+                            </div>
+                            <div>
+                                <field name="module_cmis_write" class="oe_inline"/>
+                                <label for="module_cmis_write"/>
+                            </div>
+                        </div>
+                    </group>
                 </form>
             </field>
         </record>
+
         <record id="action_knowledge_configuration" model="ir.actions.act_window">
             <field name="name">Configure Knowledge</field>
             <field name="res_model">knowledge.config.settings</field>
             <field name="view_mode">form</field>
             <field name="target">inline</field>
         </record>
-        <menuitem id="menu_knowledge_configuration" name="Settings" parent="knowledge.menu_document_configuration"
-            sequence="19" action="action_knowledge_configuration"/>
+
+        <menuitem id="menu_knowledge_configuration"
+                  name="Settings"
+                  parent="knowledge.menu_document_configuration"
+                  sequence="19"
+                  action="action_knowledge_configuration"/>
 
     </data>
 </odoo>
