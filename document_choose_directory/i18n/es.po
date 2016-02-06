@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Antonio Trueba, 2016
+# Antonio Trueba, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-19 10:18+0000\n"
-"PO-Revision-Date: 2016-01-25 18:16+0000\n"
+"PO-Revision-Date: 2016-02-03 12:59+0000\n"
 "Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -40,4 +41,4 @@ msgstr ""
 #. module: document_choose_directory
 #: view:document.directory:document_choose_directory.view_document_directory_form
 msgid "{'invisible': [('type', '!=', 'ressource')]}"
-msgstr ""
+msgstr "{'invisible': [('type', '!=', 'ressource')]}"
