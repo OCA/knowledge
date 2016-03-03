@@ -30,6 +30,7 @@ addon | version | summary
 [document_page](document_page/) | 8.0.1.0.2 | Document Page
 [document_page_approval](document_page_approval/) | 8.0.1.0.0 | Document Page Approval
 [document_page_partner_id](document_page_partner_id/) | 8.0.1.0.0 | Allows to link doucment pages to a partner
+[document_page_tags](document_page_tags/) | 8.0.1.0.0 | Allows you to assign tags or keywords to pages and search for them afterwards
 [document_reindex](document_reindex/) | 8.0.1.0.0 | Reindex your already uploaded documents
 [document_url](document_url/) | 8.0.1.0.0 | URL attachment
 
