@@ -1,0 +1,79 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page_tags
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-04 02:39+0000\n"
+"PO-Revision-Date: 2016-05-01 04:54+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: document_page_tags
+#: model:ir.model,name:document_page_tags.model_document_page_tag
+msgid "A keyword for document pages"
+msgstr "Ključna beseda za strani dokumentov"
+
+#. module: document_page_tags
+#: field:document.page.tag,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: document_page_tags
+#: field:document.page.tag,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: document_page_tags
+#: field:document.page.tag,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: document_page_tags
+#: model:ir.model,name:document_page_tags.model_document_page
+msgid "Document Page"
+msgstr "Stran dokumenta"
+
+#. module: document_page_tags
+#: field:document.page.tag,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: document_page_tags
+#: field:document.page,tag_ids:0
+msgid "Keywords"
+msgstr "Ključne besede"
+
+#. module: document_page_tags
+#: field:document.page.tag,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: document_page_tags
+#: field:document.page.tag,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnjič posodobil"
+
+#. module: document_page_tags
+#: field:document.page.tag,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: document_page_tags
+#: field:document.page.tag,name:0
+msgid "Name"
+msgstr "Naziv"
+
+#. module: document_page_tags
+#: sql_constraint:document.page.tag:0
+msgid "Tags must me unique"
+msgstr "Oznake morajo biti unikatne"
