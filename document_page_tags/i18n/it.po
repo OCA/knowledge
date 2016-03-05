@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page_tags
+# 
+# Translators:
+# Paolo Valier, 2016
+# Paolo Valier, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-09-09 12:24+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: document_page_tags
+#: model:ir.model,name:document_page_tags.model_document_page_tag
+msgid "A keyword for document pages"
+msgstr "Una parola chiave per le pagine del documento"
+
+#. module: document_page_tags
+#: field:document.page.tag,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: document_page_tags
+#: field:document.page.tag,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: document_page_tags
+#: field:document.page.tag,display_name:0
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: document_page_tags
+#: model:ir.model,name:document_page_tags.model_document_page
+msgid "Document Page"
+msgstr "Pagina documento"
+
+#. module: document_page_tags
+#: field:document.page.tag,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: document_page_tags
+#: field:document.page,tag_ids:0
+msgid "Keywords"
+msgstr "Parole chiave"
+
+#. module: document_page_tags
+#: field:document.page.tag,__last_update:0
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: document_page_tags
+#: field:document.page.tag,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento da"
+
+#. module: document_page_tags
+#: field:document.page.tag,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: document_page_tags
+#: field:document.page.tag,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: document_page_tags
+#: sql_constraint:document.page.tag:0
+msgid "Tags must me unique"
+msgstr "Il Tag devono essere univoci"
