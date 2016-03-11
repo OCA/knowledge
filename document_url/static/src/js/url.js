@@ -1,12 +1,22 @@
-openerp.document_url = function(instance, m) {
-    var _t = instance.web._t,
-        QWeb = instance.web.qweb;
+/* © 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
+ *                      Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+ * © 2016 ACSONE SA/NV (<http://acsone.eu>)
+ * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+ */
+odoo.define('document_url', function(require) {
 
-    instance.web.Sidebar.include({
+    var core = require('web.core');
+    var Sidebar = require('web.Sidebar');
+    var ActionManager = require('web.ActionManager');
+
+    var _t = core._t,
+        QWeb = core.qweb;
+
+    Sidebar.include({
         redraw: function() {
             var self = this;
             this._super.apply(this, arguments);
-            self.$el.find('.oe_sidebar_add_attachment').after(QWeb.render('AddUrlDocumentItem', {widget: self}))
+            self.$el.find('.oe_sidebar_add_attachment, .o_sidebar_add_attachment').after(QWeb.render('AddUrlDocumentItem', {widget: self}))
             self.$el.find('.oe_sidebar_add_url').on('click', function (e) {
                 self.on_url_doc();
             });
@@ -31,15 +41,15 @@ openerp.document_url = function(instance, m) {
         },
     });
 
-    instance.web.ActionManager = instance.web.ActionManager.extend({
+    ActionManager = ActionManager.include({
         ir_actions_act_close_wizard_and_reload_view: function (action, options) {
             if (!this.dialog) {
                 options.on_close();
             }
             this.dialog_stop();
-            this.inner_widget.views[this.inner_widget.active_view].controller.reload();
+            this.inner_widget.views[this.inner_widget.active_view.type].controller.reload();
             return $.when();
         },
     });
 
-};
+});
