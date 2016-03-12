@@ -4,13 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+# Rudolf Schnapka <rs@techno-flex.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:05+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-01-09 11:27+0000\n"
+"PO-Revision-Date: 2016-03-11 15:42+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 msgid ""
 "Add workflow on documents per category.\n"
 "-This installs the module document_page_approval."
-msgstr ""
+msgstr "Dokumenten einen Workflow per Kategorie zuweisen.\n- DAs Modul document_page_approval wird installiert."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -64,7 +65,7 @@ msgstr "Erstellt am"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
@@ -76,12 +77,12 @@ msgstr "Indizierung von Dokumenten, Volltextsuche in Dateianhängen.\n- Es wird 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Document page approval"
-msgstr ""
+msgstr "Dokument-Seitenfreigabe"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Document pages"
-msgstr ""
+msgstr "Dokumentseiten"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -106,7 +107,7 @@ msgstr "Knowledge und Dokumenten Management"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Zuletzt aktualisiert am"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid
@@ -121,7 +122,7 @@ msgstr "Zuletzt aktualisiert am"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
 msgid "Manage document pages (Wiki)"
-msgstr ""
+msgstr "Dokumentseiten verwalten (Wiki)"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document
@@ -131,19 +132,19 @@ msgstr "Dokumentenverwaltung"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
-msgstr ""
+msgstr "Dokumentenfreigabe verwalten"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
 msgid ""
 "Provide document page and category as a wiki.\n"
 "-This installs the module document_page."
-msgstr ""
+msgstr "Stelle Dokumentseite und -kategorie als Wiki zur Verfügung.\n- Das Modul document_page wird installiert."
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings
