@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2018-04-24 22:33+0000\n"
 "PO-Revision-Date: 2018-04-24 22:33+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
-"Language-Team: Spanish (Costa Rica) (https://www.transifex.com/oca/teams/23907/es_CR/)\n"
+"Language-Team: Georgian (https://www.transifex.com/oca/teams/23907/ka/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_CR\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -72,19 +72,19 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr "Aprobar"
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 #: model:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approved"
-msgstr "Aprobado"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_date
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_date
 msgid "Approved Date"
-msgstr "Fecha de aprobación"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_uid
@@ -101,7 +101,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_gid
 msgid "Approver group"
-msgstr "Grupo aprobador"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_group_ids
@@ -116,7 +116,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "შეწყვეტა"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
@@ -146,18 +146,18 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr "Página de documento"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr "Historia de página de documento"
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 #: model:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Draft"
-msgstr "Borrador"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_approver_group_ids
@@ -184,7 +184,7 @@ msgstr ""
 #: code:addons/document_page_approval/models/document_page_history_workflow.py:97
 #, python-format
 msgid "New version of the document %s approved."
-msgstr "Nueva versión del documento %s aprobada."
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
@@ -195,7 +195,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approval_required
 msgid "Require approval"
-msgstr "Requiere aprobación"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_approval_required
@@ -215,7 +215,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_state
 msgid "Status"
-msgstr "Estado"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
