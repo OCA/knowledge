@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_choose_directory
+# 
+# Translators:
+# Paolo Valier, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: knowledge (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-05 11:50+0000\n"
+"PO-Revision-Date: 2016-03-13 16:58+0000\n"
+"Last-Translator: Paolo Valier\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: document_choose_directory
+#. openerp-web
+#: code:addons/document_choose_directory/static/src/xml/document_choose_directory.xml:6
+#, python-format
+msgid "Choose directory"
+msgstr "Scegli la cartella"
+
+#. module: document_choose_directory
+#: model:ir.model,name:document_choose_directory.model_document_directory
+msgid "Directory"
+msgstr "Cartella"
+
+#. module: document_choose_directory
+#. openerp-web
+#: code:addons/document_choose_directory/static/src/js/document_choose_directory.js:68
+#, python-format
+msgid "No directory"
+msgstr "Nessuna cartella"
+
+#. module: document_choose_directory
+#: view:document.directory:document_choose_directory.view_document_directory_form
+msgid "{'invisible': [('type', '!=', 'ressource')]}"
+msgstr ""
