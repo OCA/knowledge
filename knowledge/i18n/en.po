@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:04+0000\n"
+"POT-Creation-Date: 2016-03-12 13:00+0000\n"
+"PO-Revision-Date: 2016-03-12 13:02+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-knowledge-9-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,18 @@ msgstr ""
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid ""
 "Add workflow on documents per category.\n"
-"-This installs the module document_page_approval."
-msgstr "Add workflow on documents per category.\n-This installs the module document_page_approval."
+"- This installs the module document_page_approval."
+msgstr "Add workflow on documents per category.\n- This installs the module document_page_approval."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Apply"
 msgstr "Apply"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_read
+msgid "Attach files from an external DMS into Odoo"
+msgstr "Attach files from an external DMS into Odoo"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -51,6 +56,26 @@ msgid "Configure Knowledge"
 msgstr "Configure Knowledge"
 
 #. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_read
+msgid ""
+"Connect Odoo with a CMIS compatible server to attach files\n"
+"to an Odoo record.\n"
+"- This installs the module cmis_read."
+msgstr "Connect Odoo with a CMIS compatible server to attach files\nto an Odoo record.\n- This installs the module cmis_read."
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
+msgid ""
+"Connect Odoo with a CMIS compatible server to store files.\n"
+"- This installs the module cmis_write."
+msgstr "Connect Odoo with a CMIS compatible server to store files.\n- This installs the module cmis_write."
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Connect with an external DMS"
+msgstr "Connect with an external DMS"
+
+#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
 msgid "Created by"
 msgstr "Created by"
@@ -69,18 +94,8 @@ msgstr "Display Name"
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
 msgid ""
 "Document indexation, full text search of attachements.\n"
-"-This installs the module document."
-msgstr "Document indexation, full text search of attachements.\n-This installs the module document."
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "Document page approval"
-msgstr "Document page approval"
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "Document pages"
-msgstr "Document pages"
+"- This installs the module document."
+msgstr "Document indexation, full text search of attachements.\n- This installs the module document."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -136,13 +151,23 @@ msgstr "Manage documents approval"
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
 msgid ""
 "Provide document page and category as a wiki.\n"
-"-This installs the module document_page."
-msgstr "Provide document page and category as a wiki.\n-This installs the module document_page."
+"- This installs the module document_page."
+msgstr "Provide document page and category as a wiki.\n- This installs the module document_page."
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
 msgid "Settings"
 msgstr "Settings"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_write
+msgid "Store attachments in an external DMS instead of the Odoo Filestore"
+msgstr "Store attachments in an external DMS instead of the Odoo Filestore"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Using CMIS"
+msgstr "Using CMIS"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings

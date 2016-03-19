@@ -9,13 +9,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-12 13:00+0000\n"
 "PO-Revision-Date: 2016-03-12 13:01+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-knowledge-9-0/language/fr/)\n"
+"Last-Translator: <>\n"
+"Language-Team: Hungarian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -31,54 +31,54 @@ msgid ""
 "--<br/>\n"
 "Odoo</p>\n"
 "            "
-msgstr "\n<p>Bonjour,</p>\n\n<p>La page \"${object.page_id.name}\" a été modifié et demande votre approbation.</p>\n\n<p>Vous pouvez réviser la nouvelle version ici : <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n\n<p>Bonne journée.<br/>\n--<br/>\nOdoo</p>\n            "
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr "Approuver"
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr "Approuvée"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_uid
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_uid
 msgid "Approved By"
-msgstr "Approuvée par"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_date
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_date
 msgid "Approved Date"
-msgstr "Date d'approbation"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_gid
 msgid "Approver group"
-msgstr "Groupe approbateur"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr "Page"
+msgstr "Documentum oldal"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr "Historique de la page"
+msgstr "Dokumantum oldal előzmény"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr "Brouillon"
+msgstr ""
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of \"${object.page_id.name}\" to approve"
-msgstr "Nouvelle version de \"${object.page_id.name}\" à approuver"
+msgstr ""
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history_workflow.py:61
@@ -89,12 +89,12 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approval_required
 msgid "Require approval"
-msgstr "Nécessite une approbation"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_state
 msgid "Status"
-msgstr "Statut"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_page_url
