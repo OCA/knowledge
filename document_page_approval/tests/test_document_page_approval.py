@@ -22,7 +22,7 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.assertIsNotNone(page.display_content, 'Page content')
 
         # Check if approval is required
-        self.assertFalse(page.is_approval_required(page))
+        self.assertTrue(page.is_approval_required(page) == category.approval_required)
 
         # Check content of an approval page
         page.approval_required = True
