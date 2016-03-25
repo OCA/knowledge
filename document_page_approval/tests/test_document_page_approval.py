@@ -10,19 +10,20 @@ class TestDocumentPageApproval(common.TransactionCase):
         # Check content of a category
         category = self.env['document.page'].search([
             ('name', '=', 'OpenERP Features')
-            ])
+        ])
 
         self.assertIsNotNone(category.display_content, 'a category')
 
         # Check content of a page
         pages = self.env['document.page'].search([
             ('parent_id', '=', category.id)
-            ])
+        ])
         page = pages[0]
         self.assertIsNotNone(page.display_content, 'Page content')
 
         # Check if approval is required
-        self.assertTrue(page.is_approval_required(page) == category.approval_required)
+        self.assertTrue(page.is_approval_required(page) ==
+                        category.approval_required)
 
         # Check content of an approval page
         page.approval_required = True

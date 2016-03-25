@@ -14,7 +14,8 @@ class TestDocumentPageHistoryWorkflow(common.TransactionCase):
         """Test if a user can approve this page."""
         category = self.env.ref('document_page.demo_category1')
         category.approval_required = True
-        category.approver_gid = self.env.ref('document_page_approval.group_document_approver_user')
+        category.approver_gid = self.env.ref(
+            'document_page_approval.group_document_approver_user')
 
         page = self.env['document.page'].create({
             'name': 'Test Page10',
