@@ -12,30 +12,25 @@ class TestDocumentPageHistoryWorkflow(common.TransactionCase):
 
     def test_can_user_approve_this_page(self):
         """Test if a user can approve this page."""
-        group = self.env['res.groups'].search([
-            ('name', '=', 'Document approver')
-        ])
         category = self.env.ref('document_page.demo_category1')
         category.approval_required = True
-        category.approver_uid = group
+        category.approver_gid = self.env.ref('document_page_approval.group_document_approver_user')
 
         page = self.env['document.page'].create({
             'name': 'Test Page10',
+            'content': 'A difficult test',
             'parent_id': category.id
         })
 
-        # history = self.env['document.page.history']
-        # history_ids = history.search(
-        #    [
-        #        ('page_id', '=', page.id)
-        #    ],
-        #    limit=1,
-        #    order='create_date DESC'
-        #)
-        #history_ids.signal_workflow('page_approval_draft')
-        #state = history_ids.state == 'draft'
-        # state = history_ids[0].page_id == page.id
-        self.assertTrue(page.is_approval_required(page))
+        history = self.env['document.page.history'].search(
+            [
+                ('page_id', '=', page.id)
+            ],
+            limit=1,
+            order='create_date DESC'
+        )
+
+        self.assertTrue(history.can_user_approve_page)
 
     def test_get_approvers_guids(self):
         """Get approver guids."""
