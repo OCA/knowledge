@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:01+0000\n"
+"POT-Creation-Date: 2016-03-26 15:50+0000\n"
+"PO-Revision-Date: 2016-03-26 15:51+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-knowledge-9-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,7 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "\n"
+"                \n"
 "<p>Hello,</p>\n"
 "\n"
 "<p>The page \"${object.page_id.name}\" has been modified and need your approval.</p>\n"
@@ -31,7 +32,7 @@ msgid ""
 "--<br/>\n"
 "Odoo</p>\n"
 "            "
-msgstr "\n<p>Bonjour,</p>\n\n<p>La page \"${object.page_id.name}\" a été modifié et demande votre approbation.</p>\n\n<p>Vous pouvez réviser la nouvelle version ici : <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n\n<p>Bonne journée.<br/>\n--<br/>\nOdoo</p>\n            "
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -69,6 +70,11 @@ msgstr "Page"
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
 msgstr "Historique de la page"
+
+#. module: document_page_approval
+#: model:res.groups,name:document_page_approval.group_document_approver_user
+msgid "Document approver"
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
