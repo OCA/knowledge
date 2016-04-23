@@ -3,13 +3,14 @@
 # * document_page_approval
 # 
 # Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:01+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-04-14 10:08+0000\n"
+"PO-Revision-Date: 2016-04-21 08:10+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,6 +22,7 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "\n"
+"                \n"
 "<p>Hello,</p>\n"
 "\n"
 "<p>The page \"${object.page_id.name}\" has been modified and need your approval.</p>\n"
@@ -31,34 +33,34 @@ msgid ""
 "--<br/>\n"
 "Odoo</p>\n"
 "            "
-msgstr ""
+msgstr "\n                \n<p>Hallo,</p>\n\n<p>Die Seite \"${object.page_id.name}\" wurde verändert und erfordert Ihre Freigabe.</p>\n\n<p>Sie können die neue Fassung hier prüfen: <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n\n<p>Erfolgreichen Tag noch.<br/>\n--<br/>\nOdoo</p>\n            "
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr ""
+msgstr "Freigeben"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr ""
+msgstr "Freigegeben"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_uid
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_uid
 msgid "Approved By"
-msgstr ""
+msgstr "Freigegeben durch"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_date
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_date
 msgid "Approved Date"
-msgstr ""
+msgstr "Freigabedatum"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_gid
 msgid "Approver group"
-msgstr ""
+msgstr "Freigabegruppe"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -71,48 +73,53 @@ msgid "Document Page History"
 msgstr "Dokumenten Seite Historie"
 
 #. module: document_page_approval
+#: model:res.groups,name:document_page_approval.group_document_approver_user
+msgid "Document approver"
+msgstr "Dokumentfreigebender"
+
+#. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Entwurf"
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of \"${object.page_id.name}\" to approve"
-msgstr ""
+msgstr "Freizugebende Fassung von \"${object.page_id.name}\""
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history_workflow.py:61
 #, python-format
 msgid "New version of the document %s approved."
-msgstr ""
+msgstr "Neue Fassung des Dokuments %s freigegeben."
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approval_required
 msgid "Require approval"
-msgstr ""
+msgstr "Freigabe anfordern"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_state
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_page_url
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_can_user_approve_page
 msgid "can user approve this page"
-msgstr ""
+msgstr "Darf Benutzer diese Seite freigeben"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_approvers_email
 msgid "get all approvers email"
-msgstr ""
+msgstr "Hole alle Freigeber-Emails"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_is_parent_approval_required
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_is_parent_approval_required
 msgid "parent approval"
-msgstr ""
+msgstr "Übergeordnete Freigabe"
