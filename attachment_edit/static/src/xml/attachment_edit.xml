@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery="a.oe_sidebar_delete_item" t-operation="before">
+            <a t-if="section.name == 'files' and !item.callback and item.url" href="#" class="oe-sidebar-attachment-edit" t-att-data-id="item.id" t-attf-title="Edit #{item.name}">
+                <img t-att-src='_s + "/web/static/src/img/pencil.gif"' width="12" height="12" border="0"/>
+            </a>
+        </t>
+    </t>
+</templates>
