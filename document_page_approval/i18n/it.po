@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Paolo Valier, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-05 11:50+0000\n"
-"PO-Revision-Date: 2016-03-13 17:02+0000\n"
-"Last-Translator: Paolo Valier\n"
+"POT-Creation-Date: 2016-05-04 02:39+0000\n"
+"PO-Revision-Date: 2016-04-30 15:51+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,11 +46,13 @@ msgid "Approved"
 msgstr "Approvato"
 
 #. module: document_page_approval
+#: field:document.page,approved_uid:0
 #: field:document.page.history,approved_uid:0
 msgid "Approved By"
 msgstr "Approvato da"
 
 #. module: document_page_approval
+#: field:document.page,approved_date:0
 #: field:document.page.history,approved_date:0
 msgid "Approved Date"
 msgstr "Data di Approvazione"
@@ -94,3 +97,24 @@ msgstr "Richiede approvazione"
 #: field:document.page.history,state:0
 msgid "Status"
 msgstr "Stato"
+
+#. module: document_page_approval
+#: field:document.page.history,get_page_url:0
+msgid "URL"
+msgstr "URL"
+
+#. module: document_page_approval
+#: field:document.page.history,can_user_approve_page:0
+msgid "can user approve this page"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page.history,get_approvers_email:0
+msgid "get all approvers email"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page,is_parent_approval_required:0
+#: field:document.page.history,is_parent_approval_required:0
+msgid "parent approval"
+msgstr ""

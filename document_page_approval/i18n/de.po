@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-20 14:33+0000\n"
-"PO-Revision-Date: 2015-11-25 09:45+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"POT-Creation-Date: 2016-05-04 02:39+0000\n"
+"PO-Revision-Date: 2016-04-30 15:51+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,11 +45,13 @@ msgid "Approved"
 msgstr "Freigegeben"
 
 #. module: document_page_approval
+#: field:document.page,approved_uid:0
 #: field:document.page.history,approved_uid:0
 msgid "Approved By"
 msgstr "Freigegeben durch"
 
 #. module: document_page_approval
+#: field:document.page,approved_date:0
 #: field:document.page.history,approved_date:0
 msgid "Approved Date"
 msgstr "Freigegeben am"
@@ -94,3 +96,24 @@ msgstr "Erfordert Freigabe"
 #: field:document.page.history,state:0
 msgid "Status"
 msgstr "Status"
+
+#. module: document_page_approval
+#: field:document.page.history,get_page_url:0
+msgid "URL"
+msgstr "URL"
+
+#. module: document_page_approval
+#: field:document.page.history,can_user_approve_page:0
+msgid "can user approve this page"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page.history,get_approvers_email:0
+msgid "get all approvers email"
+msgstr ""
+
+#. module: document_page_approval
+#: field:document.page,is_parent_approval_required:0
+#: field:document.page.history,is_parent_approval_required:0
+msgid "parent approval"
+msgstr ""

@@ -4,13 +4,13 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:44+0000\n"
-"PO-Revision-Date: 2015-11-08 05:36+0000\n"
+"POT-Creation-Date: 2016-05-04 02:39+0000\n"
+"PO-Revision-Date: 2016-05-01 04:53+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -114,6 +114,19 @@ msgid "Difference"
 msgstr "Razlika"
 
 #. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
+msgstr "Prikazana vsebina"
+
+#. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
 msgid "Document History"
 msgstr "Zgodovina dokumenta"
@@ -198,6 +211,14 @@ msgstr "Zadnji prispeval"
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
 msgstr "Datum zadnjega sporočila"
+
+#. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
