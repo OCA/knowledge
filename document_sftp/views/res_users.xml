@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_users_form" model="ir.ui.view">
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="document_sftp" string="SSH">
+                        <group>
+                            <field name="authorized_keys" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_users_form_simple_modif" model="ir.ui.view">
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif" />
+            <field name="arch" type="xml">
+                <xpath expr="//footer" position="before">
+                    <group name="document_sftp" string="SSH">
+                        <field name="authorized_keys" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

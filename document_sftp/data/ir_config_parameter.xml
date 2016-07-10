@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="param_hostkey" model="ir.config_parameter">
+            <field name="key">document_sftp.hostkey</field>
+            <field name="value">If you see this text, initialization went wrong</field>
+            <field name="group_ids" eval="[(4, ref('base.group_system'))]" />
+        </record>
+        <record id="param_bind" model="ir.config_parameter">
+            <field name="key">document_sftp.bind</field>
+            <field name="value">localhost:2222</field>
+            <field name="group_ids" eval="[(4, ref('base.group_system'))]" />
+        </record>
+    </data>
+</openerp>
