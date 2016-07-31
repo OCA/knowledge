@@ -28,6 +28,7 @@ addon | version | summary
 [attachments_to_filesystem](attachments_to_filesystem/) | 8.0.1.0.0 | Move existing attachments to filesystem
 [document_choose_directory](document_choose_directory/) | 8.0.1.0.0 | Choose a document's directory during upload
 [document_no_unique_filenames](document_no_unique_filenames/) | 8.0.1.0.0 | Drop the uniquness constraint on filenames for directories
+[document_ocr](document_ocr/) | 8.0.1.0.0 | Run character recognition on uploaded files
 [document_page](document_page/) | 8.0.1.0.2 | Document Page
 [document_page_approval](document_page_approval/) | 8.0.1.0.0 | Document Page Approval
 [document_page_partner_id](document_page_partner_id/) | 8.0.1.0.0 | Allows to link doucment pages to a partner
