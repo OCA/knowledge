@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="base.user_demo" model="res.users">
+            <field name="authorized_keys">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuJbpX5OB8tnXzn+T72D+uIHTvCnpuDMD2So5lfkJsU3M4TvidERP0MtZykNNjs2RmIV97CLTdfJXxWpjYm92KWhd9X52lFBKVIJO2FHayhWw4VQGBeNXd9iGs3h9g5/B5LPvdPeZ4OtgpuTv06fTJTdBmzjmOCSa+5j/FWWbEr3F5TTRcba7v3W2a+qvzh1PODpeBFpXEGQqK2DnAA5XwmZG17fo0hHdLhQD1vb//vL1E8sMHWc/zDn8tef8JAmWpkK7Cuib7oB55/+7PkgcsRqQx3FRhg0hcmSwPWLBT+GfU0fUfAILUPVukkOiCl8GSqN+St0fYhPtbFPwLkAscmZCTWbI0HViLXR5nsWHd1eziimpDJXeo7d2wo7cvQpSdZFKlERws5gErEgewPYFYW7SqPFVf0hZ9AqHiX01Nu3tcVUdxQvw7+92ShAcar5CVcrWdD2T5YdxDNapUJ0uL6t/vvLYz8OpcsoyfXbMFG/KPxs9UTKx7UqaPOK6pyc12MxJ+EksEMhqGY+dyPwBfwce4R9FybRhz+BhYP5ABl54dxrF894xrrkHeqS1avgslx9fUU9mXb6LyAbuyykCI6JUsKeR+O3SnLv3PdAVYmqqa/7MhMQWz+jeX3nrs+9OtETpB8P0EtcyzDNwS0keLu4pHhXH9hPmLBRDiTQ4F0Q==</field>
+        </record>
+    </data>
+</openerp>
