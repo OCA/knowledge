@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-import paramiko
 import logging
 import socket
 import StringIO
@@ -9,6 +8,7 @@ import threading
 from openerp import SUPERUSER_ID, api, models
 from openerp.modules.registry import RegistryManager
 try:
+    import paramiko
     from ..document_sftp_transport import DocumentSFTPTransport
     from ..document_sftp_server import DocumentSFTPServer
     from ..document_sftp_sftp_server import DocumentSFTPSftpServerInterface,\
