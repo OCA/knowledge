@@ -25,13 +25,6 @@ To use this module, you need to:
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/118/9.0
 
-For further information, please visit:
-
- * https://www.odoo.com/forum/help-1
-
-Known issues / Roadmap
-======================
-
 Bug Tracker
 ===========
 
@@ -47,7 +40,7 @@ Contributors
 ------------
 
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
-* Pedro M. Baeza <pedro.baeza@serviciosbaeza.com
+* Pedro M. Baeza <pedro.baeza@tecnativa.com
 
 Maintainer
 ----------
