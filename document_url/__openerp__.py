@@ -6,10 +6,7 @@
     'name': 'URL attachment',
     'version': '9.0.1.0.0',
     'category': 'Tools',
-    'description': """
-Module that allows to attach an URL as a document.
-    """,
-    'author': "Serv. Tecnolog. Avanzados - Pedro M. Baeza,"
+    'author': "Tecnativa,"
               "Odoo Community Association (OCA)",
     'website': 'http://www.serviciosbaeza.com',
     'license': 'AGPL-3',
