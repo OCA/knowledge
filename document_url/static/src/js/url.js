@@ -16,6 +16,7 @@ odoo.define('document_url', function(require) {
         redraw: function() {
             var self = this;
             this._super.apply(this, arguments);
+            self.$el.find("a[href]").attr('target', '_blank');
             self.$el.find('.oe_sidebar_add_attachment, .o_sidebar_add_attachment').after(QWeb.render('AddUrlDocumentItem', {widget: self}))
             self.$el.find('.oe_sidebar_add_url').on('click', function (e) {
                 self.on_url_doc();
