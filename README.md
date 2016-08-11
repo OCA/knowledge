@@ -20,6 +20,7 @@ addon | version | summary
 --- | --- | ---
 [document_page](document_page/) | 9.0.1.0.1 | Document Page
 [document_page_approval](document_page_approval/) | 9.0.1.0.0 | Document Page Approval
+[document_url](document_url/) | 9.0.1.0.0 | URL attachment
 [knowledge](knowledge/) | 9.0.1.1.0 | Knowledge Management System
 
 Unported addons
@@ -33,7 +34,6 @@ addon | version | summary
 [document_no_unique_filenames](document_no_unique_filenames/) | 8.0.1.0.0 (unported) | Drop the uniquness constraint on filenames for directories
 [document_page_multi_company](document_page_multi_company/) | 1.0 (unported) | Document Page Multi-Company
 [document_reindex](document_reindex/) | 8.0.1.0.0 (unported) | Reindex your already uploaded documents
-[document_url](document_url/) | 8.0.1.0.0 (unported) | URL attachment
 
 [//]: # (end addons)
 
