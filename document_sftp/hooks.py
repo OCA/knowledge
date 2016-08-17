@@ -5,8 +5,11 @@ import logging
 import StringIO
 import socket
 from lxml import etree
-from paramiko.ecdsakey import ECDSAKey
 from openerp import SUPERUSER_ID, tools
+try:
+    from paramiko.ecdsakey import ECDSAKey
+except ImportError:  # pragma: no cover
+    pass
 _logger = logging.getLogger(__name__)
 
 
