@@ -61,8 +61,13 @@ class IrAttachment(Model):
                     hasattr(magic, 'MAGIC_MIME_TYPE') and
                     magic.MAGIC_MIME_TYPE or magic.MAGIC_MIME)
                 ms.load()
-                mimetype = ms.buffer(
-                    base64.b64decode(this[binary_field]))
+                if model == self._name and binary_field == 'datas'\
+                        and this.store_fname:
+                    mimetype = ms.file(
+                        this._full_path(cr, uid, this.store_fname))
+                else:
+                    mimetype = ms.buffer(
+                        base64.b64decode(this[binary_field]))
             except ImportError:
                 (mimetype, encoding) = mimetypes.guess_type(
                     'data:;base64,' + this[binary_field], strict=False)
