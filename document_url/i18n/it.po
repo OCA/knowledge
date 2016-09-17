@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Paolo Valier, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-05 11:50+0000\n"
-"PO-Revision-Date: 2016-03-13 17:01+0000\n"
-"Last-Translator: Paolo Valier\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-09-09 12:25+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,9 +53,19 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: document_url
+#: field:ir.attachment.add_url,display_name:0
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: document_url
 #: field:ir.attachment.add_url,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: document_url
+#: field:ir.attachment.add_url,__last_update:0
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_uid:0

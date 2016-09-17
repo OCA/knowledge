@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-07 16:07+0000\n"
-"PO-Revision-Date: 2016-05-22 22:36+0000\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-09-13 11:39+0000\n"
 "Last-Translator: Pedro Castro Silva <pedrocs@sossia.pt>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Categoria"
 #. module: document_page
 #: field:document.page,child_ids:0
 msgid "Children"
-msgstr "Filhos"
+msgstr "Descendentes"
 
 #. module: document_page
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
@@ -128,7 +128,7 @@ msgstr "Conteúdo Exibido"
 #. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr "História do Documento"
+msgstr "Histórico do Documento"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -144,7 +144,7 @@ msgstr "Página do Documento"
 #: view:document.page.history:document_page.wiki_history_form
 #: model:ir.model,name:document_page.model_document_page_history
 msgid "Document Page History"
-msgstr "História da Página do Documento"
+msgstr "Histórico da Página do Documento"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -169,7 +169,7 @@ msgstr "Agrupar Por..."
 #. module: document_page
 #: field:document.page,history_ids:0
 msgid "History"
-msgstr "História"
+msgstr "Histórico"
 
 #. module: document_page
 #: help:document.page,message_summary:0
@@ -283,12 +283,12 @@ msgstr "Página"
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr "História da Página"
+msgstr "Histórico da Página"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr "História da Página"
+msgstr "Histórico da Página"
 
 #. module: document_page
 #: help:document.page,type:0
@@ -305,7 +305,7 @@ msgstr "Páginas"
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr "História das Páginas"
+msgstr "Histórico das Páginas"
 
 #. module: document_page
 #: field:document.page.create.menu,menu_parent_id:0
@@ -353,7 +353,7 @@ msgstr "Mensagens Não Lidas"
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr ""
+msgstr "Assistente Menu de Criação"
 
 #. module: document_page
 #: code:addons/document_page/wizard/document_page_show_diff.py:50

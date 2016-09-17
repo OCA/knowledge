@@ -5,13 +5,14 @@
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 # Paolo Valier, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-05 11:50+0000\n"
-"PO-Revision-Date: 2016-03-13 17:01+0000\n"
-"Last-Translator: Paolo Valier\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-09-09 12:24+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -114,6 +115,19 @@ msgid "Difference"
 msgstr "Differenza"
 
 #. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
+msgstr ""
+
+#. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
 msgid "Document History"
 msgstr "Cronologia documento"
@@ -198,6 +212,14 @@ msgstr "Ultimo collaboratore"
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
 msgstr "Data ultimo messaggio"
+
+#. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
