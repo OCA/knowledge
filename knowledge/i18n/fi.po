@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:02+0000\n"
+"POT-Creation-Date: 2016-08-13 13:00+0000\n"
+"PO-Revision-Date: 2016-09-15 12:45+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-knowledge-9-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr "Luotu"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
@@ -122,7 +122,7 @@ msgstr "Tietämyksen ja asiakirjojen -hallinta"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimeksi muokattu"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 13:00+0000\n"
-"PO-Revision-Date: 2016-09-09 12:26+0000\n"
+"PO-Revision-Date: 2016-09-13 11:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Amharic (http://www.transifex.com/oca/OCA-knowledge-9-0/language/am/)\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: am\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction
@@ -31,7 +31,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
-msgstr "መሰረዝ"
+msgstr "Cancelar"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
@@ -51,7 +51,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
 msgid "Children"
-msgstr ""
+msgstr "Descendentes"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -83,14 +83,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Criado por"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Criado em"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
@@ -100,7 +100,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Data da última mensagem registada."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
@@ -130,7 +130,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr ""
+msgstr "Histórico do Documento"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page
@@ -146,7 +146,7 @@ msgstr ""
 #: model:ir.model,name:document_page.model_document_page_history
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Document Page History"
-msgstr ""
+msgstr "Histórico da Página do Documento"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
@@ -161,7 +161,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
@@ -181,7 +181,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
 msgid "History"
-msgstr ""
+msgstr "Histórico"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_id
@@ -194,7 +194,7 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Se assinalada, há novas mensagens a requerer a sua atenção."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_needaction
@@ -220,7 +220,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Data da Última Mensagem"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -235,14 +235,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Atualizado pela última vez por"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Atualizado pela última vez em"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
@@ -262,7 +262,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensagens"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
@@ -304,12 +304,12 @@ msgstr ""
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr ""
+msgstr "Histórico da Página"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr ""
+msgstr "Histórico da Página"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_type
@@ -326,7 +326,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr ""
+msgstr "Histórico das Páginas"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_parent_id
@@ -343,7 +343,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
 msgid "Summary"
-msgstr ""
+msgstr "Resumo"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
@@ -376,7 +376,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensagens não lidas"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter
@@ -386,7 +386,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr ""
+msgstr "Assistente Menu de Criação"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
@@ -397,7 +397,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "or"
-msgstr "ወይም"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
