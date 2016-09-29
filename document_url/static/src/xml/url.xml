@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 <t t-name="AddUrlDocumentItem">
-     <li class="oe_sidebar_add_url"><span class="oe_url_attachment">Add URL...</span></li>
+    <li class="oe_sidebar_add_url">
+        <a class="oe_file_attachment">Add URL...</a>
+    </li>
 </t>
 </templates>
