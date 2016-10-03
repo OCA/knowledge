@@ -2,7 +2,8 @@
 
 <templates>
     <t t-extend="Sidebar">
-        <t t-jquery=".oe_sidebar_add_attachment" t-operation="after">
+        <!-- oe_ for Odoo CE, and o_ for Odoo EE -->
+        <t t-jquery=".oe_sidebar_add_attachment, .o_sidebar_add_attachment" t-operation="after">
             <li class="oe_sidebar_add_url">
                 <a class="oe_file_attachment"
                     data-section="url_doc"
