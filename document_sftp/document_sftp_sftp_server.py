@@ -37,6 +37,13 @@ class DocumentSFTPSftpServerInterface(SFTPServerInterface):
             return SFTP_PERMISSION_DENIED
         return handler._open(path, flags, attr)
 
+    def remove(self, path):
+        handler = self.env['document.sftp']._get_handler_for(path)
+        if handler is None:
+            return SFTP_PERMISSION_DENIED
+        return handler._remove(path)
+
+
     def session_ended(self):
         self.env.cr.commit()
         self.env.cr.close()

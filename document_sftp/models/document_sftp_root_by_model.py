@@ -2,9 +2,9 @@
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import os
-from openerp import api, models
+from openerp import api, models, exceptions
 try:
-    from paramiko import SFTP_NO_SUCH_FILE, SFTP_PERMISSION_DENIED
+    from paramiko import SFTP_OK, SFTP_NO_SUCH_FILE, SFTP_PERMISSION_DENIED
 except ImportError:   # pragma: no cover
     pass
 
@@ -20,6 +20,18 @@ class DocumentSFTPRootByModel(models.Model):
         return self._directory(self._virtual_root)
 
     @api.model
+    def _get_attachment(self, components):
+        """return an attachment if we have a full path
+        in the form /By model/res.company/$id/$attachment"""
+        return self.env['ir.attachment'].search([
+            ('res_model', '=', components[-3]),
+            ('res_id', '=', components[-2]),
+            '|',
+            ('datas_fname', '=', components[-1]),
+            ('name', '=', components[-1]),
+        ], limit=1)
+
+    @api.model
     def _stat(self, path):
         path = path.strip('/')
         if not path.startswith(self._virtual_root):
@@ -30,13 +42,7 @@ class DocumentSFTPRootByModel(models.Model):
         elif len(components) in (2, 3):
             return self._directory(components[-1])
         elif len(components) == 4:
-            return self._file(self.env['ir.attachment'].search([
-                ('res_model', '=', components[-3]),
-                ('res_id', '=', components[-2]),
-                '|',
-                ('datas_fname', '=', components[-1]),
-                ('name', '=', components[-1]),
-            ], limit=1))
+            return self._file(self._get_attachment(components))
         return SFTP_NO_SUCH_FILE
 
     @api.model
@@ -82,11 +88,7 @@ class DocumentSFTPRootByModel(models.Model):
         components = self._split_path(path)
         if len(components) == 4:
             # TODO: locking!
-            existing = self.env['ir.attachment'].search([
-                ('res_model', '=', components[-3]),
-                ('res_id', '=', int(components[-2])),
-                ('datas_fname', '=', components[-1]),
-            ])
+            existing = self._get_attachment(components)
             return self._file_handle(
                 existing or self.env['ir.attachment'].new({
                     'res_model': components[-3],
@@ -101,11 +103,16 @@ class DocumentSFTPRootByModel(models.Model):
     def _open_read(self, path, flags, attr):
         components = self._split_path(path)
         if len(components) == 4:
-            return self._file_handle(self.env['ir.attachment'].search([
-                ('res_model', '=', components[-3]),
-                ('res_id', '=', components[-2]),
-                '|',
-                ('datas_fname', '=', components[-1]),
-                ('name', '=', components[-1]),
-            ], limit=1))
+            return self._file_handle(self._get_attachment(components))
         return SFTP_PERMISSION_DENIED
+
+    @api.model
+    def _remove(self, path):
+        components = self._split_path(path)
+        if len(components) == 4:
+            try:
+                self._get_attachment(components).unlink()
+                self.env.cr.commit()
+            except exceptions.AccessError:
+                return SFTP_PERMISSION_DENIED
+        return SFTP_OK

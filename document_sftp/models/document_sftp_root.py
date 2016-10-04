@@ -63,6 +63,11 @@ class DocumentSFTPRoot(models.AbstractModel):
         raise NotImplementedError()
 
     @api.model
+    def _remove(self, path):
+        """Return file attributes"""
+        raise NotImplementedError()
+
+    @api.model
     def _lstat(self, path):
         """Return attributes about a link"""
         return self._stat(path)
