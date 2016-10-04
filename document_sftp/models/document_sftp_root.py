@@ -2,12 +2,13 @@
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import stat
+import time
 try:
     from paramiko import SFTPAttributes
-    from ..document_sftp_handle import DocumentSFTPHandle
 except ImportError:   # pragma: no cover
     pass
-from openerp import api, models
+from ..document_sftp_handle import DocumentSFTPHandle
+from openerp import api, models, fields
 
 
 class DocumentSFTPRoot(models.AbstractModel):
@@ -36,6 +37,9 @@ class DocumentSFTPRoot(models.AbstractModel):
         result.st_group = 0
         result.st_size = attachment.file_size
         result.st_mode = stat.S_IFREG | stat.S_IRUSR
+        result.st_mtime = time.mktime(fields.Datetime.from_string(
+            attachment.create_date
+        ).timetuple())
         return result
 
     @api.model
@@ -62,3 +66,10 @@ class DocumentSFTPRoot(models.AbstractModel):
     def _lstat(self, path):
         """Return attributes about a link"""
         return self._stat(path)
+
+    @api.model
+    def _split_path(self, path):
+        """Return a list of normalized and stripped path components"""
+        # TODO: normalization
+        path = path.strip('/')
+        return path.split('/')

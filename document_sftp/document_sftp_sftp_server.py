@@ -7,7 +7,7 @@ from openerp import api
 
 class DocumentSFTPSftpServerInterface(SFTPServerInterface):
     def __init__(self, server, env):
-        self.env = env
+        self.env = server.env
 
     def list_folder(self, path):
         if not path or path in ('/', '.'):
@@ -38,6 +38,7 @@ class DocumentSFTPSftpServerInterface(SFTPServerInterface):
         return handler._open(path, flags, attr)
 
     def session_ended(self):
+        self.env.cr.commit()
         self.env.cr.close()
         return super(DocumentSFTPSftpServerInterface, self).session_ended()
 
