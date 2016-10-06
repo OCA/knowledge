@@ -43,7 +43,7 @@
     'demo': [
         'demo/document_page.xml'
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'css': ['static/src/css/document_page.css'],
 }
