@@ -33,6 +33,6 @@
         "views/res_config.xml",
     ],
     "demo": ["demo/knowledge.xml"],
-    "installable": True,
+    'installable': False,
     "auto_install": False,
 }
