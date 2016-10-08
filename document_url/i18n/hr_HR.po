@@ -3,20 +3,20 @@
 # * document_url
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# Bole <bole@dajmi5.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-29 15:34+0000\n"
 "PO-Revision-Date: 2016-09-29 15:34+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"Last-Translator: Bole <bole@dajmi5.com>, 2016\n"
+"Language-Team: Croatian (Croatia) (https://www.transifex.com/oca/teams/23907/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: hr_HR\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: document_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
@@ -39,22 +39,22 @@ msgstr ""
 #. module: document_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_uid
 msgid "Created by"
-msgstr "Criado por"
+msgstr "Kreirao"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_date
 msgid "Created on"
-msgstr "Criado em"
+msgstr "Kreirano"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_display_name
 msgid "Display Name"
-msgstr "Nome para Mostrar"
+msgstr "Naziv"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_id
@@ -64,22 +64,22 @@ msgstr "ID"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url___last_update
 msgid "Last Modified on"
-msgstr "Última atualização em"
+msgstr "Zadnje modificirano"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_uid
 msgid "Last Updated by"
-msgstr "Última atualização por"
+msgstr "Zadnji ažurirao"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_date
 msgid "Last Updated on"
-msgstr "Última atualização em"
+msgstr "Zadnje ažurirano"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_name
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_url
@@ -94,4 +94,4 @@ msgstr ""
 #. module: document_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 msgid "or"
-msgstr "ou"
+msgstr ""
