@@ -3,20 +3,19 @@
 # * document_page
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-10-04 09:43+0000\n"
+"PO-Revision-Date: 2016-10-05 06:30+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/pt_BR/)\n"
+"Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: hr_HR\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -25,24 +24,24 @@ msgid ""
 "                Click to create a new web page.\n"
 "              </p>\n"
 "            "
-msgstr "<p class=\"oe_view_nocontent_create\">\n                Clique para criar uma nova página web.\n              </ P>\n            "
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
 #: field:document.page,create_uid:0
 msgid "Author"
-msgstr "Autor"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
 msgid "Categories"
-msgstr "Categorias"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -50,12 +49,12 @@ msgstr "Categorias"
 #: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr "Categoria"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,child_ids:0
 msgid "Children"
-msgstr "Filhos"
+msgstr ""
 
 #. module: document_page
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
@@ -68,32 +67,32 @@ msgstr ""
 #: field:document.page,content:0 selection:document.page,type:0
 #: field:document.page.history,content:0
 msgid "Content"
-msgstr "Conteúdo"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
 msgid "Create Menu"
-msgstr "Criar Menu"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr "Criado por"
+msgstr "Kreirao"
 
 #. module: document_page
 #: field:document.page,create_date:0
 #: field:document.page.create.menu,create_date:0
 #: field:wizard.document.page.history.show_diff,create_date:0
 msgid "Created on"
-msgstr "Criado em"
+msgstr "Kreirano"
 
 #. module: document_page
 #: field:document.page.history,create_date:0
 msgid "Date"
-msgstr "Data"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,message_last_post:0
@@ -103,14 +102,14 @@ msgstr ""
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
 msgid "Diff"
-msgstr "Diferença"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr "Diferença"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,display_name:0
@@ -118,7 +117,7 @@ msgstr "Diferença"
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr "Nome para Mostrar"
+msgstr "Naziv"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -128,7 +127,7 @@ msgstr ""
 #. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr "Histórico de Documentos"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -138,18 +137,18 @@ msgstr "Histórico de Documentos"
 #: view:document.page:document_page.view_wiki_tree_children
 #: model:ir.model,name:document_page.model_document_page
 msgid "Document Page"
-msgstr "Página do Documento"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.history:document_page.wiki_history_form
 #: model:ir.model,name:document_page.model_document_page_history
 msgid "Document Page History"
-msgstr "Histórico da Página de Documento"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
 msgid "Document Type"
-msgstr "Tipo de Documento"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -164,12 +163,12 @@ msgstr ""
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
 msgid "Group By..."
-msgstr "Agrupar Por..."
+msgstr ""
 
 #. module: document_page
 #: field:document.page,history_ids:0
 msgid "History"
-msgstr "Histórico"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,message_summary:0
@@ -183,7 +182,7 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr "Identificação"
+msgstr "ID"
 
 #. module: document_page
 #: help:document.page,message_unread:0
@@ -204,7 +203,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_filter
 #: field:document.page,write_uid:0
 msgid "Last Contributor"
-msgstr "Último Contribuidor(a)"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,message_last_post:0
@@ -217,36 +216,36 @@ msgstr ""
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr "Última atualização em"
+msgstr "Zadnje modificirano"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr "Última atualização por"
+msgstr "Zadnji ažurirao"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr "Última atualização em"
+msgstr "Zadnje ažurirano"
 
 #. module: document_page
 #: field:document.page,menu_id:0
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr "Informação do Menu"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.create.menu,menu_name:0
 msgid "Menu Name"
-msgstr "Nome do Menu"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,message_ids:0
@@ -261,66 +260,66 @@ msgstr ""
 #. module: document_page
 #: field:document.page,write_date:0
 msgid "Modification Date"
-msgstr "Data de Modificação"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.history,create_uid:0
 msgid "Modified By"
-msgstr "Modificado Por"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.history,page_id:0
 msgid "Page"
-msgstr "Página"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr "Histórico da Página"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr "Histórico da página"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,type:0
 msgid "Page type"
-msgstr "Tipo de página"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_page
 #: model:ir.ui.menu,name:document_page.menu_page
 #: model:ir.ui.menu,name:document_page.menu_wiki
 msgid "Pages"
-msgstr "Páginas"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr "Histórico das páginas"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.create.menu,menu_parent_id:0
 msgid "Parent Menu"
-msgstr "Menu Superior"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,message_summary:0 field:document.page.history,summary:0
 msgid "Summary"
-msgstr "Resumo"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Template"
-msgstr "Modelo"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -333,17 +332,17 @@ msgstr ""
 #: code:addons/document_page/document_page.py:175
 #, python-format
 msgid "There are no changes in revisions."
-msgstr "Não há mudanças nas revisões."
+msgstr ""
 
 #. module: document_page
 #: field:document.page,name:0
 msgid "Title"
-msgstr "Título"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,message_unread:0
@@ -353,21 +352,21 @@ msgstr ""
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr "Assistente Para Criar Menu"
+msgstr ""
 
 #. module: document_page
 #: code:addons/document_page/wizard/document_page_show_diff.py:50
 #, python-format
 msgid "You need to select minimum one or maximum two history revisions!"
-msgstr "Você deve selecionar de uma a duas revisões de histórico!"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 #: view:document.page:document_page.view_wiki_form
 msgid "e.g. Once upon a time..."
-msgstr "ex. Era uma vez...."
+msgstr ""
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "or"
-msgstr "ou"
+msgstr ""
