@@ -10,11 +10,11 @@ msgstr ""
 "POT-Creation-Date: 2016-09-17 13:24+0000\n"
 "PO-Revision-Date: 2015-11-07 12:40+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-7-0/language/it/)\n"
+"Language-Team: Bulgarian (http://www.transifex.com/oca/OCA-knowledge-7-0/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_url
@@ -27,7 +27,7 @@ msgstr ""
 #. module: document_url
 #: field:ir.attachment.add_url,name:0
 msgid "Name"
-msgstr ""
+msgstr "Име"
 
 #. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment_add_url
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #. module: document_url
 #: model:ir.actions.act_window,name:document_url.action_ir_attachment_add_url
@@ -53,9 +53,9 @@ msgstr ""
 #. module: document_url
 #: view:ir.attachment.add_url:0
 msgid "Cancel"
-msgstr "Annulla"
+msgstr "Откажи"
 
 #. module: document_url
 #: view:ir.attachment.add_url:0
 msgid "or"
-msgstr ""
+msgstr "или"

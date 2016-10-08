@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-19 14:36+0000\n"
-"PO-Revision-Date: 2016-09-16 21:45+0000\n"
+"POT-Creation-Date: 2016-09-17 13:24+0000\n"
+"PO-Revision-Date: 2016-10-04 09:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-7-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_id:0
 msgid "Resource ID"
-msgstr ""
+msgstr "ID vira"
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,attachment_id:0
 msgid "Attachment"
-msgstr ""
+msgstr "Priponka"
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -54,7 +54,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_name:0
 msgid "Resource Name"
-msgstr ""
+msgstr "Naziv vira"
 
 #. module: document_multiple_records
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_document
@@ -107,7 +107,7 @@ msgstr "Napaka"
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
 msgid "The database object this attachment will be attached to"
-msgstr ""
+msgstr "Objekt podatkovne baze, kamor se bo priponka pripela"
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_id:0
@@ -117,7 +117,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.existing.doc,attachment_ids:0
 msgid "Attachments"
-msgstr ""
+msgstr "Priponke"
 
 #. module: document_multiple_records
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_existing_doc
@@ -133,7 +133,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_model:0
 msgid "Resource Model"
-msgstr ""
+msgstr "Model vira"
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
