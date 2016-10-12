@@ -126,6 +126,7 @@ openerp.attachment_preview = function(instance)
                 {
                     return;
                 }
+                $elements.unbind("click")
                 $elements.click(function(e)
                 {
                     e.stopPropagation();
@@ -212,6 +213,7 @@ openerp.attachment_preview = function(instance)
                         var $element = self.$el.find('.oe-binary-preview');
                         if(openerp.attachment_preview.can_preview(extension))
                         {
+                            $element.unbind("click")
                             $element.click(function()
                             {
                                 openerp.attachment_preview.show_preview(
