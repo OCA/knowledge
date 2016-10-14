@@ -1,7 +1,6 @@
 [![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/119/9.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-knowledge-118)
 [![Build Status](https://travis-ci.org/OCA/knowledge.svg?branch=9.0)](https://travis-ci.org/OCA/knowledge)
-[![Coverage Status](https://coveralls.io/repos/OCA/knowledge/badge.png?branch=9.0)](https://coveralls.io/r/OCA/knowledge?branch=9.0)
-[![Code Climate](https://codeclimate.com/github/OCA/knowledge/badges/gpa.svg)](https://codeclimate.com/github/OCA/knowledge)
+[![codecov](https://codecov.io/gh/OCA/knowledge/branch/9.0/graph/badge.svg)](https://codecov.io/gh/OCA/knowledge)
 
 Knowledge
 =========
