@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/OCA/knowledge.svg?branch=8.0)](https://travis-ci.org/OCA/knowledge)
-[![Coverage Status](https://coveralls.io/repos/OCA/knowledge/badge.png?branch=8.0)](https://coveralls.io/r/OCA/knowledge?branch=8.0)
+[![codecov](https://codecov.io/gh/OCA/knowledge/branch/8.0/graph/badge.svg)](https://codecov.io/gh/OCA/knowledge)
 
 Knowledge
 =========
