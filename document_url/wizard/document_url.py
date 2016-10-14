@@ -39,4 +39,5 @@ class AddUrlWizard(orm.TransientModel):
                     'res_model': context['active_model'],
                 }
                 attachment_obj.create(cr, uid, attachment, context=context)
-        return {'type': 'ir.actions.act_close_wizard_and_reload_view'}
+        # Close client dialog
+        return False
