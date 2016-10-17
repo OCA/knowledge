@@ -40,7 +40,8 @@ Contributors
 ------------
 
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
-* Pedro M. Baeza <pedro.baeza@tecnativa.com
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Jairo Llopis <jairo.llopis@tecnativa.com>
 
 Maintainer
 ----------
