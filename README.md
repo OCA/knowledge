@@ -19,7 +19,7 @@ addon | version | summary
 --- | --- | ---
 [document_page](document_page/) | 9.0.1.0.1 | Document Page
 [document_page_approval](document_page_approval/) | 9.0.1.0.0 | Document Page Approval
-[document_url](document_url/) | 9.0.2.0.0 | URL attachment
+[document_url](document_url/) | 9.0.2.0.1 | URL attachment
 [knowledge](knowledge/) | 9.0.1.1.0 | Knowledge Management System
 
 Unported addons
