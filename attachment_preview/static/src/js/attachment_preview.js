@@ -31,14 +31,14 @@ odoo.define('attachment_preview', function (require) {
     var _t = core._t;
 
     function show_preview(attachment_id, attachment_url, attachment_extension, attachment_title) {
-        var url = (window.location.origin || '') +
+        var url = ((window.location.origin || '') +
             '/attachment_preview/static/lib/ViewerJS/index.html' +
             '?type=' + encodeURIComponent(attachment_extension) +
             '&title=' + encodeURIComponent(attachment_title) +
             '#' +
-            attachment_url.replace(window.location.origin, '')
+            attachment_url.replace(window.location.origin, ''));
         window.open(url);
-    };
+    }
 
     function can_preview(extension) {
         return jQuery.inArray(
@@ -47,7 +47,7 @@ odoo.define('attachment_preview', function (require) {
                 'odt', 'odp', 'ods', 'fodt', 'pdf', 'ott', 'fodp', 'otp',
                 'fods', 'ots'
             ]) > -1;
-    };
+    }
 
     Sidebar.include({
         on_attachments_loaded: function(attachments) {
@@ -104,8 +104,8 @@ odoo.define('attachment_preview', function (require) {
                     _(extensions).each(function(extension, id)
                     {
                         var $element = jQuery(
-                            'span.oe_sidebar_attachment_preview[data-id="'
-                            + id + '"]');
+                            'span.oe_sidebar_attachment_preview[data-id="'+
+                             id + '"]');
                         if(can_preview(extension[0]))
                         {
                             $element.attr('data-extension', extension[0]);
@@ -238,7 +238,7 @@ odoo.define('attachment_preview', function (require) {
             else
             {
                this.$('.oe_binary_preview').remove();
-            };
+            }
         },
     });
 });
