@@ -29,4 +29,4 @@ Viewer = function(plugin, parameters)
         alert('Unsupported file type');
     }
     return original_Viewer(plugin, parameters);
-}
+};
