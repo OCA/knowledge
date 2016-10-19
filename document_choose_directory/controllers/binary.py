@@ -25,6 +25,7 @@ from openerp.addons.web.controllers.main import Binary
 class Binary(Binary):
     @http.route('/web/binary/upload_attachment', type='http', auth="user")
     def upload_attachment(self, callback, model, id, ufile, directory_id=None):
+        print '22222222'
         if directory_id:
             # we can't use default_parent_id because of
             # the ir_attachment.create overwrite in document
