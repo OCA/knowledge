@@ -12,6 +12,8 @@ For filetype recognition, you'll get the best results by installing
 ``python-magic``::
 
 sudo apt-get install python-magic
+or
+pip install file-magic
 
 Usage
 =====
@@ -47,6 +49,8 @@ Contributors
 ------------
 
 * Holger Brunn <hbrunn@therp.nl>
+* Carlos Quirós <carlos.quiros@clearcorp.co.cr>
+* Glen Sojo <glen.sojo@clearcorp.co.cr>
 
 Maintainer
 ----------

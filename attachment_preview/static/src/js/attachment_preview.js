@@ -19,13 +19,18 @@
 //
 //############################################################################
 
-openerp.attachment_preview = function(instance)
-{
-    var _t = instance.web._t;
-    openerp.attachment_preview.show_preview = function(
-            attachment_id, attachment_url, attachment_extension,
-            attachment_title)
-    {
+odoo.define('attachment_preview', function (require) {
+    "use strict";
+
+    var core = require('web.core');
+    var session = require('web.session');
+    var Model = require('web.Model');
+    var Sidebar = require('web.Sidebar');
+    var ListView = require('web.ListView');
+
+    var _t = core._t;
+
+    function show_preview(attachment_id, attachment_url, attachment_extension, attachment_title) {
         var url = (window.location.origin || '') +
             '/attachment_preview/static/lib/ViewerJS/index.html' +
             '?type=' + encodeURIComponent(attachment_extension) +
@@ -34,8 +39,8 @@ openerp.attachment_preview = function(instance)
             attachment_url.replace(window.location.origin, '')
         window.open(url);
     };
-    openerp.attachment_preview.can_preview = function(extension)
-    {
+
+    function can_preview(extension) {
         return jQuery.inArray(
             extension,
             [
@@ -43,18 +48,18 @@ openerp.attachment_preview = function(instance)
                 'fods', 'ots'
             ]) > -1;
     };
-    instance.web.Sidebar.include(
-    {
-        on_attachments_loaded: function(attachments)
-        {
-            var result = this._super.apply(this, arguments);    
-            this.$el.find('.oe-sidebar-attachment-preview')
+
+    Sidebar.include({
+        on_attachments_loaded: function(attachments) {
+            this._super(attachments);
+
+            this.$('.oe_sidebar_attachment_preview')
                 .click(this.on_attachment_preview);
             this.update_preview_buttons();
-            return result;
+           // return _super.apply(self, arguments);
         },
-        on_attachment_preview: function(e)
-        {
+
+        on_attachment_preview: function(e){
             e.preventDefault();
             e.stopPropagation();
             var self = this,
@@ -65,28 +70,28 @@ openerp.attachment_preview = function(instance)
                 attachment_title = $target.attr('data-original-title');
             if(attachment_extension)
             {
-                openerp.attachment_preview.show_preview(
+                show_preview(
                     attachment_id, attachment_url, attachment_extension,
                     attachment_title);
             }
             else
             {
-                (new instance.web.Model('ir.attachment')).call(
+                (new Model('ir.attachment')).call(
                     'get_attachment_extension', [attachment_id], {})
                 .then(function(extension)
                 {
-                    openerp.attachment_preview.show_preview(
-                        attachment_id, attachment_url, extension);
+                    show_preview(
+                        attachment_id, attachment_url, extension[0], attachment_title);
                 });
             }
         },
-        update_preview_buttons: function()
-        {
+
+        update_preview_buttons: function(){
             var self = this;
-            return (new instance.web.Model('ir.attachment')).call(
+            return (new Model('ir.attachment')).call(
                 'get_attachment_extension',
                 [
-                    this.$el.find('.oe-sidebar-attachment-preview')
+                    this.$('span.oe_sidebar_attachment_preview')
                     .map(function()
                     {
                         return parseInt(jQuery(this).attr('data-id'));
@@ -99,11 +104,11 @@ openerp.attachment_preview = function(instance)
                     _(extensions).each(function(extension, id)
                     {
                         var $element = jQuery(
-                            'a.oe-sidebar-attachment-preview[data-id="'
+                            'span.oe_sidebar_attachment_preview[data-id="'
                             + id + '"]');
-                        if(openerp.attachment_preview.can_preview(extension))
+                        if(can_preview(extension[0]))
                         {
-                            $element.attr('data-extension', extension);
+                            $element.attr('data-extension', extension[0]);
                         }
                         else
                         {
@@ -113,15 +118,15 @@ openerp.attachment_preview = function(instance)
                 });
         },
     });
-    instance.web.ListView.include(
+
+    ListView.include(
     {
-        reload_content: function()
-        {
+        reload_content:  function() {
             var deferred = this._super.apply(this, arguments),
-                self = this;
+            self = this;
             deferred.then(function()
             {
-                var $elements = self.$el.find('.oe-binary-preview');
+                var $elements = self.$('.oe_binary_preview');
                 if(!$elements.length)
                 {
                     return;
@@ -132,13 +137,13 @@ openerp.attachment_preview = function(instance)
                     var $target = jQuery(e.currentTarget),
                         attachment_id = parseInt($target.attr('data-id')),
                         attachment_extension = $target.attr('data-extension');
-                    openerp.attachment_preview.show_preview(
+                    show_preview(
                         attachment_id,
                         $target.siblings('a').attr('href'),
                         attachment_extension,
                         $target.attr('alt'));
                 });
-                return (new instance.web.Model('ir.attachment')).call(
+                return (new Model('ir.attachment')).call(
                     'get_binary_extension',
                     [
                         $elements.attr('data-model'),
@@ -158,9 +163,9 @@ openerp.attachment_preview = function(instance)
                         {
                             var $element = $elements.filter(
                                 '[data-id="' + id + '"]');
-                            if(openerp.attachment_preview.can_preview(extension))
+                            if(can_preview(extension[0]))
                             {
-                                $element.attr('data-extension', extension);
+                                $element.attr('data-extension', extension[0]);
                             }
                             else
                             {
@@ -172,32 +177,29 @@ openerp.attachment_preview = function(instance)
             return deferred;
         }
     });
-    instance.web.list.Binary.include(
-    {
-        _format: function (row_data, options)
+
+    var ColumnBinary = core.list_widget_registry.get('field.binary').include({
+       _format: function (row_data, options)
         {
             var link = this._super.apply(this, arguments);
-            link += _.template(
-                '<img class="oe-binary-preview" title="<%-preview_text%>" alt="<%-preview_text%>" data-id="<%-preview_id%>" data-model="<%-preview_model%>" data-field="<%-preview_field%>" data-filename="<%-preview_filename%>" src="/web/static/src/img/icons/gtk-print-preview.png" />',
-                {
-                    preview_id: options.id,
-                    preview_text: _.str.sprintf(_t('Preview %s'), this.string),
-                    preview_model: options.model,
-                    preview_field: this.id,
-                    preview_filename: this.filename || '',
-                });
+            link += (
+                '<a class="oe_binary_preview" title="'+_.str.sprintf(_t('Preview %s'), this.string)+
+                    '" alt="'+_.str.sprintf(_t('Preview %s'), this.string)+'"'+
+                ' data-id="'+options.id+'" data-model="'+options.model+'"'+
+                ' data-field="'+this.id+'" data-filename="'+(this.filename || '')+'"'+
+                ' src="/web/static/src/img/icons/gtk-print-preview.png" ><i class="fa fa-search"/></a>');
             return link;
         }
     });
-    instance.web.form.FieldBinaryFile.include(
-    {
+
+    var FieldBinaryFile = core.form_widget_registry.get('binary').include({
         render_value: function()
         {
-            this._super.apply(this, arguments);
+            this._super();
             if(this.get("effective_readonly") && this.get('value'))
             {
                 var self = this;
-                (new instance.web.Model('ir.attachment')).call(
+                (new Model('ir.attachment')).call(
                     'get_binary_extension',                                                                    [
                     this.view.dataset.model,
                     this.view.datarecord.id ? [this.view.datarecord.id] : [],
@@ -209,22 +211,21 @@ openerp.attachment_preview = function(instance)
                 {
                     _(extensions).each(function(extension)
                     {
-                        var $element = self.$el.find('.oe-binary-preview');
-                        if(openerp.attachment_preview.can_preview(extension))
+                        var $element = self.$('.oe_binary_preview');
+                        $element.unbind( "click" );
+                       if(can_preview(extension[0]))
                         {
                             $element.click(function()
                             {
-                                openerp.attachment_preview.show_preview(
+                                show_preview(
                                     null,
-                                    _.str.sprintf(
-                                        '/web/binary/saveas?session_id=%s&model=%s&field=%s&id=%d',
-                                        instance.session.session_id,
-                                        self.view.dataset.model,
-                                        self.name,
-                                        self.view.datarecord.id),
-                                    extension,
+
+                                        ('data:application/'+extension[0]+';base64,'+
+                                        extension[1]),
+                                    extension[0],
                                     _.str.sprintf(_t('Preview %s'), self.field.string));
                             });
+
                             $element.attr('title', _.str.sprintf(_t('Preview %s'), self.field.string));
                         }
                         else
@@ -236,8 +237,8 @@ openerp.attachment_preview = function(instance)
             }
             else
             {
-                this.$el.find('.oe-binary-preview').remove();
+               this.$('.oe_binary_preview').remove();
             };
         },
     });
-}    
+});
