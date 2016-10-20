@@ -35,7 +35,7 @@
     ],
     "data": [
         "view/qweb.xml",
-        "view/document_directory.xml","view/attachement_view.xml"
+        "view/document_directory.xml",
     ],
     "js": [
         'static/src/js/document_choose_directory.js',
