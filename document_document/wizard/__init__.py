@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#
+#    
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2015 Therp BV (<http://therp.nl>).
+#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -15,22 +15,9 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
-from openerp import http
-from openerp.addons.web.controllers.main import Binary
+import document_configuration
 
-
-class Binary(Binary):
-    @http.route('/web/binary/upload_attachment', type='http', auth="user")
-    def upload_attachment(self, callback, model, id, ufile, directory_id=None):
-       
-        if directory_id:
-            # we can't use default_parent_id because of
-            # the ir_attachment.create overwrite in document
-            http.request.context['parent_id'] = int(directory_id)
-            # fallback if the above is ever fixed
-            http.request.context['default_parent_id'] = int(directory_id)
-        return super(Binary, self).upload_attachment(
-            callback, model, id, ufile)
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

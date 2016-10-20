@@ -57,36 +57,25 @@ openerp.document_choose_directory = function(instance)
             _.chain(attachments)
                 .groupBy(
                     function(a) { 
-                    	console.log("a.parent_id[0]");
-                    	console.log(a.parent_id[0]);
+                    	
                     	return a.parent_id[0] })
                 .sortBy(function(attachments) {
                 	
-                	console.log("attachments[0].parent_id[1]");
-                	console.log(attachments[0].parent_id[1]);
+                	
                     return attachments[0].parent_id[1];
                 })
                 .each(
                     function(group)
                     
-                    {   console.log("attachments_per_directory");
-                    	console.log(attachments_per_directory);
-                    	console.log("group");
-                    	console.log(group);
-                    	console.log(".first(group).parent_id[1]");
-                    	console.log(_.first(group).parent_id[1]);
-                    	
-                    	
+                    {   
                         attachments_per_directory.push({
                             name: _.first(group).parent_id[1] ||instance.web._t('No directory'),classname: 'oe_attachment_directory',
                         });
                     
-                    	console.log("attachments_per_directory");
-                        console.log(attachments_per_directory);
+                    	
                         self.sort_attachments(group).each(function(a)
                         		
-                        {   console.log("a");
-                        	console.log(a);
+                        {  
                             attachments_per_directory.push(a);
                             console.log(attachments_per_directory);
                         });
@@ -103,8 +92,7 @@ openerp.document_choose_directory = function(instance)
                 });
         },
         sort_attachments: function(attachments)
-        {   console.log("_.chain(attachments).sortBy('name');");
-        	console.log(_.chain(attachments).sortBy('name'));
+        {   
             return _.chain(attachments).sortBy('name');
         },
     });

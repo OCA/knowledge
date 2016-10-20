@@ -46,7 +46,7 @@ li.oe_attachment_directory
     padding: 0;
 }
 
-.openerp input, .openerp textarea, .openerp select {
+/* .openerp input, .openerp textarea, .openerp select {
     padding: 2px 4px;
     border: 1px solid #ccc;
     -moz-border-radius: 3px;
@@ -54,7 +54,7 @@ li.oe_attachment_directory
     border-radius: 3px;
     background: white;
     width: 100%;
-}
+} */
 
 
 .fa-trash-o {
