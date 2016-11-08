@@ -18,7 +18,11 @@
 }
 li.oe_attachment_directory
 {
-        font-weight: bold;
+        
+        font-weight : bolder;
+        font-size: large;
+        background-color: #CCC;
+        
 }
 .openerp .oe_dropdown_menu > li.oe_attachment_directory:hover
 {
@@ -65,5 +69,5 @@ li.oe_attachment_directory
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin-right: -5px;
-    color: brown;
+    color: #2196F3;
 }

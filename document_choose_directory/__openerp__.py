@@ -22,11 +22,14 @@
     "name": "Choose document's directory",
     "summary": "Choose a document's directory during upload",
     "version": "8.0.1.0.0",
-    "author": "Mohamed habib CHALLOUF ,Odoo Community Association (OCA)",
+    "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "complexity": "normal",
     "category": "Knowledge",
-    
+    'description': """
+            The  Technical module name is changed  
+            document to document_document 
+            ==============================================
             
 """,
     "depends": [
@@ -35,7 +38,7 @@
     ],
     "data": [
         "view/qweb.xml",
-        "view/document_directory.xml",
+        "view/document_directory.xml","view/attachement_view.xml"
     ],
     "js": [
         'static/src/js/document_choose_directory.js',
