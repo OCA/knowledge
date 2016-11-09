@@ -24,7 +24,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [attachment_edit](attachment_edit/) | 8.0.1.0.0 | Edit attachments after upload
-[attachment_preview](attachment_preview/) | 8.0.1.1.0 | Preview attachments supported by Viewer.js
+[attachment_preview](attachment_preview/) | 8.0.1.2.0 | Preview attachments supported by Viewer.js
 [attachments_to_filesystem](attachments_to_filesystem/) | 8.0.1.0.0 | Move existing attachments to filesystem
 [document_choose_directory](document_choose_directory/) | 8.0.1.0.0 | Choose a document's directory during upload
 [document_no_unique_filenames](document_no_unique_filenames/) | 8.0.1.0.0 | Drop the uniquness constraint on filenames for directories
