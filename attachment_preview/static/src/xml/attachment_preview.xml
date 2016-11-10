@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates>
     <t t-extend="Sidebar">
-        <t t-jquery="span.oe_sidebar_delete_item" t-operation="before">
+        <t t-jquery="span.o_sidebar_delete_attachment, span.oe_sidebar_delete_item" t-operation="before">
             <span t-if="section.name == 'files' and !item.callback and item.url" class="oe_sidebar_attachment_preview" t-att-data-id="item.id" t-att-data-url="item.url" t-attf-title="Preview #{item.name}">
                 <i class="fa fa-search"/>
             </span>
