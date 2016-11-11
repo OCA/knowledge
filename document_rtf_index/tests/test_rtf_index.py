@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-import base64
 from openerp.tests.common import TransactionCase
 from openerp.modules.module import get_module_resource
 
@@ -10,8 +9,11 @@ class TestIndexRtf(TransactionCase):
 
     def test_index_rtf(self):
         """Test if the indexer indexes just the text in rtf documents."""
+        attachment_model = self.env['ir.attachment']
+        # Force loading of indexer (normally _register_hooks runs after tests)
+        attachment_model._register_hook(self.env.cr)
         # we do this to avoid error messages about word files in demo data
-        self.env['ir.attachment'].search([]).unlink()
+        attachment_model.search([]).unlink()
         # Now take rather large rtf test file, with only few actual words:
         rtf_path = get_module_resource(
             'document_rtf_index',
