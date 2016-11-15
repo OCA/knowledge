@@ -34,6 +34,7 @@ addon | version | summary
 [document_page_partner_id](document_page_partner_id/) | 8.0.1.0.0 | Allows to link doucment pages to a partner
 [document_page_tags](document_page_tags/) | 8.0.1.0.0 | Allows you to assign tags or keywords to pages and search for them afterwards
 [document_reindex](document_reindex/) | 8.0.1.0.0 | Reindex your already uploaded documents
+[document_rtf_index](document_rtf_index/) | 8.0.1.0.0 | Index rtf documents
 [document_sftp](document_sftp/) | 8.0.1.0.0 | Access your documents via SFTP
 [document_url](document_url/) | 8.0.1.0.0 | URL attachment
 
