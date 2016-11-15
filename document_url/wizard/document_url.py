@@ -22,6 +22,7 @@ class AddUrlWizard(models.TransientModel):
 
         if not self._context.get('active_model'):
             return
+        attachment_obj = self.env['ir.attachment']
         for form in self:
             url = urlparse(form.url)
             if not url.scheme:
@@ -34,5 +35,5 @@ class AddUrlWizard(models.TransientModel):
                     'res_id': active_id,
                     'res_model': self._context.get('active_model')
                 }
-                self.env['ir.attachment'].create(attachment)
-        return {'type': 'ir.actions.act_close_wizard_and_reload_view'}
+                attachment_obj.create(attachment)
+        return False
