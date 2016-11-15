@@ -13,11 +13,9 @@ except:
 class AddUrlWizard(models.TransientModel):
     _name = 'ir.attachment.add_url'
 
-
     name = fields.Char('Name', required=True)
     url = fields.Char('URL', required=True)
 
-    @api.one
     @api.multi
     def action_add_url(self):
         """Adds the URL with the given name as an ir.attachment record."""
