@@ -40,7 +40,9 @@ Contributors
 ------------
 
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
-* Pedro M. Baeza <pedro.baeza@tecnativa.com
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Nicolás Ramos <contacto@difusionvisual.com>
+* Antonio Cánovas <antonio.canovas@ingenieriacloud.com>
 
 Maintainer
 ----------
