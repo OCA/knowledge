@@ -19,7 +19,7 @@ class AddUrlWizard(models.TransientModel):
     @api.multi
     def action_add_url(self):
         """Adds the URL with the given name as an ir.attachment record."""
-        
+
         if not self._context.get('active_model'):
             return
         for form in self:
