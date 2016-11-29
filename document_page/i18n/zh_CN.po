@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-10-04 09:43+0000\n"
+"PO-Revision-Date: 2016-11-25 14:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr "日期"
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "发布到记录上的最后消息的日期"
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -118,7 +118,7 @@ msgstr "差异"
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "显示名称"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -154,12 +154,12 @@ msgstr ""
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "文档"
 
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "关注者"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -188,7 +188,7 @@ msgstr "ID"
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "查看是否有需要留意的新信息。"
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -209,7 +209,7 @@ msgstr "最近的贡献者"
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "最后消息日期"
 
 #. module: document_page
 #: field:document.page,__last_update:0
@@ -217,7 +217,7 @@ msgstr ""
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "最后修改时间"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
@@ -251,12 +251,12 @@ msgstr "菜单名"
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "消息"
 
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "消息和通信历史"
 
 #. module: document_page
 #: field:document.page,write_date:0
@@ -273,7 +273,7 @@ msgstr "修改者"
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. module: document_page
 #: field:document.page.history,page_id:0
@@ -348,7 +348,7 @@ msgstr "类型"
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "未读消息"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
@@ -370,4 +370,4 @@ msgstr ""
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "or"
-msgstr ""
+msgstr "或"

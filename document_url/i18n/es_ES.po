@@ -88,4 +88,4 @@ msgstr ""
 #. module: document_url
 #: view:ir.attachment.add_url:document_url.view_ir_attachment_add_url_form
 msgid "or"
-msgstr ""
+msgstr "o"

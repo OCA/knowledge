@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-09-25 14:00+0000\n"
+"PO-Revision-Date: 2016-11-25 14:57+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Отказ"
 #: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -50,7 +50,7 @@ msgstr ""
 #: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #. module: document_page
 #: field:document.page,child_ids:0
@@ -98,7 +98,7 @@ msgstr "Дата"
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Дата на последното съобщение, публикувано на записа."
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -118,7 +118,7 @@ msgstr ""
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Име за Показване"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -154,12 +154,12 @@ msgstr ""
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "Документи"
 
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Последователи"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -188,7 +188,7 @@ msgstr "ID"
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Ако е отбелязано, новите съобщения ще изискват внимание."
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -209,7 +209,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Дата на последното съобщение"
 
 #. module: document_page
 #: field:document.page,__last_update:0
@@ -251,12 +251,12 @@ msgstr "Име на меню"
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Съобщения"
 
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "История на събщенията и комуникациите"
 
 #. module: document_page
 #: field:document.page,write_date:0
@@ -343,12 +343,12 @@ msgstr "Заглавие"
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Вид"
 
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Непрочетени съобщения"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu

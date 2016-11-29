@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:44+0000\n"
-"PO-Revision-Date: 2015-11-07 12:45+0000\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-10-11 09:49+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Serbian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Otkazati"
 #: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
 msgid "Categories"
-msgstr ""
+msgstr "Kategorije"
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -50,7 +50,7 @@ msgstr ""
 #: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr ""
+msgstr "Kategorija"
 
 #. module: document_page
 #: field:document.page,child_ids:0
@@ -113,6 +113,19 @@ msgid "Difference"
 msgstr ""
 
 #. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
+msgstr ""
+
+#. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
 msgid "Document History"
 msgstr ""
@@ -141,7 +154,7 @@ msgstr ""
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "Dokumenti"
 
 #. module: document_page
 #: field:document.page,message_follower_ids:0
@@ -170,7 +183,7 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: document_page
 #: help:document.page,message_unread:0
@@ -196,6 +209,14 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
+msgstr ""
+
+#. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: document_page
@@ -230,7 +251,7 @@ msgstr "Naziv Menija"
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Poruke"
 
 #. module: document_page
 #: help:document.page,message_ids:0
@@ -252,7 +273,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #. module: document_page
 #: field:document.page.history,page_id:0
@@ -322,7 +343,7 @@ msgstr "Naslov"
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. module: document_page
 #: field:document.page,message_unread:0

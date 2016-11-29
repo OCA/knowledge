@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-09-17 18:43+0000\n"
+"PO-Revision-Date: 2016-11-25 14:57+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Dutch (http://www.transifex.com/oca/OCA-knowledge-8-0/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "Menu maken"
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: document_page
 #: field:document.page,create_date:0
@@ -183,7 +183,7 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: document_page
 #: help:document.page,message_unread:0
@@ -224,14 +224,14 @@ msgstr "Laatst bijgewerkt op"
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: document_page
 #: field:document.page,menu_id:0

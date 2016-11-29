@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-09-09 12:25+0000\n"
+"PO-Revision-Date: 2016-11-25 14:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (Ecuador) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/es_EC/)\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Cancelar"
 #: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
 msgid "Categories"
-msgstr ""
+msgstr "Categorías"
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -49,7 +49,7 @@ msgstr ""
 #: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #. module: document_page
 #: field:document.page,child_ids:0
@@ -67,7 +67,7 @@ msgstr ""
 #: field:document.page,content:0 selection:document.page,type:0
 #: field:document.page.history,content:0
 msgid "Content"
-msgstr ""
+msgstr "Contenido"
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
@@ -80,14 +80,14 @@ msgstr ""
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: document_page
 #: field:document.page,create_date:0
 #: field:document.page.create.menu,create_date:0
 #: field:wizard.document.page.history.show_diff,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: document_page
 #: field:document.page.history,create_date:0
@@ -97,7 +97,7 @@ msgstr ""
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Fecha del último mensaje publicado en el registro."
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -117,7 +117,7 @@ msgstr ""
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -153,12 +153,12 @@ msgstr ""
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "Documentos"
 
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -182,12 +182,12 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID (identificación)"
 
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -208,7 +208,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Fecha del último mensaje"
 
 #. module: document_page
 #: field:document.page,__last_update:0
@@ -216,21 +216,21 @@ msgstr ""
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización de"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización en"
 
 #. module: document_page
 #: field:document.page,menu_id:0
@@ -250,12 +250,12 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Mensajes e historial de comunicación"
 
 #. module: document_page
 #: field:document.page,write_date:0
@@ -272,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: document_page
 #: field:document.page.history,page_id:0
@@ -337,17 +337,17 @@ msgstr ""
 #. module: document_page
 #: field:document.page,name:0
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes sin leer"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
@@ -369,4 +369,4 @@ msgstr ""
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "or"
-msgstr ""
+msgstr "o"

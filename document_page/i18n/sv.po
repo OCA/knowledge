@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:44+0000\n"
-"PO-Revision-Date: 2015-11-07 12:45+0000\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-11-22 16:25+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Swedish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "Skapa meny"
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Skapad av"
 
 #. module: document_page
 #: field:document.page,create_date:0
@@ -98,7 +98,7 @@ msgstr "Datum"
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Datum för senast publicerade meddelandet i loggen."
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -111,6 +111,19 @@ msgstr "Skillnad"
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Difference"
 msgstr "Skillnad"
+
+#. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr "Visa namn"
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
@@ -141,12 +154,12 @@ msgstr "Dokumenttyp"
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "Dokument"
 
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Följare"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -170,12 +183,12 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Om ikryssad nya meddelanden som kräver din uppmärksamhet"
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -196,21 +209,29 @@ msgstr "Senaste författare"
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Senast meddelandedatum"
+
+#. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
+msgstr "Senast redigerad"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Senast uppdaterad av"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Senast uppdaterad"
 
 #. module: document_page
 #: field:document.page,menu_id:0
@@ -230,12 +251,12 @@ msgstr "Menynamn"
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Meddelanden"
 
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Meddelande- och kommunikationshistorik"
 
 #. module: document_page
 #: field:document.page,write_date:0
@@ -327,7 +348,7 @@ msgstr "Typ"
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Olästa meddelanden"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu

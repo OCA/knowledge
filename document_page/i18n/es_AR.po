@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:44+0000\n"
-"PO-Revision-Date: 2015-11-07 12:45+0000\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-10-11 09:48+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (Argentina) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/es_AR/)\n"
 "MIME-Version: 1.0\n"
@@ -112,6 +112,19 @@ msgid "Difference"
 msgstr "Diferencia"
 
 #. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
+msgstr ""
+
+#. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
 msgid "Document History"
 msgstr "Historial del Documento"
@@ -196,6 +209,14 @@ msgstr "Último colaborador"
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
 msgstr "Fecha del ultimo mensaje"
+
+#. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación en"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
@@ -348,4 +369,4 @@ msgstr "Por ejemplo, Érase una vez..."
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "or"
-msgstr ""
+msgstr "o"

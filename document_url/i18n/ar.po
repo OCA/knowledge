@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-04-30 15:52+0000\n"
+"PO-Revision-Date: 2016-11-25 14:57+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Arabic (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -43,42 +43,42 @@ msgstr "إلغاء"
 #. module: document_url
 #: field:ir.attachment.add_url,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "أنشئ بواسطة"
 
 #. module: document_url
 #: field:ir.attachment.add_url,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "أنشئ في"
 
 #. module: document_url
 #: field:ir.attachment.add_url,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "اسم العرض"
 
 #. module: document_url
 #: field:ir.attachment.add_url,id:0
 msgid "ID"
-msgstr ""
+msgstr "المعرف"
 
 #. module: document_url
 #: field:ir.attachment.add_url,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "آخر تعديل في"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "آخر تحديث بواسطة"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "آخر تحديث في"
 
 #. module: document_url
 #: field:ir.attachment.add_url,name:0
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #. module: document_url
 #: field:ir.attachment.add_url,url:0

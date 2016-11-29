@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-09-15 12:45+0000\n"
+"PO-Revision-Date: 2016-11-25 14:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr "Päivämäärä"
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Viimeisimmän lähetetyn viestin päiväys."
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -159,7 +159,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Seuraajat"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -188,7 +188,7 @@ msgstr "ID"
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Jos valittuna, uudet viestit vaatii toimenpiteitä."
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -209,7 +209,7 @@ msgstr "Viimeisin tiedon lisääjä"
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Viimeisimmän viestin päiväys"
 
 #. module: document_page
 #: field:document.page,__last_update:0
@@ -251,7 +251,7 @@ msgstr "Valikon nimi"
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Viestejä"
 
 #. module: document_page
 #: help:document.page,message_ids:0
@@ -348,7 +348,7 @@ msgstr "Tyyppi"
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Lukemattomia viestejä"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu

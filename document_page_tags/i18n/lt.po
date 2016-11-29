@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-03 01:59+0000\n"
-"PO-Revision-Date: 2016-03-02 07:42+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-10-11 09:51+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,12 +25,17 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Sukūrė"
 
 #. module: document_page_tags
 #: field:document.page.tag,create_date:0
 msgid "Created on"
 msgstr "Sukurta"
+
+#. module: document_page_tags
+#: field:document.page.tag,display_name:0
+msgid "Display Name"
+msgstr "Vaizduojamas pavadinimas"
 
 #. module: document_page_tags
 #: model:ir.model,name:document_page_tags.model_document_page
@@ -40,7 +45,7 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: document_page_tags
 #: field:document.page,tag_ids:0
@@ -48,19 +53,24 @@ msgid "Keywords"
 msgstr ""
 
 #. module: document_page_tags
+#: field:document.page.tag,__last_update:0
+msgid "Last Modified on"
+msgstr "Paskutinį kartą keista"
+
+#. module: document_page_tags
 #: field:document.page.tag,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Paskutinį kartą atnaujino"
 
 #. module: document_page_tags
 #: field:document.page.tag,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Paskutinį kartą atnaujinta"
 
 #. module: document_page_tags
 #: field:document.page.tag,name:0
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
 #. module: document_page_tags
 #: sql_constraint:document.page.tag:0

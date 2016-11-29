@@ -1,22 +1,21 @@
-# Danish translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
+"Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 14:28+0200\n"
-"PO-Revision-Date: 2015-08-03 14:28+0200\n"
-"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
-"Language-Team: Danish <da@li.org>\n"
-"Language: da\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-10-19 12:45+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Danish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:07+0000\n"
-"X-Generator: Poedit 1.8.2\n"
+"Content-Transfer-Encoding: \n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -42,15 +41,15 @@ msgstr ""
 #: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
-#: view:document.page:document_page.view_wiki_form field:document.page,parent_id:0
-#: selection:document.page,type:0
+#: view:document.page:document_page.view_wiki_form
+#: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #. module: document_page
 #: field:document.page,child_ids:0
@@ -64,10 +63,11 @@ msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
-#: view:document.page:document_page.view_wiki_form field:document.page,content:0
-#: selection:document.page,type:0 field:document.page.history,content:0
+#: view:document.page:document_page.view_wiki_form
+#: field:document.page,content:0 selection:document.page,type:0
+#: field:document.page.history,content:0
 msgid "Content"
-msgstr ""
+msgstr "Indhold"
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
@@ -80,13 +80,14 @@ msgstr ""
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Oprettet af"
 
 #. module: document_page
-#: field:document.page,create_date:0 field:document.page.create.menu,create_date:0
+#: field:document.page,create_date:0
+#: field:document.page.create.menu,create_date:0
 #: field:wizard.document.page.history.show_diff,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Oprettet den"
 
 #. module: document_page
 #: field:document.page.history,create_date:0
@@ -96,7 +97,7 @@ msgstr ""
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Dato for sidste besked på denne post."
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -108,6 +109,19 @@ msgstr ""
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Difference"
+msgstr ""
+
+#. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr "Vist navn"
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
 msgstr ""
 
 #. module: document_page
@@ -139,12 +153,12 @@ msgstr ""
 #. module: document_page
 #: view:document.page:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "Dokumenter"
 
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "Followers"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -159,8 +173,8 @@ msgstr ""
 #. module: document_page
 #: help:document.page,message_summary:0
 msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is directly in "
-"html format in order to be inserted in kanban views."
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
 msgstr ""
 
 #. module: document_page
@@ -168,12 +182,12 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr ""
+msgstr "Id"
 
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Hvis afmærket, kræver nye beskeder din attention"
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -194,21 +208,29 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Sidste dato for besked"
+
+#. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
+msgstr "Sidst ændret den"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Sidst opdateret af"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Sidst opdateret den"
 
 #. module: document_page
 #: field:document.page,menu_id:0
@@ -228,12 +250,12 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "Beskeder"
 
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Besked- og kommunikations historik"
 
 #. module: document_page
 #: field:document.page,write_date:0
@@ -250,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #. module: document_page
 #: field:document.page.history,page_id:0
@@ -315,17 +337,17 @@ msgstr ""
 #. module: document_page
 #: field:document.page,name:0
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Ulæste beskeder"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
@@ -347,4 +369,4 @@ msgstr ""
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "or"
-msgstr ""
+msgstr "eller"

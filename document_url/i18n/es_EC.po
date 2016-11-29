@@ -43,42 +43,42 @@ msgstr "Cancelar"
 #. module: document_url
 #: field:ir.attachment.add_url,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: document_url
 #: field:ir.attachment.add_url,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: document_url
 #: field:ir.attachment.add_url,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: document_url
 #: field:ir.attachment.add_url,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID (identificación)"
 
 #. module: document_url
 #: field:ir.attachment.add_url,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización de"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización en"
 
 #. module: document_url
 #: field:ir.attachment.add_url,name:0
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
@@ -88,4 +88,4 @@ msgstr ""
 #. module: document_url
 #: view:ir.attachment.add_url:document_url.view_ir_attachment_add_url_form
 msgid "or"
-msgstr ""
+msgstr "o"
