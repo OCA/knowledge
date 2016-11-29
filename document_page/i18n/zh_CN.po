@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:05+0000\n"
+"POT-Creation-Date: 2016-10-18 00:55+0000\n"
+"PO-Revision-Date: 2016-11-25 14:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "日期"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "发布到记录上的最后消息的日期"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
@@ -121,7 +121,7 @@ msgstr "差异"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "显示名称"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
@@ -162,7 +162,7 @@ msgstr "文档"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "关注者"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
@@ -195,7 +195,7 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "查看是否有需要留意的新信息。"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_needaction
@@ -221,7 +221,7 @@ msgstr "最近的贡献者"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "最后消息日期"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -229,7 +229,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最后修改时间"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
@@ -263,12 +263,7 @@ msgstr "菜单名"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_ids
-msgid "Messages and communication history"
-msgstr ""
+msgstr "消息"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
@@ -285,7 +280,7 @@ msgstr "修改者"
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction_counter
@@ -382,7 +377,7 @@ msgstr "类型"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "未读消息"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:04+0000\n"
+"POT-Creation-Date: 2016-10-18 00:55+0000\n"
+"PO-Revision-Date: 2016-11-22 16:24+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "刪除"
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
-msgstr ""
+msgstr "分類"
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -47,7 +47,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr ""
+msgstr "分類"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
@@ -84,7 +84,7 @@ msgstr "建立選單"
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "建立者"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_date
@@ -101,7 +101,7 @@ msgstr "日期"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "釋出到記錄上的最後資訊的日期"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
@@ -121,7 +121,7 @@ msgstr "差異"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "顯示名稱"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
@@ -162,7 +162,7 @@ msgstr "文件"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "關注者"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
@@ -195,7 +195,7 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "當有新訊息時通知您。"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_needaction
@@ -221,7 +221,7 @@ msgstr "最後的貢獻者"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "最後訊息日期"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -229,21 +229,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最後修改:"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最後更新："
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最後更新於"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
@@ -263,12 +263,7 @@ msgstr "選單名稱"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_ids
-msgid "Messages and communication history"
-msgstr ""
+msgstr "訊息"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
@@ -285,7 +280,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction_counter
@@ -382,7 +377,7 @@ msgstr "類型"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "未讀訊息"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter

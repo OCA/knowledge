@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 02:46+0000\n"
-"PO-Revision-Date: 2016-08-11 02:46+0000\n"
+"POT-Creation-Date: 2016-10-18 00:55+0000\n"
+"PO-Revision-Date: 2016-10-18 00:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Georgian (https://www.transifex.com/oca/teams/23907/ka/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #. module: document_url
 #. openerp-web
-#: code:addons/document_url/static/src/xml/url.xml:4
+#: code:addons/document_url/static/src/xml/url.xml:12
 #, python-format
 msgid "Add URL..."
 msgstr ""
@@ -44,17 +44,17 @@ msgstr "შეწყვეტა"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "შემქმნელი"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_date
 msgid "Created on"
-msgstr ""
+msgstr "შექმნის თარიღი"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "სახელი"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_id
@@ -64,22 +64,22 @@ msgstr "იდენტიფიკატორი"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "ბოლოს განახლებულია"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "ბოლოს განაახლა"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "ბოლოს განახლებულია"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_name
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_url
@@ -94,4 +94,4 @@ msgstr ""
 #. module: document_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 msgid "or"
-msgstr ""
+msgstr "ან"

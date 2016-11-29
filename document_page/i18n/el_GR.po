@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-13 13:00+0000\n"
-"PO-Revision-Date: 2016-09-09 12:25+0000\n"
+"POT-Creation-Date: 2016-10-18 00:55+0000\n"
+"PO-Revision-Date: 2016-11-22 16:30+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/el_GR/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
-msgstr ""
+msgstr "Άκυρο"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
@@ -95,7 +95,7 @@ msgstr "Δημιουργήθηκε στις"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
 msgid "Date"
-msgstr ""
+msgstr "Ημερομηνία"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 02:46+0000\n"
-"PO-Revision-Date: 2016-08-11 02:46+0000\n"
+"POT-Creation-Date: 2016-10-18 00:55+0000\n"
+"PO-Revision-Date: 2016-10-18 00:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Basque (https://www.transifex.com/oca/teams/23907/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #. module: document_url
 #. openerp-web
-#: code:addons/document_url/static/src/xml/url.xml:4
+#: code:addons/document_url/static/src/xml/url.xml:12
 #, python-format
 msgid "Add URL..."
 msgstr ""
@@ -44,17 +44,17 @@ msgstr "Ezeztatu"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Nork sortua"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Created on"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Izena erakutsi"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_id
@@ -69,17 +69,17 @@ msgstr ""
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Last Updated by"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Last Updated on"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_name
 msgid "Name"
-msgstr ""
+msgstr "Izena"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_url

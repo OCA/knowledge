@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 02:46+0000\n"
-"PO-Revision-Date: 2016-08-11 02:46+0000\n"
+"POT-Creation-Date: 2016-10-18 00:55+0000\n"
+"PO-Revision-Date: 2016-10-18 00:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Estonian (https://www.transifex.com/oca/teams/23907/et/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #. module: document_url
 #. openerp-web
-#: code:addons/document_url/static/src/xml/url.xml:4
+#: code:addons/document_url/static/src/xml/url.xml:12
 #, python-format
 msgid "Add URL..."
 msgstr ""
@@ -44,7 +44,7 @@ msgstr "Loobu"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Loonud"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_create_date
@@ -54,7 +54,7 @@ msgstr "Loodud"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Näidatav nimi"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_id
@@ -64,22 +64,22 @@ msgstr "ID"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimati muudetud"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_name
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url_url
