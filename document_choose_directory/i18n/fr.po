@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:39+0000\n"
+"POT-Creation-Date: 2016-10-14 01:24+0000\n"
 "PO-Revision-Date: 2015-11-07 12:39+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-knowledge-7-0/language/fr/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: document_choose_directory
 #: model:ir.model,name:document_choose_directory.model_document_directory
 msgid "Directory"
-msgstr ""
+msgstr "Catégorie"
 
 #. module: document_choose_directory
 #: model:ir.model,name:document_choose_directory.model_ir_attachment
@@ -32,7 +32,7 @@ msgstr "ir.attachment"
 #: code:addons/document_choose_directory/static/src/js/document_choose_directory.js:68
 #, python-format
 msgid "No directory"
-msgstr ""
+msgstr "Pas de catégorie"
 
 #. module: document_choose_directory
 #: view:document.directory:0
@@ -44,4 +44,4 @@ msgstr ""
 #: code:addons/document_choose_directory/static/src/xml/document_choose_directory.xml:6
 #, python-format
 msgid "Choose directory"
-msgstr ""
+msgstr "Choisir la catégorie"

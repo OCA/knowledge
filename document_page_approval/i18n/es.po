@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:39+0000\n"
+"POT-Creation-Date: 2016-10-14 01:25+0000\n"
 "PO-Revision-Date: 2015-11-07 12:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-knowledge-7-0/language/es/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: document_page_approval
 #: field:document.page,approval_required:0
@@ -67,7 +67,7 @@ msgstr ""
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Borrador"
 
 #. module: document_page_approval
 #: field:document.page,is_parent_approval_required:0
