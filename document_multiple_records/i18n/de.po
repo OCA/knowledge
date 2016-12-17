@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 13:24+0000\n"
-"PO-Revision-Date: 2016-10-04 09:42+0000\n"
+"POT-Creation-Date: 2016-11-29 12:20+0000\n"
+"PO-Revision-Date: 2016-12-16 12:12+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-7-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -117,7 +117,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.existing.doc,attachment_ids:0
 msgid "Attachments"
-msgstr ""
+msgstr "Anhänge"
 
 #. module: document_multiple_records
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_existing_doc
