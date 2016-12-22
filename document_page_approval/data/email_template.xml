@@ -1,20 +1,17 @@
 <?xml version="1.0"?>
-<odoo>
+<odoo noupdate="1">
 
     <!-- Allow user to make upgrade-proof customizations to email template -->
-
-    <data noupdate="1">
-
-        <record id="email_template_new_draft_need_approval" model="mail.template">
-            <field name="name">Automated new draft need approval Notification Mail</field>
-            <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
-            <field name="subject">New version of "${object.page_id.name}" to approve</field>
-            <field name="email_to">${object.get_approvers_email}</field>
-            <field name="model_id" ref="model_document_page_history"/>
-            <field name="auto_delete" eval="True"/>
-            <field name="lang">${object.create_uid.partner_id.lang}</field>
-            <field name="body_html">
-                <![CDATA[
+    <record id="email_template_new_draft_need_approval" model="mail.template">
+        <field name="name">Automated new draft need approval Notification Mail</field>
+        <field name="email_from">${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+        <field name="subject">New version of "${object.page_id.name}" to approve</field>
+        <field name="email_to">${object.get_approvers_email}</field>
+        <field name="model_id" ref="model_document_page_history"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="lang">${object.create_uid.partner_id.lang}</field>
+        <field name="body_html">
+            <![CDATA[
 <p>Hello,</p>
 
 <p>The page "${object.page_id.name}" has been modified and need your approval.</p>
@@ -24,8 +21,7 @@
 <p>Have a great day.<br/>
 --<br/>
 Odoo</p>]]>
-            </field>
-        </record>
+        </field>
+    </record>
 
-    </data>
 </odoo>
