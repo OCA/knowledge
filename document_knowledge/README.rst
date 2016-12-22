@@ -33,8 +33,7 @@ To use this module, you need to:
 Known issues / Roadmap
 ======================
 
-* Add options for other OCA extension modules as they are made available.
-* `Migrate CMIS modules to version 9 <https://github.com/OCA/connector-cmis/issues/8>`_
+* Migrate related modules to v10 and add options in the settings as soon as they are installable
 
 Bug Tracker
 ===========
@@ -57,6 +56,7 @@ Contributors
 * Odoo SA <info@odoo.com>
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
+* Leonardo Donelli @ MONK Software (leonardo.donelli@monksoftware.it)
 
 Maintainer
 ----------
@@ -72,11 +72,3 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit http://odoo-community.org.
-
-Changelog
----------
-
-v9.0.1.0.0
-
-This module is an official module but was not present in odoo 9.0 official repository
-so we took it from Odoo 8.0 repository and add it here.
