@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
+
         <record model="workflow" id="wkf_document_page_history_aproval">
             <field name="name">document.page.history.aproval.wkf</field>
             <field name="osv">document.page.history</field>
@@ -35,4 +36,5 @@
             <field name="act_to" ref="act_draft" />
             <field name="signal">edit</field>
         </record>
+
 </odoo>
