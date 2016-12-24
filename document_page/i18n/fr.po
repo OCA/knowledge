@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-25 14:55+0000\n"
+"PO-Revision-Date: 2016-12-23 08:32+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-knowledge-8-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Enfant"
 #. module: document_page
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
