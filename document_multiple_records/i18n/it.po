@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 01:24+0000\n"
-"PO-Revision-Date: 2016-11-25 14:57+0000\n"
+"POT-Creation-Date: 2016-12-17 02:04+0000\n"
+"PO-Revision-Date: 2016-12-23 08:32+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-7-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr ""
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
 msgid "The database object this attachment will be attached to"
-msgstr ""
+msgstr "L'oggetto del database a cui l'allegato verrà collegato"
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_id:0
