@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:02+0000\n"
+"POT-Creation-Date: 2016-12-17 02:11+0000\n"
+"PO-Revision-Date: 2016-12-30 20:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-9-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -89,7 +89,7 @@ msgstr "Oluşturma"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen İsim"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
@@ -121,7 +121,7 @@ msgstr "Bilgi ve Belge Yönetimi"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid

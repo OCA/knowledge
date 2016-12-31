@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 00:55+0000\n"
-"PO-Revision-Date: 2016-11-25 14:57+0000\n"
+"POT-Creation-Date: 2016-12-17 02:11+0000\n"
+"PO-Revision-Date: 2016-12-30 22:02+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-9-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -121,7 +121,7 @@ msgstr "Fark"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen İsim"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
@@ -229,7 +229,7 @@ msgstr "Son mesaj tarihi"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid

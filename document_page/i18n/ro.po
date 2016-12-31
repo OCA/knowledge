@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:04+0000\n"
+"POT-Creation-Date: 2016-12-17 02:11+0000\n"
+"PO-Revision-Date: 2016-12-27 08:24+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Romanian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgstr "Diferenţă"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nume Afişat"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
@@ -229,7 +229,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima actualizare în"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
@@ -263,11 +263,6 @@ msgstr "Nume Meniu"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_ids
-msgid "Messages and communication history"
 msgstr ""
 
 #. module: document_page
