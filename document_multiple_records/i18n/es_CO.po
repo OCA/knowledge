@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-24 02:18+0000\n"
-"PO-Revision-Date: 2016-12-30 19:03+0000\n"
+"PO-Revision-Date: 2016-12-27 08:23+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-7-0/language/tr/)\n"
+"Language-Team: Spanish (Colombia) (http://www.transifex.com/oca/OCA-knowledge-7-0/language/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_id:0
 msgid "Resource ID"
-msgstr "Kaynak ID"
+msgstr ""
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,attachment_id:0
 msgid "Attachment"
-msgstr "Ek"
+msgstr ""
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -54,7 +54,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_name:0
 msgid "Resource Name"
-msgstr "Kaynak Adı"
+msgstr ""
 
 #. module: document_multiple_records
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_document
@@ -107,7 +107,7 @@ msgstr ""
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
 msgid "The database object this attachment will be attached to"
-msgstr "Bu ekin ekleneceği veritabanı nesnesi"
+msgstr ""
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_id:0
@@ -117,7 +117,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.existing.doc,attachment_ids:0
 msgid "Attachments"
-msgstr "Ekler"
+msgstr ""
 
 #. module: document_multiple_records
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_existing_doc
@@ -133,7 +133,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_model:0
 msgid "Resource Model"
-msgstr "Kaynak Model"
+msgstr ""
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -143,7 +143,7 @@ msgstr ""
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "Cancelar"
 
 #. module: document_multiple_records
 #. openerp-web
@@ -155,7 +155,7 @@ msgstr ""
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
 msgid "or"
-msgstr "ya da"
+msgstr "o"
 
 #. module: document_multiple_records
 #: code:addons/document_multiple_records/wizard/document_wizard.py:53

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 01:25+0000\n"
+"POT-Creation-Date: 2016-12-24 02:18+0000\n"
 "PO-Revision-Date: 2015-11-07 12:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-7-0/language/tr/)\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_url
 #: model:ir.actions.act_window,name:document_url.action_ir_attachment_add_url

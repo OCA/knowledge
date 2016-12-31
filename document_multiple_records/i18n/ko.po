@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 01:24+0000\n"
-"PO-Revision-Date: 2016-10-11 09:50+0000\n"
+"POT-Creation-Date: 2016-12-24 02:18+0000\n"
+"PO-Revision-Date: 2016-12-27 08:26+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Korean (http://www.transifex.com/oca/OCA-knowledge-7-0/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,7 @@ msgstr ""
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #. module: document_multiple_records
 #. openerp-web

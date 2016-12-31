@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 01:25+0000\n"
+"POT-Creation-Date: 2016-12-24 02:18+0000\n"
 "PO-Revision-Date: 2015-11-07 12:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Basque (http://www.transifex.com/oca/OCA-knowledge-7-0/language/eu/)\n"
@@ -53,7 +53,7 @@ msgstr ""
 #. module: document_url
 #: view:ir.attachment.add_url:0
 msgid "Cancel"
-msgstr ""
+msgstr "Ezeztatu"
 
 #. module: document_url
 #: view:ir.attachment.add_url:0
