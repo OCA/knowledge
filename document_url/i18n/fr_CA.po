@@ -38,27 +38,27 @@ msgstr ""
 #. module: document_url
 #: view:ir.attachment.add_url:document_url.view_ir_attachment_add_url_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: document_url
 #: field:ir.attachment.add_url,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: document_url
 #: field:ir.attachment.add_url,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: document_url
 #: field:ir.attachment.add_url,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Afficher le nom"
 
 #. module: document_url
 #: field:ir.attachment.add_url,id:0
 msgid "ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. module: document_url
 #: field:ir.attachment.add_url,__last_update:0
@@ -68,12 +68,12 @@ msgstr ""
 #. module: document_url
 #: field:ir.attachment.add_url,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: document_url
 #: field:ir.attachment.add_url,name:0

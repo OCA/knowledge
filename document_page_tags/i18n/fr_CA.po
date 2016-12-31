@@ -25,17 +25,17 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: document_page_tags
 #: field:document.page.tag,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: document_page_tags
 #: field:document.page.tag,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Afficher le nom"
 
 #. module: document_page_tags
 #: model:ir.model,name:document_page_tags.model_document_page
@@ -45,7 +45,7 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,id:0
 msgid "ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. module: document_page_tags
 #: field:document.page,tag_ids:0
@@ -60,12 +60,12 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: document_page_tags
 #: field:document.page.tag,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: document_page_tags
 #: field:document.page.tag,name:0

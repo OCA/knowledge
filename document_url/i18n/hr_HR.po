@@ -38,7 +38,7 @@ msgstr ""
 #. module: document_url
 #: view:ir.attachment.add_url:document_url.view_ir_attachment_add_url_form
 msgid "Cancel"
-msgstr ""
+msgstr "Otkaži"
 
 #. module: document_url
 #: field:ir.attachment.add_url,create_uid:0

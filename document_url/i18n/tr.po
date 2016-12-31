@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-09-09 12:26+0000\n"
+"PO-Revision-Date: 2016-12-30 19:04+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Oluşturulma"
 #. module: document_url
 #: field:ir.attachment.add_url,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen İsim"
 
 #. module: document_url
 #: field:ir.attachment.add_url,id:0
@@ -63,7 +63,7 @@ msgstr "ID"
 #. module: document_url
 #: field:ir.attachment.add_url,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_uid:0
@@ -83,7 +83,7 @@ msgstr "Adı"
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_url
 #: view:ir.attachment.add_url:document_url.view_ir_attachment_add_url_form

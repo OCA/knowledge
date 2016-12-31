@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-25 14:57+0000\n"
+"PO-Revision-Date: 2016-12-30 22:02+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Alt"
 #. module: document_page
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -118,7 +118,7 @@ msgstr "Fark"
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen İsim"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -176,7 +176,7 @@ msgstr "Geçmiş"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
+msgstr "Sohbet özetini tutar (kaç mesa vs) Bu özet kanban görünümleri gibi yerlerde kullanılmak için doğrudan HTML formatındadır. "
 
 #. module: document_page
 #: field:document.page,id:0 field:document.page.create.menu,id:0
@@ -217,7 +217,7 @@ msgstr "Son mesaj tarihi"
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
@@ -256,7 +256,7 @@ msgstr "Mesajlar"
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "Mesaj ve iletişim geçmişi"
 
 #. module: document_page
 #: field:document.page,write_date:0

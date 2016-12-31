@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-07 12:44+0000\n"
-"PO-Revision-Date: 2015-11-07 12:45+0000\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2016-12-27 08:22+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Russian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "Создать меню"
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Создано"
 
 #. module: document_page
 #: field:document.page,create_date:0
@@ -111,6 +111,19 @@ msgstr "Различие"
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Difference"
 msgstr "Различие"
+
+#. module: document_page
+#: field:document.page,display_name:0
+#: field:document.page.create.menu,display_name:0
+#: field:document.page.history,display_name:0
+#: field:wizard.document.page.history.show_diff,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: document_page
+#: field:document.page,display_content:0
+msgid "Displayed Content"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.history:document_page.view_wiki_history_tree
@@ -170,7 +183,7 @@ msgstr ""
 #: field:document.page.history,id:0
 #: field:wizard.document.page.history.show_diff,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: document_page
 #: help:document.page,message_unread:0
@@ -199,18 +212,26 @@ msgid "Last Message Date"
 msgstr ""
 
 #. module: document_page
+#: field:document.page,__last_update:0
+#: field:document.page.create.menu,__last_update:0
+#: field:document.page.history,__last_update:0
+#: field:wizard.document.page.history.show_diff,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Последний раз обновлено"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Последний раз обновлено"
 
 #. module: document_page
 #: field:document.page,menu_id:0
