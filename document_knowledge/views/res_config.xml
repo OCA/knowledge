@@ -19,6 +19,28 @@
               <field name="module_document" class="oe_inline"/>
               <label for="module_document"/>
             </div>
+            <div>
+              <field name="module_document_page" class="oe_inline"/>
+              <label for="module_document_page"/>
+            </div>
+            <div>
+              <field name="module_document_page_approval" class="oe_inline"/>
+              <label for="module_document_page_approval"/>
+            </div>
+          </div>
+        </group>
+        <separator string="Connect with an external DMS"/>
+        <group>
+          <label for="id" string="Using CMIS"/>
+          <div>
+            <div>
+              <field name="module_cmis_read" class="oe_inline"/>
+              <label for="module_cmis_read"/>
+            </div>
+            <div>
+              <field name="module_cmis_write" class="oe_inline"/>
+              <label for="module_cmis_write"/>
+            </div>
           </div>
         </group>
       </form>
