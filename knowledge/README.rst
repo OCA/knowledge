@@ -56,7 +56,8 @@ Contributors
 * Odoo SA <info@odoo.com>
 * Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
-* Leonardo Donelli @ MONK Software (leonardo.donelli@monksoftware.it)
+* Leonardo Donelli <leonardo.donelli@monksoftware.it>
+* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 
 Maintainer
 ----------
