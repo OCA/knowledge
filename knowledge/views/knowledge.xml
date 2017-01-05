@@ -30,7 +30,7 @@
   <menuitem
       id="menu_document_root"
       name="Knowledge"
-      groups="base.group_system,base.group_document_user"
+      groups="base.group_system,knowledge.group_document_user"
       sequence="116"/>
 
   <menuitem
