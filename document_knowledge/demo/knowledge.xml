@@ -2,7 +2,7 @@
 <odoo noupdate="1">
 
   <record id="base.user_demo" model="res.users">
-    <field name="groups_id" eval="[(4,ref('base.group_document_user'))]"/>
+    <field name="groups_id" eval="[(4,ref('knowledge.group_document_user'))]"/>
   </record>
 
 </odoo>
