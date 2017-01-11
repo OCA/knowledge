@@ -61,7 +61,8 @@ class IrAttachment(Model):
         user = self.pool['res.users'].browse(cr, uid, uid, context=context)
         next_night = datetime.now() + relativedelta(
             hour=01, minute=42, second=0)
-        next_night = pytz.timezone(user.tz).localize(next_night).astimezone(
+        user_tz = user.tz or 'UTC'
+        next_night = pytz.timezone(user_tz).localize(next_night).astimezone(
             pytz.utc).replace(tzinfo=None)
         if next_night < datetime.now():
             next_night += relativedelta(days=1)
