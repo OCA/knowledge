@@ -61,6 +61,9 @@ class IrAttachment(Model):
         ids_to_browse = [_id for _id in ids_to_browse if _id not in result]
         for this in self.pool[model].browse(cr, uid, ids_to_browse,
                                             context=context):
+            if this[binary_field] is None:
+                result[this.id] = False
+                continue
             try:
                 import magic
                 ms = magic.open(
