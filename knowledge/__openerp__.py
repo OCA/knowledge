@@ -27,6 +27,7 @@
     "license": "AGPL-3",
     "website": "https://www.odoo.com",
     "data": [
+        "data/knowledge_data.xml",
         "security/knowledge_security.xml",
         "security/ir.model.access.csv",
         "views/knowledge.xml",
