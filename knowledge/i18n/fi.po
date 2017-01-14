@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-13 13:00+0000\n"
-"PO-Revision-Date: 2016-09-15 12:45+0000\n"
+"POT-Creation-Date: 2017-01-11 17:45+0000\n"
+"PO-Revision-Date: 2017-01-13 09:29+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-knowledge-9-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -110,6 +110,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge_management
 #: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr "Tietämys"
@@ -133,6 +134,13 @@ msgstr "Viimeksi päivittänyt"
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
 msgid "Last Updated on"
 msgstr "Viimeksi päivitetty"
+
+#. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge_management
+msgid ""
+"Lets you install addons geared towards sharing knowledge with and between "
+"your employees."
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
