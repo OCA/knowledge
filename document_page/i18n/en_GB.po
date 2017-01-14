@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-22 16:25+0000\n"
+"PO-Revision-Date: 2017-01-11 15:38+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr "Created on"
 #. module: document_page
 #: field:document.page.history,create_date:0
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: document_page
 #: help:document.page,message_last_post:0
@@ -168,7 +168,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,history_ids:0
 msgid "History"
-msgstr ""
+msgstr "History"
 
 #. module: document_page
 #: help:document.page,message_summary:0

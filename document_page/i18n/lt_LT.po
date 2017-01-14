@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2017-01-13 09:23+0000\n"
+"PO-Revision-Date: 2017-01-11 15:35+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Bosnian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/bs/)\n"
+"Language-Team: Lithuanian (Lithuania) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/lt_LT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: bs\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt_LT\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -35,13 +35,13 @@ msgstr ""
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Atšaukti"
 
 #. module: document_page
 #: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
 msgid "Categories"
-msgstr "Kategorije"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_category_form
@@ -49,7 +49,7 @@ msgstr "Kategorije"
 #: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr "Kategorija"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,child_ids:0
@@ -67,7 +67,7 @@ msgstr ""
 #: field:document.page,content:0 selection:document.page,type:0
 #: field:document.page.history,content:0
 msgid "Content"
-msgstr "Sadržaj"
+msgstr ""
 
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
@@ -80,24 +80,24 @@ msgstr ""
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr "Kreirao"
+msgstr "Sukūrė"
 
 #. module: document_page
 #: field:document.page,create_date:0
 #: field:document.page.create.menu,create_date:0
 #: field:wizard.document.page.history.show_diff,create_date:0
 msgid "Created on"
-msgstr "Kreirano"
+msgstr "Sukurta"
 
 #. module: document_page
 #: field:document.page.history,create_date:0
 msgid "Date"
-msgstr "Datum"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr "Datum posljednje poruke ostavljene na unos."
+msgstr ""
 
 #. module: document_page
 #: field:wizard.document.page.history.show_diff,diff:0
@@ -117,7 +117,7 @@ msgstr ""
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr "Prikaži naziv"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -158,7 +158,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_follower_ids:0
 msgid "Followers"
-msgstr "Pratioci"
+msgstr ""
 
 #. module: document_page
 #: view:document.page:document_page.view_wiki_filter
@@ -168,7 +168,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,history_ids:0
 msgid "History"
-msgstr "Istorija"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,message_summary:0
@@ -187,7 +187,7 @@ msgstr "ID"
 #. module: document_page
 #: help:document.page,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "Ako je označeno nove poruke će zahtjevati vašu pažnju."
+msgstr ""
 
 #. module: document_page
 #: field:document.page,message_is_follower:0
@@ -208,7 +208,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_last_post:0
 msgid "Last Message Date"
-msgstr "Datum zadnje poruke"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,__last_update:0
@@ -216,21 +216,21 @@ msgstr "Datum zadnje poruke"
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr "Zadnje mijenjano"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Paskutinį kartą atnaujino"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Paskutinį kartą atnaujinta"
 
 #. module: document_page
 #: field:document.page,menu_id:0
@@ -250,12 +250,12 @@ msgstr ""
 #. module: document_page
 #: field:document.page,message_ids:0
 msgid "Messages"
-msgstr "Poruke"
+msgstr ""
 
 #. module: document_page
 #: help:document.page,message_ids:0
 msgid "Messages and communication history"
-msgstr "Poruke i istorija komunikacije"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,write_date:0
@@ -272,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr "Ime"
+msgstr ""
 
 #. module: document_page
 #: field:document.page.history,page_id:0
@@ -337,17 +337,17 @@ msgstr ""
 #. module: document_page
 #: field:document.page,name:0
 msgid "Title"
-msgstr "Naslov"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr "Vrsta"
+msgstr ""
 
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr "Nepročitane poruke"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
@@ -369,4 +369,4 @@ msgstr ""
 #. module: document_page
 #: view:document.page.create.menu:document_page.view_wiki_create_menu
 msgid "or"
-msgstr "ili"
+msgstr ""

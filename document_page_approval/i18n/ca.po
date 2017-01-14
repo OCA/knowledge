@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2017-01-12 19:51+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Turkish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/tr/)\n"
+"PO-Revision-Date: 2015-11-07 12:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page_approval
 #: model:email.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -36,7 +36,7 @@ msgstr ""
 #. module: document_page_approval
 #: view:document.page.history:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr "Onayla"
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
@@ -63,17 +63,17 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr "Belge Sayfası"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr "Belge Sayfa Geçmişi"
+msgstr ""
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr "Taslak"
+msgstr ""
 
 #. module: document_page_approval
 #: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval

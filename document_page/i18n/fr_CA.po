@@ -92,7 +92,7 @@ msgstr "Créé le"
 #. module: document_page
 #: field:document.page.history,create_date:0
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: document_page
 #: help:document.page,message_last_post:0

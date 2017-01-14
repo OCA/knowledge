@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-25 14:57+0000\n"
+"PO-Revision-Date: 2017-01-13 09:22+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr "Diferència"
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Veure el nom"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -169,7 +169,7 @@ msgstr "Agrupa per..."
 #. module: document_page
 #: field:document.page,history_ids:0
 msgid "History"
-msgstr ""
+msgstr "Història"
 
 #. module: document_page
 #: help:document.page,message_summary:0
@@ -217,7 +217,7 @@ msgstr ""
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació el"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
@@ -343,7 +343,7 @@ msgstr "Títol"
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #. module: document_page
 #: field:document.page,message_unread:0
