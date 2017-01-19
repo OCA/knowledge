@@ -37,9 +37,7 @@ class DocumentPage(models.Model):
         'Children'
     )
 
-    content = fields.Text(
-        "Content"
-    )
+    content = fields.Text("Content")
 
     display_content = fields.Text(
         string='Displayed Content',
@@ -60,26 +58,23 @@ class DocumentPage(models.Model):
 
     create_date = fields.Datetime(
         "Created on",
-        index=True,
         readonly=True
     )
 
     create_uid = fields.Many2one(
         'res.users',
         'Author',
-        index=True,
         readonly=True
     )
 
     write_date = fields.Datetime(
         "Modification Date",
-        index=True,
-        readonly=True)
+        readonly=True
+    )
 
     write_uid = fields.Many2one(
         'res.users',
         "Last Contributor",
-        index=True,
         readonly=True
     )
 

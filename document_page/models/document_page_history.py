@@ -5,6 +5,7 @@
 import logging
 import difflib
 from odoo import fields, models
+from odoo.tools.translate import _
 
 _logger = logging.getLogger(__name__)
 
