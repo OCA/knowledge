@@ -52,7 +52,7 @@ class DocumentPageCreateMenu(models.TransientModel):
             'res_model': 'document.page',
             'view_id': view_id,
             'type': 'ir.actions.act_window',
-            'target': 'inlineview',
+            'target': 'inline',
         }
         value['domain'] = "[('parent_id','=',%d)]" % (page.id)
         value['res_id'] = page.id
