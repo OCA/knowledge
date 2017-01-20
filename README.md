@@ -13,6 +13,12 @@ Here you should find all community modules that:
 - provide access to knowledge/documents
 
 [//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[knowledge](knowledge/) | 10.0.1.0.0 | Knowledge Management System
+
 Unported addons
 ---------------
 addon | version | summary
@@ -27,7 +33,6 @@ addon | version | summary
 [document_page_multi_company](document_page_multi_company/) | 1.0 (unported) | Document Page Multi-Company
 [document_reindex](document_reindex/) | 8.0.1.0.0 (unported) | Reindex your already uploaded documents
 [document_url](document_url/) | 9.0.1.0.0 (unported) | URL attachment
-[knowledge](knowledge/) | 9.0.1.1.0 (unported) | Knowledge Management System
 
 [//]: # (end addons)
 
