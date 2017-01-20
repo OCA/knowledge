@@ -40,18 +40,29 @@ Bug Tracker
 
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/Knowledge/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/knowledge/issues/new?body=module:%20document_page%0Aversion:%2010.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+If you spotted it first, help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======
 
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+
 Contributors
 ------------
 
-* Odoo SA <info@odoo.com>
-* Savoir-faire Linux <support@savoirfairelinux.com>
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+
+Funders
+-------
+
+The development of this module has been financially supported by:
+
+* Odoo SA <http://www.odoo.com>
+* Savoir-faire Linux <http://www.savoirfairelinux.com>
 
 Maintainer
 ----------
@@ -66,4 +77,4 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-To contribute to this module, please visit http://odoo-community.org.
+To contribute to this module, please visit https://odoo-community.org.
