@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2017-01-13 09:22+0000\n"
+"PO-Revision-Date: 2017-01-17 19:17+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Darrera Actualització el"
 #. module: document_page_tags
 #: field:document.page.tag,name:0
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: document_page_tags
 #: sql_constraint:document.page.tag:0
