@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 15:34+0000\n"
-"PO-Revision-Date: 2016-10-04 09:43+0000\n"
+"POT-Creation-Date: 2017-01-14 03:31+0000\n"
+"PO-Revision-Date: 2017-01-19 20:17+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "Data"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Data da última mensagem postada no registro"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
@@ -162,7 +162,7 @@ msgstr "Documentos"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
@@ -195,7 +195,7 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Se marcado novas mensagens requerem sua atenção."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_needaction
@@ -221,7 +221,7 @@ msgstr "Último Contribuidor(a)"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
 msgid "Last Message Date"
-msgstr ""
+msgstr "Última data de mensagem"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -263,7 +263,7 @@ msgstr "Nome do Menu"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensagens"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
@@ -377,7 +377,7 @@ msgstr "Tipo"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensagens não lidas"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter

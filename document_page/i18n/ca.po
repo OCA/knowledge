@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-11 17:45+0000\n"
-"PO-Revision-Date: 2017-01-13 09:22+0000\n"
+"POT-Creation-Date: 2017-01-14 03:31+0000\n"
+"PO-Revision-Date: 2017-01-17 19:17+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-9-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -280,7 +280,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction_counter
