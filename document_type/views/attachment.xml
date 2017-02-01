@@ -11,7 +11,9 @@
         <sheet>
           <group>
             <field name="name"/>
-            <field name="document_type_id"/>
+            <!-- Needed for the automatic domain on document_type_id -->
+            <field name="res_model" invisible="True"/>
+            <field name="document_type_id" options="{'no_create': True}"/>
             <field name="description"/>
           </group>
         </sheet>

@@ -15,4 +15,5 @@ class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
     document_type_id = fields.Many2one(
-        'document.type', string='Document Type')
+        'document.type', string='Document Type',
+        domain='[("ir_model_id.model", "=", res_model)]')
