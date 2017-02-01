@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="ir_attachment_view_form_upload" model="ir.ui.view">
+    <field name="name">Attachment form view for type selection after upload</field>
+    <field name="model">ir.attachment</field>
+    <!-- higher priority needed to make sure this isn't used as default form view -->
+    <field name="priority" eval="32"/>
+    <field name="arch" type="xml">
+      <form create="false">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="document_type_id"/>
+            <field name="description"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="ir_attachment_action_upload_type" model="ir.actions.act_window">
+    <field name="name">Attachment upload typle selection action</field>
+    <field name="res_model">ir.attachment</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="ir_attachment_view_form_upload"/>
+    <field name="target">new</field>
+  </record>
+
+</odoo>
