@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from openerp.tests import common
-from openerp import _
+from odoo.tests import common
+from odoo import _
 
 
 class TestDocumentPageShowDiff(common.TransactionCase):

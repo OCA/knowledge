@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp.tests import common
+from odoo.tests import common
 
 
 class TestDocumentPage(common.TransactionCase):
