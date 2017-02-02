@@ -3,15 +3,15 @@
 # * knowledge
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:02+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Macedonian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/mk/)\n"
+"POT-Creation-Date: 2017-01-20 03:35+0000\n"
+"PO-Revision-Date: 2017-01-20 03:35+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Macedonian (https://www.transifex.com/oca/teams/23907/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -39,11 +39,6 @@ msgstr ""
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Cancel"
 msgstr "Откажи"
-
-#. module: knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document2
-msgid "Collaborative Content"
-msgstr "Колаборативна содржина"
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
@@ -99,9 +94,18 @@ msgid ""
 msgstr ""
 
 #. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
+#: model:ir.ui.menu,name:knowledge.menu_document
+#: model:ir.ui.menu,name:knowledge.menu_document_section
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Documents"
 msgstr "Документи"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+msgid "Group by"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
@@ -109,7 +113,8 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document
+#: model:ir.module.category,name:knowledge.module_category_knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document_root
 msgid "Knowledge"
 msgstr "Знаење"
 
@@ -144,8 +149,18 @@ msgid "Manage documents"
 msgstr "Менаџирај документи"
 
 #. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge
+msgid "Manage documents and knowledge-related applications"
+msgstr ""
+
+#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+msgid "Model"
 msgstr ""
 
 #. module: knowledge
@@ -168,6 +183,11 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Using CMIS"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_ir_attachment
+msgid "ir.attachment"
 msgstr ""
 
 #. module: knowledge

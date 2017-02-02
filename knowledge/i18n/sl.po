@@ -3,16 +3,15 @@
 # * knowledge
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-16 05:46+0000\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/sl/)\n"
+"POT-Creation-Date: 2017-01-20 03:35+0000\n"
+"PO-Revision-Date: 2017-01-20 03:35+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -24,7 +23,9 @@ msgstr ""
 msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
-msgstr "Dodaj delotok dokumentov po kategoriji.\n- namesti modul document_page_approval."
+msgstr ""
+"Dodaj delotok dokumentov po kategoriji.\n"
+"- namesti modul document_page_approval."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -40,11 +41,6 @@ msgstr "Pripni datoteke iz zunanjega DMS v Odoo"
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Cancel"
 msgstr "Preklic"
-
-#. module: knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document2
-msgid "Collaborative Content"
-msgstr "Skupne vsebine"
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
@@ -63,14 +59,19 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to attach files\n"
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
-msgstr "Poveži Odoo s CMIS združljivim strežnikom za pripenjanje datotek\nOdoo zapisu.\n- namesti modul cmis_read."
+msgstr ""
+"Poveži Odoo s CMIS združljivim strežnikom za pripenjanje datotek\n"
+"Odoo zapisu.\n"
+"- namesti modul cmis_read."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
 msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
-msgstr "Poveži Odoo s CMIS združljivim strežnikom za hrambo datotek.\n- namesti modul cmis_write."
+msgstr ""
+"Poveži Odoo s CMIS združljivim strežnikom za hrambo datotek.\n"
+"- namesti modul cmis_write."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -97,12 +98,23 @@ msgstr "Naziv prikaza"
 msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module document."
-msgstr "Indeksacija dokumentov, iskanje po vsebini prilog.\n- Namesti modul 'document'."
+msgstr ""
+"Indeksacija dokumentov, iskanje po vsebini prilog.\n"
+"- Namesti modul 'document'."
 
 #. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
+#: model:ir.ui.menu,name:knowledge.menu_document
+#: model:ir.ui.menu,name:knowledge.menu_document_section
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Documents"
 msgstr "Dokumenti"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+msgid "Group by"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
@@ -110,7 +122,8 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document
+#: model:ir.module.category,name:knowledge.module_category_knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document_root
 msgid "Knowledge"
 msgstr "Baza znanja"
 
@@ -145,16 +158,28 @@ msgid "Manage documents"
 msgstr "Upravljanje dokumentov"
 
 #. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge
+msgid "Manage documents and knowledge-related applications"
+msgstr ""
+
+#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
 msgstr "Upravljanje odobritev dokumentov"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+msgid "Model"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
 msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
-msgstr "Zagotovi stran dokumenta in kategorijo kot wiki.\n- namesti modul document_page."
+msgstr ""
+"Zagotovi stran dokumenta in kategorijo kot wiki.\n"
+"- namesti modul document_page."
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
@@ -170,6 +195,11 @@ msgstr "Hrani priponke na zunanjem DMS namesto v Odoo Filestore"
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Using CMIS"
 msgstr "Uporaba CMIS"
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_ir_attachment
+msgid "ir.attachment"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings
