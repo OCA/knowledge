@@ -13,6 +13,11 @@
     <field name="arch" type="xml">
       <form>
         <sheet>
+          <div class="oe_button_box" name="button_box">
+			      <button name="documents" class="oe_stat_button" icon="fa-book">
+              <field name="documents_count" string="Documents" widget="statinfo"/>
+			      </button>
+          </div>
           <group>
             <field name="name"/>
             <field name="ir_model_id"/>
