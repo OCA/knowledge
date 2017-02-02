@@ -1,26 +1,11 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 import logging
 import difflib
-from openerp import models, fields, _
+from odoo import fields, models
+from odoo.tools.translate import _
 
 _logger = logging.getLogger(__name__)
 
@@ -34,7 +19,7 @@ class DocumentPageHistory(models.Model):
     _rec_name = "create_date"
 
     page_id = fields.Many2one('document.page', 'Page')
-    summary = fields.Char('Summary', select=True)
+    summary = fields.Char('Summary', index=True)
     content = fields.Text("Content")
     create_date = fields.Datetime("Date")
     create_uid = fields.Many2one('res.users', "Modified By")
