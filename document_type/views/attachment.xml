@@ -21,6 +21,20 @@
     </field>
   </record>
 
+  <record id="ir_attachment_view_search_document_type" model="ir.ui.view">
+    <field name="name"></field>
+    <field name="model">ir.attachment</field>
+    <field name="inherit_id" ref="base.view_attachment_search"/>
+    <field name="arch" type="xml">
+      <search position="inside">
+        <field name="document_type_id"/>
+      </search>
+      <xpath expr="//group" position="inside">
+        <filter name="group_by_document_type" string="Document Type" domain="[]" context="{'group_by': 'document_type_id'}"/>
+      </xpath>
+    </field>
+  </record>
+
   <record id="ir_attachment_action_upload_type" model="ir.actions.act_window">
     <field name="name">Attachment upload typle selection action</field>
     <field name="res_model">ir.attachment</field>
