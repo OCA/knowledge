@@ -1,41 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-        <record id="wiki_wiki_main" model="document.page">
-            <field name="name">The Odoo wiki</field>
-            <field name="tags">help, quick start, wiki, formatting</field>
-            <field name="minor_edit">0</field>
-            <field name="index">1</field>
-            <field name="summary">Initial Page</field>
-            <field  name="content">== The Odoo wiki ==
-
-[[File:https://www.odoo.com/openerp_website/static/src/img/logo_transparent_198px.png Odoo]]
-
-The Odoo wiki allows you to manage your enterprise's contents using wiki
-restructured texts. This module provides a collaborative way to manage internal
-FAQs, quality manuals, technical references, etc.
-
-==Keypoints==
-* Same formating style than MediaWiki,
-* Any number of wiki group for different purposes,
-* Detailed history on all pages,
-* Integrated with the document management system.
-
-==Why you should use the OpenERP integrated wiki than a separate wiki system ?==
-* Allows links to any document of the system,
-* Uses the access controls of OpenERP for uniq access rights management,
-* Use it to describe projects, tasks, products,
-* Integrated with customer portal to provide restricted external accesses,
-* Linked to users processes for quality manuals.
-
-==To get more information==
-* [[Basic Wiki Editing]]
-* [[Wiki Documentation]]
-* [http://openerp.com The OpenERP website]
-
-
-</field>
-            <field name="parent_id" ref="wiki_groups_wikiformatting0"/>
-        </record>
-    </data>
+    <template id="document_page_css">
+        <link rel="stylesheet" type="text/less" href="/document_page/static/src/css/document_page.css"/>
+    </template>
 </odoo>
