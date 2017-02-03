@@ -21,6 +21,17 @@
     </field>
   </record>
 
+  <record id="ir_attachment_view_form_document_type" model="ir.ui.view">
+    <field name="name">Attachment form view: add document type</field>
+    <field name="model">ir.attachment</field>
+    <field name="inherit_id" ref="base.view_attachment_form"/>
+    <field name="arch" type="xml">
+      <field name="type" position="after">
+        <field name="document_type_id"/>
+      </field>
+    </field>
+  </record>
+
   <record id="ir_attachment_view_search_document_type" model="ir.ui.view">
     <field name="name">Attachment search view: add document type filter and groupby</field>
     <field name="model">ir.attachment</field>
