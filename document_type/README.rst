@@ -9,15 +9,6 @@ Document Types
 Define type of documents per model, and choose what document you are uploading
 when attaching a file to a record.
 
-Installation
-============
-
-* None
-
-Configuration
-=============
-
-* None
 
 Usage
 =====
@@ -25,6 +16,10 @@ Usage
 To use this module, you need to:
 
 * Go to Knowledge / Configuration / Document types and configure your document types
+* Every time you attach a document using the 'Attachment' menu in the sidebar,
+  a popup will open allowing you to set attachment name, description and type;
+  according to the types defined for that model.
+
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
