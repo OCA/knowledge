@@ -13,6 +13,7 @@
         'views/document_type.xml',
         'views/attachment.xml',
         'templates/web.xml',
+        'security/ir.model.access.csv',
     ],
     "installable": True,
     "auto_install": False,

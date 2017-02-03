@@ -42,6 +42,11 @@ knowledge/issues/new?body=module:%20
 knowledge%0Aversion:%20
 9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
+TODO
+====
+
+* Show document type in the attachment list in the sidebar, and maybe order and group by those?
+
 
 Credits
 =======

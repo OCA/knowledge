@@ -13,6 +13,7 @@
       id="menu_document_configuration"
       name="Configuration"
       parent="menu_document"
+      groups="group_document_manager"
       sequence="50"/>
 
 </odoo>
