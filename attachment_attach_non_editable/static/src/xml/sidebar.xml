@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+  <t t-extend="Sidebar">
+    <t t-jquery=".o_sidebar_add_attachment">
+      this.attr('t-if', "section.name == 'files' and (widget.options.editable or widget.options.attachable)");
+    </t>
+  </t>
+
+</templates>
