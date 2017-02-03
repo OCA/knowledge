@@ -22,7 +22,7 @@
   </record>
 
   <record id="ir_attachment_view_search_document_type" model="ir.ui.view">
-    <field name="name"></field>
+    <field name="name">Attachment search view: add document type filter and groupby</field>
     <field name="model">ir.attachment</field>
     <field name="inherit_id" ref="base.view_attachment_search"/>
     <field name="arch" type="xml">

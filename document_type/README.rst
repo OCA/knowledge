@@ -51,6 +51,11 @@ Contributors
 
 * Leonardo Donelli @ MONK Software (leonardo.donelli@monksoftware.it)
 
+Acknowledgements
+----------------
+
+* Thanks to gingitsune for showing me a simple way to open a 'Save and Close' dialog
+
 Maintainer
 ----------
 
