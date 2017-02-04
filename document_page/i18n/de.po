@@ -3,16 +3,15 @@
 # * document_page
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 11:27+0000\n"
-"PO-Revision-Date: 2016-03-11 15:42+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
+"POT-Creation-Date: 2017-02-03 03:36+0000\n"
+"PO-Revision-Date: 2017-02-03 03:36+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,15 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction
-msgid "Action Needed"
-msgstr "Handeln erforderlich"
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_uid
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Author"
-msgstr "Autor"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -39,7 +33,7 @@ msgstr "Abbrechen"
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
-msgstr "Kategorien"
+msgstr ""
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -48,22 +42,22 @@ msgstr "Kategorien"
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr "Kategorie"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
 msgid "Children"
-msgstr "Kindelemente"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
 msgid "Click to create a new web page."
-msgstr "Klicken, um eine neue Webseite anzulegen."
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr "Schließen"
+msgstr ""
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -72,14 +66,14 @@ msgstr "Schließen"
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Content"
-msgstr "Inhalt"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
-msgstr "Menü erstellen"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
@@ -92,29 +86,23 @@ msgstr "Erstellt durch"
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
 msgid "Created on"
-msgstr "Erzeugt am"
+msgstr "Erstellt am"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
 msgid "Date"
-msgstr "Datum"
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_last_post
-msgid "Date of the last message posted on the record."
-msgstr "Datum der letzten Meldung zu diesem Datensatz."
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
 msgid "Diff"
-msgstr "Differenz"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
-#: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr "Differenz"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_display_name
@@ -127,12 +115,12 @@ msgstr "Anzeigename"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
 msgid "Displayed Content"
-msgstr "Angezeigter Inhalt"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr "Dokumentenhistorie"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page
@@ -142,18 +130,18 @@ msgstr "Dokumentenhistorie"
 #: model:ir.ui.view,arch_db:document_page.view_wiki_tree
 #: model:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
-msgstr "Dokumentenseite"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_history
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Document Page History"
-msgstr "Dokumenten Seite Historie"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Document Type"
-msgstr "Dokumententyp"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
@@ -161,29 +149,14 @@ msgid "Documents"
 msgstr "Dokumente"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
-msgid "Followers"
-msgstr "Follower"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Follower (Kanäle)"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_partner_ids
-msgid "Followers (Partners)"
-msgstr "Follower (Partner)"
-
-#. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Group By..."
-msgstr "Gruppiert je..."
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
 msgid "History"
-msgstr "Historie"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_id
@@ -194,35 +167,15 @@ msgid "ID"
 msgstr "ID"
 
 #. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_unread
-msgid "If checked new messages require your attention."
-msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit."
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_needaction
-msgid "If checked, new messages require your attention."
-msgstr "Wenn angewählt, erfordern neue Meldungen Ihre Aufmerksamkeit."
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_is_follower
-msgid "Is Follower"
-msgstr "Ist ein Follower"
-
-#. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Last Content"
-msgstr "Voriger Inhalt"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
-msgstr "Letzer Beitragender"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
-msgid "Last Message Date"
-msgstr "Letztes Meldungsdatum"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -230,7 +183,7 @@ msgstr "Letztes Meldungsdatum"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
+msgstr "Zuletzt aktualisiert am"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
@@ -249,152 +202,122 @@ msgstr "Zuletzt aktualisiert am"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
 msgid "Menu"
-msgstr "Menü"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr "Menü"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_name
 msgid "Menu Name"
-msgstr "Menübezeichnung"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
-msgid "Messages"
-msgstr "Meldungen"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
 msgid "Modification Date"
-msgstr "Änderung am"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_uid
 msgid "Modified By"
-msgstr "Geändert von"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr "Bezeichnung"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction_counter
-msgid "Number of Actions"
-msgstr "Anzahl Aktionen"
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Anzahl Meldungen, welche Handlungen erfordern"
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_unread_counter
-msgid "Number of unread messages"
-msgstr "Anzahl ungelesener Meldungen"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_page_id
 msgid "Page"
-msgstr "Seite"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr "Seitenänderungsverlauf"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr "Seitenhistorie"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_type
 msgid "Page type"
-msgstr "Seitentyp"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_page
 #: model:ir.ui.menu,name:document_page.menu_page
 #: model:ir.ui.menu,name:document_page.menu_wiki
 msgid "Pages"
-msgstr "Seiten"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr "Seitenhistorie"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_parent_id
 msgid "Parent Menu"
-msgstr "Obermenü"
+msgstr ""
 
 #. module: document_page
 #: code:addons/document_page/tests/test_document_page_show_diff.py:35
-#: code:addons/document_page/wizard/document_page_show_diff.py:51
+#: code:addons/document_page/wizard/document_page_show_diff.py:35
 #, python-format
 msgid "Select one or maximum two history revisions!"
-msgstr "Wählen Sie eine oder höchstens zwei vergangene Revisionen."
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
 msgid "Summary"
-msgstr "Zusammenfassung"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Template"
-msgstr "Vorlage"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
-msgstr "Vorlage, die als neue Inhaltsvorlage bei neuen Seiten in dieser Kategorie, Verwendung findet"
+msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/models/document_page_history.py:52
+#: code:addons/document_page/models/document_page_history.py:37
 #, python-format
 msgid "There are no changes in revisions."
-msgstr "Es gibt keine Veränderungen in den Revisionen"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_name
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_type
 msgid "Type"
-msgstr "Typ"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
-msgid "Unread Messages"
-msgstr "Ungelesene Meldungen"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Zähler für ungelesene Meldungen"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr "Assistent für Menüerzeugung"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "e.g. Once upon a time..."
-msgstr "z.B. Es war einmal..."
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
