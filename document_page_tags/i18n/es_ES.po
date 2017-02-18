@@ -35,7 +35,7 @@ msgstr "Creado en"
 #. module: document_page_tags
 #: field:document.page.tag,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para mostrar"
 
 #. module: document_page_tags
 #: model:ir.model,name:document_page_tags.model_document_page
@@ -55,7 +55,7 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: document_page_tags
 #: field:document.page.tag,write_uid:0

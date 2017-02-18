@@ -53,7 +53,7 @@ msgstr "Creado en"
 #. module: document_url
 #: field:ir.attachment.add_url,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para mostrar"
 
 #. module: document_url
 #: field:ir.attachment.add_url,id:0
@@ -63,7 +63,7 @@ msgstr "ID"
 #. module: document_url
 #: field:ir.attachment.add_url,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: document_url
 #: field:ir.attachment.add_url,write_uid:0
