@@ -4,14 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-11 17:45+0000\n"
-"PO-Revision-Date: 2017-01-13 09:20+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2017-02-18 03:16+0000\n"
+"PO-Revision-Date: 2017-02-25 00:44+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -140,7 +140,7 @@ msgstr "Zuletzt aktualisiert am"
 msgid ""
 "Lets you install addons geared towards sharing knowledge with and between "
 "your employees."
-msgstr ""
+msgstr "Bietet Ihnen die Installation von Addons, die sich auf gemeinsame Nutzung von Wissen unter den Anwendern ausrichten."
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
@@ -182,7 +182,7 @@ msgstr "Verwende CMIS"
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings
 msgid "knowledge.config.settings"
-msgstr ""
+msgstr "knowledge.config.settings"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration

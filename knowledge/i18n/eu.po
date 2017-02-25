@@ -4,12 +4,13 @@
 # 
 # Translators:
 # oihane <oihanecruce@gmail.com>, 2015
+# oihane <oihanecruce@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 00:55+0000\n"
-"PO-Revision-Date: 2016-10-11 09:51+0000\n"
+"POT-Creation-Date: 2017-02-18 03:16+0000\n"
+"PO-Revision-Date: 2017-02-23 15:58+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Basque (http://www.transifex.com/oca/OCA-knowledge-9-0/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +49,7 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigurazioa"
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
@@ -109,6 +110,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge_management
 #: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr ""
@@ -132,6 +134,13 @@ msgstr "Last Updated by"
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
 msgid "Last Updated on"
 msgstr "Last Updated on"
+
+#. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge_management
+msgid ""
+"Lets you install addons geared towards sharing knowledge with and between "
+"your employees."
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
