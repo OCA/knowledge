@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 13:24+0000\n"
+"POT-Creation-Date: 2017-02-18 03:04+0000\n"
 "PO-Revision-Date: 2015-11-07 12:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-7-0/language/de/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: code:addons/document_url/static/src/xml/url.xml:6
 #, python-format
 msgid "Add URL..."
-msgstr ""
+msgstr "URL hinzufügen..."
 
 #. module: document_url
 #: field:ir.attachment.add_url,name:0
@@ -32,7 +32,7 @@ msgstr "Bezeichnung"
 #. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment_add_url
 msgid "ir.attachment.add_url"
-msgstr ""
+msgstr "ir.attachment.add_url"
 
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
@@ -43,12 +43,12 @@ msgstr ""
 #: model:ir.actions.act_window,name:document_url.action_ir_attachment_add_url
 #: view:ir.attachment.add_url:0
 msgid "Add URL"
-msgstr ""
+msgstr "URL hinzufügen"
 
 #. module: document_url
 #: view:ir.attachment.add_url:0
 msgid "Add"
-msgstr ""
+msgstr "Hinzufügen"
 
 #. module: document_url
 #: view:ir.attachment.add_url:0

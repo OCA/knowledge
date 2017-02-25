@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-24 02:18+0000\n"
-"PO-Revision-Date: 2016-12-27 08:26+0000\n"
+"POT-Creation-Date: 2017-02-18 03:04+0000\n"
+"PO-Revision-Date: 2017-02-23 15:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Basque (http://www.transifex.com/oca/OCA-knowledge-7-0/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment,related_document:0
 msgid "unknown"
-msgstr ""
+msgstr "ezezaguna"
 
 #. module: document_multiple_records
 #: field:ir.attachment,attachment_document_ids:0
@@ -102,7 +102,7 @@ msgstr ""
 #: code:addons/document_multiple_records/wizard/document_wizard.py:52
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Errorea"
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
