@@ -40,9 +40,7 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
     {
         var url = (window.location.origin || '') +
             '/attachment_preview/static/lib/ViewerJS/index.html#' +
-            attachment_url.replace(window.location.origin, '') +
-            '&title=' + encodeURIComponent(attachment_title) +
-            '&ext=.' + encodeURIComponent(attachment_extension);
+            attachment_url.replace(window.location.origin, '');
         window.open(url);
     };
         
