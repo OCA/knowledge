@@ -28,8 +28,8 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
     var Model = require('web.DataModel');
     var Sidebar = require('web.Sidebar');
     var ListView = require('web.ListView');
-    var Binary = require('web.list.Binary');
-    var FieldBinaryFile = require('web.form.FieldBinaryFile');
+    var Binary = core.list_widget_registry.get('field.binary');
+    var FieldBinaryFile = core.form_widget_registry.get('binary');
     var session = require('web.session');
     
     var _t = core._t;
