@@ -34,29 +34,27 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
     
     var _t = core._t;
     
-    var AttachementPreview =  core.Class.extend({
-        show_preview : function(
-            attachment_id, attachment_url, attachment_extension,
-            attachment_title)
-        {
-            var url = (window.location.origin || '') +
-                '/attachment_preview/static/lib/ViewerJS/index.html#' +
-                attachment_url.replace(window.location.origin, '') +
-                '&title=' + encodeURIComponent(attachment_title) +
-                '&ext=.' + encodeURIComponent(attachment_extension);
-            window.open(url);
-        },
+    function show_preview(
+        attachment_id, attachment_url, attachment_extension,
+        attachment_title)
+    {
+        var url = (window.location.origin || '') +
+            '/attachment_preview/static/lib/ViewerJS/index.html#' +
+            attachment_url.replace(window.location.origin, '') +
+            '&title=' + encodeURIComponent(attachment_title) +
+            '&ext=.' + encodeURIComponent(attachment_extension);
+        window.open(url);
+    };
         
-        can_preview : function(extension)
-        {
-            return jQuery.inArray(
-                extension,
-                [
-                    'odt', 'odp', 'ods', 'fodt', 'pdf', 'ott', 'fodp', 'otp',
-                    'fods', 'ots'
-                ]) > -1;
-        },
-    });
+    function can_preview(extension)
+    {
+        return jQuery.inArray(
+            extension,
+            [
+                'odt', 'odp', 'ods', 'fodt', 'pdf', 'ott', 'fodp', 'otp',
+                'fods', 'ots'
+            ]) > -1;
+    };
     
     Sidebar.include({
         on_attachments_loaded: function(attachments)
@@ -79,7 +77,7 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
                 attachment_title = $target.attr('data-original-title');
             if(attachment_extension)
             {
-                AttachementPreview.show_preview(
+                show_preview(
                     attachment_id, attachment_url, attachment_extension,
                     attachment_title);
             }
@@ -89,7 +87,7 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
                     'get_attachment_extension', [attachment_id], {})
                 .then(function(extension)
                 {
-                    AttachementPreview.show_preview(
+                    show_preview(
                         attachment_id, attachment_url, extension);
                 });
             }
@@ -115,7 +113,7 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
                         var $element = jQuery(
                             'a.oe-sidebar-attachment-preview[data-id="'
                             + id + '"]');
-                        if(AttachementPreview.can_preview(extension))
+                        if(can_preview(extension))
                         {
                             $element.attr('data-extension', extension);
                         }
@@ -146,7 +144,7 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
                     var $target = jQuery(e.currentTarget),
                         attachment_id = parseInt($target.attr('data-id')),
                         attachment_extension = $target.attr('data-extension');
-                    AttachementPreview.show_preview(
+                    show_preview(
                         attachment_id,
                         $target.siblings('a').attr('href'),
                         attachment_extension,
@@ -172,7 +170,7 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
                         {
                             var $element = $elements.filter(
                                 '[data-id="' + id + '"]');
-                            if(AttachementPreview.can_preview(extension))
+                            if(can_preview(extension))
                             {
                                 $element.attr('data-extension', extension);
                             }
@@ -225,11 +223,11 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
                     _(extensions).each(function(extension)
                     {
                         var $element = self.$el.find('.oe-binary-preview');
-                        if(AttachementPreview.can_preview(extension))
+                        if(can_preview(extension))
                         {
                             $element.click(function()
                             {
-                                AttachementPreview.show_preview(
+                                show_preview(
                                     null,
                                     _.str.sprintf(
                                         '/web/binary/saveas?session_id=%s&model=%s&field=%s&id=%d',
