@@ -253,6 +253,4 @@ odoo.define('attachment_preview.attachment_preview', function(require) {
             };
         },
     });
-
-    return AttachementPreview;
 });
