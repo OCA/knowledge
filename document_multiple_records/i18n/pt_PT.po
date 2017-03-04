@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 01:24+0000\n"
-"PO-Revision-Date: 2016-11-25 14:56+0000\n"
+"POT-Creation-Date: 2017-02-18 03:04+0000\n"
+"PO-Revision-Date: 2017-03-02 09:14+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/oca/OCA-knowledge-7-0/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgstr ""
 #: code:addons/document_multiple_records/wizard/document_wizard.py:52
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
