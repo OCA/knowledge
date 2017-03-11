@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-18 03:04+0000\n"
-"PO-Revision-Date: 2017-02-24 20:45+0000\n"
+"PO-Revision-Date: 2017-03-06 19:25+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-7-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,attachment_id:0
 msgid "Attachment"
-msgstr ""
+msgstr "Anhang"
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -102,12 +102,12 @@ msgstr ""
 #: code:addons/document_multiple_records/wizard/document_wizard.py:52
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
 msgid "The database object this attachment will be attached to"
-msgstr ""
+msgstr "Das Datenbankobjekt dem dieser Anhang zugefügt wird"
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_id:0
@@ -133,7 +133,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_model:0
 msgid "Resource Model"
-msgstr ""
+msgstr "Ressourcen-Modell"
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0

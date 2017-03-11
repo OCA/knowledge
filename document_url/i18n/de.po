@@ -37,7 +37,7 @@ msgstr "ir.attachment.add_url"
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_url
 #: model:ir.actions.act_window,name:document_url.action_ir_attachment_add_url
