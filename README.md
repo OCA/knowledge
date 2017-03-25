@@ -13,6 +13,7 @@ Here you should find all community modules that:
 - provide access to knowledge/documents
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
