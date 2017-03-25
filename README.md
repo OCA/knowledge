@@ -19,6 +19,7 @@ document\_page\_multi\_company (unported)
 -----------------------------------------
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
