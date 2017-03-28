@@ -23,6 +23,7 @@ addon | version | summary
 [document_url](document_url/) | 9.0.2.0.1 | URL attachment
 [knowledge](knowledge/) | 9.0.1.1.0 | Knowledge Management System
 
+
 Unported addons
 ---------------
 addon | version | summary
