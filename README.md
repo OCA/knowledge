@@ -22,6 +22,7 @@ addon | version | summary
 [document_page_approval](document_page_approval/) | 10.0.1.0.0 | Document Page Approval
 [knowledge](knowledge/) | 10.0.1.0.0 | Knowledge Management System
 
+
 Unported addons
 ---------------
 addon | version | summary
