@@ -39,6 +39,7 @@ addon | version | summary
 [document_sftp](document_sftp/) | 8.0.1.0.0 | Access your documents via SFTP
 [document_url](document_url/) | 8.0.1.0.0 | URL attachment
 
+
 Unported addons
 ---------------
 addon | version | summary
