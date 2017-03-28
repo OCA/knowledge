@@ -20,7 +20,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//footer" position="before">
                     <group name="document_sftp" string="SSH">
-                        <field name="authorized_keys" />
+                        <field name="authorized_keys" readonly="False" />
                     </group>
                 </xpath>
             </field>

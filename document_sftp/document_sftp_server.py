@@ -19,6 +19,7 @@ class DocumentSFTPServer(ServerInterface):
             if not user:
                 return AUTH_FAILED
             user.sudo(user.id).check_credentials(password)
+            self.env = self.env(user=user.id)
             return AUTH_SUCCESSFUL
         except AccessDenied:
             pass
@@ -37,6 +38,7 @@ class DocumentSFTPServer(ServerInterface):
                     'Ignoring key of unknown type for line %s', line)
                 continue
             if RSAKey(data=decodebytes(key_data)) == key:
+                self.env = self.env(user=user.id)
                 return AUTH_SUCCESSFUL
         return AUTH_FAILED
 

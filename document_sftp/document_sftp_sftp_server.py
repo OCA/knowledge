@@ -7,7 +7,7 @@ from openerp import api
 
 class DocumentSFTPSftpServerInterface(SFTPServerInterface):
     def __init__(self, server, env):
-        self.env = env
+        self.env = server.env
 
     def list_folder(self, path):
         if not path or path in ('/', '.'):
@@ -37,7 +37,15 @@ class DocumentSFTPSftpServerInterface(SFTPServerInterface):
             return SFTP_PERMISSION_DENIED
         return handler._open(path, flags, attr)
 
+    def remove(self, path):
+        handler = self.env['document.sftp']._get_handler_for(path)
+        if handler is None:
+            return SFTP_PERMISSION_DENIED
+        return handler._remove(path)
+
+
     def session_ended(self):
+        self.env.cr.commit()
         self.env.cr.close()
         return super(DocumentSFTPSftpServerInterface, self).session_ended()
 
