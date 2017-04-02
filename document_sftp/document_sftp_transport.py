@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from paramiko import Transport
-from paramiko.transport import DEFAULT_WINDOW_SIZE, DEFAULT_MAX_PACKET_SIZE
+try:
+    from paramiko import Transport
+    from paramiko.transport import DEFAULT_WINDOW_SIZE, DEFAULT_MAX_PACKET_SIZE
+except ImportError:
+    pass
 from openerp import api, SUPERUSER_ID
 from openerp.modules.registry import RegistryManager
 
