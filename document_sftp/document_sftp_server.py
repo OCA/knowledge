@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from paramiko import AUTH_SUCCESSFUL, AUTH_FAILED,\
-    OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED, OPEN_SUCCEEDED,\
-    RSAKey, ServerInterface
-from paramiko.py3compat import decodebytes
+try:
+    from paramiko import AUTH_SUCCESSFUL, AUTH_FAILED,\
+        OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED, OPEN_SUCCEEDED,\
+        RSAKey, ServerInterface
+    from paramiko.py3compat import decodebytes
+except ImportError:
+    pass
 from openerp.exceptions import AccessDenied
 
 

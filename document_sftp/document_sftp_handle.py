@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from paramiko import SFTP_EOF, SFTPHandle
+try:
+    from paramiko import SFTP_EOF, SFTPHandle
+except ImportError:
+    pass
 from base64 import b64decode
 
 
