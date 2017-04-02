@@ -102,12 +102,15 @@ class IrAttachment(Model):
                     'not moving attachment %d because it links to unknown '
                     'model %s', attachment_id, attachment_data['res_model'])
                 continue
-            ir_attachment.write(
-                cr, uid, [attachment_id],
-                {
-                    'datas': attachment_data['datas'],
-                    'db_datas': False,
-                },
-                context=context)
+            try:
+                ir_attachment.write(
+                    cr, uid, [attachment_id],
+                    {
+                        'datas': attachment_data['datas'],
+                        'db_datas': False,
+                    },
+                    context=context)
+            except Exception:
+                logging.exception('Error moving attachment #%d', attachment_id)
             if not counter % (len(attachment_ids) / 100 or limit):
                 logging.info('moving attachments: %d done', counter)
