@@ -17,6 +17,7 @@ class DocumentSFTPHandle(SFTPHandle):
         return self.attachment.env['document.sftp.root']._file(self.attachment)
 
     def read(self, offset, length):
+        # pylint: disable=W8106
         data = b64decode(self.attachment.datas)
         if offset > len(data):
             return SFTP_EOF
