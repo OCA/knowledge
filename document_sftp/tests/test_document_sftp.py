@@ -6,7 +6,7 @@ import paramiko
 from openerp import tools
 from openerp.modules.registry import RegistryManager
 from openerp.tests.common import TransactionCase
-from openerp.addons.document_sftp.models.document_sftp import _db2thread
+from ..models.document_sftp import _db2thread
 from ..hooks import post_init_hook
 
 
