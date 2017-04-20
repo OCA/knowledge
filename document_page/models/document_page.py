@@ -76,26 +76,26 @@ class DocumentPage(models.Model):
 
     create_date = fields.Datetime(
         "Created on",
-        index=True,
+        select=True,
         readonly=True
     )
 
     create_uid = fields.Many2one(
         'res.users',
         'Author',
-        index=True,
+        select=True,
         readonly=True
     )
 
     write_date = fields.Datetime(
         "Modification Date",
-        index=True,
+        select=True,
         readonly=True)
 
     write_uid = fields.Many2one(
         'res.users',
         "Last Contributor",
-        index=True,
+        select=True,
         readonly=True
     )
 
