@@ -10,17 +10,17 @@ msgstr ""
 "POT-Creation-Date: 2017-02-18 03:04+0000\n"
 "PO-Revision-Date: 2015-11-07 12:40+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-7-0/language/de/)\n"
+"Language-Team: French (Switzerland) (http://www.transifex.com/oca/OCA-knowledge-7-0/language/fr_CH/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr_CH\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 #. module: document_page_approval
 #: field:document.page,approval_required:0
@@ -30,7 +30,7 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,get_page_url:0
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #. module: document_page_approval
 #: model:email.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -67,13 +67,13 @@ msgstr ""
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr "Entwurf"
+msgstr "Brouillon"
 
 #. module: document_page_approval
 #: field:document.page,is_parent_approval_required:0
 #: field:document.page.history,is_parent_approval_required:0
 msgid "parent approval"
-msgstr "Übergeordnete Freigabe"
+msgstr ""
 
 #. module: document_page_approval
 #: field:document.page,approved_date:0
@@ -84,7 +84,7 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,can_user_approve_page:0
 msgid "can user approve this page"
-msgstr "darf Benutzer diese Seite freigeben"
+msgstr ""
 
 #. module: document_page_approval
 #: field:document.page,approver_gid:0
@@ -109,4 +109,4 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,get_approvers_email:0
 msgid "get all approvers email"
-msgstr "erhalte alle Freigabe-Emails"
+msgstr ""

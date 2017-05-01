@@ -20,7 +20,7 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: document_page_approval
 #: field:document.page,approval_required:0

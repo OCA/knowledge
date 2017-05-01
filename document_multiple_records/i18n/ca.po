@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 02:30+0000\n"
-"PO-Revision-Date: 2017-01-09 16:08+0000\n"
+"POT-Creation-Date: 2017-02-18 03:04+0000\n"
+"PO-Revision-Date: 2017-03-24 09:34+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-7-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_id:0
 msgid "Resource ID"
-msgstr ""
+msgstr "ID del recurs "
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,attachment_id:0
 msgid "Attachment"
-msgstr ""
+msgstr "Adjunt "
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -54,7 +54,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_name:0
 msgid "Resource Name"
-msgstr ""
+msgstr "Nom del recurs "
 
 #. module: document_multiple_records
 #: model:ir.model,name:document_multiple_records.model_ir_attachment_document
@@ -64,7 +64,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment,related_document:0
 msgid "unknown"
-msgstr ""
+msgstr "desconegut "
 
 #. module: document_multiple_records
 #: field:ir.attachment,attachment_document_ids:0
@@ -91,7 +91,7 @@ msgstr ""
 #. module: document_multiple_records
 #: view:ir.attachment:0
 msgid "Indexed Content"
-msgstr ""
+msgstr "Contingut Indexat "
 
 #. module: document_multiple_records
 #: view:ir.attachment:0
@@ -107,7 +107,7 @@ msgstr "Error"
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_model:0
 msgid "The database object this attachment will be attached to"
-msgstr ""
+msgstr "Els objectes de la base de dades en aquesta adjunció també seran adjuntats "
 
 #. module: document_multiple_records
 #: help:ir.attachment.document,res_id:0
@@ -133,7 +133,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,res_model:0
 msgid "Resource Model"
-msgstr ""
+msgstr "Model del recurs "
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
