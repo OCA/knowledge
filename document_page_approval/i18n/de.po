@@ -3,15 +3,16 @@
 # * document_page_approval
 # 
 # Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Niki Waibel <niki.waibel@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-14 10:08+0000\n"
-"PO-Revision-Date: 2016-04-21 08:10+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
+"POT-Creation-Date: 2017-03-28 03:34+0000\n"
+"PO-Revision-Date: 2017-03-28 03:34+0000\n"
+"Last-Translator: Niki Waibel <niki.waibel@gmail.com>, 2017\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -22,7 +23,7 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "\n"
-"                \n"
+"            \n"
 "<p>Hello,</p>\n"
 "\n"
 "<p>The page \"${object.page_id.name}\" has been modified and need your approval.</p>\n"
@@ -32,8 +33,20 @@ msgid ""
 "<p>Have a great day.<br/>\n"
 "--<br/>\n"
 "Odoo</p>\n"
-"            "
-msgstr "\n                \n<p>Hallo,</p>\n\n<p>Die Seite \"${object.page_id.name}\" wurde verändert und erfordert Ihre Freigabe.</p>\n\n<p>Sie können die neue Fassung hier prüfen: <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n\n<p>Erfolgreichen Tag noch.<br/>\n--<br/>\nOdoo</p>\n            "
+"        "
+msgstr ""
+"\n"
+"            \n"
+"<p>Hallo,</p>\n"
+"\n"
+"<p>Diese Seite \"${object.page_id.name}\" wurde geändert und benötigt deine Genehmigung.</p>\n"
+"\n"
+"<p>Du kannst die neue Version hier begutachten: <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
+"\n"
+"<p>Einen schönen Tag.<br/>\n"
+"--<br/>\n"
+"Odoo</p>\n"
+"        "
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -88,7 +101,7 @@ msgid "New version of \"${object.page_id.name}\" to approve"
 msgstr "Freizugebende Fassung von \"${object.page_id.name}\""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:61
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:44
 #, python-format
 msgid "New version of the document %s approved."
 msgstr "Neue Fassung des Dokuments %s freigegeben."

@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Niki Waibel <niki.waibel@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2017-01-20 03:35+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2017-03-28 03:34+0000\n"
+"PO-Revision-Date: 2017-03-28 03:34+0000\n"
+"Last-Translator: Niki Waibel <niki.waibel@gmail.com>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,7 +116,7 @@ msgstr "Dokumente"
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Group by"
-msgstr ""
+msgstr "Gruppiert durch"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
@@ -132,6 +133,11 @@ msgstr "Dokumente"
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge and Documents Management"
 msgstr "Knowledge und Dokumenten Management"
+
+#. module: knowledge
+#: model:res.groups,name:knowledge.group_document_user
+msgid "Knowledge user"
+msgstr "Wissender Benutzer"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
@@ -171,7 +177,7 @@ msgstr "Dokumentenfreigabe verwalten"
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Model"
-msgstr ""
+msgstr "Modell"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
@@ -200,12 +206,12 @@ msgstr "Verwende CMIS"
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
 msgid "ir.attachment"
-msgstr ""
+msgstr "ir.attachment"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings
 msgid "knowledge.config.settings"
-msgstr ""
+msgstr "knowledge.config.settings"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
