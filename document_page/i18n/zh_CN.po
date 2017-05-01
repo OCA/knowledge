@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 00:55+0000\n"
-"PO-Revision-Date: 2016-11-25 14:56+0000\n"
+"POT-Creation-Date: 2017-04-20 22:18+0000\n"
+"PO-Revision-Date: 2017-04-19 01:22+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "类别"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
 msgid "Children"
-msgstr ""
+msgstr "子分类"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
@@ -62,7 +62,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -126,12 +126,12 @@ msgstr "显示名称"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
 msgid "Displayed Content"
-msgstr ""
+msgstr "显示内容"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr ""
+msgstr "文档历史"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page
@@ -141,18 +141,18 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_tree
 #: model:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
-msgstr ""
+msgstr "文档页面"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_history
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Document Page History"
-msgstr ""
+msgstr "页面历史"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Document Type"
-msgstr ""
+msgstr "文档类型"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
@@ -210,7 +210,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Last Content"
-msgstr ""
+msgstr "最后内容"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
@@ -300,7 +300,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_page_id
 msgid "Page"
-msgstr ""
+msgstr "页面"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
@@ -310,12 +310,12 @@ msgstr "页面编辑日志"
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr ""
+msgstr "页面历史"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_type
 msgid "Page type"
-msgstr ""
+msgstr "页面类型"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_page
@@ -327,7 +327,7 @@ msgstr "页面"
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr ""
+msgstr "页面历史"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_parent_id
@@ -356,13 +356,13 @@ msgstr "模版"
 msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
-msgstr ""
+msgstr "此模板将被应用到这个分类的所有新页面"
 
 #. module: document_page
 #: code:addons/document_page/models/document_page_history.py:52
 #, python-format
 msgid "There are no changes in revisions."
-msgstr ""
+msgstr "更新的版本没有任何改变"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_name
@@ -393,7 +393,7 @@ msgstr "向导创建菜单"
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "e.g. Once upon a time..."
-msgstr ""
+msgstr "例如：很久很久以前......"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
