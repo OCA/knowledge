@@ -73,7 +73,7 @@ msgstr ""
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Esborrany"
 
 #. module: document_page_approval
 #: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -94,7 +94,7 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #. module: document_page_approval
 #: field:document.page.history,get_page_url:0

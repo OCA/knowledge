@@ -10,20 +10,20 @@ msgstr ""
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
 "PO-Revision-Date: 2015-12-14 10:19+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/zh_CN/)\n"
+"Language-Team: French (Canada) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: document_page_partner_id
 #: model:ir.model,name:document_page_partner_id.model_document_page
 msgid "Document Page"
-msgstr "文档页面"
+msgstr ""
 
 #. module: document_page_partner_id
 #: view:document.page:document_page_partner_id.view_wiki_filter
 #: field:document.page,partner_id:0
 msgid "Partner"
-msgstr "业务伙伴"
+msgstr "Partenaire"

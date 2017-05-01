@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-04-30 15:51+0000\n"
+"PO-Revision-Date: 2017-04-25 10:45+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,state:0
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: document_page_approval
 #: field:document.page.history,get_page_url:0

@@ -63,17 +63,17 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr ""
+msgstr "文档页面"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr ""
+msgstr "页面历史"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "草稿"
 
 #. module: document_page_approval
 #: model:email.template,subject:document_page_approval.email_template_new_draft_need_approval
