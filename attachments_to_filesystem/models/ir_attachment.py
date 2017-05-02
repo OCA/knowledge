@@ -81,11 +81,11 @@ class IrAttachment(models.Model):
             self.env['ir.config_parameter'].get_param(
                 'attachments_to_filesystem.limit', '0')) or limit
         ir_attachment = self.env['ir.attachment']
-        attachment_ids = ir_attachment.search(
+        attachments = ir_attachment.search(
             [('db_datas', '!=', False)], limit=limit)
-        logging.info('moving %d attachments to filestore', len(attachment_ids))
+        logging.info('moving %d attachments to filestore', len(attachments))
         # attachments can be big, so we read every attachment on its own
-        for counter, attachment_id in enumerate(attachment_ids, start=1):
+        for counter, attachment_id in enumerate(attachments.ids, start=1):
             attachment_data = ir_attachment.read(
                 [attachment_id], ['datas', 'res_model']
             )[0]
@@ -96,13 +96,11 @@ class IrAttachment(models.Model):
                     'model %s', attachment_id, attachment_data['res_model'])
                 continue
             try:
-                ir_attachment.write(
-                    [attachment_id],
-                    {
-                        'datas': attachment_data['datas'],
-                        'db_datas': False,
-                    })
+                ir_attachment.browse(attachment_id).write({
+                    'datas': attachment_data['datas'],
+                    'db_datas': False,
+                })
             except Exception:
                 logging.exception('Error moving attachment #%d', attachment_id)
-            if not counter % (len(attachment_ids) / 100 or limit):
+            if not counter % (len(attachments) / 100 or limit):
                 logging.info('moving attachments: %d done', counter)
