@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="rule_document_wopi_access_token" model="ir.rule">
+            <field name="name">Users can only work on their own access tokens</field>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="model_id" ref="document_wopi.model_document_wopi_access_token" />
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="param_client" model="ir.config_parameter">
+            <field name="key">document_wopi.client</field>
+            <field name="value">https://docs.therp.nl</field>
+        </record>
+    </data>
+</openerp>
