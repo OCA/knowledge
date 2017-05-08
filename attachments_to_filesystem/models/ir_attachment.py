@@ -86,8 +86,8 @@ class IrAttachment(models.Model):
         logging.info('moving %d attachments to filestore', len(attachments))
         # attachments can be big, so we read every attachment on its own
         for counter, attachment_id in enumerate(attachments.ids, start=1):
-            attachment_data = ir_attachment.read(
-                [attachment_id], ['datas', 'res_model']
+            attachment_data = self.pool['ir.attachment'].read(
+                self._cr, self._uid, [attachment_id], ['datas', 'res_model']
             )[0]
             if attachment_data['res_model'] and not self.env.registry.get(
                     attachment_data['res_model']):
