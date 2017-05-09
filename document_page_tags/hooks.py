@@ -37,6 +37,7 @@ def populate_tags(cr, column):
     env = Environment(cr, SUPERUSER_ID, {})
     document_page_tag = env['document.page.tag']
     document_page = env['document.page']
+    # pylint: disable=E8103
     cr.execute(
         'SELECT %s, ARRAY_AGG(id) from %s WHERE %s IS NOT NULL GROUP BY %s' % (
             column, env['document.page']._table, column, column))
