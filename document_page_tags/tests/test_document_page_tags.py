@@ -20,6 +20,7 @@
 from psycopg2 import IntegrityError
 from openerp.tests.common import TransactionCase
 from ..hooks import post_init_hook
+from openerp.tools.misc import mute_logger
 
 
 class TestDocumentPageTags(TransactionCase):
@@ -28,5 +29,6 @@ class TestDocumentPageTags(TransactionCase):
         post_init_hook(self.cr, self.registry)
         # check we can't create nonunique tags
         with self.assertRaises(IntegrityError):
-            self.env['document.page.tag'].name_create('test')
-            self.env['document.page.tag'].name_create('test')
+            with mute_logger('openerp.sql_db'):
+                self.env['document.page.tag'].name_create('test')
+                self.env['document.page.tag'].name_create('test')
