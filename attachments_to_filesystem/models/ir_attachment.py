@@ -61,7 +61,7 @@ class IrAttachment(models.Model):
         # otherwise, configure our cronjob to run next night
         user = self.env.user
         next_night = datetime.now() + relativedelta(
-            hour=01, minute=42, second=0)
+            hour=1, minute=42, second=0)
         user_tz = user.tz or 'UTC'
         next_night = pytz.timezone(user_tz).localize(next_night).astimezone(
             pytz.utc).replace(tzinfo=None)
@@ -79,28 +79,27 @@ class IrAttachment(models.Model):
         """Do the actual moving"""
         limit = int(
             self.env['ir.config_parameter'].get_param(
-                'attachments_to_filesystem.limit', '0')) or limit
-        ir_attachment = self.env['ir.attachment']
-        attachments = ir_attachment.search(
+                'attachments_to_filesystem.limit', '0')
+        ) or limit
+        attachments = self.env['ir.attachment'].search(
             [('db_datas', '!=', False)], limit=limit)
         logging.info('moving %d attachments to filestore', len(attachments))
         # attachments can be big, so we read every attachment on its own
-        for counter, attachment_id in enumerate(attachments.ids, start=1):
-            attachment_data = self.pool['ir.attachment'].read(
-                self._cr, self._uid, [attachment_id], ['datas', 'res_model']
-            )[0]
+        for counter, attachment in enumerate(attachments, start=1):
+            attachment_data = attachment.read(['datas', 'res_model'])[0]
             if attachment_data['res_model'] and not self.env.registry.get(
-                    attachment_data['res_model']):
+                    attachment_data['res_model']
+            ):
                 logging.warning(
                     'not moving attachment %d because it links to unknown '
-                    'model %s', attachment_id, attachment_data['res_model'])
+                    'model %s', attachment.id, attachment_data['res_model'])
                 continue
             try:
-                ir_attachment.browse(attachment_id).write({
+                attachment.write({
                     'datas': attachment_data['datas'],
                     'db_datas': False,
                 })
             except Exception:
-                logging.exception('Error moving attachment #%d', attachment_id)
+                logging.exception('Error moving attachment #%d', attachment.id)
             if not counter % (len(attachments) / 100 or limit):
                 logging.info('moving attachments: %d done', counter)

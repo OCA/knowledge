@@ -56,4 +56,3 @@ Contributors
     'installable': False,
     'auto_install': False,
 }
-

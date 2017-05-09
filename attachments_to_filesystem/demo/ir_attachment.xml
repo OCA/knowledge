@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="test_attachment" model="ir.attachment">
+            <field name="name">Test attachment</field>
+            <field name="db_datas">aGVsbG8gd29ybGQ=</field>
+        </record>
+        <record id="test_attachment_unknown_model" model="ir.attachment">
+            <field name="name">Test attachment</field>
+            <field name="db_datas">aGVsbG8gd29ybGQ=</field>
+            <field name="res_model">unknown.unknown</field>
+        </record>
+    </data>
+</openerp>

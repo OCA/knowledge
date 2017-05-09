@@ -40,4 +40,3 @@ This module adds a company field to document page and the multi-company rule.
     'auto_install': False,
     'images': [],
 }
-
