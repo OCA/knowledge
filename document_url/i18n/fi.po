@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-09-15 12:45+0000\n"
+"PO-Revision-Date: 2017-05-11 14:14+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-knowledge-8-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,7 @@ msgstr "Nimi"
 #. module: document_url
 #: field:ir.attachment.add_url,url:0
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_url
 #: view:ir.attachment.add_url:document_url.view_ir_attachment_add_url_form
