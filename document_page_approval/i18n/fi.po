@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-04 02:31+0000\n"
-"PO-Revision-Date: 2017-02-14 09:15+0000\n"
+"POT-Creation-Date: 2017-05-01 18:36+0000\n"
+"PO-Revision-Date: 2017-05-11 04:37+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-knowledge-9-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,7 @@ msgstr "Tila"
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_page_url
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_can_user_approve_page
