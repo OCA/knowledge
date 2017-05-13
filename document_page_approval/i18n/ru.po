@@ -104,7 +104,7 @@ msgstr ""
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr ""
+msgstr "Подтвержден"
 
 #. module: document_page_approval
 #: field:document.page.history,get_approvers_email:0
