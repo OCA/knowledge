@@ -39,6 +39,21 @@ This is because the recognition process takes a while and you don't want to make
 The interval to run the cronjob can be adjusted to your needs in the ``Scheduled Actions`` menu, under ` `Settings``.
 In case you want to force the OCR to be done immediately, set configuration parameter ``document_ocr.synchronous`` to value ``True``.
 
+
+By default, recognition language is set to english.
+In case you want to use a different default, set configuration parameter ``document_ocr.language`` to value respective value ex:``por``, for Portuguese.
+
+
+In PDF case, OCR will run after it will be converted to an image. But OCR will be applied to all PDFs.
+
+
+System parameters used:
+#``document_ocr.synchronous``:  bool
+#``document_ocr.language``:  string
+#``document_ocr.dpi``:  integer
+#``document_ocr.quality``:  integer
+
+
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
     :alt: Try me on Runbot
     :target: https://runbot.odoo-community.org/runbot/118/10.0

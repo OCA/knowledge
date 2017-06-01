@@ -9,5 +9,13 @@
             <field name="key">document_ocr.dpi</field>
             <field name="value">300</field>
         </record>
+        <record id="param_quality" model="ir.config_parameter">
+            <field name="key">document_ocr.quality</field>
+            <field name="value">100</field>
+        </record>
+        <record id="param_language" model="ir.config_parameter">
+            <field name="key">document_ocr.language</field>
+            <field name="value">eng</field>
+        </record>
     </data>
 </openerp>

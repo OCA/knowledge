@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # © 2016 Therp BV <http://therp.nl>
+# © 2017 ThinkOpen Solutions <https://tkobr.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from StringIO import StringIO
 
 from PIL import Image, ImageDraw, ImageFont
-from openerp.addons.document_ocr.models.ir_attachment import _MARKER_PHRASE
-from openerp.tests.common import TransactionCase
+from odoo.addons.document_ocr.models.ir_attachment import _MARKER_PHRASE
+from odoo.tests.common import TransactionCase
 
 
 class TestDocumentOcr(TransactionCase):
