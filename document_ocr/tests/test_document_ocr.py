@@ -5,7 +5,7 @@
 from StringIO import StringIO
 
 from PIL import Image, ImageDraw, ImageFont
-from ir_attachment import _MARKER_PHRASE
+from ..models.ir_attachment import _MARKER_PHRASE
 from odoo.tests.common import TransactionCase
 
 
