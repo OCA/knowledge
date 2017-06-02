@@ -126,14 +126,14 @@ OCR_LANGUAGE = [('afr', 'Afrikaans'),
 class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
-    language = fields.Selection(OCR_LANGUAGE, _('Language'))
+    language = fields.Selection(OCR_LANGUAGE, 'Language')
     # We need to redefine index_content field to be able to update it
     # on the onchange_language()
-    index_content = fields.Text(_('Indexed Content'),
+    index_content = fields.Text('Indexed Content',
                                 readonly=False,
                                 prefetch=False)
     index_content_rel = fields.Text(related='index_content',
-                                    string=_('Indexed Content Rel'))
+                                    string='Indexed Content Rel')
 
     @api.onchange('language')
     def onchange_language(self):
