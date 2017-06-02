@@ -4,7 +4,9 @@
 {
     "name": "OCR for Documents",
     "version": "10.0.1.0.0",
-    "author": "Therp BV, Odoo Community Association (OCA), ThinkOpen Solutions Brasil",
+    "author": "Therp BV,"
+              " Odoo Community Association (OCA),"
+              " ThinkOpen Solutions Brasil",
     "license": "AGPL-3",
     "category": "Knowledge Management",
     "summary": "Run character recognition on uploaded files",

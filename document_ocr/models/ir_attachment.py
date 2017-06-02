@@ -9,7 +9,7 @@ import subprocess
 from StringIO import StringIO
 
 import pyPdf
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
@@ -126,11 +126,14 @@ OCR_LANGUAGE = [('afr', 'Afrikaans'),
 class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
-    language = fields.Selection(OCR_LANGUAGE, 'Language')
+    language = fields.Selection(OCR_LANGUAGE, _('Language'))
     # We need to redefine index_content field to be able to update it
     # on the onchange_language()
-    index_content = fields.Text('Indexed Content', readonly=False, prefetch=False)
-    index_content_rel = fields.Text(related='index_content', string='Indexed Content Rel')
+    index_content = fields.Text(_('Indexed Content'),
+                                readonly=False,
+                                prefetch=False)
+    index_content_rel = fields.Text(related='index_content',
+                                    string=_('Indexed Content Rel'))
 
     @api.onchange('language')
     def onchange_language(self):
@@ -139,11 +142,11 @@ class IrAttachment(models.Model):
                                    stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
         if self.language not in stderr.split('\n'):
-            raise UserError(
+            raise UserError(_(
                 "Language not installed."
                 " Please ask your system administrator to"
                 " install tesseract '%s' language." %
-                self.language)
+                self.language))
         if self.store_fname:
             bin_data = self._file_read(self.store_fname)
         else:
@@ -216,7 +219,8 @@ class IrAttachment(models.Model):
         if synchr:
             buf = super(IrAttachment, self)._index_pdf(bin_data)
             if len(buf.split('\n')) < 2 and bin_data.startswith('%PDF-'):
-                # If we got less than 2 lines, run OCR and append to existent text
+                # If we got less than 2 lines,
+                # run OCR anyway and append to existent text
                 try:
                     f = StringIO(bin_data)
                     pdf = pyPdf.PdfFileReader(f)
