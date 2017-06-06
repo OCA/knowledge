@@ -23,13 +23,17 @@ class TestDocumentOcr(TransactionCase):
         data = StringIO()
         test_image.save(data, 'png')
         attachment = self.env['ir.attachment'].create({
-            'name': 'testattachment'})
+            'name': 'testattachment',
+            'datas_fname': 'test_png.pdf'})
         result = attachment._index(
             data.getvalue(), 'test.png', None)
         self.assertEqual(result.strip(), 'Hello world')
         # should also work for pdfs
         data = StringIO()
         test_image.save(data, 'pdf', resolution=300)
+        attachment = self.env['ir.attachment'].create({
+            'name': 'testattachment',
+            'datas_fname': 'test_pdf.pdf'})
         result = attachment._index(
             data.getvalue(), 'test.pdf', None)
         self.assertEqual(result.strip(), 'Hello world')
@@ -38,6 +42,7 @@ class TestDocumentOcr(TransactionCase):
             'document_ocr.synchronous', 'False')
         attachment = self.env['ir.attachment'].create({
             'name': 'testattachment',
+            'datas_fname': 'test_cron.pdf',
             'datas': data.getvalue().encode('base64'),
         })
         self.assertEqual(attachment.index_content, _MARKER_PHRASE)
@@ -49,6 +54,9 @@ class TestDocumentOcr(TransactionCase):
         data = StringIO()
         test_image = Image.new('1', (200, 30))
         test_image.save(data, 'palm')
+        attachment = self.env['ir.attachment'].create({
+            'name': 'testattachment',
+            'datas_fname': 'test_err.palm'})
         result = attachment._index(
             data.getvalue(), 'test.palm', None)
         self.assertEqual(result, '')

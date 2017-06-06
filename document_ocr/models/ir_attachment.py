@@ -177,6 +177,7 @@ class IrAttachment(models.Model):
         return content
 
     def _index_ocr(self, bin_data):
+        _logger.info('OCR IMAGE "%s"...', self.datas_fname)
         process = subprocess.Popen(
             ['tesseract', 'stdin', 'stdout', '-l', self.language],
             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -237,7 +238,6 @@ class IrAttachment(models.Model):
                             buf = u'%s\n-- %d --\n%s' % (
                                 buf, pagenum + 1, index_content.decode('utf8'))
                     else:
-                        _logger.info('OCR PDF "%s"...', self.datas_fname)
                         pdf_image = convert_bin_to_image(self, bin_data)
                         index_content = self._index_ocr(pdf_image)
                         buf = u'%s\n%s' % (buf, index_content.decode('utf8'))
