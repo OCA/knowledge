@@ -5,7 +5,7 @@
 from StringIO import StringIO
 
 from PIL import Image, ImageDraw, ImageFont
-from PIL import PdfImagePlugin, PalmImagePlugin # pylint: disable=unused-import
+from PIL import PdfImagePlugin, PalmImagePlugin # noqa # pylint: disable=unused-import
 from odoo.tests.common import TransactionCase
 
 from ..models.ir_attachment import _MARKER_PHRASE
