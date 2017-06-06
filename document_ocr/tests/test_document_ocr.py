@@ -28,6 +28,7 @@ class TestDocumentOcr(TransactionCase):
         self.assertEqual(result.strip(), 'Hello world')
         # should also work for pdfs
         data = StringIO()
+        PdfImagePlugin  # to use import :/
         test_image.save(data, 'pdf', resolution=300)
         result = attachment._index(
             data.getvalue(), 'test.pdf', None)
@@ -47,6 +48,7 @@ class TestDocumentOcr(TransactionCase):
             'document_ocr.synchronous', 'True')
         data = StringIO()
         test_image = Image.new('1', (200, 30))
+        PalmImagePlugin  # to use import :/
         test_image.save(data, 'palm')
         result = attachment._index(
             data.getvalue(), 'test.palm', None)
