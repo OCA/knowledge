@@ -6,6 +6,10 @@ addons:
     packages:
       - expect-dev  # provides unbuffer utility
       - python-lxml # because pip installation is slow
+      - tesseract-ocr # document_ocr
+      - tesseract-ocr-eng # document_ocr
+      - imagemagick # document_ocr
+      - fonts-inconsolata # document_ocr (for tests only)
 
 language: python
 
