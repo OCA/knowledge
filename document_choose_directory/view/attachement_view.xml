@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+
+
+		<!-- <record id="action_attachment" model="ir.actions.act_window"> <field 
+			name="name">Attachments</field> <field name="type">ir.actions.act_window</field> 
+			<field name="res_model">ir.attachment</field> <field name="view_type">form</field> 
+			<field name="view_id" eval="False"/> <field name="search_view_id" ref="view_attachment_search"/> 
+			<field name="help" type="html"> <p class="oe_view_nocontent_create"> Click 
+			here to create new documents. </p> <p> Also you will find here all the related 
+			documents and download it by clicking on any individual document. </p> </field> 
+			</record> -->
+
+
+		
+		<menuitem name="Attachment Management" 
+			parent ="knowledge.menu_document" id="menu_action_attachment_management_inherits" />
+			<menuitem name="Attachment" action="base.action_attachment"
+			parent ="menu_action_attachment_management_inherits" id="menu_action_attachment_inherits" />
+
+
+
+
+
+
+	</data>
+</openerp>

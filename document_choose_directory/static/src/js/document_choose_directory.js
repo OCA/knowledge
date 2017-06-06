@@ -56,21 +56,28 @@ openerp.document_choose_directory = function(instance)
                 attachments_per_directory = [];
             _.chain(attachments)
                 .groupBy(
-                    function(a) { return a.parent_id[0] })
+                    function(a) { 
+                    	
+                    	return a.parent_id[0] })
                 .sortBy(function(attachments) {
+                	
+                	
                     return attachments[0].parent_id[1];
                 })
                 .each(
                     function(group)
-                    {
+                    
+                    {   
                         attachments_per_directory.push({
-                            name: _.first(group).parent_id[1] ||
-                                instance.web._t('No directory'),
-                            classname: 'oe_attachment_directory',
+                            name: _.first(group).parent_id[1] ||instance.web._t('No directory'),classname: 'oe_attachment_directory',
                         });
+                    
+                    	
                         self.sort_attachments(group).each(function(a)
-                        {
+                        		
+                        {  
                             attachments_per_directory.push(a);
+                            console.log(attachments_per_directory);
                         });
                     });
 
@@ -85,7 +92,7 @@ openerp.document_choose_directory = function(instance)
                 });
         },
         sort_attachments: function(attachments)
-        {
+        {   
             return _.chain(attachments).sortBy('name');
         },
     });

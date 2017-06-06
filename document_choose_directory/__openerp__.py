@@ -26,13 +26,19 @@
     "license": "AGPL-3",
     "complexity": "normal",
     "category": "Knowledge",
+    'description': """
+            The  Technical module name is changed  
+            document to document_document 
+            ==============================================
+            
+""",
     "depends": [
-        'document',
+        'document_document',
         'web',
     ],
     "data": [
         "view/qweb.xml",
-        "view/document_directory.xml",
+        "view/document_directory.xml","view/attachement_view.xml"
     ],
     "js": [
         'static/src/js/document_choose_directory.js',
@@ -46,8 +52,8 @@
     "test": [
     ],
     "auto_install": False,
-    'installable': False,
-    "application": False,
+    'installable': True,
+    "application": True,
     "external_dependencies": {
         'python': [],
     },
