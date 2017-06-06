@@ -126,7 +126,10 @@ OCR_LANGUAGE = [('afr', 'Afrikaans'),
 class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
-    language = fields.Selection(OCR_LANGUAGE, 'Language')
+    language = fields.Selection(OCR_LANGUAGE, 'Language',
+                                default=lambda self:
+                                self.env['ir.config_parameter'].get_param(
+                                    'document_ocr.language', 'eng'))
     # We need to redefine index_content field to be able to update it
     # on the onchange_language()
     index_content = fields.Text('Indexed Content',
@@ -151,17 +154,15 @@ class IrAttachment(models.Model):
             bin_data = self._file_read(self.store_fname)
         else:
             bin_data = self.db_datas
-        index_content = self._index(
-            bin_data.decode('base64'), self.datas_fname, self.mimetype)
-        return {'value': {
-            'index_content': index_content}}
+        if bin_data:
+            index_content = self._index(
+                bin_data.decode('base64'), self.datas_fname, self.mimetype)
+            return {'value': {
+                'index_content': index_content}}
+        return {'value': {}}
 
     @api.model
     def _index(self, bin_data, datas_fname, mimetype):
-        if not self.language:
-            # Set default language
-            self.language = self.env['ir.config_parameter'].get_param(
-                'document_ocr.language', 'eng')
         content = super(IrAttachment, self)._index(
             bin_data, datas_fname, mimetype)
         if not content or content == 'image':
