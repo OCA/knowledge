@@ -4,7 +4,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from StringIO import StringIO
 
-from PIL import Image, ImageDraw, ImageFont, PdfImagePlugin, PalmImagePlugin
+from PIL import Image, ImageDraw, ImageFont
+from PIL import PdfImagePlugin, PalmImagePlugin # pylint: disable=unused-import
 from odoo.tests.common import TransactionCase
 
 from ..models.ir_attachment import _MARKER_PHRASE
@@ -28,7 +29,6 @@ class TestDocumentOcr(TransactionCase):
         self.assertEqual(result.strip(), 'Hello world')
         # should also work for pdfs
         data = StringIO()
-        PdfImagePlugin  # to use import :/
         test_image.save(data, 'pdf', resolution=300)
         result = attachment._index(
             data.getvalue(), 'test.pdf', None)
@@ -48,7 +48,6 @@ class TestDocumentOcr(TransactionCase):
             'document_ocr.synchronous', 'True')
         data = StringIO()
         test_image = Image.new('1', (200, 30))
-        PalmImagePlugin  # to use import :/
         test_image.save(data, 'palm')
         result = attachment._index(
             data.getvalue(), 'test.palm', None)
