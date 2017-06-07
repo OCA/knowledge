@@ -53,7 +53,7 @@ class IrAttachment(models.Model):
             stderr=subprocess.PIPE,
         )
         stdout, stderr = process.communicate(image_data.getvalue())
-        if stderr:
+        if process.returncode:
             _logger.error('Error during OCR: %s', stderr)
         return stdout
 

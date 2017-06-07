@@ -28,6 +28,9 @@
     "depends": [
         'base',
     ],
+    "demo": [
+        "demo/ir_attachment.xml",
+    ],
     "data": [
         "data/ir_cron.xml",
         "data/init.xml",

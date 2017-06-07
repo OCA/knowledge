@@ -44,4 +44,3 @@ class document_page(orm.Model):
         'company_id': lambda self, cr, uid, c: self.pool.get('res.company')
         ._company_default_get(cr, uid, 'document_page', context=c)
     }
-
