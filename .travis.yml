@@ -37,6 +37,8 @@ install:
   - pip install --upgrade paramiko
   - pip install --upgrade pyth
   - travis_install_nightly
+  - sudo pip install paramiko
+  - sudo pip install fs
 
 script:
   - travis_run_tests
