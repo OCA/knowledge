@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_metadata_list_group_user,metadata.list user,model_metadata_list,base.group_document_user,1,1,1,1
+access_metadata,access_metadata,model_metadata,base.group_document_user,1,1,1,1

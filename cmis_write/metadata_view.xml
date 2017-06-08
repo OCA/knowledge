@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_mass_object_form">
+            <field name="name">metadata.form</field>
+            <field name="model">metadata</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+              <form string="Object">
+                  <field name="name"/>
+                  <field name="model_id" on_change="onchange_model(model_id)"/>
+                  <field name="model_ids" invisible="1"/>
+                    <field name="metadata_list_ids" colspan="4" nolabel="1">
+                      <tree string="Metadata list fields Tree" version="7.0" editable="bottom">
+                        <field name="field_id"
+                               domain="[('ttype', 'not in', ['reference', 'function']),
+                                      ('model_id', 'in', parent.model_ids[0][2])]"/>
+                      </tree>
+                      <form string="Metadata list fields form">
+                        <field name="field_id"/>
+                      </form>
+                    </field>
+              </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_metadata_tree">
+            <field name="name">metadata.tree</field>
+            <field name="model">metadata</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <tree string="Object">
+                    <field name="name"/>
+                    <field name="model_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_metadata" model="ir.actions.act_window">
+          <field name="name">Metadata Editing</field>
+          <field name="view_id" ref="view_metadata_tree"/>
+          <field name="res_model">metadata</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Metadata Editing"
+              id="menu_action_metadata"
+              sequence="10"
+              parent="document.menu_document_management_configuration"
+              action="action_metadata"/>
+
+    </data>
+</openerp>
