@@ -1,0 +1,119 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* cmis_read
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-21 14:55+0000\n"
+"PO-Revision-Date: 2014-03-21 10:55-0500\n"
+"Last-Translator: EL Hadji DEM <elhadji.dem@savoirfairelinux.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: cmis_read
+#: field:ir.attachment.dms,file_id:0
+msgid "File ID"
+msgstr ""
+
+#. module: cmis_read
+#: field:ir.attachment.dms.wizard,attachment_ids:0
+msgid "Attachments"
+msgstr ""
+
+#. module: cmis_read
+#: view:ir.attachment.dms.wizard:0
+msgid "Search Document"
+msgstr ""
+
+#. module: cmis_read
+#: field:ir.attachment.dms,name:0 help:ir.attachment.dms,name:0
+#: field:ir.attachment.dms.wizard,name:0 help:ir.attachment.dms.wizard,name:0
+msgid "File name"
+msgstr ""
+
+#. module: cmis_read
+#: code:addons/cmis_read/wizard/document_wizard.py:59
+#, python-format
+msgid "You have to fill in the file name. And try again"
+msgstr ""
+
+#. module: cmis_read
+#: help:ir.attachment.dms,file_id:0
+msgid "File Id"
+msgstr ""
+
+#. module: cmis_read
+#: model:_description:0 model:ir.model,name:cmis_read.model_ir_attachment_dms
+msgid "ir.attachment.dms"
+msgstr ""
+
+#. module: cmis_read
+#: field:ir.attachment.dms,owner:0 help:ir.attachment.dms,owner:0
+msgid "Owner"
+msgstr ""
+
+#. module: cmis_read
+#: view:ir.attachment.dms.wizard:0
+msgid ""
+"This action allows you to search by file name and to add the document you "
+"select"
+msgstr ""
+
+#. module: cmis_read
+#. openerp-web
+#: code:addons/cmis_read/static/src/js/document.js:26
+#, python-format
+msgid "Search Document from DMS"
+msgstr ""
+
+#. module: cmis_read
+#. openerp-web
+#: code:addons/cmis_read/static/src/xml/document.xml:7
+#, python-format
+msgid "Add Doc from DMS..."
+msgstr ""
+
+#. module: cmis_read
+#: code:addons/cmis_read/wizard/document_wizard.py:58
+#: code:addons/cmis_read/wizard/document_wizard.py:86
+#, python-format
+msgid "Error"
+msgstr ""
+
+#. module: cmis_read
+#: view:ir.attachment.dms.wizard:0
+msgid "Cancel"
+msgstr ""
+
+#. module: cmis_read
+#: view:ir.attachment.dms.wizard:0
+msgid "Apply"
+msgstr ""
+
+#. module: cmis_read
+#: model:_description:0
+#: model:ir.model,name:cmis_read.model_ir_attachment_dms_wizard
+msgid "ir.attachment.dms.wizard"
+msgstr ""
+
+#. module: cmis_read
+#: view:ir.attachment.dms.wizard:0
+msgid "Search"
+msgstr ""
+
+#. module: cmis_read
+#: view:ir.attachment.dms.wizard:0
+msgid "or"
+msgstr ""
+
+#. module: cmis_read
+#: code:addons/cmis_read/wizard/document_wizard.py:87
+#, python-format
+msgid "You have to select at least 1 Document. And try again"
+msgstr ""

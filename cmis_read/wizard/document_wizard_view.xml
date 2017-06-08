@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <!-- wizard view -->
+        <record id="wizard_view" model="ir.ui.view">
+            <field name="name">Search Document</field>
+            <field name="model">ir.attachment.dms.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Search Document" version="7.0">
+                   <div>
+                        This action allows you to search by file name and to add the document you select
+                   </div>
+                   <group>
+                      <div width="100%%">
+                        <field  name="name" width="70%%" class="oe_inline"/>
+                        <button name="search_doc" string="Search" type="object"
+                                width="15%%" class="oe_inline oe_highlight" />
+                      </div>
+                   </group>
+                    <field name="attachment_ids"/>
+                    <footer>
+                      <button name="action_apply" string="Apply" type="object"
+                              class="oe_highlight"/>
+                      or
+                      <button special="cancel" string="Cancel" type="object"
+                              class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+    <record id="wizard_attachment_tree_view" model="ir.ui.view">
+        <field name="name">Ir Attachment Dms</field>
+        <field name="model">ir.attachment.dms</field>
+        <field name="arch" type="xml">
+            <tree string="Attachment" editable="bottom" create="false" delete="false">
+                <field name="selectable_ok"/>
+                <field name="name"/>
+                <field name="owner"/>
+            </tree>
+        </field>
+    </record>
+
+  </data>
+</openerp>
