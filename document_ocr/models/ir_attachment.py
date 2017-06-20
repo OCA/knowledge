@@ -18,7 +18,7 @@ class IrAttachment(models.Model):
     def _index(self, data, datas_fname, file_type):
         mimetype, content = super(IrAttachment, self)._index(
             data, datas_fname, file_type)
-        if not content or content == 'image':
+        if mimetype and (not content or content == 'image'):
             has_synchr_param = self.env['ir.config_parameter'].get_param(
                 'document_ocr.synchronous', 'False') == 'True'
             has_force_flag = self.env.context.get('document_ocr_force')
