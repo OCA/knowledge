@@ -8,6 +8,7 @@
             <field name="model">ir.attachment</field>
             <field name="function">_ocr_cron</field>
             <field name="numbercall">-1</field>
+            <field name="args">(100,)</field>
         </record>
     </data>
 </openerp>

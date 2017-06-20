@@ -70,10 +70,10 @@ class IrAttachment(models.Model):
         return StringIO(stdout)
 
     @api.model
-    def _ocr_cron(self):
+    def _ocr_cron(self, limit=0):
         for this in self.with_context(document_ocr_force=True).search([
             ('index_content', '=', _MARKER_PHRASE),
-        ]):
+        ], limit=limit):
             if not this.datas:
                 continue
             file_type, index_content = this._index(
