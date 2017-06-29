@@ -8,6 +8,11 @@
     "license": "AGPL-3",
     "category": "Knowledge Management",
     "summary": "Index rtf documents",
+    "description": """\
+Indexing rtf documents can take a long time, especially when they contain
+images. This module will convert rtf documents to only the text contents and
+index that text.
+    """,
     "depends": [
         'document',
     ],
