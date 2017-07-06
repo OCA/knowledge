@@ -3,20 +3,19 @@
 # * knowledge
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2017-01-20 03:35+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Bosnian (https://www.transifex.com/oca/teams/23907/bs/)\n"
+"POT-Creation-Date: 2016-08-13 13:00+0000\n"
+"PO-Revision-Date: 2016-03-12 13:02+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: bs\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page_approval
@@ -28,7 +27,7 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Apply"
-msgstr "Primjeni"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_read
@@ -38,12 +37,17 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Cancelar"
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document2
+msgid "Collaborative Content"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
 msgid "Configuration"
-msgstr "Konfiguracija"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
@@ -74,12 +78,12 @@ msgstr ""
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
 msgid "Created by"
-msgstr "Kreirao"
+msgstr "Criado por"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_date
 msgid "Created on"
-msgstr "Kreirano"
+msgstr "Criado em"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
@@ -94,17 +98,8 @@ msgid ""
 msgstr ""
 
 #. module: knowledge
-#: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
-#: model:ir.ui.menu,name:knowledge.menu_document
-#: model:ir.ui.menu,name:knowledge.menu_document_section
-#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Documents"
-msgstr ""
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
-msgid "Group by"
 msgstr ""
 
 #. module: knowledge
@@ -113,10 +108,9 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
-#: model:ir.module.category,name:knowledge.module_category_knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document_root
+#: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
-msgstr "Znanje"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -131,12 +125,12 @@ msgstr ""
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Atualizado pela última vez por"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Atualizado pela última vez em"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
@@ -149,18 +143,8 @@ msgid "Manage documents"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.module.category,description:knowledge.module_category_knowledge
-msgid "Manage documents and knowledge-related applications"
-msgstr ""
-
-#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
-msgstr ""
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
-msgid "Model"
 msgstr ""
 
 #. module: knowledge
@@ -186,11 +170,6 @@ msgid "Using CMIS"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model,name:knowledge.model_ir_attachment
-msgid "ir.attachment"
-msgstr ""
-
-#. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings
 msgid "knowledge.config.settings"
 msgstr ""
@@ -198,4 +177,4 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "or"
-msgstr "ili"
+msgstr ""
