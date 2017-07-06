@@ -1,0 +1,13 @@
+---Fields in module 'knowledge'---
+---XML records in module 'knowledge'---
+NEW ir.actions.act_window: knowledge.knowledge_action_documents
+DEL ir.model.access: knowledge.access_ir_attachment_partner_manager
+DEL ir.model.access: knowledge.access_ir_attachment_sale_manager
+NEW ir.module.category: knowledge.module_category_knowledge
+DEL ir.module.category: knowledge.module_category_knowledge_management
+NEW ir.ui.menu: knowledge.menu_document_root
+NEW ir.ui.menu: knowledge.menu_document_section
+DEL ir.ui.menu: knowledge.menu_document2
+NEW ir.ui.view: knowledge.ir_attachment_view_user_documents
+NEW res.groups: knowledge.group_document_user
+DEL res.groups: base.group_document_user
