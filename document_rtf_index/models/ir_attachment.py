@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 class IrAttachment(orm.Model):
     _inherit = 'ir.attachment'
 
-    def _register_hook(self, cr):
+    def _register_hook(self, cr, uid, ids=None):
         """Only register our indexer if module is installed."""
         import StringIO
         try:
