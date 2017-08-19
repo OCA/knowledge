@@ -78,7 +78,7 @@ msgstr "Zadnje ažurirano"
 #. module: document_url
 #: field:ir.attachment.add_url,name:0
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: document_url
 #: field:ir.attachment.add_url,url:0

@@ -78,7 +78,7 @@ msgstr "Τελευταία ενημέρωση στις"
 #. module: document_url
 #: field:ir.attachment.add_url,name:0
 msgid "Name"
-msgstr ""
+msgstr "Ονομασία"
 
 #. module: document_url
 #: field:ir.attachment.add_url,url:0

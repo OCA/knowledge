@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-25 14:56+0000\n"
+"PO-Revision-Date: 2017-08-11 11:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/el_GR/)\n"
 "MIME-Version: 1.0\n"
@@ -272,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Ονομασία"
 
 #. module: document_page
 #: field:document.page.history,page_id:0

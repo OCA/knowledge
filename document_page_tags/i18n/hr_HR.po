@@ -70,7 +70,7 @@ msgstr "Zadnje ažurirano"
 #. module: document_page_tags
 #: field:document.page.tag,name:0
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: document_page_tags
 #: sql_constraint:document.page.tag:0

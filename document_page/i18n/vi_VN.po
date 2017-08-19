@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-12-27 08:24+0000\n"
+"PO-Revision-Date: 2017-08-11 11:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Vietnamese (Viet Nam) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/vi_VN/)\n"
 "MIME-Version: 1.0\n"
@@ -272,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #. module: document_page
 #: field:document.page.history,page_id:0

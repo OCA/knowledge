@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2017-01-13 09:32+0000\n"
+"PO-Revision-Date: 2017-08-11 11:57+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
@@ -272,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: document_page
 #: field:document.page.history,page_id:0
