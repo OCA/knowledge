@@ -25,12 +25,12 @@ msgstr ""
 #. module: document_page_tags
 #: field:document.page.tag,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: document_page_tags
 #: field:document.page.tag,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: document_page_tags
 #: field:document.page.tag,display_name:0
@@ -60,12 +60,12 @@ msgstr "Laatst gewijzigd op"
 #. module: document_page_tags
 #: field:document.page.tag,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: document_page_tags
 #: field:document.page.tag,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: document_page_tags
 #: field:document.page.tag,name:0
