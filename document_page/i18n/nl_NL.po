@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 02:31+0000\n"
-"PO-Revision-Date: 2017-06-30 08:53+0000\n"
+"POT-Creation-Date: 2017-08-19 03:32+0000\n"
+"PO-Revision-Date: 2017-08-29 08:01+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
-msgstr ""
+msgstr "Verwijderen"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
@@ -83,14 +83,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
@@ -235,14 +235,14 @@ msgstr "Laatst gewijzigd op"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id

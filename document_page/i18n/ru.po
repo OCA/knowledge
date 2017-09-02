@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 18:03+0000\n"
-"PO-Revision-Date: 2015-12-09 18:04+0000\n"
+"POT-Creation-Date: 2017-08-19 03:32+0000\n"
+"PO-Revision-Date: 2017-08-21 07:18+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Russian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -263,11 +263,6 @@ msgstr "Название меню"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_message_ids
-msgid "Messages and communication history"
 msgstr ""
 
 #. module: document_page

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 00:55+0000\n"
-"PO-Revision-Date: 2016-11-22 16:25+0000\n"
+"POT-Creation-Date: 2017-08-19 03:32+0000\n"
+"PO-Revision-Date: 2017-08-21 07:26+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Swedish (http://www.transifex.com/oca/OCA-knowledge-9-0/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #. module: document_page
 #: selection:document.page,type:0
