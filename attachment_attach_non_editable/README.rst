@@ -12,12 +12,20 @@ is set as not editable (``edit='false'`` in the form tag)
 This module adds a new form view attribute, ``attach=``, which lets you
 enable attachment uploads even in non-editable forms.
 
+Keep in mind: users still won't be able to attach documents
+to records they don't have write access to (according to ACL and record rules);
+this module does not bypass odoo' security rules!
+
 Usage
 =====
 
-Add the ``attach=true`` attribute to the form view tag which of uneditable views
+Add the ``attach="true"`` attribute to the form view tag which of uneditable views
 (normal editable views already allow attaching a document and there is no need
 for this attribute).
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/118/10.0
 
 
 Bug Tracker
