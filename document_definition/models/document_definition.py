@@ -7,7 +7,7 @@ from openerp import api, fields, models
 class DocumentDefinition(models.Model):
     _name = 'document.definition'
 
-    term = fields.Char(help='Term to define', required=True)
+    term = fields.Char(help='Term', required=True)
     definition = fields.Text(help='Definition of term', required=True)
 
     # stored compute field used for making the letter grouping
@@ -15,7 +15,7 @@ class DocumentDefinition(models.Model):
     first_letter = fields.Char()
 
     def _get_first_letter(self, text):
-        # if somehow the user starts with a blank space we trim it
+        # if somehow the user starts with one or more whitespaces we trim
         return text.lstrip()[:1].upper() or 'Blank Term'
 
     @api.model

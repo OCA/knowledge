@@ -2,18 +2,13 @@
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
-===================
-document_definition
-===================
+=====================
+Terms and definitions
+=====================
 
 Installs a new  document_definition model for dictionary-style word archive and
-definition. Searchable in the Knowledge menu.
-
-Known issues / Roadmap
-======================
-
-* A search function per term and per definition, obviously.
-* Dictionary Style Alphabetical grouping view
+definition. Adds Searchable view for terms and definitions in the Knowledge menu.
+Has a search view per term and per definition and a dictionary Style Alphabetical grouping view.
 
 Bug Tracker
 ===========
@@ -22,9 +17,6 @@ Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/knowledge/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
 help us smashing it by providing a detailed and welcomed feedback.
-
-Credits
-=======
 
 Images
 ------
