@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <template id="assets_backend" name="document_definition assets" inherit_id="web.assets_backend">
-            <xpath expr="." position="inside">
-                <script type="text/javascript" src="/document_definition/static/src/js/document_definition.js"/>
-                <link rel="stylesheet" href="/document_definition/static/src/css/document_definition.css"/>
-            </xpath>
-        </template>
-
-
         <record id="view_definition_tree" model="ir.ui.view">
             <field name="name">document.definition.tree</field>
             <field name="model">document.definition</field>
