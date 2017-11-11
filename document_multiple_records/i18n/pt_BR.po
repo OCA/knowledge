@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 01:24+0000\n"
-"PO-Revision-Date: 2016-11-22 16:23+0000\n"
+"POT-Creation-Date: 2017-10-28 04:36+0000\n"
+"PO-Revision-Date: 2017-11-09 00:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-knowledge-7-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_multiple_records
 #: field:ir.attachment.document,attachment_id:0
 msgid "Attachment"
-msgstr ""
+msgstr "Anexo"
 
 #. module: document_multiple_records
 #: view:ir.attachment.existing.doc:0
@@ -91,7 +91,7 @@ msgstr ""
 #. module: document_multiple_records
 #: view:ir.attachment:0
 msgid "Indexed Content"
-msgstr ""
+msgstr "Conteúdo Indexado"
 
 #. module: document_multiple_records
 #: view:ir.attachment:0
