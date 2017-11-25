@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-01 03:56+0000\n"
-"PO-Revision-Date: 2017-08-11 11:55+0000\n"
+"POT-Creation-Date: 2017-11-18 03:36+0000\n"
+"PO-Revision-Date: 2017-11-23 23:27+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Galician (http://www.transifex.com/oca/OCA-knowledge-9-0/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
@@ -372,12 +372,12 @@ msgstr "Título"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_type
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensaxes sen ler"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter

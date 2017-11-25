@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-17 02:11+0000\n"
-"PO-Revision-Date: 2016-12-27 08:24+0000\n"
+"POT-Creation-Date: 2017-11-18 03:36+0000\n"
+"PO-Revision-Date: 2017-11-23 23:27+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Vietnamese (Viet Nam) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/vi_VN/)\n"
 "MIME-Version: 1.0\n"
@@ -108,6 +108,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge_management
 #: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr ""
@@ -131,6 +132,13 @@ msgstr "Cập nhật lần cuối bởi"
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
 msgid "Last Updated on"
 msgstr "Cập nhật lần cuối vào"
+
+#. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge_management
+msgid ""
+"Lets you install addons geared towards sharing knowledge with and between "
+"your employees."
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
@@ -177,4 +185,4 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "or"
-msgstr ""
+msgstr "hoặc"

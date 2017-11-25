@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-20 22:18+0000\n"
-"PO-Revision-Date: 2017-04-25 10:42+0000\n"
+"POT-Creation-Date: 2017-11-18 03:36+0000\n"
+"PO-Revision-Date: 2017-11-23 23:27+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Romanian (http://www.transifex.com/oca/OCA-knowledge-9-0/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr ""
+msgstr "Aprobă"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
