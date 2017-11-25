@@ -36,7 +36,7 @@ msgstr ""
 #. module: document_page_approval
 #: view:document.page.history:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr ""
+msgstr "Aprobar"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0

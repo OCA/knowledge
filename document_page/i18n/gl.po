@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2017-08-11 11:55+0000\n"
+"PO-Revision-Date: 2017-11-23 23:27+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Galician (http://www.transifex.com/oca/OCA-knowledge-8-0/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr ""
 #: field:document.page,parent_id:0 selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #. module: document_page
 #: field:document.page,child_ids:0
@@ -343,12 +343,12 @@ msgstr "Título"
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. module: document_page
 #: field:document.page,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensaxes sen ler"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
