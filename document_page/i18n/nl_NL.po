@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-02 06:37+0000\n"
-"PO-Revision-Date: 2017-09-22 18:27+0000\n"
+"POT-Creation-Date: 2017-11-25 04:29+0000\n"
+"PO-Revision-Date: 2017-11-30 19:09+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
 msgid "Children"
-msgstr ""
+msgstr "Onderliggende items"
 
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
