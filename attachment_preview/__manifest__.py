@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,7 +19,7 @@
 ##############################################################################
 {
     "name": "Preview attachments",
-    "version": "8.0.1.1.0",
+    "version": "11.0.1.0.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "complexity": "normal",
