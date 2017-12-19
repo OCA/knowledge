@@ -20,7 +20,8 @@
         <filter name="user_documents" string="Documents"
                 domain="[('res_model', 'not like', 'ir.%'), ('res_model', '!=', False)]"/>
         <group string="Group by">
-          <filter name="group_model" string="Model" context="{'group_by': 'res_model'}"/>
+          <filter name="group_model" string="Model"
+                  context="{'group_by': 'res_model'}"/>
         </group>
       </search>
     </field>
@@ -28,26 +29,26 @@
 
   <!-- Top menu item -->
   <menuitem
-      id="menu_document_root"
-      name="Knowledge"
-      groups="base.group_system,knowledge.group_document_user"
-      sequence="116"/>
+          id="menu_document_root"
+          name="Knowledge"
+          groups="base.group_system,knowledge.group_document_user"
+          sequence="116"/>
 
   <menuitem
-      id="menu_document_configuration"
-      name="Configuration"
-      parent="menu_document_root"
-      sequence="50"/>
+          id="menu_document_configuration"
+          name="Configuration"
+          parent="menu_document_root"
+          sequence="50"/>
 
   <menuitem
-      id="menu_document_section"
-      name="Documents"
-      parent="menu_document_root"/>
+          id="menu_document_section"
+          name="Documents"
+          parent="menu_document_root"/>
 
   <menuitem
-      id="menu_document"
-      name="Documents"
-      action="knowledge_action_documents"
-      parent="menu_document_section"/>
+          id="menu_document"
+          name="Documents"
+          action="knowledge_action_documents"
+          parent="menu_document_section"/>
 
 </odoo>
