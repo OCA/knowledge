@@ -8,7 +8,6 @@
         <field name="context">{'search_default_user_documents': True}</field>
     </record>
 
-
     <record id="ir_attachment_view_user_documents" model="ir.ui.view">
         <field name="name">Documents search view: additional filters</field>
         <field name="model">ir.attachment</field>
@@ -29,23 +28,24 @@
 
     <!-- Top menu item -->
     <menuitem
-            id="menu_document_root"
-            name="Knowledge"
-            groups="knowledge.group_document_user"
-            sequence="116"
-            web_icon="knowledge,static/description/icon.png"/>
+        id="menu_document_root"
+        name="Knowledge"
+        groups="knowledge.group_document_user"
+        web_icon="knowledge,static/description/icon.png"
+        sequence="116"/>
 
     <menuitem
-            id="menu_document_section"
-            name="Documents"
-            groups="knowledge.group_document_user"
-            parent="menu_document_root"
-            sequence="10"/>
+        id="menu_document_section"
+        name="Documents"
+        groups="knowledge.group_document_user"
+        parent="menu_document_root"
+        sequence="10"/>
 
     <menuitem
-            id="menu_document"
-            name="Documents"
-            action="knowledge_action_documents"
-            parent="menu_document_section"
-            sequence="0"/>
+        id="menu_document"
+        name="Documents"
+        action="knowledge_action_documents"
+        parent="menu_document_section"
+        sequence="0"/>
+
 </odoo>
