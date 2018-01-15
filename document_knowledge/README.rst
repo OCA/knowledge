@@ -75,6 +75,7 @@ Contributors
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Fayez Qandeel
 * Vicent Cubells <vicent.cubells@tecnativa.com>
+* Iván Todorovich <ivan.todorovich@gmail.com>
 
 Maintainers
 ~~~~~~~~~~~
