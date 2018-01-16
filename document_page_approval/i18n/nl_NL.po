@@ -3,14 +3,14 @@
 # * document_page_approval
 # 
 # Translators:
-# Peter Hageman <hageman.p@gmail.com>, 2017
+# Peter Hageman <hageman.p@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-28 03:34+0000\n"
-"PO-Revision-Date: 2017-03-28 03:34+0000\n"
-"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"POT-Creation-Date: 2018-01-15 17:56+0000\n"
+"PO-Revision-Date: 2018-01-15 17:56+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2018\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,29 +38,29 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr ""
+msgstr "Goedkeuren"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr ""
+msgstr "Goedgekeurd"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_uid
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_uid
 msgid "Approved By"
-msgstr ""
+msgstr "Goedgekeurd door"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_date
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_date
 msgid "Approved Date"
-msgstr ""
+msgstr "Goedkeuringsdatum"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_gid
 msgid "Approver group"
-msgstr ""
+msgstr "Goedkeuringsgroep"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -75,12 +75,12 @@ msgstr "Documentpagina-historie"
 #. module: document_page_approval
 #: model:res.groups,name:document_page_approval.group_document_approver_user
 msgid "Document approver"
-msgstr ""
+msgstr "Document-goedkeurder"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Concept"
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -106,7 +106,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_page_url
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_can_user_approve_page

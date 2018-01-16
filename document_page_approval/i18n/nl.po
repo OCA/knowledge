@@ -3,14 +3,16 @@
 # * document_page_approval
 # 
 # Translators:
+# Michel V. <m.vorenhout@mvhconsult.nl>, 2018
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:01+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: Dutch (http://www.transifex.com/oca/OCA-knowledge-9-0/language/nl/)\n"
+"POT-Creation-Date: 2018-01-15 17:56+0000\n"
+"PO-Revision-Date: 2018-01-15 17:56+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -21,6 +23,7 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "\n"
+"            \n"
 "<p>Hello,</p>\n"
 "\n"
 "<p>The page \"${object.page_id.name}\" has been modified and need your approval.</p>\n"
@@ -30,30 +33,41 @@ msgid ""
 "<p>Have a great day.<br/>\n"
 "--<br/>\n"
 "Odoo</p>\n"
-"            "
+"        "
 msgstr ""
+"\n"
+"\n"
+"<p>Hallo,</p>\n"
+"\n"
+"<p>De pagina \"${object.page_id.name}\" is aangepast en heeft uw accordering nodig.</p>\n"
+"\n"
+"<p>U kunt de nieuwe versie hier bekijken: <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
+"\n"
+"<p>Een geweldige dag toegewenst!<br/>\n"
+"--<br/>\n"
+"Odoo</p>"
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr ""
+msgstr "Accordeer"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr ""
+msgstr "Geaccordeerd"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_uid
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_uid
 msgid "Approved By"
-msgstr ""
+msgstr "Geaccordeerd door"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_date
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_date
 msgid "Approved Date"
-msgstr ""
+msgstr "Geaccordeerd op"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_gid
@@ -71,6 +85,11 @@ msgid "Document Page History"
 msgstr "Document pagina historie"
 
 #. module: document_page_approval
+#: model:res.groups,name:document_page_approval.group_document_approver_user
+msgid "Document approver"
+msgstr ""
+
+#. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
 msgstr ""
@@ -81,7 +100,7 @@ msgid "New version of \"${object.page_id.name}\" to approve"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:61
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:44
 #, python-format
 msgid "New version of the document %s approved."
 msgstr ""
@@ -89,7 +108,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approval_required
 msgid "Require approval"
-msgstr ""
+msgstr "Behoeft accordering"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_state

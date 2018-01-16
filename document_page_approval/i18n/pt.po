@@ -3,14 +3,15 @@
 # * document_page_approval
 # 
 # Translators:
+# Pedro Castro Silva <inactive+pcs.sossia@transifex.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:01+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: Portuguese (http://www.transifex.com/oca/OCA-knowledge-9-0/language/pt/)\n"
+"POT-Creation-Date: 2018-01-15 17:56+0000\n"
+"PO-Revision-Date: 2018-01-15 17:56+0000\n"
+"Last-Translator: Pedro Castro Silva <inactive+pcs.sossia@transifex.com>, 2018\n"
+"Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -21,6 +22,7 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "\n"
+"            \n"
 "<p>Hello,</p>\n"
 "\n"
 "<p>The page \"${object.page_id.name}\" has been modified and need your approval.</p>\n"
@@ -30,89 +32,106 @@ msgid ""
 "<p>Have a great day.<br/>\n"
 "--<br/>\n"
 "Odoo</p>\n"
-"            "
+"        "
 msgstr ""
+"\n"
+"            \n"
+"<p>Olá,</p>\n"
+"\n"
+"<p>A página \"${object.page_id.name}\" foi modificada e necessita a sua aprovação.</p>\n"
+"\n"
+"<p>Pode rever a nova versão aqui : <a href=\"${object.get_page_url}\">${object.get_page_url}</a></p>\n"
+"\n"
+"<p>Cumprimentos.<br/>\n"
+"--<br/>\n"
+"Odoo</p>\n"
+"        "
 
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Approve"
-msgstr ""
+msgstr "Aprovar"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Approved"
-msgstr ""
+msgstr "Aprovado"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_uid
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_uid
 msgid "Approved By"
-msgstr ""
+msgstr "Aprovado Por"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approved_date
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_approved_date
 msgid "Approved Date"
-msgstr ""
+msgstr "Data de Aprovação"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approver_gid
 msgid "Approver group"
-msgstr ""
+msgstr "Grupo de Aprovadores"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
-msgstr "Página do documento"
+msgstr "Página do Documento"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
 msgid "Document Page History"
-msgstr ""
+msgstr "Histórico da Página do Documento"
+
+#. module: document_page_approval
+#: model:res.groups,name:document_page_approval.group_document_approver_user
+msgid "Document approver"
+msgstr "Aprovador de documento"
 
 #. module: document_page_approval
 #: selection:document.page.history,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Rascunho"
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of \"${object.page_id.name}\" to approve"
-msgstr ""
+msgstr "Nova versão de \"${object.page_id.name}\" necessita aprovação"
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:61
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:44
 #, python-format
 msgid "New version of the document %s approved."
-msgstr ""
+msgstr "Uma nova versão do ocumento %s foi aprovada."
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_approval_required
 msgid "Require approval"
-msgstr ""
+msgstr "Requer aprovação"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_state
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_page_url
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_can_user_approve_page
 msgid "can user approve this page"
-msgstr ""
+msgstr "pode aprovar esta página como utilizador"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_get_approvers_email
 msgid "get all approvers email"
-msgstr ""
+msgstr "Obter email de todos os aprovadores"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_is_parent_approval_required
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_is_parent_approval_required
 msgid "parent approval"
-msgstr ""
+msgstr "Aprovação do ascendente"
