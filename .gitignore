@@ -48,3 +48,6 @@ coverage.xml
 # Backup files
 *~
 *.swp
+
+# Mac TMP Files
+.DS_Store
