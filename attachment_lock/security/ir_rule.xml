@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="rule_attachment_lock" model="ir.rule">
+            <field name="name">Attachment locks</field>
+            <field name="model_id" ref="model_ir_attachment_lock" />
+            <field name="groups" eval="[(4, ref('group_attachment_lock'))]" />
+            <field name="domain_force">
+            ['|', ('create_uid', '=', user.id), '&amp;', ('lock_type', '=', 'shared'), ('shared_user_ids', 'in', user.ids)]
+            </field>
+            <field name="perm_read" eval="False" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_unlink" eval="True" />
+        </record>
+    </data>
+</openerp>

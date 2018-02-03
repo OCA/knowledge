@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_ir_attachment_lock_all,access_ir_attachment_lock,model_ir_attachment_lock,,1,0,0,0
+access_ir_attachment_lock,access_ir_attachment_lock,model_ir_attachment_lock,group_attachment_lock,1,1,1,1
