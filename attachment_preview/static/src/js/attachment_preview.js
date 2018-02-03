@@ -47,11 +47,14 @@ openerp.attachment_preview = function(instance)
     {
         on_attachments_loaded: function(attachments)
         {
-            var result = this._super.apply(this, arguments);    
-            this.$el.find('.oe-sidebar-attachment-preview')
-                .click(this.on_attachment_preview);
-            this.update_preview_buttons();
-            return result;
+            var self = this;
+            return jQuery.when(this._super.apply(this, arguments))
+            .then(function()
+            {
+                self.$el.find('.oe-sidebar-attachment-preview')
+                .click(self.on_attachment_preview);
+                self.update_preview_buttons();
+            });
         },
         on_attachment_preview: function(e)
         {
