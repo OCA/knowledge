@@ -42,7 +42,7 @@ class IrAttachment(models.Model):
         else:
             image_data = StringIO()
             try:
-                Image.open(StringIO(data)).save(image_data, 'tiff',
+                Image.open(StringIO(data)).save(image_data, 'png',
                                                 dpi=(dpi, dpi))
             except IOError:
                 _logger.exception('Failed to OCR image')
