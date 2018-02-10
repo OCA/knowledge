@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-22 16:25+0000\n"
+"PO-Revision-Date: 2018-02-02 14:11+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (Spain) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/ca_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -80,14 +80,14 @@ msgstr ""
 #: field:document.page.create.menu,create_uid:0
 #: field:wizard.document.page.history.show_diff,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: document_page
 #: field:document.page,create_date:0
 #: field:document.page.create.menu,create_date:0
 #: field:wizard.document.page.history.show_diff,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: document_page
 #: field:document.page.history,create_date:0
@@ -109,7 +109,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr ""
+msgstr "Diferència"
 
 #. module: document_page
 #: field:document.page,display_name:0
@@ -117,7 +117,7 @@ msgstr ""
 #: field:document.page.history,display_name:0
 #: field:wizard.document.page.history.show_diff,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: document_page
 #: field:document.page,display_content:0
@@ -216,21 +216,21 @@ msgstr ""
 #: field:document.page.history,__last_update:0
 #: field:wizard.document.page.history.show_diff,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: document_page
 #: field:document.page.create.menu,write_uid:0
 #: field:document.page.history,write_uid:0
 #: field:wizard.document.page.history.show_diff,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: document_page
 #: field:document.page.create.menu,write_date:0
 #: field:document.page.history,write_date:0
 #: field:wizard.document.page.history.show_diff,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Darrera actualització el"
 
 #. module: document_page
 #: field:document.page,menu_id:0
@@ -272,7 +272,7 @@ msgstr ""
 #: view:document.page:document_page.view_wiki_form
 #: view:document.page:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: document_page
 #: field:document.page.history,page_id:0
@@ -342,7 +342,7 @@ msgstr ""
 #. module: document_page
 #: field:document.page,type:0
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #. module: document_page
 #: field:document.page,message_unread:0
