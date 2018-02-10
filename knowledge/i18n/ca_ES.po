@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 00:55+0000\n"
-"PO-Revision-Date: 2016-11-22 16:25+0000\n"
+"POT-Creation-Date: 2018-01-16 05:57+0000\n"
+"PO-Revision-Date: 2018-02-02 14:11+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (Spain) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/ca_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -78,17 +78,17 @@ msgstr ""
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
@@ -108,6 +108,7 @@ msgid "ID"
 msgstr ""
 
 #. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge_management
 #: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr ""
@@ -120,16 +121,23 @@ msgstr ""
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
 msgid "Last Updated on"
+msgstr "Darrera actualització el"
+
+#. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge_management
+msgid ""
+"Lets you install addons geared towards sharing knowledge with and between "
+"your employees."
 msgstr ""
 
 #. module: knowledge
