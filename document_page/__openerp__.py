@@ -38,6 +38,7 @@
         'wizard/document_page_show_diff.xml',
         'views/document_page.xml',
         'views/document_page_assets.xml',
+        'views/report_document_page.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
