@@ -21,7 +21,7 @@
 
 {
     'name': 'Document Page',
-    'version': '9.0.1.0.1',
+    'version': '9.0.2.0.0',
     'category': 'Knowledge Management',
     'author': 'OpenERP SA, Odoo Community Association (OCA)',
     'images': ['images/category_list.png', 'images/create_category.png',
@@ -37,6 +37,7 @@
         'wizard/document_page_create_menu.xml',
         'wizard/document_page_show_diff.xml',
         'views/document_page.xml',
+        'views/document_page_assets.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',
     ],
