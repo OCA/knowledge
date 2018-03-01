@@ -153,10 +153,10 @@ class DocumentPage(models.Model):
     @api.multi
     def _inverse_content(self):
         for rec in self:
-            if rec.content:
+            if rec.type == 'content':
                 rec._create_history({
                     'content': rec.content,
-                    'summary': rec.summary
+                    'summary': rec.summary,
                 })
 
     @api.multi
