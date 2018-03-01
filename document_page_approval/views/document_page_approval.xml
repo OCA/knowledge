@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
+
+        <!-- History Form View -->
         <record id="wiki_history_form_inherit" model="ir.ui.view">
             <field name="name">document.page.history.form</field>
             <field name="model">document.page.history</field>
@@ -46,6 +48,7 @@
             </field>
         </record>
 
+        <!-- Page Form View -->
         <record id="wiki_form_inherit" model="ir.ui.view">
             <field name="name">document.page.form</field>
             <field name="model">document.page</field>
@@ -73,11 +76,11 @@
                     </div>
                 </field>
 
-                <field name="write_uid" position="after">
+                <field name="content_uid" position="after">
                     <field name="approved_uid"/>
                 </field>
 
-                <field name="write_date" position="replace">
+                <field name="content_date" position="replace">
                     <field name="approved_date"/>
                 </field>
 
@@ -94,6 +97,7 @@
             </field>
         </record>
 
+        <!-- Page Menu Form View -->
         <record id="view_wiki_menu_form_inherit" model="ir.ui.view">
             <field name="name">document.page.form</field>
             <field name="model">document.page</field>
@@ -108,6 +112,7 @@
             </field>
         </record>
 
+        <!-- Catgory Form View -->
         <record id="view_category_form_inherit" model="ir.ui.view">
             <field name="name">document.page.category.form</field>
             <field name="model">document.page</field>
@@ -121,6 +126,7 @@
             </field>
         </record>
 
+        <!-- History Tree view -->
         <record id="view_wiki_history_tree_inherit" model="ir.ui.view">
             <field name="name">document.page.history.tree</field>
             <field name="model">document.page.history</field>
@@ -149,6 +155,18 @@
                 <field name="page_id" position="before">
                     <field name="state"/>
                 </field>
+                <field name="create_uid" position="after">
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter name="pending" string="Pending Approval" domain="[('state','=','to approve')]"/>
+                    <filter name="approved" string="Approved" domain="[('state','=','approved')]"/>
+                    <filter name="cancelled" string="Cancelled" domain="[('state','=','cancelled')]"/>
+                </field>
+                <filter name="group_author" position="before">
+                    <filter name="group_state" string="State" context="{'group_by':'state'}" />
+                </filter>
+                <filter name="group_author" position="after">
+                    <filter name="group_approver" string="Approver" context="{'group_by':'approved_uid'}" />
+                </filter>
             </field>
         </record>
 
@@ -162,9 +180,9 @@
         </record>
 
         <menuitem id="menu_page_change_requests"
-                  parent="document_page.menu_wiki"
-                  name="Change Requests"
-                  action="action_change_requests"
-                  sequence="25"
-                  groups="document_page.group_document_editor" />
+            name="Change Requests"
+            parent="document_page.menu_wiki"
+            action="action_change_requests"
+            sequence="25"
+            groups="document_page.group_document_editor" />
 </odoo>

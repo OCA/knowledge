@@ -34,14 +34,20 @@ class DocumentPageApproval(models.Model):
     )
 
     approved_date = fields.Datetime(
-        compute='_compute_approved_info',
-        string="Approved Date"
+        'Approved Date',
+        related='history_head.approved_date',
+        store=True,
+        index=True,
+        readonly=True,
     )
 
     approved_uid = fields.Many2one(
         'res.users',
-        compute='_compute_approved_info',
-        string="Approved By",
+        'Approved by',
+        related='history_head.approved_uid',
+        store=True,
+        index=True,
+        readonly=True,
     )
 
     approval_required = fields.Boolean(
@@ -61,6 +67,10 @@ class DocumentPageApproval(models.Model):
         compute='_compute_is_approval_required',
     )
 
+    am_i_approver = fields.Boolean(
+        compute='_compute_am_i_approver'
+    )
+
     approver_group_ids = fields.Many2many(
         'res.groups',
         string='Approver groups',
@@ -72,15 +82,6 @@ class DocumentPageApproval(models.Model):
         compute='_compute_has_changes_pending_approval',
         string='Has changes pending approval'
     )
-
-    @api.multi
-    @api.depends('history_ids')
-    def _compute_approved_info(self):
-        """Return the approved date of a document."""
-        for page in self:
-            if page.history_ids:
-                page.approved_date = page.history_ids[0].approved_date
-                page.approved_uid = page.history_ids[0].approved_uid
 
     @api.multi
     @api.depends('approval_required', 'parent_id.is_approval_required')
@@ -101,6 +102,30 @@ class DocumentPageApproval(models.Model):
             if page.parent_id:
                 res = res | page.parent_id.approver_group_ids
             page.approver_group_ids = res
+
+    @api.multi
+    @api.depends('is_approval_required', 'approver_group_ids')
+    def _compute_am_i_approver(self):
+        """Check if the current user can approve changes to this page."""
+        for rec in self:
+            rec.am_i_approver = rec.can_user_approve_this_page(self.env.user)
+
+    @api.multi
+    def can_user_approve_this_page(self, user):
+        """Check if a user can approve this page."""
+        self.ensure_one()
+        # if it's not required, anyone can approve
+        if not self.is_approval_required:
+            return True
+        # to approve, you must have approver rights
+        approver_group_id = self.env.ref(
+            'document_page_approval.group_document_approver_user')
+        if approver_group_id not in user.groups_id:
+            return False
+        # and belong to at least one of the approver_groups (if any is set)
+        if not self.approver_group_ids:
+            return True
+        return len(user.groups_id & self.approver_group_ids) > 0
 
     @api.multi
     def _compute_has_changes_pending_approval(self):

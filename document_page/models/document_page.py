@@ -55,6 +55,7 @@ class DocumentPage(models.Model):
         "Content",
         compute='_compute_content',
         inverse='_inverse_content',
+        search='_search_content',
         required=True,
     )
 
@@ -78,12 +79,20 @@ class DocumentPage(models.Model):
         compute='_compute_display_content'
     )
 
+    history_head = fields.Many2one(
+        'document.page.history',
+        'HEAD',
+        compute='_compute_history_head',
+        store=True,
+        auto_join=True,
+    )
+
     history_ids = fields.One2many(
         'document.page.history',
         'page_id',
         'History',
         order='create_date DESC',
-        readonly=True
+        readonly=True,
     )
 
     menu_id = fields.Many2one(
@@ -92,29 +101,21 @@ class DocumentPage(models.Model):
         readonly=True
     )
 
-    create_date = fields.Datetime(
-        "Created on",
+    content_date = fields.Datetime(
+        'Last Contribution Date',
+        related='history_head.create_date',
+        store=True,
         index=True,
-        readonly=True
+        readonly=True,
     )
 
-    create_uid = fields.Many2one(
+    content_uid = fields.Many2one(
         'res.users',
-        'Author',
+        'Last Contributor',
+        related='history_head.create_uid',
+        store=True,
         index=True,
-        readonly=True
-    )
-
-    write_date = fields.Datetime(
-        "Modification Date",
-        index=True,
-        readonly=True)
-
-    write_uid = fields.Many2one(
-        'res.users',
-        "Last Contributor",
-        index=True,
-        readonly=True
+        readonly=True,
     )
 
     @api.multi
@@ -133,19 +134,21 @@ class DocumentPage(models.Model):
         return r
 
     @api.multi
+    @api.depends('content')
     def _compute_display_content(self):
         # @deprecated, simply use content
         for rec in self:
             rec.display_content = rec.content
 
     @api.multi
+    @api.depends('history_head', 'history_ids')
     def _compute_content(self):
         for rec in self:
             if rec.type == 'category':
                 rec.content = rec._get_page_index(link=False)
             else:
-                if rec.history_ids:
-                    rec.content = rec.history_ids[0].content
+                if rec.history_head:
+                    rec.content = rec.history_head.content
                 else:
                     # html widget's default, so it doesn't trigger ghost save
                     rec.content = '<p><br></p>'
@@ -158,6 +161,17 @@ class DocumentPage(models.Model):
                     'content': rec.content,
                     'summary': rec.summary,
                 })
+
+    @api.multi
+    def _search_content(self, operator, value):
+        return [('history_head.content', operator, value)]
+
+    @api.multi
+    @api.depends('history_ids')
+    def _compute_history_head(self):
+        for rec in self:
+            if rec.history_ids:
+                rec.history_head = rec.history_ids[0]
 
     @api.multi
     def _create_history(self, vals):

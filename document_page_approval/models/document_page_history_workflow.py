@@ -40,11 +40,13 @@ class DocumentPageHistoryWorkflow(models.Model):
         readonly=True,
     )
 
-    approved_date = fields.Datetime("Approved Date")
+    approved_date = fields.Datetime(
+        'Approved Date',
+    )
 
     approved_uid = fields.Many2one(
         'res.users',
-        "Approved By"
+        'Approved by',
     )
 
     is_approval_required = fields.Boolean(
@@ -52,8 +54,13 @@ class DocumentPageHistoryWorkflow(models.Model):
         string="Approval required",
     )
 
-    am_i_owner = fields.Boolean(compute='_compute_am_i_owner')
-    am_i_approver = fields.Boolean(compute='_compute_am_i_approver')
+    am_i_owner = fields.Boolean(
+        compute='_compute_am_i_owner'
+    )
+
+    am_i_approver = fields.Boolean(
+        related='page_id.am_i_approver'
+    )
 
     page_url = fields.Text(
         compute='_compute_page_url',
@@ -92,6 +99,8 @@ class DocumentPageHistoryWorkflow(models.Model):
             'approved_uid': self.env.uid
         })
         for rec in self:
+            # Trigger computed field update
+            rec.page_id._compute_history_head()
             # Notify state change
             rec.message_post(
                 subtype='mt_comment',
@@ -124,29 +133,6 @@ class DocumentPageHistoryWorkflow(models.Model):
         """Check if current user is the owner"""
         for rec in self:
             rec.am_i_owner = (rec.create_uid == self.env.user)
-
-    @api.multi
-    def _compute_am_i_approver(self):
-        """Check if the current user can approve the page."""
-        for rec in self:
-            rec.am_i_approver = rec.can_user_approve_this_page(self.env.user)
-
-    @api.multi
-    def can_user_approve_this_page(self, user):
-        """Check if a user can approve this page."""
-        self.ensure_one()
-        # if it's not required, anyone can approve
-        if not self.is_approval_required:
-            return True
-        # to approve, you must have approver rights
-        approver_group_id = self.env.ref(
-            'document_page_approval.group_document_approver_user')
-        if approver_group_id not in user.groups_id:
-            return False
-        # and belong to at least one of the approver_groups (if any is set)
-        if not self.page_id.approver_group_ids:
-            return True
-        return len(user.groups_id & self.page_id.approver_group_ids) > 0
 
     @api.multi
     def _compute_page_url(self):

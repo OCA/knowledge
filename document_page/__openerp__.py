@@ -37,6 +37,8 @@
         'wizard/document_page_create_menu.xml',
         'wizard/document_page_show_diff.xml',
         'views/document_page.xml',
+        'views/document_page_category.xml',
+        'views/document_page_history.xml',
         'views/document_page_assets.xml',
         'views/report_document_page.xml',
         'security/document_page_security.xml',
