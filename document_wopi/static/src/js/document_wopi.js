@@ -25,7 +25,7 @@ openerp.document_wopi = function(instance)
             e.preventDefault();
             e.stopPropagation();
             return new instance.web.Model('document.wopi').call(
-                'get_access_token', [attachment_id],
+                'get_access_token', [attachment_id]
             ).then(function(access_token_id)
             {
                 return self.document_wopi_frame(access_token_id);
@@ -84,6 +84,6 @@ openerp.document_wopi = function(instance)
         },
     });
     instance.web.client_actions.add(
-        'document_wopi', 'instance.document_wopi.OfficeWidget',
+        'document_wopi', 'instance.document_wopi.OfficeWidget'
     );
 };
