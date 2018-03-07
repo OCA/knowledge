@@ -57,7 +57,7 @@ openerp.attachment_lock = function(instance)
                         _.str.sprintf(
                             instance.web._t('By %s until %s'),
                             lock.create_uid[1],
-                            instance.web.format_value(lock.valid_until, {type: 'datetime'}),
+                            instance.web.format_value(lock.valid_until, {type: 'datetime'})
                         )
                     )
                 ).open();
