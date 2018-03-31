@@ -1,0 +1,330 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-03 03:36+0000\n"
+"PO-Revision-Date: 2017-02-03 03:36+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Serbian (https://www.transifex.com/oca/teams/23907/sr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_uid
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+msgid "Author"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+msgid "Cancel"
+msgstr "Otkaži"
+
+#. module: document_page
+#: model:ir.ui.menu,name:document_page.menu_category
+#: model:ir.ui.view,arch_db:document_page.view_category_tree
+msgid "Categories"
+msgstr ""
+
+#. module: document_page
+#: selection:document.page,type:0
+#: model:ir.actions.act_window,name:document_page.action_category
+#: model:ir.model.fields,field_description:document_page.field_document_page_parent_id
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Category"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
+msgid "Children"
+msgstr ""
+
+#. module: document_page
+#: model:ir.actions.act_window,help:document_page.action_page
+msgid "Click to create a new web page."
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
+msgid "Close"
+msgstr ""
+
+#. module: document_page
+#: selection:document.page,type:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_content
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_content
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Content"
+msgstr ""
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
+#: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+msgid "Create Menu"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_date
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
+msgid "Created on"
+msgstr "Kreiran"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
+msgid "Date"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
+msgid "Diff"
+msgstr ""
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
+#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
+msgid "Difference"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_display_name
+#: model:ir.model.fields,field_description:document_page.field_document_page_display_name
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_display_content
+msgid "Displayed Content"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
+msgid "Document History"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model,name:document_page.model_document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_tree
+#: model:ir.ui.view,arch_db:document_page.view_wiki_tree_children
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model,name:document_page.model_document_page_history
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "Document Page History"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+msgid "Document Type"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+msgid "Documents"
+msgstr "Dokumenti"
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+msgid "Group By..."
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
+msgid "History"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_id
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_id
+#: model:ir.model.fields,field_description:document_page.field_document_page_id
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_id
+msgid "ID"
+msgstr "ID"
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Last Content"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+msgid "Last Contributor"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page___last_update
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu___last_update
+#: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_write_uid
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_write_date
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
+msgid "Menu"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+msgid "Menu Information"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_name
+msgid "Menu Name"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_write_date
+msgid "Modification Date"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_uid
+msgid "Modified By"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
+msgid "Name"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_page_id
+msgid "Page"
+msgstr ""
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_related_page_history
+msgid "Page History"
+msgstr ""
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_history
+msgid "Page history"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page_type
+msgid "Page type"
+msgstr ""
+
+#. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_page
+#: model:ir.ui.menu,name:document_page.menu_page
+#: model:ir.ui.menu,name:document_page.menu_wiki
+msgid "Pages"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.menu,name:document_page.menu_page_history
+msgid "Pages history"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_parent_id
+msgid "Parent Menu"
+msgstr ""
+
+#. module: document_page
+#: code:addons/document_page/tests/test_document_page_show_diff.py:35
+#: code:addons/document_page/wizard/document_page_show_diff.py:35
+#, python-format
+msgid "Select one or maximum two history revisions!"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
+msgid "Summary"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+msgid "Template"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+msgid ""
+"Template that will be used as a content template for all new page of this "
+"category."
+msgstr ""
+
+#. module: document_page
+#: code:addons/document_page/models/document_page_history.py:37
+#, python-format
+msgid "There are no changes in revisions."
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_name
+msgid "Title"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_type
+msgid "Type"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model,name:document_page.model_document_page_create_menu
+msgid "Wizard Create Menu"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "e.g. Once upon a time..."
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+msgid "or"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
+msgid "wizard.document.page.history.show_diff"
+msgstr ""
