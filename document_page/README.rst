@@ -55,6 +55,7 @@ Contributors
 
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+* Jose Maria Alzaga <jose.alzaga@aselcis.com>
 
 Funders
 -------
