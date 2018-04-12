@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="document_page_css">
-        <link rel="stylesheet" type="text/less" href="/document_page/static/src/css/document_page.css"/>
-    </template>
-</odoo>
