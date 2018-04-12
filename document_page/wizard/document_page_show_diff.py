@@ -19,7 +19,7 @@
 #
 ##############################################################################
 from openerp import models, fields, _
-from openerp import exceptions
+from openerp.exceptions import UserError
 
 
 class DocumentPageShowDiff(models.TransientModel):
@@ -27,33 +27,24 @@ class DocumentPageShowDiff(models.TransientModel):
 
     _name = 'wizard.document.page.history.show_diff'
 
-    def get_diff(self):
+    def _get_diff(self):
         """Return the Difference between two document."""
         history = self.env["document.page.history"]
         ids = self.env.context.get('active_ids', [])
-
-        diff = ""
+        diff = False
         if len(ids) == 2:
             if ids[0] > ids[1]:
                 diff = history.getDiff(ids[1], ids[0])
             else:
                 diff = history.getDiff(ids[0], ids[1])
         elif len(ids) == 1:
-            old = history.browse(ids[0])
-            nids = history.search(
-                [('page_id', '=', old.page_id.id)],
-                order='id DESC',
-                limit=1
-            )
-            diff = history.getDiff(ids[0], nids.id)
+            diff = history.browse(ids[0]).diff
         else:
-            raise exceptions.Warning(
-                _("Select one or maximum two history revisions!")
-            )
+            raise UserError(
+                _("Select one or maximum two history revisions!"))
         return diff
 
     diff = fields.Text(
-        'Diff',
         readonly=True,
-        default=get_diff
+        default=_get_diff,
     )

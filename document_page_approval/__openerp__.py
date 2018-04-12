@@ -21,13 +21,12 @@
 
 {
     'name': 'Document Page Approval',
-    'version': '9.0.1.0.0',
+    'version': '9.0.2.0.0',
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
     'category': 'Knowledge Management',
     'depends': [
-        'knowledge',
         'document_page',
         'mail',
     ],
@@ -40,6 +39,8 @@
     ],
     'installable': True,
     'auto_install': False,
+    'post_init_hook': 'post_init_hook',
+    'uninstall_hook': 'uninstall_hook',
     'images': [
         'images/category.png',
         'images/page_history_list.png',
