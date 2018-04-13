@@ -4,7 +4,7 @@
 
 {
     'name': 'Document Page Approval',
-    'version': '10.0.1.1.0',
+    'version': '10.0.2.0.0',
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -25,4 +25,6 @@
         'images/page_history_list.png',
         'images/page_history.png',
     ],
+    'post_init_hook': 'post_init_hook',
+    'uninstall_hook': 'uninstall_hook',
 }
