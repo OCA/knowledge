@@ -19,7 +19,7 @@ class TestDocumentPageShowDiff(common.TransactionCase):
         self.assertTrue(
             show_diff_object.with_context(
                 active_ids=[i.id for i in history_pages]
-            ).get_diff()
+            )._get_diff()
         )
 
         page.write({'content': 'Text content updated'})
@@ -30,7 +30,7 @@ class TestDocumentPageShowDiff(common.TransactionCase):
         with self.assertRaises(Exception) as context:
             show_diff_object.with_context(
                 active_ids=[i.id for i in history_pages]
-            ).get_diff()
+            )._get_diff()
 
         self.assertTrue(_("Select one or maximum two history revisions!")
                         in context.exception)

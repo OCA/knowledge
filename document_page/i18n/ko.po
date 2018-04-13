@@ -1,262 +1,256 @@
-# Korean translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * document_page
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 14:33+0200\n"
-"PO-Revision-Date: 2015-08-03 14:33+0200\n"
-"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
-"Language-Team: Korean <ko@li.org>\n"
-"Language: ko\n"
+"POT-Creation-Date: 2018-04-17 00:50+0000\n"
+"PO-Revision-Date: 2018-04-17 00:50+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"Language-Team: Korean (https://www.transifex.com/oca/teams/23907/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:07+0000\n"
-"X-Generator: Poedit 1.8.2\n"
+"Content-Transfer-Encoding: \n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: document_page
-#: model:ir.actions.act_window,help:document_page.action_page
-msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to create a new web page.\n"
-"              </p>\n"
-"            "
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
+msgid "Author"
 msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_wiki_filter
-#: field:document.page,create_uid:0
-msgid "Author"
-msgstr "저자"
-
-#. module: document_page
-#: view:document.page.create.menu:document_page.view_wiki_create_menu
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "취소"
 
 #. module: document_page
-#: view:document.page:document_page.view_category_tree
 #: model:ir.ui.menu,name:document_page.menu_category
+#: model:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
 msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_category_form
-#: view:document.page:document_page.view_wiki_form field:document.page,parent_id:0
 #: selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
+#: model:ir.model.fields,field_description:document_page.field_document_page_parent_id
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
 msgstr ""
 
 #. module: document_page
-#: field:document.page,child_ids:0
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "Changes"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
 msgid "Children"
 msgstr ""
 
 #. module: document_page
-#: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
+#: model:ir.actions.act_window,help:document_page.action_page
+msgid "Click to create a new web page."
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
 msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_wiki_filter
-#: view:document.page:document_page.view_wiki_form field:document.page,content:0
-#: selection:document.page,type:0 field:document.page.history,content:0
+#: selection:document.page,type:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_content
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_content
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
-msgstr "컨텐트"
-
-#. module: document_page
-#: view:document.page.create.menu:document_page.view_wiki_create_menu
-#: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
-#: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
-msgid "Create Menu"
-msgstr "메뉴 만들기"
-
-#. module: document_page
-#: field:document.page.create.menu,create_uid:0
-#: field:wizard.document.page.history.show_diff,create_uid:0
-#, fuzzy
-msgid "Created by"
-msgstr "생성 날짜"
-
-#. module: document_page
-#: field:document.page,create_date:0 field:document.page.create.menu,create_date:0
-#: field:wizard.document.page.history.show_diff,create_date:0
-msgid "Created on"
-msgstr "생성 날짜"
-
-#. module: document_page
-#: field:document.page.history,create_date:0
-msgid "Date"
-msgstr "날짜"
-
-#. module: document_page
-#: help:document.page,message_last_post:0
-msgid "Date of the last message posted on the record."
 msgstr ""
 
 #. module: document_page
-#: field:wizard.document.page.history.show_diff,diff:0
+#: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
+#: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+msgid "Create Menu"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_uid
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
+msgid "Created by"
+msgstr "작성자"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
+msgid "Created on"
+msgstr "작성일"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page_summary
+msgid "Describe the changes made"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_diff
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
 msgid "Diff"
-msgstr "Diff"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
-#: view:wizard.document.page.history.show_diff:document_page.view_wiki_show_diff
+#: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
 msgstr ""
 
 #. module: document_page
-#: view:document.page.history:document_page.view_wiki_history_tree
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_display_name
+#: model:ir.model.fields,field_description:document_page.field_document_page_display_name
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_display_content
+msgid "Displayed Content"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
 msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_wiki_filter
-#: view:document.page:document_page.view_wiki_form
-#: view:document.page:document_page.view_wiki_menu_form
-#: view:document.page:document_page.view_wiki_tree
-#: view:document.page:document_page.view_wiki_tree_children
+#: model:ir.actions.report.xml,name:document_page.report_document_page
 #: model:ir.model,name:document_page.model_document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_tree
+#: model:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
 msgstr ""
 
 #. module: document_page
-#: view:document.page.history:document_page.wiki_history_form
 #: model:ir.model,name:document_page.model_document_page_history
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Document Page History"
 msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_wiki_filter
-msgid "Document Type"
-msgstr ""
-
-#. module: document_page
-#: view:document.page:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Documents"
+msgstr "문서"
+
+#. module: document_page
+#: model:res.groups,name:document_page.group_document_editor
+msgid "Editor"
 msgstr ""
 
 #. module: document_page
-#: field:document.page,message_follower_ids:0
-msgid "Followers"
-msgstr ""
-
-#. module: document_page
-#: view:document.page:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Group By..."
 msgstr ""
 
 #. module: document_page
-#: field:document.page,history_ids:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_head
+msgid "HEAD"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "History"
 msgstr ""
 
 #. module: document_page
-#: help:document.page,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is directly in "
-"html format in order to be inserted in kanban views."
-msgstr ""
-
-#. module: document_page
-#: field:document.page,id:0 field:document.page.create.menu,id:0
-#: field:document.page.history,id:0
-#: field:wizard.document.page.history.show_diff,id:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_id
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_id
+#: model:ir.model.fields,field_description:document_page.field_document_page_id
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_id
 msgid "ID"
+msgstr "ID"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_content_date
+msgid "Last Contribution Date"
 msgstr ""
 
 #. module: document_page
-#: help:document.page,message_unread:0
-msgid "If checked new messages require your attention."
-msgstr ""
-
-#. module: document_page
-#: field:document.page,message_is_follower:0
-msgid "Is a Follower"
-msgstr ""
-
-#. module: document_page
-#: view:document.page:document_page.view_wiki_form
-#, fuzzy
-msgid "Last Content"
-msgstr "컨텐트"
-
-#. module: document_page
-#: view:document.page:document_page.view_wiki_filter
-#: field:document.page,write_uid:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_content_uid
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
 msgstr ""
 
 #. module: document_page
-#: field:document.page,message_last_post:0
-msgid "Last Message Date"
+#: model:ir.model.fields,field_description:document_page.field_document_page___last_update
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu___last_update
+#: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: document_page
-#: field:document.page.create.menu,write_uid:0
-#: field:document.page.history,write_uid:0
-#: field:wizard.document.page.history.show_diff,write_uid:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_write_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "최근 갱신한 사람"
 
 #. module: document_page
-#: field:document.page.create.menu,write_date:0
-#: field:document.page.history,write_date:0
-#: field:wizard.document.page.history.show_diff,write_date:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_write_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_write_date
+#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
 msgid "Last Updated on"
+msgstr "최근 갱신 날짜"
+
+#. module: document_page
+#: model:res.groups,name:document_page.group_document_manager
+msgid "Manager"
 msgstr ""
 
 #. module: document_page
-#: field:document.page,menu_id:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
 msgid "Menu"
-msgstr "메뉴"
+msgstr ""
 
 #. module: document_page
-#: view:document.page.create.menu:document_page.view_wiki_create_menu
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr "메뉴 정보"
+msgstr ""
 
 #. module: document_page
-#: field:document.page.create.menu,menu_name:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_name
 msgid "Menu Name"
-msgstr "메뉴 이름"
-
-#. module: document_page
-#: field:document.page,message_ids:0
-#, fuzzy
-msgid "Messages"
-msgstr "페이지"
-
-#. module: document_page
-#: help:document.page,message_ids:0
-msgid "Messages and communication history"
 msgstr ""
 
 #. module: document_page
-#: field:document.page,write_date:0
-msgid "Modification Date"
-msgstr "수정 날짜"
-
-#. module: document_page
-#: field:document.page.history,create_uid:0
-msgid "Modified By"
-msgstr ""
-
-#. module: document_page
-#: view:document.page:document_page.view_category_form
-#: view:document.page:document_page.view_wiki_form
-#: view:document.page:document_page.view_wiki_menu_form
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
 msgstr ""
 
 #. module: document_page
-#: field:document.page.history,page_id:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_page_id
 msgid "Page"
 msgstr ""
 
@@ -271,7 +265,7 @@ msgid "Page history"
 msgstr ""
 
 #. module: document_page
-#: help:document.page,type:0
+#: model:ir.model.fields,help:document_page.field_document_page_type
 msgid "Page type"
 msgstr ""
 
@@ -280,7 +274,7 @@ msgstr ""
 #: model:ir.ui.menu,name:document_page.menu_page
 #: model:ir.ui.menu,name:document_page.menu_wiki
 msgid "Pages"
-msgstr "페이지"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
@@ -288,46 +282,50 @@ msgid "Pages history"
 msgstr ""
 
 #. module: document_page
-#: field:document.page.create.menu,menu_parent_id:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_parent_id
 msgid "Parent Menu"
-msgstr "부모 메뉴"
+msgstr ""
 
 #. module: document_page
-#: field:document.page,message_summary:0 field:document.page.history,summary:0
+#: code:addons/document_page/tests/test_document_page_show_diff.py:35
+#: code:addons/document_page/wizard/document_page_show_diff.py:29
+#, python-format
+msgid "Select one or maximum two history revisions!"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
+#: model:ir.model.fields,field_description:document_page.field_document_page_summary
 msgid "Summary"
-msgstr "요약"
+msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_category_form
+#: model:ir.model.fields,field_description:document_page.field_document_page_template
+#: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Template"
 msgstr ""
 
 #. module: document_page
-#: view:document.page:document_page.view_category_form
+#: model:ir.model.fields,help:document_page.field_document_page_template
 msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/document_page.py:175
+#: code:addons/document_page/models/document_page_history.py:50
 #, python-format
 msgid "There are no changes in revisions."
 msgstr ""
 
 #. module: document_page
-#: field:document.page,name:0
+#: model:ir.model.fields,field_description:document_page.field_document_page_name
 msgid "Title"
-msgstr "제목"
-
-#. module: document_page
-#: field:document.page,type:0
-msgid "Type"
 msgstr ""
 
 #. module: document_page
-#: field:document.page,message_unread:0
-msgid "Unread Messages"
+#: model:ir.model.fields,field_description:document_page.field_document_page_type
+msgid "Type"
 msgstr ""
 
 #. module: document_page
@@ -336,18 +334,24 @@ msgid "Wizard Create Menu"
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/wizard/document_page_show_diff.py:50
-#, python-format
-msgid "You need to select minimum one or maximum two history revisions!"
-msgstr ""
-
-#. module: document_page
-#: view:document.page:document_page.view_category_form
-#: view:document.page:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "e.g. Once upon a time..."
 msgstr ""
 
 #. module: document_page
-#: view:document.page.create.menu:document_page.view_wiki_create_menu
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "eg: Changed ... for ..."
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "or"
+msgstr "또는"
+
+#. module: document_page
+#: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
+msgid "wizard.document.page.history.show_diff"
 msgstr ""

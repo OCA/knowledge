@@ -9,7 +9,7 @@
         <record id="demo_category1" model="document.page">
             <field name="name">OpenERP Features</field>
             <field name="type">category</field>
-            <field  name="content">
+            <field  name="template">
 Summary of the feature
 
 Long explanation
