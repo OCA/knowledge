@@ -2,7 +2,7 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class DocumentPageApproval(models.Model):
@@ -71,12 +71,12 @@ class DocumentPageApproval(models.Model):
 
     @api.multi
     def _is_parent_approval_required(self):
-        """Check if the document required approval base on his parrent."""
+        """Check if the document requires approval base on his parent."""
         for page in self:
             page.is_parent_approval_required = self.is_approval_required(page)
 
     def is_approval_required(self, page):
-        """Check if a document required approval."""
+        """Check if a document requires approval."""
         if page:
             res = page.approval_required
             res = res or self.is_approval_required(page.parent_id)
