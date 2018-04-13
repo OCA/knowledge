@@ -55,6 +55,7 @@ Contributors
 
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+* Iván Todorovich <ivan.todorovich@gmail.com>
 
 Funders
 -------
