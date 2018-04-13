@@ -11,117 +11,122 @@ from odoo import api, fields, models
 class DocumentPageHistoryWorkflow(models.Model):
     """Useful to manage edition's workflow on a document."""
 
-    _inherit = 'document.page.history'
+    _name = 'document.page.history'
+    _inherit = ['document.page.history', 'mail.thread']
+
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('to approve', 'Pending Approval'),
+        ('approved', 'Approved'),
+        ('cancelled', 'Cancelled')],
+        'Status',
+        readonly=True,
+    )
+
+    approved_date = fields.Datetime(
+        'Approved Date',
+    )
+
+    approved_uid = fields.Many2one(
+        'res.users',
+        'Approved by',
+    )
+
+    is_approval_required = fields.Boolean(
+        related='page_id.is_approval_required',
+        string="Approval required",
+    )
+
+    am_i_owner = fields.Boolean(
+        compute='_compute_am_i_owner'
+    )
+
+    am_i_approver = fields.Boolean(
+        related='page_id.am_i_approver'
+    )
+
+    page_url = fields.Text(
+        compute='_compute_page_url',
+        string="URL",
+    )
 
     @api.multi
     def page_approval_draft(self):
-        """Set a document state as draft and notified the reviewers."""
+        """Set a change request as draft"""
         self.write({'state': 'draft'})
+
+    @api.multi
+    def page_approval_to_approve(self):
+        """Set a change request as to approve"""
+        self.write({'state': 'to approve'})
         template = self.env.ref(
             'document_page_approval.email_template_new_draft_need_approval')
-        for page in self:
-            if page.is_parent_approval_required:
-                template.send_mail(page.id, force_send=True)
-        return True
+        approver_gid = self.env.ref(
+            'document_page_approval.group_document_approver_user')
+        for rec in self:
+            if rec.is_approval_required:
+                guids = [g.id for g in rec.page_id.approver_group_ids]
+                users = self.env['res.users'].search([
+                    ('groups_id', 'in', guids),
+                    ('groups_id', 'in', approver_gid.id)])
+                rec.message_subscribe_users([u.id for u in users])
+                rec.message_post_with_template(template.id)
 
     @api.multi
     def page_approval_approved(self):
-        """Set a document state as approve."""
-        message_obj = self.env['mail.message']
+        """Set a change request as approved."""
         self.write({
             'state': 'approved',
             'approved_date': datetime.now().strftime(
                 DEFAULT_SERVER_DATETIME_FORMAT),
             'approved_uid': self.env.uid
         })
-        # Notify followers a new version is available
-        for page_history in self:
-            subtype = self.env.ref('mail.mt_comment')
-            message_obj.create(
-                {'res_id': page_history.page_id.id,
-                 'model': 'document.page',
-                 'subtype_id': subtype.id,
-                 'body': _('New version of the document %s'
-                           ' approved.') % page_history.page_id.name
-                 }
+        for rec in self:
+            # Trigger computed field update
+            rec.page_id._compute_history_head()
+            # Notify state change
+            rec.message_post(
+                subtype='mt_comment',
+                body=_(
+                    'Change request has been approved by %s.'
+                    ) % (self.env.user.name)
             )
-        return True
-
-    @api.multi
-    def _can_user_approve_page(self):
-        """Check if a user cas approve the page."""
-        user = self.env.user
-        for page in self:
-            page.can_user_approve_page = page.can_user_approve_this_page(
-                page.page_id,
-                user
+            # Notify followers a new version is available
+            rec.page_id.message_post(
+                subtype='mt_comment',
+                body=_(
+                    'New version of the document %s approved.'
+                    ) % (rec.page_id.name)
             )
 
-    def can_user_approve_this_page(self, page, user):
-        """Check if a user can approved the page."""
-        if page:
-            res = page.approver_gid in user.groups_id
-            res = res or self.can_user_approve_this_page(page.parent_id, user)
-        else:
-            res = False
-        return res
+    @api.multi
+    def page_approval_cancelled(self):
+        """Set a change request as cancelled."""
+        self.write({'state': 'cancelled'})
+        for rec in self:
+            rec.message_post(
+                subtype='mt_comment',
+                body=_(
+                    'Change request <b>%s</b> has been cancelled by %s.'
+                    ) % (rec.display_name, self.env.user.name)
+                )
 
     @api.multi
-    def get_approvers_guids(self):
-        """Return the approvers group."""
-        res = {}
-        for page in self:
-            res[page.id] = self.get_approvers_guids_for_page(page.page_id)
-        return res
-
-    def get_approvers_guids_for_page(self, page):
-        """Return the approvers group for a page."""
-        if page:
-            if page.approver_gid:
-                res = [page.approver_gid.id]
-            else:
-                res = []
-            res.extend(self.get_approvers_guids_for_page(page.parent_id))
-        else:
-            res = []
-
-        return res
+    def _compute_am_i_owner(self):
+        """Check if current user is the owner"""
+        for rec in self:
+            rec.am_i_owner = (rec.create_uid == self.env.user)
 
     @api.multi
-    def _get_approvers_email(self):
-        """Get the approvers email."""
-        for page in self:
-            emails = ''
-            guids = self.get_approvers_guids()
-            uids = [i.id for i in self.env['res.users'].search([
-                ('groups_id', 'in', guids[page.id])
-            ])]
-            users = self.env['res.users'].browse(uids)
-
-            for user in users:
-                if user.email:
-                    emails += user.email
-                    emails += ','
-                else:
-                    empl = self.env['hr.employee'].search([
-                        ('login', '=', user.login)
-                    ])
-                    if empl.work_email:
-                        emails += empl.work_email
-                        emails += ','
-
-            page.get_approvers_email = emails[:-1]
-
-    @api.multi
-    def _get_page_url(self):
-        """Get the page url."""
+    def _compute_page_url(self):
+        """Compute the page url."""
         for page in self:
             base_url = self.env['ir.config_parameter'].get_param(
                 'web.base.url',
                 default='http://localhost:8069'
             )
 
-            page.get_page_url = (
+            page.page_url = (
                 '{}/web#db={}&id={}&view_type=form&'
                 'model=document.page.history').format(
                     base_url,
@@ -129,37 +134,18 @@ class DocumentPageHistoryWorkflow(models.Model):
                     page.id
                 )
 
-    state = fields.Selection(
-        [('draft', 'Draft'), ('approved', 'Approved')],
-        'Status',
-        readonly=True
-    )
-
-    approved_date = fields.Datetime("Approved Date")
-
-    approved_uid = fields.Many2one(
-        'res.users',
-        "Approved By"
-    )
-
-    is_parent_approval_required = fields.Boolean(
-        related='page_id.is_parent_approval_required',
-        string="parent approval",
-        store=False
-    )
-
-    can_user_approve_page = fields.Boolean(
-        compute=_can_user_approve_page,
-        string="can user approve this page",
-        store=False
-    )
-    get_approvers_email = fields.Text(
-        compute=_get_approvers_email,
-        string="get all approvers email",
-        store=False
-    )
-    get_page_url = fields.Text(
-        compute=_get_page_url,
-        string="URL",
-        store=False
-    )
+    @api.multi
+    def _compute_diff(self):
+        """Shows a diff between this version and the previous version"""
+        history = self.env['document.page.history']
+        for rec in self:
+            domain = [
+                ('page_id', '=', rec.page_id.id),
+                ('state', '=', 'approved')]
+            if rec.approved_date:
+                domain.append(('approved_date', '<', rec.approved_date))
+            prev = history.search(domain, limit=1, order='approved_date DESC')
+            if prev:
+                rec.diff = self.getDiff(prev.id, rec.id)
+            else:
+                rec.diff = self.getDiff(False, rec.id)
