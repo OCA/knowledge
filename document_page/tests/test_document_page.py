@@ -4,34 +4,37 @@ from odoo.tests import common
 
 
 class TestDocumentPage(common.TransactionCase):
-    """document_page test class."""
+
+    def setUp(self):
+        super(TestDocumentPage, self).setUp()
+        self.page_obj = self.env['document.page']
+        self.history_obj = self.env['document.page.history']
+        self.category1 = self.env.ref('document_page.demo_category1')
+        self.page1 = self.env.ref('document_page.demo_page1')
 
     def test_page_creation(self):
-        """Test page creation."""
-        parent_page = self.env.ref('document_page.demo_category1')
-
-        self.assertEqual(parent_page.name, 'OpenERP Features')
-
-        record = self.env['document.page'].create({
-            'name': 'Test Page1',
-            'parent_id': parent_page.id,
+        page = self.page_obj.create({
+            'name': 'Test Page 1',
+            'parent_id': self.category1.id,
             'content': 'Test content'
         })
-        self.assertEqual(record.name, 'Test Page1')
+        self.assertEqual(page.content, 'Test content')
+        self.assertEqual(len(page.history_ids), 1)
+        page.content = 'New content for Demo Page'
+        self.assertEqual(len(page.history_ids), 2)
 
-    def test_category_display_content(self):
-        """Test category display content."""
-        page = self.env.ref('document_page.demo_category1')
-        self.assertTrue(page.display_content.find('Demo') > 1)
+    def test_category_template(self):
+        page = self.page_obj.create({
+            'name': 'Test Page 2',
+            'parent_id': self.category1.id,
+        })
+        page._onchange_parent_id()
+        self.assertEqual(page.content, self.category1.template)
 
-    def test_page_display_content(self):
-        """Test page display content."""
-        page = self.env.ref('document_page.demo_page1')
-        self.assertTrue(page.display_content.find('Demo') > 1)
-
-    def test_page_do_set_content(self):
-        """Test page set content."""
-        page = self.env.ref('document_page.demo_page1')
-        page.content = None
-        page.do_set_content()
-        self.assertTrue(page.display_content.find('Summary') == 1)
+    def test_page_history_diff(self):
+        page = self.page_obj.create({
+            'name': 'Test Page 3',
+            'content': 'Test content'
+        })
+        page.content = 'New content'
+        self.assertIsNotNone(page.history_ids[0].diff)
