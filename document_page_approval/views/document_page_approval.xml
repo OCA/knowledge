@@ -10,19 +10,18 @@
                 <xpath expr="//form/label[@for='page_id']"
                        position="before">
                     <header attrs="{'invisible':[('is_parent_approval_required','=',False)]}">
-                        <span attrs="{'invisible':[('can_user_approve_page','=',False)]}">
-                            <button name="page_approval_approve"
-                                    string="Approve"
-                                    states="draft" />
-                        </span>
+                        <button name="page_approval_approve"
+                                string="Approve"
+                                states="draft"
+                                class="btn-primary"
+                                attrs="{'invisible':[('can_user_approve_page','=',False)]}"/>
                         <field name="state"
                                widget="statusbar"
                                statusbar_visible="draft,approved"/>
-                         <field name="is_parent_approval_required"
+                        <field name="is_parent_approval_required"
                                invisible="1" />
                         <field name="can_user_approve_page"
                                invisible="1" />
-
                     </header>
                 </xpath>
             </field>
