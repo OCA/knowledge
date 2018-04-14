@@ -3,14 +3,16 @@
 # * document_choose_directory
 # 
 # Translators:
+# Marco Calcagni <mcalcagni@dinamicheaziendali.it>, 2018
+# Paolo Valier, 2016
 # Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-05 11:50+0000\n"
-"PO-Revision-Date: 2016-03-13 16:58+0000\n"
-"Last-Translator: Paolo Valier\n"
+"POT-Creation-Date: 2016-07-31 02:38+0000\n"
+"PO-Revision-Date: 2018-04-10 19:33+0000\n"
+"Last-Translator: Marco Calcagni <mcalcagni@dinamicheaziendali.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,4 +42,4 @@ msgstr "Nessuna cartella"
 #. module: document_choose_directory
 #: view:document.directory:document_choose_directory.view_document_directory_form
 msgid "{'invisible': [('type', '!=', 'ressource')]}"
-msgstr ""
+msgstr "{'invisible': [('type', '!=', 'ressource')]}"
