@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 00:55+0000\n"
-"PO-Revision-Date: 2016-11-25 14:55+0000\n"
+"POT-Creation-Date: 2018-04-13 00:41+0000\n"
+"PO-Revision-Date: 2018-04-12 22:34+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (Venezuela) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/es_VE/)\n"
 "MIME-Version: 1.0\n"
@@ -23,8 +23,8 @@ msgid "Action Needed"
 msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_create_uid
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
 msgstr "Autor"
 
@@ -44,9 +44,15 @@ msgstr "Categorías"
 #: model:ir.actions.act_window,name:document_page.action_category
 #: model:ir.model.fields,field_description:document_page.field_document_page_parent_id
 #: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
 msgstr "Categoría"
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "Changes"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
@@ -69,6 +75,7 @@ msgstr "Cerrar"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_content
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
 msgstr "Contenido"
 
@@ -81,6 +88,8 @@ msgstr "Crear menú"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_create_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
 msgid "Created by"
 msgstr "Creado por"
@@ -88,14 +97,10 @@ msgstr "Creado por"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
 msgid "Created on"
 msgstr "Creado en"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
-msgid "Date"
-msgstr "Fecha"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post
@@ -103,6 +108,12 @@ msgid "Date of the last message posted on the record."
 msgstr "Fecha del último mensaje publicado en el registro."
 
 #. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page_summary
+msgid "Describe the changes made"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_diff
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_diff
 msgid "Diff"
 msgstr "Dif."
@@ -133,6 +144,7 @@ msgid "Document History"
 msgstr "Historial del Documento"
 
 #. module: document_page
+#: model:ir.actions.report.xml,name:document_page.report_document_page
 #: model:ir.model,name:document_page.model_document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -144,19 +156,20 @@ msgstr "Página de documento"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_history
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Document Page History"
 msgstr "Historia de página de documento"
 
 #. module: document_page
-#: model:ir.ui.view,arch_db:document_page.view_wiki_filter
-msgid "Document Type"
-msgstr "Tipo de documento"
-
-#. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Documents"
 msgstr "Documentos"
+
+#. module: document_page
+#: model:res.groups,name:document_page.group_document_editor
+msgid "Editor"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
@@ -175,11 +188,18 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
+#: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Group By..."
 msgstr "Agrupar por..."
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_head
+msgid "HEAD"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "History"
 msgstr "Historial"
 
@@ -207,12 +227,12 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: document_page
-#: model:ir.ui.view,arch_db:document_page.view_wiki_form
-msgid "Last Content"
-msgstr "Ultimo contenido"
+#: model:ir.model.fields,field_description:document_page.field_document_page_content_date
+msgid "Last Contribution Date"
+msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_content_uid
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
 msgstr "Último colaborador"
@@ -233,6 +253,7 @@ msgstr "Modificada por última vez"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_uid
+#: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualización por"
@@ -240,9 +261,15 @@ msgstr "Ultima actualización por"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_write_date
+#: model:ir.model.fields,field_description:document_page.field_document_page_write_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
 msgid "Last Updated on"
 msgstr "Ultima actualización en"
+
+#. module: document_page
+#: model:res.groups,name:document_page.group_document_manager
+msgid "Manager"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
@@ -263,16 +290,6 @@ msgstr "Nombre menú"
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
 msgstr "Mensajes"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_write_date
-msgid "Modification Date"
-msgstr "Fecha de modificación"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page_history_create_uid
-msgid "Modified By"
-msgstr "Modificado por"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
@@ -335,30 +352,32 @@ msgstr "Menú padre"
 
 #. module: document_page
 #: code:addons/document_page/tests/test_document_page_show_diff.py:35
-#: code:addons/document_page/wizard/document_page_show_diff.py:51
+#: code:addons/document_page/wizard/document_page_show_diff.py:44
 #, python-format
 msgid "Select one or maximum two history revisions!"
 msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
+#: model:ir.model.fields,field_description:document_page.field_document_page_summary
 msgid "Summary"
 msgstr "Resumen"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_template
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Template"
 msgstr "Plantilla"
 
 #. module: document_page
-#: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.model.fields,help:document_page.field_document_page_template
 msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
 msgstr "Plantilla que se utilizará como una plantilla de contenido para todas las nuevas páginas de esta categoría."
 
 #. module: document_page
-#: code:addons/document_page/models/document_page_history.py:52
+#: code:addons/document_page/models/document_page_history.py:65
 #, python-format
 msgid "There are no changes in revisions."
 msgstr "No hay cambios en las revisiones."
@@ -391,8 +410,15 @@ msgstr "Asistente crear menú"
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "e.g. Once upon a time..."
 msgstr "Por ejemplo, Érase una vez..."
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "eg: Changed ... for ..."
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
