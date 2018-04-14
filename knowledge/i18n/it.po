@@ -3,14 +3,15 @@
 # * knowledge
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2018
+# Marco Calcagni <mcalcagni@dinamicheaziendali.it>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2017-01-20 03:35+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-03-31 04:49+0000\n"
+"PO-Revision-Date: 2018-03-31 04:49+0000\n"
+"Last-Translator: Marco Calcagni <mcalcagni@dinamicheaziendali.it>, 2018\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,6 +25,8 @@ msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
 msgstr ""
+"Aggiungi un workflow sul documento per categoria.- Questo installa il modulo"
+"  document_page_approval."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -33,7 +36,7 @@ msgstr "Salva"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_read
 msgid "Attach files from an external DMS into Odoo"
-msgstr ""
+msgstr "Allega file da un DMS esterno verso Odoo"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -58,6 +61,9 @@ msgid ""
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
 msgstr ""
+"Collega Odoo con un server CMIS compatibile per allegare files\n"
+"ad un record Odoo.\n"
+"- Questo installa il modulo cmis_read."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
@@ -65,11 +71,13 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
+"Collega  Odoo con un server CMIS compatibile per archiviare files.\n"
+"- Questo installa il modulo cmis_write."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Connect with an external DMS"
-msgstr ""
+msgstr "Collega con un DMS esterno"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
@@ -92,6 +100,8 @@ msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module document."
 msgstr ""
+"Indicizzazione documento, ricerca del testo nell'allegato.\n"
+"- Questo installa il modulo document."
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
@@ -105,7 +115,7 @@ msgstr "Documenti"
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Group by"
-msgstr ""
+msgstr "Group by"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
@@ -122,6 +132,11 @@ msgstr "Know how"
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge and Documents Management"
 msgstr "Knowledge e Gestione documentale"
+
+#. module: knowledge
+#: model:res.groups,name:knowledge.group_document_user
+msgid "Knowledge user"
+msgstr "Utente di knowledge"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
@@ -141,7 +156,7 @@ msgstr "Ultima modifica il"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
 msgid "Manage document pages (Wiki)"
-msgstr ""
+msgstr "Gestione pagine (Wiki)"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document
@@ -151,17 +166,17 @@ msgstr "Gestione documenti"
 #. module: knowledge
 #: model:ir.module.category,description:knowledge.module_category_knowledge
 msgid "Manage documents and knowledge-related applications"
-msgstr ""
+msgstr "Gestione dei documenti e applicazioni riferite al knowledge"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
-msgstr ""
+msgstr "Gestione della approvazione documenti"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Model"
-msgstr ""
+msgstr "Model"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
@@ -169,31 +184,33 @@ msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
 msgstr ""
+"Fornisci una pagina ed una categoria come wiki.\n"
+"-  Questo installerà il modulo document_page."
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
 msgid "Settings"
-msgstr ""
+msgstr "Settings"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_write
 msgid "Store attachments in an external DMS instead of the Odoo Filestore"
-msgstr ""
+msgstr "Archivia allegati in un DMS esterno invece che nel Filestore Odoo."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Using CMIS"
-msgstr ""
+msgstr "Utilizzando CMIS"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
 msgid "ir.attachment"
-msgstr ""
+msgstr "ir.attachment"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_knowledge_config_settings
 msgid "knowledge.config.settings"
-msgstr ""
+msgstr "knowledge.config.settings"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
