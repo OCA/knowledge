@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-11 03:34+0000\n"
-"PO-Revision-Date: 2015-11-07 12:40+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2018-02-10 05:21+0000\n"
+"PO-Revision-Date: 2018-04-10 20:42+0000\n"
+"Last-Translator: Marco Calcagni <mcalcagni@dinamicheaziendali.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-7-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,12 +84,12 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,can_user_approve_page:0
 msgid "can user approve this page"
-msgstr ""
+msgstr "può un utente approvare questa pagina"
 
 #. module: document_page_approval
 #: field:document.page,approver_gid:0
 msgid "Approver group"
-msgstr ""
+msgstr "gruppo che approva"
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page_history
@@ -109,4 +109,4 @@ msgstr ""
 #. module: document_page_approval
 #: field:document.page.history,get_approvers_email:0
 msgid "get all approvers email"
-msgstr ""
+msgstr "prendi le email di chi approva"
