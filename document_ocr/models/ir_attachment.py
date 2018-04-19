@@ -18,7 +18,7 @@ class IrAttachment(models.Model):
     def _index(self, data, datas_fname, file_type):
         mimetype, content = super(IrAttachment, self)._index(
             data, datas_fname, file_type)
-        if not content or content == 'image':
+        if mimetype and (not content or content == 'image'):
             has_synchr_param = self.env['ir.config_parameter'].get_param(
                 'document_ocr.synchronous', 'False') == 'True'
             has_force_flag = self.env.context.get('document_ocr_force')
@@ -42,7 +42,7 @@ class IrAttachment(models.Model):
         else:
             image_data = StringIO()
             try:
-                Image.open(StringIO(data)).save(image_data, 'tiff',
+                Image.open(StringIO(data)).save(image_data, 'png',
                                                 dpi=(dpi, dpi))
             except IOError:
                 _logger.exception('Failed to OCR image')
@@ -70,10 +70,10 @@ class IrAttachment(models.Model):
         return StringIO(stdout)
 
     @api.model
-    def _ocr_cron(self):
+    def _ocr_cron(self, limit=0):
         for this in self.with_context(document_ocr_force=True).search([
             ('index_content', '=', _MARKER_PHRASE),
-        ]):
+        ], limit=limit):
             if not this.datas:
                 continue
             file_type, index_content = this._index(
