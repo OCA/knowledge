@@ -10,20 +10,23 @@
             <sheet position="before">
                 <header>
                     <!-- draft -> to approve -->
-                    <button name="page_approval_to_approve" type="object" string="Send to Review" state="draft" class="oe_highlight"
+                    <button name="action_to_approve" type="object" string="Send to Review" class="oe_highlight"
                             attrs="{'invisible':['|','|',('is_approval_required','=',False),('am_i_owner','=',False),('state', 'not in', ['draft'])]}"/>
                     <!-- approve if i am approver -->
-                    <button name="page_approval_approved" type="object" string="Approve" state="to aprrove" class="oe_highlight"
+                    <button name="action_approve" type="object" string="Approve" class="oe_highlight"
                             attrs="{'invisible':['|','|',('is_approval_required','=',False),('am_i_approver','=',False),('state','not in',['draft','to approve'])]}"/>
                     <!-- approve if it's not required and i am owner -->
-                    <button name="page_approval_approved" type="object" string="Approve" class="oe_highlight"
+                    <button name="action_approve" type="object" string="Approve" class="oe_highlight"
                             attrs="{'invisible':['|','|',('is_approval_required','=',True),('am_i_owner','=',False),('state','not in',['draft', 'to approve'])]}"/>
                     <!-- cancel if i am owner or approver -->
-                    <button name="page_approval_cancelled" type="object" string="Cancel"
+                    <button name="action_cancel" type="object" string="Cancel"
                             attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['draft','to approve'])]}"/>
                     <!-- reopen if i am owner or approver -->
-                    <button name="page_approval_draft" type="object" string="Back to draft" state="cancelled"
+                    <button name="action_draft" type="object" string="Back to draft"
                             attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['cancelled'])]}"/>
+                    <!-- cancel & reopen, if i am owner or approver -->
+                    <button name="action_draft" type="object" string="Back to draft"
+                            attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['to approve'])]}"/>
                     <field name="am_i_owner" invisible="1"/>
                     <field name="am_i_approver" invisible="1"/>
                     <field name="is_approval_required" invisible="1"/>
@@ -36,15 +39,31 @@
                     <field name="approved_date" readonly="1" attrs="{'invisible':[('state','not in',['approved'])]}"/>
                 </group>
             </xpath>
-            <field name="content" position="attributes">
-                <attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute>
-            </field>
+			<!-- Readonly fields -->
+            <field name="content" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+            <field name="page_id" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+            <field name="name"    position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+            <field name="summary" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+            <!-- Chatter -->
             <sheet position="after">
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
             </sheet>
+        </field>
+    </record>
+
+    <!-- History Form View Manager Rights -->
+    <record id="wiki_history_form_inherit_manager" model="ir.ui.view">
+        <field name="name">document.page.history.form</field>
+        <field name="model">document.page.history</field>
+        <field name="inherit_id" ref="wiki_history_form_inherit"/>
+        <field name="groups_id" eval="[(6, 0, [ref('document_page.group_document_manager')])]"/>
+        <field name="arch" type="xml">
+            <!-- Readonly fields -->
+            <field name="name"    position="attributes"><attribute name="attrs">{'readonly': False}</attribute></field>
+            <field name="summary" position="attributes"><attribute name="attrs">{'readonly': False}</attribute></field>
         </field>
     </record>
 
@@ -64,17 +83,20 @@
                      attrs="{'invisible': [('is_approval_required','=',False)]}">
                     This document requires approval. If edited, you will create a new <b>Change Request</b>.
                 </div>
+                <div class="alert alert-warning oe_edit_only" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': [('user_has_drafts','=',False)]}">
+                    <b>You already have a Draft Change Request for this page.</b>
+                    It is highly recommended that you edit that one instead of creating a new one.
+                </div>
                 <field name="is_approval_required" invisible="1"/>
                 <field name="has_changes_pending_approval" invisible="1"/>
+                <field name="user_has_drafts" invisible="1"/>
             </sheet>
 
-            <field name="type" position="before">
-                <div class="oe_button_box" name="button_box">
-                    <button class="oe_stat_button" name="action_changes_pending_approval"
-                            string="Change Requests" type="object"
-                            attrs="{'invisible':[('has_changes_pending_approval','=',False)]}" icon="fa-edit"/>
-                </div>
-            </field>
+            <button name="toggle_active" position="after">
+                <button class="oe_stat_button" name="action_changes_pending_approval" string="Change Requests" type="object"
+                        attrs="{'invisible':[('has_changes_pending_approval','=',False),('user_has_drafts','=',False)]}" icon="fa-edit"/>
+            </button>
 
             <field name="content_uid" position="after">
                 <field name="approved_uid"/>
@@ -176,7 +198,7 @@
         <field name="res_model">document.page.history</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{'search_default_state':'to approve'}</field>
+        <field name="context">{'search_default_draft': 1, 'search_default_pending': 1}</field>
     </record>
 
     <menuitem id="menu_page_change_requests"
