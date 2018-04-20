@@ -1,14 +1,12 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from datetime import datetime
 from odoo.tools.translate import _
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
-class DocumentPageHistoryWorkflow(models.Model):
+class DocumentPageHistory(models.Model):
     """Useful to manage edition's workflow on a document."""
 
     _name = 'document.page.history'
@@ -20,8 +18,8 @@ class DocumentPageHistoryWorkflow(models.Model):
         ('approved', 'Approved'),
         ('cancelled', 'Cancelled')],
         'Status',
+        default='draft',
         readonly=True,
-        default='draft'
     )
 
     approved_date = fields.Datetime(
@@ -43,7 +41,8 @@ class DocumentPageHistoryWorkflow(models.Model):
     )
 
     am_i_approver = fields.Boolean(
-        compute='_compute_am_i_approver'
+        related='page_id.am_i_approver',
+        related_sudo=False,
     )
 
     page_url = fields.Text(
@@ -52,56 +51,66 @@ class DocumentPageHistoryWorkflow(models.Model):
     )
 
     @api.multi
-    def page_approval_draft(self):
+    def action_draft(self):
         """Set a change request as draft"""
-        if self.filtered(lambda r: r.state not in [
-                         'cancelled', 'approved']):
-            raise UserError(_("It's not cancelled or approved"))
-        if self.filtered(lambda r:
-                         r.state == 'approved' and not self.am_i_approver):
-            raise UserError(_("You are not an appover to reset to draft"))
-        self.write({'state': 'draft'})
+        for rec in self:
+            if not rec.state == 'cancelled':
+                raise UserError(
+                    _('You need to cancel it before reopening.'))
+            if not (rec.am_i_owner or rec.am_i_approver):
+                raise UserError(
+                    _('You are not authorized to do this.\r\n'
+                      'Only owners or approvers can reopen Change Requests.'))
+            rec.write({'state': 'draft'})
 
     @api.multi
-    def document_page_auto_confirm(self):
-        """Automatic Transitions for change requests created directly from
-        documents
-        """
-        if self.filtered(lambda r: r.state != 'draft'):
-            raise UserError(_("It's not in draft state"))
-        to_approve = self.filtered(lambda r: r.is_approval_required)
-        to_approve.write({'state': 'to approve'})
-        approved = (self - to_approve)
-        approved.write({'state': 'approved'})
-        approved.mapped('page_id')._compute_history_head()
-
-    @api.multi
-    def page_approval_to_approve(self):
+    def action_to_approve(self):
         """Set a change request as to approve"""
-        self.write({'state': 'to approve'})
         template = self.env.ref(
             'document_page_approval.email_template_new_draft_need_approval')
         approver_gid = self.env.ref(
             'document_page_approval.group_document_approver_user')
         for rec in self:
+            if rec.state != 'draft':
+                raise UserError(
+                    _("Can't approve pages in '%s' state.") % rec.state)
+            if not (rec.am_i_owner or rec.am_i_approver):
+                raise UserError(
+                    _('You are not authorized to do this.\r\n'
+                      'Only owners or approvers can request approval.'))
+            # request approval
             if rec.is_approval_required:
+                rec.write({'state': 'to approve'})
                 guids = [g.id for g in rec.page_id.approver_group_ids]
                 users = self.env['res.users'].search([
                     ('groups_id', 'in', guids),
                     ('groups_id', 'in', approver_gid.id)])
                 rec.message_subscribe_users([u.id for u in users])
                 rec.message_post_with_template(template.id)
+            else:
+                # auto-approve if approval is not required
+                rec.action_approve()
 
     @api.multi
-    def page_approval_approved(self):
+    def action_approve(self):
         """Set a change request as approved."""
-        self.write({
-            'state': 'approved',
-            'approved_date': datetime.now().strftime(
-                DEFAULT_SERVER_DATETIME_FORMAT),
-            'approved_uid': self.env.uid
-        })
         for rec in self:
+            if rec.state not in ['draft', 'to approve']:
+                raise UserError(
+                    _("Can't approve page in '%s' state.") % rec.state)
+            if not rec.am_i_approver:
+                raise UserError(_(
+                    'You are not authorized to do this.\r\n'
+                    'Only approvers with these groups can approve this: '
+                    ) % ', '.join(
+                        [g.display_name
+                            for g in rec.page_id.approver_group_ids]))
+            # Update state
+            rec.write({
+                'state': 'approved',
+                'approved_date': fields.datetime.now(),
+                'approved_uid': self.env.uid,
+            })
             # Trigger computed field update
             rec.page_id._compute_history_head()
             # Notify state change
@@ -120,7 +129,7 @@ class DocumentPageHistoryWorkflow(models.Model):
             )
 
     @api.multi
-    def page_approval_cancelled(self):
+    def action_cancel(self):
         """Set a change request as cancelled."""
         self.write({'state': 'cancelled'})
         for rec in self:
@@ -132,17 +141,16 @@ class DocumentPageHistoryWorkflow(models.Model):
                 )
 
     @api.multi
+    def action_cancel_and_draft(self):
+        """Set a change request as draft, cancelling it first"""
+        self.action_cancel()
+        self.action_draft()
+
+    @api.multi
     def _compute_am_i_owner(self):
         """Check if current user is the owner"""
         for rec in self:
             rec.am_i_owner = (rec.create_uid == self.env.user)
-
-    @api.multi
-    def _compute_am_i_approver(self):
-        """check if current user is a approver"""
-        for rec in self:
-            rec.am_i_approver = rec.page_id.can_user_approve_this_page(
-                self.env.user)
 
     @api.multi
     def _compute_page_url(self):
