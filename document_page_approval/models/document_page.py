@@ -23,7 +23,7 @@ from openerp import models, fields, api
 from ast import literal_eval
 
 
-class DocumentPageApproval(models.Model):
+class DocumentPage(models.Model):
     """Useful to know the state of a document."""
 
     _inherit = 'document.page'
@@ -138,8 +138,8 @@ class DocumentPageApproval(models.Model):
 
     @api.multi
     def _create_history(self, vals):
-        res = super(DocumentPageApproval, self)._create_history(vals)
-        res.signal_workflow('document_page_auto_confirm')
+        res = super(DocumentPage, self)._create_history(vals)
+        res.action_to_approve()
 
     @api.multi
     def action_changes_pending_approval(self):
