@@ -21,6 +21,8 @@ class DocumentPage(models.Model):
         default="content"
     )
 
+    active = fields.Boolean(default=True)
+
     parent_id = fields.Many2one(
         'document.page',
         'Category',
@@ -42,7 +44,16 @@ class DocumentPage(models.Model):
     )
 
     # no-op computed field
-    summary = fields.Char(
+    draft_name = fields.Char(
+        string='Name',
+        help='Name for the changes made',
+        compute=lambda x: x,
+        inverse=lambda x: x,
+    )
+
+    # no-op computed field
+    draft_summary = fields.Char(
+        string='Summary',
         help='Describe the changes made',
         compute=lambda x: x,
         inverse=lambda x: x,
@@ -93,6 +104,14 @@ class DocumentPage(models.Model):
         readonly=True,
     )
 
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        help='If set, page is accessible only from this company',
+        index=True,
+        ondelete='cascade',
+    )
+
     @api.multi
     def _get_page_index(self, link=True):
         """Return the index of a document."""
@@ -124,10 +143,12 @@ class DocumentPage(models.Model):
     @api.multi
     def _inverse_content(self):
         for rec in self:
-            if rec.type == 'content':
+            if rec.type == 'content' and \
+                    rec.content != rec.history_head.content:
                 rec._create_history({
+                    'name': rec.draft_name,
+                    'summary': rec.draft_summary,
                     'content': rec.content,
-                    'summary': rec.summary,
                 })
 
     @api.multi
