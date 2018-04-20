@@ -6,7 +6,7 @@ from odoo import api, fields, models
 from ast import literal_eval
 
 
-class DocumentPageApproval(models.Model):
+class DocumentPage(models.Model):
     """Useful to know the state of a document."""
 
     _inherit = 'document.page'
@@ -66,6 +66,11 @@ class DocumentPageApproval(models.Model):
         string='Has changes pending approval'
     )
 
+    user_has_drafts = fields.Boolean(
+        compute='_compute_user_has_drafts',
+        string='User has drafts?',
+    )
+
     @api.multi
     @api.depends('approval_required', 'parent_id.is_approval_required')
     def _compute_is_approval_required(self):
@@ -100,14 +105,17 @@ class DocumentPageApproval(models.Model):
         # if it's not required, anyone can approve
         if not self.is_approval_required:
             return True
-        # to approve, you must have approver rights
-        approver_group_id = self.env.ref(
-            'document_page_approval.group_document_approver_user')
-        if approver_group_id not in user.groups_id:
+        # if user belongs to 'Knowledge / Manager', he can approve anything
+        if user.has_group('document_page.group_document_manager'):
+            return True
+        # to approve, user must have approver rights
+        if not user.has_group(
+                'document_page_approval.group_document_approver_user'):
             return False
-        # and belong to at least one of the approver_groups (if any is set)
+        # if there aren't any approver_groups_defined, user can approve
         if not self.approver_group_ids:
             return True
+        # to approve, user must belong to any of the approver groups
         return len(user.groups_id & self.approver_group_ids) > 0
 
     @api.multi
@@ -120,9 +128,18 @@ class DocumentPageApproval(models.Model):
             rec.has_changes_pending_approval = (changes > 0)
 
     @api.multi
+    def _compute_user_has_drafts(self):
+        history = self.env['document.page.history']
+        for rec in self:
+            changes = history.search_count([
+                ('page_id', '=', rec.id),
+                ('state', '=', 'draft')])
+            rec.user_has_drafts = (changes > 0)
+
+    @api.multi
     def _create_history(self, vals):
-        res = super(DocumentPageApproval, self)._create_history(vals)
-        res.document_page_auto_confirm()
+        res = super(DocumentPage, self)._create_history(vals)
+        res.action_to_approve()
 
     @api.multi
     def action_changes_pending_approval(self):
