@@ -14,8 +14,9 @@ class DocumentPageHistory(models.Model):
     _order = 'id DESC'
 
     page_id = fields.Many2one('document.page', 'Page', ondelete='cascade')
-    summary = fields.Char('Summary', index=True)
-    content = fields.Text("Content")
+    name = fields.Char(index=True)
+    summary = fields.Char(index=True)
+    content = fields.Text()
     diff = fields.Text(compute='_compute_diff')
 
     @api.multi
