@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-31 04:49+0000\n"
-"PO-Revision-Date: 2018-03-31 04:49+0000\n"
+"POT-Creation-Date: 2018-04-17 00:50+0000\n"
+"PO-Revision-Date: 2018-04-17 00:50+0000\n"
 "Last-Translator: Marco Calcagni <mcalcagni@dinamicheaziendali.it>, 2018\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
@@ -104,18 +104,9 @@ msgstr ""
 "- Questo installa il modulo document."
 
 #. module: knowledge
-#: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
-#: model:ir.ui.menu,name:knowledge.menu_document
-#: model:ir.ui.menu,name:knowledge.menu_document_section
-#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Documents"
 msgstr "Documenti"
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
-msgid "Group by"
-msgstr "Group by"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
@@ -124,7 +115,7 @@ msgstr "ID"
 
 #. module: knowledge
 #: model:ir.module.category,name:knowledge.module_category_knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document_root
+#: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr "Know how"
 
@@ -172,11 +163,6 @@ msgstr "Gestione dei documenti e applicazioni riferite al knowledge"
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
 msgstr "Gestione della approvazione documenti"
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
-msgid "Model"
-msgstr "Model"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
