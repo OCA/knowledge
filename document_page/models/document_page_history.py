@@ -20,7 +20,6 @@ class DocumentPageHistory(models.Model):
     diff = fields.Text(compute='_compute_diff')
 
     @api.multi
-    @api.depends('content', 'page_id.history_ids')
     def _compute_diff(self):
         """Shows a diff between this version and the previous version"""
         history = self.env['document.page.history']
