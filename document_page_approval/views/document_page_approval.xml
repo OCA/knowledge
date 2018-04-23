@@ -36,9 +36,12 @@
                         <field name="approved_date" readonly="1" attrs="{'invisible':[('state','not in',['approved'])]}"/>
                     </group>
                 </xpath>
-                <field name="content" position="attributes">
-                    <attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute>
-                </field>
+                <!-- Readonly fields -->
+                <field name="content" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+                <field name="page_id" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+                <field name="name"    position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+                <field name="summary" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
+                <!-- Chatter -->
                 <sheet position="after">
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
