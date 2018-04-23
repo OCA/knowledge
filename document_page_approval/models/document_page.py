@@ -67,6 +67,11 @@ class DocumentPage(models.Model):
         string='Has changes pending approval'
     )
 
+    user_has_drafts = fields.Boolean(
+        compute='_compute_user_has_drafts',
+        string='User has drafts?',
+    )
+
     @api.multi
     @api.depends('approval_required', 'parent_id.is_approval_required')
     def _compute_is_approval_required(self):
@@ -119,6 +124,15 @@ class DocumentPage(models.Model):
                 ('page_id', '=', rec.id),
                 ('state', '=', 'to approve')])
             rec.has_changes_pending_approval = (changes > 0)
+
+    @api.multi
+    def _compute_user_has_drafts(self):
+        history = self.env['document.page.history']
+        for rec in self:
+            changes = history.search_count([
+                ('page_id', '=', rec.id),
+                ('state', '=', 'draft')])
+            rec.user_has_drafts = (changes > 0)
 
     @api.multi
     def _create_history(self, vals):
