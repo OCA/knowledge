@@ -24,6 +24,9 @@
                     <!-- reopen if i am owner or approver -->
                     <button name="action_draft" type="object" string="Back to draft"
                             attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['cancelled'])]}"/>
+                    <!-- cancel & reopen, if i am owner or approver -->
+                    <button name="action_draft" type="object" string="Back to draft"
+                            attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['to approve'])]}"/>
                     <field name="am_i_owner" invisible="1"/>
                     <field name="am_i_approver" invisible="1"/>
                     <field name="is_approval_required" invisible="1"/>
