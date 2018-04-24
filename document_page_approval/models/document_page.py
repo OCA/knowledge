@@ -106,14 +106,17 @@ class DocumentPage(models.Model):
         # if it's not required, anyone can approve
         if not self.is_approval_required:
             return True
-        # to approve, you must have approver rights
-        approver_group_id = self.env.ref(
-            'document_page_approval.group_document_approver_user')
-        if approver_group_id not in user.groups_id:
+        # if user belongs to 'Knowledge / Manager', he can approve anything
+        if user.has_group('document_page.group_document_manager'):
+            return True
+        # to approve, user must have approver rights
+        if not user.has_group(
+                'document_page_approval.group_document_approver_user'):
             return False
-        # and belong to at least one of the approver_groups (if any is set)
+        # if there aren't any approver_groups_defined, user can approve
         if not self.approver_group_ids:
             return True
+        # to approve, user must belong to any of the approver groups
         return len(user.groups_id & self.approver_group_ids) > 0
 
     @api.multi

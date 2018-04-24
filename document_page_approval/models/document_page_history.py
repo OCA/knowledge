@@ -42,7 +42,8 @@ class DocumentPageHistory(models.Model):
     )
 
     am_i_approver = fields.Boolean(
-        related='page_id.am_i_approver'
+        related='page_id.am_i_approver',
+        related_sudo=False,
     )
 
     page_url = fields.Text(
