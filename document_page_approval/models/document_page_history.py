@@ -120,9 +120,8 @@ class DocumentPageHistory(models.Model):
                     'You are not authorized to do this.\r\n'
                     'Only approvers with these groups can approve this: '
                     ) % ', '.join(
-                        [g.display_name 
-                        for g in rec.page_id.approver_group_ids])
-                    )
+                        [g.display_name
+                            for g in rec.page_id.approver_group_ids]))
             # Update state
             rec.write({
                 'state': 'approved',
