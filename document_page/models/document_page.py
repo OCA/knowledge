@@ -39,6 +39,8 @@ class DocumentPage(models.Model):
         default="content"
     )
 
+    active = fields.Boolean(default=True)
+
     parent_id = fields.Many2one(
         'document.page',
         'Category',
