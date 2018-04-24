@@ -41,7 +41,8 @@ class DocumentPageHistory(models.Model):
     )
 
     am_i_approver = fields.Boolean(
-        compute='_compute_am_i_approver'
+        related='page_id.am_i_approver',
+        related_sudo=False,
     )
 
     page_url = fields.Text(
@@ -150,13 +151,6 @@ class DocumentPageHistory(models.Model):
         """Check if current user is the owner"""
         for rec in self:
             rec.am_i_owner = (rec.create_uid == self.env.user)
-
-    @api.multi
-    def _compute_am_i_approver(self):
-        """check if current user is a approver"""
-        for rec in self:
-            rec.am_i_approver = rec.page_id.can_user_approve_this_page(
-                self.env.user)
 
     @api.multi
     def _compute_page_url(self):
