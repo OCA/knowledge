@@ -40,7 +40,7 @@
         <field name="arch" type="xml">
             <form string="Document Page History">
                 <sheet>
-                    <h1><field name="page_id"/></h1>
+                    <h1><field name="page_id" readonly="1"/></h1>
                     <group>
                         <group>
                             <field name="create_uid" readonly="1"/>
