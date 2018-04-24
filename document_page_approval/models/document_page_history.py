@@ -158,6 +158,12 @@ class DocumentPageHistory(models.Model):
                 )
 
     @api.multi
+    def action_cancel_and_draft(self):
+        """Set a change request as draft, cancelling it first"""
+        self.action_cancel()
+        self.action_draft()
+
+    @api.multi
     def _compute_am_i_owner(self):
         """Check if current user is the owner"""
         for rec in self:
