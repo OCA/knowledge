@@ -34,7 +34,6 @@ class AddUrlWizard(orm.TransientModel):
                     'name': form.name,
                     'type': 'url',
                     'url': url.geturl(),
-                    'user_id': uid,
                     'res_id': active_id,
                     'res_model': context['active_model'],
                 }
