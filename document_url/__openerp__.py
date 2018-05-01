@@ -4,7 +4,7 @@
 # © 2016 ACSONE SA/NV (<http://acsone.eu>)
 {
     'name': 'URL attachment',
-    'version': '9.0.2.0.1',
+    'version': '9.0.2.0.2',
     'category': 'Tools',
     'author': "Tecnativa,"
               "Odoo Community Association (OCA)",
