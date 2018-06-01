@@ -21,7 +21,7 @@
 
 {
     'name': 'Document Page Approval',
-    'version': '9.0.2.0.0',
+    'version': '9.0.2.1.0',
     "author": "Savoir-faire Linux,Odoo Community Association (OCA)",
     "website": "http://www.savoirfairelinux.com",
     "license": "AGPL-3",
@@ -32,7 +32,6 @@
     ],
     'data': [
         'data/email_template.xml',
-        'workflows/document_page_approval.xml',
         'views/document_page_approval.xml',
         'security/document_page_security.xml',
         'security/ir.model.access.csv',

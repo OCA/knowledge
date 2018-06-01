@@ -48,7 +48,7 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.assertTrue(chreq.am_i_approver)
 
         # approve
-        chreq.signal_workflow('page_approval_approve')
+        chreq.action_approve()
         self.assertEqual(chreq.state, 'approved')
         self.assertEqual(chreq.content, page.content)
 
@@ -59,7 +59,7 @@ class TestDocumentPageApproval(common.TransactionCase):
             ('page_id', '=', page.id),
             ('state', '!=', 'approved')
         ])[0]
-        chreq.signal_workflow('page_approval_approve')
+        chreq.action_approve()
         self.assertEqual(page.content, 'New content')
 
     def test_change_request_auto_approve(self):
@@ -75,7 +75,7 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.history_obj.search([
             ('page_id', '=', page.id),
             ('state', '!=', 'approved')
-        ]).signal_workflow('page_approval_approve')
+        ]).action_approve()
 
         # new change request from scrath
         chreq = self.history_obj.create({
@@ -89,25 +89,25 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.assertNotEqual(page.approved_date, chreq.approved_date)
         self.assertNotEqual(page.approved_uid, chreq.approved_uid)
 
-        chreq.signal_workflow('page_approval_to_approve')
+        chreq.action_to_approve()
         self.assertEqual(chreq.state, 'to approve')
         self.assertNotEqual(page.content, chreq.content)
         self.assertNotEqual(page.approved_date, chreq.approved_date)
         self.assertNotEqual(page.approved_uid, chreq.approved_uid)
 
-        chreq.signal_workflow('page_approval_cancel')
+        chreq.action_cancel()
         self.assertEqual(chreq.state, 'cancelled')
         self.assertNotEqual(page.content, chreq.content)
         self.assertNotEqual(page.approved_date, chreq.approved_date)
         self.assertNotEqual(page.approved_uid, chreq.approved_uid)
 
-        chreq.signal_workflow('page_approval_reopen')
+        chreq.action_draft()
         self.assertEqual(chreq.state, 'draft')
         self.assertNotEqual(page.content, chreq.content)
         self.assertNotEqual(page.approved_date, chreq.approved_date)
         self.assertNotEqual(page.approved_uid, chreq.approved_uid)
 
-        chreq.signal_workflow('page_approval_approve')
+        chreq.action_approve()
         self.assertEqual(chreq.state, 'approved')
         self.assertEqual(page.content, chreq.content)
         self.assertEqual(page.approved_date, chreq.approved_date)
