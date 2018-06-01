@@ -1,5 +1,6 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
+
 ===================================
 Link to a partner in document pages
 ===================================
@@ -12,9 +13,11 @@ Usage
 To use this module, simply fill in a partner for some pages, then you can search by partner or group by partner.
 
 * go to ...
+
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+
 :alt: Try me on Runbotknowl
-    :target: https://runbot.odoo-community.org/runbot/118/8.0
+    :target: https://runbot.odoo-community.org/runbot/118/10.0
 
 Bug Tracker
 ===========
@@ -31,6 +34,7 @@ Contributors
 ------------
 
 * Holger Brunn <hbrunn@therp.nl>
+* George Daramouskas <gdaramouskas@therp.nl>
 
 Maintainer
 ----------
