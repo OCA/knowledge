@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-13 00:41+0000\n"
-"PO-Revision-Date: 2018-04-12 22:34+0000\n"
+"POT-Creation-Date: 2018-06-01 19:51+0000\n"
+"PO-Revision-Date: 2018-06-01 18:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction
 msgid "Action Needed"
 msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_active
+msgid "Active"
+msgstr "活躍"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
@@ -109,7 +114,7 @@ msgid "Date of the last message posted on the record."
 msgstr "釋出到記錄上的最後資訊的日期"
 
 #. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_summary
+#: model:ir.model.fields,help:document_page.field_document_page_draft_summary
 msgid "Describe the changes made"
 msgstr ""
 
@@ -293,11 +298,18 @@ msgid "Messages"
 msgstr "訊息"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_draft_name
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_name
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
 msgstr "名稱"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page_draft_name
+msgid "Name for the changes made"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction_counter
@@ -352,6 +364,17 @@ msgid "Parent Menu"
 msgstr "上級選單"
 
 #. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "Rev 01"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Revision"
+msgstr ""
+
+#. module: document_page
 #: code:addons/document_page/tests/test_document_page_show_diff.py:35
 #: code:addons/document_page/wizard/document_page_show_diff.py:44
 #, python-format
@@ -359,8 +382,8 @@ msgid "Select one or maximum two history revisions!"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
-#: model:ir.model.fields,field_description:document_page.field_document_page_summary
 msgid "Summary"
 msgstr "摘要"
 
