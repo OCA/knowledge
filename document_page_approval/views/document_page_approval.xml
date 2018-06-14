@@ -10,19 +10,19 @@
             <sheet position="before">
                 <header>
                     <!-- draft -> to approve -->
-                    <button name="page_approval_to_approve" string="Send to Review" class="oe_highlight"
+                    <button name="page_approval_to_approve" type="object" string="Send to Review" state="draft" class="oe_highlight"
                             attrs="{'invisible':['|','|',('is_approval_required','=',False),('am_i_owner','=',False),('state', 'not in', ['draft'])]}"/>
                     <!-- approve if i am approver -->
-                    <button name="page_approval_approve" string="Approve" class="oe_highlight"
+                    <button name="page_approval_approved" type="object" string="Approve" state="to aprrove" class="oe_highlight"
                             attrs="{'invisible':['|','|',('is_approval_required','=',False),('am_i_approver','=',False),('state','not in',['draft','to approve'])]}"/>
                     <!-- approve if it's not required and i am owner -->
-                    <button name="page_approval_approve" string="Approve" class="oe_highlight"
+                    <button name="page_approval_approved" type="object" string="Approve" class="oe_highlight"
                             attrs="{'invisible':['|','|',('is_approval_required','=',True),('am_i_owner','=',False),('state','not in',['draft', 'to approve'])]}"/>
                     <!-- cancel if i am owner or approver -->
-                    <button name="page_approval_cancel" string="Cancel"
+                    <button name="page_approval_cancelled" type="object" string="Cancel"
                             attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['draft','to approve'])]}"/>
                     <!-- reopen if i am owner or approver -->
-                    <button name="page_approval_reopen" string="Back to draft"
+                    <button name="page_approval_draft" type="object" string="Back to draft" state="cancelled"
                             attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['cancelled'])]}"/>
                     <field name="am_i_owner" invisible="1"/>
                     <field name="am_i_approver" invisible="1"/>
