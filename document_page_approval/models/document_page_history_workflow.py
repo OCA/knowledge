@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -6,6 +5,7 @@ from datetime import datetime
 from odoo.tools.translate import _
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class DocumentPageHistoryWorkflow(models.Model):
@@ -21,6 +21,7 @@ class DocumentPageHistoryWorkflow(models.Model):
         ('cancelled', 'Cancelled')],
         'Status',
         readonly=True,
+        default='draft'
     )
 
     approved_date = fields.Datetime(
@@ -42,7 +43,7 @@ class DocumentPageHistoryWorkflow(models.Model):
     )
 
     am_i_approver = fields.Boolean(
-        related='page_id.am_i_approver'
+        compute='_compute_am_i_approver'
     )
 
     page_url = fields.Text(
@@ -53,7 +54,26 @@ class DocumentPageHistoryWorkflow(models.Model):
     @api.multi
     def page_approval_draft(self):
         """Set a change request as draft"""
+        if self.filtered(lambda r: r.state not in [
+                         'cancelled', 'approved']):
+            raise UserError(_("It's not cancelled or approved"))
+        if self.filtered(lambda r:
+                         r.state == 'approved' and not self.am_i_approver):
+            raise UserError(_("You are not an appover to reset to draft"))
         self.write({'state': 'draft'})
+
+    @api.multi
+    def document_page_auto_confirm(self):
+        """Automatic Transitions for change requests created directly from
+        documents
+        """
+        if self.filtered(lambda r: r.state != 'draft'):
+            raise UserError(_("It's not in draft state"))
+        to_approve = self.filtered(lambda r: r.is_approval_required)
+        to_approve.write({'state': 'to approve'})
+        approved = (self - to_approve)
+        approved.write({'state': 'approved'})
+        approved.mapped('page_id')._compute_history_head()
 
     @api.multi
     def page_approval_to_approve(self):
@@ -118,10 +138,17 @@ class DocumentPageHistoryWorkflow(models.Model):
             rec.am_i_owner = (rec.create_uid == self.env.user)
 
     @api.multi
+    def _compute_am_i_approver(self):
+        """check if current user is a approver"""
+        for rec in self:
+            rec.am_i_approver = rec.page_id.can_user_approve_this_page(
+                self.env.user)
+
+    @api.multi
     def _compute_page_url(self):
         """Compute the page url."""
         for page in self:
-            base_url = self.env['ir.config_parameter'].get_param(
+            base_url = self.env['ir.config_parameter'].sudo().get_param(
                 'web.base.url',
                 default='http://localhost:8069'
             )
