@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -123,7 +122,7 @@ class DocumentPageApproval(models.Model):
     @api.multi
     def _create_history(self, vals):
         res = super(DocumentPageApproval, self)._create_history(vals)
-        res.signal_workflow('document_page_auto_confirm')
+        res.document_page_auto_confirm()
 
     @api.multi
     def action_changes_pending_approval(self):
