@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * document_page_approval
-# 
+#
 # Translators:
 # Pedro Castro Silva <inactive+pcs.sossia@transifex.com>, 2018
 # OCA Transbot <transbot@odoo-community.org>, 2018
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2018-04-24 22:33+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page_approval
@@ -26,7 +26,8 @@ msgid ""
 "            \n"
 "<p>Hello,</p>\n"
 "\n"
-"<p>${object.create_uid.name} submited a new Change Request for <b>${object.page_id.name}</b> and it needs your approval.</p>\n"
+"<p>${object.create_uid.name} submited a new Change Request for <b>${object."
+"page_id.name}</b> and it needs your approval.</p>\n"
 "\n"
 "<h1><a href=\"${object.page_url}\">${object.display_name}</a></h1>\n"
 "<p>\n"
@@ -56,12 +57,13 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_am_i_approver
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_am_i_approver
-msgid "Am i approver"
-msgstr ""
+#, fuzzy
+msgid "Am I Approver"
+msgstr "Aprovar"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_am_i_owner
-msgid "Am i owner"
+msgid "Am I Owner"
 msgstr ""
 
 #. module: document_page_approval
@@ -133,13 +135,13 @@ msgid "Change Requests"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:109
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:129
 #, python-format
 msgid "Change request <b>%s</b> has been cancelled by %s."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:90
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:110
 #, python-format
 msgid "Change request has been approved by %s."
 msgstr ""
@@ -177,12 +179,24 @@ msgid "If true, changes of this page require approval"
 msgstr ""
 
 #. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:59
+#, python-format
+msgid "It's not cancelled or approved"
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:71
+#, python-format
+msgid "It's not in draft state"
+msgstr ""
+
+#. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of ${object.display_name} needs your approval"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:97
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:117
 #, python-format
 msgid "New version of the document %s approved."
 msgstr "Uma nova versão do ocumento %s foi aprovada."
@@ -240,4 +254,10 @@ msgstr "URL"
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_approver_gid
 msgid "Users must also belong to the Approvers group"
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history_workflow.py:62
+#, python-format
+msgid "You are not an appover to reset to draft"
 msgstr ""
