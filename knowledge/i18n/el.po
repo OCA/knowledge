@@ -1,0 +1,201 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * knowledge
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-20 03:35+0000\n"
+"PO-Revision-Date: 2017-01-20 03:35+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Greek (https://www.transifex.com/oca/teams/23907/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page_approval
+msgid ""
+"Add workflow on documents per category.\n"
+"- This installs the module document_page_approval."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Apply"
+msgstr "Εφαρμογή"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_read
+msgid "Attach files from an external DMS into Odoo"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document_configuration
+msgid "Configuration"
+msgstr "Ρυθμίσεις"
+
+#. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Configure Knowledge"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_read
+msgid ""
+"Connect Odoo with a CMIS compatible server to attach files\n"
+"to an Odoo record.\n"
+"- This installs the module cmis_read."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
+msgid ""
+"Connect Odoo with a CMIS compatible server to store files.\n"
+"- This installs the module cmis_write."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Connect with an external DMS"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
+msgid "Created by"
+msgstr "Δημιουργήθηκε από"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_date
+msgid "Created on"
+msgstr "Δημιουργήθηκε στις"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
+msgid ""
+"Document indexation, full text search of attachements.\n"
+"- This installs the module document."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
+#: model:ir.ui.menu,name:knowledge.menu_document
+#: model:ir.ui.menu,name:knowledge.menu_document_section
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Documents"
+msgstr "Έγγραφα"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+msgid "Group by"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
+msgid "ID"
+msgstr "Κωδικός"
+
+#. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge
+#: model:ir.ui.menu,name:knowledge.menu_document_root
+msgid "Knowledge"
+msgstr "Γνωσιακή"
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Knowledge and Documents Management"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid
+msgid "Last Updated by"
+msgstr "Τελευταία Αναβαθμίστηκε από"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
+msgid "Last Updated on"
+msgstr "Τελευταία Αναβαθμίστηκε στις"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
+msgid "Manage document pages (Wiki)"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document
+msgid "Manage documents"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge
+msgid "Manage documents and knowledge-related applications"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
+msgid "Manage documents approval"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
+msgid "Model"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
+msgid ""
+"Provide document page and category as a wiki.\n"
+"- This installs the module document_page."
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
+msgid "Settings"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_write
+msgid "Store attachments in an external DMS instead of the Odoo Filestore"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "Using CMIS"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_ir_attachment
+msgid "ir.attachment"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_knowledge_config_settings
+msgid "knowledge.config.settings"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
+msgid "or"
+msgstr "ή"
