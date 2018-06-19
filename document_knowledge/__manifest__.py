@@ -3,18 +3,24 @@
 {
     "name": "Knowledge Management System",
     "version": "11.0.1.0.0",
-    "author": "OpenERP SA, MONK Software, Odoo Community Association (OCA)",
+    "author": "OpenERP SA,"
+              "MONK Software, "
+              "Tecnativa, "
+              "Odoo Community Association (OCA)",
     "category": "Knowledge",
     "license": "AGPL-3",
-    "website": "https://odoo-community.org/",
-    "depends": ["base"],
+    "website": "https://github.com/OCA/knowledge",
+    "depends": [
+        "base",
+    ],
     "data": [
         "data/ir_module_category.xml",
         "security/knowledge_security.xml",
         "views/knowledge.xml",
         "views/res_config.xml",
     ],
-    "demo": ["demo/knowledge.xml"],
+    "demo": [
+        "demo/knowledge.xml",
+    ],
     "installable": True,
-    "auto_install": False,
 }
