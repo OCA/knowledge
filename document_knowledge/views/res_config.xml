@@ -62,5 +62,24 @@
             </xpath>
         </field>
     </record>
+    <record id="action_knowledge_configuration" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="view_knowledge_configuration"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'knowledge'}</field>
+    </record>
+    <menuitem id="menu_document_configuration"
+              name="Configuration"
+              parent="menu_document_root"
+              groups="base.group_system"
+              sequence="50"/>
+    <menuitem id="menu_knowledge_configuration"
+              name="Settings"
+              parent="menu_document_configuration"
+              sequence="0"
+              action="action_knowledge_configuration"/>
 
 </odoo>
