@@ -31,18 +31,13 @@
     <menuitem
             id="menu_document_root"
             name="Knowledge"
-            groups="base.group_system,knowledge.group_document_user"
+            groups="knowledge.group_document_user"
             sequence="116"/>
-
-    <menuitem
-            id="menu_document_configuration"
-            name="Configuration"
-            parent="menu_document_root"
-            sequence="50"/>
 
     <menuitem
             id="menu_document_section"
             name="Documents"
+            groups="knowledge.group_document_user"
             parent="menu_document_root"/>
 
     <menuitem
