@@ -117,6 +117,12 @@ msgid "Provide document page and category as a wiki.\n"
 msgstr ""
 
 #. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
+#: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
+msgid "Settings"
+msgstr ""
+
+#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_cmis_write
 msgid "Store attachments in an external DMS instead of the Odoo Filestore"
 msgstr ""
