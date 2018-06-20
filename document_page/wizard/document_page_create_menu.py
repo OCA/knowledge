@@ -64,7 +64,6 @@ class DocumentPageCreateMenu(models.TransientModel):
         menu_id = obj_menu.sudo().create({
             'name': data.menu_name,
             'parent_id': data.menu_parent_id.id,
-            'icon': 'STOCK_DIALOG_QUESTION',
             'action': 'ir.actions.act_window,' + str(action_id.id),
         })
         page.write({'menu_id': menu_id.id})
