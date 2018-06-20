@@ -1,6 +1,5 @@
-
+from odoo.exceptions import UserError
 from odoo.tests import common
-from odoo import _
 
 
 class TestDocumentPageShowDiff(common.TransactionCase):
@@ -26,10 +25,7 @@ class TestDocumentPageShowDiff(common.TransactionCase):
 
         history_pages = history_document.search([('page_id', '=', page.id)])
 
-        with self.assertRaises(Exception) as context:
+        with self.assertRaises(UserError):
             show_diff_object.with_context(
                 active_ids=[i.id for i in history_pages]
             )._get_diff()
-
-        self.assertTrue(_("Select one or maximum two history revisions!")
-                        in context.exception)
