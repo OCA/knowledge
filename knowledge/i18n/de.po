@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * knowledge
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 # Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2017-02-18 03:16+0000\n"
 "PO-Revision-Date: 2017-02-25 00:44+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: knowledge
@@ -24,7 +25,9 @@ msgstr ""
 msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
-msgstr "Workflow zu Dokumenten pro Kategorie hinzufügen.\n- Das Modul document_page_approval wird installiert."
+msgstr ""
+"Workflow zu Dokumenten pro Kategorie hinzufügen.\n"
+"- Das Modul document_page_approval wird installiert."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -63,14 +66,20 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to attach files\n"
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
-msgstr "Verknüpfe Odoo mit einem CMIS-kompatiblen Server, um \nDateien an Odoo-Datensätze anzuhängen.\n- Das Modul cmis-read wird installiert."
+msgstr ""
+"Verknüpfe Odoo mit einem CMIS-kompatiblen Server, um \n"
+"Dateien an Odoo-Datensätze anzuhängen.\n"
+"- Das Modul cmis-read wird installiert."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
 msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
-msgstr "Verknüpfe Odoo mit einem CMIS-kompatiblen Server, um \nDateien dort abzuspeichern.\n- Das Modul cmis-write wird installiert."
+msgstr ""
+"Verknüpfe Odoo mit einem CMIS-kompatiblen Server, um \n"
+"Dateien dort abzuspeichern.\n"
+"- Das Modul cmis-write wird installiert."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -97,7 +106,9 @@ msgstr "Anzeigename"
 msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module document."
-msgstr "Dokumentindizierung, Volltextrecherche in Dokumenten.\n- Das Modul document wird installiert."
+msgstr ""
+"Dokumentindizierung, Volltextrecherche in Dokumenten.\n"
+"- Das Modul document wird installiert."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -140,7 +151,9 @@ msgstr "Zuletzt aktualisiert am"
 msgid ""
 "Lets you install addons geared towards sharing knowledge with and between "
 "your employees."
-msgstr "Bietet Ihnen die Installation von Addons, die sich auf gemeinsame Nutzung von Wissen unter den Anwendern ausrichten."
+msgstr ""
+"Bietet Ihnen die Installation von Addons, die sich auf gemeinsame Nutzung "
+"von Wissen unter den Anwendern ausrichten."
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
@@ -162,7 +175,9 @@ msgstr "Dokumentenfreigabe verwalten"
 msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
-msgstr "Stelle Dokumentenseite und Kategorie als Wiki zur Verfügung.\n- Das Modul document_page wird installiert."
+msgstr ""
+"Stelle Dokumentenseite und Kategorie als Wiki zur Verfügung.\n"
+"- Das Modul document_page wird installiert."
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
