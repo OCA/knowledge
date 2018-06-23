@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * document_page
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
 "PO-Revision-Date: 2018-06-01 18:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Spanish (Venezuela) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/es_VE/)\n"
+"Language-Team: Spanish (Venezuela) (http://www.transifex.com/oca/OCA-"
+"knowledge-9-0/language/es_VE/)\n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_VE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page
@@ -397,7 +398,9 @@ msgstr "Plantilla"
 msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
-msgstr "Plantilla que se utilizará como una plantilla de contenido para todas las nuevas páginas de esta categoría."
+msgstr ""
+"Plantilla que se utilizará como una plantilla de contenido para todas las "
+"nuevas páginas de esta categoría."
 
 #. module: document_page
 #: code:addons/document_page/models/document_page_history.py:65

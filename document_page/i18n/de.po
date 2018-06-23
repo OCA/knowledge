@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * document_page
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 # Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
 "PO-Revision-Date: 2018-06-01 18:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-9-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page
@@ -399,7 +400,9 @@ msgstr "Vorlage"
 msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
-msgstr "Vorlage, die als neue Inhaltsvorlage bei neuen Seiten in dieser Kategorie, Verwendung findet"
+msgstr ""
+"Vorlage, die als neue Inhaltsvorlage bei neuen Seiten in dieser Kategorie, "
+"Verwendung findet"
 
 #. module: document_page
 #: code:addons/document_page/models/document_page_history.py:65

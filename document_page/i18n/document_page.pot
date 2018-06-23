@@ -1,22 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * document_page
+#	* document_page
 #
-# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2018-06-01 18:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Thai (http://www.transifex.com/oca/OCA-knowledge-9-0/language/"
-"th/)\n"
-"Language: th\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: \n"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_needaction
@@ -26,7 +21,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_active
 msgid "Active"
-msgstr "เปิดใช้งาน"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
@@ -37,13 +32,13 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
-msgstr "ยกเลิก"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
-msgstr "หมวด"
+msgstr ""
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -53,7 +48,7 @@ msgstr "หมวด"
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr "หมวด"
+msgstr ""
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
@@ -73,7 +68,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr "ปิด"
+msgstr ""
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -83,7 +78,7 @@ msgstr "ปิด"
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
-msgstr "ของที่บรรจุอยู่"
+msgstr ""
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
@@ -98,7 +93,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_uid
 msgid "Created by"
-msgstr "สร้างโดย"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_date
@@ -106,12 +101,12 @@ msgstr "สร้างโดย"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_create_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_create_date
 msgid "Created on"
-msgstr "สร้างเมื่อ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_last_post
 msgid "Date of the last message posted on the record."
-msgstr "วันที่ข้อความล่าสุดโพสต์ในระเบียน"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_draft_summary
@@ -137,7 +132,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_display_name
 msgid "Display Name"
-msgstr "ชื่อที่ใช้แสดง"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
@@ -170,7 +165,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Documents"
-msgstr "เอกสาร"
+msgstr ""
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
@@ -180,7 +175,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
 msgid "Followers"
-msgstr "ผู้ติดตาม"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
@@ -207,7 +202,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "History"
-msgstr "ประวัติ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_id
@@ -215,12 +210,12 @@ msgstr "ประวัติ"
 #: model:ir.model.fields,field_description:document_page.field_document_page_id
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_id
 msgid "ID"
-msgstr "รหัส"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_unread
 msgid "If checked new messages require your attention."
-msgstr "ถ้าเลือก ข้อความใหม่จะต้องการความสนใจจากคุณ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_message_needaction
@@ -246,7 +241,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
 msgid "Last Message Date"
-msgstr "วันที่ข้อความล่าสุด"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -254,7 +249,7 @@ msgstr "วันที่ข้อความล่าสุด"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr "แก้ไขครั้งสุดท้ายเมื่อ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
@@ -262,7 +257,7 @@ msgstr "แก้ไขครั้งสุดท้ายเมื่อ"
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_uid
 msgid "Last Updated by"
-msgstr "อัพเดทครั้งสุดท้ายโดย"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_date
@@ -270,7 +265,7 @@ msgstr "อัพเดทครั้งสุดท้ายโดย"
 #: model:ir.model.fields,field_description:document_page.field_document_page_write_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_write_date
 msgid "Last Updated on"
-msgstr "อัพเดทครั้งสุดท้ายเมื่อ"
+msgstr ""
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
@@ -295,7 +290,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_ids
 msgid "Messages"
-msgstr "ข้อความ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_draft_name
@@ -304,7 +299,7 @@ msgstr "ข้อความ"
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr "ชื่อ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_draft_name
@@ -395,9 +390,7 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_template
-msgid ""
-"Template that will be used as a content template for all new page of this "
-"category."
+msgid "Template that will be used as a content template for all new page of this category."
 msgstr ""
 
 #. module: document_page
@@ -409,17 +402,17 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_name
 msgid "Title"
-msgstr "คำนำหน้าชื่อ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_type
 msgid "Type"
-msgstr "ชนิด"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread
 msgid "Unread Messages"
-msgstr "ข้อความที่ยังไม่ได้อ่าน"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter
@@ -447,9 +440,10 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "or"
-msgstr "หรือ"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 msgid "wizard.document.page.history.show_diff"
 msgstr ""
+
