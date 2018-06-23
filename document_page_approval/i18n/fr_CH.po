@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * document_page_approval
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2018-04-13 00:41+0000\n"
 "PO-Revision-Date: 2018-04-12 22:36+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: French (Switzerland) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/fr_CH/)\n"
+"Language-Team: French (Switzerland) (http://www.transifex.com/oca/OCA-"
+"knowledge-9-0/language/fr_CH/)\n"
+"Language: fr_CH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr_CH\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: document_page_approval
@@ -24,7 +25,8 @@ msgid ""
 "                \n"
 "<p>Hello,</p>\n"
 "\n"
-"<p>${object.create_uid.name} submited a new Change Request for <b>${object.page_id.name}</b> and it needs your approval.</p>\n"
+"<p>${object.create_uid.name} submited a new Change Request for <b>${object."
+"page_id.name}</b> and it needs your approval.</p>\n"
 "\n"
 "<h1><a href=\"${object.page_url}\">${object.display_name}</a></h1>\n"
 "<p>\n"
@@ -48,6 +50,14 @@ msgid ""
 "<p>Odoo</p>\n"
 "                \n"
 "            "
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
+msgid ""
+"<b>You already have a Draft Change Request for this page.</b>\n"
+"                        It is highly recommended that you edit that one "
+"instead of creating a new one."
 msgstr ""
 
 #. module: document_page_approval
@@ -117,6 +127,18 @@ msgid "Back to draft"
 msgstr ""
 
 #. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:118
+#, python-format
+msgid "Can't approve page in '%s' state."
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:94
+#, python-format
+msgid "Can't approve pages in '%s' state."
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Cancel"
 msgstr "Annuler"
@@ -135,13 +157,13 @@ msgid "Change Requests"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:126
+#: code:addons/document_page_approval/models/document_page_history.py:156
 #, python-format
 msgid "Change request <b>%s</b> has been cancelled by %s."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:107
+#: code:addons/document_page_approval/models/document_page_history.py:137
 #, python-format
 msgid "Change request has been approved by %s."
 msgstr ""
@@ -229,7 +251,7 @@ msgid "New version of ${object.display_name} needs your approval"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:114
+#: code:addons/document_page_approval/models/document_page_history.py:144
 #, python-format
 msgid "New version of the document %s approved."
 msgstr ""
@@ -310,6 +332,41 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_user_has_drafts
+msgid "User has drafts?"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_approver_gid
 msgid "Users must also belong to the Approvers group"
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:120
+#, python-format
+msgid ""
+"You are not authorized to do this.\r\n"
+"Only approvers with these groups can approve this: "
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:80
+#, python-format
+msgid ""
+"You are not authorized to do this.\r\n"
+"Only owners or approvers can reopen Change Requests."
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:97
+#, python-format
+msgid ""
+"You are not authorized to do this.\r\n"
+"Only owners or approvers can request approval."
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:77
+#, python-format
+msgid "You need to cancel it before reopening."
 msgstr ""
