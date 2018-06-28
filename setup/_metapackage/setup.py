@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-knowledge Odoo addons",
     version=version,
     install_requires=[
+        'odoo11-addon-document_page',
         'odoo11-addon-knowledge',
     ],
     classifiers=[
