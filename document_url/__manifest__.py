@@ -1,6 +1,6 @@
-# © 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
+# Copyright 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
 #                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
-# © 2016 ACSONE SA/NV (<http://acsone.eu>)
+# Copyright 2016 ACSONE SA/NV (<http://acsone.eu>)
 {
     'name': 'URL attachment',
     'version': '11.0.1.0.0',
