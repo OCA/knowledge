@@ -1,6 +1,6 @@
-/* © 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
+/* Copyright 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
  *                      Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
- * © 2016 ACSONE SA/NV (<http://acsone.eu>)
+ * Copyright 2016 ACSONE SA/NV (<http://acsone.eu>)
  * License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
  */
 odoo.define('document_url', function (require) {
