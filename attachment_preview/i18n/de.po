@@ -3,16 +3,17 @@
 # * attachment_preview
 #
 # Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-08 08:32+0000\n"
-"PO-Revision-Date: 2015-11-07 12:44+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Dutch (http://www.transifex.com/oca/OCA-knowledge-8-0/"
-"language/nl/)\n"
-"Language: nl\n"
+"PO-Revision-Date: 2015-11-25 09:41+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-8-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -24,7 +25,7 @@ msgstr ""
 #: code:addons/attachment_preview/static/src/js/attachment_preview.js:128
 #, python-format
 msgid "Preview %s"
-msgstr "Voorbeeld %s"
+msgstr "Vorschau %s"
 
 #. module: attachment_preview
 #: model:ir.model,name:attachment_preview.model_ir_attachment
