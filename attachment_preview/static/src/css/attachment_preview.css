@@ -1,26 +1,15 @@
-.openerp .oe_sidebar .oe_dropdown_menu li .oe-sidebar-attachment-preview
-{
+.o_cp_sidebar li .o_sidebar_preview_attachment {
     position: absolute;
-    right: 18px;
-    top: 0px;
-    display: none;
+    top: 5px;
+    right: 26px;
+    background-color: #FFF;
 }
-.openerp .oe_sidebar .oe_dropdown_menu li:hover .oe-sidebar-attachment-preview
-{
-    display: inherit;
+
+.o_cp_sidebar .open .dropdown-menu > li > a {
+    padding-right: 46px;
 }
-.openerp .oe_sidebar .oe_dropdown_menu li .oe-sidebar-attachment-preview:hover
-{
-    text-decoration: none;
-    color: white;
-    background: #8786b7;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-}
-.openerp .oe-binary-preview
-{
-    cursor: pointer;
-    vertical-align: middle;
+
+.o_form_uri .fa-search {
+    padding-left: 5px;
+    padding-right: 5px;
 }
