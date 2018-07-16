@@ -13,25 +13,27 @@ class IrAttachment(models.Model):
         string='Resource reference', compute='_compute_res_reference',
         inverse='_inverse_res_reference')
 
-    @api.one
+    @api.multi
     @api.depends('res_id', 'res_model')
     def _compute_res_reference(self):
-        if self.res_model and self.res_id:
-            self.res_reference = '%s,%s' % (self.res_model, self.res_id)
+        for this in self:
+            if this.res_model and this.res_id:
+                this.res_reference = '%s,%s' % (this.res_model, this.res_id)
 
-    @api.one
+    @api.multi
     def _inverse_res_reference(self):
-        if self.res_reference:
-            self.write({
-                'res_model': self.res_reference._model._model,
-                'res_id': self.res_reference.id,
-            })
-        else:
-            self.write({'res_model': False, 'res_id': False})
+        for this in self:
+            if this.res_reference:
+                this.write({
+                    'res_model': this.res_reference._name,
+                    'res_id': this.res_reference.id,
+                })
+            else:
+                this.write({'res_model': False, 'res_id': False})
 
     @api.model
     def _selection_res_reference(self):
         return self.env['ir.model'].search([
-            ('osv_memory', '=', False),
+            ('transient', '=', False),
             ('access_ids.group_id.users', '=', self.env.uid)
         ]).mapped(lambda rec: (rec.model, rec.name))
