@@ -17,7 +17,7 @@ class DocumentPageTag(models.Model):
     @api.model
     def create(self, vals):
         """Be nice when trying to create duplicates"""
-        existing = self.search([('name', '=ilike', vals['name'])])
+        existing = self.search([('name', '=ilike', vals['name'])], limit=1)
         if existing:
             return existing
         return super(DocumentPageTag, self).create(vals)
