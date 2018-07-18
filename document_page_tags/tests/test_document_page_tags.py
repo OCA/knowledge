@@ -1,34 +1,22 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    This module copyright (C) 2015 Therp BV <http://therp.nl>.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2015-2018 Therp BV <https://therp.nl>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from psycopg2 import IntegrityError
 from openerp.tests.common import TransactionCase
-from ..hooks import post_init_hook
 from openerp.tools.misc import mute_logger
 
 
 class TestDocumentPageTags(TransactionCase):
     def test_document_page_tags(self):
-        # run our init hook for coverage
-        post_init_hook(self.cr, self.registry)
+        testtag = self.env['document.page.tag'].name_create('test')
+        # check we're charitable on duplicates
+        self.assertEqual(
+            testtag, self.env['document.page.tag'].name_create('Test'),
+        )
         # check we can't create nonunique tags
         with self.assertRaises(IntegrityError):
-            with mute_logger('openerp.sql_db'):
-                self.env['document.page.tag'].name_create('test')
-                self.env['document.page.tag'].name_create('test')
+            with mute_logger('odoo.sql_db'):
+                testtag2 = self.env['document.page.tag'].create({
+                    'name': 'test2',
+                })
+                testtag2.write({'name': 'test'})

@@ -1,31 +1,23 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    This module copyright (C) 2015 Therp BV (<http://therp.nl>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-from openerp import models, fields
+# Copyright 2015-2018 Therp BV <https://therp.nl>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+from openerp import api, models, fields
 
 
 class DocumentPageTag(models.Model):
     _name = 'document.page.tag'
     _description = 'A keyword for document pages'
 
-    name = fields.Char(translate=True)
+    name = fields.Char(required=True, translate=True)
 
     _sql_constraints = [
         ('unique_name', 'unique(name)', 'Tags must me unique'),
     ]
+
+    @api.model
+    def create(self, vals):
+        """Be nice when trying to create duplicates"""
+        existing = self.search([('name', '=ilike', vals['name'])])
+        if existing:
+            return existing
+        return super(DocumentPageTag, self).create(vals)
