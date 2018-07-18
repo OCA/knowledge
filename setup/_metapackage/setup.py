@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo11-addon-document_page',
         'odoo11-addon-document_page_approval',
+        'odoo11-addon-document_url',
         'odoo11-addon-knowledge',
     ],
     classifiers=[
