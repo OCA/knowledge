@@ -10,14 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2018-04-17 00:50+0000\n"
-"Last-Translator: Niki Waibel, 2018\n"
+"PO-Revision-Date: 2018-08-24 10:24+0000\n"
+"Last-Translator: Axel-G <git@r5d.de>\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1.1\n"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
@@ -49,7 +50,7 @@ msgstr "Kategorie"
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Changes"
-msgstr ""
+msgstr "Änderungen"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
