@@ -38,34 +38,3 @@ class KnowledgeConfigSettings(models.TransientModel):
         help='Connect Odoo with a CMIS compatible server to store files.\n'
              '- This installs the module cmis_write.'
     )
-
-    def get_values(self):
-        res = super(KnowledgeConfigSettings, self).get_values()
-        get_param = self.env['ir.config_parameter'].sudo().get_param
-        res.update(
-            module_document=get_param(
-                'knowledge.module_document'),
-            module_document_page=get_param(
-                'knowledge.module_document_page'),
-            module_document_page_approval=get_param(
-                'knowledge.module_document_page_approval'),
-            module_cmis_read=get_param(
-                'knowledge.module_cmis_read'),
-            module_cmis_write=get_param(
-                'knowledge.module_cmis_write'),
-        )
-        return res
-
-    def set_values(self):
-        super(KnowledgeConfigSettings, self).set_values()
-        set_param = self.env['ir.config_parameter'].sudo().set_param
-        set_param('knowledge.module_document',
-                  self.module_document)
-        set_param('knowledge.module_document_page',
-                  self.module_document_page)
-        set_param('knowledge.module_document_page_approval',
-                  self.module_document_page_approval)
-        set_param('knowledge.module_cmis_read',
-                  self.module_cmis_read)
-        set_param('knowledge.module_cmis_write',
-                  self.module_cmis_write)
