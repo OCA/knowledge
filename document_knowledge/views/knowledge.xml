@@ -32,18 +32,20 @@
             id="menu_document_root"
             name="Knowledge"
             groups="knowledge.group_document_user"
-            sequence="116"/>
+            sequence="116"
+            web_icon="knowledge,static/description/icon.png"/>
 
     <menuitem
             id="menu_document_section"
             name="Documents"
             groups="knowledge.group_document_user"
-            parent="menu_document_root"/>
+            parent="menu_document_root"
+            sequence="10"/>
 
     <menuitem
             id="menu_document"
             name="Documents"
             action="knowledge_action_documents"
-            parent="menu_document_section"/>
-
+            parent="menu_document_section"
+            sequence="0"/>
 </odoo>
