@@ -23,4 +23,5 @@
         "demo/knowledge.xml",
     ],
     "installable": True,
+    "application": True,
 }
