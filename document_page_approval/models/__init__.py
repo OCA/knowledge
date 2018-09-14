@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-from . import document_page_approval, document_page_history_workflow
+from . import document_page, document_page_history
