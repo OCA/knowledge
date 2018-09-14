@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * document_page_tags
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
 "PO-Revision-Date: 2016-03-02 07:42+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Spanish (Peru) (http://www.transifex.com/oca/OCA-knowledge-8-0/language/es_PE/)\n"
+"Language-Team: Spanish (Peru) (http://www.transifex.com/oca/OCA-"
+"knowledge-8-0/language/es_PE/)\n"
+"Language: es_PE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_PE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: document_page_tags
@@ -23,17 +24,17 @@ msgid "A keyword for document pages"
 msgstr ""
 
 #. module: document_page_tags
-#: field:document.page.tag,create_uid:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: document_page_tags
-#: field:document.page.tag,create_date:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_create_date
 msgid "Created on"
 msgstr "Creado en"
 
 #. module: document_page_tags
-#: field:document.page.tag,display_name:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_display_name
 msgid "Display Name"
 msgstr "Nombre a Mostrar"
 
@@ -43,32 +44,32 @@ msgid "Document Page"
 msgstr ""
 
 #. module: document_page_tags
-#: field:document.page.tag,id:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_id
 msgid "ID"
 msgstr "ID"
 
 #. module: document_page_tags
-#: field:document.page,tag_ids:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_ids
 msgid "Keywords"
 msgstr ""
 
 #. module: document_page_tags
-#: field:document.page.tag,__last_update:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag___last_update
 msgid "Last Modified on"
 msgstr "Ultima Modificación en"
 
 #. module: document_page_tags
-#: field:document.page.tag,write_uid:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_write_uid
 msgid "Last Updated by"
 msgstr "Actualizado última vez por"
 
 #. module: document_page_tags
-#: field:document.page.tag,write_date:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_write_date
 msgid "Last Updated on"
 msgstr "Ultima Actualización"
 
 #. module: document_page_tags
-#: field:document.page.tag,name:0
+#: model:ir.model.fields,field_description:document_page_tags.field_document_page_tag_name
 msgid "Name"
 msgstr "Nombre"
 
