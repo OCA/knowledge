@@ -24,6 +24,8 @@ class DocumentPageHistory(models.Model):
         'Company',
         help='If set, page is accessible only from this company',
         related='page_id.company_id',
+        store=True,
+        index=True,
         readonly=True,
     )
 
