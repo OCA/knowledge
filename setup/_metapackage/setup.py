@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo10-addon-attachment_attach_non_editable',
         'odoo10-addon-document_page',
         'odoo10-addon-document_page_approval',
+        'odoo10-addon-document_page_tags',
         'odoo10-addon-knowledge',
     ],
     classifiers=[
