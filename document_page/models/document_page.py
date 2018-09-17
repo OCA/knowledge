@@ -104,6 +104,14 @@ class DocumentPage(models.Model):
         readonly=True,
     )
 
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        help='If set, page is accessible only from this company',
+        index=True,
+        ondelete='cascade',
+    )
+
     @api.multi
     def _get_page_index(self, link=True):
         """Return the index of a document."""
