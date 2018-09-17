@@ -19,6 +19,16 @@ class DocumentPageHistory(models.Model):
     content = fields.Text()
     diff = fields.Text(compute='_compute_diff')
 
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        help='If set, page is accessible only from this company',
+        related='page_id.company_id',
+        store=True,
+        index=True,
+        readonly=True,
+    )
+
     @api.multi
     def _compute_diff(self):
         """Shows a diff between this version and the previous version"""
