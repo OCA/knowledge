@@ -66,6 +66,12 @@ msgid "Close"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_company_id
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_company_id
+msgid "Company"
+msgstr ""
+
+#. module: document_page
 #: selection:document.page,type:0
 #: model:ir.model.fields,field_description:document_page.field_document_page_content
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_content
@@ -180,6 +186,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_id
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff_id
 msgid "ID"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page_company_id
+#: model:ir.model.fields,help:document_page.field_document_page_history_company_id
+msgid "If set, page is accessible only from this company"
 msgstr ""
 
 #. module: document_page
@@ -323,7 +335,7 @@ msgid "Template that will be used as a content template for all new page of this
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/models/document_page_history.py:49
+#: code:addons/document_page/models/document_page_history.py:59
 #, python-format
 msgid "There are no changes in revisions."
 msgstr ""
