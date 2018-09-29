@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * knowledge
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-08-13 13:00+0000\n"
 "PO-Revision-Date: 2016-09-09 12:25+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Spanish (Spain) (http://www.transifex.com/oca/OCA-knowledge-9-0/language/es_ES/)\n"
+"Language-Team: Spanish (Spain) (http://www.transifex.com/oca/OCA-"
+"knowledge-9-0/language/es_ES/)\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: knowledge
@@ -38,11 +39,6 @@ msgstr ""
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Cancel"
 msgstr "Cancelar"
-
-#. module: knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document2
-msgid "Collaborative Content"
-msgstr ""
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
@@ -108,6 +104,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr ""
@@ -115,6 +112,11 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge and Documents Management"
+msgstr ""
+
+#. module: knowledge
+#: model:res.groups,name:knowledge.group_document_user
+msgid "Knowledge user"
 msgstr ""
 
 #. module: knowledge
@@ -143,6 +145,11 @@ msgid "Manage documents"
 msgstr ""
 
 #. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge
+msgid "Manage documents and knowledge-related applications"
+msgstr ""
+
+#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
 msgstr ""
@@ -167,6 +174,11 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Using CMIS"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_ir_attachment
+msgid "ir.attachment"
 msgstr ""
 
 #. module: knowledge

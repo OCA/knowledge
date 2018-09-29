@@ -1,20 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * knowledge
-# 
+#
 # Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 13:00+0000\n"
-"PO-Revision-Date: 2016-03-12 13:02+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Korean (http://www.transifex.com/oca/OCA-knowledge-9-0/language/ko/)\n"
+"POT-Creation-Date: 2018-04-17 00:50+0000\n"
+"PO-Revision-Date: 2018-04-17 00:50+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"Language-Team: Korean (https://www.transifex.com/oca/teams/23907/ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: knowledge
@@ -38,11 +39,6 @@ msgstr ""
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Cancel"
 msgstr "취소"
-
-#. module: knowledge
-#: model:ir.ui.menu,name:knowledge.menu_document2
-msgid "Collaborative Content"
-msgstr "공동작업 내용"
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
@@ -108,6 +104,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: knowledge
+#: model:ir.module.category,name:knowledge.module_category_knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document
 msgid "Knowledge"
 msgstr "지식"
@@ -116,6 +113,11 @@ msgstr "지식"
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge and Documents Management"
 msgstr "지식 및 문서 관리"
+
+#. module: knowledge
+#: model:res.groups,name:knowledge.group_document_user
+msgid "Knowledge user"
+msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
@@ -143,6 +145,11 @@ msgid "Manage documents"
 msgstr "문서 관리"
 
 #. module: knowledge
+#: model:ir.module.category,description:knowledge.module_category_knowledge
+msgid "Manage documents and knowledge-related applications"
+msgstr ""
+
+#. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
 msgstr ""
@@ -167,6 +174,11 @@ msgstr ""
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Using CMIS"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model,name:knowledge.model_ir_attachment
+msgid "ir.attachment"
 msgstr ""
 
 #. module: knowledge
