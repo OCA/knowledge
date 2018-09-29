@@ -2,7 +2,7 @@
 # © 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
 #                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 # © 2016 ACSONE SA/NV (<http://acsone.eu>)
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 try:
     # Python 3
     from urllib import parse as urlparse

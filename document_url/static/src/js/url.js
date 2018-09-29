@@ -13,9 +13,9 @@ odoo.define('document_url', function(require) {
             this.items.url_doc = [
                 {
                     action: {
-                        id: "document_url.action_ir_attachment_add_url",
-                    },
-                },
+                        id: "document_url.action_ir_attachment_add_url"
+                    }
+                }
             ];
             return result;
         },
@@ -25,6 +25,6 @@ odoo.define('document_url', function(require) {
             // Open URLs in a different browser tab
             this.$el.find("a[href]").attr('target', '_blank');
             return result;
-        },
+        }
     });
 });
