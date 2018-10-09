@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 MONK Software
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
   <template id="assets_backend" name="document_type backend assets" inherit_id="web.assets_backend">
