@@ -4,10 +4,14 @@
 {
     "name": "Document Types",
     "version": "10.0.1.0.0",
-    "author": "MONK Software, Odoo Community Association (OCA)",
+    "development_status": "Beta",
     "category": "Knowledge",
+    "website": "https://github.com/OCA/knowledge",
+    "author": "MONK Software, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "website": "https://odoo-community.org/",
+    "application": False,
+    "installable": True,
+    "auto_install": False,
     "depends": ["document", "knowledge"],
     "data": [
         'views/document_type.xml',
@@ -15,6 +19,4 @@
         'templates/web.xml',
         'security/ir.model.access.csv',
     ],
-    "installable": True,
-    "auto_install": False,
 }
