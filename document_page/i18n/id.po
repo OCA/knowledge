@@ -3,26 +3,27 @@
 # * document_page
 #
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2018
+# OCA Transbot <transbot@odoo-community.org>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2018-04-17 00:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
-"Language-Team: Indonesian (https://www.transifex.com/oca/teams/23907/id/)\n"
+"PO-Revision-Date: 2018-10-21 17:25+0700\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
-msgstr ""
+msgstr "Penulis"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -33,7 +34,7 @@ msgstr "Batalkan"
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
-msgstr ""
+msgstr "Kategori"
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -43,12 +44,12 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Changes"
-msgstr ""
+msgstr "Perubahan"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_child_ids
@@ -58,12 +59,12 @@ msgstr ""
 #. module: document_page
 #: model:ir.actions.act_window,help:document_page.action_page
 msgid "Click to create a new web page."
-msgstr ""
+msgstr "Klik untuk membuat halaman web baru."
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -73,14 +74,14 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
-msgstr ""
+msgstr "Konten"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
-msgstr ""
+msgstr "Buat Menu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_create_uid
@@ -101,7 +102,7 @@ msgstr "Dibuat pada"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_summary
 msgid "Describe the changes made"
-msgstr ""
+msgstr "Jelaskan perubahan yang dibuat"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_diff
@@ -114,7 +115,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr ""
+msgstr "Perbedaan"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_display_name
@@ -127,12 +128,12 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_display_content
 msgid "Displayed Content"
-msgstr ""
+msgstr "Konten yang Ditampilkan"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr ""
+msgstr "Riwayat Dokumen"
 
 #. module: document_page
 #: model:ir.actions.report.xml,name:document_page.report_document_page
@@ -143,19 +144,19 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_tree
 #: model:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
-msgstr ""
+msgstr "Halaman Dokumen"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_history
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Document Page History"
-msgstr ""
+msgstr "Riwayat Halaman Dokumen"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Documents"
-msgstr ""
+msgstr "Dokumen"
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
@@ -166,7 +167,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Group By..."
-msgstr ""
+msgstr "Kelompokkan Menurut"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_head
@@ -177,7 +178,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_ids
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "History"
-msgstr ""
+msgstr "Riwayat"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_id
@@ -190,13 +191,13 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_content_date
 msgid "Last Contribution Date"
-msgstr ""
+msgstr "Tanggal Kontribusi Terakhir"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_content_uid
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
-msgstr ""
+msgstr "Kontribusi Terakhir"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page___last_update
@@ -204,7 +205,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history___last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Terakhir Dimodifikasi pada"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_write_uid
@@ -225,7 +226,7 @@ msgstr "Diperbaharui pada"
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
 msgid "Manager"
-msgstr ""
+msgstr "Manajer"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
@@ -235,69 +236,69 @@ msgstr ""
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr ""
+msgstr "Informasi Menu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_name
 msgid "Menu Name"
-msgstr ""
+msgstr "Nama Menu"
 
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_page_id
 msgid "Page"
-msgstr ""
+msgstr "Halaman"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr ""
+msgstr "Riwayat Halaman"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr ""
+msgstr "Riwayat halaman"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page_type
 msgid "Page type"
-msgstr ""
+msgstr "Tipe halaman"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_page
 #: model:ir.ui.menu,name:document_page.menu_page
 #: model:ir.ui.menu,name:document_page.menu_wiki
 msgid "Pages"
-msgstr ""
+msgstr "Halaman"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr ""
+msgstr "Riwayat halaman"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_parent_id
 msgid "Parent Menu"
-msgstr ""
+msgstr "Menu Induk"
 
 #. module: document_page
 #: code:addons/document_page/tests/test_document_page_show_diff.py:35
 #: code:addons/document_page/wizard/document_page_show_diff.py:29
 #, python-format
 msgid "Select one or maximum two history revisions!"
-msgstr ""
+msgstr "Pilih satu atau maksimal dua revisi riwayat!"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_summary
 msgid "Summary"
-msgstr ""
+msgstr "Ringkasan"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_template
@@ -316,7 +317,7 @@ msgstr ""
 #: code:addons/document_page/models/document_page_history.py:50
 #, python-format
 msgid "There are no changes in revisions."
-msgstr ""
+msgstr "Tidak ada perubahan dalam revisi."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_name
@@ -326,7 +327,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_type
 msgid "Type"
-msgstr ""
+msgstr "Tipe"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
@@ -355,3 +356,4 @@ msgstr "atau"
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 msgid "wizard.document.page.history.show_diff"
 msgstr ""
+
