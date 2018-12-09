@@ -54,6 +54,14 @@ msgid ""
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
+msgid ""
+"<b>You already have a Draft Change Request for this page.</b>\n"
+"                    It is highly recommended that you edit that one instead "
+"of creating a new one."
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_am_i_approver
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_am_i_approver
 msgid "Am i approver"
@@ -115,6 +123,18 @@ msgid "Back to draft"
 msgstr ""
 
 #. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:101
+#, python-format
+msgid "Can't approve page in '%s' state."
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:77
+#, python-format
+msgid "Can't approve pages in '%s' state."
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Cancel"
 msgstr "ยกเลิก"
@@ -133,13 +153,13 @@ msgid "Change Requests"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:109
+#: code:addons/document_page_approval/models/document_page_history.py:139
 #, python-format
 msgid "Change request <b>%s</b> has been cancelled by %s."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:90
+#: code:addons/document_page_approval/models/document_page_history.py:120
 #, python-format
 msgid "Change request has been approved by %s."
 msgstr ""
@@ -182,7 +202,7 @@ msgid "New version of ${object.display_name} needs your approval"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history_workflow.py:97
+#: code:addons/document_page_approval/models/document_page_history.py:127
 #, python-format
 msgid "New version of the document %s approved."
 msgstr ""
@@ -238,6 +258,41 @@ msgid "URL"
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_user_has_drafts
+msgid "User has drafts?"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_approver_gid
 msgid "Users must also belong to the Approvers group"
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:103
+#, python-format
+msgid ""
+"You are not authorized to do this.\r\n"
+"Only approvers with these groups can approve this: "
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:63
+#, python-format
+msgid ""
+"You are not authorized to do this.\r\n"
+"Only owners or approvers can reopen Change Requests."
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:80
+#, python-format
+msgid ""
+"You are not authorized to do this.\r\n"
+"Only owners or approvers can request approval."
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:60
+#, python-format
+msgid "You need to cancel it before reopening."
 msgstr ""
