@@ -20,6 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_active
+msgid "Active"
+msgstr ""
+
+#. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
@@ -100,7 +105,7 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page_summary
+#: model:ir.model.fields,help:document_page.field_document_page_draft_summary
 msgid "Describe the changes made"
 msgstr "Décrivez les modifications réalisées"
 
@@ -244,11 +249,19 @@ msgid "Menu Name"
 msgstr "Nom du menu"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_draft_name
+#: model:ir.model.fields,field_description:document_page.field_document_page_history_name
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
 msgstr "Nom"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page_draft_name
+#, fuzzy
+msgid "Name for the changes made"
+msgstr "Décrivez les modifications réalisées"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_page_id
@@ -288,6 +301,17 @@ msgid "Parent Menu"
 msgstr "Menu parent"
 
 #. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+#: model:ir.ui.view,arch_db:document_page.wiki_history_form
+msgid "Rev 01"
+msgstr ""
+
+#. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Revision"
+msgstr ""
+
+#. module: document_page
 #: code:addons/document_page/tests/test_document_page_show_diff.py:35
 #: code:addons/document_page/wizard/document_page_show_diff.py:29
 #, python-format
@@ -295,8 +319,8 @@ msgid "Select one or maximum two history revisions!"
 msgstr "Sélectionnez une révision ou deux maximum!"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page_draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_summary
-#: model:ir.model.fields,field_description:document_page.field_document_page_summary
 msgid "Summary"
 msgstr "Résumé"
 
