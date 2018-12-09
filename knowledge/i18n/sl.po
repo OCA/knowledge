@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * knowledge
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -12,14 +12,15 @@ msgstr ""
 "PO-Revision-Date: 2017-01-20 03:35+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page_approval
+#: model:ir.model.fields,help:knowledge.field_res_config_settings_module_document_page_approval
 msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
@@ -28,19 +29,9 @@ msgstr ""
 "- namesti modul document_page_approval."
 
 #. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "Apply"
-msgstr "Uveljavi"
-
-#. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_read
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_cmis_read
 msgid "Attach files from an external DMS into Odoo"
 msgstr "Pripni datoteke iz zunanjega DMS v Odoo"
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "Cancel"
-msgstr "Preklic"
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
@@ -48,13 +39,7 @@ msgid "Configuration"
 msgstr "Nastavitve"
 
 #. module: knowledge
-#: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "Configure Knowledge"
-msgstr "Nastavitve baze znanja"
-
-#. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_read
+#: model:ir.model.fields,help:knowledge.field_res_config_settings_module_cmis_read
 msgid ""
 "Connect Odoo with a CMIS compatible server to attach files\n"
 "to an Odoo record.\n"
@@ -65,7 +50,7 @@ msgstr ""
 "- namesti modul cmis_read."
 
 #. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
+#: model:ir.model.fields,help:knowledge.field_res_config_settings_module_cmis_write
 msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
@@ -79,22 +64,7 @@ msgid "Connect with an external DMS"
 msgstr "Poveži z zunanjim DMS"
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
-msgid "Created by"
-msgstr "Ustvaril"
-
-#. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_date
-msgid "Created on"
-msgstr "Ustvarjeno"
-
-#. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_display_name
-msgid "Display Name"
-msgstr "Naziv prikaza"
-
-#. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document
+#: model:ir.model.fields,help:knowledge.field_res_config_settings_module_document
 msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module document."
@@ -107,7 +77,6 @@ msgstr ""
 #: model:ir.ui.menu,name:knowledge.menu_document
 #: model:ir.ui.menu,name:knowledge.menu_document_section
 #: model:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Documents"
 msgstr "Dokumenti"
 
@@ -117,13 +86,9 @@ msgid "Group by"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_id
-msgid "ID"
-msgstr "ID"
-
-#. module: knowledge
 #: model:ir.module.category,name:knowledge.module_category_knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_root
+#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge"
 msgstr "Baza znanja"
 
@@ -133,37 +98,31 @@ msgid "Knowledge and Documents Management"
 msgstr "Baza znanja in upravljanje dokumentov"
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
-msgid "Last Modified on"
-msgstr "Zadnjič spremenjeno"
+#: model:res.groups,name:knowledge.group_document_user
+#, fuzzy
+msgid "Knowledge user"
+msgstr "Baza znanja"
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_uid
-msgid "Last Updated by"
-msgstr "Zadnjič posodobil"
-
-#. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_write_date
-msgid "Last Updated on"
-msgstr "Zadnjič posodobljeno"
-
-#. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_document_page
 msgid "Manage document pages (Wiki)"
 msgstr "Upravljanje strani dokumentov (Wiki)"
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_document
 msgid "Manage documents"
 msgstr "Upravljanje dokumentov"
 
 #. module: knowledge
 #: model:ir.module.category,description:knowledge.module_category_knowledge
-msgid "Manage documents and knowledge-related applications"
+msgid ""
+"Manage documents and knowledge-related\n"
+"            applications\n"
+"        "
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_document_page_approval
 msgid "Manage documents approval"
 msgstr "Upravljanje odobritev dokumentov"
 
@@ -173,7 +132,7 @@ msgid "Model"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
+#: model:ir.model.fields,help:knowledge.field_res_config_settings_module_document_page
 msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
@@ -182,19 +141,15 @@ msgstr ""
 "- namesti modul document_page."
 
 #. module: knowledge
+#: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
 msgid "Settings"
 msgstr "Nastavitve"
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_write
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_cmis_write
 msgid "Store attachments in an external DMS instead of the Odoo Filestore"
 msgstr "Hrani priponke na zunanjem DMS namesto v Odoo Filestore"
-
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "Using CMIS"
-msgstr "Uporaba CMIS"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
@@ -202,11 +157,43 @@ msgid "ir.attachment"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model,name:knowledge.model_knowledge_config_settings
-msgid "knowledge.config.settings"
+#: model:ir.model,name:knowledge.model_res_config_settings
+#, fuzzy
+msgid "res.config.settings"
 msgstr "knowledge.config.settings"
 
-#. module: knowledge
-#: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
-msgid "or"
-msgstr "ali"
+#~ msgid "Apply"
+#~ msgstr "Uveljavi"
+
+#~ msgid "Cancel"
+#~ msgstr "Preklic"
+
+#~ msgid "Configure Knowledge"
+#~ msgstr "Nastavitve baze znanja"
+
+#~ msgid "Created by"
+#~ msgstr "Ustvaril"
+
+#~ msgid "Created on"
+#~ msgstr "Ustvarjeno"
+
+#~ msgid "Display Name"
+#~ msgstr "Naziv prikaza"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zadnjič spremenjeno"
+
+#~ msgid "Last Updated by"
+#~ msgstr "Zadnjič posodobil"
+
+#~ msgid "Last Updated on"
+#~ msgstr "Zadnjič posodobljeno"
+
+#~ msgid "Using CMIS"
+#~ msgstr "Uporaba CMIS"
+
+#~ msgid "or"
+#~ msgstr "ali"
