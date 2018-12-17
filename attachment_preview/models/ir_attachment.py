@@ -41,7 +41,7 @@ class IrAttachment(models.Model):
         ids_to_browse = [_id for _id in ids_to_browse if _id not in result]
         for this in self.env[model].with_context(
                 bin_size=True).browse(ids_to_browse):
-            if this[binary_field] is None:
+            if not this[binary_field]:
                 result[this.id] = False
                 continue
             try:
