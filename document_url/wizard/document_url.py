@@ -2,8 +2,10 @@
 #                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 # Copyright 2016 ACSONE SA/NV (<http://acsone.eu>)
 from odoo import fields, models
-from urllib import parse
-
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 
 class AddUrlWizard(models.Model):
     _name = 'ir.attachment.add_url'
