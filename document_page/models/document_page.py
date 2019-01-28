@@ -1,7 +1,8 @@
 # Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class DocumentPage(models.Model):
@@ -111,6 +112,11 @@ class DocumentPage(models.Model):
         index=True,
         ondelete='cascade',
     )
+
+    @api.constrains('parent_id')
+    def _check_parent_id(self):
+        if not self._check_recursion():
+            raise ValidationError(_('You cannot create recursive categories.'))
 
     @api.multi
     def _get_page_index(self, link=True):

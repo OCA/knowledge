@@ -364,6 +364,12 @@ msgid "Wizard Create Menu"
 msgstr ""
 
 #. module: document_page
+#: code:addons/document_page/models/document_page.py:119
+#, python-format
+msgid "You cannot create recursive categories."
+msgstr ""
+
+#. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_category_form
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
