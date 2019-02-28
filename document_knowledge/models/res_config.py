@@ -9,10 +9,16 @@ class KnowledgeConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     module_document = fields.Boolean(
-        'Manage documents',
+        'Attachments List and Document Indexation',
         help='Document indexation, full text search of attachements.\n'
         '- This installs the module document.'
     )
+
+    group_ir_attachment_user = fields.Boolean(
+        string='Central access to Documents',
+        help="When you set this field all users will be able to manage "
+             "attachments centrally, from the Knowledge/Documents menu.",
+        implied_group='knowledge.group_ir_attachment_user')
 
     module_document_page = fields.Boolean(
         'Manage document pages (Wiki)',
