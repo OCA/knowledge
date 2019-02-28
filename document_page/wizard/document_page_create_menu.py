@@ -51,7 +51,7 @@ class DocumentPageCreateMenu(models.TransientModel):
             'res_model': 'document.page',
             'view_id': view_id,
             'type': 'ir.actions.act_window',
-            'target': 'inline',
+            'target': 'current',
         }
         value['domain'] = "[('parent_id','=',%d)]" % (page.id)
         value['res_id'] = page.id
@@ -66,6 +66,8 @@ class DocumentPageCreateMenu(models.TransientModel):
             'parent_id': data.menu_parent_id.id,
             'action': 'ir.actions.act_window,' + str(action_id.id),
         })
+        if page.menu_id:
+            page.menu_id.unlink()
         page.write({'menu_id': menu_id.id})
         return {
             'type': 'ir.actions.client',
