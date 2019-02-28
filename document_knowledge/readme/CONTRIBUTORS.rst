@@ -6,3 +6,4 @@
 * Fayez Qandeel
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Iván Todorovich <ivan.todorovich@gmail.com>
+* Jordi Ballester <jordi.ballester@eficent.com>

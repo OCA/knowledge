@@ -2,10 +2,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Knowledge Management System",
-    "version": "11.0.2.0.0",
+    "version": "11.0.3.0.0",
     "author": "OpenERP SA,"
               "MONK Software, "
               "Tecnativa, "
+              "Eficent, "
               "Odoo Community Association (OCA)",
     "category": "Knowledge",
     "license": "AGPL-3",
