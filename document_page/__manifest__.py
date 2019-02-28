@@ -4,7 +4,7 @@
 
 {
     'name': 'Document Page',
-    'version': '11.0.2.2.0',
+    'version': '11.0.2.3.0',
     'category': 'Knowledge Management',
     'author': 'OpenERP SA, Odoo Community Association (OCA)',
     'images': [
@@ -15,7 +15,7 @@
         'images/customer_invoice.jpeg',
         'images/page_history.png',
     ],
-    'website': 'http://www.openerp.com/',
+    'website': 'https://github.com/OCA/knowledge',
     'license': 'AGPL-3',
     'depends': [
         'mail',
