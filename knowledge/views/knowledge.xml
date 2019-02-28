@@ -37,9 +37,9 @@
     <menuitem
         id="menu_document_section"
         name="Documents"
-        groups="knowledge.group_document_user"
+        groups="knowledge.group_ir_attachment_user"
         parent="menu_document_root"
-        sequence="10"/>
+        sequence="150"/>
 
     <menuitem
         id="menu_document"
