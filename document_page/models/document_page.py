@@ -9,7 +9,7 @@ class DocumentPage(models.Model):
     """This class is use to manage Document."""
 
     _name = "document.page"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Document Page"
     _order = 'name'
 
