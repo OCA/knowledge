@@ -14,7 +14,7 @@ to Knowledge.
 If you want to grant Central Access to Documents only to some users:
 
 #. Go to *Settings/Activate the developer mode*. Only a user with
-  *Administration / Settings* permissions can do that.
+   *Administration / Settings* permissions can do that.
 
 #. Go to *Settings / Users & Companies / Users* and set the checkbox
    *Central access to Documents* to the selected users.
