@@ -21,7 +21,7 @@ odoo.define('document_url', function (require) {
             self.$el.find("a[href]").attr('target', '_blank');
             self.$el
                 .find('.oe_sidebar_add_attachment, .o_sidebar_add_attachment')
-                .after(QWeb.render('AddUrlDocumentItem', {widget: self}))
+                .after(QWeb.render('AddUrlDocumentItem', {widget: self}));
             self.$el.find('.o_sidebar_add_url').on('click', function (e) {
                 self.on_url_doc();
             });
@@ -29,7 +29,7 @@ odoo.define('document_url', function (require) {
         on_url_doc: function (event) {
 
             var self = this;
-            var env = self.env
+            var env = self.env;
             var view = self.getParent();
             var ids = self.env.activeIds;
             if (!_.isEmpty(ids)) {
@@ -41,7 +41,7 @@ odoo.define('document_url', function (require) {
                 if (env.domain) {
                     activeIdsContext.active_domain = env.domain;
                 }
-                var context = new Context(env.context, activeIdsContext)
+                var context = new Context(env.context, activeIdsContext);
                 context = pyeval.eval('context', context);
                 self._rpc({
                     route: "/web/action/load",
