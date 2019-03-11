@@ -39,7 +39,7 @@
                     <field name="approved_date" readonly="1" attrs="{'invisible':[('state','not in',['approved'])]}"/>
                 </group>
             </xpath>
-			<!-- Readonly fields -->
+            <!-- Readonly fields -->
             <field name="content" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
             <field name="page_id" position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
             <field name="name"    position="attributes"><attribute name="attrs">{'readonly': [('state', 'not in', ['draft'])]}</attribute></field>
