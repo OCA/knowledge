@@ -25,6 +25,7 @@ msgid "Active"
 msgstr ""
 
 #. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
@@ -46,6 +47,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:document_page.action_category
 #: model:ir.model.fields,field_description:document_page.field_document_page_parent_id
 #: model:ir.ui.view,arch_db:document_page.view_category_form
+#: model:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
@@ -81,8 +83,8 @@ msgstr ""
 #: selection:document.page,type:0
 #: model:ir.model.fields,field_description:document_page.field_document_page_content
 #: model:ir.model.fields,field_description:document_page.field_document_page_history_content
+#: model:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
-#: model:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
 msgstr ""
@@ -137,6 +139,11 @@ msgid "Display Name"
 msgstr ""
 
 #. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_document_category_filter
+msgid "Document Category"
+msgstr ""
+
+#. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
 msgstr ""
@@ -170,6 +177,7 @@ msgid "Editor"
 msgstr ""
 
 #. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Group By..."
@@ -201,12 +209,18 @@ msgid "If set, page is accessible only from this company"
 msgstr ""
 
 #. module: document_page
+#: model:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Information"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_content_date
 msgid "Last Contribution Date"
 msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_content_uid
+#: model:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
 msgstr ""
