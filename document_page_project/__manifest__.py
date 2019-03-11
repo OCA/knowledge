@@ -4,7 +4,7 @@
 
 {
     'name': 'Project Wiki',
-    'description': 'This module links document pages to projects',
+    'summary': 'This module links document pages to projects',
     'version': '11.0.1.0.0',
     "development_status": "Beta",
     'category': 'Project',
