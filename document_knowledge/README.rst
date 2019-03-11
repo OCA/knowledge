@@ -32,18 +32,38 @@ This module is the base for any knowledge and document management application.
 .. contents::
    :local:
 
+Configuration
+=============
+
+To set up this module, you need to go to:
+
+* Knowledge / Configuration / Settings
+
+From this menu you'll have a central access to install the apps that belong
+to Knowledge.
+
+* Check *Attachments List and Document Indexation* if you want to install the
+  module that allows users to attach documents to any model.
+* Check *Manage attachments centrally* if you want all users to be able to
+  access to the all attachments to which they have read permissions, from the
+  menu *Knowledge / Documents*
+
+If you want to grant Central Access to Documents only to some users:
+
+#. Go to *Settings/Activate the developer mode*. Only a user with
+   *Administration / Settings* permissions can do that.
+
+#. Go to *Settings / Users & Companies / Users* and set the checkbox
+   *Central access to Documents* to the selected users.
+
 Usage
 =====
 
-To use this module, you need to:
+This module adds a new top level menu *Knowledge*
 
-* Go to Knowledge / Configuration / Settings
-
-Known issues / Roadmap
-======================
-
-* Migrate related modules to v11 and add options in the settings as soon as
-  they are installable.
+Users with permission *Central access to Documents* can access in
+*Knowledge/Documents* to all the documents attached to records of any model
+for which they have read permission.
 
 Bug Tracker
 ===========
@@ -64,6 +84,7 @@ Authors
 * OpenERP SA
 * MONK Software
 * Tecnativa
+* Eficent
 
 Contributors
 ~~~~~~~~~~~~
@@ -76,6 +97,7 @@ Contributors
 * Fayez Qandeel
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Iván Todorovich <ivan.todorovich@gmail.com>
+* Jordi Ballester <jordi.ballester@eficent.com>
 
 Maintainers
 ~~~~~~~~~~~
