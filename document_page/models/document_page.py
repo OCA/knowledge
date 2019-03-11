@@ -9,7 +9,7 @@ class DocumentPage(models.Model):
     """This class is use to manage Document."""
 
     _name = "document.page"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Document Page"
     _order = 'name'
 
@@ -85,7 +85,7 @@ class DocumentPage(models.Model):
     menu_id = fields.Many2one(
         'ir.ui.menu',
         "Menu",
-        readonly=True
+        readonly=True,
     )
 
     content_date = fields.Datetime(
@@ -181,3 +181,10 @@ class DocumentPage(models.Model):
         if not self.content or self.content == '<p><br></p>':
             if self.parent_id and self.parent_id.type == "category":
                     self.content = self.parent_id.template
+
+    @api.multi
+    def unlink(self):
+        menus = self.mapped('menu_id')
+        res = super().unlink()
+        menus.unlink()
+        return res
