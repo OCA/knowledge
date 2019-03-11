@@ -21,8 +21,8 @@ msgstr ""
 
 #. module: attachment_preview
 #. openerp-web
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:166
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:194
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:165
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:193
 #, python-format
 msgid "Preview %s"
 msgstr "预览 %s"
