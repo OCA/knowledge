@@ -13,8 +13,8 @@ class TestDocumentPageHistory(common.TransactionCase):
         history_pages = history_document.search([('page_id', '=', page.id)])
         active_ids = [i.id for i in history_pages]
 
-        result = history_document.getDiff(active_ids[0], active_ids[0])
+        result = history_document._get_diff(active_ids[0], active_ids[0])
         self.assertEqual(result, 'There are no changes in revisions.')
 
-        result = history_document.getDiff(active_ids[0], active_ids[1])
+        result = history_document._get_diff(active_ids[0], active_ids[1])
         self.assertNotEqual(result, 'There are no changes in revisions.')
