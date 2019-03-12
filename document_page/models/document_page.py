@@ -14,28 +14,23 @@ class DocumentPage(models.Model):
     _order = 'name'
 
     name = fields.Char('Title', required=True)
-
     type = fields.Selection(
         [('content', 'Content'), ('category', 'Category')],
         'Type',
         help="Page type",
         default="content"
     )
-
     active = fields.Boolean(default=True)
-
     parent_id = fields.Many2one(
         'document.page',
         'Category',
         domain=[('type', '=', 'category')]
     )
-
     child_ids = fields.One2many(
         'document.page',
         'parent_id',
         'Children'
     )
-
     content = fields.Text(
         "Content",
         compute='_compute_content',
@@ -65,7 +60,6 @@ class DocumentPage(models.Model):
         help="Template that will be used as a content template "
              "for all new page of this category.",
     )
-
     history_head = fields.Many2one(
         'document.page.history',
         'HEAD',
@@ -73,7 +67,6 @@ class DocumentPage(models.Model):
         store=True,
         auto_join=True,
     )
-
     history_ids = fields.One2many(
         'document.page.history',
         'page_id',
@@ -81,13 +74,11 @@ class DocumentPage(models.Model):
         order='create_date DESC',
         readonly=True,
     )
-
     menu_id = fields.Many2one(
         'ir.ui.menu',
         "Menu",
         readonly=True,
     )
-
     content_date = fields.Datetime(
         'Last Contribution Date',
         related='history_head.create_date',
@@ -95,7 +86,6 @@ class DocumentPage(models.Model):
         index=True,
         readonly=True,
     )
-
     content_uid = fields.Many2one(
         'res.users',
         'Last Contributor',
@@ -104,7 +94,6 @@ class DocumentPage(models.Model):
         index=True,
         readonly=True,
     )
-
     company_id = fields.Many2one(
         'res.company',
         'Company',
