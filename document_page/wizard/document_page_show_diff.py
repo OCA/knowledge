@@ -10,6 +10,7 @@ class DocumentPageShowDiff(models.TransientModel):
     """Display Difference for History."""
 
     _name = 'wizard.document.page.history.show_diff'
+    _description = 'Document Page Show Diff'
 
     def _get_diff(self):
         """Return the Difference between two document."""
@@ -18,9 +19,9 @@ class DocumentPageShowDiff(models.TransientModel):
         diff = False
         if len(ids) == 2:
             if ids[0] > ids[1]:
-                diff = history.getDiff(ids[1], ids[0])
+                diff = history._get_diff(ids[1], ids[0])
             else:
-                diff = history.getDiff(ids[0], ids[1])
+                diff = history._get_diff(ids[0], ids[1])
         elif len(ids) == 1:
             diff = history.browse(ids[0]).diff
         else:

@@ -40,12 +40,12 @@ class DocumentPageHistory(models.Model):
                 limit=1,
                 order='create_date DESC')
             if prev:
-                rec.diff = self.getDiff(prev.id, rec.id)
+                rec.diff = self._get_diff(prev.id, rec.id)
             else:
-                rec.diff = self.getDiff(False, rec.id)
+                rec.diff = self._get_diff(False, rec.id)
 
     @api.model
-    def getDiff(self, v1, v2):
+    def _get_diff(self, v1, v2):
         """Return the difference between two version of document version."""
         text1 = v1 and self.browse(v1).content or ''
         text2 = v2 and self.browse(v2).content or ''
@@ -53,8 +53,8 @@ class DocumentPageHistory(models.Model):
         # TODO: consider using a beautify library directly on the content
         text1 = text1.replace('</p><p>', '</p>\r\n<p>')
         text2 = text2.replace('</p><p>', '</p>\r\n<p>')
-        line1 = text1.splitlines(1)
-        line2 = text2.splitlines(1)
+        line1 = text1.splitlines(True)
+        line2 = text2.splitlines(True)
         if line1 == line2:
             return _('There are no changes in revisions.')
         else:
