@@ -14,7 +14,6 @@ class DocumentPageCreateMenu(models.TransientModel):
         'Menu Name',
         required=True
     )
-
     menu_parent_id = fields.Many2one(
         'ir.ui.menu',
         'Parent Menu',
@@ -53,7 +52,7 @@ class DocumentPageCreateMenu(models.TransientModel):
             'type': 'ir.actions.act_window',
             'target': 'current',
         }
-        value['domain'] = "[('parent_id','=',%d)]" % (page.id)
+        value['domain'] = "[('parent_id','=',%d)]" % page.id
         value['res_id'] = page.id
 
         # only the super user is allowed to create menu due to security rules

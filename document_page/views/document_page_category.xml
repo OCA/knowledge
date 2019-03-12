@@ -62,9 +62,9 @@
                 <field name="create_uid"/>
                 <field name="content_uid"/>
                 <group expand="0" string="Group By...">
-                    <filter string="Category" context="{'group_by':'parent_id'}"/>
-                    <filter string="Author" context="{'group_by':'create_uid'}"/>
-                    <filter string="Last Contributor" context="{'group_by':'content_uid'}"/>
+                    <filter name="group_by_category" string="Category" context="{'group_by':'parent_id'}"/>
+                    <filter name="group_by_author" string="Author" context="{'group_by':'create_uid'}"/>
+                    <filter name="group_by_last_contributor" string="Last Contributor" context="{'group_by':'content_uid'}"/>
                 </group>
             </search>
         </field>
