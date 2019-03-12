@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class KnowledgeConfigSettings(models.TransientModel):
-
     _inherit = 'res.config.settings'
 
     module_document = fields.Boolean(
