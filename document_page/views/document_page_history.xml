@@ -27,7 +27,7 @@
                 <field name="content"/>
                 <field name="create_uid"/>
                 <group expand="0" string="Group By...">
-                    <filter name="group_author" string="Author" context="{'group_by':'create_uid'}" />
+                    <filter name="group_by_author" string="Author" context="{'group_by':'create_uid'}" />
                 </group>
             </search>
         </field>
