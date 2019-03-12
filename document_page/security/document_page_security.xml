@@ -11,7 +11,7 @@
         <field name="name">Manager</field>
         <field name="category_id" ref="knowledge.module_category_knowledge"/>
         <field name="implied_ids" eval="[(4, ref('group_document_editor'))]"/>
-        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
     </record>
 
     <record model="ir.rule" id="document_page_rule">
