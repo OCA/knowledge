@@ -34,6 +34,17 @@ msgid "Attach files from an external DMS into Odoo"
 msgstr "Pripni datoteke iz zunanjega DMS v Odoo"
 
 #. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_document
+msgid "Attachments List and Document Indexation"
+msgstr ""
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_group_ir_attachment_user
+#: model:res.groups,name:knowledge.group_ir_attachment_user
+msgid "Central access to Documents"
+msgstr ""
+
+#. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
 msgid "Configuration"
 msgstr "Nastavitve"
@@ -109,11 +120,6 @@ msgid "Manage document pages (Wiki)"
 msgstr "Upravljanje strani dokumentov (Wiki)"
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_res_config_settings_module_document
-msgid "Manage documents"
-msgstr "Upravljanje dokumentov"
-
-#. module: knowledge
 #: model:ir.module.category,description:knowledge.module_category_knowledge
 msgid ""
 "Manage documents and knowledge-related\n"
@@ -152,6 +158,13 @@ msgid "Store attachments in an external DMS instead of the Odoo Filestore"
 msgstr "Hrani priponke na zunanjem DMS namesto v Odoo Filestore"
 
 #. module: knowledge
+#: model:ir.model.fields,help:knowledge.field_res_config_settings_group_ir_attachment_user
+msgid ""
+"When you set this field all users will be able to manage attachments "
+"centrally, from the Knowledge/Documents menu."
+msgstr ""
+
+#. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
 msgid "ir.attachment"
 msgstr ""
@@ -161,6 +174,9 @@ msgstr ""
 #, fuzzy
 msgid "res.config.settings"
 msgstr "knowledge.config.settings"
+
+#~ msgid "Manage documents"
+#~ msgstr "Upravljanje dokumentov"
 
 #~ msgid "Apply"
 #~ msgstr "Uveljavi"
