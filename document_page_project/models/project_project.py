@@ -11,7 +11,7 @@ class ProjectProject(models.Model):
     document_page_ids = fields.One2many(
         string='Wiki',
         comodel_name='document.page',
-        inverse_name='project_id'
+        inverse_name='project_id',
     )
     document_page_count = fields.Integer(
         compute='_compute_document_page_count',
