@@ -3,14 +3,14 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Project Wiki',
+    'name': 'Document Page Project',
     'summary': 'This module links document pages to projects',
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     "development_status": "Beta",
     'category': 'Project',
-    'author': 'Efient, '
+    'author': 'Eficent, '
               'Odoo Community Association (OCA)',
-    'website': 'https://github.com/OCA/project',
+    'website': 'https://github.com/OCA/knowledge',
     'license': 'AGPL-3',
     'depends': [
         'project',
