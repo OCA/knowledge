@@ -35,7 +35,7 @@
 
     > .attachment_preview_iframe {
         width: 100%;
-        height: calc(~"100% - 30px");
+        height: calc(100% - 30px);
         float: left;
     }
 
@@ -44,7 +44,7 @@
         float: left;
         width: 100%;
         background-color: #FFF;
-        border-left: 1px solid @gray-lighter-dark;
+        border-left: 1px solid gray('300');
 
         button {
             min-width: 25px;

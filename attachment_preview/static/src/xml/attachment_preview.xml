@@ -18,18 +18,18 @@
     </t>
 
     <t t-name="attachment_preview.AttachmentPreviewWidget">
-        <div class="attachment_preview_widget hidden">
+        <div class="attachment_preview_widget d-none">
             <div class="attachment_preview_buttons">
-                <div class="button-group pull-left">
-                    <button class="btn btn-sm btn-default attachment_preview_previous"><i class="fa fa-chevron-left"/></button>
-                    <button class="btn btn-sm btn-default disabled attachment_preview_current">1 / 5</button>
-                    <button class="btn btn-sm btn-default attachment_preview_next"><i class="fa fa-chevron-right"/></button>
+                <div class="button-group float-left">
+                    <button class="btn btn-secondary attachment_preview_previous"><i class="fa fa-chevron-left"/></button>
+                    <button class="btn btn-secondary disabled attachment_preview_current">1 / 5</button>
+                    <button class="btn btn-secondary attachment_preview_next"><i class="fa fa-chevron-right"/></button>
                 </div>
-                <button class="btn btn-sm btn-default pull-left ml8 attachment_preview_popout"><i class="fa fa-external-link"/></button>
+                <button class="btn btn-secondary pull-left ml8 attachment_preview_popout"><i class="fa fa-external-link"/></button>
 
-                <button class="btn btn-sm btn-default pull-right attachment_preview_close"><i class="fa fa-times"/></button>
+                <button class="btn btn-secondary pull-right attachment_preview_close"><i class="fa fa-times"/></button>
             </div>
-            <iframe class="attachment_preview_iframe"></iframe>
+            <iframe class="attachment_preview_iframe"/>
         </div>
     </t>
 </templates>

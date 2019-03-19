@@ -18,7 +18,7 @@ odoo.define('attachment_preview', function (require) {
             return $.inArray(
                 extension,
                 ['odt', 'odp', 'ods', 'fodt', 'pdf', 'ott', 'fodp', 'otp',
-                 'fods', 'ots',
+                    'fods', 'ots',
                 ]) > -1;
         },
 
@@ -257,13 +257,13 @@ odoo.define('attachment_preview', function (require) {
         },
 
         show: function () {
-            this.$el.removeClass('hidden');
+            this.$el.removeClass('d-none');
             this.trigger('shown');
         },
 
         hide: function () {
-            this.$el.addClass('hidden');
-            this.trigger('hidden');
+            this.$el.addClass('d-none');
+            this.trigger('d-none');
         },
 
         updatePaginator: function () {
@@ -295,7 +295,7 @@ odoo.define('attachment_preview', function (require) {
         init: function () {
             var res = this._super.apply(this, arguments);
             this.attachmentPreviewWidget = new AttachmentPreviewWidget(this);
-            this.attachmentPreviewWidget.on('hidden', this, this._attachmentPreviewWidgetHidden);
+            this.attachmentPreviewWidget.on('d-none', this, this._attachmentPreviewWidgetHidden);
             return res;
         },
 

@@ -1,4 +1,4 @@
-Addon icon
-----------
+Module icon
+-----------
 
 * courtesy of http://commons.wikimedia.org/wiki/Crystal_Clear

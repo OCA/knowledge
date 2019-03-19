@@ -46,6 +46,7 @@ class IrAttachment(models.Model):
                 continue
             try:
                 import magic
+                magic = magic.Magic(magic.flags.MAGIC_NONE)
                 if model == self._name and binary_field == 'datas'\
                         and this.store_fname:
                     mimetype = magic.from_file(
@@ -59,7 +60,7 @@ class IrAttachment(models.Model):
                                   mimetype)
             except ImportError:
                 (mimetype, encoding) = mimetypes.guess_type(
-                    'data:;base64,' + this[binary_field], strict=False)
+                    'data:;base64,' + str(this[binary_field]), strict=False)
                 _logger.debug('Mimetypes guessed type %s from buffer',
                               mimetype)
             extension = mimetypes.guess_extension(
