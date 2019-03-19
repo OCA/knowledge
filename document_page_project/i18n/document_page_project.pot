@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -14,12 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: document_page_project
-#: model:ir.ui.view,arch_db:document_page_project.view_project_kanban
+#: model_terms:ir.ui.view,arch_db:document_page_project.view_project_kanban
 msgid "<span class=\"o_label\">Wiki Pages</span>"
 msgstr ""
 
 #. module: document_page_project
-#: model:ir.actions.act_window,help:document_page_project.action_document_page_projects
+#: model_terms:ir.actions.act_window,help:document_page_project.action_document_page_projects
 msgid "Click to create a new web page."
 msgstr ""
 
@@ -29,13 +29,13 @@ msgid "Document Page"
 msgstr ""
 
 #. module: document_page_project
-#: model:ir.model.fields,field_description:document_page_project.field_project_project_document_page_count
+#: model:ir.model.fields,field_description:document_page_project.field_project_project__document_page_count
 msgid "Document Page Count"
 msgstr ""
 
 #. module: document_page_project
 #: model:ir.model,name:document_page_project.model_project_project
-#: model:ir.model.fields,field_description:document_page_project.field_document_page_project_id
+#: model:ir.model.fields,field_description:document_page_project.field_document_page__project_id
 msgid "Project"
 msgstr ""
 
@@ -45,12 +45,12 @@ msgid "Project Wiki"
 msgstr ""
 
 #. module: document_page_project
-#: model:ir.model.fields,field_description:document_page_project.field_project_project_document_page_ids
+#: model:ir.model.fields,field_description:document_page_project.field_project_project__document_page_ids
 msgid "Wiki"
 msgstr ""
 
 #. module: document_page_project
-#: model:ir.ui.view,arch_db:document_page_project.edit_project
+#: model_terms:ir.ui.view,arch_db:document_page_project.edit_project
 msgid "Wiki Pages"
 msgstr ""
 
