@@ -3,11 +3,11 @@
 # Copyright 2016 ACSONE SA/NV (<http://acsone.eu>)
 {
     'name': 'URL attachment',
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'category': 'Tools',
     'author': "Tecnativa,"
               "Odoo Community Association (OCA)",
-    'website': 'http://www.serviciosbaeza.com',
+    'website': 'https://github.com/OCA/knowledge',
     'license': 'AGPL-3',
     'depends': [
         'document',
