@@ -4,7 +4,6 @@
     <template id="assets_backend" name="google_drive assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/document_url/static/src/js/url.js"></script>
-            <link rel="stylesheet" type="text/less" href="/document_url/static/src/less/url.less"/>
         </xpath>
     </template>
 
