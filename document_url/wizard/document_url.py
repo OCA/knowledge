@@ -7,6 +7,7 @@ from urllib import parse
 
 class AddUrlWizard(models.Model):
     _name = 'ir.attachment.add_url'
+    _description = 'Wizard to add URL attachment'
 
     name = fields.Char('Name', required=True)
     url = fields.Char('URL', required=True)
@@ -29,4 +30,4 @@ class AddUrlWizard(models.Model):
                     'res_model': self.env.context['active_model'],
                 }
                 attachment_obj.create(attachment)
-        return {'type': 'ir.actions.act_close_wizard_and_reload_view'}
+        return {'type': 'ir.actions.act_window_close'}
