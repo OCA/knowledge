@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="mail.chatter.AttachmentBox">
+        <t t-jquery="span.o_upload_attachments_button" t-operation="after">
+            <span class="btn btn-link o_add_url_button"><span class="fa fa-plus-square"/> Add URL</span>
+        </t>
+    </t>
+
+</templates>
