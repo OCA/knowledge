@@ -24,7 +24,9 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[attachment_action](attachment_action/) | 8.0.1.0.0 | Enable/disable actions on attachments
 [attachment_edit](attachment_edit/) | 8.0.1.0.0 | Edit attachments after upload
+[attachment_lock](attachment_lock/) | 8.0.1.0.0 | Support for locks on attachments for external applications
 [attachment_preview](attachment_preview/) | 8.0.1.2.0 | Preview attachments supported by Viewer.js
 [attachments_to_filesystem](attachments_to_filesystem/) | 8.0.1.0.1 | Move existing attachments to filesystem
 [document_choose_directory](document_choose_directory/) | 8.0.1.0.0 | Choose a document's directory during upload
@@ -38,6 +40,7 @@ addon | version | summary
 [document_rtf_index](document_rtf_index/) | 8.0.1.0.0 | Index rtf documents
 [document_sftp](document_sftp/) | 8.0.1.0.0 | Access your documents via SFTP
 [document_url](document_url/) | 8.0.1.0.0 | URL attachment
+[document_wopi](document_wopi/) | 8.0.1.0.0 | Allow online collaborative editing of your documents
 
 
 Unported addons
