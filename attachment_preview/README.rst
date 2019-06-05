@@ -1,3 +1,8 @@
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
+
+===================
 Preview attachments
 ===================
 
@@ -11,7 +16,7 @@ Installation
 For filetype recognition, you'll get the best results by installing
 ``python-magic``::
 
-sudo apt-get install python-magic
+  sudo apt-get install python-magic
 
 Usage
 =====

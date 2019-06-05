@@ -23,12 +23,7 @@
     'name': 'Document Page',
     'version': '8.0.1.0.2',
     'category': 'Knowledge Management',
-    'description': """
-Pages
-=====
-Web pages
-    """,
-    'author': ['OpenERP SA'],
+    'author': 'OpenERP SA,Odoo Community Association (OCA)',
     'website': 'http://www.openerp.com/',
     'license': 'AGPL-3',
     'depends': [

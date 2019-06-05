@@ -86,6 +86,3 @@ class document_page_create_menu(models.TransientModel):
             'type': 'ir.actions.client',
             'tag': 'reload',
         }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
