@@ -25,10 +25,13 @@ openerp.attachment_edit = function(instance)
     {
         on_attachments_loaded: function(attachments)
         {
-            var result = this._super.apply(this, arguments);    
-            this.$el.find('.oe-sidebar-attachment-edit')
-                .click(this.on_attachment_edit);
-            return result;
+            var self = this;
+            return jQuery.when(this._super.apply(this, arguments))
+            .then(function()
+            {
+                self.$el.find('.oe-sidebar-attachment-edit')
+                .click(self.on_attachment_edit);
+            });
         },
         on_attachment_edit: function(e)
         {

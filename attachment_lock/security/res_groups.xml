@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="group_attachment_lock" model="res.groups">
+            <field name="name">Attachment locking</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]" />
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+    </data>
+</openerp>

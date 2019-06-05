@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery="a.oe_sidebar_delete_item" t-operation="before">
+            <a t-if="section.name == 'files' and !item.callback and item.url and !item.locked and item.can_lock" class="oe_sidebar_attachment_lock" t-att-data-id="item.id" t-attf-title="Lock #{item.name}">
+                <i class="fa fa-lock"></i>
+            </a>
+            <a t-if="section.name == 'files' and !item.callback and item.url and item.locked and item.can_lock" class="oe_sidebar_attachment_unlock" t-att-data-id="item.id" t-attf-title="Unlock #{item.name}">
+                <i class="fa fa-unlock"></i>
+            </a>
+            <a t-if="section.name == 'files' and !item.callback and item.url and item.locked and !item.can_lock" class="oe_sidebar_attachment_locked" t-att-data-id="item.id" t-attf-title="#{item.name} is locked">
+                <i class="fa fa-ban"></i>
+            </a>
+        </t>
+    </t>
+</templates>

@@ -27,7 +27,7 @@
     'summary': 'Preview attachments supported by Viewer.js',
     "category": "Knowledge Management",
     "depends": [
-        'web',
+        'attachment_action',
     ],
     "data": [
         "view/attachment_preview.xml",

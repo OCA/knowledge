@@ -1,0 +1,37 @@
+.openerp .oe_sidebar .oe_dropdown_menu li span.oe_sidebar_attachment_action .oe_sidebar_delete_item
+{
+    position: static;
+}
+.openerp .oe_sidebar .oe_dropdown_menu li span.oe_sidebar_attachment_action
+{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 50%;
+    text-align: right;
+    padding: 0px 6px;
+}
+.openerp .oe_sidebar .oe_dropdown_menu li span.oe_sidebar_attachment_action > *
+{
+    display: inline-block;
+    padding: 2px;
+    color: #8786b7;
+    font-weight: bold;
+    text-shadow: 0 1px 1px white;
+    margin-right: 1px;
+}
+.openerp .oe_sidebar .oe_dropdown_menu li span.oe_sidebar_attachment_action > *:hover
+{
+    text-decoration: none;
+    color: white;
+    background: #8786b7;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px
+}
+.openerp .oe_sidebar .oe_dropdown_menu li:hover span.oe_sidebar_attachment_action
+{
+    display: block;
+}

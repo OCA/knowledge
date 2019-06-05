@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery="a.oe_sidebar_delete_item" t-operation="before">
+            <a t-if="section.name == 'files' and !item.callback and item.url" href="#" class="oe-sidebar-document-wopi" t-att-data-id="item.id" t-att-data-url="item.url" t-attf-title="Edit #{item.name}">
+                <img t-att-src='_s + "/web/static/src/img/icons/STOCK_EDIT.png"' width="12" height="12" border="0"/>
+            </a>
+        </t>
+    </t>
+    <div t-name="DocumentWopiOfficeWidget">
+        <form id="document_wopi_form" name="document_wopi_form" target="document_wopi_iframe" action="" method="post">
+            <input name="access_token" value="" type="hidden"/>
+            <input name="access_token_ttl" value="" type="hidden"/>
+        </form>
+        <iframe id="document_wopi_iframe" name="document_wopi_iframe" allowfullscreen="allowfullscreen" />
+    </div>
+</templates>

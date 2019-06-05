@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="document_wopi_todo" model="ir.actions.todo">
+            <field name="name">Configure document_wopi</field>
+            <field name="action_id" ref="knowledge.action_knowledge_configuration" />
+            <field name="type">once</field>
+        </record>
+    </data>
+</openerp>

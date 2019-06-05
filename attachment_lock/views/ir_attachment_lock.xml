@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_ir_attachment_lock_tree" model="ir.ui.view">
+            <field name="model">ir.attachment.lock</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="attachment_id" />
+                    <field name="create_uid" />
+                    <field name="valid_until" />
+                    <field name="lock_type" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_ir_attachment_lock_form" model="ir.ui.view">
+            <field name="model">ir.attachment.lock</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="attachment_id" />
+                        <field name="create_uid" />
+                        <field name="valid_until" />
+                        <field name="lock_type" />
+                        <field name="shared_user_ids" widget="many2many_tags" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <act_window
+            id="action_ir_attachment_lock"
+            name="Locks"
+            res_model="ir.attachment.lock"
+            view_mode="tree,form"
+            groups="group_attachment_lock"
+        />
+        <menuitem
+            id="menu_ir_attachment_lock"
+            parent="knowledge.menu_document_configuration"
+            action="action_ir_attachment_lock"
+        />
+    </data>
+</openerp>

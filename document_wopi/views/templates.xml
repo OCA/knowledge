@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="document_wopi assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/document_wopi/static/src/js/document_wopi.js"></script>
+                <link rel="stylesheet" href="/document_wopi/static/src/css/document_wopi.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_knowledge_configuration" model="ir.ui.view">
+            <field name="model">knowledge.config.settings</field>
+            <field name="inherit_id" ref="knowledge.view_knowledge_configuration" />
+            <field name="arch" type="xml">
+                <group position="after">
+                    <group name="document_wopi">
+                        <field name="document_wopi_client" placeholder="https://your.wopi.client" />
+                    </group>
+                </group>
+            </field>
+        </record>
+    </data>
+</openerp>

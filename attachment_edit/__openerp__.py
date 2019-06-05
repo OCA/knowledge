@@ -9,7 +9,7 @@
     "category": "Knowledge Management",
     "summary": "Edit attachments after upload",
     "depends": [
-        'web',
+        'attachment_action',
     ],
     "data": [
         "views/ir_attachment.xml",
