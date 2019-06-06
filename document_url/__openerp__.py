@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -24,9 +24,6 @@
     'name': 'URL attachment',
     'version': '8.0.1.0.0',
     'category': 'Tools',
-    'description': """
-Module that allows to attach an URL as a document.
-    """,
     'author': "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
               "Odoo Community Association (OCA)",
     'website': 'http://www.serviciosbaeza.com',
