@@ -37,3 +37,21 @@ class TestDocumentPage(common.TransactionCase):
         })
         page.content = 'New content'
         self.assertIsNotNone(page.history_ids[0].diff)
+
+    def test_page_link(self):
+        page = self.page_obj.create({
+            'name': 'Test Page 3',
+            'content': 'Test content'
+        })
+        self.assertEqual(
+            page.backend_url,
+            '/web#id={}&model=document.page&view_type=form'.format(page.id)
+        )
+        menu = self.env.ref('knowledge.menu_document')
+        page.menu_id = menu
+        self.assertEqual(
+            page.backend_url,
+            '/web#id={}&model=document.page&view_type=form&action={}'.format(
+                page.id, menu.action.id
+            )
+        )
