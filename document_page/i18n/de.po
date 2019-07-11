@@ -53,6 +53,11 @@ msgid "Author"
 msgstr "Autor"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
+msgid "Backend URL"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -534,12 +539,17 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__backend_url
+msgid "Use it to link resources univocally"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Assistent Menü erstellen"
 
 #. module: document_page
-#: code:addons/document_page/models/document_page.py:108
+#: code:addons/document_page/models/document_page.py:128
 #, python-format
 msgid "You cannot create recursive categories."
 msgstr ""
