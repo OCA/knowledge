@@ -101,6 +101,17 @@ class DocumentPage(models.Model):
         index=True,
         ondelete='cascade',
     )
+    backend_url = fields.Char(
+        string='Backend URL',
+        help='Use it to link resources univocally',
+        compute='_compute_backend_url',
+    )
+
+    @api.depends()
+    def _compute_backend_url(self):
+        tmpl = '/web#id={}&model=document.page&view_type=form'
+        for rec in self:
+            rec.backend_url = tmpl.format(rec.id)
 
     @api.constrains('parent_id')
     def _check_parent_id(self):
@@ -116,11 +127,12 @@ class DocumentPage(models.Model):
             index += ["<li>" + subpage._get_page_index() + "</li>"]
         r = ''
         if link:
-            r = '<a href="#id=%s">%s</a>' % (self.id, self.name)
+            r = '<a href="{}">{}</a>'.format(self.backend_url, self.name)
 
         if index:
             r += "<ul>" + "".join(index) + "</ul>"
         return r
+        
 
     @api.multi
     @api.depends('history_head')
