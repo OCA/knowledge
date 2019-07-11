@@ -47,3 +47,11 @@ class TestDocumentPage(common.TransactionCase):
             page.backend_url,
             '/web#id={}&model=document.page&view_type=form'.format(page.id)
         )
+        menu = self.env.ref('knowledge.menu_document')
+        page.menu_id = menu
+        self.assertEqual(
+            page.backend_url,
+            '/web#id={}&model=document.page&view_type=form&action={}'.format(
+                page.id, menu.action.id
+            )
+        )
