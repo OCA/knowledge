@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2019-08-01 14:43+0000\n"
+"PO-Revision-Date: 2019-08-01 23:43+0000\n"
 "Last-Translator: Valaeys Stéphane <svalaeys@fiefmanage.ch>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
@@ -76,11 +76,14 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
+"Connectez Odoo avec un serveur compatible CMIS pour enregistrer les fichiers."
+"\n"
+"- Cecu installe le module cmis_write."
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Connect with an external DMS"
-msgstr ""
+msgstr "Connecter avec un DMS externe"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document
@@ -88,6 +91,9 @@ msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module document."
 msgstr ""
+"Indexation des documents, recherche dans le texte des pièces jointes "
+"complète.\n"
+"- Ceci installe le module document."
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
@@ -116,9 +122,8 @@ msgstr "Base de connaissance et documentaire"
 
 #. module: knowledge
 #: model:res.groups,name:knowledge.group_document_user
-#, fuzzy
 msgid "Knowledge user"
-msgstr "Connaissances"
+msgstr "Utilisateur Connaissances"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document_page
@@ -132,6 +137,9 @@ msgid ""
 "            applications\n"
 "        "
 msgstr ""
+"Gérez les documents et les applications liées à\n"
+"            la connaissance\n"
+"        "
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document_page_approval
@@ -141,7 +149,7 @@ msgstr "Gérer l'approbation sur les pages"
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Model"
-msgstr ""
+msgstr "Modèle"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document_page
@@ -149,11 +157,13 @@ msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
 msgstr ""
+"Fournir les pages et catégories de documents comme un wiki.\n"
+"- Ceci installe le module document_page."
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_ir_attachment__res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Modèle de la ressource"
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
@@ -165,11 +175,12 @@ msgstr "Paramètres"
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_cmis_write
 msgid "Store attachments in an external DMS instead of the Odoo Filestore"
 msgstr ""
+"Enregistrer les pièces jointes dans un DMS externe au lieu du Filestore Odoo"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_ir_attachment__res_model
 msgid "The database object this attachment will be attached to."
-msgstr ""
+msgstr "L'objet de la base de données auquel cette sera jointe."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__group_ir_attachment_user
@@ -177,6 +188,9 @@ msgid ""
 "When you set this field all users will be able to manage attachments "
 "centrally, from the Knowledge/Documents menu."
 msgstr ""
+"Quand ce champ est spécifié, tous les utilisateurs pourront gérer "
+"centralement leurs pièces jointes, à partir du menu Connaissances / "
+"Documents."
 
 #~ msgid "Manage documents"
 #~ msgstr "Gérer les documents"
