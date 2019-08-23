@@ -12,6 +12,9 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.page1 = self.env.ref('document_page.demo_page1')
         self.approver_gid = self.env.ref(
             'document_page_approval.group_document_approver_user')
+        self.env.ref('base.user_root').write({
+            'groups_id': [(4, self.approver_gid.id)],
+        })
         # demo_approval
         self.category2 = self.page_obj.create({
             'name': 'This category requires approval',

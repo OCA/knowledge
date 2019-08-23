@@ -183,10 +183,10 @@
                 <filter name="approved" string="Approved" domain="[('state','=','approved')]"/>
                 <filter name="cancelled" string="Cancelled" domain="[('state','=','cancelled')]"/>
             </field>
-            <filter name="group_author" position="before">
+            <filter name="group_by_author" position="before">
                 <filter name="group_state" string="State" context="{'group_by':'state'}" />
             </filter>
-            <filter name="group_author" position="after">
+            <filter name="group_by_author" position="after">
                 <filter name="group_approver" string="Approver" context="{'group_by':'approved_uid'}" />
             </filter>
         </field>
