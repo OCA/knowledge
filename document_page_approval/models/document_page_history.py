@@ -85,7 +85,7 @@ class DocumentPageHistory(models.Model):
                 users = self.env['res.users'].search([
                     ('groups_id', 'in', guids),
                     ('groups_id', 'in', approver_gid.id)])
-                rec.message_subscribe_users([u.id for u in users])
+                rec.message_subscribe([u.id for u in users])
                 rec.message_post_with_template(template.id)
             else:
                 # auto-approve if approval is not required
@@ -102,9 +102,9 @@ class DocumentPageHistory(models.Model):
                 raise UserError(_(
                     'You are not authorized to do this.\r\n'
                     'Only approvers with these groups can approve this: '
-                    ) % ', '.join(
-                        [g.display_name
-                            for g in rec.page_id.approver_group_ids]))
+                ) % ', '.join(
+                    [g.display_name
+                     for g in rec.page_id.approver_group_ids]))
             # Update state
             rec.write({
                 'state': 'approved',
@@ -118,14 +118,14 @@ class DocumentPageHistory(models.Model):
                 subtype='mt_comment',
                 body=_(
                     'Change request has been approved by %s.'
-                    ) % (self.env.user.name)
+                ) % (self.env.user.name)
             )
             # Notify followers a new version is available
             rec.page_id.message_post(
                 subtype='mt_comment',
                 body=_(
                     'New version of the document %s approved.'
-                    ) % (rec.page_id.name)
+                ) % (rec.page_id.name)
             )
 
     @api.multi
@@ -137,8 +137,8 @@ class DocumentPageHistory(models.Model):
                 subtype='mt_comment',
                 body=_(
                     'Change request <b>%s</b> has been cancelled by %s.'
-                    ) % (rec.display_name, self.env.user.name)
-                )
+                ) % (rec.display_name, self.env.user.name)
+            )
 
     @api.multi
     def action_cancel_and_draft(self):
@@ -167,7 +167,7 @@ class DocumentPageHistory(models.Model):
                     base_url,
                     self.env.cr.dbname,
                     page.id
-                )
+            )
 
     @api.multi
     def _compute_diff(self):
@@ -181,6 +181,6 @@ class DocumentPageHistory(models.Model):
                 domain.append(('approved_date', '<', rec.approved_date))
             prev = history.search(domain, limit=1, order='approved_date DESC')
             if prev:
-                rec.diff = self.getDiff(prev.id, rec.id)
+                rec.diff = self._get_diff(prev.id, rec.id)
             else:
-                rec.diff = self.getDiff(False, rec.id)
+                rec.diff = self._get_diff(False, rec.id)
