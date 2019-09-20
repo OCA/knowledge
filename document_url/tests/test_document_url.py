@@ -26,5 +26,6 @@ class TestDocumentUrl(common.TransactionCase):
             ('res_model', '=', 'res.users'),
             ('res_id', '=', self.env.ref('base.user_demo').id)
         ]
-        attachment_added_count = self.env['ir.attachment'].search_count(domain)
-        self.assertEqual(attachment_added_count, 1)
+        attachment_added = self.env['ir.attachment'].search(domain)
+        self.assertEqual(len(attachment_added), 1)
+        self.assertEqual(attachment_added.filename, 'Demo User (Website)')

@@ -24,6 +24,7 @@ class AddUrlWizard(models.Model):
             for active_id in self.env.context.get('active_ids', []):
                 attachment = {
                     'name': form.name,
+                    'filename': form.name,
                     'type': 'url',
                     'url': url.geturl(),
                     'res_id': active_id,
