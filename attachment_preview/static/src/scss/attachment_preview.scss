@@ -1,11 +1,11 @@
-.o_cp_sidebar {
-    li .o_sidebar_preview_attachment {
-        position: absolute;
-        top: 5px;
-        right: 26px;
-        background-color: #FFF;
+.o_attachments_list .o_attachment_wrap {
+    .o_attachment_preview {
+        cursor: pointer;
+        float: right;
+        padding-top: 1px;
+        padding-bottom: 1px;
 
-        &.o_sidebar_preview_attachment_new_tab {
+        &.o_attachment_preview_new_tab {
             right: 43px;
         }
     }
@@ -35,7 +35,7 @@
 
     > .attachment_preview_iframe {
         width: 100%;
-        height: calc(~"100% - 30px");
+        height: calc(100% - 30px);
         float: left;
     }
 
@@ -44,7 +44,7 @@
         float: left;
         width: 100%;
         background-color: #FFF;
-        border-left: 1px solid @gray-lighter-dark;
+        border-left: 1px solid $gray-800;
 
         button {
             min-width: 25px;
