@@ -3,7 +3,7 @@
 
 {
     "name": "Preview attachments",
-    "version": "11.0.1.3.0",
+    "version": "12.0.1.0.0",
     "author": "Therp BV,"
               "Onestein,"
               "Odoo Community Association (OCA)",
@@ -12,6 +12,7 @@
     "category": "Knowledge Management",
     "depends": [
         'web',
+        'mail'
     ],
     "data": [
         "templates/assets.xml",
