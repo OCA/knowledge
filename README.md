@@ -21,6 +21,7 @@ addon | version | summary
 [attachment_attach_non_editable](attachment_attach_non_editable/) | 10.0.1.0.0 | Force enable attachments
 [document_page](document_page/) | 10.0.2.1.0 | Document Page
 [document_page_approval](document_page_approval/) | 10.0.2.1.0 | Document Page Approval
+[document_page_partner_id](document_page_partner_id/) | 10.0.1.0.0 | Allows to link doucment pages to a partner
 [document_page_tags](document_page_tags/) | 10.0.1.0.0 | Allows you to assign tags or keywords to pages and search for them afterwards
 [knowledge](knowledge/) | 10.0.1.0.0 | Knowledge Management System
 
