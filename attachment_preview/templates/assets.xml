@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_backend" name="attachment_preview assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/attachment_preview/static/src/js/attachment_preview.js"></script>
+            <link rel="stylesheet" type="text/less" href="/attachment_preview/static/src/less/attachment_preview.less" />
+        </xpath>
+    </template>
+</odoo>
