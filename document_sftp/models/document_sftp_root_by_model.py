@@ -2,7 +2,7 @@
 # © 2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import os
-from openerp import api, models
+from openerp import api, models, _
 try:
     from paramiko import SFTP_NO_SUCH_FILE, SFTP_PERMISSION_DENIED
 except ImportError:   # pragma: no cover
@@ -68,10 +68,10 @@ class DocumentSFTPRootByModel(models.Model):
                     res_model = attachment.res_model
                     seen.add(res_id)
                     res = self.env[res_model].browse(res_id)
-                    if res.name:
-                        display_name = str(res_id) + ' - ' + res.name
+                    if res.display_name:
+                        display_name = str(res_id) + ' - ' + res.display_name
                     else:
-                        display_name = str(res_id) + ' - No Name'
+                        display_name = str(res_id) + _(' - No Name')
                     result.append(self._directory(display_name))
         elif len(components) == 3:
             model = components[-2]
