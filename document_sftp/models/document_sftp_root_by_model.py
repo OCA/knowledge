@@ -64,11 +64,18 @@ class DocumentSFTPRootByModel(models.Model):
             ], order='res_id asc'):
                 # TODO: better lump ids together in steps of 100 or something?
                 if attachment.res_id not in seen:
-                    seen.add(attachment.res_id)
-                    result.append(self._directory(str(attachment.res_id)))
+                    res_id = attachment.res_id
+                    res_model = attachment.res_model
+                    seen.add(res_id)
+                    res = self.env[res_model].browse(res_id)
+                    if res.name:
+                        display_name = str(res_id) + ' - ' + res.name
+                    else:
+                        display_name = str(res_id) + ' - No Name'
+                    result.append(self._directory(display_name))
         elif len(components) == 3:
             model = components[-2]
-            res_id = int(components[-1])
+            res_id = int(components[-1].split('-')[0])
             for attachment in self.env['ir.attachment'].search([
                 ('res_model', '=', model),
                 ('res_id', '=', res_id),
