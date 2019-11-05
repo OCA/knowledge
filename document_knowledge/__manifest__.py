@@ -4,25 +4,21 @@
     "name": "Knowledge",
     "version": "12.0.1.0.0",
     "author": "OpenERP SA,"
-              "MONK Software, "
-              "Tecnativa, "
-              "Eficent, "
-              "Odoo Community Association (OCA)",
+    "MONK Software, "
+    "Tecnativa, "
+    "Eficent, "
+    "Odoo Community Association (OCA)",
     "category": "Knowledge",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/knowledge",
-    "depends": [
-        "base",
-    ],
+    "depends": ["base"],
     "data": [
         "data/ir_module_category.xml",
         "security/knowledge_security.xml",
         "views/knowledge.xml",
         "views/res_config.xml",
     ],
-    "demo": [
-        "demo/knowledge.xml",
-    ],
+    "demo": ["demo/knowledge.xml"],
     "installable": True,
     "application": True,
 }
