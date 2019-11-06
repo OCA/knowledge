@@ -4,6 +4,9 @@
 * Leonardo Donelli <leonardo.donelli@monksoftware.it>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Fayez Qandeel
-* Vicent Cubells <vicent.cubells@tecnativa.com>
 * Iván Todorovich <ivan.todorovich@gmail.com>
 * Jordi Ballester <jordi.ballester@eficent.com>
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Vicent Cubells
+  * Ernesto Tejeda

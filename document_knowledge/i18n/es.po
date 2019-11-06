@@ -36,7 +36,7 @@ msgid "Attachment"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_attachment_indexation
 msgid "Attachments List and Document Indexation"
 msgstr ""
 
@@ -78,10 +78,10 @@ msgid "Connect with an external DMS"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document
+#: model:ir.model.fields,help:knowledge.field_res_config_settings__module_attachment_indexation
 msgid ""
 "Document indexation, full text search of attachements.\n"
-"- This installs the module document."
+"- This installs the module attachment_indexation."
 msgstr ""
 
 #. module: knowledge

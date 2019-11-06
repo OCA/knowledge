@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Knowledge",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "author": "OpenERP SA,"
     "MONK Software, "
     "Tecnativa, "
@@ -15,6 +15,7 @@
     "data": [
         "data/ir_module_category.xml",
         "security/knowledge_security.xml",
+        "data/res_users.xml",
         "views/knowledge.xml",
         "views/res_config.xml",
     ],
