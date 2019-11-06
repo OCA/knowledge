@@ -9,13 +9,13 @@ from odoo.tools.translate import _
 class DocumentPageShowDiff(models.TransientModel):
     """Display Difference for History."""
 
-    _name = 'wizard.document.page.history.show_diff'
-    _description = 'Document Page Show Diff'
+    _name = "wizard.document.page.history.show_diff"
+    _description = "Document Page Show Diff"
 
     def _get_diff(self):
         """Return the Difference between two document."""
         history = self.env["document.page.history"]
-        ids = self.env.context.get('active_ids', [])
+        ids = self.env.context.get("active_ids", [])
         diff = False
         if len(ids) == 2:
             if ids[0] > ids[1]:
@@ -25,11 +25,7 @@ class DocumentPageShowDiff(models.TransientModel):
         elif len(ids) == 1:
             diff = history.browse(ids[0]).diff
         else:
-            raise UserError(
-                _("Select one or maximum two history revisions!"))
+            raise UserError(_("Select one or maximum two history revisions!"))
         return diff
 
-    diff = fields.Text(
-        readonly=True,
-        default=_get_diff,
-    )
+    diff = fields.Text(readonly=True, default=_get_diff)
