@@ -8,12 +8,12 @@ class TestDocumentPageShowDiff(common.TransactionCase):
 
     def test_show_demo_page1_diff(self):
         """Show test page history difference."""
-        page = self.env.ref('document_page.demo_page1')
+        page = self.env.ref("document_page.demo_page1")
 
-        show_diff_object = self.env['wizard.document.page.history.show_diff']
+        show_diff_object = self.env["wizard.document.page.history.show_diff"]
 
-        history_document = self.env['document.page.history']
-        history_pages = history_document.search([('page_id', '=', page.id)])
+        history_document = self.env["document.page.history"]
+        history_pages = history_document.search([("page_id", "=", page.id)])
 
         self.assertTrue(
             show_diff_object.with_context(
@@ -21,10 +21,10 @@ class TestDocumentPageShowDiff(common.TransactionCase):
             )._get_diff()
         )
 
-        page.write({'content': 'Text content updated'})
-        page.write({'content': 'Text updated'})
+        page.write({"content": "Text content updated"})
+        page.write({"content": "Text updated"})
 
-        history_pages = history_document.search([('page_id', '=', page.id)])
+        history_pages = history_document.search([("page_id", "=", page.id)])
 
         with self.assertRaises(UserError):
             show_diff_object.with_context(
