@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* knowledge
+# 	* knowledge
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document_page_approval
-msgid "Add workflow on documents per category.\n"
+msgid ""
+"Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
 msgstr ""
 
@@ -30,7 +31,7 @@ msgid "Attachment"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_attachment_indexation
 msgid "Attachments List and Document Indexation"
 msgstr ""
 
@@ -52,14 +53,16 @@ msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_cmis_read
-msgid "Connect Odoo with a CMIS compatible server to attach files\n"
+msgid ""
+"Connect Odoo with a CMIS compatible server to attach files\n"
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
 msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_cmis_write
-msgid "Connect Odoo with a CMIS compatible server to store files.\n"
+msgid ""
+"Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
 
@@ -69,9 +72,10 @@ msgid "Connect with an external DMS"
 msgstr ""
 
 #. module: knowledge
-#: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document
-msgid "Document indexation, full text search of attachements.\n"
-"- This installs the module document."
+#: model:ir.model.fields,help:knowledge.field_res_config_settings__module_attachment_indexation
+msgid ""
+"Document indexation, full text search of attachements.\n"
+"- This installs the module attachment_indexation."
 msgstr ""
 
 #. module: knowledge
@@ -111,7 +115,8 @@ msgstr ""
 
 #. module: knowledge
 #: model:ir.module.category,description:knowledge.module_category_knowledge
-msgid "Manage documents and knowledge-related\n"
+msgid ""
+"Manage documents and knowledge-related\n"
 "            applications\n"
 "        "
 msgstr ""
@@ -128,7 +133,8 @@ msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document_page
-msgid "Provide document page and category as a wiki.\n"
+msgid ""
+"Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
 msgstr ""
 
@@ -155,6 +161,7 @@ msgstr ""
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__group_ir_attachment_user
-msgid "When you set this field all users will be able to manage attachments centrally, from the Knowledge/Documents menu."
+msgid ""
+"When you set this field all users will be able to manage attachments "
+"centrally, from the Knowledge/Documents menu."
 msgstr ""
-
