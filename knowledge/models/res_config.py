@@ -7,10 +7,10 @@ from odoo import fields, models
 class KnowledgeConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    module_document = fields.Boolean(
+    module_attachment_indexation = fields.Boolean(
         "Attachments List and Document Indexation",
         help="Document indexation, full text search of attachements.\n"
-        "- This installs the module document.",
+        "- This installs the module attachment_indexation.",
     )
 
     group_ir_attachment_user = fields.Boolean(
