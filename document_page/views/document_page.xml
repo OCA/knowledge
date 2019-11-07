@@ -39,11 +39,8 @@
         <field name="arch" type="xml">
             <form string="Document Page">
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object" groups="document_page.group_document_manager" class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"/>
-                        </button>
-                    </div>
+                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="active" invisible="1"/>
                     <field name="type" invisible="1"/>
                     <h1>
                         <field name="name" placeholder="Name"/>
@@ -63,9 +60,9 @@
                                     <field name="content_date"/>
                                     <field name="menu_id" readonly="1" attrs="{'invisible': [('menu_id','=',False)]}"/>
                                 </group>
-                                <group string="Revision" class="oe_edit_only">
-                                    <field name="draft_name" placeholder="Rev 01" class="oe_edit_only" />
-                                    <field name="draft_summary" placeholder="eg: Changed ... for ..." class="oe_edit_only" />
+                                <group string="Revision">
+                                    <field name="draft_name" placeholder="Rev 01" />
+                                    <field name="draft_summary" placeholder="eg: Changed ... for ..." />
                                 </group>
                             </group>
                         </page>
@@ -132,7 +129,6 @@
         <field name="res_model">document.page</field>
         <field name="domain">[('type','=','content')]</field>
         <field name="context">{'default_type': 'content'}</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_wiki_tree"/>
         <field name="search_view_id" ref="view_wiki_filter"/>
@@ -169,15 +165,5 @@
               parent="menu_wiki"
               action="action_page"
               sequence="20"/>
-
-
-    <act_window
-            id="action_related_page_create_menu"
-            name="Create Menu"
-            res_model="document.page.create.menu"
-            target="new"
-            view_type="form"
-            view_mode="form"
-            src_model="document.page"/>
 
 </odoo>

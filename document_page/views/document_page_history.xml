@@ -68,7 +68,6 @@
     <record model="ir.actions.act_window" id="action_history">
         <field name="name">Page history</field>
         <field name="res_model">document.page.history</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -84,7 +83,7 @@
         domain="[('page_id','=',active_id)]"
         name="Page History"
         res_model="document.page.history"
-        src_model="document.page"/>
+        binding_model="document.page"/>
 
 
 </odoo>
