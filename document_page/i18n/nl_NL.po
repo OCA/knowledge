@@ -35,6 +35,11 @@ msgid "Activities"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
 msgid "Activity State"
 msgstr ""
@@ -68,9 +73,9 @@ msgid "Categories"
 msgstr "Categorieën "
 
 #. module: document_page
-#: selection:document.page,type:0
 #: model:ir.actions.act_window,name:document_page.action_category
 #: model:ir.model.fields,field_description:document_page.field_document_page__parent_id
+#: model:ir.model.fields.selection,name:document_page.selection__document_page__type__category
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
@@ -105,9 +110,9 @@ msgid "Company"
 msgstr ""
 
 #. module: document_page
-#: selection:document.page,type:0
 #: model:ir.model.fields,field_description:document_page.field_document_page__content
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__content
+#: model:ir.model.fields.selection,name:document_page.selection__document_page__type__content
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
@@ -116,7 +121,6 @@ msgstr "Inhoud"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
-#: model:ir.actions.act_window,name:document_page.action_wiki_create_menu
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
 msgstr "Maak menu aan"
@@ -149,7 +153,6 @@ msgid "Diff"
 msgstr "Verschil"
 
 #. module: document_page
-#: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
@@ -251,17 +254,24 @@ msgid "ID"
 msgstr "ID"
 
 #. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page__message_unread
-msgid "If checked new messages require your attention."
+#: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__activity_exception_icon
+msgid "Icon to indicate an exception activity."
 msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
+#: model:ir.model.fields,help:document_page.field_document_page__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
+#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -391,7 +401,7 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: document_page
@@ -407,11 +417,6 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
-
-#. module: document_page
-#: selection:document.page,activity_state:0
-msgid "Overdue"
 msgstr ""
 
 #. module: document_page
@@ -452,11 +457,6 @@ msgid "Parent Menu"
 msgstr "Oudermenu"
 
 #. module: document_page
-#: selection:document.page,activity_state:0
-msgid "Planned"
-msgstr ""
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
 msgstr ""
@@ -473,7 +473,12 @@ msgid "Revision"
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/wizard/document_page_show_diff.py:29
+#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: document_page
+#: code:addons/document_page/wizard/document_page_show_diff.py:0
 #, python-format
 msgid "Select one or maximum two history revisions!"
 msgstr "Selecteer een of maximaal  twee historie-revisies!"
@@ -507,7 +512,7 @@ msgid ""
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/models/document_page_history.py:59
+#: code:addons/document_page/models/document_page_history.py:0
 #, python-format
 msgid "There are no changes in revisions."
 msgstr "Er zijn geen wijzigingen in revisies."
@@ -518,14 +523,14 @@ msgid "Title"
 msgstr "Titel"
 
 #. module: document_page
-#: selection:document.page,activity_state:0
-msgid "Today"
-msgstr ""
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
 msgid "Type"
 msgstr "Type"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_unread
@@ -548,7 +553,7 @@ msgid "Wizard Create Menu"
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/models/document_page.py:128
+#: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "You cannot create recursive categories."
 msgstr ""

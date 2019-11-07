@@ -1,16 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <template id="report_documentpage_doc">
         <t t-call="web.external_layout">
-
             <div class="page">
                 <h1 t-field="doc.name" />
                 <div t-raw="doc.content" />
             </div>
         </t>
     </template>
-
     <template id="report_documentpage">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
@@ -18,7 +15,6 @@
             </t>
         </t>
     </template>
-
     <report
         id="report_document_page"
         string="Document Page"
@@ -27,5 +23,4 @@
         file="document_page.report_documentpage"
         name="document_page.report_documentpage"
     />
-
 </odoo>

@@ -13,6 +13,8 @@ class DocumentPage(models.Model):
     _description = "Document Page"
     _order = "name"
 
+    _HTML_WIDGET_DEFAULT_VALUE = "<p><br></p>"
+
     name = fields.Char("Title", required=True)
     type = fields.Selection(
         [("content", "Content"), ("category", "Category")],
@@ -33,20 +35,18 @@ class DocumentPage(models.Model):
         required=True,
     )
 
-    # no-op computed field
     draft_name = fields.Char(
         string="Name",
         help="Name for the changes made",
-        compute=lambda x: x,
-        inverse=lambda x: x,
+        related="history_head.name",
+        readonly=False,
     )
 
-    # no-op computed field
     draft_summary = fields.Char(
         string="Summary",
         help="Describe the changes made",
-        compute=lambda x: x,
-        inverse=lambda x: x,
+        related="history_head.summary",
+        readonly=False,
     )
 
     template = fields.Html(
@@ -117,13 +117,12 @@ class DocumentPage(models.Model):
         if not self._check_recursion():
             raise ValidationError(_("You cannot create recursive categories."))
 
-    @api.multi
     def _get_page_index(self, link=True):
         """Return the index of a document."""
         self.ensure_one()
-        index = []
-        for subpage in self.child_ids:
-            index += ["<li>" + subpage._get_page_index() + "</li>"]
+        index = [
+            "<li>" + subpage._get_page_index() + "</li>" for subpage in self.child_ids
+        ]
         r = ""
         if link:
             r = '<a href="{}">{}</a>'.format(self.backend_url, self.name)
@@ -131,7 +130,6 @@ class DocumentPage(models.Model):
             r += "<ul>" + "".join(index) + "</ul>"
         return r
 
-    @api.multi
     @api.depends("history_head")
     def _compute_content(self):
         for rec in self:
@@ -142,46 +140,42 @@ class DocumentPage(models.Model):
                     rec.content = rec.history_head.content
                 else:
                     # html widget's default, so it doesn't trigger ghost save
-                    rec.content = "<p><br></p>"
+                    rec.content = self._HTML_WIDGET_DEFAULT_VALUE
 
-    @api.multi
     def _inverse_content(self):
+        vals = []
         for rec in self:
             if rec.type == "content" and rec.content != rec.history_head.content:
-                rec._create_history(
+                vals.append(
                     {
+                        "page_id": rec.id,
                         "name": rec.draft_name,
                         "summary": rec.draft_summary,
                         "content": rec.content,
                     }
                 )
+        self.env["document.page.history"].create(vals)
 
-    @api.multi
     def _search_content(self, operator, value):
         return [("history_head.content", operator, value)]
 
-    @api.multi
     @api.depends("history_ids")
     def _compute_history_head(self):
         for rec in self:
             if rec.history_ids:
                 rec.history_head = rec.history_ids[0]
-
-    @api.multi
-    def _create_history(self, vals):
-        self.ensure_one()
-        history = self.env["document.page.history"]
-        vals["page_id"] = self.id
-        return history.create(vals)
+            else:
+                rec.history_head = False
 
     @api.onchange("parent_id")
     def _onchange_parent_id(self):
         """We Set it the right content to the new parent."""
-        if not self.content or self.content == "<p><br></p>":
-            if self.parent_id and self.parent_id.type == "category":
-                self.content = self.parent_id.template
+        if (
+            self.content in (False, self._HTML_WIDGET_DEFAULT_VALUE)
+            and self.parent_id.type == "category"
+        ):
+            self.content = self.parent_id.template
 
-    @api.multi
     def unlink(self):
         menus = self.mapped("menu_id")
         res = super().unlink()

@@ -3,8 +3,7 @@
 
 import difflib
 
-from odoo import api, fields, models
-from odoo.tools.translate import _
+from odoo import _, api, fields, models
 
 
 class DocumentPageHistory(models.Model):
@@ -30,7 +29,6 @@ class DocumentPageHistory(models.Model):
         readonly=True,
     )
 
-    @api.multi
     def _compute_diff(self):
         """Shows a diff between this version and the previous version"""
         history = self.env["document.page.history"]
@@ -43,10 +41,7 @@ class DocumentPageHistory(models.Model):
                 limit=1,
                 order="create_date DESC",
             )
-            if prev:
-                rec.diff = self._get_diff(prev.id, rec.id)
-            else:
-                rec.diff = self._get_diff(False, rec.id)
+            rec.diff = self._get_diff(prev.id, rec.id)
 
     @api.model
     def _get_diff(self, v1, v2):
@@ -71,10 +66,5 @@ class DocumentPageHistory(models.Model):
                 context=True,
             )
 
-    @api.multi
     def name_get(self):
-        result = []
-        for rec in self:
-            name = "%s #%i" % (rec.page_id.name, rec.id)
-            result.append((rec.id, name))
-        return result
+        return [(rec.id, "%s #%i" % (rec.page_id.name, rec.id)) for rec in self]
