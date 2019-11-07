@@ -26,4 +26,4 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
             active_id=[self.ref("document_page.demo_page1")]
         ).default_get(fields_list)
 
-        self.assertEqual(res["menu_name"], "OpenERP 6.1. Functional Demo")
+        self.assertEqual(res["menu_name"], "Odoo 13.0 Functional Demo")
