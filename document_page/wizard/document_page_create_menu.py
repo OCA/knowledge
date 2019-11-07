@@ -16,14 +16,13 @@ class DocumentPageCreateMenu(models.TransientModel):
     @api.model
     def default_get(self, fields_list):
         """Get Page name of the menu."""
-        res = super(DocumentPageCreateMenu, self).default_get(fields_list)
+        res = super().default_get(fields_list)
         page_id = self.env.context.get("active_id")
         obj_page = self.env["document.page"]
         page = obj_page.browse(page_id)
         res["menu_name"] = page.name
         return res
 
-    @api.multi
     def document_page_menu_create(self):
         """Menu creation."""
         obj_page = self.env["document.page"]
@@ -39,7 +38,6 @@ class DocumentPageCreateMenu(models.TransientModel):
         )[1]
         value = {
             "name": "Document Page",
-            "view_type": "form",
             "view_mode": "form,tree",
             "res_model": "document.page",
             "view_id": view_id,
