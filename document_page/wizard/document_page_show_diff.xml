@@ -15,27 +15,13 @@
         </field>
     </record>
 
-
-    <!-- Create Index Action  -->
-    <record id="action_view_wiki_show_diff" model="ir.actions.act_window">
-        <field name="name">Difference</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">wizard.document.page.history.show_diff</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-    </record>
-
-
     <!-- Create Index Action Window  -->
     <act_window
             id="action_view_wiki_show_diff_values"
-            key2="client_action_multi"
             name="Difference"
             res_model="wizard.document.page.history.show_diff"
-            src_model="document.page.history"
+            binding_model="document.page.history"
             view_mode="form"
-            target="new"
-            view_type="form"/>
+            target="new"/>
 
 </odoo>
