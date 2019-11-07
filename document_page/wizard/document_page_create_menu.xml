@@ -25,15 +25,12 @@
         </field>
     </record>
 
-
-    <!-- Create Server Action -->
-    <record id="action_wiki_create_menu" model="ir.actions.act_window">
-        <field name="name">Create Menu</field>
-        <field name="res_model">document.page.create.menu</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-        <field name="binding_model_id"
-            ref="document_page.model_document_page"/>
-    </record>
+    <act_window
+            id="action_related_page_create_menu"
+            name="Create Menu"
+            res_model="document.page.create.menu"
+            target="new"
+            view_mode="form"
+            binding_model="document.page"/>
 
 </odoo>

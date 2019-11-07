@@ -7,7 +7,7 @@
         </record>
 
         <record id="demo_category1" model="document.page">
-            <field name="name">OpenERP Features</field>
+            <field name="name">Odoo Features</field>
             <field name="type">category</field>
             <field  name="template">
 Summary of the feature
@@ -22,28 +22,28 @@ Additional ressources
         </record>
 
         <record id="demo_page1" model="document.page">
-            <field name="name">OpenERP 6.1. Functional Demo</field>
+            <field name="name">Odoo 13.0 Functional Demo</field>
             <field name="parent_id" ref="demo_category1"/>
             <field name="content">
 <![CDATA[
 <br>
 <br>
-The news is out, OpenERP's latest version 6.1. is here.  It's more<br>
+The news is out, Odoo's latest version 13.0 is here.  It's more<br>
 user-friendly, even more business oriented and efficient to manage your company<br>
 <br>
-How to discover the latest version 6.1.?<br>
+How to discover the latest version 13.0?<br>
 <br>
-Demo : <a target="http://demo.openerp.com" href="http://demo.openerp.com" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
-Online: <a target="http://openerp.com/online" href="http://openerp.com/online" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
-Download: <a target="http://openerp.com/downloads" href="http://openerp.com/downloads" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
+Demo : <a target="https://demo.odoo.com" href="https://demo.odoo.com" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
+Online: <a target="https://www.odoo.com/trial" href="https://www.odoo.com/trial" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
+Download: <a target="https://www.odoo.com/page/download" href="https://www.odoo.com/page/download" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
 <br>
-We have also put together a functional demo that presents 6.1. Watch this video<br>
-to learn directly from us what OpenERP 6.1. can do for you. Share it in your<br>
+We have also put together a functional demo that presents 13.0. Watch this video<br>
+to learn directly from us what Odoo 13.0 can do for you. Share it in your<br>
 company, with your clients and implement it now for your business.<br>
 <br>
 <h3>Watch on Youtube!</h3><br>
 <br>
-<iframe width="480" height="390" src="http://www.youtube.com/embed/7jES2jxKMso " frameborder="0" allowfullscreen=""></iframe><br>
+<iframe width="480" height="390" src="https://www.youtube.com/embed/zLSgpQM_tms" frameborder="0" allowfullscreen=""></iframe><br>
 <br>
 <br>
 ]]>
@@ -56,9 +56,8 @@ company, with your clients and implement it now for your business.<br>
             <field name="content">
 <![CDATA[
 <br>
-You like OpenERP, but feel like you want to personalise it more? Now, OpenERP<br>
-goes a step further and lets you customize your dashboard.  Thanks to a new<br>
-feature that allows you to customize your dashboard by adding new boards of any<br>
+You like Odoo, but feel like you want to personalise it more? You can customize your
+dashboard by adding new boards of any<br>
 search view.<br>
 <br>
 <h3>How is it done?</h3><br>
@@ -77,11 +76,11 @@ application's dashboard "Purchases to Approve". After I access the search view<b
 and apply the filter for "Purchases to Approve", I can add it immediately to my<br>
 Purchase dashboard.<br>
 <br>
-<img src="http://www.openerp.com/sites/default/files/fileattach/dashboard2_1(1).png" alt=""><br>
+<img src="/document_page/static/src/img/add_to_dashboard.png" alt="Add to dashboard" width="500"><br>
 <br>
 In less than a minute, the search view is visible on the dashboard<br>
 <br>
-<img src="http://www.openerp.com/sites/default/files/fileattach/dashboard2_2.png" alt=""><br>
+<img src="/document_page/static/src/img/dashboard.png" alt="Dashboard" width="500"><br>
 <br>
 Of course, you are free to delete what you don't need or like, but just in case<br>
 you change your mind there is a reset button to return to the default view.<br>
@@ -97,13 +96,13 @@ you change your mind there is a reset button to return to the default view.<br>
             <field name="content">
 <![CDATA[
 <br>
-The brand new OpenERP touchscreen point of sale available with 6.1 allows you<br>
+The Odoo touchscreen point of sale available with 13.0 allows you<br>
 to manage your shop sales very easily.  It's fully web based so that you don't<br>
 have to install or deploy any software and all the sales shops can be easily<br>
 consolidated.  It works in connected and disconnected modes so that you can<br>
 continue to sell if you lose your internet connection.<br>
 <br>
-<img src="http://www.openerp.com/sites/default/files/fileattach/POS(2).png" alt=""><br>
+<img src="/document_page/static/src/img/POS.png" alt="Point of Sale" width="500"><br>
 <br>
 <h3>Here's a summary of its main features and benefits:</h3><br>
 <br>
