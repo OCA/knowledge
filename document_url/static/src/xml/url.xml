@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<templates id="template" xml:space="preserve">
-<t t-name="AddUrlDocumentItem">
-    <li class="oe_sidebar_add_url">
-        <a class="oe_file_attachment">Add URL...</a>
-    </li>
-</t>
+<templates>
+    <t t-extend="Sidebar">
+        <!-- oe_ for Odoo CE, and o_ for Odoo EE -->
+        <t t-jquery=".oe_sidebar_add_attachment, .o_sidebar_add_attachment"
+           t-operation="after">
+            <li class="oe_sidebar_add_url"
+                t-if="section.name == 'files' and widget.options.editable">
+                <a class="oe_file_attachment"
+                    data-section="url_doc"
+                    data-index="0">Add URL...</a>
+            </li>
+        </t>
+    </t>
 </templates>
