@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+document_type_all,document.type.all,model_document_type,,1,0,0,0
+document_type_manager,document.type.document.manager,model_document_type,knowledge.group_document_manager,1,1,1,1
