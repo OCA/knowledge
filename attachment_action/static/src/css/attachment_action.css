@@ -1,0 +1,21 @@
+.o_control_panel .o_cp_sidebar .o_sidebar_delete_attachment {
+    position: initial;
+    top: auto;
+    right: auto;
+}
+.o_control_panel .o_cp_sidebar .o_sidebar_attachment_action {
+    padding: 0px;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 10px;
+    display: flex;
+    visibility: hidden;
+}
+.o_control_panel .o_cp_sidebar li:hover .o_sidebar_attachment_action {
+    visibility: visible;
+    background-color: inherit;
+}
+.o_control_panel .o_cp_sidebar .o_sidebar_attachment_action > span {
+    margin-left: 5px;
+}

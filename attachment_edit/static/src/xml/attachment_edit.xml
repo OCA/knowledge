@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery="span.o_sidebar_delete_attachment" t-operation="before">
+            <span t-if="section.name == 'files' and widget.options.editable and !item.callback" class="fa fa-pencil o_sidebar_edit_attachment" t-att-data-id="item.id" t-attf-title="Edit #{item.name}" />
+        </t>
+    </t>
+</templates>
