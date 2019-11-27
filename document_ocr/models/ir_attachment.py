@@ -18,7 +18,7 @@ class IrAttachment(models.Model):
     def _index(self, data, datas_fname, file_type):
         mimetype, content = super(IrAttachment, self)._index(
             data, datas_fname, file_type)
-        if mimetype and (not content or content == 'image'):
+        if data and mimetype and (not content or content == 'image'):
             has_synchr_param = self.env['ir.config_parameter'].get_param(
                 'document_ocr.synchronous', 'False') == 'True'
             has_force_flag = self.env.context.get('document_ocr_force')
@@ -35,6 +35,9 @@ class IrAttachment(models.Model):
         dpi = int(
             self.env['ir.config_parameter'].get_param(
                 'document_ocr.dpi', '500'))
+        if '/' not in mimetype:
+            _logger.warning('Invalid mimetype %s', mimetype)
+            return None
         top_type, sub_type = mimetype.split('/', 1)
         if hasattr(self, '_index_ocr_get_data_%s' % sub_type):
             image_data = getattr(self, '_index_ocr_get_data_%s' % sub_type)(
