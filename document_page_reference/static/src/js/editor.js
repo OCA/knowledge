@@ -14,11 +14,18 @@ odoo.define('document_page_reference.backend', function (require) {
             event.preventDefault();
             event.stopPropagation();
             var element = $(event.target).closest('.oe_direct_line')[0];
+            var default_reference = element.name;
+            var model = $(event.target).data('oe-model');
+            var id = $(event.target).data('oe-id');
+            var context = this.record.getContext(this.recordParams);
+            if (default_reference){
+                context['default_reference'] = default_reference
+            }
             this._rpc({
-                model: element.name,
+                model: model,
                 method: 'get_formview_action',
-                args: [[parseInt(element.dataset.id)]],
-                context: this.record.getContext(this.recordParams),
+                args: [[parseInt(id)]],
+                context: context,
             })
             .then(function (action) {
                 self.trigger_up('do_action', {action: action});
