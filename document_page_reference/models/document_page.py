@@ -74,21 +74,25 @@ class DocumentPage(models.Model):
         document = self.search([('reference', '=', code)])
         if document:
             return document
-        return False
+        else:
+            return self.env[self._name]
 
     def get_reference(self, code):
         element = self._get_document(code)
-        if not element:
-            return code
         if self.env.context.get('raw_reference', False):
             return html_escape(element.display_name)
-        text = '<a href="#" class="oe_direct_line" ' \
-               'name="%s" data-id="%s">%s</a>'
-        return text % (
+        text = """<a href="#" class="oe_direct_line"
+        data-oe-model="%s" data-oe-id="%s" name="%s">%s</a>
+        """
+        if not element:
+            text = '<i>%s</i>' % text
+        res = text % (
             element._name,
-            element.id,
-            html_escape(element.display_name)
+            element and element.id or '',
+            code,
+            html_escape(element.display_name or code),
         )
+        return res
 
     def _get_template_variables(self):
         return {'ref': self.get_reference}
