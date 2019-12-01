@@ -22,10 +22,11 @@ import collections
 import os.path
 import mimetypes
 import base64
-from openerp.osv.orm import Model
+from openerp import models
 
 
-class IrAttachment(Model):
+class IrAttachment(models.Model):
+
     _inherit = 'ir.attachment'
 
     def get_binary_extension(
@@ -59,8 +60,9 @@ class IrAttachment(Model):
                         'data:;base64,' + this[binary_field], strict=False)
                 extension = mimetypes.guess_extension(
                     mimetype.split(';')[0], strict=False)
-
-            result[this.id] = (extension or '').lstrip('.').lower()
+            docdata = {1: this[binary_field],
+                       0: (extension or '').lstrip('.').lower()}
+            result[this.id] = docdata
         return result if isinstance(ids, collections.Iterable) else result[ids]
 
     def get_attachment_extension(self, cr, uid, ids, context=None):

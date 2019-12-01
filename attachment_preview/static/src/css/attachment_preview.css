@@ -1,11 +1,16 @@
-.openerp .oe_sidebar .oe_dropdown_menu li .oe-sidebar-attachment-preview
+/*.openerp .oe_sidebar .oe_dropdown_menu li .oe_sidebar_attachment_preview
 {
     position: absolute;
     right: 18px;
     top: 0px;
     display: none;
+}*/
+.openerp .oe-control-panel .oe-cp-sidebar .oe_sidebar_attachment_preview {
+  padding: 0;
+  position: absolute;
+  right: 24px;
 }
-.openerp .oe_sidebar .oe_dropdown_menu li:hover .oe-sidebar-attachment-preview
+/*.openerp .oe_sidebar .oe_dropdown_menu li:hover .oe-sidebar-attachment-preview
 {
     display: inherit;
 }
@@ -18,9 +23,16 @@
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-}
+}*/
 .openerp .oe-binary-preview
 {
     cursor: pointer;
     vertical-align: middle;
+}
+
+
+.openerp .oe-control-panel .oe-cp-sidebar .oe_sidebar_delete_item {
+  padding: 0;
+  position: absolute;
+  right: 10px;
 }
