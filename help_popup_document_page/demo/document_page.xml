@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="demo_help0" model="document.page">
+            <field name="parent_id" ref="help_popup_document_page.page_category" />
+            <field name="name">Help for groups</field>
+            <field name="content">This is the help for groups</field>
+            <field name="help_popup_window_action_ids" eval="[(4, ref('base.action_res_users'))]" />
+        </record>
+        <record id="demo_help1" model="document.page">
+            <field name="parent_id" ref="help_popup_document_page.page_category" />
+            <field name="name">Help for groups - additional</field>
+            <field name="content">This should be concatenated</field>
+            <field name="help_popup_window_action_ids" eval="[(4, ref('base.action_res_users'))]" />
+        </record>
+        <record id="demo_help_advanced" model="document.page">
+            <field name="parent_id" ref="help_popup_document_page.page_category" />
+            <field name="name">Help for groups - advanced</field>
+            <field name="content">This is the advanced help for groups</field>
+            <field name="help_popup_window_advanced_action_ids" eval="[(4, ref('base.action_res_users'))]" />
+        </record>
+    </data>
+</openerp>

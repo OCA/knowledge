@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="page_category" model="document.page">
+            <field name="name">Documentation</field>
+            <field name="type">category</field>
+        </record>
+    </data>
+</openerp>

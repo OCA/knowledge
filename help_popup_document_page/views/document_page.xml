@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="document_page_form" model="ir.ui.view">
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_form" />
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="help_popup_window_action_ids" widget="many2many_tags" attrs="{'invisible': [('parent_id', '!=', %(help_popup_document_page.page_category)s)]}" groups="help_popup_document_page.group_documentation_writer" />
+                    <field name="help_popup_window_advanced_action_ids" widget="many2many_tags" attrs="{'invisible': [('parent_id', '!=', %(help_popup_document_page.page_category)s)]}" groups="help_popup_document_page.group_advanced_documentation_writer" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
