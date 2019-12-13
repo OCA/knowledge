@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo11-addon-attachment_preview',
         'odoo11-addon-document_page',
         'odoo11-addon-document_page_approval',
+        'odoo11-addon-document_page_group',
         'odoo11-addon-document_page_project',
         'odoo11-addon-document_page_reference',
         'odoo11-addon-document_url',
