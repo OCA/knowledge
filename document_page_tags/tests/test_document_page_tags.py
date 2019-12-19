@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 # Copyright 2015-2018 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from psycopg2 import IntegrityError
-from openerp.tests.common import TransactionCase
-from openerp.tools.misc import mute_logger
+from odoo.tests.common import TransactionCase
+from odoo.tools.misc import mute_logger
 
 
 class TestDocumentPageTags(TransactionCase):
