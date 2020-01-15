@@ -1,3 +1,3 @@
-* `Eficent <https://www.eficent.com>`_:
+* `Forgeflow <https://www.forgeflow.com>`_:
 
-  * Lois Rilo <lois.rilo@eficent.com>
+  * Lois Rilo <lois.rilo@forgeflow.com>
