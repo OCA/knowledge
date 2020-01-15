@@ -1,8 +1,7 @@
-# Copyright 2019 Eficent Business and IT Consulting Services S.L.
-#   (http://www.eficent.com)
+# Copyright 2019 ForgeFlow S.L. (https://www.forgeflow.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ProjectProject(models.Model):
@@ -13,7 +12,6 @@ class ProjectProject(models.Model):
     )
     document_page_count = fields.Integer(compute="_compute_document_page_count")
 
-    @api.multi
     def _compute_document_page_count(self):
         for rec in self:
             rec.document_page_count = len(rec.document_page_ids)
