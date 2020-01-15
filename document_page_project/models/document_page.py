@@ -6,9 +6,6 @@ from odoo import fields, models
 
 
 class DocumentPage(models.Model):
-    _inherit = 'document.page'
+    _inherit = "document.page"
 
-    project_id = fields.Many2one(
-        string='Project',
-        comodel_name='project.project',
-    )
+    project_id = fields.Many2one(string="Project", comodel_name="project.project")
