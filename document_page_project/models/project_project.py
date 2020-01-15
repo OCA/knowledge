@@ -6,16 +6,12 @@ from odoo import api, fields, models
 
 
 class ProjectProject(models.Model):
-    _inherit = 'project.project'
+    _inherit = "project.project"
 
     document_page_ids = fields.One2many(
-        string='Wiki',
-        comodel_name='document.page',
-        inverse_name='project_id',
+        string="Wiki", comodel_name="document.page", inverse_name="project_id"
     )
-    document_page_count = fields.Integer(
-        compute='_compute_document_page_count',
-    )
+    document_page_count = fields.Integer(compute="_compute_document_page_count")
 
     @api.multi
     def _compute_document_page_count(self):
