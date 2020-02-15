@@ -1,0 +1,72 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_page_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-27 14:08+0000\n"
+"PO-Revision-Date: 2019-11-27 11:11-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_document_page_page
+msgid ""
+"<br/>\n"
+"                                  <b>Category:</b>"
+msgstr ""
+"<br/>\n"
+"                                  <b>Categoria:</b>"
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_document_page_page
+msgid ""
+"<br/>\n"
+"                                  <strong>Date:</strong>"
+msgstr ""
+"<br/>\n"
+"                                  <strong>Data:</strong>"
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:55
+#, python-format
+msgid "All"
+msgstr "Todos"
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_documents
+msgid "Category"
+msgstr "Categoria"
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_layout
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_documents
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:53
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_documents
+#, python-format
+msgid "Name"
+msgstr "Nome"
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:52
+#, python-format
+msgid "Newest"
+msgstr "Mais Recentes"
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_documents
+msgid "There are no documents in your account."
+msgstr "Não há documentos em sua conta."

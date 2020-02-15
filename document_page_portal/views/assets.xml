@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 - TODAY, Marcel Savegnago - Escodoo
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+    <template id="assets_frontend" inherit_id="web.assets_frontend" name="Portal Assets" priority="15">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/document_page_portal/static/src/js/document_page_portal_tour.js"></script>
+        </xpath>
+    </template>
+
+</odoo>
