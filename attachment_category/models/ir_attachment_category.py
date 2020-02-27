@@ -28,8 +28,7 @@ class IrAttachmentCategory(models.Model):
         for category in self:
             if category.parent_id.display_name:
                 category.display_name = "{}/{}".format(
-                    category.parent_id.display_name,
-                    category.name,
+                    category.parent_id.display_name, category.name,
                 )
             else:
                 category.display_name = category.name
