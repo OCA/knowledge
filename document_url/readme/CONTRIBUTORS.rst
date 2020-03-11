@@ -3,3 +3,4 @@
 
   * Pedro M. Baeza
   * Ernesto Tejeda
+  * Manuel Calero
