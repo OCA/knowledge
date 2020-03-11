@@ -1,12 +1,12 @@
-# Copyright 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
-#                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+# Copyright 2014 Tecnativa - Pedro M. Baeza
+# Copyright 2020 Tecnativa - Manuel Calero
 # Copyright 2016 ACSONE SA/NV (<http://acsone.eu>)
 from urllib import parse
 
 from odoo import fields, models
 
 
-class AddUrlWizard(models.Model):
+class AddUrlWizard(models.TransientModel):
     _name = "ir.attachment.add_url"
     _description = "Wizard to add URL attachment"
 
