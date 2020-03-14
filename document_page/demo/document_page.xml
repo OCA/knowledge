@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo noupdate="1">
-
-        <record id="base.user_demo" model="res.users">
-            <field eval="[(4, ref('knowledge.group_document_user'))]"
-                   name="groups_id"/>
-        </record>
-
-        <record id="demo_category1" model="document.page">
-            <field name="name">Odoo Features</field>
-            <field name="type">category</field>
-            <field  name="template">
+    <record id="base.user_demo" model="res.users">
+        <field eval="[(4, ref('knowledge.group_document_user'))]" name="groups_id" />
+    </record>
+    <record id="demo_category1" model="document.page">
+        <field name="name">Odoo Features</field>
+        <field name="type">category</field>
+        <field name="template">
 Summary of the feature
 
 Long explanation
@@ -19,12 +16,11 @@ Conclusion
 Additional ressources
 
 </field>
-        </record>
-
-        <record id="demo_page1" model="document.page">
-            <field name="name">Odoo 13.0 Functional Demo</field>
-            <field name="parent_id" ref="demo_category1"/>
-            <field name="content">
+    </record>
+    <record id="demo_page1" model="document.page">
+        <field name="name">Odoo 13.0 Functional Demo</field>
+        <field name="parent_id" ref="demo_category1" />
+        <field name="content">
 <![CDATA[
 <br>
 <br>
@@ -48,12 +44,11 @@ company, with your clients and implement it now for your business.<br>
 <br>
 ]]>
 </field>
-        </record>
-
-        <record id="demo_page2" model="document.page">
-            <field name="name">Personalise Dashboards</field>
-            <field name="parent_id" ref="demo_category1"/>
-            <field name="content">
+    </record>
+    <record id="demo_page2" model="document.page">
+        <field name="name">Personalise Dashboards</field>
+        <field name="parent_id" ref="demo_category1" />
+        <field name="content">
 <![CDATA[
 <br>
 You like Odoo, but feel like you want to personalise it more? You can customize your
@@ -88,12 +83,11 @@ you change your mind there is a reset button to return to the default view.<br>
 <br>
 ]]>
 </field>
-        </record>
-
-        <record id="demo_page3" model="document.page">
-            <field name="name">Touchscreen Point of Sale</field>
-            <field name="parent_id" ref="demo_category1"/>
-            <field name="content">
+    </record>
+    <record id="demo_page3" model="document.page">
+        <field name="name">Touchscreen Point of Sale</field>
+        <field name="parent_id" ref="demo_category1" />
+        <field name="content">
 <![CDATA[
 <br>
 The Odoo touchscreen point of sale available with 13.0 allows you<br>
@@ -125,6 +119,5 @@ Think of it as an out-of-the-box solution to boost your business' productivity.<
 <br>
 ]]>
 </field>
-        </record>
-
+    </record>
 </odoo>
