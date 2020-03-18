@@ -93,10 +93,10 @@
                 <field name="user_has_drafts" invisible="1"/>
             </sheet>
 
-            <button name="toggle_active" position="after">
+            <widget name="web_ribbon" position="after">
                 <button class="oe_stat_button" name="action_changes_pending_approval" string="Change Requests" type="object"
                         attrs="{'invisible':[('has_changes_pending_approval','=',False),('user_has_drafts','=',False)]}" icon="fa-edit"/>
-            </button>
+            </widget>
 
             <field name="content_uid" position="after">
                 <field name="approved_uid"/>
