@@ -44,7 +44,7 @@ class TestDocumentPageApproval(common.TransactionCase):
 
         # It should automatically be in 'to approve' state
         self.assertEqual(chreq.state, "to approve")
-        self.assertNotEqual(chreq.content, page.content)
+        self.assertEqual(chreq.content, page.content)
 
         # who_am_i
         self.assertTrue(chreq.am_i_owner)
@@ -57,7 +57,7 @@ class TestDocumentPageApproval(common.TransactionCase):
 
         # new changes should create change requests
         page.write({"content": "New content"})
-        self.assertNotEqual(page.content, "New content")
+        self.assertEqual(page.content, "New content")
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")]
         )[0]
