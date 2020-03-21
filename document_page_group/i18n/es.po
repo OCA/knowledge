@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* document_page_group
+# 	* document_page_group
 #
 msgid ""
 msgstr ""
@@ -22,16 +22,16 @@ msgid "Document Page"
 msgstr "Página del documento"
 
 #. module: document_page_group
-#: model:ir.model.fields,field_description:document_page_group.field_document_page_group_ids
+#: model:ir.model.fields,field_description:document_page_group.field_document_page__group_ids
 msgid "Group"
 msgstr "Grupo"
 
 #. module: document_page_group
-#: model:ir.model.fields,help:document_page_group.field_document_page_direct_group_ids
+#: model:ir.model.fields,help:document_page_group.field_document_page__direct_group_ids
 msgid "Set the groups that can view this category and its childs"
 msgstr "Definir los grupos que puede ver una categoría y sus hijos"
 
 #. module: document_page_group
-#: model:ir.model.fields,field_description:document_page_group.field_document_page_direct_group_ids
+#: model:ir.model.fields,field_description:document_page_group.field_document_page__direct_group_ids
 msgid "Visible to"
 msgstr "Visible para"
