@@ -84,7 +84,7 @@ Authors
 * OpenERP SA
 * MONK Software
 * Tecnativa
-* Eficent
+* ForgeFlow
 
 Contributors
 ~~~~~~~~~~~~
@@ -96,7 +96,7 @@ Contributors
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Fayez Qandeel
 * Iván Todorovich <ivan.todorovich@gmail.com>
-* Jordi Ballester <jordi.ballester@eficent.com>
+* Jordi Ballester <jordi.ballester@forgeflow.com>
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Vicent Cubells
