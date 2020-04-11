@@ -1,0 +1,141 @@
+<odoo>
+    <!-- Main Layout -->
+    <template id="wiki" name="wiki">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Wiki - Home Page</t>
+            <div id="wrap">
+                <div class="wiki_menu">
+                    <t t-call="website_document_page.wiki_menu" />
+                </div>
+                <div class="wiki_content">
+                    <t t-if="pages">
+                        <t t-call="website_document_page.wiki_list_page" />
+                    </t>
+                    <t t-elif="page">
+                        <t t-call="website_document_page.wiki_page" />
+                    </t>
+                    <t t-else="">
+                        No page here.
+                    </t>
+                </div>
+                <div class="wiki_sidebar">
+                    <t t-call="website_document_page.wiki_sidebar" />
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- List Pages -->
+    <template id="wiki_list_page" name="wiki_list_page">
+        <h1>
+            <t t-if="category">
+                Category: <span t-field="category.name" />
+            </t>
+            <t t-if="tag">
+                Tag: <span t-field="tag.name" />
+            </t>
+            <t t-if="search">
+                Search: "<t t-esc="search" />" (<t
+                    t-esc="search_count"
+                /> page(s) found)
+            </t>
+        </h1>
+        <t t-if="pages">
+            <ul t-foreach="pages" t-as="p">
+                <li>
+                    <a t-attf-href="/wiki/page#{ '/%s' % slug(p) }" t-field="p.name" />
+                </li>
+            </ul>
+        </t>
+    </template>
+    <!-- Menu -->
+    <template id="wiki_menu" name="wiki_menu">
+        <ul>
+            <li>Pages
+                <ul t-foreach="menu_pages" t-as="p">
+                    <li>
+                        <a
+                            t-attf-href="/wiki/page#{ '/%s' % slug(p) }"
+                            t-field="p.name"
+                        />
+                    </li>
+                </ul>
+            </li>
+            <li>Categories
+                <ul t-foreach="menu_categories" t-as="c">
+                    <li>
+                        <a
+                            t-attf-href="/wiki/category#{ '/%s' % slug(c) }"
+                            t-field="c.name"
+                        />
+                    </li>
+                </ul>
+            </li>
+            <li>Tags
+                <ul t-foreach="menu_tags" t-as="t">
+                    <li>
+                        <a
+                            t-attf-href="/wiki/tag#{ '/%s' % slug(t) }"
+                            t-field="t.name"
+                        />
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </template>
+    <!-- Page -->
+    <template id="wiki_page" name="wiki_page">
+        <t t-call="website_document_page.wiki_page_header" />
+        <span t-raw="page.content" />
+        <t t-call="website_document_page.wiki_page_footer" />
+    </template>
+    <!-- Page Header -->
+    <template id="wiki_page_header" name="wiki_page_header">
+        <h1>
+            <span t-field="page.name" />
+        </h1>
+    </template>
+    <!-- Page Footer -->
+    <template id="wiki_page_footer" name="wiki_page_footer">
+        <div class="wiki_page_footer">
+            <t t-if="page.parent_id">
+                Category: <a
+                    t-attf-href="/wiki/category#{ '/%s' % slug(page.parent_id) }"
+                    t-field="page.parent_id.name"
+                />
+            </t>
+            <t t-if="page_tags">
+                Tags:
+                <t t-foreach="page_tags" t-as="t">
+                    <a t-attf-href="/wiki/tag#{ '/%s' % slug(t) }" t-field="t.name" />
+                </t>
+            </t>
+        </div>
+    </template>
+    <!-- Sidebar -->
+    <template id="wiki_sidebar" name="wiki_sidebar">
+        <t t-call="website_document_page.wiki_search" />
+    </template>
+    <!-- Search Box -->
+    <template
+        id="wiki_search"
+        name="wiki_search"
+        inherit_id="website.website_search_box"
+    >
+        <xpath expr="//div[@role='search']" position="replace">
+            <form t-att-action="action if action else '/wiki'" method="get">
+                <t>$0</t>
+                <t t-raw="0" />
+            </form>
+        </xpath>
+    </template>
+    <!-- Assets -->
+    <template id="assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link
+                rel="stylesheet"
+                type="text/scss"
+                href="/website_document_page/static/src/scss/website_document_page.scss"
+            />
+        </xpath>
+    </template>
+</odoo>
