@@ -1,0 +1,10 @@
+<odoo>
+    <record model="ir.rule" id="document_tag_rule">
+        <field name="name">document_tag multi-company</field>
+        <field name="model_id" ref="model_document_tag" />
+        <field name="global" eval="True" />
+        <field
+            name="domain_force"
+        >['|', ('company_id', '=', False), ('company_id', 'child_of', [user.company_id.id])]</field>
+    </record>
+</odoo>
