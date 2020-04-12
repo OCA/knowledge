@@ -36,6 +36,7 @@
         <field name="arch" type="xml">
             <form string="Document Page">
                 <sheet>
+                    <div name="button_box" id="button_box" class="oe_button_box" />
                     <widget
                         name="web_ribbon"
                         text="Archived"
