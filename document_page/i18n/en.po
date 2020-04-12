@@ -554,6 +554,18 @@ msgid "Use it to link resources univocally"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+#| msgid "Messages"
+msgid "Website Messages"
+msgstr "Messages"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Wizard Create Menu"
