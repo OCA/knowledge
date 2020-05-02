@@ -17,8 +17,11 @@ class IrAttachmentCategory(models.Model):
     )
     parent_id = fields.Many2one(
         "ir.attachment.category",
+        index=True,
+        ondelete="cascade",
     )
-    parent_path = fields.Char(index=True)
+    parent_left = fields.Integer('Left Parent', index=True)
+    parent_right = fields.Integer('Right Parent', index=True)
     attachment_ids = fields.Many2many(
         compute="_compute_attachment_count",
         comodel_name="ir.attachment"
