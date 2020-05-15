@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2017-01-20 03:35+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2020-05-15 12:19+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document_page_approval
@@ -24,34 +25,34 @@ msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
 msgstr ""
+"Aggiungi un workflow ai documenti per categoria.\n"
+"- Questo installerà il modulo document_page_approval."
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_cmis_read
 msgid "Attach files from an external DMS into Odoo"
-msgstr ""
+msgstr "Allega files da un DMS esterno in Odoo"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "Allegato"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document
 msgid "Attachments List and Document Indexation"
-msgstr ""
+msgstr "Lista allegati e Indicizzazione Documenti"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__group_ir_attachment_user
 #: model:res.groups,name:knowledge.group_ir_attachment_user
 msgid "Central access to Documents"
-msgstr ""
+msgstr "Accesso centralizzato ai Documenti"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_res_config_settings
-#, fuzzy
-#| msgid "Configuration"
 msgid "Config Settings"
-msgstr "Configurazione"
+msgstr "Impostazioni configurazione"
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
@@ -65,6 +66,9 @@ msgid ""
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
 msgstr ""
+"Connetti Odoo con un server compatibile CMIS per allegare files\n"
+"ad un record di Odoo.\n"
+"- Questo installa il modulo cmis_read."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_cmis_write
@@ -72,11 +76,13 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
+"Connetti Odoo con un server compatibile CMIS per conservare i files.\n"
+"- Questo installa il modulo cmis_write."
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Connect with an external DMS"
-msgstr ""
+msgstr "Connetti con un DMS esterno"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document
@@ -84,6 +90,8 @@ msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module document."
 msgstr ""
+"Indicizzazione documenti, ricerca nel testo degli allegati.\n"
+"- Questo installa il modulo document."
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
@@ -96,30 +104,29 @@ msgstr "Documenti"
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Group by"
-msgstr ""
+msgstr "Raggruppa per"
 
 #. module: knowledge
 #: model:ir.module.category,name:knowledge.module_category_knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_root
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge"
-msgstr "Know how"
+msgstr "Know-How"
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge and Documents Management"
-msgstr "Knowledge e Gestione documentale"
+msgstr "Gestione documentale e del Know-How"
 
 #. module: knowledge
 #: model:res.groups,name:knowledge.group_document_user
-#, fuzzy
 msgid "Knowledge user"
-msgstr "Know how"
+msgstr "Utente Know-How"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document_page
 msgid "Manage document pages (Wiki)"
-msgstr ""
+msgstr "Gestisci pagine documentazione (Wiki)"
 
 #. module: knowledge
 #: model:ir.module.category,description:knowledge.module_category_knowledge
@@ -128,16 +135,19 @@ msgid ""
 "            applications\n"
 "        "
 msgstr ""
+"Gestisci documenti e applicazioni legate al\n"
+"            Know-How\n"
+"        "
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document_page_approval
 msgid "Manage documents approval"
-msgstr ""
+msgstr "Gestisci approvazione documenti"
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Model"
-msgstr ""
+msgstr "Modello"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document_page
@@ -145,27 +155,29 @@ msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
 msgstr ""
+"Fornisce una pagina di documentazione e categorie in una wiki.\n"
+"- Questo installa il modulo document_page."
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_ir_attachment__res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Modello Risorse"
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.action_knowledge_configuration
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
 msgid "Settings"
-msgstr ""
+msgstr "Impostazioni"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_cmis_write
 msgid "Store attachments in an external DMS instead of the Odoo Filestore"
-msgstr ""
+msgstr "Conserva gli allegati in un DMS esterno invece che nel Filestore Odoo"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_ir_attachment__res_model
 msgid "The database object this attachment will be attached to."
-msgstr ""
+msgstr "Il database a cui verrà allegato questo allegato."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__group_ir_attachment_user
@@ -173,6 +185,8 @@ msgid ""
 "When you set this field all users will be able to manage attachments "
 "centrally, from the Knowledge/Documents menu."
 msgstr ""
+"Quando imposti questo campo tutti gli utenti saranno in grado di gestire "
+"centralmente gli allegati, dal menu Know-How/Documenti."
 
 #~ msgid "Manage documents"
 #~ msgstr "Gestione documenti"
