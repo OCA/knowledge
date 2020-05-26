@@ -38,6 +38,7 @@
                                 widget="html"
                                 class="oe_view_only"
                                 options='{"safe": True}'
+                                required="0"
                             />
                         </page>
                     </notebook>
