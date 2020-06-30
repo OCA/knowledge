@@ -25,17 +25,32 @@ msgid "A keyword for document pages"
 msgstr ""
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_create_uid
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__active
+msgid "Active"
+msgstr ""
+
+#. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
+msgid "Archived"
+msgstr ""
+
+#. module: document_page_tag
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
+msgid "Color Index"
+msgstr ""
+
+#. module: document_page_tag
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_uid
 msgid "Created by"
 msgstr "Creat de"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_create_date
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_date
 msgid "Created on"
 msgstr "Creat in"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_display_name
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
 msgstr "Nume Afişat"
 
@@ -45,34 +60,57 @@ msgid "Document Page"
 msgstr "Pagina Documentului"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_id
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
+#, fuzzy
+msgid "Document Tag Search"
+msgstr "Pagina Documentului"
+
+#. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
+#, fuzzy
+msgid "Document Tags"
+msgstr "Pagina Documentului"
+
+#. module: document_page_tag
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
 msgid "ID"
 msgstr "ID"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_ids
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page__tag_ids
 msgid "Keywords"
 msgstr ""
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag___last_update
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
 msgid "Last Modified on"
 msgstr "Ultima actualizare în"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_write_uid
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualizare făcută de"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_write_date
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_date
 msgid "Last Updated on"
 msgstr "Ultima actualizare la"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_name
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__name
 msgid "Name"
 msgstr "Nume"
+
+#. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
+msgid "Tag"
+msgstr ""
+
+#. module: document_page_tag
+#: model:ir.actions.act_window,name:document_page_tag.document_page_tag_action
+#: model:ir.ui.menu,name:document_page_tag.document_page_tag_menu
+msgid "Tags"
+msgstr ""
 
 #. module: document_page_tag
 #: sql_constraint:document.page.tag:0
