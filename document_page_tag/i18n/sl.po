@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.10\n"
 
 #. module: document_page_tag
@@ -27,17 +27,32 @@ msgid "A keyword for document pages"
 msgstr "Ključna beseda za strani dokumentov"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_create_uid
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__active
+msgid "Active"
+msgstr ""
+
+#. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
+msgid "Archived"
+msgstr ""
+
+#. module: document_page_tag
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
+msgid "Color Index"
+msgstr ""
+
+#. module: document_page_tag
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_uid
 msgid "Created by"
 msgstr "Ustvaril"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_create_date
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_date
 msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_display_name
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
 msgstr "Prikazani naziv"
 
@@ -47,34 +62,59 @@ msgid "Document Page"
 msgstr "Stran dokumenta"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_id
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
+#, fuzzy
+#| msgid "Document Page"
+msgid "Document Tag Search"
+msgstr "Stran dokumenta"
+
+#. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
+#, fuzzy
+#| msgid "Document Page"
+msgid "Document Tags"
+msgstr "Stran dokumenta"
+
+#. module: document_page_tag
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
 msgid "ID"
 msgstr "ID"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_ids
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page__tag_ids
 msgid "Keywords"
 msgstr "Ključne besede"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag___last_update
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
 msgid "Last Modified on"
 msgstr "Zadnjič spremenjeno"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_write_uid
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_uid
 msgid "Last Updated by"
 msgstr "Zadnjič posodobil"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_write_date
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_date
 msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag_name
+#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__name
 msgid "Name"
 msgstr "Naziv"
+
+#. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
+msgid "Tag"
+msgstr ""
+
+#. module: document_page_tag
+#: model:ir.actions.act_window,name:document_page_tag.document_page_tag_action
+#: model:ir.ui.menu,name:document_page_tag.document_page_tag_menu
+msgid "Tags"
+msgstr ""
 
 #. module: document_page_tag
 #: sql_constraint:document.page.tag:0
