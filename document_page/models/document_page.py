@@ -37,6 +37,7 @@ class DocumentPage(models.Model):
         inverse='_inverse_content',
         search='_search_content',
         required=True,
+        copy=True,
     )
 
     # no-op computed field
