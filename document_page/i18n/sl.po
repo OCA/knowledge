@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.10\n"
 
 #. module: document_page
@@ -551,7 +551,7 @@ msgid "Wizard Create Menu"
 msgstr "Čarovnik za ustvarjanje menija"
 
 #. module: document_page
-#: code:addons/document_page/models/document_page.py:128
+#: code:addons/document_page/models/document_page.py:129
 #, python-format
 msgid "You cannot create recursive categories."
 msgstr "Rekurzivne kategorije niso dovoljene."

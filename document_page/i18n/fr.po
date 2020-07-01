@@ -549,7 +549,7 @@ msgid "Wizard Create Menu"
 msgstr "Assistant de création de menu"
 
 #. module: document_page
-#: code:addons/document_page/models/document_page.py:128
+#: code:addons/document_page/models/document_page.py:129
 #, python-format
 msgid "You cannot create recursive categories."
 msgstr "Vous ne pouvez pas créer des catégories récursives."
