@@ -262,21 +262,24 @@ msgstr ""
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:102
 #, python-format
-msgid "You are not authorized to do this.\n"
+msgid "You are not authorized to do this.
+\n"
 "Only approvers with these groups can approve this: "
 msgstr ""
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:62
 #, python-format
-msgid "You are not authorized to do this.\n"
+msgid "You are not authorized to do this.
+\n"
 "Only owners or approvers can reopen Change Requests."
 msgstr ""
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:79
 #, python-format
-msgid "You are not authorized to do this.\n"
+msgid "You are not authorized to do this.
+\n"
 "Only owners or approvers can request approval."
 msgstr ""
 
