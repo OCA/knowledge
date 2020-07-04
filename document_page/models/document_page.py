@@ -32,7 +32,6 @@ class DocumentPage(models.Model):
         compute="_compute_content",
         inverse="_inverse_content",
         search="_search_content",
-        required=True,
     )
 
     draft_name = fields.Char(
@@ -90,6 +89,7 @@ class DocumentPage(models.Model):
         help="If set, page is accessible only from this company",
         index=True,
         ondelete="cascade",
+        default=lambda self: self.env.company,
     )
     backend_url = fields.Char(
         string="Backend URL",
@@ -143,10 +143,9 @@ class DocumentPage(models.Model):
                     rec.content = self._HTML_WIDGET_DEFAULT_VALUE
 
     def _inverse_content(self):
-        vals = []
         for rec in self:
             if rec.type == "content" and rec.content != rec.history_head.content:
-                vals.append(
+                rec._create_history(
                     {
                         "page_id": rec.id,
                         "name": rec.draft_name,
@@ -154,7 +153,10 @@ class DocumentPage(models.Model):
                         "content": rec.content,
                     }
                 )
-        self.env["document.page.history"].create(vals)
+
+    def _create_history(self, vals):
+        self.ensure_one()
+        return self.env["document.page.history"].create(vals)
 
     def _search_content(self, operator, value):
         return [("history_head.content", operator, value)]
