@@ -12,9 +12,7 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.approver_gid = self.env.ref(
             "document_page_approval.group_document_approver_user"
         )
-        self.env.ref("base.user_root").write(
-            {"groups_id": [(4, self.approver_gid.id)],}
-        )
+        self.env.ref("base.user_root").write({"groups_id": [(4, self.approver_gid.id)]})
         # demo_approval
         self.category2 = self.page_obj.create(
             {
@@ -46,6 +44,9 @@ class TestDocumentPageApproval(common.TransactionCase):
 
         # It should automatically be in 'to approve' state
         self.assertEqual(chreq.state, "to approve")
+
+        # Needed to compute calculated fields
+        page.refresh()
         self.assertNotEqual(chreq.content, page.content)
 
         # who_am_i
@@ -59,6 +60,8 @@ class TestDocumentPageApproval(common.TransactionCase):
 
         # new changes should create change requests
         page.write({"content": "New content"})
+        # Needed to compute calculated fields
+        page.refresh()
         self.assertNotEqual(page.content, "New content")
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")]
