@@ -22,4 +22,4 @@ def post_init_hook(cr, registry):  # pragma: no cover
 def uninstall_hook(cr, registry):  # pragma: no cover
     # Remove unapproved pages
     _logger.info("Deleting unapproved Change Requests.")
-    cr.execute("DELETE FROM document_page_history " "WHERE state != 'approved'")
+    cr.execute("DELETE FROM document_page_history WHERE state != 'approved'")
