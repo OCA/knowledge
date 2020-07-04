@@ -1,7 +1,7 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import fields, models
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
 
@@ -24,21 +24,20 @@ class DocumentPageHistory(models.Model):
         readonly=True,
     )
 
-    approved_date = fields.Datetime("Approved Date",)
+    approved_date = fields.Datetime("Approved Date")
 
-    approved_uid = fields.Many2one("res.users", "Approved by",)
+    approved_uid = fields.Many2one("res.users", "Approved by")
 
     is_approval_required = fields.Boolean(
-        related="page_id.is_approval_required", string="Approval required",
+        related="page_id.is_approval_required", string="Approval required"
     )
 
     am_i_owner = fields.Boolean(compute="_compute_am_i_owner")
 
-    am_i_approver = fields.Boolean(related="page_id.am_i_approver", related_sudo=False,)
+    am_i_approver = fields.Boolean(related="page_id.am_i_approver", related_sudo=False)
 
-    page_url = fields.Text(compute="_compute_page_url", string="URL",)
+    page_url = fields.Text(compute="_compute_page_url", string="URL")
 
-    @api.multi
     def action_draft(self):
         """Set a change request as draft"""
         for rec in self:
@@ -53,7 +52,6 @@ class DocumentPageHistory(models.Model):
                 )
             rec.write({"state": "draft"})
 
-    @api.multi
     def action_to_approve(self):
         """Set a change request as to approve"""
         template = self.env.ref(
@@ -85,7 +83,6 @@ class DocumentPageHistory(models.Model):
                 # auto-approve if approval is not required
                 rec.action_approve()
 
-    @api.multi
     def action_approve(self):
         """Set a change request as approved."""
         for rec in self:
@@ -123,7 +120,6 @@ class DocumentPageHistory(models.Model):
                 body=_("New version of the document %s approved.") % (rec.page_id.name),
             )
 
-    @api.multi
     def action_cancel(self):
         """Set a change request as cancelled."""
         self.write({"state": "cancelled"})
@@ -134,19 +130,16 @@ class DocumentPageHistory(models.Model):
                 % (rec.display_name, self.env.user.name),
             )
 
-    @api.multi
     def action_cancel_and_draft(self):
         """Set a change request as draft, cancelling it first"""
         self.action_cancel()
         self.action_draft()
 
-    @api.multi
     def _compute_am_i_owner(self):
         """Check if current user is the owner"""
         for rec in self:
             rec.am_i_owner = rec.create_uid == self.env.user
 
-    @api.multi
     def _compute_page_url(self):
         """Compute the page url."""
         for page in self:
@@ -157,10 +150,9 @@ class DocumentPageHistory(models.Model):
             )
 
             page.page_url = (
-                "{}/web#db={}&id={}&view_type=form&" "model=document.page.history"
+                "{}/web#db={}&id={}&" "model=document.page.history"
             ).format(base_url, self.env.cr.dbname, page.id)
 
-    @api.multi
     def _compute_diff(self):
         """Shows a diff between this version and the previous version"""
         history = self.env["document.page.history"]
