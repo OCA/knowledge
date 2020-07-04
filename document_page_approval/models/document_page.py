@@ -13,7 +13,7 @@ class DocumentPage(models.Model):
     _inherit = "document.page"
 
     history_ids = fields.One2many(
-        order="approved_date DESC", domain=[("state", "=", "approved")],
+        order="approved_date DESC", domain=[("state", "=", "approved")]
     )
 
     approved_date = fields.Datetime(
@@ -65,10 +65,9 @@ class DocumentPage(models.Model):
     )
 
     user_has_drafts = fields.Boolean(
-        compute="_compute_user_has_drafts", string="User has drafts?",
+        compute="_compute_user_has_drafts", string="User has drafts?"
     )
 
-    @api.multi
     @api.depends("approval_required", "parent_id.is_approval_required")
     def _compute_is_approval_required(self):
         """Check if the document required approval based on his parents."""
@@ -78,7 +77,6 @@ class DocumentPage(models.Model):
                 res = res or page.parent_id.is_approval_required
             page.is_approval_required = res
 
-    @api.multi
     @api.depends("approver_gid", "parent_id.approver_group_ids")
     def _compute_approver_group_ids(self):
         """Compute the approver groups based on his parents."""
@@ -88,14 +86,12 @@ class DocumentPage(models.Model):
                 res = res | page.parent_id.approver_group_ids
             page.approver_group_ids = res
 
-    @api.multi
     @api.depends("is_approval_required", "approver_group_ids")
     def _compute_am_i_approver(self):
         """Check if the current user can approve changes to this page."""
         for rec in self:
             rec.am_i_approver = rec.can_user_approve_this_page(self.env.user)
 
-    @api.multi
     def can_user_approve_this_page(self, user):
         """Check if a user can approve this page."""
         self.ensure_one()
@@ -114,7 +110,6 @@ class DocumentPage(models.Model):
         # to approve, user must belong to any of the approver groups
         return len(user.groups_id & self.approver_group_ids) > 0
 
-    @api.multi
     def _compute_has_changes_pending_approval(self):
         history = self.env["document.page.history"]
         for rec in self:
@@ -123,7 +118,6 @@ class DocumentPage(models.Model):
             )
             rec.has_changes_pending_approval = changes > 0
 
-    @api.multi
     def _compute_user_has_drafts(self):
         history = self.env["document.page.history"]
         for rec in self:
@@ -132,12 +126,10 @@ class DocumentPage(models.Model):
             )
             rec.user_has_drafts = changes > 0
 
-    @api.multi
     def _create_history(self, vals):
         res = super(DocumentPage, self)._create_history(vals)
         res.action_to_approve()
 
-    @api.multi
     def action_changes_pending_approval(self):
         self.ensure_one()
         action = self.env.ref("document_page_approval.action_change_requests")
