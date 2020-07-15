@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-knowledge Odoo addons",
     version=version,
     install_requires=[
+        'odoo12-addon-attachment_preview',
         'odoo12-addon-document_page',
         'odoo12-addon-document_page_approval',
         'odoo12-addon-document_page_group',
