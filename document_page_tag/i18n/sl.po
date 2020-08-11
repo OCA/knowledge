@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-04 02:39+0000\n"
-"PO-Revision-Date: 2020-06-30 15:19+0000\n"
+"PO-Revision-Date: 2020-08-11 14:59+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/sl/)\n"
@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.10\n"
 
 #. module: document_page_tag
@@ -29,17 +29,17 @@ msgstr "Ključna beseda za strani dokumentov"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__active
 msgid "Active"
-msgstr ""
+msgstr "Aktivno"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
 msgid "Archived"
-msgstr ""
+msgstr "Arhivirano"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Barvni indeks"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_uid
@@ -63,17 +63,13 @@ msgstr "Stran dokumenta"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
-#, fuzzy
-#| msgid "Document Page"
 msgid "Document Tag Search"
-msgstr "Stran dokumenta"
+msgstr "Iskanje po oznakah dokumenta"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
-#, fuzzy
-#| msgid "Document Page"
 msgid "Document Tags"
-msgstr "Stran dokumenta"
+msgstr "Oznake dokumenta"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
@@ -108,13 +104,13 @@ msgstr "Naziv"
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 msgid "Tag"
-msgstr ""
+msgstr "Oznaka"
 
 #. module: document_page_tag
 #: model:ir.actions.act_window,name:document_page_tag.document_page_tag_action
 #: model:ir.ui.menu,name:document_page_tag.document_page_tag_menu
 msgid "Tags"
-msgstr ""
+msgstr "Oznake"
 
 #. module: document_page_tag
 #: sql_constraint:document.page.tag:0
