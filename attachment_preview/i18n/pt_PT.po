@@ -20,14 +20,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: attachment_preview
+#: model:ir.model,name:attachment_preview.model_ir_attachment
+msgid "Attachment"
+msgstr ""
+
+#. module: attachment_preview
 #. openerp-web
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:165
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:193
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:188
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:216
 #, python-format
 msgid "Preview %s"
 msgstr "Antever %s"
-
-#. module: attachment_preview
-#: model:ir.model,name:attachment_preview.model_ir_attachment
-msgid "ir.attachment"
-msgstr ""
