@@ -61,14 +61,12 @@ msgstr "Belge Sayfası"
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
 #, fuzzy
-#| msgid "Document Page"
 msgid "Document Tag Search"
 msgstr "Belge Sayfası"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
 #, fuzzy
-#| msgid "Document Page"
 msgid "Document Tags"
 msgstr "Belge Sayfası"
 
