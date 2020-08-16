@@ -36,7 +36,6 @@ msgstr "Dateien aus externem DMS in Odoo einbinden"
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
 #, fuzzy
-#| msgid "ir.attachment"
 msgid "Attachment"
 msgstr "ir.attachment"
 

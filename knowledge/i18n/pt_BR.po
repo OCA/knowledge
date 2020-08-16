@@ -53,7 +53,6 @@ msgstr ""
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_res_config_settings
 #, fuzzy
-#| msgid "Settings"
 msgid "Config Settings"
 msgstr "Configurações"
 
