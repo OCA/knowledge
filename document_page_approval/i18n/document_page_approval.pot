@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* document_page_approval
+# 	* document_page_approval
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
-msgid "\n"
+msgid ""
+"\n"
 "            \n"
 "<p>Hello,</p>\n"
 "\n"
@@ -48,8 +49,14 @@ msgstr ""
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
-msgid "<b>You already have a Draft Change Request for this page.</b>\n"
+msgid ""
+"<b>You already have a Draft Change Request for this page.</b>\n"
 "                    It is highly recommended that you edit that one instead of creating a new one."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
+msgid "Action Needed"
 msgstr ""
 
 #. module: document_page_approval
@@ -75,7 +82,7 @@ msgid "Approve"
 msgstr ""
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__approved
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approved"
 msgstr ""
@@ -93,8 +100,8 @@ msgid "Approved by"
 msgstr ""
 
 #. module: document_page_approval
-#: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 #: model:res.groups,name:document_page_approval.group_document_approver_user
+#: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approver"
 msgstr ""
 
@@ -109,18 +116,23 @@ msgid "Approver groups"
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Back to draft"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:100
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve page in '%s' state."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:76
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve pages in '%s' state."
 msgstr ""
@@ -131,7 +143,7 @@ msgid "Cancel"
 msgstr ""
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__cancelled
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Cancelled"
 msgstr ""
@@ -144,15 +156,21 @@ msgid "Change Requests"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:138
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request <b>%s</b> has been cancelled by %s."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:119
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request has been approved by %s."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page__display_name
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: document_page_approval
@@ -166,9 +184,24 @@ msgid "Document Page History"
 msgstr ""
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__draft
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Draft"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_partner_ids
+msgid "Followers (Partners)"
 msgstr ""
 
 #. module: document_page_approval
@@ -187,9 +220,53 @@ msgid "History"
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page__id
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__id
+msgid "ID"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__is_approval_required
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__is_approval_required
 msgid "If true, changes of this page require approval"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page____last_update
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_ids
+msgid "Messages"
 msgstr ""
 
 #. module: document_page_approval
@@ -198,13 +275,38 @@ msgid "New version of ${object.display_name} needs your approval"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:126
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "New version of the document %s approved."
 msgstr ""
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__to_approve
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Pending Approval"
 msgstr ""
@@ -217,6 +319,11 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approval_required
 msgid "Require approval for changes on this page or its child pages."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: document_page_approval
@@ -236,17 +343,31 @@ msgstr ""
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
-msgid "This document has <b>Changes Pending Approval</b>. You are viewing the last approved content."
+msgid ""
+"This document has <b>Changes Pending Approval</b>. You are viewing the last "
+"approved content."
 msgstr ""
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
-msgid "This document requires approval. If edited, you will create a new <b>Change Request</b>."
+msgid ""
+"This document requires approval. If edited, you will create a new <b>Change "
+"Request</b>."
 msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__page_url
 msgid "URL"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_unread_counter
+msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: document_page_approval
@@ -260,32 +381,41 @@ msgid "Users must also belong to the Approvers group"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:102
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page_approval
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
-msgid "You are not authorized to do this.
-\n"
+msgid ""
+"You are not authorized to do this.\r\n"
 "Only approvers with these groups can approve this: "
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:62
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
-msgid "You are not authorized to do this.
-\n"
+msgid ""
+"You are not authorized to do this.\r\n"
 "Only owners or approvers can reopen Change Requests."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:79
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
-msgid "You are not authorized to do this.
-\n"
+msgid ""
+"You are not authorized to do this.\r\n"
 "Only owners or approvers can request approval."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:59
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr ""
-
