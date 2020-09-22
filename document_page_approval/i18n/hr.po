@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.8\n"
 
 #. module: document_page_approval
@@ -87,7 +87,7 @@ msgid "Approve"
 msgstr "Odobri"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__approved
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approved"
 msgstr "Odobreno"
@@ -126,13 +126,13 @@ msgid "Back to draft"
 msgstr "Nazad u nacrt"
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:100
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve page in '%s' state."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:76
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve pages in '%s' state."
 msgstr ""
@@ -143,7 +143,7 @@ msgid "Cancel"
 msgstr "Odustani"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__cancelled
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Cancelled"
 msgstr ""
@@ -156,13 +156,13 @@ msgid "Change Requests"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:138
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request <b>%s</b> has been cancelled by %s."
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:119
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request has been approved by %s."
 msgstr ""
@@ -178,7 +178,7 @@ msgid "Document Page History"
 msgstr "Povijest stranica Dokumenata"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__draft
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Draft"
 msgstr "Nacrt"
@@ -210,13 +210,13 @@ msgid "New version of ${object.display_name} needs your approval"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:126
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "New version of the document %s approved."
 msgstr "Nova verzija dokumenta %s odobrena"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__to_approve
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Pending Approval"
 msgstr ""
@@ -276,7 +276,7 @@ msgid "Users must also belong to the Approvers group"
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:102
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
@@ -284,7 +284,7 @@ msgid ""
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:62
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
@@ -292,7 +292,7 @@ msgid ""
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:79
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
@@ -300,7 +300,7 @@ msgid ""
 msgstr ""
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:59
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr ""
