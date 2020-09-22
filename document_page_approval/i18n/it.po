@@ -58,8 +58,8 @@ msgstr ""
 "            \n"
 "<p>Ciao,</p>\n"
 "\n"
-"<p>${object.create_uid.name} ha aggiunto una Richiesta di Modifica per "
-"<b>${object.page_id.name}</b> e necessita la tua approvazione.</p>\n"
+"<p>${object.create_uid.name} ha aggiunto una Richiesta di Modifica per <b>"
+"${object.page_id.name}</b> e necessita la tua approvazione.</p>\n"
 "\n"
 "<h1><a href=\"${object.page_url}\">${object.display_name}</a></h1>\n"
 "<p>\n"
@@ -119,7 +119,7 @@ msgid "Approve"
 msgstr "Approvare"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__approved
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approved"
 msgstr "Approvato"
@@ -158,13 +158,13 @@ msgid "Back to draft"
 msgstr "Ritorna a bozza"
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:100
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve page in '%s' state."
 msgstr "Non puoi approvare una pagina in stato '%s'."
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:76
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve pages in '%s' state."
 msgstr "Non puoi approvare le pagine in stato '%s'."
@@ -175,7 +175,7 @@ msgid "Cancel"
 msgstr "Annulla"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__cancelled
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Cancelled"
 msgstr "Annullato"
@@ -188,13 +188,13 @@ msgid "Change Requests"
 msgstr "Richieste di Modifica"
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:138
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request <b>%s</b> has been cancelled by %s."
 msgstr "La richiesta di modifica <b>%s</b> è stata annullata da %s."
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:119
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request has been approved by %s."
 msgstr "La richiesta di modifica è stata approvata da %s."
@@ -210,7 +210,7 @@ msgid "Document Page History"
 msgstr "Cronologia Pagina Documento"
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__draft
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Draft"
 msgstr "Bozza"
@@ -243,13 +243,13 @@ msgstr ""
 "La nuova versione di ${object.display_name} richiede la tua approvazione"
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:126
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "New version of the document %s approved."
 msgstr "La nuova versione del documento %s è approvata."
 
 #. module: document_page_approval
-#: selection:document.page.history,state:0
+#: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__to_approve
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Pending Approval"
 msgstr "In attesa di approvazione"
@@ -315,7 +315,7 @@ msgid "Users must also belong to the Approvers group"
 msgstr "Gli utenti devono anche appartenere al gruppo di approvazione"
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:102
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
@@ -325,7 +325,7 @@ msgstr ""
 "Solo gli approvatori in questi gruppi possono approvarlo: "
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:62
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
@@ -336,7 +336,7 @@ msgstr ""
 "Modifica."
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:79
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
@@ -346,7 +346,7 @@ msgstr ""
 "Solo i proprietari o gli approvatori possono richiedere l'approvazione."
 
 #. module: document_page_approval
-#: code:addons/document_page_approval/models/document_page_history.py:59
+#: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Devi cancellarlo prima di riaprirlo."
