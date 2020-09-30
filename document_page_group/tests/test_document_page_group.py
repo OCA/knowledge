@@ -22,16 +22,16 @@ class TestDocumentPageGroup(TransactionCase):
             {"name": "Categ 1", "type": "category"}
         )
         self.categ_2 = self.env["document.page"].create(
-            {"name": "Categ 2", "type": "category", "parent_id": self.categ_1.id,}
+            {"name": "Categ 2", "type": "category", "parent_id": self.categ_1.id}
         )
         self.page = self.env["document.page"].create(
-            {"name": "Page 1", "type": "content", "parent_id": self.categ_1.id,}
+            {"name": "Page 1", "type": "content", "parent_id": self.categ_1.id}
         )
 
     def test_document_page_group(self):
         pages = (
             self.env["document.page"]
-            .sudo(user=self.user_id.id)
+            .with_user(user=self.user_id.id)
             .search([("type", "=", "content")])
         )
         self.assertIn(self.page.id, pages.ids)
@@ -41,7 +41,7 @@ class TestDocumentPageGroup(TransactionCase):
 
         pages = (
             self.env["document.page"]
-            .sudo(user=self.user_id.id)
+            .with_user(user=self.user_id.id)
             .search([("type", "=", "content")])
         )
         self.assertNotIn(self.page.id, pages.ids)
