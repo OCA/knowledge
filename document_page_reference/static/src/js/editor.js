@@ -2,9 +2,7 @@ odoo.define("document_page_reference.backend", function(require) {
     "use strict";
 
     var field_registry = require("web.field_registry");
-    var backend = require("web_editor.backend");
-    var FieldTextHtmlSimple = backend.FieldTextHtmlSimple;
-
+    var FieldTextHtmlSimple = require("web_editor.field.html");
     var FieldDocumentPage = FieldTextHtmlSimple.extend({
         events: _.extend({}, FieldTextHtmlSimple.prototype.events, {
             "click .oe_direct_line": "_onClickDirectLink",
