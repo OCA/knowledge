@@ -52,6 +52,12 @@ class DocumentPage(models.Model):
     )
     content_parsed = fields.Html(compute="_compute_content_parsed")
 
+    def get_formview_action(self, access_uid=None):
+        res = super().get_formview_action(access_uid)
+        view_id = self.env.ref("document_page.view_wiki_form").id
+        res["views"] = [(view_id, "form")]
+        return res
+
     @api.depends("history_head")
     def _compute_content_parsed(self):
         for record in self:
