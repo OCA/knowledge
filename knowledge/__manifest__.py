@@ -6,7 +6,7 @@
     "author": "OpenERP SA,"
     "MONK Software, "
     "Tecnativa, "
-    "Eficent, "
+    "ForgeFlow, "
     "Odoo Community Association (OCA)",
     "category": "Knowledge",
     "license": "AGPL-3",
