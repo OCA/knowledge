@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo13-addon-document_page',
         'odoo13-addon-document_page_approval',
+        'odoo13-addon-document_page_group',
         'odoo13-addon-document_page_project',
         'odoo13-addon-knowledge',
     ],
