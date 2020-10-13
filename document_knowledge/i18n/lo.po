@@ -49,7 +49,6 @@ msgstr ""
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_res_config_settings
 #, fuzzy
-#| msgid "Configuration"
 msgid "Config Settings"
 msgstr "ການກໍານົດຄ່າ"
 
