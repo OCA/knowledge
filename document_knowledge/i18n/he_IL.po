@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2020-10-13 10:08+0000\n"
+"Last-Translator: Yves Goldberg <admin@ygol.com>\n"
 "Language-Team: none\n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_document_page_approval
@@ -21,37 +23,39 @@ msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
 msgstr ""
+"הוסף תהליך עבודה על מסמכים בכל קטגוריה.\n"
+"- התקנה של המודול document_page_approval."
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_cmis_read
 msgid "Attach files from an external DMS into Odoo"
-msgstr ""
+msgstr "צירוף מסמכים מתכנת ניהול חיצונית (DMS) לתוך Odoo"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "קובץ מצורף"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_attachment_indexation
 msgid "Attachments List and Document Indexation"
-msgstr ""
+msgstr "רשימת קבצים מצורפים ואינדקס מסמכים"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__group_ir_attachment_user
 #: model:res.groups,name:knowledge.group_ir_attachment_user
 msgid "Central access to Documents"
-msgstr ""
+msgstr "גישה מרכזית למסמכים"
 
 #. module: knowledge
 #: model:ir.model,name:knowledge.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "הגדרות תצורה"
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_configuration
 msgid "Configuration"
-msgstr ""
+msgstr "הגדרות"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_cmis_read
@@ -60,6 +64,9 @@ msgid ""
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
 msgstr ""
+"חבר את Odoo לשרת תואם CMIS כדי לצרף קבצים\n"
+"לOdoo.\n"
+"- התקנה של המודול cmis_read."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_cmis_write
@@ -67,11 +74,13 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
+"חבר את Odoo לשרת תואם CMIS לאחסון קבצים.\n"
+"- התקנה של המודול cmis_write."
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Connect with an external DMS"
-msgstr ""
+msgstr "קישור ל- DMS תכנת ניהול מסמכים חיצונית"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_attachment_indexation
@@ -79,6 +88,8 @@ msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module attachment_indexation."
 msgstr ""
+"אינדקס מסמכים, חיפוש טקסט מלא של קבצים מצורפים.\n"
+"- התקנה של המודול attachment_indexation."
 
 #. module: knowledge
 #: model:ir.actions.act_window,name:knowledge.knowledge_action_documents
@@ -86,24 +97,24 @@ msgstr ""
 #: model:ir.ui.menu,name:knowledge.menu_document_section
 #: model_terms:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Documents"
-msgstr ""
+msgstr "מסמכים"
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.ir_attachment_view_user_documents
 msgid "Group by"
-msgstr ""
+msgstr "קבץ לפי"
 
 #. module: knowledge
 #: model:ir.module.category,name:knowledge.module_category_knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_root
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge"
-msgstr ""
+msgstr "ידע"
 
 #. module: knowledge
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Knowledge and Documents Management"
-msgstr ""
+msgstr "ניהול ידע ומסמכים"
 
 #. module: knowledge
 #: model:res.groups,name:knowledge.group_document_user
