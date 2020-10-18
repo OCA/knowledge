@@ -11,13 +11,20 @@ class IrAttachmentCategory(models.Model):
     _parent_store = True
 
     name = fields.Char()
-    display_name = fields.Char(compute="_compute_display_name", store=True,)
-    parent_id = fields.Many2one("ir.attachment.category",)
+    display_name = fields.Char(
+        compute="_compute_display_name",
+        store=True,
+    )
+    parent_id = fields.Many2one(
+        "ir.attachment.category",
+    )
     parent_path = fields.Char(index=True)
     attachment_ids = fields.Many2many(
         compute="_compute_attachment_count", comodel_name="ir.attachment"
     )
-    attachment_count = fields.Integer(compute="_compute_attachment_count",)
+    attachment_count = fields.Integer(
+        compute="_compute_attachment_count",
+    )
 
     @api.depends("name", "parent_id.display_name")
     def _compute_display_name(self):
@@ -28,7 +35,8 @@ class IrAttachmentCategory(models.Model):
         for category in self:
             if category.parent_id.display_name:
                 category.display_name = "{}/{}".format(
-                    category.parent_id.display_name, category.name,
+                    category.parent_id.display_name,
+                    category.name,
                 )
             else:
                 category.display_name = category.name

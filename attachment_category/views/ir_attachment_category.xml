@@ -52,12 +52,8 @@
         <field name="res_model">ir.attachment.category</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                    Create a new document
-                </p>
-            <p>
-                    Also you will find here all the related document categories.
-                </p>
+            <p class="o_view_nocontent_smiling_face">Create a new document</p>
+            <p>Also you will find here all the related document categories.</p>
         </field>
     </record>
     <record model="ir.ui.menu" id="ir_attachment_category_menu">
