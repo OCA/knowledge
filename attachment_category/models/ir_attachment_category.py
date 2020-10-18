@@ -41,11 +41,14 @@ class IrAttachmentCategory(models.Model):
             else:
                 category.display_name = category.name
 
-    @api.depends()
     def _compute_attachment_count(self):
         category_obj = self.env["ir.attachment.category"]
         attachment_obj = self.env["ir.attachment"]
         for category in self:
+            if isinstance(category.id, models.NewId):
+                category.attachment_count = 0
+                category.attachment_ids = attachment_obj.browse()
+                continue
             child_categories = category_obj.search([("id", "child_of", category.id)])
             attachment_ids = attachment_obj.search(
                 [("category_ids", "in", child_categories.ids)]
