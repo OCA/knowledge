@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-10-13 10:08+0000\n"
+"PO-Revision-Date: 2020-10-19 08:08+0000\n"
 "Last-Translator: Yves Goldberg <admin@ygol.com>\n"
 "Language-Team: none\n"
 "Language: he_IL\n"
@@ -30,7 +30,7 @@ msgstr "לחץ ליצירת עמוד נחיתה."
 #. module: document_page_project
 #: model:ir.model,name:document_page_project.model_document_page
 msgid "Document Page"
-msgstr "דף מסמך"
+msgstr "עמוד המסמך"
 
 #. module: document_page_project
 #: model:ir.model.fields,field_description:document_page_project.field_project_project__document_page_count
