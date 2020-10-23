@@ -14,7 +14,6 @@
         <field name='res_model'>ir.attachment.add_url</field>
         <field name='type'>ir.actions.act_window</field>
         <field name='target'>new</field>
-        <field name='view_type'>form</field>
         <field name='view_mode'>form</field>
     </record>
     <record model="ir.ui.view" id="view_ir_attachment_add_url_form">

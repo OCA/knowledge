@@ -19,7 +19,7 @@ odoo.define("document_url", function(require) {
          * @private
          * @param {MouseEvent} ev
          */
-        _onAddUrl: function(ev) {
+        _onAddUrl: function() {
             this.do_action("document_url.action_ir_attachment_add_url", {
                 additional_context: {
                     active_id: this.currentResID,

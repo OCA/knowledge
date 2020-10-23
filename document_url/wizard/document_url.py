@@ -6,7 +6,7 @@ from urllib import parse
 from odoo import fields, models
 
 
-class AddUrlWizard(models.Model):
+class AddUrlWizard(models.TransientModel):
     _name = "ir.attachment.add_url"
     _description = "Wizard to add URL attachment"
 

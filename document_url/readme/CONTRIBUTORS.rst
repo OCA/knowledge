@@ -3,3 +3,7 @@
 
   * Pedro M. Baeza
   * Ernesto Tejeda
+
+* `Guadaltech <https://www.guadaltech.es>`_:
+
+  * Fernando La Chica
