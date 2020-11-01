@@ -59,7 +59,7 @@ class DocumentPageHistory(models.Model):
                     _('You need to cancel it before reopening.'))
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _('You are not authorized to do this.\r\n'
+                    _('You are not authorized to do this.\n'
                       'Only owners or approvers can reopen Change Requests.'))
             rec.write({'state': 'draft'})
 
@@ -76,7 +76,7 @@ class DocumentPageHistory(models.Model):
                     _("Can't approve pages in '%s' state.") % rec.state)
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _('You are not authorized to do this.\r\n'
+                    _('You are not authorized to do this.\n'
                       'Only owners or approvers can request approval.'))
             # request approval
             if rec.is_approval_required:
@@ -100,7 +100,7 @@ class DocumentPageHistory(models.Model):
                     _("Can't approve page in '%s' state.") % rec.state)
             if not rec.am_i_approver:
                 raise UserError(_(
-                    'You are not authorized to do this.\r\n'
+                    'You are not authorized to do this.\n'
                     'Only approvers with these groups can approve this: '
                 ) % ', '.join(
                     [g.display_name
