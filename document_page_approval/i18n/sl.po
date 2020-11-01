@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.10\n"
 
 #. module: document_page_approval
@@ -58,8 +58,8 @@ msgstr ""
 "            \n"
 "<p>Pozdravljeni.</p>\n"
 "\n"
-"<p>${object.create_uid.name} je vložil novo zahtevo po spremembi za  "
-"<b>${object.page_id.name}</b> , ki jo morate odobriti.</p>\n"
+"<p>${object.create_uid.name} je vložil novo zahtevo po spremembi za  <b>"
+"${object.page_id.name}</b> , ki jo morate odobriti.</p>\n"
 "\n"
 "<h1><a href=\"${object.page_url}\">${object.display_name}</a></h1>\n"
 "<p>\n"
@@ -315,34 +315,49 @@ msgstr "Uporabniki morajo pripadati skupini odobriteljev"
 #: code:addons/document_page_approval/models/document_page_history.py:102
 #, python-format
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only approvers with these groups can approve this: "
 msgstr ""
-"Za to niste pooblaščeni.\n"
-"Le odobritelji iz teh skupin lahko to odobrijo: "
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:62
 #, python-format
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only owners or approvers can reopen Change Requests."
 msgstr ""
-"Za to niste pooblaščeni.\n"
-"Le lastniki ali odobritelji lahko ponovno odprejo Zahteve po spremembi."
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:79
 #, python-format
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only owners or approvers can request approval."
 msgstr ""
-"Za to niste pooblaščeni.\n"
-"Le lastniki ali odobritelji lahko zahtevajo odobritev."
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:59
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Pred ponovnim odprtjem jo morate preklicati."
+
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only approvers with these groups can approve this: "
+#~ msgstr ""
+#~ "Za to niste pooblaščeni.\n"
+#~ "Le odobritelji iz teh skupin lahko to odobrijo: "
+
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only owners or approvers can reopen Change Requests."
+#~ msgstr ""
+#~ "Za to niste pooblaščeni.\n"
+#~ "Le lastniki ali odobritelji lahko ponovno odprejo Zahteve po spremembi."
+
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only owners or approvers can request approval."
+#~ msgstr ""
+#~ "Za to niste pooblaščeni.\n"
+#~ "Le lastniki ali odobritelji lahko zahtevajo odobritev."

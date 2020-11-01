@@ -58,8 +58,8 @@ msgstr ""
 "            \n"
 "<p>Ciao,</p>\n"
 "\n"
-"<p>${object.create_uid.name} ha aggiunto una Richiesta di Modifica per "
-"<b>${object.page_id.name}</b> e necessita la tua approvazione.</p>\n"
+"<p>${object.create_uid.name} ha aggiunto una Richiesta di Modifica per <b>"
+"${object.page_id.name}</b> e necessita la tua approvazione.</p>\n"
 "\n"
 "<h1><a href=\"${object.page_url}\">${object.display_name}</a></h1>\n"
 "<p>\n"
@@ -318,35 +318,50 @@ msgstr "Gli utenti devono anche appartenere al gruppo di approvazione"
 #: code:addons/document_page_approval/models/document_page_history.py:102
 #, python-format
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only approvers with these groups can approve this: "
 msgstr ""
-"Non sei autorizzato a compiere quest'azione.\n"
-"Solo gli approvatori in questi gruppi possono approvarlo: "
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:62
 #, python-format
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only owners or approvers can reopen Change Requests."
 msgstr ""
-"Non sei autorizzato a compiere quest'azione.\n"
-"Solo i proprietari o gli approvatori possono riaprire delle Richieste di "
-"Modifica."
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:79
 #, python-format
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only owners or approvers can request approval."
 msgstr ""
-"Non sei autorizzato a compiere quest'azione.\n"
-"Solo i proprietari o gli approvatori possono richiedere l'approvazione."
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:59
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Devi cancellarlo prima di riaprirlo."
+
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only approvers with these groups can approve this: "
+#~ msgstr ""
+#~ "Non sei autorizzato a compiere quest'azione.\n"
+#~ "Solo gli approvatori in questi gruppi possono approvarlo: "
+
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only owners or approvers can reopen Change Requests."
+#~ msgstr ""
+#~ "Non sei autorizzato a compiere quest'azione.\n"
+#~ "Solo i proprietari o gli approvatori possono riaprire delle Richieste di "
+#~ "Modifica."
+
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only owners or approvers can request approval."
+#~ msgstr ""
+#~ "Non sei autorizzato a compiere quest'azione.\n"
+#~ "Solo i proprietari o gli approvatori possono richiedere l'approvazione."
