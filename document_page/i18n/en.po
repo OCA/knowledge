@@ -197,7 +197,6 @@ msgstr "Document Page History"
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 #, fuzzy
-#| msgid "Document Page"
 msgid "Document Page Show Diff"
 msgstr "Document Page"
 
@@ -272,7 +271,6 @@ msgstr "If checked, new messages require your attention."
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 #, fuzzy
-#| msgid "If checked, new messages require your attention."
 msgid "If checked, some messages have a delivery error."
 msgstr "If checked, new messages require your attention."
 
@@ -402,7 +400,6 @@ msgstr "Number of Actions"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error_counter
 #, fuzzy
-#| msgid "Number of Actions"
 msgid "Number of errors"
 msgstr "Number of Actions"
 
@@ -414,7 +411,6 @@ msgstr "Number of messages which requires an action"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
 #, fuzzy
-#| msgid "Number of messages which requires an action"
 msgid "Number of messages with delivery error"
 msgstr "Number of messages which requires an action"
 
@@ -556,7 +552,6 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
 #, fuzzy
-#| msgid "Messages"
 msgid "Website Messages"
 msgstr "Messages"
 

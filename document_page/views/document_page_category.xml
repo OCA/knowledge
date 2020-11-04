@@ -18,6 +18,10 @@
                                 string="Category"
                                 context="{'default_type':'category'}"
                             />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
                         </group>
                         <group>
                             <field name="write_uid" groups="base.group_no_one" />
@@ -60,6 +64,7 @@
                 <field name="create_uid" invisible="1" />
                 <field name="write_uid" />
                 <field name="write_date" />
+                <field name="company_id" groups="base.group_multi_company" />
             </tree>
         </field>
     </record>
@@ -76,6 +81,7 @@
                 <field name="parent_id" />
                 <field name="create_uid" />
                 <field name="content_uid" />
+                <field name="company_id" groups="base.group_multi_company" />
                 <group expand="0" string="Group By...">
                     <filter
                         name="group_by_category"
