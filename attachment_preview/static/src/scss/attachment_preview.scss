@@ -15,6 +15,12 @@
     }
 }
 
+.o_Attachment_actions {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
 .o_form_uri .fa-search {
     padding-left: 5px;
     padding-right: 5px;

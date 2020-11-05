@@ -16,6 +16,8 @@ class IrAttachment(models.Model):
 
     @api.model
     def get_binary_extension(self, model, ids, binary_field, filename_field=None):
+        # import pdb
+        # pdb.set_trace()
         result = {}
         ids_to_browse = ids if isinstance(ids, collections.Iterable) else [ids]
 
@@ -73,4 +75,4 @@ class IrAttachment(models.Model):
 
     @api.model
     def get_attachment_extension(self, ids):
-        return self.get_binary_extension(self._name, ids, "datas", "datas_fname")
+        return self.get_binary_extension(self._name, ids, "datas", "name")
