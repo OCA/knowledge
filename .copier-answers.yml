@@ -1,0 +1,22 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: v1.0.4
+_src_path: https://github.com/OCA/oca-addons-repo-template.git
+dependency_installation_mode: OCA
+generate_requirements_txt: true
+include_wkhtmltopdf: false
+odoo_version: 13.0
+rebel_module_groups: []
+repo_description: "This project is meant to gather all community extensions of Odoo's
+  knowledge and document management.
+
+
+  Here you should find all community modules that:
+
+
+  - implement means to structure knowledge
+
+  - provide access to knowledge/documents"
+repo_name: Knowledge
+repo_slug: knowledge
+travis_apt_packages: []
+travis_apt_sources: []

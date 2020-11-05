@@ -14,6 +14,11 @@ default_language_version:
   python: python3
   node: "14.13.0"
 repos:
+  - repo: https://github.com/myint/autoflake
+    rev: v1.4
+    hooks:
+      - id: autoflake
+        args: ["-i", "--ignore-init-module-imports"]
   - repo: https://github.com/psf/black
     rev: 19.10b0
     hooks:
@@ -76,17 +81,17 @@ repos:
         files: /__init__\.py$
         additional_dependencies: ["flake8-bugbear==19.8.0"]
   - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.3.1
+    rev: v2.5.3
     hooks:
       - id: pylint
         name: pylint with optional checks
         args: ["--rcfile=.pylintrc", "--exit-zero"]
         verbose: true
-        additional_dependencies: ["pylint-odoo==3.1.0"]
+        additional_dependencies: ["pylint-odoo==3.5.0"]
       - id: pylint
         name: pylint with mandatory checks
         args: ["--rcfile=.pylintrc-mandatory"]
-        additional_dependencies: ["pylint-odoo==3.1.0"]
+        additional_dependencies: ["pylint-odoo==3.5.0"]
   - repo: https://github.com/asottile/pyupgrade
     rev: v1.26.2
     hooks:
