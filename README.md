@@ -28,6 +28,7 @@ addon | version | summary
 [document_page_approval](document_page_approval/) | 13.0.1.0.0 | Document Page Approval
 [document_page_group](document_page_group/) | 13.0.1.0.0 | Define access groups on documents
 [document_page_project](document_page_project/) | 13.0.1.0.1 | This module links document pages to projects
+[document_url](document_url/) | 13.0.1.0.0 | URL attachment
 [knowledge](knowledge/) | 13.0.1.0.1 | Knowledge
 
 [//]: # (end addons)
