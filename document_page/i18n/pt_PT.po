@@ -198,7 +198,6 @@ msgstr "Histórico da Página do Documento"
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 #, fuzzy
-#| msgid "Document Page History"
 msgid "Document Page Show Diff"
 msgstr "Histórico da Página do Documento"
 
