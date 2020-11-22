@@ -351,7 +351,6 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_ids
 #, fuzzy
-#| msgid "Pages"
 msgid "Messages"
 msgstr "Stranice"
 
