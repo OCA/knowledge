@@ -397,7 +397,6 @@ msgstr "Nombre d'actions"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error_counter
 #, fuzzy
-#| msgid "Number of error"
 msgid "Number of errors"
 msgstr "Nombre d'erreurs"
 
@@ -472,7 +471,6 @@ msgstr "Révision"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
 #, fuzzy
-#| msgid "Message Delivery error"
 msgid "SMS Delivery error"
 msgstr "Erreur d'envoi du message"
 
@@ -555,7 +553,6 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
 #, fuzzy
-#| msgid "Messages"
 msgid "Website Messages"
 msgstr "Messages"
 
