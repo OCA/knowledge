@@ -197,7 +197,6 @@ msgstr "Dokumentets sidhistorik"
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 #, fuzzy
-#| msgid "Document Page"
 msgid "Document Page Show Diff"
 msgstr "Dokumentsida"
 
