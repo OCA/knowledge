@@ -9,9 +9,10 @@
         <xpath expr="//div[hasclass('o_Attachment_actionDownload')]" position="before">
             <div
                 class="ml4 o_attachment_preview"
-                t-on-click="_onPreviewAttachment"
                 t-att-data-id="attachment.id"
-                t-att-data-url="attachment.url"
+                t-att-data-url="attachmentUrl"
+                t-on-click="_onPreviewAttachment"
+                t-att-data-original-title="attachment.name"
                 t-attf-title="Preview {{attachment.name}} in side panel"
             >
                 <i class="fa fa-search" />
@@ -20,7 +21,9 @@
                 class="ml4 o_attachment_preview o_attachment_preview_new_tab"
                 data-target="new"
                 t-att-data-id="attachment.id"
-                t-att-data-url="attachment.url"
+                t-att-data-url="attachmentUrl"
+                t-on-click="_onPreviewAttachment"
+                t-att-data-original-title="attachment.name"
                 t-attf-title="Open preview {{attachment.name}} in a new tab"
             >
                 <i class="fa fa-external-link" />

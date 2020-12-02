@@ -12,14 +12,12 @@ class TestAttachmentPreview(TransactionCase):
             {
                 "datas": base64.b64encode(b"from this, to that."),
                 "name": "doc.txt",
-                "datas_fname": "doc.txt",
             }
         )
         attachment2 = self.env["ir.attachment"].create(
             {
                 "datas": base64.b64encode(b"Png"),
                 "name": "image.png",
-                "datas_fname": "image.png",
             }
         )
         res = self.env["ir.attachment"].get_attachment_extension(attachment.id)
@@ -37,7 +35,8 @@ class TestAttachmentPreview(TransactionCase):
         self.assertTrue(res2)
 
         module = (
-            self.env["ir.module.module"].search([]).filtered(lambda m: m.icon_image)[0]
+            self.env["ir.module.module"].search(
+                []).filtered(lambda m: m.icon_image)[0]
         )
         res3 = self.env["ir.attachment"].get_binary_extension(
             "ir.module.module", module.id, "icon_image"

@@ -25,14 +25,16 @@ class IrAttachment(models.Model):
         #  unnecessarily.
         if filename_field:
             for this in (
-                self.env[model].with_context(bin_size=True).browse(ids_to_browse)
+                self.env[model].with_context(
+                    bin_size=True).browse(ids_to_browse)
             ):
                 if not this.id:
                     result[this.id] = False
                     continue
                 extension = ""
                 if this[filename_field]:
-                    filename, extension = os.path.splitext(this[filename_field])
+                    filename, extension = os.path.splitext(
+                        this[filename_field])
                 if this[binary_field] and extension:
                     result[this.id] = extension
                     _logger.debug(
@@ -61,13 +63,16 @@ class IrAttachment(models.Model):
                     )
                 else:
                     mimetype = magic.from_buffer(this[binary_field], mime=True)
-                    _logger.debug("Magic determined mimetype %s from buffer", mimetype)
+                    _logger.debug(
+                        "Magic determined mimetype %s from buffer", mimetype)
             except ImportError:
                 (mimetype, encoding) = mimetypes.guess_type(
                     "data:;base64," + this[binary_field], strict=False
                 )
-                _logger.debug("Mimetypes guessed type %s from buffer", mimetype)
-            extension = mimetypes.guess_extension(mimetype.split(";")[0], strict=False)
+                _logger.debug(
+                    "Mimetypes guessed type %s from buffer", mimetype)
+            extension = mimetypes.guess_extension(
+                mimetype.split(";")[0], strict=False)
             result[this.id] = extension
         for _id in result:
             result[_id] = (result[_id] or "").lstrip(".").lower()
