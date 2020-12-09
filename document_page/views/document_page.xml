@@ -65,6 +65,7 @@
                                 <group>
                                     <field
                                         name="parent_id"
+                                        required="True"
                                         string="Category"
                                         context="{'default_type':'category'}"
                                     />
@@ -81,10 +82,15 @@
                                     />
                                 </group>
                                 <group string="Revision">
-                                    <field name="draft_name" placeholder="Rev 01" />
+                                    <field
+                                        name="draft_name"
+                                        placeholder="Rev 01"
+                                        required="True"
+                                    />
                                     <field
                                         name="draft_summary"
                                         placeholder="eg: Changed ... for ..."
+                                        required="True"
                                     />
                                 </group>
                             </group>
