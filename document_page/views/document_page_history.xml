@@ -21,8 +21,8 @@
         <field name="model">document.page.history</field>
         <field name="arch" type="xml">
             <search string="Document Page History">
-                <field name="page_id" />
-                <field name="content" />
+                <field name="page_id" required="True" />
+                <field name="content" required="True" />
                 <field name="create_uid" />
                 <group expand="0" string="Group By...">
                     <filter

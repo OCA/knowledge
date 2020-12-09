@@ -19,6 +19,8 @@ Additional ressources
     </record>
     <record id="demo_page1" model="document.page">
         <field name="name">Odoo 13.0 Functional Demo</field>
+        <field name="draft_name">1.0</field>
+        <field name="draft_summary">Init</field>
         <field name="parent_id" ref="demo_category1" />
         <field name="content">
 <![CDATA[
@@ -48,6 +50,8 @@ company, with your clients and implement it now for your business.<br>
     <record id="demo_page2" model="document.page">
         <field name="name">Personalise Dashboards</field>
         <field name="parent_id" ref="demo_category1" />
+        <field name="draft_name">1.0</field>
+        <field name="draft_summary">Init</field>
         <field name="content">
 <![CDATA[
 <br>
@@ -87,6 +91,8 @@ you change your mind there is a reset button to return to the default view.<br>
     <record id="demo_page3" model="document.page">
         <field name="name">Touchscreen Point of Sale</field>
         <field name="parent_id" ref="demo_category1" />
+        <field name="draft_name">1.0</field>
+        <field name="draft_summary">Init</field>
         <field name="content">
 <![CDATA[
 <br>
