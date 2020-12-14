@@ -4,3 +4,7 @@
 * Jose Maria Alzaga <jose.alzaga@aselcis.com>
 * Lois Rilo <lois.rilo@eficent.com>
 * Simone Orsi <simone.orsi@camptocamp.com>
+
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Víctor Martínez

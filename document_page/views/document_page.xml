@@ -57,15 +57,15 @@
                         <page name="info" string="Information">
                             <group>
                                 <group>
-                                    <field name="parent_id" string="Category" context="{'default_type':'category'}"/>
+                                    <field name="parent_id" string="Category" required="True" context="{'default_type':'category'}"/>
                                     <field name="company_id" groups="base.group_multi_company"/>
                                     <field name="content_uid"/>
                                     <field name="content_date"/>
                                     <field name="menu_id" readonly="1" attrs="{'invisible': [('menu_id','=',False)]}"/>
                                 </group>
                                 <group string="Revision" class="oe_edit_only">
-                                    <field name="draft_name" placeholder="Rev 01" class="oe_edit_only" />
-                                    <field name="draft_summary" placeholder="eg: Changed ... for ..." class="oe_edit_only" />
+                                    <field name="draft_name" placeholder="Rev 01" required="True" class="oe_edit_only" />
+                                    <field name="draft_summary" placeholder="eg: Changed ... for ..." required="True" class="oe_edit_only" />
                                 </group>
                             </group>
                         </page>
