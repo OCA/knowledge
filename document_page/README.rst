@@ -79,6 +79,10 @@ Contributors
 * Lois Rilo <lois.rilo@eficent.com>
 * Simone Orsi <simone.orsi@camptocamp.com>
 
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Víctor Martínez
+
 Other credits
 ~~~~~~~~~~~~~
 
