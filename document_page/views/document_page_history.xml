@@ -89,12 +89,13 @@
         sequence="30"
         groups="base.group_no_one"
     />
-    <act_window
-        id="action_related_page_history"
-        context="{'search_default_page_id': [active_id], 'default_page_id': active_id}"
-        domain="[('page_id','=',active_id)]"
-        name="Page History"
-        res_model="document.page.history"
-        binding_model="document.page"
-    />
+    <record id="action_related_page_history" model="ir.actions.act_window">
+        <field
+            name="context"
+        >{'search_default_page_id': [active_id], 'default_page_id': active_id}</field>
+        <field name="domain">[('page_id','=',active_id)]</field>
+        <field name="name">Page History</field>
+        <field name="res_model">document.page.history</field>
+        <field name="binding_model_id" ref="model_document_page" />
+    </record>
 </odoo>

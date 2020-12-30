@@ -15,12 +15,10 @@
             </t>
         </t>
     </template>
-    <report
-        id="report_document_page"
-        string="Document Page"
-        model="document.page"
-        report_type="qweb-pdf"
-        file="document_page.report_documentpage"
-        name="document_page.report_documentpage"
-    />
+    <record id="report_document_page" model="ir.actions.report">
+        <field name="name">Document Page</field>
+        <field name="model">document.page</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_page.report_documentpage</field>
+    </record>
 </odoo>

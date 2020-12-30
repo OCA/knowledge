@@ -14,12 +14,11 @@
         </field>
     </record>
     <!-- Create Index Action Window  -->
-    <act_window
-        id="action_view_wiki_show_diff_values"
-        name="Difference"
-        res_model="wizard.document.page.history.show_diff"
-        binding_model="document.page.history"
-        view_mode="form"
-        target="new"
-    />
+    <record id="action_view_wiki_show_diff_values" model="ir.actions.act_window">
+        <field name="name">Difference</field>
+        <field name="res_model">wizard.document.page.history.show_diff</field>
+        <field name="binding_model_id" ref="model_document_page_history" />
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
 </odoo>
