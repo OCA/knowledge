@@ -7,6 +7,7 @@
         Adds a document category to help classification""",
     "version": "14.0.1.0.0",
     "license": "AGPL-3",
+    "website": "https://github.com/OCA/knowledge",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "depends": ["base"],
     "data": [

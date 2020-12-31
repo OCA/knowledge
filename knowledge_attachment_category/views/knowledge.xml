@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ir_attachment_search_view" model="ir.ui.view">
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="knowledge.ir_attachment_view_user_documents" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[last()]" position="after">
+                <searchpanel>
+                    <field
+                        name="category_ids"
+                        string="Categories"
+                        enable_counters="1"
+                        select="multi"
+                    />
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+</odoo>
