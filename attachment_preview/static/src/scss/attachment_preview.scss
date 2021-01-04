@@ -32,6 +32,7 @@
     height: 100%;
     float: right;
     position: relative;
+    z-index: 999;
 
     > .attachment_preview_iframe {
         width: 100%;
