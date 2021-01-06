@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="ir_attachment_category_menu"
+        name="Attachment Categories"
+        parent="knowledge.menu_document_configuration"
+        action="attachment_category.ir_attachment_category_act_window"
+        sequence="7"
+    />
+</odoo>
