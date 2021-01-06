@@ -13,5 +13,5 @@
         "knowledge",
         "attachment_category",
     ],
-    "data": ["views/knowledge.xml"],
+    "data": ["views/knowledge.xml", "views/menu.xml"],
 }
