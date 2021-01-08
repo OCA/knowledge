@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-15 05:49+0000\n"
-"PO-Revision-Date: 2020-02-15 05:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,7 +24,7 @@ msgid "<small class=\"text-right\">Category:</small>"
 msgstr ""
 
 #. module: document_page_portal
-#: code:addons/document_page_portal/controllers/portal.py:36
+#: code:addons/document_page_portal/controllers/portal.py:43
 #: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
 #, python-format
 msgid "Category"
@@ -38,23 +36,38 @@ msgid "Current Category of this document"
 msgstr ""
 
 #. module: document_page_portal
-#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home_Knowledge_document_page
-#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home_menu_Knowledge
-#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
-msgid "Documents"
+#: model:ir.model,name:document_page_portal.model_document_page
+msgid "Document Page"
 msgstr ""
 
 #. module: document_page_portal
-#: code:addons/document_page_portal/controllers/portal.py:35
+#: model:ir.model.fields,help:document_page_portal.field_document_page__is_public
+msgid "If true it allows any user of the portal to have access to this document."
+msgstr ""
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home_Knowledge_document_page
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home_menu_Knowledge
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
+msgid "Knowledge Documents"
+msgstr ""
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:42
 #: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
 #, python-format
 msgid "Name"
 msgstr ""
 
 #. module: document_page_portal
-#: code:addons/document_page_portal/controllers/portal.py:34
+#: code:addons/document_page_portal/controllers/portal.py:41
 #, python-format
 msgid "Newest"
+msgstr ""
+
+#. module: document_page_portal
+#: model:ir.model.fields,field_description:document_page_portal.field_document_page__is_public
+msgid "Public Page"
 msgstr ""
 
 #. module: document_page_portal
@@ -63,19 +76,19 @@ msgid "Ref"
 msgstr ""
 
 #. module: document_page_portal
-#: code:addons/document_page_portal/controllers/portal.py:39
+#: code:addons/document_page_portal/controllers/portal.py:46
 #, python-format
 msgid "Search <span class=\"nolabel\"> (in Content)</span>"
 msgstr ""
 
 #. module: document_page_portal
-#: code:addons/document_page_portal/controllers/portal.py:40
+#: code:addons/document_page_portal/controllers/portal.py:48
 #, python-format
 msgid "Search in All"
 msgstr ""
 
 #. module: document_page_portal
 #: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
-msgid "There are currently no Document for your account."
+msgid "There are currently no Knowledge Document for your account."
 msgstr ""
 
