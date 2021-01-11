@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo11-addon-document_page_group',
         'odoo11-addon-document_page_project',
         'odoo11-addon-document_page_reference',
+        'odoo11-addon-document_page_reference_search',
         'odoo11-addon-document_url',
         'odoo11-addon-knowledge',
     ],
