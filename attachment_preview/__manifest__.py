@@ -3,7 +3,7 @@
 
 {
     "name": "Preview attachments",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "author": "Therp BV,"
               "Onestein,"
               "Odoo Community Association (OCA)",
