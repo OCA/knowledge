@@ -1,0 +1,1 @@
+odoo14-addon-knowledge @git+https://github.com/dzungtran89/knowledge@14.0-mig-knowledge#subdirectory=setup/knowledge
