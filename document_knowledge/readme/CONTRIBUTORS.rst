@@ -10,3 +10,7 @@
 
   * Vicent Cubells
   * Ernesto Tejeda
+
+Trobz
+
+* Dung Tran <dungtd@trobz.com>
