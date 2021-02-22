@@ -12,7 +12,7 @@ class DocumentPageShowDiff(models.TransientModel):
     _description = "Document Page Show Diff"
 
     def _get_diff(self):
-        """Return the Difference between two document."""
+        """Return the Difference between two documents"""
         history = self.env["document.page.history"]
         ids = self.env.context.get("active_ids", [])
         diff = False

@@ -5,3 +5,5 @@ document_page_editor,document.page editor,model_document_page,group_document_edi
 document_page_history_editor,document.page.history editor,model_document_page_history,group_document_editor,1,1,1,0
 document_page_manager,document.page manager,model_document_page,group_document_manager,1,1,1,1
 document_page_history_manager,document.page.history manager,model_document_page_history,group_document_manager,1,1,1,0
+document_page_create_menu_wizard,document.page.create.menu wizard,model_document_page_create_menu,knowledge.group_document_user,1,1,1,0
+document_page_history_show_diff_wizard,document.page.history.show_diff wizard,model_wizard_document_page_history_show_diff,knowledge.group_document_user,1,1,1,0
