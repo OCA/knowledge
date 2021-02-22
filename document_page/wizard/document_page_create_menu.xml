@@ -23,12 +23,13 @@
             </form>
         </field>
     </record>
-    <act_window
-        id="action_related_page_create_menu"
-        name="Create Menu"
-        res_model="document.page.create.menu"
-        target="new"
-        view_mode="form"
-        binding_model="document.page"
-    />
+
+    <record model="ir.actions.act_window" id="action_related_page_create_menu">
+        <field name="name">Create Menu</field>
+        <field name="res_model">document.page.create.menu</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="document_page.model_document_page" />
+    </record>
+
 </odoo>
