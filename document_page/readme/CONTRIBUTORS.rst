@@ -8,3 +8,7 @@
 
   * Ernesto Tejeda
   * Víctor Martínez
+
+Trobz
+
+* Dung Tran <dungtd@trobz.com>

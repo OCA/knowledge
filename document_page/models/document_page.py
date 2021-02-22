@@ -64,7 +64,6 @@ class DocumentPage(models.Model):
         "document.page.history",
         "page_id",
         "History",
-        order="create_date DESC",
         readonly=True,
     )
     menu_id = fields.Many2one("ir.ui.menu", "Menu", readonly=True)

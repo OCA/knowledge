@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <odoo>
+
     <!-- History Tree view -->
     <record model="ir.ui.view" id="view_wiki_history_tree">
         <field name="name">document.page.history.tree</field>
@@ -15,6 +16,7 @@
             </tree>
         </field>
     </record>
+
     <!-- History Search view  -->
     <record id="view_wiki_history_filter" model="ir.ui.view">
         <field name="name">document.page.history.search</field>
@@ -34,6 +36,7 @@
             </search>
         </field>
     </record>
+
     <!-- History Form view  -->
     <record model="ir.ui.view" id="wiki_history_form">
         <field name="name">document.page.history.form</field>
@@ -75,12 +78,14 @@
             </form>
         </field>
     </record>
+
     <!-- History Action  -->
     <record model="ir.actions.act_window" id="action_history">
         <field name="name">Page history</field>
         <field name="res_model">document.page.history</field>
         <field name="view_mode">tree,form</field>
     </record>
+
     <menuitem
         id="menu_page_history"
         parent="menu_wiki"
@@ -89,12 +94,15 @@
         sequence="30"
         groups="base.group_no_one"
     />
-    <act_window
-        id="action_related_page_history"
-        context="{'search_default_page_id': [active_id], 'default_page_id': active_id}"
-        domain="[('page_id','=',active_id)]"
-        name="Page History"
-        res_model="document.page.history"
-        binding_model="document.page"
-    />
+
+    <record id="action_related_page_history" model="ir.actions.act_window">
+        <field name="name">Page History</field>
+        <field name="res_model">document.page.history</field>
+        <field name="domain">[('page_id','=',active_id)]</field>
+        <field
+            name="context"
+        >{'search_default_page_id': [active_id], 'default_page_id': active_id}</field>
+        <field name="binding_model_id" ref="document_page.model_document_page" />
+    </record>
+
 </odoo>
