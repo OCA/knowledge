@@ -3,7 +3,11 @@
 * Gervais Naoussi <gervaisnaoussi@gmail.com>
 * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
 * Iván Todorovich <ivan.todorovich@gmail.com>
-* Victor M.M. Torres <victor.martin@tecnativa.com>
+
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+    * Victor M.M. Torres
+    * Víctor Martínez
 
 * `Guadaltech <https://www.guadaltech.es>`_:
 
