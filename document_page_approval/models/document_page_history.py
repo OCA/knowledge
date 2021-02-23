@@ -110,13 +110,13 @@ class DocumentPageHistory(models.Model):
             rec.page_id._compute_history_head()
             # Notify state change
             rec.message_post(
-                subtype="mt_comment",
+                subtype_xmlid="mail.mt_comment",
                 body=_("Change request has been approved by %s.")
                 % (self.env.user.name),
             )
             # Notify followers a new version is available
             rec.page_id.message_post(
-                subtype="mt_comment",
+                subtype_xmlid="mail.mt_comment",
                 body=_("New version of the document %s approved.") % (rec.page_id.name),
             )
 
@@ -125,7 +125,7 @@ class DocumentPageHistory(models.Model):
         self.write({"state": "cancelled"})
         for rec in self:
             rec.message_post(
-                subtype="mt_comment",
+                subtype_xmlid="mail.mt_comment",
                 body=_("Change request <b>%s</b> has been cancelled by %s.")
                 % (rec.display_name, self.env.user.name),
             )
