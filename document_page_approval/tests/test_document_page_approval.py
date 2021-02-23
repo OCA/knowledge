@@ -15,6 +15,22 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.env.ref('base.user_root').write({
             'groups_id': [(4, self.approver_gid.id)],
         })
+        self.user2 = self.env["res.users"].create(
+            {
+                "name": "Test user 2",
+                "login": "Test user 2",
+                "groups_id": [
+                    (
+                        6,
+                        0,
+                        [
+                            self.env.ref("base.group_user").id,
+                            self.approver_gid.id,
+                        ],
+                    )
+                ],
+            }
+        )
         # demo_approval
         self.category2 = self.page_obj.create({
             'name': 'This category requires approval',
@@ -43,6 +59,9 @@ class TestDocumentPageApproval(common.TransactionCase):
 
         # It should automatically be in 'to approve' state
         self.assertEqual(chreq.state, 'to approve')
+        user_root = self.env.ref('base.user_root')
+        self.assertTrue(user_root.partner_id.id in chreq.message_partner_ids.ids)
+        self.assertTrue(self.user2.partner_id.id in chreq.message_partner_ids.ids)
         self.assertNotEqual(chreq.content, page.content)
 
         # who_am_i
