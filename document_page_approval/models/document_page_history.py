@@ -77,7 +77,7 @@ class DocumentPageHistory(models.Model):
                 users = self.env["res.users"].search(
                     [("groups_id", "in", guids), ("groups_id", "in", approver_gid.id)]
                 )
-                rec.message_subscribe([u.id for u in users])
+                rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
                 rec.message_post_with_template(template.id)
             else:
                 # auto-approve if approval is not required
