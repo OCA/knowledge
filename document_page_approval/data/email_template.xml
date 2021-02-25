@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<data noupdate="1">
     <!-- If user wants to make upgrade-proof customizations to email templates, he should edit ir.model.data and check noupdate himself -->
     <record id="email_template_new_draft_need_approval" model="mail.template">
         <field name="name">Automated new draft need approval Notification Mail</field>
@@ -42,4 +42,4 @@ ${object.diff|safe}
             ]]>
         </field>
     </record>
-</odoo>
+</data>
