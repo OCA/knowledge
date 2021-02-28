@@ -6,9 +6,10 @@ from odoo import fields, models
 
 class DocumentPage(models.Model):
 
-    _inherit = 'document.page'
+    _inherit = "document.page"
 
     is_public = fields.Boolean(
-        'Public Page',
-        help='If true it allows any user of the portal to have '
-             'access to this document.')
+        "Public Page",
+        help="If true it allows any user of the portal to have "
+        "access to this document.",
+    )
