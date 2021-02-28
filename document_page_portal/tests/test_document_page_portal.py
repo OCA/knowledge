@@ -5,7 +5,7 @@ import odoo.tests
 
 
 @odoo.tests.tagged("post_install", "-at_install")
-class TestUi(odoo.tests.HttpCase):
+class TestPortalDocumentPage(odoo.tests.HttpCase):
     def test_01_document_page_portal_tour(self):
         # Create a public document
         self.env["document.page"].create(
@@ -25,6 +25,7 @@ class TestUi(odoo.tests.HttpCase):
             login="portal",
         )
 
+    def test_02_document_page_portal_tour(self):
         self.phantom_js(
             "/",
             "odoo.__DEBUG__.services['web_tour.tour']"
