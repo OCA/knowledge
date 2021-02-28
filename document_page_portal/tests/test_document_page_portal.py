@@ -4,15 +4,17 @@
 import odoo.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@odoo.tests.tagged("post_install", "-at_install")
 class TestUi(odoo.tests.HttpCase):
     def test_01_document_page_portal_tour(self):
         # Create a public document
-        self.env['document.page'].create({
-            'name': 'Test Public Page 1',
-            'content': 'Test content',
-            'is_public': True,
-        })
+        self.env["document.page"].create(
+            {
+                "name": "Test Public Page 1",
+                "content": "Test content",
+                "is_public": True,
+            }
+        )
 
         self.phantom_js(
             "/",
@@ -20,7 +22,7 @@ class TestUi(odoo.tests.HttpCase):
             ".run('document_page_portal_tour')",
             "odoo.__DEBUG__.services['web_tour.tour']"
             ".tours.document_page_portal_tour.ready",
-            login="portal"
+            login="portal",
         )
 
         self.phantom_js(
@@ -29,5 +31,5 @@ class TestUi(odoo.tests.HttpCase):
             ".run('document_page_portal_search_tour')",
             "odoo.__DEBUG__.services['web_tour.tour']"
             ".tours.document_page_portal_search_tour.ready",
-            login="portal"
+            login="portal",
         )
