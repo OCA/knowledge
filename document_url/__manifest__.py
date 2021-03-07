@@ -7,6 +7,7 @@
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
+    "depends": ["mail"],
     "data": ["view/document_url_view.xml"],
     "qweb": ["static/src/xml/url.xml"],
     "installable": True,
