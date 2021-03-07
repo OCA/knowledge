@@ -2,7 +2,7 @@
 <odoo>
     <template
         id="assets_backend"
-        name="google_drive assets"
+        name="document_url assets"
         inherit_id="web.assets_backend"
     >
         <xpath expr="." position="inside">
