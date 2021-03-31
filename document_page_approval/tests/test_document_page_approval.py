@@ -1,4 +1,5 @@
 from odoo.tests import common
+from odoo.exceptions import AccessError
 
 
 class TestDocumentPageApproval(common.TransactionCase):
@@ -26,6 +27,23 @@ class TestDocumentPageApproval(common.TransactionCase):
                         [
                             self.env.ref("base.group_user").id,
                             self.approver_gid.id,
+                        ],
+                    )
+                ],
+            }
+        )
+        self.manager_gid = self.env.ref('document_page.group_document_manager')
+        self.user_manager = self.env["res.users"].create(
+            {
+                "name": "Test document manager",
+                "login": "Test document manager",
+                "groups_id": [
+                    (
+                        6,
+                        0,
+                        [
+                            self.env.ref("base.group_user").id,
+                            self.manager_gid.id,
                         ],
                     )
                 ],
@@ -133,6 +151,32 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.assertEqual(page.content, chreq.content)
         self.assertEqual(page.approved_date, chreq.approved_date)
         self.assertEqual(page.approved_uid, chreq.approved_uid)
+
+    def test_check_rules(self):
+        page = self.page2
+        # aprove everything
+        self.history_obj.search([
+            ('page_id', '=', page.id),
+            ('state', '!=', 'approved')
+        ]).action_approve()
+        # new change request from scrath
+        chreq = self.history_obj.create({
+            'page_id': page.id,
+            'summary': 'Changed something',
+            'content': 'New content',
+        })
+        self.assertEqual(chreq.state, 'draft')
+        chreq.action_to_approve()
+        self.assertEqual(chreq.state, 'to approve')
+        chreq.action_cancel()
+        self.assertEqual(chreq.state, 'cancelled')
+        chreq.sudo().action_draft()
+        with self.assertRaises(AccessError):
+            self.assertEqual(chreq.sudo(self.user2).state, 'draft')
+        self.assertEqual(chreq.state, 'draft')
+        self.assertEqual(chreq.sudo(self.user_manager).state, 'draft')
+        chreq.action_approve()
+        self.assertEqual(chreq.state, 'approved')
 
     def test_get_approvers_guids(self):
         """Get approver guids."""
