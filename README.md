@@ -25,7 +25,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [document_page](document_page/) | 13.0.1.1.0 | Document Page
-[document_page_approval](document_page_approval/) | 13.0.1.1.0 | Document Page Approval
+[document_page_approval](document_page_approval/) | 13.0.1.2.0 | Document Page Approval
 [document_page_group](document_page_group/) | 13.0.1.0.0 | Define access groups on documents
 [document_page_portal](document_page_portal/) | 13.0.1.0.0 | This module enables document page portal
 [document_page_project](document_page_project/) | 13.0.1.0.1 | This module links document pages to projects
