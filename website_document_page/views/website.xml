@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_website_form_wiki" model="ir.ui.view">
+        <field name="name">view.website.form.wiki</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form" />
+        <field name="arch" type="xml">
+            <field name="default_lang_id" position="after">
+                <field name="wiki_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<odoo noupdate="1">
+    <record id="document_page_public" model="ir.rule">
+        <field name="name">Public document page</field>
+        <field name="model_id" ref="document_page.model_document_page" />
+        <field name="domain_force">[('website_published', '=', True)]</field>
+        <field
+            name="groups"
+            eval="[(4, ref('base.group_public')), (4, ref('base.group_portal'))]"
+        />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+</odoo>

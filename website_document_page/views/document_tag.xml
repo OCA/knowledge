@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_document_tag_form_website" model="ir.ui.view">
+        <field name="name">view.document.tag.website</field>
+        <field name="model">document.tag</field>
+        <field name="inherit_id" ref="document_tag.view_document_tag_form" />
+        <field name="arch" type="xml">
+            <group id="main-right" position="inside">
+                <field name="is_menu" />
+                <field
+                    name="sequence"
+                    attrs="{'invisible': [('is_menu', '=', False)]}"
+                />
+            </group>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+document_page_nobody,document.page nobody,document_page.model_document_page,,1,0,0,0
+document_tag_nobody,document.tag nobody,document_tag.model_document_tag,,1,0,0,0
+document_page_history_nobody,document.page.history nobody,document_page.model_document_page_history,,1,0,0,0

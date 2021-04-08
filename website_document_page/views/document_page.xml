@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Category view form -->
+    <record id="view_document_category_form_website" model="ir.ui.view">
+        <field name="name">view.document.page.website</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_category_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Website" id="name">
+                    <group id="website-main">
+                        <group id="website-left">
+                            <field name="is_menu" />
+                            <field
+                                name="sequence"
+                                attrs="{'invisible': [('is_menu', '=', False)]}"
+                            />
+                        </group>
+                        <group id="website-right" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+    <!-- Page view form -->
+    <record id="view_document_page_form_published" model="ir.ui.view">
+        <field name="name">view.document.page.published</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field name="is_published" widget="website_redirect_button" />
+            </div>
+            <notebook position="inside">
+                <page string="Website" id="name">
+                    <group id="website-main">
+                        <group id="website-left">
+                            <field name="is_menu" />
+                            <field
+                                name="sequence"
+                                attrs="{'invisible': [('is_menu', '=', False)]}"
+                            />
+                        </group>
+                        <group id="website-right" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

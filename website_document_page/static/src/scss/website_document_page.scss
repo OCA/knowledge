@@ -1,0 +1,32 @@
+#wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.wiki_menu {
+    position: relative;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.wiki_content {
+    position: relative;
+    flex: 0 0 59%;
+    max-width: 59%;
+}
+
+.wiki_page_footer {
+    border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin-top: 1em;
+    clear: both;
+}
+
+.wiki_sidebar {
+    position: relative;
+    flex: 0 0 20%;
+    max-width: 20%;
+}

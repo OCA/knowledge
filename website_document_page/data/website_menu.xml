@@ -1,0 +1,8 @@
+<odoo noupdate="1">
+    <record id="menu_wiki" model="website.menu">
+        <field name="name">Wiki</field>
+        <field name="url">/wiki</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">30</field>
+    </record>
+</odoo>
