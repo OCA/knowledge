@@ -1,0 +1,24 @@
+<odoo>
+    <!-- Form view  -->
+    <record id="view_document_page_form_tag" model="ir.ui.view">
+        <field name="name">document.page.form.tag</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="tag_ids" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+    <!-- Search view  -->
+    <record id="view_document_page_search_tag" model="ir.ui.view">
+        <field name="name">document.page.search.tag</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_filter" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="tag_ids" />
+            </field>
+        </field>
+    </record>
+</odoo>
