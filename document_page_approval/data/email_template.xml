@@ -26,11 +26,6 @@
 <p>${object.summary}</p>
 % endif
 
-<h3>Diff</h3>
-<div style="overflow-x:scroll; font-size:0.85em; margin-bottom:2em;">
-${object.diff|safe}
-</div>
-
 <p>Have a great day.</p>
 
 --<br/>
