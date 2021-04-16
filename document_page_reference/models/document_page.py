@@ -49,7 +49,10 @@ class DocumentPage(models.Model):
     reference = fields.Char(
         help="Used to find the document, it can contain letters, numbers and _"
     )
-    content_parsed = fields.Html(compute='_compute_content_parsed')
+    # Do not set this field as HTML or it will be sanitized in
+    # `convert_to_cache` in `odoo/odoo/fields.py` and iframe tags will
+    # be removed
+    content_parsed = fields.Text(compute='_compute_content_parsed')
 
     @api.depends('history_head')
     def _compute_content_parsed(self):
