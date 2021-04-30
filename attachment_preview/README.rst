@@ -80,7 +80,7 @@ Authors
 Contributors
 ~~~~~~~~~~~~
 
-* Holger Brunn <hbrunn@therp.nl>
+* Holger Brunn <mail@hunki-enterprises.com>
 * Dennis Sluijk <d.sluijk@onestein.nl>
 
 Other credits
