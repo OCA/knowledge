@@ -328,8 +328,10 @@ odoo.define('attachment_preview', function (require) {
         },
 
         start: function () {
-            this._super.apply(this, arguments);
-            this.attachmentPreviewWidget.insertAfter(this.$el);
+            var self = this;
+            return this._super.apply(this, arguments).then(function () {
+                return self.attachmentPreviewWidget.insertAfter(self.$el);
+            });
         },
 
         _attachmentPreviewWidgetHidden: function () {
