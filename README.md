@@ -16,28 +16,28 @@ Here you should find all community modules that:
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[attachment_attach_non_editable](attachment_attach_non_editable/) | 10.0.1.0.0 | Force enable attachments
-[attachment_preview](attachment_preview/) | 10.0.1.3.0 | Preview attachments supported by Viewer.js
-[document_page](document_page/) | 10.0.2.1.0 | Document Page
-[document_page_approval](document_page_approval/) | 10.0.2.2.0 | Document Page Approval
-[document_page_partner_id](document_page_partner_id/) | 10.0.1.0.0 | Allows to link doucment pages to a partner
-[document_page_tags](document_page_tags/) | 10.0.1.0.0 | Allows you to assign tags or keywords to pages and search for them afterwards
-[knowledge](knowledge/) | 10.0.1.0.0 | Knowledge Management System
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[attachment_attach_non_editable](attachment_attach_non_editable/) | 10.0.1.0.0 |  | Force enable attachments
+[attachment_preview](attachment_preview/) | 10.0.1.3.0 |  | Preview attachments supported by Viewer.js
+[document_page](document_page/) | 10.0.2.1.0 |  | Document Page
+[document_page_approval](document_page_approval/) | 10.0.2.2.0 |  | Document Page Approval
+[document_page_partner_id](document_page_partner_id/) | 10.0.1.0.0 |  | Allows to link doucment pages to a partner
+[document_page_tags](document_page_tags/) | 10.0.1.0.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
+[knowledge](knowledge/) | 10.0.1.0.0 |  | Knowledge Management System
 
 
 Unported addons
 ---------------
-addon | version | summary
---- | --- | ---
-[attachments_to_filesystem](attachments_to_filesystem/) | 8.0.1.0.0 (unported) | Move existing attachments to filesystem
-[document_choose_directory](document_choose_directory/) | 8.0.1.0.0 (unported) | Choose a document's directory during upload
-[document_multiple_records](document_multiple_records/) | 0.1 (unported) | Document Management System for Multiple Records
-[document_no_unique_filenames](document_no_unique_filenames/) | 8.0.1.0.0 (unported) | Drop the uniquness constraint on filenames for directories
-[document_page_multi_company](document_page_multi_company/) | 1.0 (unported) | Document Page Multi-Company
-[document_reindex](document_reindex/) | 8.0.1.0.0 (unported) | Reindex your already uploaded documents
-[document_url](document_url/) | 9.0.1.0.0 (unported) | URL attachment
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[attachments_to_filesystem](attachments_to_filesystem/) | 8.0.1.0.0 (unported) |  | Move existing attachments to filesystem
+[document_choose_directory](document_choose_directory/) | 8.0.1.0.0 (unported) |  | Choose a document's directory during upload
+[document_multiple_records](document_multiple_records/) | 0.1 (unported) |  | Document Management System for Multiple Records
+[document_no_unique_filenames](document_no_unique_filenames/) | 8.0.1.0.0 (unported) |  | Drop the uniquness constraint on filenames for directories
+[document_page_multi_company](document_page_multi_company/) | 1.0 (unported) |  | Document Page Multi-Company
+[document_reindex](document_reindex/) | 8.0.1.0.0 (unported) |  | Reindex your already uploaded documents
+[document_url](document_url/) | 9.0.1.0.0 (unported) |  | URL attachment
 
 [//]: # (end addons)
 
