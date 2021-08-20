@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* attachment_category
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: attachment_category
+#: model_terms:ir.actions.act_window,help:attachment_category.ir_attachment_category_act_window
+msgid "Also you will find here all the related document categories."
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model,name:attachment_category.model_ir_attachment
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__attachment_ids
+msgid "Attachment"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.actions.act_window,name:attachment_category.ir_attachment_category_act_window
+#: model:ir.ui.menu,name:attachment_category.ir_attachment_category_menu
+msgid "Attachment Categories"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model,name:attachment_category.model_ir_attachment_category
+msgid "Attachment Category"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__category_ids
+msgid "Category"
+msgstr ""
+
+#. module: attachment_category
+#: model_terms:ir.actions.act_window,help:attachment_category.ir_attachment_category_act_window
+msgid "Create a new document"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__id
+msgid "ID"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__name
+msgid "Name"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__parent_path
+msgid "Parent Path"
+msgstr ""
+
