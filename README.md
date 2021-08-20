@@ -41,6 +41,7 @@ addon | version | maintainers | summary
 [document_sftp](document_sftp/) | 8.0.1.0.0 |  | Access your documents via SFTP
 [document_url](document_url/) | 8.0.1.0.0 |  | URL attachment
 [document_wopi](document_wopi/) | 8.0.1.0.0 |  | Allow online collaborative editing of your documents
+[help_popup_document_page](help_popup_document_page/) | 8.0.1.0.0 |  | Use document pages as help popup
 
 
 Unported addons
