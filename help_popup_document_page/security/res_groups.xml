@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="group_documentation_writer" model="res.groups">
+            <field name="name">Documentation writer</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_document_user'))]" />
+            <field name="category_id" ref="base.module_category_knowledge_management"/>
+        </record>
+        <record id="group_advanced_documentation_writer" model="res.groups">
+            <field name="name">Advanced documentation writer</field>
+            <field name="implied_ids" eval="[(4, ref('help_popup_document_page.group_documentation_writer'))]" />
+            <field name="category_id" ref="base.module_category_knowledge_management"/>
+        </record>
+    </data>
+</openerp>
