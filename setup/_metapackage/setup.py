@@ -25,6 +25,7 @@ setuptools.setup(
         'odoo8-addon-document_sftp',
         'odoo8-addon-document_url',
         'odoo8-addon-document_wopi',
+        'odoo8-addon-help_popup_document_page',
     ],
     classifiers=[
         'Programming Language :: Python',
