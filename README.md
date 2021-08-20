@@ -18,7 +18,9 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[attachment_action](attachment_action/) | 10.0.1.0.0 |  | Base for addons adding buttons to attachments
 [attachment_attach_non_editable](attachment_attach_non_editable/) | 10.0.1.0.0 |  | Force enable attachments
+[attachment_edit](attachment_edit/) | 10.0.1.0.0 |  | Edit attachments after upload
 [attachment_preview](attachment_preview/) | 10.0.1.3.0 |  | Preview attachments supported by Viewer.js
 [document_page](document_page/) | 10.0.2.1.0 |  | Document Page
 [document_page_approval](document_page_approval/) | 10.0.2.2.0 |  | Document Page Approval
