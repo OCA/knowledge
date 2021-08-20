@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="Sidebar">
+        <t t-jquery="span.o_sidebar_delete_attachment" t-operation="before">
+            <span class="o_sidebar_attachment_action" />
+        </t>
+        <t t-jquery="span.o_sidebar_delete_attachment">
+            jQuery(this).appendTo(this.siblings('.o_sidebar_attachment_action'));
+        </t>
+    </t>
+</templates>
