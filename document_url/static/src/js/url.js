@@ -12,7 +12,7 @@ odoo.define("document_url", function (require) {
 
     AttachmentBox.include({
         events: _.extend(AttachmentBox.prototype.events, {
-            "click span.o_add_url_button": "_onAddUrl",
+            "click button.o_add_url_button": "_onAddUrl",
         }),
         _onAddUrl: function () {
             // Opens wizard to add an URL attachment to the current record
