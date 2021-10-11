@@ -5,7 +5,7 @@ from odoo.tests import common
 
 class TestDocumentUrl(common.TransactionCase):
     def setUp(self):
-        super(TestDocumentUrl, self).setUp()
+        super().setUp()
         wizard_add_url = self.env["ir.attachment.add_url"]
         ctx = {
             "active_model": "res.users",
