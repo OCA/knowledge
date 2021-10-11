@@ -9,12 +9,12 @@
             <script type="text/javascript" src="/document_url/static/src/js/url.js" />
         </xpath>
     </template>
-    <record model='ir.actions.act_window' id='action_ir_attachment_add_url'>
-        <field name='name'>Add URL</field>
-        <field name='res_model'>ir.attachment.add_url</field>
-        <field name='type'>ir.actions.act_window</field>
-        <field name='target'>new</field>
-        <field name='view_mode'>form</field>
+    <record model="ir.actions.act_window" id='action_ir_attachment_add_url'>
+        <field name="name">Add URL</field>
+        <field name="res_model">ir.attachment.add_url</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="target">new</field>
+        <field name="view_mode">form</field>
     </record>
     <record model="ir.ui.view" id="view_ir_attachment_add_url_form">
         <field name="name">ir.attachment.add_url.form</field>
