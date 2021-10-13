@@ -7,6 +7,10 @@
     >
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/document_url/static/src/js/url.js" />
+            <link
+                href="/document_url/static/src/scss/document_url.scss"
+                rel="stylesheet"
+            />
         </xpath>
     </template>
     <record model="ir.actions.act_window" id='action_ir_attachment_add_url'>
