@@ -1,0 +1,15 @@
+.o_AttachmentBox_content {
+    text-align: center;
+    display: block;
+}
+.o_AttachmentList_partialListNonImages {
+    .o_Attachment_image {
+        cursor: pointer;
+    }
+    .o_Attachment_filename a {
+        color: #4c4c4c;
+    }
+}
+.o_Attachment_url_icon {
+    margin: 4px 2px 0px 4px;
+}

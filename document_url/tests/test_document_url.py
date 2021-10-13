@@ -27,3 +27,5 @@ class TestDocumentUrl(common.TransactionCase):
         ]
         attachment_added_count = self.env["ir.attachment"].search_count(domain)
         self.assertEqual(attachment_added_count, 1)
+        attachment = self.env["ir.attachment"].search(domain)
+        self.assertEqual(attachment.mimetype, "application/link")

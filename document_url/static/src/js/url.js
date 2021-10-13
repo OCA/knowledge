@@ -10,6 +10,7 @@ odoo.define("document_url", function (require) {
     "use strict";
 
     const AttachmentBox = require("mail/static/src/components/attachment_box/attachment_box.js");
+    const Attachment = require("mail/static/src/components/attachment/attachment.js");
     const {patch} = require("web.utils");
 
     patch(AttachmentBox, "document_url", {
@@ -28,6 +29,14 @@ odoo.define("document_url", function (require) {
         },
         _onAddedUrl() {
             this.trigger("reload");
+        },
+    });
+    patch(Attachment, "document_url", {
+        _onClickImage(ev) {
+            if (!this.attachment.isViewable) {
+                this._onClickDownload(ev);
+            }
+            this._super.apply(this, arguments);
         },
     });
 });
