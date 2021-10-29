@@ -27,4 +27,4 @@ class DocumentPageShowDiff(models.TransientModel):
             raise UserError(_("Select one or maximum two history revisions!"))
         return diff
 
-    diff = fields.Text(readonly=True, default=_get_diff)
+    diff = fields.Html(readonly=True, default=_get_diff)

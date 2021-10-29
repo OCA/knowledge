@@ -6,7 +6,7 @@
         <field name="name">document.page.history.tree</field>
         <field name="model">document.page.history</field>
         <field name="arch" type="xml">
-            <tree string="Document History">
+            <tree>
                 <field name="id" />
                 <field name="page_id" />
                 <field name="name" />
@@ -63,7 +63,7 @@
                                 name="content"
                                 widget="html"
                                 placeholder="e.g. Once upon a time..."
-                                options="{'safe': True}"
+                                options="{'safe': True, 'codeview': True}"
                             />
                         </page>
                         <page name="diff" string="Changes">

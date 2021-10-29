@@ -10,7 +10,7 @@ class DocumentPageCreateMenu(models.TransientModel):
     _name = "document.page.create.menu"
     _description = "Wizard Create Menu"
 
-    menu_name = fields.Char("Menu Name", required=True)
+    menu_name = fields.Char(required=True)
     menu_parent_id = fields.Many2one("ir.ui.menu", "Parent Menu", required=True)
 
     @api.model
@@ -33,9 +33,7 @@ class DocumentPageCreateMenu(models.TransientModel):
         page = obj_page.browse(page_id)
 
         data = self[0]
-        view_id = obj_model_data.sudo().get_object_reference(
-            "document_page", "view_wiki_menu_form"
-        )[1]
+        view_id = obj_model_data._xmlid_to_res_id("document_page.view_wiki_menu_form")
         value = {
             "name": "Document Page",
             "view_mode": "form,tree",

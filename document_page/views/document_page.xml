@@ -7,7 +7,7 @@
         <field name="field_parent">child_ids</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
-            <tree string="Document Page">
+            <tree>
                 <field name="name" />
                 <field name="content_uid" />
                 <field name="content_date" />
@@ -19,7 +19,7 @@
         <field name="name">document.page.list</field>
         <field name="model">document.page</field>
         <field name="arch" type="xml">
-            <tree string="Document Page">
+            <tree>
                 <field name="name" />
                 <field name="parent_id" />
                 <field name="company_id" groups="base.group_multi_company" />
@@ -55,7 +55,7 @@
                                 widget="html"
                                 placeholder="e.g. Once upon a time..."
                                 required="1"
-                                options="{'safe': True}"
+                                options="{'safe': True, 'codeview': True}"
                             />
                         </div>
                     </group>
