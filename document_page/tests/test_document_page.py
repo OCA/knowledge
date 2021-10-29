@@ -15,12 +15,12 @@ class TestDocumentPage(common.TransactionCase):
             {
                 "name": "Test Page 1",
                 "parent_id": self.category1.id,
-                "content": "Test content",
+                "content": "<p>Test content</p>",
             }
         )
-        self.assertEqual(page.content, "Test content")
+        self.assertEqual(page.content, "<p>Test content</p>")
         self.assertEqual(len(page.history_ids), 1)
-        page.content = "New content for Demo Page"
+        page.content = "<p>New content for Demo Page</p>"
         self.assertEqual(len(page.history_ids), 2)
 
     def test_category_template(self):

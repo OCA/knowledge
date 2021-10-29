@@ -4,7 +4,7 @@
 
 {
     "name": "Document Page",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "category": "Knowledge Management",
     "author": "OpenERP SA, Odoo Community Association (OCA)",
     "images": [
@@ -26,8 +26,12 @@
         "views/document_page.xml",
         "views/document_page_category.xml",
         "views/document_page_history.xml",
-        "views/document_page_assets.xml",
         "views/report_document_page.xml",
     ],
     "demo": ["demo/document_page.xml"],
+    "assets": {
+        "web.assets_backend": [
+            "document_page/static/src/scss/document_page.scss",
+        ],
+    },
 }
