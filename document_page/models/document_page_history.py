@@ -16,8 +16,8 @@ class DocumentPageHistory(models.Model):
     page_id = fields.Many2one("document.page", "Page", ondelete="cascade")
     name = fields.Char(index=True)
     summary = fields.Char(index=True)
-    content = fields.Text()
-    diff = fields.Text(compute="_compute_diff")
+    content = fields.Html(sanitize=False)
+    diff = fields.Html(compute="_compute_diff")
 
     company_id = fields.Many2one(
         "res.company",
