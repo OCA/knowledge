@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     Copyright 2021 Tecnativa - Víctor Martínez
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates xml:space="preserve">
+    <t t-inherit="mail.AttachmentBox" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('o_AttachmentBox_buttonAdd')]" position="after">
+            <button
+                type="button"
+                class="o_add_url_button btn btn-link"
+                t-on-click="_onAddUrl"
+            >
+                    <i class="fa fa-plus-square" />
+                    Add URL
+            </button>
+        </xpath>
+    </t>
+    <t t-inherit="mail.Attachment" t-inherit-mode="extension" owl="1">
+        <xpath
+            expr="//t[@t-if='attachment']/t/div[1][hasclass('o_Attachment_details')]//div[hasclass('o_Attachment_filename')]/t"
+            position="replace"
+        >
+            <a t-att-href="attachmentUrl" target="new">
+                <t t-esc="attachment.displayName" />
+            </a>
+        </xpath>
+        <xpath
+            expr="//div[hasclass('o_Attachment_asideItemDownload')]"
+            position="attributes"
+        >
+            <attribute name="t-if">attachment.mimetype != 'application/link'</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('o_Attachment_image')]" position="attributes">
+            <attribute name="t-if">attachment.mimetype != 'application/link'</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('o_Attachment_image')]" position="before">
+            <a
+                class="o_Attachment_url_icon"
+                t-att-href="attachmentUrl"
+                target="new"
+                t-if="attachment.mimetype=='application/link'"
+            >
+                <i class="fa fa-link fa-2x" />
+            </a>
+        </xpath>
+    </t>
+</templates>
