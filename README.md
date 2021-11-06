@@ -20,6 +20,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [document_page](document_page/) | 14.0.1.0.0 |  | Document Page
+[document_url](document_url/) | 14.0.1.0.0 |  | URL attachment
 [knowledge](knowledge/) | 14.0.1.0.0 |  | Knowledge
 
 [//]: # (end addons)
