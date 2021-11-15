@@ -10,10 +10,11 @@ from odoo.tools.misc import html_escape
 _logger = logging.getLogger(__name__)
 
 try:
-    from jinja2.sandbox import SandboxedEnvironment
+    import re
+
     from jinja2 import Undefined
     from jinja2.lexer import name_re as old_name_re
-    import re
+    from jinja2.sandbox import SandboxedEnvironment
 
     name_re = re.compile(u"^%s$" % old_name_re.pattern)
 
