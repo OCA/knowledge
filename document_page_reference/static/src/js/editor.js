@@ -1,4 +1,4 @@
-odoo.define("document_page_reference.backend", function(require) {
+odoo.define("document_page_reference.backend", function (require) {
     "use strict";
 
     var field_registry = require("web.field_registry");
@@ -7,7 +7,7 @@ odoo.define("document_page_reference.backend", function(require) {
         events: _.extend({}, FieldTextHtmlSimple.prototype.events, {
             "click .oe_direct_line": "_onClickDirectLink",
         }),
-        _onClickDirectLink: function(event) {
+        _onClickDirectLink: function (event) {
             var self = this;
             event.preventDefault();
             event.stopPropagation();
@@ -24,7 +24,7 @@ odoo.define("document_page_reference.backend", function(require) {
                 method: "get_formview_action",
                 args: [[parseInt(id, 10)]],
                 context: context,
-            }).then(function(action) {
+            }).then(function (action) {
                 self.trigger_up("do_action", {action: action});
             });
         },
