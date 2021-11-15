@@ -16,7 +16,7 @@ try:
     from jinja2.lexer import name_re as old_name_re
     from jinja2.sandbox import SandboxedEnvironment
 
-    name_re = re.compile(u"^%s$" % old_name_re.pattern)
+    name_re = re.compile("^%s$" % old_name_re.pattern)
 
     class Context(SandboxedEnvironment.context_class):
         def resolve(self, key):
