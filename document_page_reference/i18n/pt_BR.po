@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* document_page_reference
+# 	* document_page_reference
 #
 msgid ""
 msgstr ""
@@ -30,13 +30,13 @@ msgid "Reference"
 msgstr ""
 
 #. module: document_page_reference
-#: code:addons/document_page_reference/models/document_page.py:65
+#: code:addons/document_page_reference/models/document_page.py:68
 #, python-format
 msgid "Reference is not valid"
 msgstr ""
 
 #. module: document_page_reference
-#: code:addons/document_page_reference/models/document_page.py:70
+#: code:addons/document_page_reference/models/document_page.py:73
 #, python-format
 msgid "Reference must be unique"
 msgstr ""
