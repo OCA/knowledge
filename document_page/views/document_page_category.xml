@@ -42,6 +42,7 @@
         <field name="model">document.page</field>
         <field name="arch" type="xml">
             <tree string="Categories">
+                <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="parent_id"/>
                 <field name="create_uid" invisible="1"/>
