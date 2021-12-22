@@ -11,7 +11,11 @@ class DocumentPage(models.Model):
     _name = "document.page"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Document Page"
-    _order = 'name'
+    _parent_name = "parent_id"
+    _parent_store = True
+    _rec_name = 'complete_name'
+    _order = 'type, sequence, complete_name'
+    
 
     name = fields.Char('Title', required=True)
     type = fields.Selection(
@@ -107,6 +111,24 @@ class DocumentPage(models.Model):
         help='Use it to link resources univocally',
         compute='_compute_backend_url',
     )
+    
+    sequence = fields.Integer(
+            string='Sequence', 
+            default=10, 
+            help="Used to organise the category.")
+
+    complete_name = fields.Char(
+        'Complete Name', compute='_compute_complete_name',
+        store=True)
+
+
+    @api.depends('name', 'parent_id.complete_name')
+    def _compute_complete_name(self):
+        for category in self:
+            if category.parent_id:
+                category.complete_name = '%s / %s' % (category.parent_id.complete_name, category.name)
+            else:
+                category.complete_name = category.name
 
     @api.depends('menu_id', 'parent_id.menu_id')
     def _compute_backend_url(self):
