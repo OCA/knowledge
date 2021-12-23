@@ -3,7 +3,7 @@
 
 
 {
-    'name': 'Document Page',
+    'name': 'Documentation Page',
     'version': '12.0.1.2.0',
     'category': 'Knowledge Management',
     'author': 'OpenERP SA, Odoo Community Association (OCA)',
