@@ -117,9 +117,14 @@ class DocumentPage(models.Model):
             default=10, 
             help="Used to organise the category.")
 
+    parent_path = fields.Char(index=True)
     complete_name = fields.Char(
         'Complete Name', compute='_compute_complete_name',
         store=True)
+    
+    image = fields.Binary(
+        "Image", attachment=True,
+    )
 
 
     @api.depends('name', 'parent_id.complete_name')
