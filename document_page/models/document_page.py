@@ -18,7 +18,6 @@ class DocumentPage(models.Model):
     name = fields.Char("Title", required=True)
     type = fields.Selection(
         [("content", "Content"), ("category", "Category")],
-        "Type",
         help="Page type",
         default="content",
     )
@@ -28,7 +27,6 @@ class DocumentPage(models.Model):
     )
     child_ids = fields.One2many("document.page", "parent_id", "Children")
     content = fields.Text(
-        "Content",
         compute="_compute_content",
         inverse="_inverse_content",
         search="_search_content",
@@ -49,7 +47,6 @@ class DocumentPage(models.Model):
     )
 
     template = fields.Html(
-        "Template",
         help="Template that will be used as a content template "
         "for all new page of this category.",
     )
