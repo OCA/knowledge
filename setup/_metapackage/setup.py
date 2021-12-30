@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-document_page',
+        'odoo14-addon-document_page_project',
         'odoo14-addon-document_url',
         'odoo14-addon-knowledge',
     ],
