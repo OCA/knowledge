@@ -45,6 +45,11 @@ msgid "Activity State"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
@@ -227,6 +232,11 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
@@ -362,6 +372,11 @@ msgstr ""
 #, fuzzy
 msgid "Messages"
 msgstr "Pagine"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
