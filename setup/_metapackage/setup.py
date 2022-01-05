@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo14-addon-document_page',
         'odoo14-addon-document_page_approval',
         'odoo14-addon-document_page_project',
+        'odoo14-addon-document_page_reference',
         'odoo14-addon-document_url',
         'odoo14-addon-knowledge',
     ],
