@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-document_page',
         'odoo14-addon-document_page_approval',
+        'odoo14-addon-document_page_group',
         'odoo14-addon-document_page_project',
         'odoo14-addon-document_page_reference',
         'odoo14-addon-document_url',
