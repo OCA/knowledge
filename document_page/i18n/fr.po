@@ -537,6 +537,7 @@ msgstr "Il n'y a pas de différence entre ces révisions."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr "Titre"
 
