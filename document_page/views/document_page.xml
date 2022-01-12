@@ -149,6 +149,7 @@
                 <field name="parent_id" />
                 <field name="create_uid" />
                 <field name="content_uid" />
+                <field name="name" string="Title" />
                 <group expand="0" string="Group By...">
                     <filter
                         name="group_by_category"
