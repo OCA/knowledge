@@ -19,7 +19,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[document_page](document_page/) | 14.0.1.0.0 |  | Document Page
+[document_page](document_page/) | 14.0.1.0.1 |  | Document Page
 [document_page_approval](document_page_approval/) | 14.0.1.0.0 |  | Document Page Approval
 [document_page_group](document_page_group/) | 14.0.1.0.0 |  | Define access groups on documents
 [document_page_project](document_page_project/) | 14.0.1.0.1 |  | This module links document pages to projects
