@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [document_page_group](document_page_group/) | 14.0.1.0.0 |  | Define access groups on documents
 [document_page_project](document_page_project/) | 14.0.1.0.1 |  | This module links document pages to projects
 [document_page_reference](document_page_reference/) | 14.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
-[document_url](document_url/) | 14.0.1.0.0 |  | URL attachment
+[document_url](document_url/) | 14.0.1.1.0 |  | URL attachment
 [knowledge](knowledge/) | 14.0.1.0.0 |  | Knowledge
 
 [//]: # (end addons)
