@@ -10,6 +10,7 @@
             <link
                 href="/document_url/static/src/scss/document_url.scss"
                 rel="stylesheet"
+                type="text/scss"
             />
         </xpath>
     </template>
