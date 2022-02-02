@@ -234,8 +234,3 @@ class DocumentPage(models.Model):
         res = super().unlink()
         menus.unlink()
         return res
-
-    @api.multi 
-    def open_childs(self):
-        self.ensure_one()
-        action = self.env.ref('document_page.')

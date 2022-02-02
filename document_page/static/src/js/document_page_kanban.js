@@ -24,9 +24,5 @@ odoo.define('document_page.update_kanban', function (require) {
                 this._super.apply(this, arguments);
             }
         },
-
-
-
-
     });
 });
