@@ -125,7 +125,17 @@ class DocumentPage(models.Model):
     image = fields.Binary(
         "Image", attachment=True,
     )
+    
+    color = fields.Integer(string='Color Index')
 
+
+    @api.multi 
+    def write(self, vals):
+        child_ids = self
+        if vals.get('color', False) and len(vals) ==1:
+            child_ids = self.search([('type', '=', 'category'), ('parent_id', 'child_of', self.ids)])
+        res = super(DocumentPage, child_ids).write(vals)
+        return res
 
     @api.depends('name', 'parent_id.complete_name')
     def _compute_complete_name(self):
@@ -224,3 +234,8 @@ class DocumentPage(models.Model):
         res = super().unlink()
         menus.unlink()
         return res
+
+    @api.multi 
+    def open_childs(self):
+        self.ensure_one()
+        action = self.env.ref('document_page.')
