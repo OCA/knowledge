@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- Create Index Form view  -->
@@ -29,13 +29,14 @@
 
     <!-- Create Index Action Window  -->
     <act_window
-            id="action_view_wiki_show_diff_values"
-            key2="client_action_multi"
-            name="Difference"
-            res_model="wizard.document.page.history.show_diff"
-            src_model="document.page.history"
-            view_mode="form"
-            target="new"
-            view_type="form"/>
+        id="action_view_wiki_show_diff_values"
+        key2="client_action_multi"
+        name="Difference"
+        res_model="wizard.document.page.history.show_diff"
+        src_model="document.page.history"
+        view_mode="form"
+        target="new"
+        view_type="form"
+    />
 
 </odoo>

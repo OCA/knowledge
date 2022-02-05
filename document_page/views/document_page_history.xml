@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <!-- History Tree view -->
@@ -7,12 +7,12 @@
         <field name="model">document.page.history</field>
         <field name="arch" type="xml">
             <tree string="Document History">
-                <field name="id"/>
-                <field name="page_id"/>
-                <field name="name"/>
-                <field name="summary"/>
-                <field name="create_uid"/>
-                <field name="create_date"/>
+                <field name="id" />
+                <field name="page_id" />
+                <field name="name" />
+                <field name="summary" />
+                <field name="create_uid" />
+                <field name="create_date" />
             </tree>
         </field>
     </record>
@@ -25,9 +25,13 @@
             <search string="Document Page History">
                 <field name="page_id" required="True" />
                 <field name="content" required="True" />
-                <field name="create_uid"/>
+                <field name="create_uid" />
                 <group expand="0" string="Group By...">
-                    <filter name="group_by_author" string="Author" context="{'group_by':'create_uid'}" />
+                    <filter
+                        name="group_by_author"
+                        string="Author"
+                        context="{'group_by':'create_uid'}"
+                    />
                 </group>
             </search>
         </field>
@@ -40,23 +44,35 @@
         <field name="arch" type="xml">
             <form string="Document Page History">
                 <sheet>
-                    <h1><field name="page_id" readonly="1"/></h1>
+                    <h1><field name="page_id" readonly="1" /></h1>
                     <group>
                         <group>
-                            <field name="create_uid" readonly="1"/>
-                            <field name="create_date" readonly="1"/>
+                            <field name="create_uid" readonly="1" />
+                            <field name="create_date" readonly="1" />
                         </group>
                     </group>
                     <group>
-                        <field name="name" placeholder="Rev 01"/>
-                        <field name="summary" placeholder="eg: Changed ... for ..."/>
+                        <field name="name" placeholder="Rev 01" />
+                        <field
+                            name="summary"
+                            placeholder="eg: Changed ... for ..."
+                        />
                     </group>
                     <notebook>
                         <page name="content" string="Content">
-                            <field name="content" widget="html" placeholder="e.g. Once upon a time..." options="{'safe': True}"/>
+                            <field
+                                name="content"
+                                widget="html"
+                                placeholder="e.g. Once upon a time..."
+                                options="{'safe': True}"
+                            />
                         </page>
                         <page name="diff" string="Changes">
-                            <field name="diff" widget="html" style="overflow-x: scroll" />
+                            <field
+                                name="diff"
+                                widget="html"
+                                style="overflow-x: scroll"
+                            />
                         </page>
                     </notebook>
                 </sheet>
@@ -72,19 +88,23 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_page_history"
+    <menuitem
+        id="menu_page_history"
         parent="menu_wiki"
         name="Pages history"
         action="action_history"
         sequence="30"
-        groups="base.group_no_one" />
+        groups="base.group_no_one"
+    />
 
-    <act_window id="action_related_page_history"
+    <act_window
+        id="action_related_page_history"
         context="{'search_default_page_id': [active_id], 'default_page_id': active_id}"
         domain="[('page_id','=',active_id)]"
         name="Page History"
         res_model="document.page.history"
-        src_model="document.page"/>
+        src_model="document.page"
+    />
 
 
 </odoo>
