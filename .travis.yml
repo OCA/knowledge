@@ -20,8 +20,8 @@ env:
     - secure: "k8/ebCIiOPGEIcL4Pzji2tanrjAzP5bqY0dSOmZwdNVNfncCrQREYbQgPhuTJHKuEX5E76kCuJJE70x0PEFhtaJt6K8KLvIF3B7/FJNUdXy6cjOKgBNfJuBSJRmkRM8mfxS2K+mqi4R3OEy4R2v4X/syK6F7vKxNhcRmindDfY8="
 
   matrix:
-  - LINT_CHECK="1" 
-  - TRANSIFEX="1" 
+  - LINT_CHECK="1"
+  - TRANSIFEX="1"
   - TESTS="1" ODOO_REPO="OCA/OCB"
   - TESTS="1" ODOO_REPO="odoo/odoo"
 
