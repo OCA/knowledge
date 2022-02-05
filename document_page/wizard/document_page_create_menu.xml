@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- Create Menu From view -->
@@ -12,14 +12,14 @@
                     <field name="menu_parent_id" />
                 </group>
                 <footer>
-                    <button name="document_page_menu_create"
-                            string="Create Menu"
-                            type="object"
-                            class="oe_highlight" />
+                    <button
+                        name="document_page_menu_create"
+                        string="Create Menu"
+                        type="object"
+                        class="oe_highlight"
+                    />
                     or
-                    <button string="Cancel"
-                            class="oe_link"
-                            special="cancel" />
+                    <button string="Cancel" class="oe_link" special="cancel" />
                 </footer>
             </form>
         </field>
@@ -32,8 +32,10 @@
         <field name="res_model">document.page.create.menu</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="binding_model_id"
-            ref="document_page.model_document_page"/>
+        <field
+            name="binding_model_id"
+            ref="document_page.model_document_page"
+        />
     </record>
 
 </odoo>
