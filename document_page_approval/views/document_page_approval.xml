@@ -71,6 +71,7 @@
     <record id="wiki_form_inherit" model="ir.ui.view">
         <field name="name">document.page.form</field>
         <field name="model">document.page</field>
+        <field name="priority" eval="100"></field>
         <field name="inherit_id" ref="document_page.view_wiki_form" />
         <field name="arch" type="xml">
 
