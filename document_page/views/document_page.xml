@@ -40,18 +40,8 @@
             <form string="Document Page">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button
-                            name="toggle_active"
-                            type="object"
-                            groups="document_page.group_document_manager"
-                            class="oe_stat_button"
-                            icon="fa-archive"
-                        >
-                            <field
-                                name="active"
-                                widget="boolean_button"
-                                options="{'terminology': 'archive'}"
-                            />
+                        <button name="toggle_active" type="object" groups="document_page.group_document_manager" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{'terminology': 'archive'}" />
                         </button>
                     </div>
                     <field name="type" invisible="1" />
@@ -60,50 +50,22 @@
                     </h1>
                     <group>
                         <div>
-                            <field
-                                name="content"
-                                widget="html"
-                                placeholder="e.g. Once upon a time..."
-                                required="1"
-                                options="{'safe': True}"
-                            />
+                            <field name="content" widget="html" placeholder="e.g. Once upon a time..." required="1" options="{'safe': True}" />
                         </div>
                     </group>
                     <notebook>
                         <page name="info" string="Information">
                             <group>
                                 <group>
-                                    <field
-                                        name="parent_id"
-                                        string="Category"
-                                        required="True"
-                                        context="{'default_type':'category'}"
-                                    />
-                                    <field
-                                        name="company_id"
-                                        groups="base.group_multi_company"
-                                    />
+                                    <field name="parent_id" string="Category" required="True" context="{'default_type':'category'}" />
+                                    <field name="company_id" groups="base.group_multi_company" />
                                     <field name="content_uid" />
                                     <field name="content_date" />
-                                    <field
-                                        name="menu_id"
-                                        readonly="1"
-                                        attrs="{'invisible': [('menu_id','=',False)]}"
-                                    />
+                                    <field name="menu_id" readonly="1" attrs="{'invisible': [('menu_id','=',False)]}" />
                                 </group>
                                 <group string="Revision" class="oe_edit_only">
-                                    <field
-                                        name="draft_name"
-                                        placeholder="Rev 01"
-                                        required="True"
-                                        class="oe_edit_only"
-                                    />
-                                    <field
-                                        name="draft_summary"
-                                        placeholder="eg: Changed ... for ..."
-                                        required="True"
-                                        class="oe_edit_only"
-                                    />
+                                    <field name="draft_name" placeholder="Rev 01" required="True" class="oe_edit_only" />
+                                    <field name="draft_summary" placeholder="eg: Changed ... for ..." required="True" class="oe_edit_only" />
                                 </group>
                             </group>
                         </page>
@@ -121,10 +83,7 @@
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field
-                        name="message_follower_ids"
-                        widget="mail_followers"
-                    />
+                    <field name="message_follower_ids" widget="mail_followers" />
                     <field name="activity_ids" widget="mail_activity" />
                     <field name="message_ids" widget="mail_thread" />
                 </div>
@@ -141,13 +100,7 @@
                 <h1>
                     <field name="name" placeholder="Name" />
                 </h1>
-                <field
-                    name="content"
-                    widget="html"
-                    class="oe_view_only"
-                    required="1"
-                    options='{"safe": True}'
-                />
+                <field name="content" widget="html" class="oe_view_only" required="1" options='{"safe": True}' />
             </form>
         </field>
     </record>
@@ -158,30 +111,14 @@
         <field name="model">document.page</field>
         <field name="arch" type="xml">
             <search string="Document Page">
-                <field
-                    name="name"
-                    string="Content"
-                    filter_domain="['|', ('name','ilike',self), ('content','ilike',self)]"
-                />
+                <field name="name" string="Content" filter_domain="['|', ('name','ilike',self), ('content','ilike',self)]" />
                 <field name="parent_id" />
                 <field name="create_uid" />
                 <field name="content_uid" />
                 <group expand="0" string="Group By...">
-                    <filter
-                        name="group_by_category"
-                        string="Category"
-                        context="{'group_by':'parent_id'}"
-                    />
-                    <filter
-                        name="group_by_author"
-                        string="Author"
-                        context="{'group_by':'create_uid'}"
-                    />
-                    <filter
-                        name="group_by_last_contributor"
-                        string="Last Contributor"
-                        context="{'group_by':'content_uid'}"
-                    />
+                    <filter name="group_by_category" string="Category" context="{'group_by':'parent_id'}" />
+                    <filter name="group_by_author" string="Author" context="{'group_by':'create_uid'}" />
+                    <filter name="group_by_last_contributor" string="Last Contributor" context="{'group_by':'content_uid'}" />
                 </group>
             </search>
         </field>
@@ -220,31 +157,12 @@
     </record>
 
 
-    <menuitem
-        id="menu_wiki"
-        name="Pages"
-        parent="knowledge.menu_document_root"
-        sequence="10"
-    />
+    <menuitem id="menu_wiki" name="Pages" parent="knowledge.menu_document_root" sequence="10" />
 
 
-    <menuitem
-        id="menu_page"
-        name="Pages"
-        parent="menu_wiki"
-        action="action_page"
-        sequence="20"
-    />
+    <menuitem id="menu_page" name="Pages" parent="menu_wiki" action="action_page" sequence="20" />
 
 
-    <act_window
-        id="action_related_page_create_menu"
-        name="Create Menu"
-        res_model="document.page.create.menu"
-        target="new"
-        view_type="form"
-        view_mode="form"
-        src_model="document.page"
-    />
+    <act_window id="action_related_page_create_menu" name="Create Menu" res_model="document.page.create.menu" target="new" view_type="form" view_mode="form" src_model="document.page" />
 
 </odoo>
