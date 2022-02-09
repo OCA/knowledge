@@ -36,9 +36,23 @@
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
                     <field name="message_ids" widget="mail_thread" />
                 </div>
             </form>
+        </field>
+    </record>
+
+
+    <record id="view_browse_top_document_filter" model="ir.ui.view">
+        <field name="name">document.page.category.search</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="view_wiki_filter" />
+        <field name="arch" type="xml">
+            <field name="content_uid" position="after">
+                <separator />
+                <filter string="Top Level Ressources" name="no_parent_id" domain="[('parent_id', '=', False)]" />
+            </field>
         </field>
     </record>
 
@@ -49,6 +63,7 @@
         <field name="context">{'default_type': 'content', 'search_default_no_parent_id':1, }</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_browse_top_document_filter" />
     </record>
 
     <record id="action_browse_all_content" model="ir.actions.act_window">
@@ -58,6 +73,7 @@
         <field name="context">{'default_type': 'content', 'search_default_parent_id': [active_id] }</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_wiki_filter" />
     </record>
 
     <record id="view_browse_content_kanban" model="ir.ui.view">
@@ -177,17 +193,6 @@
         </field>
     </record>
 
-    <record id="view_browse_top_document_filter" model="ir.ui.view">
-        <field name="name">document.page.category.search</field>
-        <field name="model">document.page</field>
-        <field name="inherit_id" ref="view_wiki_filter" />
-        <field name="arch" type="xml">
-            <field name="content_uid" position="after">
-                <separator />
-                <filter string="Top Level Ressources" name="no_parent_id" domain="[('parent_id', '=', False)]" />
-            </field>
-        </field>
-    </record>
 
 
     <!-- Category Action -->
@@ -216,15 +221,15 @@
         <field name="act_window_id" ref="action_category" />
     </record>
 
-    <record id="action_browse_top_content" model="ir.actions.act_window">
+    <!-- <record id="action_browse_top_content" model="ir.actions.act_window">
         <field name="view_id" ref="view_browse_content_kanban" />
         <field name="search_view_id" ref="view_browse_top_document_filter" />
-    </record>
+    </record> -->
 
-    <record id="action_browse_all_content" model="ir.actions.act_window">
+    <!-- <record id="action_browse_all_content" model="ir.actions.act_window">
         <field name="view_id" ref="view_browse_content_kanban" />
         <field name="search_view_id" ref="view_wiki_filter" />
-    </record>
+    </record> -->
 
 
     <menuitem id="menu_category" parent="menu_wiki" name="Categories" action="action_category" sequence="20" />
