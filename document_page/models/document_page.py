@@ -119,7 +119,7 @@ class DocumentPage(models.Model):
         child_ids = self
         if vals.get("color", False) and len(vals) == 1:
             child_ids = self.search(
-                [("type", "=", "category"), 
+                [("type", "=", "category"),
                  ("parent_id", "child_of", self.ids)]
             )
         res = super(DocumentPage, child_ids).write(vals)
@@ -185,8 +185,8 @@ class DocumentPage(models.Model):
     @api.multi
     def _inverse_content(self):
         for rec in self:
-            if rec.type == "content" and \
-                rec.content != rec.history_head.content:
+            if rec.type == "content" \
+                    and rec.content != rec.history_head.content:
                 rec._create_history(
                     {
                         "name": rec.draft_name,

@@ -32,14 +32,14 @@ class TestDocumentPage(common.TransactionCase):
 
     def test_page_history_diff(self):
         page = self.page_obj.create({
-            "name": "Test Page 3", 
+            "name": "Test Page 3",
             "content": "Test content"})
         page.content = "New content"
         self.assertIsNotNone(page.history_ids[0].diff)
 
     def test_page_link(self):
         page = self.page_obj.create({
-            "name": "Test Page 3", 
+            "name": "Test Page 3",
             "content": "Test content"})
         self.assertEqual(
             page.backend_url,
