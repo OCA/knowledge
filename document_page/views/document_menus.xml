@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+	<menuitem id="menu_main_wiki"
+              name="Wiki"
+              action="action_category_navigation"
+              parent="knowledge.menu_document_root"
+              sequence="1"/>
+
+    <menuitem id="menu_wiki"
+              name="Pages"
+              parent="knowledge.menu_document_root"
+              sequence="10"/>
+
+    <menuitem id="menu_page"
+              name="Pages"
+              parent="menu_wiki"
+              action="action_page"
+              sequence="20"/>
+
+	<menuitem id="menu_category" 
+			  parent="menu_wiki"
+			  name="Categories" 
+			  action="action_category" 
+			  sequence="20" />
+
+</odoo>
