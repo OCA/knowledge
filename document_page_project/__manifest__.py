@@ -4,8 +4,7 @@
 {
     "name": "Document Page Project",
     "summary": "This module links document pages to projects",
-    "version": "14.0.1.0.1",
-    "development_status": "Production/Stable",
+    "version": "15.0.1.0.0",
     "category": "Project",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
