@@ -8,3 +8,5 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Víctor Martínez
+
+* Florent THOMAS <florent.thomas@mind-and-go.com>
