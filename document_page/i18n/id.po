@@ -56,6 +56,13 @@ msgid "Backend URL"
 msgstr ""
 
 #. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_browse_all_content
+#: model:ir.actions.act_window,name:document_page.action_browse_top_content
+#: model:ir.ui.menu,name:document_page.menu_browse_content
+msgid "Browse Wiki Content"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "Batalkan"
@@ -98,9 +105,19 @@ msgid "Close"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__color
+msgid "Color Index"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__company_id
 msgid "Company"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__complete_name
+msgid "Complete Name"
 msgstr ""
 
 #. module: document_page
@@ -201,6 +218,11 @@ msgid "Documents"
 msgstr ""
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_content_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
 msgid "Editor"
 msgstr ""
@@ -265,6 +287,11 @@ msgstr ""
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__image
+msgid "Image"
 msgstr ""
 
 #. module: document_page
@@ -445,6 +472,11 @@ msgid "Parent Menu"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: document_page
 #: selection:document.page,activity_state:0
 msgid "Planned"
 msgstr ""
@@ -469,6 +501,11 @@ msgstr ""
 #: code:addons/document_page/wizard/document_page_show_diff.py:29
 #, python-format
 msgid "Select one or maximum two history revisions!"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__sequence
+msgid "Sequence"
 msgstr ""
 
 #. module: document_page
@@ -516,6 +553,11 @@ msgid "Today"
 msgstr ""
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
+msgid "Top Level Ressources"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
 msgid "Type"
 msgstr ""
@@ -536,12 +578,17 @@ msgid "Use it to link resources univocally"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__sequence
+msgid "Used to organise the category."
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr ""
 
 #. module: document_page
-#: code:addons/document_page/models/document_page.py:129
+#: code:addons/document_page/models/document_page.py:156
 #, python-format
 msgid "You cannot create recursive categories."
 msgstr ""

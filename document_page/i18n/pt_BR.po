@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
 "PO-Revision-Date: 2021-03-14 23:46+0000\n"
 "Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,6 +58,13 @@ msgid "Backend URL"
 msgstr "Backend URL"
 
 #. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_browse_all_content
+#: model:ir.actions.act_window,name:document_page.action_browse_top_content
+#: model:ir.ui.menu,name:document_page.menu_browse_content
+msgid "Browse Wiki Content"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "Cancelar"
@@ -100,10 +107,20 @@ msgid "Close"
 msgstr "Fechar"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__color
+msgid "Color Index"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__company_id
 msgid "Company"
 msgstr "Empresa"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__complete_name
+msgid "Complete Name"
+msgstr ""
 
 #. module: document_page
 #: selection:document.page,type:0
@@ -203,6 +220,11 @@ msgid "Documents"
 msgstr "Documentos"
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_content_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
 msgid "Editor"
 msgstr "Editor"
@@ -268,6 +290,11 @@ msgstr "Se marcado, algumas mensagens tem erro de entrega."
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
 msgstr "Se definido, a página é acessível apenas a partir desta empresa"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__image
+msgid "Image"
+msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -447,6 +474,11 @@ msgid "Parent Menu"
 msgstr "Menu Superior(pai)"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: document_page
 #: selection:document.page,activity_state:0
 msgid "Planned"
 msgstr "Planejado"
@@ -472,6 +504,11 @@ msgstr "Revisão"
 #, python-format
 msgid "Select one or maximum two history revisions!"
 msgstr "Selecione uma ou no máxima de duas revisões de história!"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__sequence
+msgid "Sequence"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_state
@@ -524,6 +561,11 @@ msgid "Today"
 msgstr "Hoje"
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
+msgid "Top Level Ressources"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
 msgid "Type"
 msgstr "Tipo"
@@ -544,12 +586,17 @@ msgid "Use it to link resources univocally"
 msgstr "Use-o para vincular recursos univocamente"
 
 #. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__sequence
+msgid "Used to organise the category."
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Assistente para Criação de Menu"
 
 #. module: document_page
-#: code:addons/document_page/models/document_page.py:129
+#: code:addons/document_page/models/document_page.py:156
 #, python-format
 msgid "You cannot create recursive categories."
 msgstr "Erro! Não é possível criar categorias recursivas."
