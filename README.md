@@ -32,7 +32,7 @@ addon | version | maintainers | summary
 [document_page_project](document_page_project/) | 13.0.1.0.1 |  | This module links document pages to projects
 [document_page_reference](document_page_reference/) | 13.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
 [document_url](document_url/) | 13.0.1.0.1 |  | URL attachment
-[knowledge](knowledge/) | 13.0.1.0.1 |  | Knowledge
+[knowledge](knowledge/) | 13.0.1.1.0 |  | Knowledge
 
 [//]: # (end addons)
 
