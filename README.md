@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [document_page_portal](document_page_portal/) | 13.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module enables document page portal
 [document_page_project](document_page_project/) | 13.0.1.0.1 |  | This module links document pages to projects
 [document_page_reference](document_page_reference/) | 13.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
+[document_page_tag](document_page_tag/) | 13.0.1.0.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
 [document_url](document_url/) | 13.0.1.0.1 |  | URL attachment
 [knowledge](knowledge/) | 13.0.1.1.0 |  | Knowledge
 
