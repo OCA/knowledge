@@ -9,13 +9,11 @@
     "category": "Knowledge Management",
     "summary": "Allows you to assign tags or keywords to pages and search for "
     "them afterwards",
-    "depends": [
-        'document_page',
-    ],
+    "depends": ["document_page",],
     "data": [
         "views/document_page_tag.xml",
         "views/document_page.xml",
-        'security/ir.model.access.csv',
+        "security/ir.model.access.csv",
     ],
     "installable": True,
 }
