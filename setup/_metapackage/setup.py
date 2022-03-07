@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo13-addon-document_page_portal',
         'odoo13-addon-document_page_project',
         'odoo13-addon-document_page_reference',
+        'odoo13-addon-document_page_tag',
         'odoo13-addon-document_url',
         'odoo13-addon-knowledge',
     ],
