@@ -5,8 +5,12 @@
         <field name="model">document.page.tag</field>
         <field name="arch" type="xml">
             <search string="Document Tag Search">
-                <filter string="Archived" name="inactive" domain="[('active','=',False)]" />
-                <separator/>
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active','=',False)]"
+                />
+                <separator />
                 <field name="name" filter_domain="[('name', 'ilike', self)]" />
             </search>
         </field>
@@ -19,14 +23,23 @@
             <form string="Tag">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-check">
-                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;active&quot;}" />
+                        <button
+                            name="toggle_active"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-check"
+                        >
+                            <field
+                                name="active"
+                                widget="boolean_button"
+                                options="{&quot;terminology&quot;: &quot;active&quot;}"
+                            />
                         </button>
                     </div>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" />
                         <h1>
-                            <field name="name" required="1"/>
+                            <field name="name" required="1" />
                         </h1>
                     </div>
                     <group name="main">
@@ -55,11 +68,12 @@
         <field name="view_type">form</field>
     </record>
 
-    <menuitem 
-        id="document_page_tag_menu" 
-        name="Tags" 
-        parent="knowledge.menu_document_configuration" 
-        action="document_page_tag_action" 
-        sequence="45" />
+    <menuitem
+        id="document_page_tag_menu"
+        name="Tags"
+        parent="knowledge.menu_document_configuration"
+        action="document_page_tag_action"
+        sequence="45"
+    />
 
 </odoo>
