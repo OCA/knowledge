@@ -11,7 +11,8 @@ class TestDocumentPageTag(TransactionCase):
         testtag = self.env["document.page.tag"].name_create("test")
         # check we're charitable on duplicates
         self.assertEqual(
-            testtag, self.env["document.page.tag"].name_create("Test"),
+            testtag,
+            self.env["document.page.tag"].name_create("Test"),
         )
         # check we can't create nonunique tags
         with self.assertRaises(IntegrityError):
