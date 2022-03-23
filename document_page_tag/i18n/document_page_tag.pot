@@ -110,5 +110,5 @@ msgstr ""
 
 #. module: document_page_tag
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
-msgid "Tags must me unique"
+msgid "Tags must be unique"
 msgstr ""
