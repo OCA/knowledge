@@ -12,7 +12,7 @@ class DocumentPageTag(models.Model):
     active = fields.Boolean(default=True)
 
     _sql_constraints = [
-        ("unique_name", "unique(name)", "Tags must me unique"),
+        ("unique_name", "unique(name)", "Tags must be unique"),
     ]
 
     @api.model
