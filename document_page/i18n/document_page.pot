@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -67,7 +67,6 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
-#: model_terms:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
 msgstr ""
 
@@ -171,18 +170,11 @@ msgid "Document Category"
 msgstr ""
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_tree
-msgid "Document History"
-msgstr ""
-
-#. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
 #: model:ir.model,name:document_page.model_document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
 msgstr ""
 
@@ -214,11 +206,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -238,6 +225,11 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: document_page
@@ -522,6 +514,7 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr ""
 
