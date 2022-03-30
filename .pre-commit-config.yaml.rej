@@ -1,0 +1,4 @@
+diff a/.pre-commit-config.yaml b/.pre-commit-config.yaml	(rejected hunks)
+@@ -108,2 +108 @@ repos:
+       - id: setuptools-odoo-make-default
+-
