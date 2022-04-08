@@ -9,56 +9,57 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2018-04-17 00:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2022-04-08 12:05+0000\n"
+"Last-Translator: Ediz Duman <neps1192@gmail.com>\n"
 "Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Eylem Gerekli"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__active
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktiviteler"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Aktivite İstisna Dekorasyonu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Aktivite Durumu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Ek Sayısı"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
-msgstr ""
+msgstr "Yazar"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
 msgid "Backend URL"
-msgstr ""
+msgstr "Arka uç URL'si"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -69,7 +70,7 @@ msgstr "İptal"
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_tree
 msgid "Categories"
-msgstr ""
+msgstr "Kategoriler"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_category
@@ -80,33 +81,33 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Changes"
-msgstr ""
+msgstr "Değişiklikler"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__child_ids
 msgid "Children"
-msgstr ""
+msgstr "Alt"
 
 #. module: document_page
 #: model_terms:ir.actions.act_window,help:document_page.action_page
 msgid "Click to create a new web page."
-msgstr ""
+msgstr "Yeni bir web sayfası oluşturmak için tıklayın."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Kapanış"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__company_id
 msgid "Company"
-msgstr ""
+msgstr "Firma"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content
@@ -116,13 +117,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
-msgstr ""
+msgstr "İçerği"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
-msgstr ""
+msgstr "Menu Oluştur"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__create_uid
@@ -143,19 +144,19 @@ msgstr "Oluşturma"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_summary
 msgid "Describe the changes made"
-msgstr ""
+msgstr "Yapılan değişiklikleri açıklayın"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__diff
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__diff
 msgid "Diff"
-msgstr ""
+msgstr "Fark"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr ""
+msgstr "Fark"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__display_name
@@ -163,18 +164,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen Ad"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-#, fuzzy
 msgid "Document Category"
-msgstr "Belge Sayfa Geçmişi"
+msgstr "Belge Kategorisi"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_tree
 msgid "Document History"
-msgstr ""
+msgstr "Belge Geçmişi"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -196,9 +196,8 @@ msgstr "Belge Sayfa Geçmişi"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
-#, fuzzy
 msgid "Document Page Show Diff"
-msgstr "Belge Sayfası"
+msgstr "Belge Sayfa Geçmiş Farkı"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -208,29 +207,29 @@ msgstr "Belgeler"
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
 msgid "Editor"
-msgstr ""
+msgstr "Düzenleyeci"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Takipçiler"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Takipçiler (kanal)"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Takipçiler (İş Ortaklar)"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Group By..."
-msgstr ""
+msgstr "Gruplama..."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
@@ -241,7 +240,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_ids
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "History"
-msgstr ""
+msgstr "Geçmiş"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__id
@@ -254,52 +253,52 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "İkon"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Bir istisna etkinliğini gösteren simge."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
 #: model:ir.model.fields,help:document_page.field_document_page__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "İşaretlenirse, yeni mesajlarla ilgilenmeniz gerekir."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "İşaretlenirse, bazı iletilerde teslim hatası olur."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
-msgstr ""
+msgstr "Ayarlanırsa, sayfaya yalnızca bu şirketten erişilebilir"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Information"
-msgstr ""
+msgstr "Bilgi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Takipçimi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content_date
 msgid "Last Contribution Date"
-msgstr ""
+msgstr "Son Katkı Tarihi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content_uid
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
-msgstr ""
+msgstr "Son Katkı Yapan"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page____last_update
@@ -307,7 +306,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history____last_update
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__write_uid
@@ -328,37 +327,37 @@ msgstr "Son Güncelleme"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Ana Ek"
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
 msgid "Manager"
-msgstr ""
+msgstr "Yöneticisi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__menu_id
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr ""
+msgstr "Menü Bilgileri"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__menu_name
 msgid "Menu Name"
-msgstr ""
+msgstr "Menu Adı"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Mesaj Teslim hatası"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mesajlar"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
@@ -367,94 +366,94 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Adı"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_name
 msgid "Name for the changes made"
-msgstr ""
+msgstr "Yapılan değişikliklerin adı"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Sonraki Aktivite Zaman Sınırı"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Sonraki Aktivite Özeti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Sonraki Aktivite Türü"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Eylem Sayısı"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Eylem Sayısı"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "İşlem gerektiren mesaj sayısı"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Teslim hatası olan mesaj sayısı"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Okunmamış Mesaj Sayacı"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__page_id
 msgid "Page"
-msgstr ""
+msgstr "Sayfa"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr ""
+msgstr "Sayfa Geçmişi"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr ""
+msgstr "Sayfa Geçmişi"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__type
 msgid "Page type"
-msgstr ""
+msgstr "Sayfa Türü"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_page
 #: model:ir.ui.menu,name:document_page.menu_page
 #: model:ir.ui.menu,name:document_page.menu_wiki
 msgid "Pages"
-msgstr ""
+msgstr "Sayfa"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr ""
+msgstr "Sayfa Geçmiş"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__menu_parent_id
 msgid "Parent Menu"
-msgstr ""
+msgstr "Sayfa Menu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Sorumlu Kullanıcı"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -465,18 +464,18 @@ msgstr ""
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
-msgstr ""
+msgstr "Revizyon"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "SMS Mesaj Teslim hatası"
 
 #. module: document_page
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 #, python-format
 msgid "Select one or maximum two history revisions!"
-msgstr ""
+msgstr "Bir veya en fazla iki geçmiş revizyonu seçin!"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_state
@@ -486,18 +485,22 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Aktiveyeteler dayalı durum\n"
+"Gecikme: Son tarih zaten geçti\n"
+"Bugün: Etkinlik tarihi bugün\n"
+"Planlanan: Gelecekteki faaliyetler."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__summary
 msgid "Summary"
-msgstr ""
+msgstr "Özeti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__template
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Template"
-msgstr ""
+msgstr "Şablon"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__template
@@ -505,76 +508,78 @@ msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
 msgstr ""
+"Bu kategorinin tüm yeni sayfaları için içerik şablonu olarak kullanılacak "
+"şablon."
 
 #. module: document_page
 #: code:addons/document_page/models/document_page_history.py:0
 #, python-format
 msgid "There are no changes in revisions."
-msgstr ""
+msgstr "Revizyonlarda herhangi bir değişiklik yoktur."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
 msgid "Type"
-msgstr ""
+msgstr "Tipi"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Bir istisna etkinliğini gösteren simge."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Okunmamış Mesajlar"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Okunmamış Mesaj Sayacı"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
-msgstr ""
+msgstr "Kaynakları tek anlamlı olarak bağlamak için kullanın"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Web Sitesi Mesajları"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Web sitesi iletişim geçmişi"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr ""
+msgstr "Sihirbaz Oluşturma Menüsü"
 
 #. module: document_page
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "You cannot create recursive categories."
-msgstr ""
+msgstr "Özyinelemeli kategoriler oluşturamazsınız."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "e.g. Once upon a time..."
-msgstr ""
+msgstr "ö.r bir zamanlar..."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "eg: Changed ... for ..."
-msgstr ""
+msgstr "örneğin: Değiştirildi ... için ..."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
