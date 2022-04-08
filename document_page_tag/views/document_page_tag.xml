@@ -38,7 +38,7 @@
                         </h1>
                     </div>
                     <group name="main">
-                        <field name="color" />
+                        <field name="color" widget="color_picker" />
                     </group>
                 </sheet>
             </form>
