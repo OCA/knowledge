@@ -75,6 +75,7 @@ msgstr "Otkaži"
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_tree
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Categories"
 msgstr ""
 
