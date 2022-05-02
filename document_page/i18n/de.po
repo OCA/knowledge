@@ -46,6 +46,11 @@ msgid "Activity State"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
@@ -69,7 +74,7 @@ msgstr "Abbrechen"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
-#: model_terms:ir.ui.view,arch_db:document_page.view_category_tree
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Categories"
 msgstr "Kategorien"
 
@@ -174,18 +179,11 @@ msgid "Document Category"
 msgstr "Verlauf des Dokumentes"
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_tree
-msgid "Document History"
-msgstr "Verlauf des Dokumentes"
-
-#. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
 #: model:ir.model,name:document_page.model_document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
 msgstr "Dokumentenseite"
 
@@ -218,13 +216,13 @@ msgid "Followers"
 msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_channel_ids
-msgid "Followers (Channels)"
+#: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
+msgid "Followers (Partners)"
 msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
-msgid "Followers (Partners)"
+#: model:ir.model.fields,help:document_page.field_document_page__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: document_page
@@ -237,6 +235,11 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: document_page
@@ -363,6 +366,11 @@ msgstr ""
 #, fuzzy
 msgid "Messages"
 msgstr "Seiten"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
@@ -518,6 +526,7 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr "Überschrift"
 
@@ -544,17 +553,6 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
-#, fuzzy
-msgid "Website Messages"
-msgstr "Seiten"
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: document_page
@@ -585,6 +583,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "or"
 msgstr "oder"
+
+#~ msgid "Document History"
+#~ msgstr "Verlauf des Dokumentes"
+
+#, fuzzy
+#~ msgid "Website Messages"
+#~ msgstr "Seiten"
 
 #~ msgid "wizard.document.page.history.show_diff"
 #~ msgstr "wizard.document.page.history.show_diff"
