@@ -12,3 +12,7 @@
 Trobz
 
 * Dung Tran <dungtd@trobz.com>
+
+* `Sygel <https://www.sygel.es>`_:
+
+  * Ángel García de la Chica Herrera
