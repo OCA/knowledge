@@ -167,6 +167,14 @@
                         context="{'group_by':'content_uid'}"
                     />
                 </group>
+                <searchpanel>
+                    <field
+                        name="parent_id"
+                        icon="fa-folder"
+                        string="Categories"
+                        enable_counters="1"
+                    />
+                </searchpanel>
             </search>
         </field>
     </record>

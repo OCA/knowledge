@@ -45,6 +45,11 @@ msgid "Activity State"
 msgstr "Aktivite Durumu"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
 msgstr "Ek Sayısı"
@@ -68,7 +73,7 @@ msgstr "İptal"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
-#: model_terms:ir.ui.view,arch_db:document_page.view_category_tree
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Categories"
 msgstr "Kategoriler"
 
@@ -172,18 +177,11 @@ msgid "Document Category"
 msgstr "Belge Kategorisi"
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_tree
-msgid "Document History"
-msgstr "Belge Geçmişi"
-
-#. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
 #: model:ir.model,name:document_page.model_document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
 msgstr "Belge Sayfası"
 
@@ -215,14 +213,14 @@ msgid "Followers"
 msgstr "Takipçiler"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Takipçiler (kanal)"
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Takipçiler (İş Ortaklar)"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
@@ -234,6 +232,11 @@ msgstr "Gruplama..."
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: document_page
@@ -358,6 +361,11 @@ msgstr "Mesaj Teslim hatası"
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_ids
 msgid "Messages"
 msgstr "Mesajlar"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
@@ -519,6 +527,7 @@ msgstr "Revizyonlarda herhangi bir değişiklik yoktur."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr "Başlık"
 
@@ -548,16 +557,6 @@ msgid "Use it to link resources univocally"
 msgstr "Kaynakları tek anlamlı olarak bağlamak için kullanın"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
-msgid "Website Messages"
-msgstr "Web Sitesi Mesajları"
-
-#. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
-msgid "Website communication history"
-msgstr "Web sitesi iletişim geçmişi"
-
-#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Sihirbaz Oluşturma Menüsü"
@@ -585,3 +584,15 @@ msgstr "örneğin: Değiştirildi ... için ..."
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "or"
 msgstr "ya da"
+
+#~ msgid "Document History"
+#~ msgstr "Belge Geçmişi"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Takipçiler (kanal)"
+
+#~ msgid "Website Messages"
+#~ msgstr "Web Sitesi Mesajları"
+
+#~ msgid "Website communication history"
+#~ msgstr "Web sitesi iletişim geçmişi"
