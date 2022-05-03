@@ -37,6 +37,11 @@ msgid "Archived"
 msgstr ""
 
 #. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
+msgid "Color"
+msgstr ""
+
+#. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
 msgstr ""
