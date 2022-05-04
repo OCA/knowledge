@@ -36,6 +36,11 @@ msgid "Archived"
 msgstr ""
 
 #. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
+msgid "Color"
+msgstr ""
+
+#. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
 msgstr ""
@@ -51,7 +56,6 @@ msgid "Created on"
 msgstr "Utworzono"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page__display_name
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
 msgstr "Wyświetlana nazwa "
@@ -68,13 +72,6 @@ msgid "Document Tag Search"
 msgstr "Strona dokumentu"
 
 #. module: document_page_tag
-#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
-#, fuzzy
-msgid "Document Tags"
-msgstr "Strona dokumentu"
-
-#. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page__id
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
 msgid "ID"
 msgstr "ID"
@@ -85,7 +82,6 @@ msgid "Keywords"
 msgstr ""
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page____last_update
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
 msgid "Last Modified on"
 msgstr "Ostatnio modyfikowano"
@@ -120,3 +116,7 @@ msgstr ""
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Document Tags"
+#~ msgstr "Strona dokumentu"

@@ -51,6 +51,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
+                <field name="color" widget="color_picker" string="Color" />
             </tree>
         </field>
     </record>
