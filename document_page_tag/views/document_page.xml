@@ -21,6 +21,15 @@
             <field name="name" position="after">
                 <field name="tag_ids" widget="many2one" />
             </field>
+            <xpath expr="//searchpanel" position="inside">
+                <field
+                    name="tag_ids"
+                    select="multi"
+                    icon="fa-folder"
+                    string="Tags"
+                    enable_counters="1"
+                />
+            </xpath>
         </field>
     </record>
 
