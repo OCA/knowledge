@@ -117,6 +117,7 @@ msgstr ""
 #. module: document_page_tag
 #: model:ir.actions.act_window,name:document_page_tag.document_page_tag_action
 #: model:ir.ui.menu,name:document_page_tag.document_page_tag_menu
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_wiki_filter
 msgid "Tags"
 msgstr ""
 
