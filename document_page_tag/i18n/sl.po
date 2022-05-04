@@ -38,6 +38,11 @@ msgid "Archived"
 msgstr "Arhivirano"
 
 #. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
+msgid "Color"
+msgstr ""
+
+#. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
 msgstr "Barvni indeks"
@@ -53,7 +58,6 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page__display_name
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
 msgstr "Prikazani naziv"
@@ -69,12 +73,6 @@ msgid "Document Tag Search"
 msgstr "Iskanje po oznakah dokumenta"
 
 #. module: document_page_tag
-#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
-msgid "Document Tags"
-msgstr "Oznake dokumenta"
-
-#. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page__id
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
 msgid "ID"
 msgstr "ID"
@@ -85,7 +83,6 @@ msgid "Keywords"
 msgstr "Ključne besede"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page____last_update
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
 msgid "Last Modified on"
 msgstr "Zadnjič spremenjeno"
@@ -120,6 +117,9 @@ msgstr "Oznake"
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
 msgstr ""
+
+#~ msgid "Document Tags"
+#~ msgstr "Oznake dokumenta"
 
 #~ msgid "Tags must me unique"
 #~ msgstr "Oznake morajo biti unikatne"
