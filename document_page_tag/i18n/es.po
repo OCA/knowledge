@@ -36,6 +36,11 @@ msgid "Archived"
 msgstr "Archivado"
 
 #. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
+msgid "Color"
+msgstr ""
+
+#. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
 msgstr "Índice de color"
@@ -51,7 +56,6 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page__display_name
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
@@ -67,12 +71,6 @@ msgid "Document Tag Search"
 msgstr "Búsqueda de página de documento"
 
 #. module: document_page_tag
-#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
-msgid "Document Tags"
-msgstr "Etiquetas de documento"
-
-#. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page__id
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
 msgid "ID"
 msgstr "ID"
@@ -83,7 +81,6 @@ msgid "Keywords"
 msgstr "Palabras clave"
 
 #. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page____last_update
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
@@ -118,6 +115,9 @@ msgstr "Etiquetas"
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
 msgstr ""
+
+#~ msgid "Document Tags"
+#~ msgstr "Etiquetas de documento"
 
 #~ msgid "Tags must me unique"
 #~ msgstr "Las etiquetas deben ser únicas"
