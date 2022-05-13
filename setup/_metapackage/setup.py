@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-attachment_zipped_download',
         'odoo14-addon-document_page',
+        'odoo14-addon-document_page_access_group',
         'odoo14-addon-document_page_approval',
         'odoo14-addon-document_page_group',
         'odoo14-addon-document_page_project',
