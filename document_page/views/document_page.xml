@@ -33,6 +33,7 @@
     <record id="view_wiki_form" model="ir.ui.view">
         <field name="name">document.page.form</field>
         <field name="model">document.page</field>
+        <field name="priority">10</field>
         <field name="arch" type="xml">
             <form string="Document Page">
                 <sheet>
