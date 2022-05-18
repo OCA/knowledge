@@ -4,6 +4,7 @@
     <record id="view_category_form" model="ir.ui.view">
         <field name="name">document.page.category.form</field>
         <field name="model">document.page</field>
+        <field name="priority">16</field>
         <field name="arch" type="xml">
             <form string="Category">
                 <sheet>
