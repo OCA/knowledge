@@ -21,7 +21,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_zipped_download](attachment_zipped_download/) | 14.0.1.0.0 |  | Attachment Zipped Download
-[document_page](document_page/) | 14.0.1.1.1 |  | Document Page
+[document_page](document_page/) | 14.0.1.2.0 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 14.0.1.0.0 |  | Choose groups to access document pages
 [document_page_approval](document_page_approval/) | 14.0.1.0.0 |  | Document Page Approval
 [document_page_group](document_page_group/) | 14.0.1.0.0 |  | Define access groups on documents
