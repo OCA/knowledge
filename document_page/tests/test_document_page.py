@@ -49,3 +49,11 @@ class TestDocumentPage(common.TransactionCase):
                 page.id, menu.action.id
             ),
         )
+
+    def test_page_copy(self):
+        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
+        page_copy = page.copy()
+        self.assertEqual(page_copy.name, page.name + " (copy)")
+        self.assertEqual(page_copy.content, page.content)
+        self.assertEqual(page_copy.draft_name, "1.0")
+        self.assertEqual(page_copy.draft_summary, "summary")
