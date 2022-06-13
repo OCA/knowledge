@@ -180,3 +180,13 @@ class DocumentPage(models.Model):
         res = super().unlink()
         menus.unlink()
         return res
+
+    def copy(self, default=None):
+        default = dict(
+            default or {},
+            name=_("%s (copy)") % self.name,
+            content=self.content,
+            draft_name="1.0",
+            draft_summary=_("summary"),
+        )
+        return super(DocumentPage, self).copy(default=default)
