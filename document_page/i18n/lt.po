@@ -20,6 +20,12 @@ msgstr ""
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: document_page
+#: code:addons/document_page/models/document_page.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
 msgid "Action Needed"
 msgstr ""
@@ -578,3 +584,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "or"
 msgstr "arba"
+
+#. module: document_page
+#: code:addons/document_page/models/document_page.py:0
+#, python-format
+msgid "summary"
+msgstr ""
