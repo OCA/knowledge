@@ -22,10 +22,7 @@ class TestAttachmentZippedDownload(odoo.tests.HttpCase):
 
     def _create_attachment(self, name):
         return self.env["ir.attachment"].create(
-            {
-                "name": name,
-                "datas": base64.b64encode(b"\xff data"),
-            }
+            {"name": name, "datas": base64.b64encode(b"\xff data")}
         )
 
     def test_action_attachments_download(self):

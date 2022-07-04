@@ -2,14 +2,12 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Attachment Zipped Download",
-    "version": "14.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "Tools",
     "website": "https://github.com/OCA/knowledge",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "depends": ["base"],
-    "data": [
-        "views/ir_attachment_view.xml",
-    ],
+    "data": ["views/ir_attachment_view.xml"],
     "installable": True,
 }
