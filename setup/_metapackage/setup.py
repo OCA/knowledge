@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-document_page>=15.0dev,<15.1dev',
         'odoo-addon-document_page_group>=15.0dev,<15.1dev',
+        'odoo-addon-document_page_reference>=15.0dev,<15.1dev',
         'odoo-addon-document_page_tag>=15.0dev,<15.1dev',
         'odoo-addon-knowledge>=15.0dev,<15.1dev',
     ],
