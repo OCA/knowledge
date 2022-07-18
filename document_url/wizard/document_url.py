@@ -10,7 +10,7 @@ class AddUrlWizard(models.TransientModel):
     _name = "ir.attachment.add_url"
     _description = "Wizard to add URL attachment"
 
-    name = fields.Char("Name", required=True)
+    name = fields.Char(required=True)
     url = fields.Char("URL", required=True)
 
     def action_add_url(self):

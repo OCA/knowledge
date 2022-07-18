@@ -72,6 +72,7 @@ Contributors
   * Ernesto Tejeda
   * Manuel Calero
   * Víctor Martínez
+  * Matias Peralta - Adhoc SA
 
 Maintainers
 ~~~~~~~~~~~
