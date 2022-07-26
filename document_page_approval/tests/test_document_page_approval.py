@@ -3,7 +3,7 @@ from odoo.tests import common
 
 class TestDocumentPageApproval(common.TransactionCase):
     def setUp(self):
-        super(TestDocumentPageApproval, self).setUp()
+        super().setUp()
         self.page_obj = self.env["document.page"]
         self.history_obj = self.env["document.page.history"]
         # demo
