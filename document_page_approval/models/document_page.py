@@ -12,9 +12,7 @@ class DocumentPage(models.Model):
 
     _inherit = "document.page"
 
-    history_ids = fields.One2many(
-        order="approved_date DESC", domain=[("state", "=", "approved")]
-    )
+    history_ids = fields.One2many(domain=[("state", "=", "approved")])
 
     approved_date = fields.Datetime(
         "Approved Date",
@@ -48,6 +46,7 @@ class DocumentPage(models.Model):
         "Approval required",
         help="If true, changes of this page require approval",
         compute="_compute_is_approval_required",
+        recursive=True,
     )
 
     am_i_approver = fields.Boolean(compute="_compute_am_i_approver")
@@ -57,8 +56,10 @@ class DocumentPage(models.Model):
         string="Approver groups",
         help="Groups that can approve changes to this document",
         compute="_compute_approver_group_ids",
+        recursive=True,
     )
 
+    # pylint: disable=W8113
     has_changes_pending_approval = fields.Boolean(
         compute="_compute_has_changes_pending_approval",
         string="Has changes pending approval",
@@ -67,6 +68,9 @@ class DocumentPage(models.Model):
     user_has_drafts = fields.Boolean(
         compute="_compute_user_has_drafts", string="User has drafts?"
     )
+
+    def _valid_field_parameter(self, field, name):
+        return name == "order" or super()._valid_field_parameter(field, name)
 
     @api.depends("approval_required", "parent_id.is_approval_required")
     def _compute_is_approval_required(self):
@@ -127,13 +131,14 @@ class DocumentPage(models.Model):
             rec.user_has_drafts = changes > 0
 
     def _create_history(self, vals):
-        res = super(DocumentPage, self)._create_history(vals)
+        res = super()._create_history(vals)
         res.action_to_approve()
+        return res
 
     def action_changes_pending_approval(self):
         self.ensure_one()
         action = self.env.ref("document_page_approval.action_change_requests")
-        action = action.read()[0]
+        action = action.sudo().read()[0]
         context = literal_eval(action["context"])
         context["search_default_page_id"] = self.id
         context["default_page_id"] = self.id
