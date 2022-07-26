@@ -11,6 +11,7 @@ class DocumentPageHistory(models.Model):
 
     _name = "document.page.history"
     _inherit = ["document.page.history", "mail.thread"]
+    _order = "approved_date DESC, id DESC"
 
     state = fields.Selection(
         [
@@ -24,7 +25,7 @@ class DocumentPageHistory(models.Model):
         readonly=True,
     )
 
-    approved_date = fields.Datetime("Approved Date")
+    approved_date = fields.Datetime()
 
     approved_uid = fields.Many2one("res.users", "Approved by")
 
@@ -126,8 +127,8 @@ class DocumentPageHistory(models.Model):
         for rec in self:
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request <b>%s</b> has been cancelled by %s.")
-                % (rec.display_name, self.env.user.name),
+                body=_("Change request <b>%(name)s</b> has been cancelled by %(user)s.")
+                % ({"name": rec.display_name, "user": self.env.user.name}),
             )
 
     def action_cancel_and_draft(self):
