@@ -156,8 +156,8 @@ msgstr ""
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
-msgid "Change request <b>%s</b> has been cancelled by %s."
-msgstr ""
+msgid "Change request <b>%(name)s</b> has been cancelled by %(user)s."
+msgstr "El cambio solicitado <b>%(name)s</b> ha sido cancelado por %(user)s."
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:0
