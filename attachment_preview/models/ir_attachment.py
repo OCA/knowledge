@@ -6,7 +6,7 @@ import logging
 import mimetypes
 import os.path
 
-from odoo import models, api
+from odoo import api, models
 
 _logger = logging.getLogger(__name__)
 

@@ -3,12 +3,12 @@
 
 // This file contains tweaks for viewerjs itself and is not meant to be run in
 // OpenERP's context
-(function (original_Viewer) {
-    window.Viewer = function (plugin, parameters) {
+(function(original_Viewer) {
+    window.Viewer = function(plugin, parameters) {
         if (!plugin) {
             // eslint-disable-next-line no-alert
-            alert('Unsupported file type');
+            alert("Unsupported file type");
         }
         return original_Viewer(plugin, parameters);
     };
-}(window.Viewer));
+})(window.Viewer);
