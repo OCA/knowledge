@@ -6,12 +6,14 @@ odoo.define("attachment_preview", function(require) {
 
     var core = require("web.core");
     var _t = core._t;
-    var qweb = core.qweb;
     var Chatter = require("mail.Chatter");
     var basic_fields = require("web.basic_fields");
     var FormRenderer = require("web.FormRenderer");
-    var FormController = require("web.FormController");
     var Widget = require("web.Widget");
+
+    var active_attachment_id = 0;
+    var active_attachment_index = 0;
+    var first_click = true;
 
     var AttachmentPreviewMixin = {
         canPreview: function(extension) {
@@ -81,13 +83,15 @@ odoo.define("attachment_preview", function(require) {
         _openAttachmentBox: function() {
             var res = this._super.apply(this, arguments);
 
-            this.getPreviewableAttachments().done(
-                function(atts) {
-                    this.previewableAttachments = atts;
-                    this.updatePreviewButtons(atts);
-                    this.getParent().attachmentPreviewWidget.setAttachments(atts);
-                }.bind(this)
-            );
+            setTimeout(() => {
+                this.getPreviewableAttachments().done(
+                    function(atts) {
+                        this.previewableAttachments = atts;
+                        this.updatePreviewButtons(atts);
+                        this.getParent().attachmentPreviewWidget.setAttachments(atts);
+                    }.bind(this)
+                );
+            }, 0);
 
             return res;
         },
@@ -96,7 +100,7 @@ odoo.define("attachment_preview", function(require) {
             var res = this._super.apply(this, arguments);
             var self = this;
             if (this.getParent().$el.hasClass("attachment_preview")) {
-                this._fetchAttachments().done(function() {
+                this._fetchAttachments().then(function() {
                     self._openAttachmentBox();
                     self.getPreviewableAttachments().done(function(atts) {
                         self.updatePreviewButtons(self.previewableAttachments);
@@ -117,6 +121,11 @@ odoo.define("attachment_preview", function(require) {
                 attachment_url = $target.attr("data-url"),
                 attachment_extension = $target.attr("data-extension"),
                 attachment_title = $target.attr("data-original-title");
+
+            if (attachment_id !== active_attachment_id) {
+                active_attachment_id = attachment_id;
+                first_click = true;
+            }
 
             if (attachment_extension) {
                 this.showPreview(
@@ -145,9 +154,10 @@ odoo.define("attachment_preview", function(require) {
 
         getPreviewableAttachments: function() {
             var self = this;
+
             var deferred = $.Deferred();
 
-            var $items = this.$el.find(".o_attachment_preview");
+            var $items = self.$el.find(".o_attachment_preview");
             var attachments = _.object(
                 $items.map(function() {
                     return parseInt($(this).attr("data-id"), 10);
@@ -173,7 +183,7 @@ odoo.define("attachment_preview", function(require) {
                 function(extensions) {
                     var reviewableAttachments = _.map(
                         _.keys(
-                            _.pick(extensions, function(extension, id) {
+                            _.pick(extensions, function(extension) {
                                 return self.canPreview(extension);
                             })
                         ),
@@ -218,7 +228,7 @@ odoo.define("attachment_preview", function(require) {
     basic_fields.FieldBinaryFile.include(AttachmentPreviewMixin);
     basic_fields.FieldBinaryFile.include({
         events: _.extend({}, basic_fields.FieldBinaryFile.prototype.events, {
-            "click .fa-search": "_onPreview",
+            "click .fa-external-link": "_onPreview",
         }),
 
         _renderReadonly: function() {
@@ -226,7 +236,7 @@ odoo.define("attachment_preview", function(require) {
             this._super.apply(this, arguments);
 
             if (this.recordData.id) {
-                this._getBinaryExtension().done(function(extension) {
+                this._getBinaryExtension().then(function(extension) {
                     if (self.canPreview(extension)) {
                         self._renderPreviewButton(extension);
                     }
@@ -236,7 +246,7 @@ odoo.define("attachment_preview", function(require) {
 
         _renderPreviewButton: function(extension) {
             this.$previewBtn = $("<a/>");
-            this.$previewBtn.addClass("fa fa-search mr-2");
+            this.$previewBtn.addClass("fa fa-external-link mr-2");
             this.$previewBtn.attr("href", "javascript:void(0)");
             this.$previewBtn.attr(
                 "title",
@@ -284,6 +294,7 @@ odoo.define("attachment_preview", function(require) {
         },
 
         start: function() {
+            first_click = true;
             var res = this._super.apply(this, arguments);
             this.$overlay = this.$el.find(".attachment_preview_overlay");
             this.$iframe = this.$el.find(".attachment_preview_iframe");
@@ -337,6 +348,7 @@ odoo.define("attachment_preview", function(require) {
         },
 
         hide: function() {
+            first_click = true;
             this.$el.addClass("d-none");
             this.trigger("hidden");
         },
@@ -356,7 +368,18 @@ odoo.define("attachment_preview", function(require) {
                 return;
             }
 
-            var att = this.attachments[this.activeIndex];
+            if (first_click) {
+                for (var i in this.attachments) {
+                    if (this.attachments[i].id === active_attachment_id.toString()) {
+                        active_attachment_index = i;
+                        first_click = false;
+                    }
+                }
+            } else {
+                active_attachment_index = this.activeIndex;
+            }
+
+            var att = this.attachments[active_attachment_index];
             this.$iframe.attr("src", att.previewUrl);
         },
 
@@ -411,7 +434,7 @@ odoo.define("attachment_preview", function(require) {
             return this._super.apply(this, arguments);
         },
 
-        _onAttachmentPreview: function(event) {
+        _onAttachmentPreview: function() {
             this.showAttachmentPreviewWidget();
         },
     });
