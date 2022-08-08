@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-15 09:24+0000\n"
-"PO-Revision-Date: 2016-03-15 09:24+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2022-08-08 08:32+0000\n"
+"Last-Translator: Vincent Hatakeyama <vincent+github@hatakeyama.fr>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: document_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
@@ -25,14 +26,14 @@ msgstr "Ajouter"
 #: model:ir.actions.act_window,name:document_url.action_ir_attachment_add_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 msgid "Add URL"
-msgstr "Ajouter URL"
+msgstr "Ajouter une adresse universelle"
 
 #. module: document_url
 #. openerp-web
 #: code:addons/document_url/static/src/xml/url.xml:5
 #, python-format
 msgid "Add URL..."
-msgstr "Ajouter URL..."
+msgstr "Ajouter une adresse universelle..."
 
 #. module: document_url
 #: model:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
