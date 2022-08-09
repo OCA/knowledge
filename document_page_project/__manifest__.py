@@ -5,7 +5,7 @@
     "name": "Document Page Project",
     "summary": "This module links document pages to projects",
     "version": "13.0.1.0.1",
-    "development_status": "Production/Stable",
+    "development_status": "Beta",
     "category": "Project",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
