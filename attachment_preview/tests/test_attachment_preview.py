@@ -9,18 +9,10 @@ from odoo.tests.common import TransactionCase
 class TestAttachmentPreview(TransactionCase):
     def test_get_extension(self):
         attachment = self.env["ir.attachment"].create(
-            {
-                "datas": base64.b64encode(b"from this, to that."),
-                "name": "doc.txt",
-                "datas_fname": "doc.txt",
-            }
+            {"datas": base64.b64encode(b"from this, to that."), "name": "doc.txt"}
         )
         attachment2 = self.env["ir.attachment"].create(
-            {
-                "datas": base64.b64encode(b"Png"),
-                "name": "image.png",
-                "datas_fname": "image.png",
-            }
+            {"datas": base64.b64encode(b"Png"), "name": "image.png"}
         )
         res = self.env["ir.attachment"].get_attachment_extension(attachment.id)
         self.assertEqual(res, "txt")

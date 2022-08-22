@@ -3,10 +3,11 @@
 
 {
     "name": "Preview attachments",
-    "version": "12.0.1.0.2",
+    "version": "14.0.1.0.0",
     "author": "Therp BV," "Onestein," "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "summary": "Preview attachments supported by Viewer.js",
+    "website": "https://github.com/OCA/knowledge",
     "category": "Knowledge Management",
     "depends": ["web", "mail"],
     "data": ["templates/assets.xml"],
