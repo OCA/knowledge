@@ -25,9 +25,7 @@ class IrAttachment(models.Model):
             for this in (
                 self.env[model].with_context(bin_size=True).browse(ids_to_browse)
             ):
-                if not this.id:
-                    result[this.id] = False
-                    continue
+                result[this.id] = False
                 extension = ""
                 if this[filename_field]:
                     filename, extension = os.path.splitext(this[filename_field])
@@ -42,9 +40,7 @@ class IrAttachment(models.Model):
         #  to get the extension from the content
         ids_to_browse = [_id for _id in ids_to_browse if _id not in result]
         for this in self.env[model].with_context(bin_size=True).browse(ids_to_browse):
-            if not this[binary_field]:
-                result[this.id] = False
-                continue
+            result[this.id] = False
             try:
                 import magic
 
@@ -52,17 +48,17 @@ class IrAttachment(models.Model):
                     mimetype = magic.from_file(
                         this._full_path(this.store_fname), mime=True
                     )
-                    _logger.debug(
-                        "Magic determined mimetype %s from file %s",
-                        mimetype,
-                        this.store_fname,
-                    )
+                    # _logger.debug(
+                    #     "Magic determined mimetype %s from file %s",
+                    #     mimetype,
+                    #     this.store_fname,
+                    # )
                 else:
                     mimetype = magic.from_buffer(this[binary_field], mime=True)
-                    _logger.debug("Magic determined mimetype %s from buffer", mimetype)
+                    # _logger.debug("Magic determined mimetype %s from buffer", mimetype)
             except ImportError:
                 (mimetype, encoding) = mimetypes.guess_type(
-                    "data:;base64," + this[binary_field], strict=False
+                    "data:;base64," + this[binary_field].decode("utf-8"), strict=False
                 )
                 _logger.debug("Mimetypes guessed type %s from buffer", mimetype)
             extension = mimetypes.guess_extension(mimetype.split(";")[0], strict=False)
@@ -73,4 +69,4 @@ class IrAttachment(models.Model):
 
     @api.model
     def get_attachment_extension(self, ids):
-        return self.get_binary_extension(self._name, ids, "datas", "datas_fname")
+        return self.get_binary_extension(self._name, ids, "datas", "name")
