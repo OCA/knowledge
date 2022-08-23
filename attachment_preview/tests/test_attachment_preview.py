@@ -12,14 +12,12 @@ class TestAttachmentPreview(TransactionCase):
             {
                 "datas": base64.b64encode(b"from this, to that."),
                 "name": "doc.txt",
-                "datas_fname": "doc.txt",
             }
         )
         attachment2 = self.env["ir.attachment"].create(
             {
                 "datas": base64.b64encode(b"Png"),
                 "name": "image.png",
-                "datas_fname": "image.png",
             }
         )
         res = self.env["ir.attachment"].get_attachment_extension(attachment.id)

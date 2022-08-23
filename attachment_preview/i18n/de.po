@@ -1,33 +1,43 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * attachment_preview
+# 	* attachment_preview
 #
-# Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: knowledge (8.0)\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-08 08:32+0000\n"
-"PO-Revision-Date: 2015-11-25 09:41+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-knowledge-8-0/"
-"language/de/)\n"
-"Language: de\n"
+"POT-Creation-Date: 2022-08-23 14:27+0000\n"
+"PO-Revision-Date: 2022-08-23 14:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: attachment_preview
 #: model:ir.model,name:attachment_preview.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "Dateianhang"
 
 #. module: attachment_preview
 #. openerp-web
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:188
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:216
+#: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
+#, python-format
+msgid "Open in new page"
+msgstr "In neuer Seite öffnen"
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
+#, python-format
+msgid "Preview"
+msgstr "Vorschau"
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/js/components/chatter/chatter.js:0
+#: code:addons/attachment_preview/static/src/js/components/chatter/chatter.js:0
 #, python-format
 msgid "Preview %s"
 msgstr "Vorschau %s"
