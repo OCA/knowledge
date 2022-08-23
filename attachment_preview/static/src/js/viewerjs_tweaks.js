@@ -4,6 +4,7 @@
 // This file contains tweaks for viewerjs itself and is not meant to be run in
 // OpenERP's context
 (function (original_Viewer) {
+    "use strict";
     window.Viewer = function (plugin, parameters) {
         if (!plugin) {
             // eslint-disable-next-line no-alert
