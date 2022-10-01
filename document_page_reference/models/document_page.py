@@ -54,6 +54,16 @@ class DocumentPage(models.Model):
     # be removed
     content_parsed = fields.Text(compute='_compute_content_parsed')
 
+    @api.multi
+    @api.returns('self', lambda value: value.id)
+    def copy(self, default=None):
+        self.ensure_one()
+        if default is None:
+            default = {}
+        if not default.get('reference'):
+            default.update(reference=_('%s_copy') % (self.reference))
+        return super(DocumentPage, self).copy(default)
+
     @api.depends('history_head')
     def _compute_content_parsed(self):
         for record in self:
