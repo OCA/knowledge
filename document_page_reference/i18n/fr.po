@@ -17,6 +17,12 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: document_page_reference
+#: code:addons/document_page_reference/models/document_page.py:64
+#, python-format
+msgid "%s_copy"
+msgstr ""
+
+#. module: document_page_reference
 #: model:ir.model.fields,field_description:document_page_reference.field_document_page__content_parsed
 msgid "Content Parsed"
 msgstr "Contenu formaté"
@@ -32,13 +38,13 @@ msgid "Reference"
 msgstr "Référence"
 
 #. module: document_page_reference
-#: code:addons/document_page_reference/models/document_page.py:68
+#: code:addons/document_page_reference/models/document_page.py:78
 #, python-format
 msgid "Reference is not valid"
 msgstr "La référence n’est pas valide"
 
 #. module: document_page_reference
-#: code:addons/document_page_reference/models/document_page.py:73
+#: code:addons/document_page_reference/models/document_page.py:83
 #, python-format
 msgid "Reference must be unique"
 msgstr "La référence doit être unique"
