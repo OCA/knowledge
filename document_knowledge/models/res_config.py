@@ -4,7 +4,7 @@
 from odoo import fields, models
 
 
-class KnowledgeConfigSettings(models.TransientModel):
+class DocumentKnowledgeConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     module_attachment_indexation = fields.Boolean(
@@ -16,8 +16,8 @@ class KnowledgeConfigSettings(models.TransientModel):
     group_ir_attachment_user = fields.Boolean(
         string="Central access to Documents",
         help="When you set this field all users will be able to manage "
-        "attachments centrally, from the Knowledge/Documents menu.",
-        implied_group="knowledge.group_ir_attachment_user",
+        "attachments centrally, from the Document Knowledge/Documents menu.",
+        implied_group="document_knowledge.group_ir_attachment_user",
     )
 
     module_document_page = fields.Boolean(
