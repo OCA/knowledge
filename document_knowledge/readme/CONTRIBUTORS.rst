@@ -6,6 +6,7 @@
 * Fayez Qandeel
 * Iván Todorovich <ivan.todorovich@gmail.com>
 * Jordi Ballester <jordi.ballester@forgeflow.com>
+* Marie Lejeune <marie.lejeune@acsone.eu>
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Vicent Cubells
