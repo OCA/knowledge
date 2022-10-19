@@ -62,7 +62,7 @@
         <field name="view_id" ref="view_knowledge_configuration" />
         <field name="view_mode">form</field>
         <field name="target">inline</field>
-        <field name="context">{'module': 'knowledge'}</field>
+        <field name="context">{'module': 'document_knowledge'}</field>
     </record>
     <menuitem
         id="menu_document_configuration"
