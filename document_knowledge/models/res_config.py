@@ -31,16 +31,3 @@ class KnowledgeConfigSettings(models.TransientModel):
         help="Add workflow on documents per category.\n"
         "- This installs the module document_page_approval.",
     )
-
-    module_cmis_read = fields.Boolean(
-        "Attach files from an external DMS into Odoo",
-        help="Connect Odoo with a CMIS compatible server to attach files\n"
-        "to an Odoo record.\n"
-        "- This installs the module cmis_read.",
-    )
-
-    module_cmis_write = fields.Boolean(
-        "Store attachments in an external DMS instead of the Odoo Filestore",
-        help="Connect Odoo with a CMIS compatible server to store files.\n"
-        "- This installs the module cmis_write.",
-    )
