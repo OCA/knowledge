@@ -6,6 +6,7 @@
     "name": "Document Page",
     "version": "14.0.1.2.0",
     "category": "Knowledge Management",
+    "development_status": "Production/Stable",
     "author": "OpenERP SA, Odoo Community Association (OCA)",
     "images": [
         "images/category_list.png",
