@@ -9,6 +9,7 @@
     "ForgeFlow, "
     "Odoo Community Association (OCA)",
     "category": "Knowledge",
+    "development_status": "Production/Stable",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/knowledge",
     "depends": ["base"],
