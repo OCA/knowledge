@@ -39,3 +39,19 @@ class TestDocumentReference(TransactionCase):
     def test_no_reference(self):
         self.page2.reference = "r3"
         self.assertRegex(self.page1.content_parsed, ".*r2.*")
+
+    def test_auto_reference(self):
+        """Test if reference is proposed when saving a page without one."""
+        self.assertEqual(self.page1.reference, "R1")
+        new_page = self.page_obj.create(
+            {"name": "Test Page with no rEfErenCe", "content": "some content"}
+        )
+        self.assertEqual(new_page.reference, "test_page_with_no_reference")
+        new_page_duplicated_name = self.page_obj.create(
+            {
+                "name": "test page with no reference",
+                "content": "this should have an empty reference "
+                "because reference must be unique",
+            }
+        )
+        self.assertFalse(new_page_duplicated_name.reference)
