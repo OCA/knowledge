@@ -9,7 +9,10 @@
         <field name="arch" type="xml">
             <xpath expr="//h1" position="before">
                 <h2>
-                    <field name="reference" placeholder="internal_reference" />
+                    <field
+                        name="reference"
+                        placeholder="internal_reference (autofilled if not value is provided)"
+                    />
                 </h2>
             </xpath>
             <field name="content" position="attributes">
@@ -56,8 +59,8 @@
         <field name="model">document.page</field>
         <field name="inherit_id" ref="document_page.view_wiki_tree" />
         <field name="arch" type="xml">
-            <field name="name" position="before">
-                <field name="reference" />
+            <field name="name" position="after">
+                <field name="reference" optional="hidden" />
             </field>
         </field>
     </record>
