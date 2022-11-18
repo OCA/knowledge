@@ -7,6 +7,8 @@ from odoo import _, api, fields, models, tools
 from odoo.exceptions import ValidationError
 from odoo.tools.misc import html_escape
 
+from odoo.addons.http_routing.models.ir_http import slugify
+
 _logger = logging.getLogger(__name__)
 
 try:
@@ -69,12 +71,19 @@ class DocumentPage(models.Model):
         for record in self:
             if not record.reference:
                 continue
-            if not name_re.match(record.reference):
-                raise ValidationError(_("Reference is not valid"))
-            if self.search(
-                [("reference", "=", record.reference), ("id", "!=", record.id)]
-            ):
-                raise ValidationError(_("Reference must be unique"))
+            record._validate_reference(record=record)
+
+    @api.model
+    def _validate_reference(self, record=None, reference=None):
+        if not reference:
+            reference = self.reference
+        if not name_re.match(reference):
+            raise ValidationError(_("Reference is not valid"))
+        uniq_domain = [("reference", "=", reference)]
+        if record:
+            uniq_domain += [("id", "!=", record.id)]
+        if self.search(uniq_domain):
+            raise ValidationError(_("Reference must be unique"))
 
     def _get_document(self, code):
         # Hook created in order to add check on other models
@@ -116,3 +125,17 @@ class DocumentPage(models.Model):
 
     def get_raw_content(self):
         return self.with_context(raw_reference=True).get_content()
+
+    @api.model
+    def create(self, vals):
+        if not vals.get("reference"):
+            # Propose a default reference
+            reference = slugify(vals.get("name")).replace("-", "_")
+            try:
+                self._validate_reference(reference=reference)
+                vals["reference"] = reference
+            except ValidationError:
+                # Do not fill reference.
+                pass
+
+        return super(DocumentPage, self).create(vals)
