@@ -12,9 +12,7 @@ class DocumentPage(models.Model):
 
     _inherit = "document.page"
 
-    history_ids = fields.One2many(
-        order="approved_date DESC", domain=[("state", "=", "approved")]
-    )
+    history_ids = fields.One2many(domain=[("state", "=", "approved")])
 
     approved_date = fields.Datetime(
         "Approved Date",
