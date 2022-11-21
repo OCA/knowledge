@@ -62,5 +62,5 @@ msgstr ""
 
 #. module: document_page_reference
 #: model_terms:ir.ui.view,arch_db:document_page_reference.document_page_form_view
-msgid "internal_reference"
+msgid "internal_reference (autofilled if not value is provided)"
 msgstr ""
