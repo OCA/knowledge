@@ -6,7 +6,7 @@ dependency_installation_mode: PIP
 generate_requirements_txt: true
 github_check_license: true
 github_enable_codecov: true
-github_enable_makepot: false
+github_enable_makepot: true
 github_enable_stale_action: true
 github_enforce_dev_status_compatibility: true
 include_wkhtmltopdf: false
