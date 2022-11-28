@@ -11,6 +11,7 @@ class DocumentPage(models.Model):
     group_ids = fields.Many2many(
         "res.groups",
         store=True,
+        recursive=True,
         relation="document_page_direct_group",
         column1="document_page_id",
         column2="group_id",
