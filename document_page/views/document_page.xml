@@ -209,7 +209,7 @@
     <menuitem
         id="menu_wiki"
         name="Pages"
-        parent="knowledge.menu_document_root"
+        parent="document_knowledge.menu_document_root"
         sequence="10"
     />
     <menuitem
