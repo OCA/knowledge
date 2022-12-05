@@ -16,6 +16,7 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "%s (copy)"
@@ -175,7 +176,7 @@ msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document Category"
+msgid "Document History"
 msgstr ""
 
 #. module: document_page
@@ -267,7 +268,6 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
-#: model:ir.model.fields,help:document_page.field_document_page__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -281,11 +281,6 @@ msgstr ""
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
-msgstr ""
-
-#. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
-msgid "Information"
 msgstr ""
 
 #. module: document_page
@@ -346,6 +341,7 @@ msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr ""
 
@@ -419,11 +415,6 @@ msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page__message_unread_counter
-msgid "Number of unread messages"
-msgstr ""
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__page_id
 msgid "Page"
 msgstr ""
@@ -482,6 +473,7 @@ msgid "SMS Delivery error"
 msgstr ""
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 #, python-format
 msgid "Select one or maximum two history revisions!"
@@ -516,6 +508,7 @@ msgid ""
 msgstr ""
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page_history.py:0
 #, python-format
 msgid "There are no changes in revisions."
@@ -538,16 +531,6 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr ""
-
-#. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
 msgstr ""
@@ -558,6 +541,7 @@ msgid "Wizard Create Menu"
 msgstr ""
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "You cannot create recursive categories."
@@ -582,6 +566,7 @@ msgid "or"
 msgstr ""
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "summary"

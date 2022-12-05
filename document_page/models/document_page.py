@@ -189,4 +189,4 @@ class DocumentPage(models.Model):
             draft_name="1.0",
             draft_summary=_("summary"),
         )
-        return super(DocumentPage, self).copy(default=default)
+        return super().copy(default=default)
