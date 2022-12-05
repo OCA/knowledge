@@ -20,6 +20,7 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "%s (copy)"
@@ -179,8 +180,8 @@ msgstr "Görünen Ad"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document Category"
-msgstr "Belge Kategorisi"
+msgid "Document History"
+msgstr "Belge Geçmişi"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -271,7 +272,6 @@ msgstr "Bir istisna etkinliğini gösteren simge."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
-#: model:ir.model.fields,help:document_page.field_document_page__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "İşaretlenirse, yeni mesajlarla ilgilenmeniz gerekir."
 
@@ -286,11 +286,6 @@ msgstr "İşaretlenirse, bazı iletilerde teslim hatası olur."
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
 msgstr "Ayarlanırsa, sayfaya yalnızca bu şirketten erişilebilir"
-
-#. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
-msgid "Information"
-msgstr "Bilgi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
@@ -350,6 +345,7 @@ msgstr "Menü"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr "Menü Bilgileri"
 
@@ -423,11 +419,6 @@ msgid "Number of messages with delivery error"
 msgstr "Teslim hatası olan mesaj sayısı"
 
 #. module: document_page
-#: model:ir.model.fields,help:document_page.field_document_page__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Okunmamış Mesaj Sayacı"
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__page_id
 msgid "Page"
 msgstr "Sayfa"
@@ -486,6 +477,7 @@ msgid "SMS Delivery error"
 msgstr "SMS Mesaj Teslim hatası"
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 #, python-format
 msgid "Select one or maximum two history revisions!"
@@ -526,6 +518,7 @@ msgstr ""
 "şablon."
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page_history.py:0
 #, python-format
 msgid "There are no changes in revisions."
@@ -548,16 +541,6 @@ msgid "Type of the exception activity on record."
 msgstr "Bir istisna etkinliğini gösteren simge."
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_unread
-msgid "Unread Messages"
-msgstr "Okunmamış Mesajlar"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Okunmamış Mesaj Sayacı"
-
-#. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
 msgstr "Kaynakları tek anlamlı olarak bağlamak için kullanın"
@@ -568,6 +551,7 @@ msgid "Wizard Create Menu"
 msgstr "Sihirbaz Oluşturma Menüsü"
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "You cannot create recursive categories."
@@ -592,13 +576,26 @@ msgid "or"
 msgstr "ya da"
 
 #. module: document_page
+#. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "summary"
 msgstr ""
 
-#~ msgid "Document History"
-#~ msgstr "Belge Geçmişi"
+#~ msgid "Document Category"
+#~ msgstr "Belge Kategorisi"
+
+#~ msgid "Information"
+#~ msgstr "Bilgi"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Okunmamış Mesaj Sayacı"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Okunmamış Mesajlar"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Okunmamış Mesaj Sayacı"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Takipçiler (kanal)"

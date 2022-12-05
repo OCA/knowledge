@@ -4,7 +4,7 @@ from odoo.tests import common
 
 class TestDocumentPage(common.TransactionCase):
     def setUp(self):
-        super(TestDocumentPage, self).setUp()
+        super().setUp()
         self.page_obj = self.env["document.page"]
         self.history_obj = self.env["document.page.history"]
         self.category1 = self.env.ref("document_page.demo_category1")
@@ -41,7 +41,7 @@ class TestDocumentPage(common.TransactionCase):
             page.backend_url,
             "/web#id={}&model=document.page&view_type=form".format(page.id),
         )
-        menu = self.env.ref("knowledge.menu_document")
+        menu = self.env.ref("document_knowledge.menu_document")
         page.menu_id = menu
         self.assertEqual(
             page.backend_url,
