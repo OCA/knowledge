@@ -21,4 +21,4 @@ class DocumentPageTag(models.Model):
         existing = self.search([("name", "=ilike", vals["name"])], limit=1)
         if existing:
             return existing
-        return super(DocumentPageTag, self).create(vals)
+        return super().create(vals)
