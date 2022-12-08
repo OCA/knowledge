@@ -19,4 +19,4 @@ class TestDocumentPageTag(TransactionCase):
             with mute_logger("odoo.sql_db"):
                 testtag2 = self.env["document.page.tag"].create({"name": "test2"})
                 testtag2.write({"name": "test"})
-                testtag2.flush()
+                testtag2.flush_model()
