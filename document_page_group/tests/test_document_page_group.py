@@ -6,8 +6,8 @@ from odoo.tests.common import TransactionCase
 
 class TestDocumentPageGroup(TransactionCase):
     def setUp(self):
-        super(TestDocumentPageGroup, self).setUp()
-        knowledge_group = self.browse_ref("knowledge.group_document_user").id
+        super().setUp()
+        knowledge_group = self.browse_ref("document_knowledge.group_document_user").id
         self.user_id = self.env["res.users"].create(
             {
                 "name": "user",
