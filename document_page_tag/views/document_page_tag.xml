@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="view_document_page_tag_search" model="ir.ui.view">
@@ -66,7 +67,7 @@
     <menuitem
         id="document_page_tag_menu"
         name="Tags"
-        parent="knowledge.menu_document_configuration"
+        parent="document_knowledge.menu_document_configuration"
         action="document_page_tag_action"
         sequence="45"
     />
