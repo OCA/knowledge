@@ -46,7 +46,7 @@ class TestDocumentPageApproval(common.TransactionCase):
         self.assertEqual(chreq.state, "to approve")
 
         # Needed to compute calculated fields
-        page.refresh()
+        page.invalidate_model()
         self.assertNotEqual(chreq.content, page.content)
 
         # who_am_i
@@ -61,7 +61,7 @@ class TestDocumentPageApproval(common.TransactionCase):
         # new changes should create change requests
         page.write({"content": "New content"})
         # Needed to compute calculated fields
-        page.refresh()
+        page.invalidate_model()
         self.assertNotEqual(page.content, "New content")
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")]
