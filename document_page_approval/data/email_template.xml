@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- If user wants to make upgrade-proof customizations to email templates, he should edit ir.model.data and check noupdate himself -->
     <record id="email_template_new_draft_need_approval" model="mail.template">
