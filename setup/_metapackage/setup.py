@@ -9,6 +9,10 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-document_knowledge>=16.0dev,<16.1dev',
+        'odoo-addon-document_page>=16.0dev,<16.1dev',
+        'odoo-addon-document_page_group>=16.0dev,<16.1dev',
+        'odoo-addon-document_page_tag>=16.0dev,<16.1dev',
+        'odoo-addon-document_url>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color', 'no_create_edit': True}"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="view_wiki_filter" model="ir.ui.view">
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_filter" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="tag_ids" widget="many2one" />
+            </field>
+            <xpath expr="//searchpanel" position="inside">
+                <field
+                    name="tag_ids"
+                    select="multi"
+                    icon="fa-folder"
+                    string="Tags"
+                    enable_counters="1"
+                />
+            </xpath>
+        </field>
+    </record>
+
+  <!-- List View-->
+    <record id="document_page_tag_view_inherit_list" model="ir.ui.view">
+        <field name="name">document_page.tags.tree</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_tree" />
+        <field name="type">tree</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>
