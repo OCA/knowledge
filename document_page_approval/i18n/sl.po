@@ -97,6 +97,11 @@ msgstr ""
 "da ustvarjate novega."
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__am_i_approver
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__am_i_approver
 msgid "Am I Approver"
@@ -137,8 +142,8 @@ msgid "Approved by"
 msgstr "Odobril"
 
 #. module: document_page_approval
-#: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 #: model:res.groups,name:document_page_approval.group_document_approver_user
+#: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approver"
 msgstr "Odobritelj"
 
@@ -153,17 +158,29 @@ msgid "Approver groups"
 msgstr "Skupine odobriteljev"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: document_page_approval
+#: model:mail.template,name:document_page_approval.email_template_new_draft_need_approval
+msgid "Automated new draft need approval Notification Mail"
+msgstr ""
+
+#. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Back to draft"
 msgstr "Vrni v osnutek"
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve page in '%s' state."
 msgstr "Ne morem odobriti strani v stanju '%s'."
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Can't approve pages in '%s' state."
@@ -188,12 +205,14 @@ msgid "Change Requests"
 msgstr "Zahteve po spremembi"
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
-msgid "Change request <b>%s</b> has been cancelled by %s."
-msgstr "Zahtevo po spremembi <b>%s</b> je preklical %s."
+msgid "Change request <b>%(name)s</b> has been cancelled by %(user)s."
+msgstr ""
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "Change request has been approved by %s."
@@ -216,9 +235,24 @@ msgid "Draft"
 msgstr "Osnutek"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_group_ids
 msgid "Groups that can approve changes to this document"
 msgstr "Skupine, ki lahko odobrijo spremembe tega dokumenta"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__has_message
+msgid "Has Message"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__has_changes_pending_approval
@@ -231,10 +265,41 @@ msgid "History"
 msgstr "Zgodovina"
 
 #. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__is_approval_required
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__is_approval_required
 msgid "If true, changes of this page require approval"
 msgstr "Če označeno, se za spremembe te strani zahteva odobritev"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_ids
+msgid "Messages"
+msgstr ""
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -242,10 +307,31 @@ msgid "New version of ${object.display_name} needs your approval"
 msgstr "Nova verzija ${object.display_name} potrebuje vašo odobritev"
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "New version of the document %s approved."
 msgstr "Nova verzija dokumenta %s odobrena."
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__to_approve
@@ -262,6 +348,11 @@ msgstr "Zahtevana odobritev"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approval_required
 msgid "Require approval for changes on this page or its child pages."
 msgstr "Zahtevaj odobritev za spremembe te strani ali njej podrejenih strani."
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -312,6 +403,7 @@ msgid "Users must also belong to the Approvers group"
 msgstr "Uporabniki morajo pripadati skupini odobriteljev"
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
@@ -322,6 +414,7 @@ msgstr ""
 "Le odobritelji iz teh skupin lahko to odobrijo: "
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
@@ -332,6 +425,7 @@ msgstr ""
 "Le lastniki ali odobritelji lahko ponovno odprejo Zahteve po spremembi."
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid ""
@@ -342,7 +436,12 @@ msgstr ""
 "Le lastniki ali odobritelji lahko zahtevajo odobritev."
 
 #. module: document_page_approval
+#. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Pred ponovnim odprtjem jo morate preklicati."
+
+#, python-format
+#~ msgid "Change request <b>%s</b> has been cancelled by %s."
+#~ msgstr "Zahtevo po spremembi <b>%s</b> je preklical %s."

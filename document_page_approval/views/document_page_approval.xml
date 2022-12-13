@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- History Form View -->
     <record id="wiki_history_form_inherit" model="ir.ui.view">
@@ -112,16 +112,20 @@
         <field name="name">document.page.history.form</field>
         <field name="model">document.page.history</field>
         <field name="inherit_id" ref="wiki_history_form_inherit" />
-        <field
-            name="groups_id"
-            eval="[(6, 0, [ref('document_page.group_document_manager')])]"
-        />
         <field name="arch" type="xml">
             <!-- Readonly fields -->
-            <field name="name" position="attributes">
+            <field
+                name="name"
+                position="attributes"
+                groups="document_page.group_document_manager"
+            >
                 <attribute name="attrs">{'readonly': False}</attribute>
             </field>
-            <field name="summary" position="attributes">
+            <field
+                name="summary"
+                position="attributes"
+                groups="document_page.group_document_manager"
+            >
                 <attribute name="attrs">{'readonly': False}</attribute>
             </field>
         </field>
