@@ -11,7 +11,7 @@
                     class="app_settings_block"
                     data-string="Knowledge"
                     string="Knowledge"
-                    data-key="knowledge"
+                    data-key="document_knowledge"
                 >
                     <h2>Knowledge and Documents Management</h2>
                     <div
