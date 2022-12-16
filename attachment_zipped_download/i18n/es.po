@@ -23,33 +23,31 @@ msgid "Attachment"
 msgstr "Adjunto"
 
 #. module: attachment_zipped_download
-#: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment__display_name
-msgid "Display Name"
-msgstr "Nombre mostrado"
-
-#. module: attachment_zipped_download
 #: model:ir.actions.server,name:attachment_zipped_download.action_attachments_download
 msgid "Download"
 msgstr "Descargar"
 
 #. module: attachment_zipped_download
-#: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment__id
-msgid "ID"
-msgstr "ID"
-
-#. module: attachment_zipped_download
-#: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment____last_update
-msgid "Last Modified on"
-msgstr "Última modificación el"
-
-#. module: attachment_zipped_download
+#. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
 #, python-format
 msgid "None attachment selected. Only binary attachments allowed."
-msgstr "No se seleccionó ningún archivo adjunto. Solo se permiten archivos adjuntos binarios."
+msgstr ""
+"No se seleccionó ningún archivo adjunto. Solo se permiten archivos adjuntos "
+"binarios."
 
 #. module: attachment_zipped_download
+#. odoo-python
 #: code:addons/attachment_zipped_download/controllers/main.py:0
 #, python-format
 msgid "attachments.zip"
 msgstr "adjuntos.zip"
+
+#~ msgid "Display Name"
+#~ msgstr "Nombre mostrado"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación el"
