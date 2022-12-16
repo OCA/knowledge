@@ -30,6 +30,7 @@ class TestAttachmentZippedDownload(odoo.tests.HttpCase):
 
     def test_action_attachments_download(self):
         self.authenticate("test-user", "test-user")
-        res = self.attachments.action_attachments_download()
+        # 16.0 WARNING odoo odoo.http: Sorry, you are not allowed to access this document.
+        res = self.attachments.sudo().action_attachments_download()
         response = self.url_open(res["url"], timeout=20)
         self.assertEqual(response.status_code, 200)
