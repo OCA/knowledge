@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2020-05-15 12:19+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2022-12-29 01:32+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
@@ -212,7 +212,7 @@ msgstr "Cronologia Pagina Documento"
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 msgid "Document Page Show Diff"
-msgstr "Pagina documento Mostra Differenze"
+msgstr "Pagina documento differenze"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -278,7 +278,7 @@ msgstr "Se abilitato, i nuovi messaggi richiedono la tua attenzione."
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Se abilitato, i nuovi messaggi richiedono la tua attenzione."
+msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
@@ -520,10 +520,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
-"Status basato sulle attività\n"
-"In ritardo: Data di consegna è passata\n"
-"Oggi: La data dell'attività è oggi\n"
-"Pianificato: Attività future."
+"Stati in base alle attività\n"
+"Scaduti: la data richiesta è trascorsa\n"
+"Oggi: la data attività è oggi\n"
+"Pianificate: attività future."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
@@ -585,7 +585,7 @@ msgstr "Conteggio messaggi non letti"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
-msgstr "Usa per connettere risorse univocamente"
+msgstr "Utilizzato per collegare univocamente le risorse"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__sequence
@@ -614,7 +614,7 @@ msgstr "Esempio C'era una volta"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "eg: Changed ... for ..."
-msgstr "es: Cambiato ... in ..."
+msgstr "es.: Modificato... per..."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
