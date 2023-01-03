@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-29 02:09+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-01-03 12:46+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Categoria allegato"
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__attachment_count
 msgid "Attachment Count"
-msgstr "Conteggio allegato"
+msgstr "Numero allegati"
 
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__category_ids
