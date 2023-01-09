@@ -49,17 +49,13 @@
                     <h1>
                         <field name="name" placeholder="Name" />
                     </h1>
-                    <group>
-                        <div>
-                            <field
-                                name="content"
-                                widget="html"
-                                placeholder="e.g. Once upon a time..."
-                                required="1"
-                                options="{'safe': True, 'codeview': True}"
-                            />
-                        </div>
-                    </group>
+                    <field
+                        name="content"
+                        widget="html"
+                        placeholder="e.g. Once upon a time..."
+                        required="1"
+                        options="{'safe': True, 'codeview': True, 'collaborative': True}"
+                    />
                     <notebook>
                         <page name="info" string="Information">
                             <group>
