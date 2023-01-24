@@ -12,9 +12,7 @@ class AttachmentZippedDownloadController(http.Controller):
         if len(ids) == 0:
             return
         list_ids = map(int, ids.split(","))
-        out_file = (
-            request.env["ir.attachment"].sudo().browse(list_ids)._create_temp_zip()
-        )
+        out_file = request.env["ir.attachment"].browse(list_ids)._create_temp_zip()
         return http.send_file(
             filepath_or_fp=out_file,
             mimetype="application/zip",
