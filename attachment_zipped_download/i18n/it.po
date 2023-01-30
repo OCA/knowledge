@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-28 21:46+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-01-30 19:47+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment
 msgid "Attachment"
-msgstr "Allegati"
+msgstr "Allegato"
 
 #. module: attachment_zipped_download
 #: model:ir.actions.server,name:attachment_zipped_download.action_attachments_download
