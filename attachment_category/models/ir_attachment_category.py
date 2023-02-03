@@ -58,7 +58,7 @@ class IrAttachmentCategory(models.Model):
 
     def action_attachment_view(self):
         self.ensure_one()
-        action = self.env.ref("base.action_attachment").read()[0]
+        action = self.env["ir.actions.act_window"]._for_xml_id("base.action_attachment")
         action["domain"] = [("category_ids", "child_of", self.id)]
         context = self.env.context.copy()
         context.update({"default_category_ids": [self.id]})
