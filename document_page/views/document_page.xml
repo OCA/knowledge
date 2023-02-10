@@ -143,6 +143,11 @@
         <field name="arch" type="xml">
             <search string="Document Page">
                 <field
+                    name="draft_summary"
+                    string="Summary"
+                    filter_domain="[('draft_summary','ilike',self)]"
+                />
+                <field
                     name="name"
                     string="Content"
                     filter_domain="['|', ('name','ilike',self), ('content','ilike',self)]"
