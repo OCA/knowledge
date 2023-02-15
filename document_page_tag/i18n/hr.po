@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-10-05 06:35+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"PO-Revision-Date: 2023-02-15 21:23+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/hr/)\n"
 "Language: hr\n"
@@ -18,32 +18,33 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page_tag
 msgid "A keyword for document pages"
-msgstr ""
+msgstr "Ključna riječ za stranice dokumenta"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__active
 msgid "Active"
-msgstr ""
+msgstr "Aktivno"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
 msgid "Archived"
-msgstr ""
+msgstr "Arhivirano"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
 msgid "Color"
-msgstr ""
+msgstr "Boja"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Index boje"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_uid
@@ -58,7 +59,7 @@ msgstr "Datum kreiranja"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
-msgstr "Naziv "
+msgstr "Naziv"
 
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page
@@ -67,7 +68,6 @@ msgstr "Stranica dokumenata"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
-#, fuzzy
 msgid "Document Tag Search"
 msgstr "Stranica dokumenata"
 
@@ -79,7 +79,7 @@ msgstr "ID"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page__tag_ids
 msgid "Keywords"
-msgstr ""
+msgstr "Ključne riječi"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
@@ -104,19 +104,19 @@ msgstr "Naziv"
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 msgid "Tag"
-msgstr ""
+msgstr "Oznaka"
 
 #. module: document_page_tag
 #: model:ir.actions.act_window,name:document_page_tag.document_page_tag_action
 #: model:ir.ui.menu,name:document_page_tag.document_page_tag_menu
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_wiki_filter
 msgid "Tags"
-msgstr ""
+msgstr "Oznake"
 
 #. module: document_page_tag
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
-msgstr ""
+msgstr "Oznaka mora biti jedinstvena"
 
 #, fuzzy
 #~ msgid "Document Tags"
