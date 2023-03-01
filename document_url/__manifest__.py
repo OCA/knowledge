@@ -15,6 +15,7 @@
     "assets": {
         "web.assets_backend": [
             "document_url/static/src/js/url.esm.js",
+            "document_url/static/src/scss/document_url.scss",
         ],
         "web.assets_qweb": [
             "document_url/static/src/xml/url.xml",
