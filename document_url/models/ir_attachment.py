@@ -8,6 +8,6 @@ class IrAttachment(models.Model):
     _inherit = "ir.attachment"
 
     def _compute_mimetype(self, values):
-        if values.get("url"):
+        if values.get("url") and values.get("type", "url") == "url":
             return "application/link"
         return super()._compute_mimetype(values)
