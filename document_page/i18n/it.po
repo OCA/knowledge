@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2023-01-03 13:48+0000\n"
+"PO-Revision-Date: 2023-03-09 13:23+0000\n"
 "Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
@@ -182,7 +182,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_follower_ids
 msgid "Followers"
-msgstr "Seguaci"
+msgstr "Seguito da"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_channel_ids
