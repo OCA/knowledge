@@ -21,12 +21,14 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[document_page](document_page/) | 15.0.1.2.0 |  | Document Page
-[document_page_group](document_page_group/) | 15.0.1.0.0 |  | Define access groups on documents
-[document_page_reference](document_page_reference/) | 15.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
+[document_page](document_page/) | 15.0.1.3.1 |  | Document Page
+[document_page_approval](document_page_approval/) | 15.0.1.0.0 |  | Document Page Approval
+[document_page_group](document_page_group/) | 15.0.1.0.1 |  | Define access groups on documents
+[document_page_project](document_page_project/) | 15.0.1.0.0 |  | This module links document pages to projects
+[document_page_reference](document_page_reference/) | 15.0.1.0.1 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
 [document_page_tag](document_page_tag/) | 15.0.1.2.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
-[document_url](document_url/) | 15.0.1.0.0 |  | URL attachment
-[knowledge](knowledge/) | 15.0.1.0.1 |  | Knowledge
+[document_url](document_url/) | 15.0.1.1.1 |  | URL attachment
+[knowledge](knowledge/) | 15.0.1.0.2 |  | Knowledge
 
 [//]: # (end addons)
 

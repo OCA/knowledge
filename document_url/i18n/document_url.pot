@@ -28,13 +28,6 @@ msgid "Add URL"
 msgstr ""
 
 #. module: document_url
-#. openerp-web
-#: code:addons/document_url/static/src/xml/url.xml:0
-#, python-format
-msgid "Add attachments"
-msgstr ""
-
-#. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment
 msgid "Attachment"
 msgstr ""

@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Knowledge",
-    "version": "15.0.1.0.1",
+    "version": "15.0.1.0.2",
     "author": "OpenERP SA,"
     "MONK Software, "
     "Tecnativa, "

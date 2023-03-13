@@ -508,6 +508,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__summary
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Summary"
 msgstr "Zusammenfassung"
 
@@ -562,6 +563,17 @@ msgid "Use it to link resources univocally"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Seiten"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Assistent Menü erstellen"
@@ -598,10 +610,6 @@ msgstr ""
 
 #~ msgid "Document History"
 #~ msgstr "Verlauf des Dokumentes"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Seiten"
 
 #~ msgid "wizard.document.page.history.show_diff"
 #~ msgstr "wizard.document.page.history.show_diff"

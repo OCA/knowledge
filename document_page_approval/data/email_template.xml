@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- If user wants to make upgrade-proof customizations to email templates, he should edit ir.model.data and check noupdate himself -->
+    <record id="email_template_new_draft_need_approval" model="mail.template">
+        <field name="name">Automated new draft need approval Notification Mail</field>
+        <field
+            name="email_from"
+        >${object.create_uid.company_id.email or 'noreply@localhost.com'}</field>
+        <field
+            name="subject"
+        >New version of ${object.display_name} needs your approval</field>
+        <field name="model_id" ref="model_document_page_history" />
+        <field name="auto_delete" eval="True" />
+        <field name="lang">${object.create_uid.partner_id.lang}</field>
+        <field name="body_html">
+            <![CDATA[
+<p>Hello,</p>
+
+<p>${object.create_uid.name} submited a new Change Request for <b>${object.page_id.name}</b> and it needs your approval.</p>
+
+<h1><a href="${object.page_url}">${object.display_name}</a></h1>
+<p>
+<b>Modified by:</b> ${object.create_uid.name}<br/>
+<b>Date:</b> ${object.create_date}<br>
+</p>
+
+% if object.summary:
+<h3>Summary</h3>
+<p>${object.summary}</p>
+% endif
+
+<h3>Diff</h3>
+<div style="overflow-x:scroll; font-size:0.85em; margin-bottom:2em;">
+${object.diff|safe}
+</div>
+
+<p>Have a great day.</p>
+
+--<br/>
+
+<p>Odoo</p>
+            ]]>
+        </field>
+    </record>
+</odoo>
