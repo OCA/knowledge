@@ -17,7 +17,7 @@ class IrAttachment(models.Model):
     @api.model
     def get_binary_extension(self, model, ids, binary_field, filename_field=None):
         result = {}
-        ids_to_browse = ids if isinstance(ids, collections.Iterable) else [ids]
+        ids_to_browse = ids if isinstance(ids, collections.abc.Iterable) else [ids]
 
         # First pass: load fields in bin_size mode to avoid loading big files
         #  unnecessarily.
@@ -51,21 +51,21 @@ class IrAttachment(models.Model):
                     # _logger.debug(
                     #     "Magic determined mimetype %s from file %s",
                     #     mimetype,
-                    #     this.store_fname,
+                    #     this.store_fname
                     # )
                 else:
                     mimetype = magic.from_buffer(this[binary_field], mime=True)
-                    # _logger.debug("Magic determined mimetype %s from buffer", mimetype)
+                    _logger.debug("Magic determined mimetype %s from buffer", mimetype)
             except ImportError:
                 (mimetype, encoding) = mimetypes.guess_type(
                     "data:;base64," + this[binary_field].decode("utf-8"), strict=False
                 )
-                _logger.debug("Mimetypes guessed type %s from buffer", mimetype)
+                # _logger.debug("Mimetypes guessed type %s from buffer", mimetype)
             extension = mimetypes.guess_extension(mimetype.split(";")[0], strict=False)
             result[this.id] = extension
         for _id in result:
             result[_id] = (result[_id] or "").lstrip(".").lower()
-        return result if isinstance(ids, collections.Iterable) else result[ids]
+        return result if isinstance(ids, collections.abc.Iterable) else result[ids]
 
     @api.model
     def get_attachment_extension(self, ids):
