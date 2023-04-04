@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-03-30 14:31+0000\n"
+"PO-Revision-Date: 2023-04-04 15:24+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -345,7 +345,7 @@ msgstr "Ultima modifica il"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "Allegato Principale"
+msgstr "Allegato principale"
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
@@ -370,7 +370,7 @@ msgstr "Nome Menu"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error
 msgid "Message Delivery error"
-msgstr "Errore Consegna Messaggio"
+msgstr "Errore consegna messaggio"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_ids
@@ -394,12 +394,12 @@ msgstr "Nome per i cambiamenti effettuati"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Deadline prossima attività"
+msgstr "Scadenza attività successiva"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_summary
 msgid "Next Activity Summary"
-msgstr "Riassunto prossima attività"
+msgstr "Sommario attività successiva"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_id
