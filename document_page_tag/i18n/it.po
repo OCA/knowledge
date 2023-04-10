@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2023-03-23 13:28+0000\n"
+"PO-Revision-Date: 2023-04-10 16:36+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/it/)\n"
@@ -90,7 +90,7 @@ msgstr "Ultima modifica il"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento da"
+msgstr "Ultimo aggiornamento di"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_date
