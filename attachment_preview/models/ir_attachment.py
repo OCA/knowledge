@@ -48,14 +48,14 @@ class IrAttachment(models.Model):
                     mimetype = magic.from_file(
                         this._full_path(this.store_fname), mime=True
                     )
-                    # _logger.debug(
-                    #     "Magic determined mimetype %s from file %s",
-                    #     mimetype,
-                    #     this.store_fname,
-                    # )
+                    _logger.debug(
+                        "Magic determined mimetype %s from file %s",
+                        mimetype,
+                        this.store_fname,
+                    )
                 else:
                     mimetype = magic.from_buffer(this[binary_field], mime=True)
-                    # _logger.debug("Magic determined mimetype %s from buffer", mimetype)
+                    _logger.debug("Magic determined mimetype %s from buffer", mimetype)
             except ImportError:
                 (mimetype, encoding) = mimetypes.guess_type(
                     "data:;base64," + this[binary_field].decode("utf-8"), strict=False
