@@ -64,7 +64,14 @@ class DocumentPage(models.Model):
     @api.depends("history_head")
     def _compute_content_parsed(self):
         for record in self:
-            record.content_parsed = record.get_content()
+            content = record.get_content()
+            if content == "<p>" and self.content != "<p>":
+                _logger.error(
+                    "Template from page with id = %s cannot be processed correctly"
+                    % self.id
+                )
+                content = self.content
+            record.content_parsed = content
 
     @api.constrains("reference")
     def _check_reference(self):
@@ -120,7 +127,9 @@ class DocumentPage(models.Model):
             template = mako_env.from_string(tools.ustr(content))
             return template.render(self._get_template_variables())
         except Exception:
-            _logger.error("Template from page %s cannot be processed" % self.id)
+            _logger.error(
+                "Template from page with id = %s cannot be processed" % self.id
+            )
             return self.content
 
     def get_raw_content(self):

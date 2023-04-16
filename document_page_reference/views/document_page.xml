@@ -33,7 +33,7 @@
         <field name="inherit_id" ref="document_page.view_wiki_menu_form" />
         <field name="arch" type="xml">
             <field name="content" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="class">oe_edit_only</attribute>
             </field>
             <field name="content" position="before">
                 <field
