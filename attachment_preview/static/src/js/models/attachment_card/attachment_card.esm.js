@@ -242,34 +242,23 @@ odoo.define("attachment_preview.attachment_card", function (require) {
                     $target = $(event.currentTarget),
                     split_screen = $target.attr("data-target") !== "new",
                     attachment_id = this.attachment.id,
-                    attachment_extension = "pdf",
                     attachment_title = this.attachment.filename,
                     attachment_url = this.attachment.defaultSource;
                 active_attachment_id = attachment_id;
 
-                if (attachment_extension) {
+                rpc.query({
+                    model: "ir.attachment",
+                    method: "get_attachment_extension",
+                    args: [attachment_id],
+                }).then(function (extension) {
                     self._showPreview(
                         attachment_id,
                         attachment_url,
-                        attachment_extension,
+                        extension,
                         attachment_title,
                         split_screen
                     );
-                } else {
-                    rpc.query({
-                        model: "ir.attachment",
-                        method: "get_attachment_extension",
-                        args: [attachment_id],
-                    }).then(function (extension) {
-                        self.showPreview(
-                            attachment_id,
-                            attachment_url,
-                            extension,
-                            null,
-                            split_screen
-                        );
-                    });
-                }
+                });
             },
         }
     );
