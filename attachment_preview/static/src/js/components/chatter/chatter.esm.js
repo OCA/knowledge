@@ -205,12 +205,17 @@ odoo.define("attachment_preview.chatter", function (require) {
             attachment_title,
             split_screen
         ) {
+            if (!canPreview(attachment_extension)) {
+                return;
+            }
+
             var url = getUrl(
                 attachment_id,
                 attachment_url,
                 attachment_extension,
                 attachment_title
             );
+
             if (split_screen) {
                 this.trigger("onAttachmentPreview", {url: url});
             } else {
