@@ -13,7 +13,7 @@
             >
                 <div
                     t-if="attachmentCard.attachment.downloadUrl"
-                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4 o_attachment_preview"
+                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4"
                     t-att-data-id="attachmentCard.attachment.id"
                     t-att-data-url="attachmentCard.attachment.defaultSource"
                     t-on-click="attachmentCard._onPreviewAttachment"
@@ -27,7 +27,7 @@
                 </div>
                 <div
                     t-if="attachmentCard.attachment.downloadUrl"
-                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4 o_attachment_preview o_attachment_preview_new_tab"
+                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4 o_attachment_preview_new_tab"
                     data-target="new"
                     t-att-data-id="attachmentCard.attachment.id"
                     t-att-data-url="attachmentCard.attachment.defaultSource"
