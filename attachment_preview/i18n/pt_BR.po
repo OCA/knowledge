@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* attachment_preview
+# 	* attachment_preview
 #
 msgid ""
 msgstr ""
@@ -21,8 +21,21 @@ msgstr ""
 
 #. module: attachment_preview
 #. openerp-web
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:188
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:216
+#: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
+#, python-format
+msgid "Open in new page"
+msgstr ""
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
+#, python-format
+msgid "Preview"
+msgstr ""
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/js/components/chatter/chatter.esm.js:0
 #, python-format
 msgid "Preview %s"
 msgstr ""
