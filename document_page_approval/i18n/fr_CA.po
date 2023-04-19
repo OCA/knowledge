@@ -20,46 +20,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: document_page_approval
-#: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
-msgid ""
-"\n"
-"            \n"
-"<p>Hello,</p>\n"
-"\n"
-"<p>${object.create_uid.name} submited a new Change Request for <b>${object."
-"page_id.name}</b> and it needs your approval.</p>\n"
-"\n"
-"<h1><a href=\"${object.page_url}\">${object.display_name}</a></h1>\n"
-"<p>\n"
-"<b>Modified by:</b> ${object.create_uid.name}<br/>\n"
-"<b>Date:</b> ${object.create_date}<br>\n"
-"</p>\n"
-"\n"
-"% if object.summary:\n"
-"<h3>Summary</h3>\n"
-"<p>${object.summary}</p>\n"
-"% endif\n"
-"\n"
-"<h3>Diff</h3>\n"
-"<div style=\"overflow-x:scroll; font-size:0.85em; margin-bottom:2em;\">\n"
-"${object.diff|safe}\n"
-"</div>\n"
-"\n"
-"<p>Have a great day.</p>\n"
-"\n"
-"--<br/>\n"
-"\n"
-"<p>Odoo</p>\n"
-"            \n"
-"        "
-msgstr ""
-
-#. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
 msgid ""
 "<b>You already have a Draft Change Request for this page.</b>\n"
 "                    It is highly recommended that you edit that one instead "
 "of creating a new one."
+msgstr ""
+
+#. module: document_page_approval
+#: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
+msgid ""
+"<p>Hello,</p>\n"
+"            <p><t t-out=\"object.create_uid.name\"/> submited a new Change "
+"Request for <b t-out=\"object.page_id.name\"/> and it needs your approval.</"
+"p>\n"
+"            <h1>\n"
+"                <a t-att-href=\"object.page_url\" t-out=\"object.display_name"
+"\"/>\n"
+"            </h1>\n"
+"            <p><b>Modified by:</b> <t t-out=\"object.create_uid.name\"/></"
+"p>\n"
+"            <p><b>Date:</b> <t t-out=\"object.create_date\"/></p>\n"
+"            <t t-if=\"object.summary\">\n"
+"                <h3>Summary</h3>\n"
+"                <p t-out=\"object.summary\"/>\n"
+"            </t>\n"
+"            <h3>Diff</h3>\n"
+"            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
+"bottom:2em;\">\n"
+"                <t t-out=\"object.diff\"/>\n"
+"            </div>\n"
+"            <p>Have a great day.</p>\n"
+"            <br/>\n"
+"            <p>Odoo</p>\n"
+"        "
 msgstr ""
 
 #. module: document_page_approval
@@ -268,15 +262,15 @@ msgid "Messages"
 msgstr ""
 
 #. module: document_page_approval
-#: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
-msgid "New version of ${object.display_name} needs your approval"
-msgstr ""
-
-#. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
 msgid "New version of the document %s approved."
+msgstr ""
+
+#. module: document_page_approval
+#: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
+msgid "New version of {{object.display_name}} needs your approval"
 msgstr ""
 
 #. module: document_page_approval
