@@ -4,3 +4,5 @@
 
   * Víctor Martínez
   * Pedro M. Baeza
+
+* Pierre Verkest <pierreverkest@gmail.com>
