@@ -6,15 +6,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-29 02:09+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
-"Language-Team: none\n"
-"Language: it\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"Plural-Forms: \n"
 
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment_action_download
@@ -22,60 +19,60 @@ msgid ""
 "\n"
 "        Mixin to help download attachments linked to record(s).\n"
 "    "
-msgstr ""
+msgstr "Mixin pour faciliter le téléchargements des pièces jointes lié aux enregistrements."
 
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment
 msgid "Attachment"
-msgstr "Allegato"
+msgstr "Pièce jointe"
 
 #. module: attachment_zipped_download
 #: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment__display_name
 #: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment_action_download__display_name
 msgid "Display Name"
-msgstr "Nome visualizzato"
+msgstr "Nom affiché"
 
 #. module: attachment_zipped_download
 #: model:ir.actions.server,name:attachment_zipped_download.action_attachments_download
 msgid "Download"
-msgstr "Scarica"
+msgstr "Télécharger"
 
 #. module: attachment_zipped_download
 #: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment__id
 #: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment_action_download__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: attachment_zipped_download
 #: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment____last_update
 #: model:ir.model.fields,field_description:attachment_zipped_download.field_ir_attachment_action_download____last_update
 msgid "Last Modified on"
-msgstr "Ultima modifica il"
+msgstr "Dernière modification le"
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #: code:addons/src/knowledge/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #, python-format
 msgid "No attachment!"
-msgstr ""
+msgstr "Aucune pièce jointe !"
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
 #: code:addons/src/knowledge/attachment_zipped_download/models/ir_attachment.py:0
 #, python-format
 msgid "None attachment selected. Only binary attachments allowed."
-msgstr "Nessun allegato selezionato. Consentiti solo allegati binari."
+msgstr "Aucune pièce jointe sélectionnée. Seul les picèces jointes de type Binaire sont permises."
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #: code:addons/src/knowledge/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #, python-format
 msgid "There is no document found to download."
-msgstr ""
+msgstr "Aucune pièce jointe téléchargeable trouvé."
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/controllers/main.py:0
 #: code:addons/src/knowledge/attachment_zipped_download/controllers/main.py:0
 #, python-format
 msgid "attachments.zip"
-msgstr "attachments.zip"
+msgstr "pieces-jointes.zip"
