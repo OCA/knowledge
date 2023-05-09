@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2023-03-09 13:23+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2023-05-09 13:38+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
 "Language: it\n"
@@ -428,7 +428,7 @@ msgstr "Messaggi non letti"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr "Contatore Messaggi non letti"
+msgstr "Contatore messaggi non letti"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
