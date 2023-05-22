@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-13 00:41+0000\n"
-"PO-Revision-Date: 2023-05-09 13:38+0000\n"
+"PO-Revision-Date: 2023-05-22 15:11+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -260,7 +260,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history_message_needaction_counter
 msgid "Number of Actions"
-msgstr "Numero di Azioni"
+msgstr "Numero di azioni"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history_message_needaction_counter
