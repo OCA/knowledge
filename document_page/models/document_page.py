@@ -164,7 +164,10 @@ class DocumentPage(models.Model):
     def _compute_history_head(self):
         for rec in self:
             if rec.history_ids:
-                rec.history_head = rec.history_ids[0]
+                # do not rely on the history_ids default order here as odoo 14.0 does
+                # not seems to comply with the default model order when recomputing.
+                # fixing it by running a new sort (basically a new search).
+                rec.history_head = rec.history_ids.sorted()[0]
             else:
                 rec.history_head = False
 

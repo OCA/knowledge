@@ -22,6 +22,10 @@ class TestDocumentPage(common.TransactionCase):
         self.assertEqual(len(page.history_ids), 1)
         page.content = "New content for Demo Page"
         self.assertEqual(len(page.history_ids), 2)
+        page.content = "Another new content for Demo Page"
+        self.assertEqual(len(page.history_ids), 3)
+        # ensure history head is the latest revision (default sort order is ID DESC)
+        self.assertEqual(page.history_head.id, max(page.history_ids.ids))
 
     def test_category_template(self):
         page = self.page_obj.create(
