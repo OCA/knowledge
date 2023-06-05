@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2022-03-18 13:17+0000\n"
-"Last-Translator: Harald Panten <harald.panten@sygel.es>\n"
+"PO-Revision-Date: 2023-06-05 13:08+0000\n"
+"Last-Translator: luis-ron <luis.ron@sygel.es>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/es/)\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page_tag
@@ -38,7 +38,7 @@ msgstr "Archivado"
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
@@ -123,7 +123,7 @@ msgstr "Etiquetas"
 #. module: document_page_tag
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
-msgstr ""
+msgstr "Las etiquetas deben ser únicas"
 
 #~ msgid "Tags must me unique"
 #~ msgstr "Las etiquetas deben ser únicas"
