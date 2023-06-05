@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-06-05 14:08+0000\n"
+"PO-Revision-Date: 2023-06-05 17:08+0000\n"
 "Last-Translator: luis-ron <luis.ron@sygel.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -203,7 +203,7 @@ msgstr "Historial de página del documento"
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
 #, fuzzy
 msgid "Document Page Show Diff"
-msgstr "Página del documento"
+msgstr "Página del documento mostrar dif"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -490,9 +490,9 @@ msgstr "Error de entrega de SMS"
 
 #. module: document_page
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
-#, python-format
+#, fuzzy, python-format
 msgid "Select one or maximum two history revisions!"
-msgstr ""
+msgstr "Seleccione uno o, como máximo, dos revisiones del historial"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_state
@@ -502,6 +502,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado en base a las actividades\n"
+"Atrasada: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
@@ -522,12 +526,14 @@ msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
 msgstr ""
+"Plantilla que utilizará como estructura de contenido para todas las páginas "
+"nuevas de esta categoría."
 
 #. module: document_page
 #: code:addons/document_page/models/document_page_history.py:0
 #, python-format
 msgid "There are no changes in revisions."
-msgstr ""
+msgstr "No hay cambio en las revisiones."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
@@ -543,44 +549,43 @@ msgstr "Tipo"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de actividad de excepción registrada."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes no leídos"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de mensajes no leídos"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
-msgstr ""
+msgstr "Utilícelo para vincular recursos de forma unívoca"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
-#, fuzzy
 msgid "Website Messages"
-msgstr "Páginas"
+msgstr "Mensajes de sitio web"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicaciones del sitio web"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr ""
+msgstr "Asistente de creación de menú"
 
 #. module: document_page
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "You cannot create recursive categories."
-msgstr ""
+msgstr "No se pueden crear categorías recursivas."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -593,7 +598,7 @@ msgstr "p.e. Érase una vez..."
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "eg: Changed ... for ..."
-msgstr ""
+msgstr "ej: Cambiado …por …"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -604,7 +609,7 @@ msgstr "o"
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "summary"
-msgstr ""
+msgstr "resumen"
 
 #~ msgid "Document History"
 #~ msgstr "Historial del documento"
