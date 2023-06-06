@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-13 00:41+0000\n"
-"PO-Revision-Date: 2023-05-22 15:11+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-06-06 14:12+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
 "Language: it\n"
@@ -125,7 +125,7 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Back to draft"
-msgstr "Reimposta a bozza"
+msgstr "Ritorna a bozza"
 
 #. module: document_page_approval
 #: code:addons/document_page_approval/models/document_page_history.py:118
