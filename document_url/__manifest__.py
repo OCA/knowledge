@@ -2,7 +2,7 @@
 # Copyright 2020 Tecnativa - Manuel Calero
 {
     "name": "URL attachment",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.0.2",
     "category": "Tools",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
@@ -15,9 +15,8 @@
     "assets": {
         "web.assets_backend": [
             "document_url/static/src/js/url.esm.js",
-        ],
-        "web.assets_qweb": [
             "document_url/static/src/xml/url.xml",
+            "document_url/static/src/scss/document_url.scss",
         ],
     },
     "installable": True,
