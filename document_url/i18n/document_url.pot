@@ -31,7 +31,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/document_url/static/src/xml/url.xml:0
 #, python-format
-msgid "Add attachments"
+msgid "Attach files"
 msgstr ""
 
 #. module: document_url
@@ -82,6 +82,14 @@ msgstr ""
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__name
 msgid "Name"
+msgstr ""
+
+#. module: document_url
+#. odoo-javascript
+#: code:addons/document_url/static/src/xml/url.xml:0
+#: code:addons/document_url/static/src/xml/url.xml:0
+#, python-format
+msgid "Open"
 msgstr ""
 
 #. module: document_url
