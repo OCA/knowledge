@@ -3,6 +3,7 @@
      Copyright 2021 Tecnativa - Víctor Martínez
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <templates>
+
     <t t-inherit="mail.AttachmentBox" t-inherit-mode="extension" owl="1">
         <xpath
             expr="//button[hasclass('o_AttachmentBox_buttonAdd')]"
@@ -12,10 +13,11 @@
                 <button
                     class="o_AttachmentBox_buttonAdd btn btn-link"
                     type="button"
-                    t-on-click="_onClickAdd"
+                    t-on-click="attachmentBoxView.onClickAddAttachment"
+                    t-att-disabled="!attachmentBoxView.chatter.isTemporary and !attachmentBoxView.chatter.hasWriteAccess"
                 >
                     <i class="fa fa-plus-square" />
-                    Add attachments
+                    Attach files
                 </button>
                 <button
                     type="button"
@@ -28,29 +30,30 @@
             </div>
         </xpath>
     </t>
-
     <t t-inherit="mail.AttachmentCard" t-inherit-mode="extension" owl="1">
         <xpath
-            expr="//div[hasclass('o_AttachmentCard_details')]/t/div"
-            position="replace"
-        >
-            <a t-att-href="attachmentUrl" target="new">
-                <t t-esc="attachmentCard.attachment.displayName" />
-            </a>
-        </xpath>
-        <xpath
-            expr="//div[hasclass('o_AttachmentCard_details')]/t[2]/div"
-            position="replace"
-        >
-        </xpath>
-        <xpath
-            expr="//div[hasclass('o_AttachmentCard_asideItemDownload')]"
+            expr="//button[hasclass('o_AttachmentCard_asideItemDownload')]"
             position="attributes"
         >
             <attribute
                 name="t-if"
             >attachmentCard.attachment.mimetype != 'application/link'</attribute>
         </xpath>
+        <xpath
+            expr="//button[hasclass('o_AttachmentCard_asideItemDownload')]"
+            position="after"
+        >
+        <button
+                class="o_AttachmentCard_asideItem o_AttachmentCard_asideItemDownload btn d-flex justify-content-center align-items-center w-100 h-100 rounded-0 bg-300"
+                t-on-click="() => window.open(attachmentUrl, '_blank')"
+                title="Open"
+                t-if="attachmentCard.attachment.mimetype === 'application/link'"
+                target="new"
+            >
+                                <i class="fa fa-link" role="img" aria-label="Open" />
+                            </button>
+        </xpath>
+
         <xpath expr="//div[hasclass('o_AttachmentCard_image')]" position="attributes">
             <attribute
                 name="t-if"
@@ -58,7 +61,7 @@
         </xpath>
         <xpath expr="//div[hasclass('o_AttachmentCard_image')]" position="before">
             <a
-                class="o_Attachment_url_icon"
+                class="o_Attachment_url_ico o_image flex-shrink-0 m-1"
                 t-att-href="attachmentUrl"
                 target="new"
                 t-if="attachmentCard.attachment.mimetype=='application/link'"
