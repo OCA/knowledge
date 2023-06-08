@@ -24,12 +24,24 @@ msgid "Add"
 msgstr ""
 
 #. module: document_url
-#. openerp-web
+#. odoo-javascript
 #: code:addons/document_url/static/src/xml/url.xml:0
 #: model:ir.actions.act_window,name:document_url.action_ir_attachment_add_url
 #: model_terms:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 #, python-format
 msgid "Add URL"
+msgstr ""
+
+#. module: document_url
+#. odoo-javascript
+#: code:addons/document_url/static/src/xml/url.xml:0
+#, python-format
+msgid "Attach files"
+msgstr ""
+
+#. module: document_url
+#: model:ir.model,name:document_url.model_ir_attachment
+msgid "Attachment"
 msgstr ""
 
 #. module: document_url
@@ -75,6 +87,13 @@ msgstr "Τελευταία Αναβαθμίστηκε στις"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__name
 msgid "Name"
+msgstr ""
+
+#. module: document_url
+#. odoo-javascript
+#: code:addons/document_url/static/src/xml/url.xml:0
+#, python-format
+msgid "Open"
 msgstr ""
 
 #. module: document_url
