@@ -18,6 +18,7 @@ class TestAttachmentZippedDownload(odoo.tests.HttpCase):
         self.user = new_test_user(
             self.env,
             login="test-user",
+            password="test-user",
             context=ctx,
         )
         test_1 = self._create_attachment(self.user, "test1.txt")
@@ -27,7 +28,7 @@ class TestAttachmentZippedDownload(odoo.tests.HttpCase):
     def _create_attachment(self, user, name):
         return (
             self.env["ir.attachment"]
-            .with_user(user)
+            .sudo(user)
             .create(
                 {
                     "name": name,

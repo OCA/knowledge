@@ -4,13 +4,14 @@
 import zipfile
 from io import BytesIO
 
-from odoo import _, models
+from odoo import _, api, models
 from odoo.exceptions import UserError
 
 
 class IrAttachment(models.Model):
     _inherit = "ir.attachment"
 
+    @api.multi
     def action_attachments_download(self):
         items = self.filtered(lambda x: x.type == "binary")
         if not items:
