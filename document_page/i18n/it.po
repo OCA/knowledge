@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2023-06-07 17:11+0000\n"
+"PO-Revision-Date: 2023-06-14 09:10+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
@@ -131,7 +131,7 @@ msgstr "Differenze"
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr "Differenze"
+msgstr "Differenza"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_display_name
