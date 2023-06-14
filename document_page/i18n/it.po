@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-06-08 09:12+0000\n"
+"PO-Revision-Date: 2023-06-14 09:08+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -129,7 +129,7 @@ msgstr "Differenza"
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr "Differenze"
+msgstr "Differenza"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_display_name
