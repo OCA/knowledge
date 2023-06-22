@@ -32,6 +32,13 @@ msgstr "In neuer Seite öffnen"
 #. openerp-web
 #: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
 #, python-format
+msgid "Open preview {{attachmentCard.attachment.name}} in a new tab"
+msgstr ""
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
+#, python-format
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -41,3 +48,10 @@ msgstr "Vorschau"
 #, python-format
 msgid "Preview %s"
 msgstr "Vorschau %s"
+
+#. module: attachment_preview
+#. openerp-web
+#: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
+#, python-format
+msgid "Preview {{attachmentCard.attachment.displayName}} in side panel"
+msgstr ""
