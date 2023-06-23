@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2023-06-16 14:09+0000\n"
+"PO-Revision-Date: 2023-06-23 13:13+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
@@ -277,7 +277,7 @@ msgstr "Ultimo aggiornamento il"
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
 msgid "Manager"
-msgstr "Manager"
+msgstr "Responsabile"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_menu_id
@@ -408,7 +408,7 @@ msgstr ""
 #: code:addons/document_page/models/document_page_history.py:65
 #, python-format
 msgid "There are no changes in revisions."
-msgstr "Non ci sono modifiche nelle revisioni."
+msgstr "Non ci sono cambiamenti nelle revisioni."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_name
