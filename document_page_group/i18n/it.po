@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-28 21:46+0000\n"
+"PO-Revision-Date: 2023-06-23 09:09+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: document_page_group
 #: model:ir.model,name:document_page_group.model_document_page
@@ -29,7 +29,7 @@ msgstr "Gruppo"
 #. module: document_page_group
 #: model:ir.model.fields,help:document_page_group.field_document_page__direct_group_ids
 msgid "Set the groups that can view this category and its childs"
-msgstr "Imposta il gruppo che può visualizzare questa categoria e le sue figlie"
+msgstr "Imposta i gruppi che possono visualizzare questa categoria e le figlie"
 
 #. module: document_page_group
 #: model:ir.model.fields,field_description:document_page_group.field_document_page__direct_group_ids
