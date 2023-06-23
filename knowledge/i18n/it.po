@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-06-23 10:09+0000\n"
+"PO-Revision-Date: 2023-06-23 13:12+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -37,7 +37,7 @@ msgstr "Applica"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_read
 msgid "Attach files from an external DMS into Odoo"
-msgstr "Allega file da un DMS esterno verso Odoo"
+msgstr "Allega file da un DMS esterno in Odoo"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -62,9 +62,9 @@ msgid ""
 "to an Odoo record.\n"
 "- This installs the module cmis_read."
 msgstr ""
-"Collega Odoo con un server CMIS compatibile per allegare files\n"
+"Collegare Odoo con un server CMIS compatibile per allegare file\n"
 "ad un record Odoo.\n"
-"- Questo installa il modulo cmis_read."
+"- Questo installerà il modulo cmis_read."
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_cmis_write
@@ -72,13 +72,13 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
-"Collega  Odoo con un server CMIS compatibile per archiviare files.\n"
-"- Questo installa il modulo cmis_write."
+"Collegare Odoo con un server compatibile CMIS per allegare file.\n"
+"- Questo installerà il modulo cmis_read."
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
 msgid "Connect with an external DMS"
-msgstr "Collega con un DMS esterno"
+msgstr "Connessione con un DMS esterno"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_create_uid
@@ -128,7 +128,7 @@ msgstr "Knowledge e Gestione documentale"
 #. module: knowledge
 #: model:res.groups,name:knowledge.group_document_user
 msgid "Knowledge user"
-msgstr "Utente di knowledge"
+msgstr "Utente knowledge"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings___last_update
@@ -148,7 +148,7 @@ msgstr "Ultimo aggiornamento il"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page
 msgid "Manage document pages (Wiki)"
-msgstr "Gestione pagine (Wiki)"
+msgstr "Gestione pagine documenti (Wiki)"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document
@@ -163,7 +163,7 @@ msgstr "Gestione dei documenti e applicazioni riferite al knowledge"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_document_page_approval
 msgid "Manage documents approval"
-msgstr "Gestione della approvazione documenti"
+msgstr "Gestione approvazione documenti"
 
 #. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_knowledge_config_settings_module_document_page
@@ -171,8 +171,8 @@ msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
 msgstr ""
-"Fornisci una pagina ed una categoria come wiki.\n"
-"-  Questo installerà il modulo document_page."
+"Fornisce pagina e categoria documento come una wiki.\n"
+"- Questo installa il modulo document_page."
 
 #. module: knowledge
 #: model:ir.ui.menu,name:knowledge.menu_knowledge_configuration
@@ -182,7 +182,7 @@ msgstr "Impostazioni"
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_knowledge_config_settings_module_cmis_write
 msgid "Store attachments in an external DMS instead of the Odoo Filestore"
-msgstr "Archivia allegati in un DMS esterno invece che nel Filestore Odoo."
+msgstr "Salva gli allegati in un DMS esterno anziché nel Filestore Odoo"
 
 #. module: knowledge
 #: model:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
