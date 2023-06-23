@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-06-23 10:10+0000\n"
+"PO-Revision-Date: 2023-06-23 13:10+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -55,7 +55,7 @@ msgstr "Autore"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
 msgid "Backend URL"
-msgstr "URL Backend"
+msgstr "URL backend"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_browse_all_content
@@ -158,7 +158,7 @@ msgstr "Creato il"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_summary
 msgid "Describe the changes made"
-msgstr "Descrivi i cambiamenti apportati"
+msgstr "Descrive le modifiche fatte"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__diff
@@ -184,7 +184,7 @@ msgstr "Nome visualizzato"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 msgid "Document Category"
-msgstr "Categoria del documento"
+msgstr "Categoria documento"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_tree
@@ -289,7 +289,7 @@ msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
-msgstr "Se impostato, la pagina è accessibile solo da questa azienda"
+msgstr "Se impostata, la pagina è accessibile solo da questa azienda"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__image
@@ -309,7 +309,7 @@ msgstr "Segue"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content_date
 msgid "Last Contribution Date"
-msgstr "Data ultimo contributo"
+msgstr "Data ultima contribuzione"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content_uid
@@ -350,7 +350,7 @@ msgstr "Allegato principale"
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
 msgid "Manager"
-msgstr "Manager"
+msgstr "Responsabile"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__menu_id
@@ -601,7 +601,7 @@ msgstr "Wizard Crea Menu"
 #: code:addons/document_page/models/document_page.py:156
 #, python-format
 msgid "You cannot create recursive categories."
-msgstr "Non puoi creare categorie ricorsive."
+msgstr "Non si possono creare categorie ricorsive."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
