@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2023-06-07 17:11+0000\n"
+"PO-Revision-Date: 2023-06-23 09:09+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/it/)\n"
@@ -29,7 +29,7 @@ msgstr "Una parola chiave per le pagine del documento"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__active
 msgid "Active"
-msgstr ""
+msgstr "Attiva"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
