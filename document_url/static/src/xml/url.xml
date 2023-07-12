@@ -22,7 +22,7 @@
                 <button
                     type="button"
                     class="o_add_url_button btn btn-link"
-                    t-on-click="_onAddUrl"
+                    t-on-click="attachmentBoxView._onAddUrl"
                 >
                     <i class="fa fa-plus-square" />
                     Add URL
@@ -68,6 +68,18 @@
             >
                 <i class="fa fa-link fa-2x" />
             </a>
+        </xpath>
+    </t>
+    <t t-inherit="mail.ChatterTopbar" t-inherit-mode="extension" owl="1">
+        <xpath
+            expr="//button[hasclass('o_ChatterTopbar_buttonAddAttachments')]"
+            position="replace"
+        />
+        <xpath
+            expr="//button[hasclass('o_ChatterTopbar_buttonToggleAttachments')]"
+            position="attributes"
+        >
+            <attribute name="t-if" />
         </xpath>
     </t>
 </templates>

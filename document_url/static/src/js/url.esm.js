@@ -1,30 +1,31 @@
 /** @odoo-module **/
 
-import {AttachmentBox} from "@mail/components/attachment_box/attachment_box";
+import {registerPatch} from "@mail/model/model_core";
 import {AttachmentCard} from "@mail/components/attachment_card/attachment_card";
 import {patch} from "web.utils";
 import {url} from "@web/core/utils/urls";
 
-patch(AttachmentBox.prototype, "document_url/static/src/js/url.js", {
-    _onAddUrl(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (this.env.model) {
+registerPatch({
+    name: "AttachmentBoxView",
+    recordMethods: {
+        _onAddUrl(event) {
+            event.preventDefault();
+            event.stopPropagation();
             this.env.services.action.doAction(
                 "document_url.action_ir_attachment_add_url",
                 {
                     additionalContext: {
-                        active_id: this.env.model.root.data.id,
-                        active_ids: [this.env.model.root.data.id],
-                        active_model: this.env.model.root.resModel,
+                        active_id: this.chatter.thread.id,
+                        active_ids: [this.chatter.thread.id],
+                        active_model: this.chatter.thread.model,
                     },
                     onClose: this._onAddedUrl.bind(this),
                 }
             );
-        }
-    },
-    _onAddedUrl() {
-        this.props.record.chatter.refresh();
+        },
+        _onAddedUrl() {
+            this.chatter.refresh();
+        },
     },
 });
 
