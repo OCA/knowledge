@@ -1,5 +1,6 @@
 /** @odoo-module **/
 
+import {Activity} from "@mail/components/activity/activity";
 import {AttachmentBox} from "@mail/components/attachment_box/attachment_box";
 import {AttachmentCard} from "@mail/components/attachment_card/attachment_card";
 import {patch} from "web.utils";
@@ -45,5 +46,35 @@ patch(AttachmentCard.prototype, "document_url/static/src/js/url.js", {
             id: this.attachmentCard.attachment.id,
             download: true,
         });
+    },
+});
+
+patch(Activity.prototype, "document_url/static/src/js/url.js", {
+    _onAddUrl(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.env.bus.trigger("do-action", {
+            action: "document_url.action_ir_attachment_add_url",
+            options: {
+                additional_context: {
+                    active_id: this.messaging.models["mail.activity"].get(
+                        this.props.activityLocalId
+                    ).thread.id,
+                    active_ids: [
+                        this.messaging.models["mail.activity"].get(
+                            this.props.activityLocalId
+                        ).thread.id,
+                    ],
+                    active_model: this.messaging.models["mail.activity"].get(
+                        this.props.activityLocalId
+                    ).thread.model,
+                },
+                on_close: this._onAddedUrl.bind(this),
+            },
+        });
+    },
+    async _onAddedUrl() {
+        await this.activity.markAsDone({attachments: []});
+        this.trigger("o-attachments-changed");
     },
 });
