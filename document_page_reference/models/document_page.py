@@ -135,16 +135,16 @@ class DocumentPage(models.Model):
     def get_raw_content(self):
         return self.with_context(raw_reference=True).get_content()
 
-    @api.model
-    def create(self, vals):
-        if not vals.get("reference"):
-            # Propose a default reference
-            reference = slugify(vals.get("name")).replace("-", "_")
-            try:
-                self._validate_reference(reference=reference)
-                vals["reference"] = reference
-            except ValidationError:  # pylint: disable=W7938
-                # Do not fill reference.
-                pass
-
-        return super(DocumentPage, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get("reference"):
+                # Propose a default reference
+                reference = slugify(vals.get("name")).replace("-", "_")
+                try:
+                    self._validate_reference(reference=reference)
+                    vals["reference"] = reference
+                except ValidationError:  # pylint: disable=W7938
+                    # Do not fill reference.
+                    pass
+        return super(DocumentPage, self).create(vals_list)
