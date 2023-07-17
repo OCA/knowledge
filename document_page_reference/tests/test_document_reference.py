@@ -6,14 +6,15 @@ from odoo.tests.common import TransactionCase
 
 
 class TestDocumentReference(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.page_obj = self.env["document.page"]
-        self.history_obj = self.env["document.page.history"]
-        self.page1 = self.page_obj.create(
+    @classmethod
+    def setUpClass(cls):
+        super(TestDocumentReference, cls).setUpClass()
+        cls.page_obj = cls.env["document.page"]
+        cls.history_obj = cls.env["document.page.history"]
+        cls.page1 = cls.page_obj.create(
             {"name": "Test Page 1", "content": "${r2}", "reference": "R1"}
         )
-        self.page2 = self.page_obj.create(
+        cls.page2 = cls.page_obj.create(
             {"name": "Test Page 1", "content": "${r1}", "reference": "r2"}
         )
 
@@ -55,3 +56,23 @@ class TestDocumentReference(TransactionCase):
             }
         )
         self.assertFalse(new_page_duplicated_name.reference)
+
+    def test_get_formview_action(self):
+        res = self.page1.get_formview_action()
+        view_id = self.env.ref("document_page.view_wiki_form").id
+        expected_result = {
+            "type": "ir.actions.act_window",
+            "context": {},
+            "res_model": "document.page",
+            "res_id": self.page1.id,
+            "view_mode": "form",
+            "view_type": "form",
+            "target": "current",
+            "views": [(view_id, "form")],
+        }
+        self.assertEqual(res, expected_result)
+
+    def test_compute_content_parsed(self):
+        self.page1.content = "<p>"
+        self.page1._compute_content_parsed()
+        self.assertEqual(str(self.page1.content_parsed), "<p></p>")
