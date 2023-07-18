@@ -54,4 +54,19 @@
             </a>
         </xpath>
     </t>
+
+    <t t-inherit="mail.Activity" t-inherit-mode="extension" owl="1">
+        <xpath
+            expr="//div[hasclass('o_Activity_tools')]//t[2]/FileUploader"
+            position="after"
+        >
+            <button
+                type="button"
+                class="o_Activity_toolButton o_Activity_uploadButton btn btn-link"
+                t-on-click="_onAddUrl"
+            >
+                <i class="fa fa-link" /> Link document by URL</button>
+        </xpath>
+    </t>
+
 </templates>
