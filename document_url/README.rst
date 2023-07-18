@@ -73,6 +73,7 @@ Contributors
   * Manuel Calero
   * Víctor Martínez
   * Matias Peralta - Adhoc SA
+* Emilio Pascual (`Moduon <https://www.moduon.team/>`__)
 
 Maintainers
 ~~~~~~~~~~~
