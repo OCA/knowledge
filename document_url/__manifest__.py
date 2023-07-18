@@ -2,7 +2,7 @@
 # Copyright 2020 Tecnativa - Manuel Calero
 {
     "name": "URL attachment",
-    "version": "15.0.1.1.1",
+    "version": "15.0.1.2.0",
     "category": "Tools",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
