@@ -79,6 +79,13 @@ msgid "Last Updated on"
 msgstr "Atualizado pela última vez em"
 
 #. module: document_url
+#. openerp-web
+#: code:addons/document_url/static/src/xml/url.xml:0
+#, python-format
+msgid "Link document by URL"
+msgstr ""
+
+#. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__name
 msgid "Name"
 msgstr ""
