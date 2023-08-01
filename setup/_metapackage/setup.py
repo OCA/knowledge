@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-attachment_category',
+        'odoo14-addon-attachment_preview',
         'odoo14-addon-attachment_zipped_download',
         'odoo14-addon-document_page',
         'odoo14-addon-document_page_access_group',
