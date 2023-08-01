@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+        t-name="Attachment"
+        t-inherit="mail.Attachment"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//div[hasclass('o_Attachment_aside')]" position="before">
+            <div class="o_Attachment_aside o-has-multiple-action">
+                <div
+                    t-if="attachmentUrl"
+                    class="o_Attachment_asideItem ml4 o_attachment_preview"
+                    t-att-data-id="attachment.id"
+                    t-att-data-url="attachmentUrl"
+                    t-on-click="_onPreviewAttachment"
+                    t-att-data-original-title="attachment.name"
+                    t-attf-title="Preview {{attachment.name}} in side panel"
+                    tabindex="0"
+                    role="menuitem"
+                >
+                    <i class="fa fa-search" />
+                </div>
+                <div
+                    t-if="attachmentUrl"
+                    class="o_Attachment_asideItem ml4 o_attachment_preview o_attachment_preview_new_tab"
+                    data-target="new"
+                    t-att-data-id="attachment.id"
+                    t-att-data-url="attachmentUrl"
+                    t-on-click="_onPreviewAttachment"
+                    t-att-data-original-title="attachment.name"
+                    t-attf-title="Open preview {{attachment.name}} in a new tab"
+                    tabindex="0"
+                    role="menuitem"
+                >
+                    <i class="fa fa-external-link" />
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="attachment_preview.AttachmentPreviewWidget">
+        <div class="attachment_preview_widget d-none">
+            <div class="attachment_preview_buttons">
+                <div class="button-group pull-left">
+                    <button
+                        class="btn btn-sm btn-secondary attachment_preview_previous"
+                    ><i class="fa fa-chevron-left" /></button>
+                    <button
+                        class="btn btn-sm btn-secondary disabled attachment_preview_current"
+                    >1 / 2</button>
+                    <button class="btn btn-sm btn-secondary attachment_preview_next"><i
+                            class="fa fa-chevron-right"
+                        /></button>
+                </div>
+                <button
+                    class="btn btn-sm btn-secondary pull-left ml8 attachment_preview_popout"
+                ><i class="fa fa-external-link" /></button>
+
+                <button
+                    class="btn btn-sm btn-secondary pull-right attachment_preview_close"
+                ><i class="fa fa-times" /></button>
+            </div>
+            <iframe class="attachment_preview_iframe" />
+        </div>
+    </t>
+</templates>
