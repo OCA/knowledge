@@ -182,8 +182,8 @@ msgstr "Отображаемое имя"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document History"
-msgstr "История документа"
+msgid "Document Category"
+msgstr "Категория документа"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -291,6 +291,11 @@ msgid "If set, page is accessible only from this company"
 msgstr "Если установлено, страница доступна только из этой компании"
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Information"
+msgstr "Информация"
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
 msgid "Is Follower"
 msgstr "Является подписчиком"
@@ -348,7 +353,6 @@ msgstr "Меню"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr "Информационное меню"
 
@@ -413,8 +417,8 @@ msgstr "Количество ошибок"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Количество сообщений, требующих действия"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
@@ -585,11 +589,11 @@ msgstr "или"
 msgid "summary"
 msgstr ""
 
-#~ msgid "Document Category"
-#~ msgstr "Категория документа"
+#~ msgid "Document History"
+#~ msgstr "История документа"
 
-#~ msgid "Information"
-#~ msgstr "Информация"
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Количество сообщений, требующих действия"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Количество непрочитанных сообщений"
