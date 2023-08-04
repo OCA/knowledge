@@ -183,7 +183,8 @@ msgstr "Naziv za prikaz"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document History"
+#, fuzzy
+msgid "Document Category"
 msgstr "Povijest dokumenta"
 
 #. module: document_page
@@ -291,6 +292,12 @@ msgid "If set, page is accessible only from this company"
 msgstr "Ako je postavljeno, stranica je dostupna samo iz ove tvrtke"
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+#, fuzzy
+msgid "Information"
+msgstr "Informacija izbornika"
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
 msgid "Is Follower"
 msgstr "Je pratitelj"
@@ -348,7 +355,6 @@ msgstr "Izbornik"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr "Informacija izbornika"
 
@@ -413,8 +419,8 @@ msgstr "Broj grešaka"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Broj poruka koje zahtijevaju neku radnju"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
@@ -585,13 +591,11 @@ msgstr "ili"
 msgid "summary"
 msgstr "sažetak"
 
-#, fuzzy
-#~ msgid "Document Category"
+#~ msgid "Document History"
 #~ msgstr "Povijest dokumenta"
 
-#, fuzzy
-#~ msgid "Information"
-#~ msgstr "Informacija izbornika"
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Broj poruka koje zahtijevaju neku radnju"
 
 #, fuzzy
 #~ msgid "Website Messages"
