@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-06-06 10:09+0000\n"
-"Last-Translator: luis-ron <luis.ron@sygel.es>\n"
+"PO-Revision-Date: 2023-08-04 13:09+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: code:addons/document_page/models/document_page.py:0
 #, python-format
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s(copia)"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
@@ -45,7 +45,7 @@ msgstr "Actividades"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoración de actividad de excepción"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
@@ -55,7 +55,7 @@ msgstr "Estado de actividad"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono de tipo de actIvidad"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
@@ -72,7 +72,7 @@ msgstr "Autor"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
 msgid "Backend URL"
-msgstr ""
+msgstr "URL de servidor"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -163,7 +163,7 @@ msgstr "Describa los cambios realizados"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__diff
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__diff
 msgid "Diff"
-msgstr "Diff"
+msgstr "Dif."
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
@@ -202,9 +202,8 @@ msgstr "Historial de página del documento"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
-#, fuzzy
 msgid "Document Page Show Diff"
-msgstr "Página del documento"
+msgstr "Página del documento Mostrar diferencias"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -223,14 +222,13 @@ msgstr "Seguidores"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
-#, fuzzy
 msgid "Followers (Partners)"
 msgstr "Seguidores (socios)"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icono de fuente impresionante, por ejemplo fa-tasks"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
@@ -271,7 +269,7 @@ msgstr "Icono"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad por excepción."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
@@ -370,7 +368,7 @@ msgstr "Mensajes"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Fecha límite de mi actividad"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
@@ -389,7 +387,7 @@ msgstr "Número de cambios realizados"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite para la siguiente actividad"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_summary
@@ -467,7 +465,7 @@ msgstr "Usuario responsable"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Rev 01"
-msgstr ""
+msgstr "Rev 01"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
