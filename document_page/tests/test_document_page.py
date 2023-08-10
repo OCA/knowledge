@@ -15,10 +15,10 @@ class TestDocumentPage(common.TransactionCase):
             {
                 "name": "Test Page 1",
                 "parent_id": self.category1.id,
-                "content": "Test content",
+                "content": "<p>Test content</p>",
             }
         )
-        self.assertEqual(page.content, "Test content")
+        self.assertEqual(page.content, "<p>Test content</p>")
         self.assertEqual(len(page.history_ids), 1)
         page.content = "New content for Demo Page"
         self.assertEqual(len(page.history_ids), 2)
@@ -35,12 +35,16 @@ class TestDocumentPage(common.TransactionCase):
         self.assertEqual(page.content, self.category1.template)
 
     def test_page_history_diff(self):
-        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
+        page = self.page_obj.create(
+            {"name": "Test Page 3", "content": "<p>Test content</p>"}
+        )
         page.content = "New content"
         self.assertIsNotNone(page.history_ids[0].diff)
 
     def test_page_link(self):
-        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
+        page = self.page_obj.create(
+            {"name": "Test Page 3", "content": "<p>Test content</p>"}
+        )
         self.assertEqual(
             page.backend_url,
             "/web#id={}&model=document.page&view_type=form".format(page.id),
@@ -55,7 +59,9 @@ class TestDocumentPage(common.TransactionCase):
         )
 
     def test_page_copy(self):
-        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
+        page = self.page_obj.create(
+            {"name": "Test Page 3", "content": "<p>Test content</p>"}
+        )
         page_copy = page.copy()
         self.assertEqual(page_copy.name, page.name + " (copy)")
         self.assertEqual(page_copy.content, page.content)
