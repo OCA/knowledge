@@ -27,7 +27,7 @@ class DocumentPage(models.Model):
         "document.page", "Category", domain=[("type", "=", "category")]
     )
     child_ids = fields.One2many("document.page", "parent_id", "Children")
-    content = fields.Text(
+    content = fields.Html(
         "Content",
         compute="_compute_content",
         inverse="_inverse_content",
