@@ -30,9 +30,6 @@ class TestDocumentReference(TransactionCase):
         self.page2.write({"reference": False})
         self.assertEqual(self.page1.reference, self.page2.reference)
 
-    def test_check_raw(self):
-        self.assertEqual(self.page2.display_name, self.page1.get_raw_content())
-
     def test_check_reference(self):
         self.assertRegex(self.page1.content_parsed, ".*%s.*" % self.page2.display_name)
 

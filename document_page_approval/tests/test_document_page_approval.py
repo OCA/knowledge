@@ -62,18 +62,18 @@ class TestDocumentPageApproval(common.TransactionCase):
         page.write({"content": "New content"})
         # Needed to compute calculated fields
         page.refresh()
-        self.assertNotEqual(page.content, "New content")
+        self.assertNotEqual(page.content, "<p>New content</p>")
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")]
         )[0]
         chreq.action_approve()
-        self.assertEqual(page.content, "New content")
+        self.assertEqual(page.content, "<p>New content</p>")
 
     def test_change_request_auto_approve(self):
         page = self.page1
         self.assertFalse(page.is_approval_required)
         page.write({"content": "New content"})
-        self.assertEqual(page.content, "New content")
+        self.assertEqual(page.content, "<p>New content</p>")
 
     def test_change_request_from_scratch(self):
         page = self.page2
@@ -88,7 +88,7 @@ class TestDocumentPageApproval(common.TransactionCase):
             {
                 "page_id": page.id,
                 "summary": "Changed something",
-                "content": "New content",
+                "content": "<p>New content</p>",
             }
         )
 
