@@ -55,14 +55,12 @@ msgstr "Última modificación el"
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
-#: code:addons/src/knowledge/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #, python-format
 msgid "No attachment!"
 msgstr ""
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
-#: code:addons/src/knowledge/attachment_zipped_download/models/ir_attachment.py:0
 #, python-format
 msgid "None attachment selected. Only binary attachments allowed."
 msgstr ""
@@ -71,14 +69,12 @@ msgstr ""
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
-#: code:addons/src/knowledge/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #, python-format
 msgid "There is no document found to download."
 msgstr ""
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/controllers/main.py:0
-#: code:addons/src/knowledge/attachment_zipped_download/controllers/main.py:0
 #, python-format
 msgid "attachments.zip"
 msgstr "adjuntos.zip"
