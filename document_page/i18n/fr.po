@@ -181,8 +181,8 @@ msgstr "Nom affiché"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document History"
-msgstr "Historique du document"
+msgid "Document Category"
+msgstr "Catégorie du document"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -289,6 +289,11 @@ msgid "If set, page is accessible only from this company"
 msgstr "Si coché, la page ne sera accessible que depuis cette société"
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Information"
+msgstr "Information"
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
 msgid "Is Follower"
 msgstr "Est abonné"
@@ -346,7 +351,6 @@ msgstr "Menu"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr "Information du menu"
 
@@ -411,8 +415,8 @@ msgstr "Nombre d’erreurs"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Nombre de messages qui requièrent une action"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
@@ -583,11 +587,11 @@ msgstr "ou"
 msgid "summary"
 msgstr "résumé"
 
-#~ msgid "Document Category"
-#~ msgstr "Catégorie du document"
+#~ msgid "Document History"
+#~ msgstr "Historique du document"
 
-#~ msgid "Information"
-#~ msgstr "Information"
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Nombre de messages qui requièrent une action"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Nombre de messages non lus"

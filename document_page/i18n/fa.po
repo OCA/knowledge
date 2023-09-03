@@ -180,7 +180,8 @@ msgstr "نام نمایشی"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document History"
+#, fuzzy
+msgid "Document Category"
 msgstr "تاریخچه سند"
 
 #. module: document_page
@@ -289,6 +290,12 @@ msgid "If set, page is accessible only from this company"
 msgstr ""
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+#, fuzzy
+msgid "Information"
+msgstr "اطلاعات منو"
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
 msgid "Is Follower"
 msgstr ""
@@ -346,7 +353,6 @@ msgstr "منو"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr "اطلاعات منو"
 
@@ -411,7 +417,7 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr ""
 
 #. module: document_page
@@ -577,10 +583,5 @@ msgstr "یا"
 msgid "summary"
 msgstr ""
 
-#, fuzzy
-#~ msgid "Document Category"
+#~ msgid "Document History"
 #~ msgstr "تاریخچه سند"
-
-#, fuzzy
-#~ msgid "Information"
-#~ msgstr "اطلاعات منو"
