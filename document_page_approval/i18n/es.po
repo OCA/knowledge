@@ -66,8 +66,8 @@ msgstr ""
 "                <a t-att-href=\"objeto.página_url\" t-out=\"objeto."
 "mostrar_nombre\"></a>\n"
 "            </h1>\n"
-"            <p><b>Modificado por:</b> <t t-out=\"object.create_uid.name\""
-"></t></p>\n"
+"            <p><b>Modificado por:</b> <t t-out=\"object.create_uid.name\"></"
+"t></p>\n"
 "            <p><b>Fecha:</b> <t t-out=\"objeto.crear_fecha\"></t></p>\n"
 "            <t t-if=\"objeto.resumen\">\n"
 "                <h3>Resumen</h3>\n"
@@ -312,8 +312,8 @@ msgstr "Número de errores"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Número de mensajes que requieren una acción"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error_counter
@@ -429,3 +429,6 @@ msgstr ""
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Necesita cancelarlo antes de volver a abrirlo."
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensajes que requieren una acción"
