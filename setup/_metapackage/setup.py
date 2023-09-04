@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo-addon-document_page>=16.0dev,<16.1dev',
         'odoo-addon-document_page_approval>=16.0dev,<16.1dev',
         'odoo-addon-document_page_group>=16.0dev,<16.1dev',
+        'odoo-addon-document_page_reference>=16.0dev,<16.1dev',
         'odoo-addon-document_page_tag>=16.0dev,<16.1dev',
         'odoo-addon-document_url>=16.0dev,<16.1dev',
     ],
