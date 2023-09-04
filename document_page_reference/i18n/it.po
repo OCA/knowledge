@@ -32,12 +32,14 @@ msgid "Reference"
 msgstr "Riferimento"
 
 #. module: document_page_reference
+#. odoo-python
 #: code:addons/document_page_reference/models/document_page.py:0
 #, python-format
 msgid "Reference is not valid"
 msgstr "Il riferimento non è valido"
 
 #. module: document_page_reference
+#. odoo-python
 #: code:addons/document_page_reference/models/document_page.py:0
 #, python-format
 msgid "Reference must be unique"
