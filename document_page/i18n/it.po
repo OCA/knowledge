@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-06-23 13:10+0000\n"
+"PO-Revision-Date: 2023-09-04 18:38+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -181,9 +181,8 @@ msgstr "Nome visualizzato"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-#, fuzzy
 msgid "Document Category"
-msgstr "Cronologia del documento"
+msgstr "Categoria documento"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -291,9 +290,8 @@ msgstr "Se impostata, la pagina è accessibile solo da questa azienda"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
-#, fuzzy
 msgid "Information"
-msgstr "Menu informativo"
+msgstr "Informazione"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
@@ -418,7 +416,7 @@ msgstr "Numero di errori"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Numero di messaggi che richiedono un'azione"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
