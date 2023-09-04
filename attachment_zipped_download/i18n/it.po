@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-29 02:09+0000\n"
+"PO-Revision-Date: 2023-09-04 18:38+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment_action_download
@@ -23,6 +23,9 @@ msgid ""
 "        Mixin to help download attachments linked to record(s).\n"
 "    "
 msgstr ""
+"\n"
+"        Mixin per aiutare a scaricare gli allegati collegati ai record.\n"
+"    "
 
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment
@@ -56,7 +59,7 @@ msgstr "Ultima modifica il"
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #, python-format
 msgid "No attachment!"
-msgstr ""
+msgstr "Nessun allegato!"
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
@@ -68,7 +71,7 @@ msgstr "Nessun allegato selezionato. Consentiti solo allegati binari."
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
 #, python-format
 msgid "There is no document found to download."
-msgstr ""
+msgstr "Non sono stati trovati documenti da scaricare."
 
 #. module: attachment_zipped_download
 #: code:addons/attachment_zipped_download/controllers/main.py:0
