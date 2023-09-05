@@ -233,7 +233,6 @@ msgstr "Ako je označeno, nove poruke traže vašu pozornost."
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error
-#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Ako je označeno, neke poruke imaju greške pri isporuci."
 
@@ -310,11 +309,6 @@ msgstr "Zahtijeva odobrenje"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approval_required
 msgid "Require approval for changes on this page or its child pages."
 msgstr "Traži odobrenje za izmjene na ovoj ili podređenim stranicama."
-
-#. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Greška pri isporuci SMSa"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -403,6 +397,9 @@ msgstr ""
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Morate otkazati prije ponovnog otvaranja."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Greška pri isporuci SMSa"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Broj poruka koje trebaju neku radnju"
