@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[attachment_zipped_download](attachment_zipped_download/) | 16.0.1.0.2 |  | Attachment Zipped Download
+[attachment_zipped_download](attachment_zipped_download/) | 16.0.2.0.0 |  | Attachment Zipped Download
 [document_knowledge](document_knowledge/) | 16.0.1.1.0 |  | Documents Knowledge
 [document_page](document_page/) | 16.0.1.1.0 |  | Document Page
 [document_page_approval](document_page_approval/) | 16.0.1.1.0 |  | Document Page Approval
