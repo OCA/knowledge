@@ -18,6 +18,14 @@ msgstr ""
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: attachment_zipped_download
+#: model:ir.model,name:attachment_zipped_download.model_ir_attachment_action_download
+msgid ""
+"\n"
+"        Mixin to help download attachments linked to record(s).\n"
+"    "
+msgstr ""
+
+#. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment
 msgid "Attachment"
 msgstr "Prilog"
@@ -29,10 +37,24 @@ msgstr "Preuzimanje"
 
 #. module: attachment_zipped_download
 #. odoo-python
+#: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
+#, python-format
+msgid "No attachment!"
+msgstr ""
+
+#. module: attachment_zipped_download
+#. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
 #, python-format
 msgid "None attachment selected. Only binary attachments allowed."
 msgstr "Nema odabranih priloga. Samo binarni prilozi su dozvoljeni."
+
+#. module: attachment_zipped_download
+#. odoo-python
+#: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
+#, python-format
+msgid "There is no document found to download."
+msgstr ""
 
 #. module: attachment_zipped_download
 #. odoo-python
