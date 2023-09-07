@@ -1,4 +1,5 @@
 # © 2016 Therp BV <http://therp.nl>
+# Copyright 2023 len-foss/Financial Way
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "OCR for documents",
@@ -13,5 +14,5 @@
         "data/ir_cron.xml",
         "data/ir_config_parameter.xml",
     ],
-    "external_dependencies": {"bin": ["tesseract"]},
+    "external_dependencies": {"bin": ["tesseract"], "python": ["PyMuPDF"]},
 }

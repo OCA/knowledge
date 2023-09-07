@@ -6,6 +6,7 @@ import logging
 import subprocess
 from io import BytesIO
 
+import fitz
 from PIL import Image
 
 from odoo import api, models
@@ -45,14 +46,12 @@ class IrAttachment(models.Model):
             _logger.warning("Invalid mimetype %s", file_type)
             return None
         top_type, sub_type = file_type.split("/", 1)
+        images = []
         if sub_type == "pdf":
-            # tesseract only supports image of at most 32K pixels
-            # depending on the number of pages, we have to either split
-            # into different batches or reduce the dpi;
-            # The maximum width and height are 32767.
-            image_data = self._index_ocr_get_data_pdf(bin_data, dpi)  # TODO
+            images += self._index_ocr_get_data_pdf(bin_data, dpi)  # TODO
         else:
             image_data = BytesIO()
+            images.append(image_data)
             try:
                 i = Image.open(BytesIO(bin_data))
                 i.save(image_data, "png", dpi=(dpi, dpi))
@@ -64,29 +63,29 @@ class IrAttachment(models.Model):
             # no check that this lang has been correctly installed;
             # the corresponding tessdata should be listed by `tesseract --list-langs`
             tesseract_command += ["-l", self.env.context["ocr_lang"]]
-        process = subprocess.Popen(
-            tesseract_command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        stdout, stderr = process.communicate(image_data.getvalue())
-        if process.returncode:
-            _logger.error("Error during OCR: %s", stderr)
-        return stdout.decode("utf-8")
+        result = ""
+        for im in images:
+            process = subprocess.Popen(
+                tesseract_command,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            stdout, stderr = process.communicate(im.getvalue())
+            if process.returncode:
+                _logger.error("Error during OCR: %s", stderr)
+            result += stdout.decode("utf-8")
+        return result
 
     @api.model
     def _index_ocr_get_data_pdf(self, bin_data, dpi):
-        process = subprocess.Popen(
-            ["convert", "-density", str(dpi), "-", "-append", "png32:-"],
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        stdout, stderr = process.communicate(bin_data)
-        if stderr:
-            _logger.error("Error converting to PDF: %s", stderr)
-        return BytesIO(stdout)
+        # tesseract only supports image of at most 32K pixels in any dimension
+        # it is thus better to have a list of images than a single one
+        res = []
+        for page in fitz.open(stream=bin_data, filetype="pdf"):
+            pix = page.get_pixmap(dpi=dpi, alpha=False)
+            res.append(BytesIO(pix.tobytes("png")))
+        return res
 
     @api.model
     def _ocr_cron(self, limit=None):
