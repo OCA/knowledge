@@ -59,8 +59,13 @@ class IrAttachment(models.Model):
             except IOError:
                 _logger.exception("Failed to OCR image")
                 return None
+        tesseract_command = ["tesseract", "stdin", "stdout"]
+        if self.env.context.get("ocr_lang"):
+            # no check that this lang has been correctly installed;
+            # the corresponding tessdata should be listed by `tesseract --list-langs`
+            tesseract_command += ["-l", self.env.context["ocr_lang"]]
         process = subprocess.Popen(
-            ["tesseract", "stdin", "stdout"],
+            tesseract_command,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -89,12 +94,14 @@ class IrAttachment(models.Model):
         recs = self.with_context(ocr_force=True).search(domain, limit=limit)
         recs.perform_ocr()
 
-    def perform_ocr(self):
+    def perform_ocr(self, tesseract_lang=None):
         for rec in self:
             if not rec.datas:
                 index_content = ""  # the _MARKER_PHRASE should be removed
             else:
                 bin_data = base64.b64decode(rec.datas)
                 ctx = {"ocr_force": True}
+                if tesseract_lang:
+                    ctx["ocr_lang"] = tesseract_lang
                 index_content = rec.with_context(**ctx)._index(bin_data, rec.mimetype)
             rec.write({"index_content": index_content})

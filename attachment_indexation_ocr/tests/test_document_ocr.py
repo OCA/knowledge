@@ -63,3 +63,11 @@ class TestDocumentOcr(TransactionCase):
         self.assertEqual(attachment.index_content, _MARKER_PHRASE)
         attachment._ocr_cron()
         self.assertEqual(attachment.index_content.strip(), result_string)
+
+    def test_document_ocr_lang(self):
+        """We can pass an ocr_lang context key to help text detection"""
+        self.env["ir.config_parameter"].set_param(ir_config_parameter_key, "True")
+        bin_data = _get_image_data("pdf")
+        with_lang = self.env["ir.attachment"].with_context(ocr_lang="eng")
+        result = with_lang._index(bin_data, "application/pdf")
+        self.assertEqual(result.strip(), result_string)
