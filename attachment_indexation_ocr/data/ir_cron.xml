@@ -4,9 +4,9 @@
             <field name="name">Run OCR on uploaded documents</field>
             <field name="interval_type">days</field>
             <field name="interval_number">1</field>
-            <field name="model">ir.attachment</field>
-            <field name="function">_ocr_cron</field>
+            <field name="model_id" ref="model_ir_attachment" />
+            <field name="state">code</field>
+            <field name="code">model._ocr_cron(limit=100)</field>
             <field name="numbercall">-1</field>
-            <field name="args">(100,)</field>
         </record>
 </odoo>
