@@ -23,8 +23,9 @@
                 <field name="name" />
                 <field name="parent_id" />
                 <field name="company_id" groups="base.group_multi_company" />
-                <field name="create_uid" invisible="1" />
-                <field name="content_uid" />
+                <field name="partner_id" />
+                <field name="create_uid" optional="show" />
+                <field name="content_uid" optional="hide"/>
                 <field name="content_date" />
             </tree>
         </field>
@@ -59,7 +60,7 @@
                     <notebook>
                         <page name="info" string="Information">
                             <group>
-                                <group>
+                                <group name="Informations" string="Informations">
                                     <field
                                         name="parent_id"
                                         required="True"
@@ -70,8 +71,7 @@
                                         name="company_id"
                                         groups="base.group_multi_company"
                                     />
-                                    <field name="content_uid" />
-                                    <field name="content_date" />
+                                    <field name="partner_id" />
                                     <field
                                         name="menu_id"
                                         readonly="1"
@@ -89,6 +89,8 @@
                                         placeholder="eg: Changed ... for ..."
                                         required="True"
                                     />
+                                    <field name="content_uid" />
+                                    <field name="content_date" />
                                 </group>
                             </group>
                         </page>
@@ -169,6 +171,12 @@
                         name="parent_id"
                         icon="fa-folder"
                         string="Categories"
+                        enable_counters="1"
+                    />
+                    <field
+                        name="partner_id"
+                        icon="fa-user"
+                        string="Partner"
                         enable_counters="1"
                     />
                 </searchpanel>

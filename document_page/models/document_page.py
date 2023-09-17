@@ -93,6 +93,12 @@ class DocumentPage(models.Model):
         help="Use it to link resources univocally",
         compute="_compute_backend_url",
     )
+    partner_id = fields.Many2one(
+        comodel_name="res.partner",
+        string="Partner",
+        index=True,
+        ondelete="cascade",
+    )
 
     @api.depends("menu_id", "parent_id.menu_id")
     def _compute_backend_url(self):
