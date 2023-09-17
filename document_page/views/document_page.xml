@@ -24,8 +24,8 @@
                 <field name="parent_id" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <field name="partner_id" />
-                <field name="create_uid" optional="show" />
-                <field name="content_uid" optional="hide" />
+                <field name="create_uid" optional="hide" />
+                <field name="content_uid" optional="show" />
                 <field name="content_date" />
             </tree>
         </field>
