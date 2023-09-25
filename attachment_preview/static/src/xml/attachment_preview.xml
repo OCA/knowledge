@@ -8,38 +8,35 @@
     >
         <xpath expr="//div[hasclass('o_AttachmentCard_aside')]" position="before">
             <div
-                class="o_AttachmentCard_aside position-relative overflow-hidden"
-                t-att-class="{ 'o-has-multiple-action d-flex flex-column': !attachmentCard.attachmentList.composerView and attachmentCard.attachment.isEditable }"
+                t-if="attachmentCard.attachment.downloadUrl"
+                class="o_AttachmentCard_aside position-relative rounded-end overflow-hidden"
+                t-att-class="{ 'o-hasMultipleActions d-flex flex-column': attachmentCard.hasMultipleActions }"
             >
-                <div
-                    t-if="attachmentCard.attachment.downloadUrl"
-                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4"
+                <button
+                    class="o_AttachmentCard_asideItem btn d-flex justify-content-center align-items-center w-100 h-100 rounded-0 bg-300"
                     t-att-data-id="attachmentCard.attachment.id"
                     t-att-data-url="attachmentCard.attachment.defaultSource"
                     t-on-click="attachmentCard._onPreviewAttachment"
                     t-att-data-original-title="attachmentCard.attachment.name"
                     t-attf-title="Preview {{attachmentCard.attachment.displayName}} in side panel"
-                    tabindex="0"
-                    role="menuitem"
-                    aria-label="Preview"
                 >
-                    <i class="fa fa-search" />
-                </div>
-                <div
-                    t-if="attachmentCard.attachment.downloadUrl"
-                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4 o_attachment_preview_new_tab"
+                    <i class="fa fa-search" role="img" aria-label="Preview" />
+                </button>
+                <button
+                    class="o_AttachmentCard_asideItem btn d-flex justify-content-center align-items-center w-100 h-100 rounded-0 bg-300"
                     data-target="new"
                     t-att-data-id="attachmentCard.attachment.id"
                     t-att-data-url="attachmentCard.attachment.defaultSource"
                     t-on-click="attachmentCard._onPreviewAttachment"
                     t-att-data-original-title="attachmentCard.attachment.name"
                     t-attf-title="Open preview {{attachmentCard.attachment.name}} in a new tab"
-                    tabindex="0"
-                    role="menuitem"
-                    aria-label="Open in new page"
                 >
-                    <i class="fa fa-external-link" />
-                </div>
+                    <i
+                        class="fa fa-external-link"
+                        role="img"
+                        aria-label="Open in new page"
+                    />
+                </button>
             </div>
         </xpath>
     </t>
