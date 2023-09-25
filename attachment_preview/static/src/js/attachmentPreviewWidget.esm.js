@@ -1,10 +1,7 @@
 /** @odoo-module */
 import Widget from "web.Widget";
 
-var active_attachment_index = 0;
-var is_first_click = true;
-
-var AttachmentPreviewWidget = Widget.extend({
+export const AttachmentPreviewWidget = Widget.extend({
     template: "attachment_preview.AttachmentPreviewWidget",
     activeIndex: 0,
 
@@ -16,7 +13,6 @@ var AttachmentPreviewWidget = Widget.extend({
     },
 
     start: function () {
-        // First_click = true;
         var res = this._super.apply(this, arguments);
         this.$overlay = $(".attachment_preview_overlay");
         this.$iframe = $(".attachment_preview_iframe");
@@ -37,17 +33,11 @@ var AttachmentPreviewWidget = Widget.extend({
     },
 
     _onPopoutClick: function () {
-        if (!this.attachments[this.activeIndex]) {
-            return;
-        }
-
+        if (!this.attachments[this.activeIndex]) return;
         window.open(this.attachments[this.activeIndex].previewUrl);
     },
 
     next: function () {
-        if (is_first_click) {
-            is_first_click = !is_first_click;
-        }
         var index = this.activeIndex + 1;
         if (index >= this.attachments.length) {
             index = 0;
@@ -58,9 +48,6 @@ var AttachmentPreviewWidget = Widget.extend({
     },
 
     previous: function () {
-        if (is_first_click) {
-            is_first_click = !is_first_click;
-        }
         var index = this.activeIndex - 1;
         if (index < 0) {
             index = this.attachments.length - 1;
@@ -76,7 +63,6 @@ var AttachmentPreviewWidget = Widget.extend({
     },
 
     hide: function () {
-        is_first_click = true;
         this.$el.addClass("d-none");
         this.trigger("hidden");
     },
@@ -98,37 +84,19 @@ var AttachmentPreviewWidget = Widget.extend({
             this.$iframe.attr("src", "about:blank");
             return;
         }
-
-        if (is_first_click) {
-            for (let i = 0; i < this.attachments.length; i++) {
-                if (
-                    parseInt(this.attachments[i].id, 10) === this.active_attachment_id
-                ) {
-                    active_attachment_index = i;
-                    is_first_click = false;
-                }
-            }
-        } else {
-            active_attachment_index = this.activeIndex;
-        }
-
-        var att = this.attachments[active_attachment_index];
+        var att = this.attachments[this.activeIndex];
         this.$iframe.attr("src", att.previewUrl);
     },
 
-    setAttachments: function (attachments, active_attachment_id, first_click) {
-        is_first_click = first_click;
-
-        if (active_attachment_id) {
-            this.active_attachment_id = active_attachment_id;
+    setAttachments: function (attachments, active_attachment_id) {
+        this.attachments = attachments;
+        if (!attachments) return;
+        for (let i = 0; i < attachments.length; ++i) {
+            if (parseInt(attachments[i].id, 10) === active_attachment_id) {
+                this.activeIndex = i;
+            }
         }
-        if (attachments) {
-            this.attachments = attachments;
-            this.activeIndex = 0;
-            this.updatePaginator();
-            this.loadPreview();
-        }
+        this.updatePaginator();
+        this.loadPreview();
     },
 });
-
-export default AttachmentPreviewWidget;
