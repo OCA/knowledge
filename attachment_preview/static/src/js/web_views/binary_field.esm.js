@@ -1,8 +1,5 @@
 /** @odoo-module **/
-import {
-    canPreview,
-    showPreview,
-} from "../../models/attachment_card/attachment_card.esm";
+import {canPreview, showPreview} from "../utils.esm";
 import {BinaryField} from "@web/views/fields/binary/binary_field";
 import {_t} from "@web/core/l10n/translation";
 import {onMounted} from "@odoo/owl";
