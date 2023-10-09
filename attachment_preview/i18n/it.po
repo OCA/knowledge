@@ -26,9 +26,23 @@ msgid "Attachment"
 msgstr "Allegato"
 
 #. module: attachment_preview
+#: model:ir.model.fields,field_description:attachment_preview.field_ir_attachment__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: attachment_preview
+#: model:ir.model.fields,field_description:attachment_preview.field_ir_attachment__id
+msgid "ID"
+msgstr ""
+
+#. module: attachment_preview
+#: model:ir.model.fields,field_description:attachment_preview.field_ir_attachment____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: attachment_preview
 #. openerp-web
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:188
-#: code:addons/attachment_preview/static/src/js/attachment_preview.js:216
+#: code:addons/attachment_preview/static/src/js/attachment_preview.js:0
 #, python-format
 msgid "Preview %s"
 msgstr "Anteprima %s"
