@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* document_page_reference
+# 	* document_page_reference
 #
 msgid ""
 msgstr ""
