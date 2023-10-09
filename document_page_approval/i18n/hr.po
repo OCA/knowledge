@@ -65,6 +65,11 @@ msgid ""
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__am_i_approver
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__am_i_approver
 msgid "Am I Approver"
@@ -105,8 +110,8 @@ msgid "Approved by"
 msgstr "Odobrio"
 
 #. module: document_page_approval
-#: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 #: model:res.groups,name:document_page_approval.group_document_approver_user
+#: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approver"
 msgstr "Odobrava"
 
@@ -119,6 +124,11 @@ msgstr "Grupa odobravatelja"
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approver_group_ids
 msgid "Approver groups"
 msgstr "Grupe odobravatelja"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -168,6 +178,12 @@ msgid "Change request has been approved by %s."
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page__display_name
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
 msgid "Document Page"
 msgstr "Stranica dokumenata"
@@ -182,6 +198,21 @@ msgstr "Povijest stranica Dokumenata"
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Draft"
 msgstr "Nacrt"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_group_ids
@@ -199,9 +230,53 @@ msgid "History"
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page__id
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__id
+msgid "ID"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__is_approval_required
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__is_approval_required
 msgid "If true, changes of this page require approval"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page____last_update
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_ids
+msgid "Messages"
 msgstr ""
 
 #. module: document_page_approval
@@ -214,6 +289,31 @@ msgstr ""
 #, python-format
 msgid "New version of the document %s approved."
 msgstr "Nova verzija dokumenta %s odobrena"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__to_approve
@@ -229,6 +329,11 @@ msgstr "Zahtijeva odobrenje"
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approval_required
 msgid "Require approval for changes on this page or its child pages."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: document_page_approval
@@ -266,6 +371,16 @@ msgid "URL"
 msgstr "URL"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__user_has_drafts
 msgid "User has drafts?"
 msgstr ""
@@ -273,6 +388,16 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: document_page_approval
