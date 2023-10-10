@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.10\n"
 
 #. module: document_page_tag
@@ -32,6 +32,7 @@ msgid "Active"
 msgstr "Aktivno"
 
 #. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
 msgid "Archived"
 msgstr "Arhivirano"
@@ -113,6 +114,6 @@ msgid "Tags"
 msgstr "Oznake"
 
 #. module: document_page_tag
-#: sql_constraint:document.page.tag:0
+#: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must me unique"
 msgstr "Oznake morajo biti unikatne"

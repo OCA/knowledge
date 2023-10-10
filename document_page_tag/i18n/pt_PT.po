@@ -29,6 +29,7 @@ msgid "Active"
 msgstr ""
 
 #. module: document_page_tag
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
 msgid "Archived"
 msgstr ""
@@ -112,6 +113,6 @@ msgid "Tags"
 msgstr ""
 
 #. module: document_page_tag
-#: sql_constraint:document.page.tag:0
+#: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must me unique"
 msgstr ""
