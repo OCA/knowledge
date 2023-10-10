@@ -76,8 +76,8 @@ msgid ""
 "Connect Odoo with a CMIS compatible server to store files.\n"
 "- This installs the module cmis_write."
 msgstr ""
-"Connectez Odoo avec un serveur compatible CMIS pour enregistrer les fichiers."
-"\n"
+"Connectez Odoo avec un serveur compatible CMIS pour enregistrer les "
+"fichiers.\n"
 "- Cecu installe le module cmis_write."
 
 #. module: knowledge
