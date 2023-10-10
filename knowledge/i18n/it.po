@@ -85,6 +85,12 @@ msgid "Connect with an external DMS"
 msgstr "Connessione con un DMS esterno"
 
 #. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: knowledge
 #: model:ir.model.fields,help:knowledge.field_res_config_settings__module_attachment_indexation
 msgid ""
 "Document indexation, full text search of attachements.\n"
@@ -107,6 +113,12 @@ msgid "Group by"
 msgstr "Raggruppa per"
 
 #. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_ir_attachment__id
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge
 #: model:ir.module.category,name:knowledge.module_category_knowledge
 #: model:ir.ui.menu,name:knowledge.menu_document_root
 #: model_terms:ir.ui.view,arch_db:knowledge.view_knowledge_configuration
@@ -122,6 +134,12 @@ msgstr "Knowledge e Gestione documentale"
 #: model:res.groups,name:knowledge.group_document_user
 msgid "Knowledge user"
 msgstr "Utente knowledge"
+
+#. module: knowledge
+#: model:ir.model.fields,field_description:knowledge.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:knowledge.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
 
 #. module: knowledge
 #: model:ir.model.fields,field_description:knowledge.field_res_config_settings__module_document_page
@@ -205,15 +223,6 @@ msgstr ""
 
 #~ msgid "Created on"
 #~ msgstr "Creato il"
-
-#~ msgid "Display Name"
-#~ msgstr "Nome da visualizzare"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Ultima modifica il"
 
 #~ msgid "Last Updated by"
 #~ msgstr "Ultima modifica di"
