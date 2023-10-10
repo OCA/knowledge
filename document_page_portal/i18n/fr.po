@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* document_page_portal
+# 	* document_page_portal
 #
 msgid ""
 msgstr ""
@@ -45,7 +45,8 @@ msgstr "Page"
 
 #. module: document_page_portal
 #: model:ir.model.fields,help:document_page_portal.field_document_page__is_public
-msgid "If true it allows any user of the portal to have access to this document."
+msgid ""
+"If true it allows any user of the portal to have access to this document."
 msgstr ""
 "Si actif, il permet à n’importe quel utilisateur du portail d’avoir accès à "
 "ce document."
