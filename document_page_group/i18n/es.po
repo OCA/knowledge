@@ -17,11 +17,6 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: document_page_group
-#: model:ir.model.fields,field_description:document_page_group.field_document_page__display_name
-msgid "Display Name"
-msgstr "Nombre mostrado"
-
-#. module: document_page_group
 #: model:ir.model,name:document_page_group.model_document_page
 msgid "Document Page"
 msgstr "Página del documento"
@@ -32,16 +27,6 @@ msgid "Group"
 msgstr "Grupo"
 
 #. module: document_page_group
-#: model:ir.model.fields,field_description:document_page_group.field_document_page__id
-msgid "ID"
-msgstr "ID"
-
-#. module: document_page_group
-#: model:ir.model.fields,field_description:document_page_group.field_document_page____last_update
-msgid "Last Modified on"
-msgstr "Última modificación el"
-
-#. module: document_page_group
 #: model:ir.model.fields,help:document_page_group.field_document_page__direct_group_ids
 msgid "Set the groups that can view this category and its childs"
 msgstr "Definir los grupos que puede ver una categoría y sus hijos"
@@ -50,3 +35,12 @@ msgstr "Definir los grupos que puede ver una categoría y sus hijos"
 #: model:ir.model.fields,field_description:document_page_group.field_document_page__direct_group_ids
 msgid "Visible to"
 msgstr "Visible para"
+
+#~ msgid "Display Name"
+#~ msgstr "Nombre mostrado"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación el"
