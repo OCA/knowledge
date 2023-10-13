@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-05 11:50+0000\n"
-"PO-Revision-Date: 2023-08-07 09:11+0000\n"
+"PO-Revision-Date: 2023-10-13 10:39+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/it/)\n"
@@ -28,17 +28,17 @@ msgstr "Allegato"
 #. module: attachment_preview
 #: model:ir.model.fields,field_description:attachment_preview.field_ir_attachment__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: attachment_preview
 #: model:ir.model.fields,field_description:attachment_preview.field_ir_attachment__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: attachment_preview
 #: model:ir.model.fields,field_description:attachment_preview.field_ir_attachment____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: attachment_preview
 #. openerp-web
