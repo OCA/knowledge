@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2023-06-23 13:13+0000\n"
+"PO-Revision-Date: 2023-10-29 08:26+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
@@ -287,7 +287,7 @@ msgstr "Menu"
 #. module: document_page
 #: model:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr "Informazioni Menu"
+msgstr "Informazioni menu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu_menu_name
