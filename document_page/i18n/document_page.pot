@@ -73,7 +73,6 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_category
-#: model_terms:ir.ui.view,arch_db:document_page.view_category_tree
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Categories"
 msgstr ""
@@ -178,18 +177,11 @@ msgid "Document Category"
 msgstr ""
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_tree
-msgid "Document History"
-msgstr ""
-
-#. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
 #: model:ir.model,name:document_page.model_document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_tree_children
 msgid "Document Page"
 msgstr ""
 
