@@ -49,7 +49,7 @@
         <field name="name">document.page.tag.tree</field>
         <field name="model">document.page.tag</field>
         <field name="arch" type="xml">
-            <tree string="Document Tags">
+            <tree>
                 <field name="name" />
                 <field name="color" widget="color_picker" string="Color" />
             </tree>
