@@ -66,11 +66,6 @@ msgid "Document Tag Search"
 msgstr ""
 
 #. module: document_page_tag
-#: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
-msgid "Document Tags"
-msgstr ""
-
-#. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page__id
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
 msgid "ID"
