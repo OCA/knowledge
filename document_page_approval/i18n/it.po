@@ -259,7 +259,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error
-#: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -339,11 +338,6 @@ msgid "Require approval for changes on this page or its child pages."
 msgstr ""
 "Richiede approvazione per le modifiche in questa pagina o nelle pagine "
 "figlie."
-
-#. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -433,6 +427,9 @@ msgstr ""
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Devi cancellarlo prima di riaprirlo."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"
