@@ -9,7 +9,7 @@
 
 # knowledge
 
-TODO: add repo description.
+Knowlesge management addons. Also has some usefull tools to handle attachments
 
 <!-- /!\ do not modify below this line -->
 
