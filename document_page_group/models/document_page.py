@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class DocumentPage(models.Model):
-
     _inherit = "document.page"
 
     group_ids = fields.Many2many(
