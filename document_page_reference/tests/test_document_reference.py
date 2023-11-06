@@ -8,7 +8,7 @@ from odoo.tests.common import TransactionCase
 class TestDocumentReference(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestDocumentReference, cls).setUpClass()
+        super().setUpClass()
         cls.page_obj = cls.env["document.page"]
         cls.history_obj = cls.env["document.page.history"]
         cls.page1 = cls.page_obj.create(
