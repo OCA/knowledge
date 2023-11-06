@@ -2,7 +2,7 @@ To configure this module, you need to:
 
 - Go to Settings -> General Settings and scroll down to the Integrations section.
 
-- Enable "Google API", save.
+- Enable "Google API", save. Setup instructions https://developers.google.com/drive/picker/guides/overview
 
   - field "Google Client ID" - enter the client ID from the Google API console.
   - field "Google API key" - enter the API key from the Google API console.

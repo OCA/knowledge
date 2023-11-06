@@ -13,6 +13,9 @@ class ResUsers(models.Model):
     )
     google_picker_access_token = fields.Char(string="Google Access Token")
     google_picker_mime_types = fields.Char(string="Google Mime Types")
+    google_picker_active = fields.Boolean(
+        compute="_compute_google_picker_active",
+    )
 
     def get_google_picker_params(self):
         """
@@ -22,9 +25,8 @@ class ResUsers(models.Model):
         self.ensure_one()
         config = self.env["ir.config_parameter"].sudo()
         google_service = self.env["google.service"]
-        is_active_google_api = config.get_param("is_active_google_api")
 
-        if not is_active_google_api:
+        if not self.google_picker_active:
             return {}
         return {
             "client_id": google_service._get_client_id("picker"),
@@ -43,3 +45,11 @@ class ResUsers(models.Model):
         """
         self.ensure_one()
         self.google_picker_access_token = access_token
+
+    def _compute_google_picker_active(self):
+        """
+        Compute Google Picker Active
+        :return: None
+        """
+        conf = self.env["ir.config_parameter"].sudo()
+        self.google_picker_active = conf.get_param("is_active_google_api")
