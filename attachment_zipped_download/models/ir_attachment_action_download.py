@@ -5,7 +5,6 @@ from odoo import _, models
 
 
 class IrAttachmentActionDownloadMixin(models.AbstractModel):
-
     _name = "ir.attachment.action_download"
     _description = """
         Mixin to help download attachments linked to record(s).
