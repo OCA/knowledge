@@ -278,7 +278,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -477,11 +476,6 @@ msgid "Revision"
 msgstr "Revisione"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 #, python-format
@@ -588,6 +582,9 @@ msgstr "o"
 #, python-format
 msgid "summary"
 msgstr "Sommario"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
 
 #~ msgid "Document History"
 #~ msgstr "Cronologia del documento"
