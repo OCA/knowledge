@@ -9,7 +9,32 @@
         <field name="inherit_id" ref="base.view_users_form" />
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page string="Google API">
+                <field name="google_picker_active" invisible="1" />
+                <page
+                    string="Google API"
+                    attrs="{'invisible': [('google_picker_active', '=', False)]}"
+                >
+                    <group>
+                        <field name="google_picker_scope" />
+                        <field name="google_picker_access_token" readonly="1" />
+                        <field name="google_picker_mime_types" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_users_google_picker_view_form_simple_modif" model="ir.ui.view">
+        <field name="name">res.users.simple_modif (document_url_google_drive)</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <field name="google_picker_active" invisible="1" />
+                <page
+                    string="Google API"
+                    attrs="{'invisible': [('google_picker_active', '=', False)]}"
+                >
                     <group>
                         <field name="google_picker_scope" />
                         <field name="google_picker_access_token" readonly="1" />

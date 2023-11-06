@@ -33,17 +33,15 @@ class TestDocumentUrl(common.TransactionCase):
         self.assertEqual(attachment.mimetype, "application/link")
 
     def test_get_google_picker_params_is_active(self):
-        self.config_settings.set_param(
-            "document_url_google_drive.is_active_google_api", True
-        )
+        self.config_settings.set_param("is_active_google_api", True)
+        self.config_settings.set_param("google_picker_api_key", "test_api_key")
+        self.config_settings.set_param("google_picker_app_id", "test_app_id")
+        self.config_settings.set_param("google_picker_client_id", "test_client_id")
         user = self.users.with_context(no_reset_password=True).create(
             {
                 "name": "Test User",
                 "login": "test_user",
-                "google_picker_client_id": "test_client_id",
-                "google_picker_api_key": "test_api_key",
                 "google_picker_scope": "test_scope",
-                "google_picker_app_id": "test_app_id",
                 "google_picker_access_token": "test_access_token",
                 "google_picker_mime_types": "test_mime_types",
             }
@@ -62,9 +60,7 @@ class TestDocumentUrl(common.TransactionCase):
         )
 
     def test_get_google_picker_params_not_is_active(self):
-        self.config_settings.set_param(
-            "document_url_google_drive.is_active_google_api", False
-        )
+        self.config_settings.set_param("is_active_google_api", False)
         user = self.users.with_context(no_reset_password=True).create(
             {
                 "name": "Test User",

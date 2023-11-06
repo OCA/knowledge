@@ -25,6 +25,7 @@ export class AttachmentGooglePicker extends Component {
             client_id: "",
             app_id: "",
             accessToken: null,
+            expiresDate: 0,
         });
         this.tokenClient = null;
 
@@ -48,9 +49,15 @@ export class AttachmentGooglePicker extends Component {
     // Public
     // --------------------------------------------------------------------------
 
-    _onAddGooglePickerUrl() {
-        console.log("Add Google Picker URL");
-        this.handleAuthClick();
+    async _onAddGooglePickerUrl() {
+        if (
+            this.state.accessToken &&
+            this.state.expiresDate > Math.floor(Date.now() / 1000)
+        ) {
+            await this.createPicker();
+        } else {
+            await this.handleAuthClick();
+        }
     }
 
     checkActive() {
@@ -74,11 +81,15 @@ export class AttachmentGooglePicker extends Component {
         const res = await this.orm.call("res.users", "get_google_picker_params", [
             this.user.userId,
         ]);
+        if (!res) {
+            return;
+        }
         this.state.client_id = res.client_id;
         this.state.api_key = res.api_key;
         this.state.app_id = res.app_id;
         this.state.scopes = res.scope;
         this.state.accessToken = res.access_token;
+        this.state.expiresDate = res.expires_date;
         this.state.mime_types = res.mime_types;
     }
 
@@ -86,6 +97,7 @@ export class AttachmentGooglePicker extends Component {
         await this.orm.call("res.users", "save_google_picker_access_token", [
             this.user.userId,
             this.state.accessToken,
+            this.state.expiresDate,
         ]);
     }
 
@@ -106,6 +118,8 @@ export class AttachmentGooglePicker extends Component {
                 throw response;
             }
             this.state.accessToken = response.access_token;
+            this.state.expiresDate =
+                Math.floor(Date.now() / 1000) + response.expires_in;
             await this.createPicker();
             await this.saveUserAuthAccessToken();
         };
@@ -113,10 +127,13 @@ export class AttachmentGooglePicker extends Component {
         if (this.state.accessToken === null) {
             // Prompt the user to select a Google Account and ask for consent to share their data
             // when establishing a new session.
-            this.tokenClient.requestAccessToken({prompt: "consent"});
+            this.tokenClient.requestAccessToken({
+                prompt: "consent",
+                access_type: "offline",
+            });
         } else {
             // Skip display of account chooser and consent dialog for an existing session.
-            this.tokenClient.requestAccessToken({prompt: ""});
+            this.tokenClient.requestAccessToken({prompt: "", access_type: "offline"});
         }
     }
 
