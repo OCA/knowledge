@@ -106,7 +106,7 @@ class DocumentPage(models.Model):
                 action = parent.menu_id.action
                 parent = parent.parent_id
             if action:
-                url += "&action={}".format(action.id)
+                url += f"&action={action.id}"
             rec.backend_url = url
 
     @api.constrains("parent_id")
@@ -122,7 +122,7 @@ class DocumentPage(models.Model):
         ]
         r = ""
         if link:
-            r = '<a href="{}">{}</a>'.format(self.backend_url, self.name)
+            r = f'<a href="{self.backend_url}">{self.name}</a>'
         if index:
             r += "<ul>" + "".join(index) + "</ul>"
         return r
