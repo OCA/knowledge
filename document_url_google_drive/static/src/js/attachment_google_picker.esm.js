@@ -66,7 +66,6 @@ export class AttachmentGooglePicker extends Component {
         this.state.accessToken = null;
         await this.saveUserAuthAccessToken();
     }
-
     // --------------------------------------------------------------------------
     // Private
     // --------------------------------------------------------------------------
@@ -84,7 +83,7 @@ export class AttachmentGooglePicker extends Component {
     }
 
     async saveUserAuthAccessToken() {
-        this.orm.call("res.users", "save_google_picker_access_token", [
+        await this.orm.call("res.users", "save_google_picker_access_token", [
             this.user.userId,
             this.state.accessToken,
         ]);
@@ -150,15 +149,15 @@ export class AttachmentGooglePicker extends Component {
 
     async pickerCallback(data) {
         if (data.action === window.google.picker.Action.PICKED) {
-            data[window.google.picker.Response.DOCUMENTS].forEach((document) => {
-                this.createAttachment(document);
-            });
+            for (const document of data.docs) {
+                await this.createAttachment(document);
+            }
             await this._onAddedUrl();
         }
     }
 
     async createAttachment(document) {
-        this.orm.call("ir.attachment.add_url", "add_attachment_google_drive", [
+        await this.orm.call("ir.attachment.add_url", "add_attachment_google_drive", [
             document.url,
             document.name,
             this.props.record.chatter.thread.model,

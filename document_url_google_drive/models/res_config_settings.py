@@ -9,5 +9,18 @@ class ResConfigSettings(models.TransientModel):
 
     is_active_google_api = fields.Boolean(
         string="Google APIs",
-        config_parameter="document_url_google_drive.is_active_google_api",
+        config_parameter="is_active_google_api",
+    )
+    google_picker_client_id = fields.Char(
+        string="Google Client ID",
+        config_parameter="google_picker_client_id",
+    )
+    google_picker_api_key = fields.Char(
+        string="Google API Key",
+        config_parameter="google_picker_api_key",
+    )
+    google_picker_app_id = fields.Char(
+        string="Google App ID",
+        config_parameter="google_picker_app_id",
+        default="odoo",
     )

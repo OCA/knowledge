@@ -11,10 +11,7 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Google API">
                     <group>
-                        <field name="google_picker_client_id" />
-                        <field name="google_picker_api_key" />
                         <field name="google_picker_scope" />
-                        <field name="google_picker_app_id" />
                         <field name="google_picker_access_token" readonly="1" />
                         <field name="google_picker_mime_types" />
                     </group>

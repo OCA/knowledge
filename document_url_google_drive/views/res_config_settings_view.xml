@@ -19,6 +19,35 @@
                         <div class="text-muted">
                             Use google integration.
                         </div>
+                        <div
+                            class="content-group"
+                            attrs="{'invisible': [('is_active_google_api','=',False)]}"
+                        >
+                            <div class="mt16 row">
+                                <label
+                                    for="google_picker_client_id"
+                                    string="Google Client ID"
+                                    class="col-3 col-lg-3 o_light_label"
+                                />
+                                <field name="google_picker_client_id" nolabel="1" />
+                            </div>
+                            <div class="mt16 row">
+                                <label
+                                    for="google_picker_api_key"
+                                    string="Google Api Key"
+                                    class="col-3 col-lg-3 o_light_label"
+                                />
+                                <field name="google_picker_api_key" nolabel="1" />
+                            </div>
+                            <div class="mt16 row">
+                                <label
+                                    for="google_picker_app_id"
+                                    string="Google App Id"
+                                    class="col-3 col-lg-3 o_light_label"
+                                />
+                                <field name="google_picker_app_id" nolabel="1" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </xpath>

@@ -14,7 +14,7 @@
             Add GDrive link
 
         </button>
-        <i
+         <i
             t-if="state.accessToken"
             class="fa fa-sign-out"
             aria-hidden="true"

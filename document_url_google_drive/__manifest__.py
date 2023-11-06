@@ -11,6 +11,7 @@
     "installable": True,
     "depends": [
         "document_url",
+        "google_account",
     ],
     "data": [
         "views/res_users_view.xml",
