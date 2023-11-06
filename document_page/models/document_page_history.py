@@ -61,8 +61,8 @@ class DocumentPageHistory(models.Model):
             return diff.make_table(
                 line1,
                 line2,
-                "Revision-{}".format(v1),
-                "Revision-{}".format(v2),
+                f"Revision-{v1}",
+                f"Revision-{v2}",
                 context=True,
             )
 
