@@ -11,7 +11,7 @@ from .test_attachment_zipped_download import TestAttachmentZippedDownloadBase
 class TestMixin(SavepointCase, TestAttachmentZippedDownloadBase):
     @classmethod
     def setUpClass(cls):
-        super(TestMixin, cls).setUpClass()
+        super().setUpClass()
         cls.loader = FakeModelLoader(cls.env, cls.__module__)
         cls.addClassCleanup(cls.loader.restore_registry)
         cls.loader.backup_registry()
