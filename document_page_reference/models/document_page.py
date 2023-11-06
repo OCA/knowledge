@@ -47,7 +47,6 @@ except Exception:
 
 
 class DocumentPage(models.Model):
-
     _inherit = "document.page"
 
     reference = fields.Char(
@@ -144,7 +143,7 @@ class DocumentPage(models.Model):
                 try:
                     self._validate_reference(reference=reference)
                     vals["reference"] = reference
-                except ValidationError:  # pylint: disable=W7938
+                except ValidationError:  # pylint: disable=W8138
                     # Do not fill reference.
                     pass
-        return super(DocumentPage, self).create(vals_list)
+        return super().create(vals_list)
