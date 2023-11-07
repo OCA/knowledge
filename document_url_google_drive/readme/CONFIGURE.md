@@ -4,12 +4,16 @@ To configure this module, you need to:
 
 - Enable "Google API", save. Setup instructions https://developers.google.com/drive/picker/guides/overview
 
-  - field "Google Client ID" - enter the client ID from the Google API console.
-  - field "Google API key" - enter the API key from the Google API console.
-  - field "Google App ID" - enter the ID of the Google application. The default value is
+  - "Google Client ID" - enter the client ID from the Google API console: https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid
+  - "Google API key" - enter the API key from the Google API console.
+  - "Google App ID" - enter the ID of the Google application. The default value is
     `odoo`.
 
-- Next, open your user profile and set up personal access credentials on the "Google
+You will be asked to authenticate when you add a link for the first time.
+
+To modify your pesonal login credentials later:
+
+- Open your user profile and set up personal access credentials on the "Google
   API" tab.
 
   - field "Google Scope" - enter the scope for the Google API. The default value is
@@ -20,4 +24,6 @@ To configure this module, you need to:
     Example: `application/pdf, image/jpeg, image/png`. By default, all files are
     selected
 
-- You will be asked to authenticate when you add a link for the first time.
+  You can always log off from the current Google Account by clicking the "logout" icon right to the "Add GDrive link".
+
+
