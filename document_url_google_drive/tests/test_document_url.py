@@ -44,6 +44,7 @@ class TestDocumentUrl(common.TransactionCase):
                 "google_picker_scope": "test_scope",
                 "google_picker_access_token": "test_access_token",
                 "google_picker_mime_types": "test_mime_types",
+                "google_picker_google_picker_expires_date": 0,
             }
         )
         params = user.get_google_picker_params()
@@ -55,6 +56,7 @@ class TestDocumentUrl(common.TransactionCase):
                 "scope": "test_scope",
                 "app_id": "test_app_id",
                 "access_token": "test_access_token",
+                "expires_date": 0,
                 "mime_types": "test_mime_types",
             },
         )
