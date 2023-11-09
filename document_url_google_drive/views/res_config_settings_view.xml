@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2023 Cetmix OÜ
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.document.url.google.drive</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='recaptcha']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="google_api">
+                    <div class="o_setting_left_pane">
+                        <field name="is_active_google_api" />
+                    </div>
+                    <div class="o_setting_right_pane" id="website_recaptcha_settings">
+                        <label for="is_active_google_api" />
+                        <div class="text-muted">
+                            Use google integration.
+                        </div>
+                        <div
+                            class="content-group"
+                            attrs="{'invisible': [('is_active_google_api','=',False)]}"
+                        >
+                            <div class="mt16 row">
+                                <label
+                                    for="google_picker_client_id"
+                                    string="Google Client ID"
+                                    class="col-3 col-lg-3 o_light_label"
+                                />
+                                <field name="google_picker_client_id" nolabel="1" />
+                            </div>
+                            <div class="mt16 row">
+                                <label
+                                    for="google_picker_api_key"
+                                    string="Google Api Key"
+                                    class="col-3 col-lg-3 o_light_label"
+                                />
+                                <field name="google_picker_api_key" nolabel="1" />
+                            </div>
+                            <div class="mt16 row">
+                                <label
+                                    for="google_picker_app_id"
+                                    string="Google App Id"
+                                    class="col-3 col-lg-3 o_light_label"
+                                />
+                                <field name="google_picker_app_id" nolabel="1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
