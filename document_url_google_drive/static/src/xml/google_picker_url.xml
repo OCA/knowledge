@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2023 Cetmix OÜ
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates>
+    <t t-inherit="mail.AttachmentBox" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o_AttachmentBox_content')]/div" position="inside">
+            <AttachmentGooglePicker record="attachmentBoxView" />
+        </xpath>
+    </t>
+</templates>
