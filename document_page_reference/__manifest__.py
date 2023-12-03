@@ -4,7 +4,8 @@
 {
     "name": "Document Page Reference",
     "summary": """
-        Include references on document pages""",
+        Include references on document pages
+    """,
     "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "author": "Creu Blanca,Odoo Community Association (OCA)",
