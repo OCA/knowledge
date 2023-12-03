@@ -14,7 +14,7 @@
                         type="object"
                         string="Send to Review"
                         class="oe_highlight"
-                        attrs="{'invisible':['|','|',('is_approval_required','=',False),('am_i_owner','=',False),('state', 'not in', ['draft'])]}"
+                        invisible="is_approval_required == False or am_i_owner == False or state not in ['draft']"
                     />
                     <!-- approve if i am approver -->
                     <button
@@ -22,7 +22,7 @@
                         type="object"
                         string="Approve"
                         class="oe_highlight"
-                        attrs="{'invisible':['|','|',('is_approval_required','=',False),('am_i_approver','=',False),('state','not in',['draft','to approve'])]}"
+                        invisible="is_approval_required == False or am_i_approver == False or state not in ['draft','to approve']"
                     />
                     <!-- approve if it's not required and i am owner -->
                     <button
@@ -30,28 +30,28 @@
                         type="object"
                         string="Approve"
                         class="oe_highlight"
-                        attrs="{'invisible':['|','|',('is_approval_required','=',True),('am_i_owner','=',False),('state','not in',['draft', 'to approve'])]}"
+                        invisible="is_approval_required == True or am_i_owner == False or state not in ['draft', 'to approve']"
                     />
                     <!-- cancel if i am owner or approver -->
                     <button
                         name="action_cancel"
                         type="object"
                         string="Cancel"
-                        attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['draft','to approve'])]}"
+                        invisible="am_i_owner == False or am_i_approver == False and state not in ['draft','to approve']"
                     />
                     <!-- reopen if i am owner or approver -->
                     <button
                         name="action_draft"
                         type="object"
                         string="Back to draft"
-                        attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['cancelled'])]}"
+                        invisible="am_i_owner == False or am_i_approver == False and state not in ['cancelled']"
                     />
                     <!-- cancel & reopen, if i am owner or approver -->
                     <button
                         name="action_draft"
                         type="object"
                         string="Back to draft"
-                        attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['to approve'])]}"
+                        invisible="am_i_owner == False or am_i_approver == False and state not in ['to approve']"
                     />
                     <field name="am_i_owner" invisible="1" />
                     <field name="am_i_approver" invisible="1" />
@@ -68,35 +68,27 @@
                     <field
                         name="approved_uid"
                         readonly="1"
-                        attrs="{'invisible':[('state','not in',['approved'])]}"
+                        invisible="state not in ['approved']"
                     />
                     <field
                         name="approved_date"
                         readonly="1"
-                        attrs="{'invisible':[('state','not in',['approved'])]}"
+                        invisible="state not in ['approved']"
                     />
                 </group>
             </xpath>
             <!-- Readonly fields -->
             <field name="content" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'readonly': [('state', 'not in', ['draft'])]}</attribute>
+                <attribute name="readonly">state not in ['draft']</attribute>
             </field>
             <field name="page_id" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'readonly': [('state', 'not in', ['draft'])]}</attribute>
+                <attribute name="readonly">state not in ['draft']</attribute>
             </field>
             <field name="name" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'readonly': [('state', 'not in', ['draft'])]}</attribute>
+                <attribute name="readonly">state not in ['draft']</attribute>
             </field>
             <field name="summary" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'readonly': [('state', 'not in', ['draft'])]}</attribute>
+                <attribute name="readonly">state not in ['draft']</attribute>
             </field>
             <!-- Chatter -->
             <sheet position="after">
@@ -119,14 +111,14 @@
                 position="attributes"
                 groups="document_page.group_document_manager"
             >
-                <attribute name="attrs">{'readonly': False}</attribute>
+                <attribute name="readonly">False</attribute>
             </field>
             <field
                 name="summary"
                 position="attributes"
                 groups="document_page.group_document_manager"
             >
-                <attribute name="attrs">{'readonly': False}</attribute>
+                <attribute name="readonly">False</attribute>
             </field>
         </field>
     </record>
@@ -141,7 +133,7 @@
                     class="alert alert-info"
                     role="alert"
                     style="margin-bottom:0px;"
-                    attrs="{'invisible': [('has_changes_pending_approval','=',False)]}"
+                    invisible="has_changes_pending_approval == False"
                 >
                     This document has <b
                     >Changes Pending Approval</b>. You are viewing the last approved content.
@@ -150,7 +142,7 @@
                     class="alert alert-warning oe_edit_only"
                     role="alert"
                     style="margin-bottom:0px;"
-                    attrs="{'invisible': [('is_approval_required','=',False)]}"
+                    invisible="is_approval_required == False"
                 >
                     This document requires approval. If edited, you will create a new <b
                     >Change Request</b>.
@@ -159,7 +151,7 @@
                     class="alert alert-warning oe_edit_only"
                     role="alert"
                     style="margin-bottom:0px;"
-                    attrs="{'invisible': [('user_has_drafts','=',False)]}"
+                    invisible="user_has_drafts == False"
                 >
                     <b>You already have a Draft Change Request for this page.</b>
                     It is highly recommended that you edit that one instead of creating a new one.
@@ -174,7 +166,7 @@
                     name="action_changes_pending_approval"
                     string="Change Requests"
                     type="object"
-                    attrs="{'invisible':[('has_changes_pending_approval','=',False),('user_has_drafts','=',False)]}"
+                    invisible="has_changes_pending_approval == False and user_has_drafts == False"
                     icon="fa-edit"
                 />
             </xpath>
@@ -207,7 +199,7 @@
             <field name="content" position="before">
                 <group
                     class="oe_read_only"
-                    attrs="{'invisible':[('type','!=','content')]}"
+                    invisible="type != 'content'"
                 >
                     <field name="approved_date" />
                     <field name="approved_uid" />
@@ -225,7 +217,8 @@
                 <field name="approval_required" />
                 <field
                     name="approver_gid"
-                    attrs="{'invisible':[('approval_required','!=', True)], 'required':[('approval_required','=', True)]}"
+                    invisible="approval_required != True"
+                    required="approval_required == True"
                 />
             </field>
         </field>

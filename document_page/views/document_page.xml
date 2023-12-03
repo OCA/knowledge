@@ -4,7 +4,6 @@
     <record id="view_wiki_tree_children" model="ir.ui.view">
         <field name="name">document.page.tree</field>
         <field name="model">document.page</field>
-        <field name="field_parent">child_ids</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
             <tree>
@@ -42,7 +41,7 @@
                         name="web_ribbon"
                         text="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active == True"
                     />
                     <field name="active" invisible="1" />
                     <field name="type" invisible="1" />
@@ -75,7 +74,7 @@
                                     <field
                                         name="menu_id"
                                         readonly="1"
-                                        attrs="{'invisible': [('menu_id','=',False)]}"
+                                        invisible="menu_id == False"
                                     />
                                 </group>
                                 <group string="Revision">
