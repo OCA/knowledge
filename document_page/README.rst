@@ -93,6 +93,7 @@ Trobz
 * `Sygel <https://www.sygel.es>`_:
 
   * Ángel García de la Chica Herrera
+  * Alberto Martínez Rodríguez
 
 Other credits
 ~~~~~~~~~~~~~
