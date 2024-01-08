@@ -27,3 +27,17 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
         ).default_get(fields_list)
 
         self.assertEqual(res["menu_name"], "Odoo 15.0 Functional Demo")
+
+    def test_page_menu_parent_id_context(self):
+        """Test page menu parent_id context."""
+        menu_parent = self.env["ir.ui.menu"].create({"name": "Test Folder Menu"})
+        context_results = (
+            self.env["ir.ui.menu"]
+            .with_context(**{"ir.ui.menu.authorized_list": True})
+            .search([("id", "=", menu_parent.id)])
+        )
+        no_context_results = self.env["ir.ui.menu"].search(
+            [("id", "=", menu_parent.id)]
+        )
+        self.assertEqual(context_results[:1].id, menu_parent.id)
+        self.assertEqual(any(no_context_results), False)
