@@ -8,7 +8,10 @@
             <form>
                 <group string="Menu Information">
                     <field name="menu_name" />
-                    <field name="menu_parent_id" />
+                    <field
+                        name="menu_parent_id"
+                        context="{'ir.ui.menu.authorized_list': True}"
+                    />
                 </group>
                 <footer>
                     <button
