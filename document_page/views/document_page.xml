@@ -64,7 +64,7 @@
                                         name="parent_id"
                                         required="True"
                                         string="Category"
-                                        context="{'default_type':'category'}"
+                                        context="{'default_type':'category', 'form_view_ref': 'document_page.view_category_form'}"
                                     />
                                     <field
                                         name="company_id"
