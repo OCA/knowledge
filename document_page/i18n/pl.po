@@ -346,6 +346,7 @@ msgid "Manager"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model,name:document_page.model_ir_ui_menu
 #: model:ir.model.fields,field_description:document_page.field_document_page__menu_id
 msgid "Menu"
 msgstr ""
