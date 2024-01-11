@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_preview](attachment_preview/) | 15.0.1.0.0 |  | Preview attachments supported by Viewer.js
-[document_page](document_page/) | 15.0.1.3.1 |  | Document Page
+[document_page](document_page/) | 15.0.1.4.0 |  | Document Page
 [document_page_approval](document_page_approval/) | 15.0.1.1.0 |  | Document Page Approval
 [document_page_group](document_page_group/) | 15.0.1.0.1 |  | Define access groups on documents
 [document_page_project](document_page_project/) | 15.0.1.0.0 |  | This module links document pages to projects
