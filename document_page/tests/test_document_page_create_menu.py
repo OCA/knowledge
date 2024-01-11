@@ -26,7 +26,7 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
             active_id=[self.ref("document_page.demo_page1")]
         ).default_get(fields_list)
 
-        self.assertEqual(res["menu_name"], "Odoo 15.0 Functional Demo")
+        self.assertEqual(res["menu_name"], "Odoo 17.0 Functional Demo")
 
     def test_page_menu_parent_id_context(self):
         """Test page menu parent_id context."""

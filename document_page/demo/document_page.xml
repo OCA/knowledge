@@ -24,7 +24,7 @@ Additional ressources
     </record>
 
     <record id="demo_page1" model="document.page">
-        <field name="name">Odoo 15.0 Functional Demo</field>
+        <field name="name">Odoo 17.0 Functional Demo</field>
         <field name="draft_name">1.0</field>
         <field name="draft_summary">Init</field>
         <field name="parent_id" ref="demo_category1" />
@@ -32,17 +32,17 @@ Additional ressources
 <![CDATA[
 <br>
 <br>
-The news is out, Odoo's latest version 15.0 is here.  It's more<br>
+The news is out, Odoo's latest version 17.0 is here.  It's more<br>
 user-friendly, even more business oriented and efficient to manage your company<br>
 <br>
-How to discover the latest version 15.0?<br>
+How to discover the latest version 17.0?<br>
 <br>
 Demo : <a target="https://demo.odoo.com" href="https://demo.odoo.com" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
 Online: <a target="https://www.odoo.com/trial" href="https://www.odoo.com/trial" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
 Download: <a target="https://www.odoo.com/page/download" href="https://www.odoo.com/page/download" style="background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC&quot;) no-repeat scroll right center transparent;padding-right: 13px;"></a><br>
 <br>
-We have also put together a functional demo that presents 15.0. Watch this video<br>
-to learn directly from us what Odoo 15.0 can do for you. Share it in your<br>
+We have also put together a functional demo that presents 17.0. Watch this video<br>
+to learn directly from us what Odoo 17.0 can do for you. Share it in your<br>
 company, with your clients and implement it now for your business.<br>
 <br>
 <h3>Watch on Youtube!</h3><br>
@@ -108,7 +108,7 @@ you change your mind there is a reset button to return to the default view.<br>
         <field name="content">
 <![CDATA[
 <br>
-The Odoo touchscreen point of sale available with 15.0 allows you<br>
+The Odoo touchscreen point of sale available with 17.0 allows you<br>
 to manage your shop sales very easily.  It's fully web based so that you don't<br>
 have to install or deploy any software and all the sales shops can be easily<br>
 consolidated.  It works in connected and disconnected modes so that you can<br>
