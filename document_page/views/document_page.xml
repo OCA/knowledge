@@ -42,7 +42,7 @@
                         name="web_ribbon"
                         text="Archived"
                         bg_color="bg-danger"
-                        invisible = "active"
+                        invisible="active"
                     />
                     <field name="active" invisible="1" />
                     <field name="type" invisible="1" />
@@ -75,7 +75,7 @@
                                     <field
                                         name="menu_id"
                                         readonly="True"
-                                        invisible = "menu_id == False"
+                                        invisible="menu_id == False"
                                     />
                                 </group>
                                 <group string="Revision">
