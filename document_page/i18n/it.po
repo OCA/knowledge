@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-09-04 18:38+0000\n"
+"PO-Revision-Date: 2024-01-18 10:37+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -136,7 +136,7 @@ msgstr "Contenuto"
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
-msgstr "Creare Menu"
+msgstr "Crea menu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__create_uid
