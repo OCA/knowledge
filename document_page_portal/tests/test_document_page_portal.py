@@ -16,7 +16,7 @@ class TestPortalDocumentPage(odoo.tests.HttpCase):
             }
         )
 
-        self.phantom_js(
+        self.browser_js(
             "/",
             "odoo.__DEBUG__.services['web_tour.tour']"
             ".run('document_page_portal_tour')",
@@ -26,7 +26,7 @@ class TestPortalDocumentPage(odoo.tests.HttpCase):
         )
 
     def test_02_document_page_portal_tour(self):
-        self.phantom_js(
+        self.browser_js(
             "/",
             "odoo.__DEBUG__.services['web_tour.tour']"
             ".run('document_page_portal_search_tour')",
