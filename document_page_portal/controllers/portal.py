@@ -72,8 +72,6 @@ class CustomerPortal(CustomerPortal):
             sortby = "date"
         order = searchbar_sortings[sortby]["order"]
 
-        # archive groups - Default Group By 'create_date'
-        archive_groups = self._get_archive_groups("document.page", domain)
         if date_begin and date_end:
             domain += [
                 ("create_date", ">", date_begin),
@@ -114,7 +112,6 @@ class CustomerPortal(CustomerPortal):
                 "page_name": "document_page",
                 "default_url": "/my/knowledge/s",
                 "pager": pager,
-                "archive_groups": archive_groups,
                 "searchbar_sortings": searchbar_sortings,
                 "searchbar_inputs": searchbar_inputs,
                 "sortby": sortby,
