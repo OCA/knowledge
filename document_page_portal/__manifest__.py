@@ -6,7 +6,7 @@
     "name": "Document Page Portal",
     "summary": """
         This module enables document page portal""",
-    "version": "13.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Knowledge Management",
     "author": "Escodoo, Odoo Community Association (OCA)",
     "maintainers": ["marcelsavegnago"],
