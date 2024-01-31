@@ -17,18 +17,19 @@ Documents Knowledge
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github
-    :target: https://github.com/OCA/knowledge/tree/16.0/document_knowledge
+    :target: https://github.com/OCA/knowledge/tree/17.0/document_knowledge
     :alt: OCA/knowledge
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/knowledge-16-0/knowledge-16-0-document_knowledge
+    :target: https://translation.odoo-community.org/projects/knowledge-17-0/knowledge-17-0-document_knowledge
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/knowledge&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/knowledge&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module is the base for any knowledge and document management application.
+This module is the base for any knowledge and document management
+application.
 
 **Table of contents**
 
@@ -40,23 +41,23 @@ Configuration
 
 To set up this module, you need to go to:
 
-* Knowledge / Configuration / Settings
+-  Knowledge / Configuration / Settings
 
-From this menu you'll have a central access to install the apps that belong
-to Knowledge.
+From this menu you'll have a central access to install the apps that
+belong to Knowledge.
 
-* Check *Attachments List and Document Indexation* if you want to install the
-  module that allows users to attach documents to any model.
-* Check *Manage attachments centrally* if you want all users to be able to
-  access to the all attachments to which they have read permissions, from the
-  menu *Knowledge / Documents*
+-  Check *Attachments List and Document Indexation* if you want to
+   install the module that allows users to attach documents to any
+   model.
+-  Check *Manage attachments centrally* if you want all users to be able
+   to access to the all attachments to which they have read permissions,
+   from the menu *Knowledge / Documents*
 
 If you want to grant Central Access to Documents only to some users:
 
-#. Go to *Settings/Activate the developer mode*. Only a user with
+1. Go to *Settings/Activate the developer mode*. Only a user with
    *Administration / Settings* permissions can do that.
-
-#. Go to *Settings / Users & Companies / Users* and set the checkbox
+2. Go to *Settings / Users & Companies / Users* and set the checkbox
    *Central access to Documents* to the selected users.
 
 Usage
@@ -65,8 +66,8 @@ Usage
 This module adds a new top level menu *Knowledge*
 
 Users with permission *Central access to Documents* can access in
-*Knowledge/Documents* to all the documents attached to records of any model
-for which they have read permission.
+*Knowledge/Documents* to all the documents attached to records of any
+model for which they have read permission.
 
 Bug Tracker
 ===========
@@ -74,7 +75,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/knowledge/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/knowledge/issues/new?body=module:%20document_knowledge%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/knowledge/issues/new?body=module:%20document_knowledge%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -82,7 +83,7 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * OpenERP SA
 * MONK Software
@@ -90,35 +91,35 @@ Authors
 * ForgeFlow
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Odoo SA <info@odoo.com>
-* Savoir-faire Linux <support@savoirfairelinux.com>
-* Gervais Naoussi <gervaisnaoussi@gmail.com>
-* Leonardo Donelli <leonardo.donelli@monksoftware.it>
-* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
-* Fayez Qandeel
-* Iván Todorovich <ivan.todorovich@gmail.com>
-* Jordi Ballester <jordi.ballester@forgeflow.com>
-* Marie Lejeune <marie.lejeune@acsone.eu>
-* `Tecnativa <https://www.tecnativa.com>`_:
+-  Odoo SA <info@odoo.com>
+-  Savoir-faire Linux <support@savoirfairelinux.com>
+-  Gervais Naoussi <gervaisnaoussi@gmail.com>
+-  Leonardo Donelli <leonardo.donelli@monksoftware.it>
+-  Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+-  Fayez Qandeel
+-  Iván Todorovich <ivan.todorovich@gmail.com>
+-  Jordi Ballester <jordi.ballester@forgeflow.com>
+-  Marie Lejeune <marie.lejeune@acsone.eu>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Vicent Cubells
-  * Ernesto Tejeda
+   -  Vicent Cubells
+   -  Ernesto Tejeda
 
 Trobz
 
-* Dung Tran <dungtd@trobz.com>
+-  Dung Tran <dungtd@trobz.com>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
 The development of this module has been financially supported by:
 
-* Camptocamp
+-  Camptocamp
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -130,6 +131,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/16.0/document_knowledge>`_ project on GitHub.
+This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/17.0/document_knowledge>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
