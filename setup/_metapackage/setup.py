@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo-addon-document_page_reference>=16.0dev,<16.1dev',
         'odoo-addon-document_page_tag>=16.0dev,<16.1dev',
         'odoo-addon-document_url>=16.0dev,<16.1dev',
+        'odoo-addon-document_url_google_drive>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
