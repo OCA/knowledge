@@ -3,7 +3,7 @@
 {
     "name": "Google Drive URL Attachment",
     "summary": "Attach Google Drive link to Odoo document using Google Drive Picker",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Tools",
     "website": "https://github.com/OCA/knowledge",
     "author": "Cetmix, Odoo Community Association (OCA)",
