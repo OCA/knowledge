@@ -26,6 +26,6 @@ You will be asked to authenticate when you add a link for the first time.
     Example: `application/pdf, image/jpeg, image/png`. By default, all files are
     selected
 
-  You can always log off from the current Google Account by clicking the "logout" icon right to the "Add GDrive link".
+  To log out from the current Google Account by clicking the "logout" icon right to the "Add GDrive link".
 
 
