@@ -17,7 +17,11 @@ Knowlesge management addons. Also has some usefull tools to handle attachments
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[document_knowledge](document_knowledge/) | 17.0.1.0.0 |  | Documents Knowledge
 
 [//]: # (end addons)
 
