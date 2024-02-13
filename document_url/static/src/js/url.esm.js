@@ -29,6 +29,18 @@ registerPatch({
     },
 });
 
+registerPatch({
+    name: "Chatter",
+    recordMethods: {
+        /**
+         * Handles click on the attach button.
+         */
+        async onClickButtonAddAttachments() {
+            await this.onClickButtonToggleAttachments();
+        },
+    },
+});
+
 patch(AttachmentCard.prototype, "document_url/static/src/js/url.js", {
     /**
      * Return the url of the attachment. Temporary attachments, a.k.a. uploading
