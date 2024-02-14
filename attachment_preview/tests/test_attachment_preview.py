@@ -35,3 +35,11 @@ class TestAttachmentPreview(TransactionCase):
             "ir.module.module", module.id, "icon_image"
         )
         self.assertTrue(res3)
+
+        module = (
+            self.env["ir.ui.menu"].search([]).filtered(lambda m: not m.web_icon_data)[0]
+        )
+        res4 = self.env["ir.attachment"].get_binary_extension(
+            "ir.ui.menu", module.id, "web_icon_data"
+        )
+        self.assertFalse(res4)
