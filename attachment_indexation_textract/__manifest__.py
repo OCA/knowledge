@@ -14,7 +14,9 @@
     "data": [],
     "assets": {},
     "external_dependencies": {
-        "python": ["textract"],
+        "python": [
+            "textract-py3"
+        ],  # see https://github.com/deanmalmgren/textract/issues/476
         "bin": ["antiword"],
     },
 }
