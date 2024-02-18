@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2023-07-20 17:11+0000\n"
+"PO-Revision-Date: 2024-02-18 23:56+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -22,9 +22,9 @@ msgstr ""
 
 #. module: document_page
 #: code:addons/document_page/models/document_page.py:0
-#, fuzzy, python-format
+#, python-format
 msgid "%s (copy)"
-msgstr "%s (copia)"
+msgstr "%s (copy)"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
@@ -43,9 +43,8 @@ msgstr "Actividades"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
-#, fuzzy
 msgid "Activity Exception Decoration"
-msgstr "Decoración de excepción de actividad"
+msgstr "Decorador de actividad de excepción"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
@@ -71,7 +70,6 @@ msgstr "Autor"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
-#, fuzzy
 msgid "Backend URL"
 msgstr "URL de servidor"
 
@@ -211,9 +209,8 @@ msgstr "Historial de página del documento"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
-#, fuzzy
 msgid "Document Page Show Diff"
-msgstr "Página del documento"
+msgstr "Página del Documento Mostrar diferencias"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -395,7 +392,6 @@ msgstr "Nombre"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_name
-#, fuzzy
 msgid "Name for the changes made"
 msgstr "Nombre de los cambios realizados"
 
@@ -484,7 +480,6 @@ msgstr "Usuario responsable"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
-#, fuzzy
 msgid "Rev 01"
 msgstr "Rev 01"
 
@@ -568,7 +563,6 @@ msgstr "Contador de mensajes no leídos"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
-#, fuzzy
 msgid "Use it to link resources univocally"
 msgstr "Úselo para vincular recursos de manera unívoca"
 
@@ -579,9 +573,8 @@ msgstr "Mensajes del sitio web"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
-#, fuzzy
 msgid "Website communication history"
-msgstr "Historial de comunicación del sitio web"
+msgstr "Historial de la comunicación en el sitio web"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
