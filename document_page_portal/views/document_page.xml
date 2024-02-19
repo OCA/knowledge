@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 - TODAY, Marcel Savegnago - Escodoo
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="document_page_form_view">
+        <field name="name">document.page.form (in document_page_portal)</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="is_public" groups="document_page.group_document_manager" />
+            </field>
+        </field>
+    </record>
+
+
+</odoo>
