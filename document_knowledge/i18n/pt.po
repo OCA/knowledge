@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2017-01-20 03:35+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2024-02-28 21:33+0000\n"
+"Last-Translator: Peter Romão <peterromao@yahoo.co.uk>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: document_knowledge
 #: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_document_page_approval
@@ -24,28 +25,29 @@ msgid ""
 "Add workflow on documents per category.\n"
 "- This installs the module document_page_approval."
 msgstr ""
+"Adicione fluxo de trabalho a documentos por categoria.\n"
+"- Isto instala o módulo document_page_approval."
 
 #. module: document_knowledge
 #: model:ir.model,name:document_knowledge.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "Anexo"
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_attachment_indexation
 msgid "Attachments List and Document Indexation"
-msgstr ""
+msgstr "Lista de Anexos e Indexação de Documentos"
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__group_ir_attachment_user
 #: model:res.groups,name:document_knowledge.group_ir_attachment_user
 msgid "Central access to Documents"
-msgstr ""
+msgstr "Acesso Central aos Documentos"
 
 #. module: document_knowledge
 #: model:ir.model,name:document_knowledge.model_res_config_settings
-#, fuzzy
 msgid "Config Settings"
-msgstr "Configuração"
+msgstr "Ajustes de Configuração"
 
 #. module: document_knowledge
 #: model:ir.ui.menu,name:document_knowledge.menu_document_configuration
@@ -54,9 +56,8 @@ msgstr "Configuração"
 
 #. module: document_knowledge
 #: model:res.groups,name:document_knowledge.group_document_user
-#, fuzzy
 msgid "Document Knowledge user"
-msgstr "Conhecimento"
+msgstr "Utilizador de Document Knowledge"
 
 #. module: document_knowledge
 #: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_attachment_indexation
@@ -64,6 +65,8 @@ msgid ""
 "Document indexation, full text search of attachements.\n"
 "- This installs the module attachment_indexation."
 msgstr ""
+"Indexação de documentos, pesquisa de texto completo de anexos.\n"
+"- Isto instala o módulo attachment_indexation."
 
 #. module: document_knowledge
 #: model:ir.actions.act_window,name:document_knowledge.knowledge_action_documents
@@ -75,14 +78,13 @@ msgstr "Documentos"
 
 #. module: document_knowledge
 #: model:ir.module.category,name:document_knowledge.module_category_knowledge
-#, fuzzy
 msgid "Documents Knowledge"
-msgstr "Configurar Conhecimento"
+msgstr "Base de Conhecimento"
 
 #. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.ir_attachment_view_user_documents
 msgid "Group by"
-msgstr ""
+msgstr "Agrupar por"
 
 #. module: document_knowledge
 #: model:ir.ui.menu,name:document_knowledge.menu_document_root
@@ -98,7 +100,7 @@ msgstr "Gestão de Conhecimento e Documentos"
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_document_page
 msgid "Manage document pages (Wiki)"
-msgstr ""
+msgstr "Gerir páginas de documentos (Wiki)"
 
 #. module: document_knowledge
 #: model:ir.module.category,description:document_knowledge.module_category_knowledge
@@ -107,16 +109,19 @@ msgid ""
 "            applications\n"
 "        "
 msgstr ""
+"Gerir documentos e apps de conhecimento\n"
+"            relacionados\n"
+"        "
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_document_page_approval
 msgid "Manage documents approval"
-msgstr ""
+msgstr "Gerir a aprovação de documentos"
 
 #. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.ir_attachment_view_user_documents
 msgid "Model"
-msgstr ""
+msgstr "Modelo"
 
 #. module: document_knowledge
 #: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_document_page
@@ -124,17 +129,19 @@ msgid ""
 "Provide document page and category as a wiki.\n"
 "- This installs the module document_page."
 msgstr ""
+"Forneçe páginas e categorias de documento como num wiki.\n"
+"- Isto instala o módulo document_page."
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_ir_attachment__res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Modelo de Recursos"
 
 #. module: document_knowledge
 #: model:ir.actions.act_window,name:document_knowledge.action_knowledge_configuration
 #: model:ir.ui.menu,name:document_knowledge.menu_knowledge_configuration
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 #. module: document_knowledge
 #: model:ir.model.fields,help:document_knowledge.field_res_config_settings__group_ir_attachment_user
@@ -142,6 +149,8 @@ msgid ""
 "When you set this field all users will be able to manage attachments "
 "centrally, from the Document Knowledge/Documents menu."
 msgstr ""
+"Quando configurar este campo, todos os utilizadores poderão gerir anexos, "
+"centralmente, no menu Base de Conhecimento/Documentos."
 
 #~ msgid "Manage documents"
 #~ msgstr "Gerir documentos"
