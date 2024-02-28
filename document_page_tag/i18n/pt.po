@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2016-11-25 14:58+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"PO-Revision-Date: 2024-02-28 21:33+0000\n"
+"Last-Translator: Peter Romão <peterromao@yahoo.co.uk>\n"
 "Language-Team: Portuguese (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/pt/)\n"
 "Language: pt\n"
@@ -17,32 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page_tag
 msgid "A keyword for document pages"
-msgstr ""
+msgstr "Uma palavra-chave para páginas de documentos"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__active
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
 msgid "Archived"
-msgstr ""
+msgstr "Arquivados"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
 msgid "Color"
-msgstr ""
+msgstr "Cor"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Índice de Cor"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__create_uid
@@ -66,9 +67,8 @@ msgstr "Página do documento"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
-#, fuzzy
 msgid "Document Tag Search"
-msgstr "Página do documento"
+msgstr "Pesquisar Etiquetas de Documento"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__id
@@ -78,7 +78,7 @@ msgstr "ID"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page__tag_ids
 msgid "Keywords"
-msgstr ""
+msgstr "Palavras-chave"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
@@ -103,19 +103,19 @@ msgstr "Nome"
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_form
 msgid "Tag"
-msgstr ""
+msgstr "Etiqueta"
 
 #. module: document_page_tag
 #: model:ir.actions.act_window,name:document_page_tag.document_page_tag_action
 #: model:ir.ui.menu,name:document_page_tag.document_page_tag_menu
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_wiki_filter
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetas"
 
 #. module: document_page_tag
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
-msgstr ""
+msgstr "As etiquetas devem ser únicas"
 
 #, fuzzy
 #~ msgid "Document Tags"
