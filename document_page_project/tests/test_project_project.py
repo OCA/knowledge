@@ -14,7 +14,6 @@ class TestProjectProject(common.TransactionCase):
         cls.default_page = cls.Page.create({"name": "My page"})
 
     def test_page_count(self):
-
         proj = self.Project.create({"name": "Proj A"})
 
         self.assertEqual(
