@@ -7,7 +7,7 @@ from odoo.tests import common
 class TestProjectProject(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestProjectProject, cls).setUpClass()
+        super().setUpClass()
 
         cls.Page = cls.env["document.page"]
         cls.Project = cls.env["project.project"]
