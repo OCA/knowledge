@@ -1,0 +1,106 @@
+# © 2016 Therp BV <http://therp.nl>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+import base64
+import logging
+import subprocess
+from io import BytesIO
+
+import fitz
+from PIL import Image
+
+from odoo import api, models
+
+_logger = logging.getLogger(__name__)
+_MARKER_PHRASE = "[[waiting for OCR]]"
+
+
+class IrAttachment(models.Model):
+    _inherit = "ir.attachment"
+
+    @api.model
+    def _get_no_content_strings(self):
+        return ["image", "application"]
+
+    @api.model
+    def _not_content(self, text):
+        return not text or text in self._get_no_content_strings()
+
+    @api.model
+    def _index(self, bin_data, file_type, checksum=None):
+        content = super()._index(bin_data, file_type, checksum)
+        if bin_data and file_type and self._not_content(content):
+            synchronous = self.env["ir.config_parameter"].get_param("ocr.synchronous")
+            if synchronous == "True" or self.env.context.get("ocr_force"):
+                content = self._index_ocr(bin_data, file_type)
+            else:
+                content = _MARKER_PHRASE
+        return content
+
+    @api.model
+    def _index_ocr(self, bin_data, file_type, dpi=0):
+        if not dpi:
+            icp = self.env["ir.config_parameter"]
+            dpi = int(icp.get_param("ocr.dpi", "500"))
+        if "/" not in file_type:
+            _logger.warning("Invalid mimetype %s", file_type)
+            return None
+        top_type, sub_type = file_type.split("/", 1)
+        images = []
+        if sub_type == "pdf":
+            images += self._index_ocr_get_data_pdf(bin_data, dpi)  # TODO
+        else:
+            image_data = BytesIO()
+            images.append(image_data)
+            try:
+                i = Image.open(BytesIO(bin_data))
+                i.save(image_data, "png", dpi=(dpi, dpi))
+            except IOError:
+                _logger.exception("Failed to OCR image")
+                return None
+        tesseract_command = ["tesseract", "stdin", "stdout"]
+        if self.env.context.get("ocr_lang"):
+            # no check that this lang has been correctly installed;
+            # the corresponding tessdata should be listed by `tesseract --list-langs`
+            tesseract_command += ["-l", self.env.context["ocr_lang"]]
+        result = ""
+        for im in images:
+            process = subprocess.Popen(
+                tesseract_command,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            stdout, stderr = process.communicate(im.getvalue())
+            if process.returncode:
+                _logger.error("Error during OCR: %s", stderr)
+            result += stdout.decode("utf-8")
+        return result
+
+    @api.model
+    def _index_ocr_get_data_pdf(self, bin_data, dpi):
+        # tesseract only supports image of at most 32K pixels in any dimension
+        # it is thus better to have a list of images than a single one
+        res = []
+        for page in fitz.open(stream=bin_data, filetype="pdf"):
+            pix = page.get_pixmap(dpi=dpi, alpha=False)
+            res.append(BytesIO(pix.tobytes("png")))
+        return res
+
+    @api.model
+    def _ocr_cron(self, limit=None):
+        domain = [("index_content", "=", _MARKER_PHRASE)]
+        recs = self.with_context(ocr_force=True).search(domain, limit=limit)
+        recs.perform_ocr()
+
+    def perform_ocr(self, tesseract_lang=None):
+        for rec in self:
+            if not rec.datas:
+                index_content = ""  # the _MARKER_PHRASE should be removed
+            else:
+                bin_data = base64.b64decode(rec.datas)
+                ctx = {"ocr_force": True}
+                if tesseract_lang:
+                    ctx["ocr_lang"] = tesseract_lang
+                index_content = rec.with_context(**ctx)._index(bin_data, rec.mimetype)
+            rec.write({"index_content": index_content})
