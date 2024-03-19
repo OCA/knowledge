@@ -104,5 +104,4 @@
         >{'search_default_page_id': [active_id], 'default_page_id': active_id}</field>
         <field name="binding_model_id" ref="document_page.model_document_page" />
     </record>
-
 </odoo>
