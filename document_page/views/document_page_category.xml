@@ -62,7 +62,7 @@
             <tree>
                 <field name="name" />
                 <field name="parent_id" />
-                <field name="create_uid" invisible="1" />
+                <field name="create_uid" column_invisible="1" />
                 <field name="write_uid" />
                 <field name="write_date" />
                 <field name="company_id" groups="base.group_multi_company" />
