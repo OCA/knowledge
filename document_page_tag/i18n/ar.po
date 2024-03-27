@@ -77,13 +77,9 @@ msgstr "المعرف"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page__tag_ids
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_wiki_filter
 msgid "Keywords"
 msgstr ""
-
-#. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
-msgid "Last Modified on"
-msgstr "آخر تعديل في"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__write_uid
@@ -116,3 +112,6 @@ msgstr ""
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "آخر تعديل في"

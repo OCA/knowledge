@@ -30,6 +30,13 @@
                     enable_counters="1"
                 />
             </xpath>
+            <xpath expr="//group" position="inside">
+                <filter
+                    name="group_by_tag_ids"
+                    string="Keywords"
+                    context="{'group_by':'tag_ids'}"
+                />
+            </xpath>
         </field>
     </record>
 
@@ -39,7 +46,6 @@
         <field name="model">document.page</field>
         <field name="inherit_id" ref="document_page.view_wiki_tree" />
         <field name="type">tree</field>
-        <field name="field_parent">child_ids</field>
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
                 <field

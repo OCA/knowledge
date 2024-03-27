@@ -77,12 +77,8 @@ msgstr "ID"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page__tag_ids
+#: model_terms:ir.ui.view,arch_db:document_page_tag.view_wiki_filter
 msgid "Keywords"
-msgstr ""
-
-#. module: document_page_tag
-#: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: document_page_tag
