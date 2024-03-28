@@ -1,6 +1,6 @@
-To select the users that have access to a given document page
-you need to open a document, go to the 'Security' tab
-and select which groups will have access.
+To select the users that have access to a given document page you need
+to open a document, go to the 'Security' tab and select which groups
+will have access.
 
 Only users that belong to the 'document_knowledge / Manager' group can
 manage access groups to documents.
