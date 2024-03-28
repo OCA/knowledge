@@ -553,6 +553,16 @@ msgid "Use it to link resources univocally"
 msgstr "Используйте для ссылки на ресурсы"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+msgid "Website Messages"
+msgstr "Сообщения веб-сайта"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr "История общения на сайте"
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Мастер создания меню"
@@ -609,9 +619,3 @@ msgstr ""
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Подписчики (каналы)"
-
-#~ msgid "Website Messages"
-#~ msgstr "Сообщения веб-сайта"
-
-#~ msgid "Website communication history"
-#~ msgstr "История общения на сайте"

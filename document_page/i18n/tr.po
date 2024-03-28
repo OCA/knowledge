@@ -550,6 +550,16 @@ msgid "Use it to link resources univocally"
 msgstr "Kaynakları tek anlamlı olarak bağlamak için kullanın"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+msgid "Website Messages"
+msgstr "Web Sitesi Mesajları"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr "Web sitesi iletişim geçmişi"
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Sihirbaz Oluşturma Menüsü"
@@ -606,9 +616,3 @@ msgstr ""
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Takipçiler (kanal)"
-
-#~ msgid "Website Messages"
-#~ msgstr "Web Sitesi Mesajları"
-
-#~ msgid "Website communication history"
-#~ msgstr "Web sitesi iletişim geçmişi"

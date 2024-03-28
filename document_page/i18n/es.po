@@ -551,6 +551,17 @@ msgid "Use it to link resources univocally"
 msgstr "Utilícelo para vincular recursos de forma unívoca"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Páginas"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Asistente para crear un menú"
@@ -595,10 +606,6 @@ msgstr "resumen"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensajes que requieren una acción"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Páginas"
 
 #~ msgid "wizard.document.page.history.show_diff"
 #~ msgstr "wizard.document.page.history.show_diff"
