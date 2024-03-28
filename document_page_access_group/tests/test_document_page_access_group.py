@@ -5,8 +5,10 @@ from odoo.tests import common
 
 class TestDocumentPageAccessGroup(common.TransactionCase):
     def setUp(self):
-        super(TestDocumentPageAccessGroup, self).setUp()
-        self.document_user_group = self.browse_ref("knowledge.group_document_user").id
+        super().setUp()
+        self.document_user_group = self.browse_ref(
+            "document_knowledge.group_document_user"
+        ).id
         self.test_group = self.browse_ref("base.group_erp_manager").id
         self.user_id = self.env["res.users"].create(
             {
