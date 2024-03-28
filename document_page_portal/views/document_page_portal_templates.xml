@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <data noupdate="0">
+        <template
+            id="portal_my_home_menu_Knowledge"
+            name="Portal layout : Knowledge document_pages menu entries"
+            inherit_id="portal.portal_breadcrumbs"
+            priority="50"
+        >
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+                <li
+                    t-if="page_name == 'document_page' or document_page"
+                    t-attf-class="breadcrumb-item #{'active ' if not document_page else ''}"
+                >
+                    <a
+                        t-if="document_page"
+                        t-attf-href="/my/knowledge/documents?{{ keep_query() }}"
+                    >Knowledge Documents</a>
+                    <t t-else="">Knowledge Documents</t>
+                </li>
+                <li t-if="document_page" class="breadcrumb-item active">
+                    #<span t-field="document_page.id" />
+                </li>
+            </xpath>
+        </template>
+
+        <template
+            id="portal_my_home_Knowledge_document_page"
+            name="Portal My Home : Knowledge Documents"
+            inherit_id="portal.portal_my_home"
+            priority="50"
+        >
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-if="document_page_count" t-call="portal.portal_docs_entry">
+                    <t t-set="title">Knowledge Documents</t>
+                    <t t-set="url" t-value="'/my/knowledge/documents'" />
+                    <t t-set="count" t-value="document_page_count" />
+                </t>
+            </xpath>
+        </template>
+
+        <template id="portal_my_knowledge_document_pages" name="Knowledge Document">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True" />
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Knowledge Documents</t>
+                </t>
+                <div t-if="not document_pages" class="alert alert-info">
+                    There are currently no Knowledge Document for your account.
+                </div>
+                <t t-if="document_pages" t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th class="text-right">Ref</th>
+                            <th class="w-100">Name</th>
+                            <th />
+                            <th class="text-center">Category</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="document_pages" t-as="document_page">
+                        <tr>
+                            <td class="text-right"><a
+                                    t-attf-href="/knowledge/document/#{document_page.id}"
+                                ><small>#</small><t t-esc="document_page.id" /></a></td>
+                            <td>
+                                <a
+                                    t-attf-href="/knowledge/document/#{document_page.id}"
+                                ><span t-field="document_page.name" /></a>
+                            </td>
+                            <td />
+                            <td class="text-center"><span
+                                    class="badge badge-pill badge-info"
+                                    t-field="document_page.parent_id.name"
+                                /></td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="document_pages_followup" name="Knowledge Documents Followup">
+            <t t-call="portal.portal_layout">
+                <t t-set="wrapwrap_classes" t-value="'o_portal_bg_dark'" />
+
+                <t
+                    t-set="o_portal_fullwidth_alert"
+                    groups="knowledge.group_document_user"
+                >
+                    <t t-call="portal.portal_back_in_edit_mode">
+                        <t
+                            t-set="backend_url"
+                            t-value="'/web#return_label=Website&amp;model=document.page&amp;id=%s&amp;view_type=form' % (document_page.id)"
+                        />
+                    </t>
+                </t>
+
+                <t t-call="portal.portal_record_layout">
+                    <t t-set="card_header">
+                        <div class="row no-gutters">
+                            <div class="col-md">
+                                <h5 class="mb-1 mb-md-0">
+                            <span t-field="document_page.name" />
+                            <small class="text-muted"> (#<span
+                                            t-field="document_page.id"
+                                        />)</small>
+                        </h5>
+                            </div>
+                            <div class="col-md text-md-right">
+                                <small class="text-right">Category:</small>
+                                <span
+                                    t-field="document_page.parent_id.name"
+                                    class=" badge badge-pill badge-info"
+                                    title="Current Category of this document"
+                                />
+                            </div>
+                        </div>
+                    </t>
+                    <t t-set="card_body">
+                        <div class="row mb-4">
+                            <h1 class="col-lg-12">
+                                <span t-field="document_page.name" />
+                            </h1>
+                            <div
+                                t-if="document_page.content"
+                                class="col-lg-12"
+                                t-raw="document_page.content"
+                            />
+                            <div t-else="" class="col-lg-10">
+                                <em class="text-muted"><small>No content</small></em>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>

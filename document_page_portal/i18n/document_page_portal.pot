@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_page_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.document_pages_followup
+msgid "<em class=\"text-muted\"><small>No content</small></em>"
+msgstr ""
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.document_pages_followup
+msgid "<small class=\"text-right\">Category:</small>"
+msgstr ""
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
+#, python-format
+msgid "Category"
+msgstr ""
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.document_pages_followup
+msgid "Current Category of this document"
+msgstr ""
+
+#. module: document_page_portal
+#: model:ir.model,name:document_page_portal.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_portal
+#: model:ir.model.fields,help:document_page_portal.field_document_page__is_public
+msgid ""
+"If true it allows any user of the portal to have access to this document."
+msgstr ""
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home_Knowledge_document_page
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_home_menu_Knowledge
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
+msgid "Knowledge Documents"
+msgstr ""
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
+#, python-format
+msgid "Name"
+msgstr ""
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:0
+#, python-format
+msgid "Newest"
+msgstr ""
+
+#. module: document_page_portal
+#: model:ir.model.fields,field_description:document_page_portal.field_document_page__is_public
+msgid "Public Page"
+msgstr ""
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
+msgid "Ref"
+msgstr ""
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:0
+#, python-format
+msgid "Search <span class=\"nolabel\"> (in Content)</span>"
+msgstr ""
+
+#. module: document_page_portal
+#: code:addons/document_page_portal/controllers/portal.py:0
+#, python-format
+msgid "Search in All"
+msgstr ""
+
+#. module: document_page_portal
+#: model_terms:ir.ui.view,arch_db:document_page_portal.portal_my_knowledge_document_pages
+msgid "There are currently no Knowledge Document for your account."
+msgstr ""
