@@ -4,8 +4,8 @@
 {
     "name": "Document Page Access Group",
     "summary": "Choose groups to access document pages",
-    "version": "15.0.1.0.0",
-    "category": "Knowledge",
+    "version": "16.0.1.0.0",
+    "category": "document_knowledge",
     "website": "https://github.com/OCA/knowledge",
     "author": "Sygel, Odoo Community Association (OCA)",
     "license": "AGPL-3",
@@ -13,7 +13,7 @@
     "installable": True,
     "depends": [
         "document_page",
-        "knowledge",
+        "document_knowledge",
     ],
     "data": ["views/document_page.xml", "security/security.xml"],
 }
