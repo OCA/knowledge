@@ -27,8 +27,8 @@ msgid ""
 "                    It is highly recommended that you edit that one instead "
 "of creating a new one."
 msgstr ""
-"<b>Já dispõe de uma Solicitação de Alteração de Rascunho para esta "
-"página.</b>\n"
+"<b>Já dispõe de uma Solicitação de Alteração de Rascunho para esta página.</"
+"b>\n"
 "                    Recomendamos fortemente que edite esse em vez de criar "
 "um novo."
 
@@ -65,11 +65,11 @@ msgstr ""
 "Solicitação de Alteração para <b t-out=\"object.page_id.name\"></b> e ela "
 "precisa de sua aprovação.</p>\n"
 "            <h1>\n"
-"                <a t-att-href=\"object.page_url\" t-out=\"object."
-"display_name\"></a>\n"
+"                <a t-att-href=\"object.page_url\" t-out=\"object.display_name"
+"\"></a>\n"
 "            </h1>\n"
-"            <p><b>Modificado por:</b> <t t-out=\"object.create_uid.name\""
-"></t></p>\n"
+"            <p><b>Modificado por:</b> <t t-out=\"object.create_uid.name\"></"
+"t></p>\n"
 "            <p><b>Data:</b> <t t-out=\"object.create_date\"></t></p>\n"
 "            <t t-if=\"object.summary\">\n"
 "                <h3>Resumo</h3>\n"
@@ -387,6 +387,16 @@ msgstr "O utilizador tem rascunhos?"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
 msgstr "Utilizadores precisam também pertencer ao grupo de Aprovadores"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: document_page_approval
 #. odoo-python
