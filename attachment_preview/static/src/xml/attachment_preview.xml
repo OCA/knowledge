@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t
+        t-name="Attachment"
+        t-inherit="mail.AttachmentCard"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//div[hasclass('o_AttachmentCard_aside')]" position="before">
+            <div
+                t-if="attachmentCard.attachment.downloadUrl"
+                class="o_AttachmentCard_aside position-relative rounded-end overflow-hidden"
+                t-att-class="{ 'o-hasMultipleActions d-flex flex-column': attachmentCard.hasMultipleActions }"
+            >
+                <button
+                    class="o_AttachmentCard_asideItem btn d-flex justify-content-center align-items-center w-100 h-100 rounded-0 bg-300"
+                    t-att-data-id="attachmentCard.attachment.id"
+                    t-att-data-url="attachmentCard.attachment.defaultSource"
+                    t-on-click="attachmentCard._onPreviewAttachment"
+                    t-att-data-original-title="attachmentCard.attachment.name"
+                    t-attf-title="Preview {{attachmentCard.attachment.displayName}} in side panel"
+                >
+                    <i class="fa fa-search" role="img" aria-label="Preview" />
+                </button>
+                <button
+                    class="o_AttachmentCard_asideItem btn d-flex justify-content-center align-items-center w-100 h-100 rounded-0 bg-300"
+                    data-target="new"
+                    t-att-data-id="attachmentCard.attachment.id"
+                    t-att-data-url="attachmentCard.attachment.defaultSource"
+                    t-on-click="attachmentCard._onPreviewAttachment"
+                    t-att-data-original-title="attachmentCard.attachment.name"
+                    t-attf-title="Open preview {{attachmentCard.attachment.name}} in a new tab"
+                >
+                    <i
+                        class="fa fa-external-link"
+                        role="img"
+                        aria-label="Open in new page"
+                    />
+                </button>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="attachment_preview.AttachmentPreviewWidget">
+        <div class="attachment_preview_widget d-none">
+            <div class="attachment_preview_buttons">
+                <div class="button-group pull-left">
+                    <button
+                        class="btn btn-sm btn-secondary attachment_preview_previous"
+                    ><i class="fa fa-chevron-left" /></button>
+                    <button
+                        class="btn btn-sm btn-secondary disabled attachment_preview_current"
+                    >1 / 5</button>
+                    <button class="btn btn-sm btn-secondary attachment_preview_next"><i
+                            class="fa fa-chevron-right"
+                        /></button>
+                </div>
+                <button
+                    class="btn btn-sm btn-secondary pull-left ml8 attachment_preview_popout"
+                ><i class="fa fa-external-link" /></button>
+                <button
+                    class="btn btn-sm btn-secondary pull-right attachment_preview_close"
+                ><i class="fa fa-times" /></button>
+            </div>
+            <iframe class="attachment_preview_iframe" />
+        </div>
+    </t>
+</templates>
