@@ -17,11 +17,6 @@ msgstr ""
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: document_page_access_group
-#: model:ir.model.fields,field_description:document_page_access_group.field_document_page__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: document_page_access_group
 #: model:ir.model,name:document_page_access_group.model_document_page
 msgid "Document Page"
 msgstr "Pagina documento"
@@ -32,16 +27,15 @@ msgid "Groups"
 msgstr "Gruppi"
 
 #. module: document_page_access_group
-#: model:ir.model.fields,field_description:document_page_access_group.field_document_page__id
-msgid "ID"
-msgstr "ID"
-
-#. module: document_page_access_group
-#: model:ir.model.fields,field_description:document_page_access_group.field_document_page____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: document_page_access_group
 #: model_terms:ir.ui.view,arch_db:document_page_access_group.document_page_access_group_view_wiki_form
 msgid "Security"
 msgstr "Sicurezza"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
