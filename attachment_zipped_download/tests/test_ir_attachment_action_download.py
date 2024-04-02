@@ -3,15 +3,25 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo_test_helper import FakeModelLoader
 
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 from .test_attachment_zipped_download import TestAttachmentZippedDownloadBase
 
 
-class TestMixin(SavepointCase, TestAttachmentZippedDownloadBase):
+class TestMixin(TransactionCase, TestAttachmentZippedDownloadBase):
     @classmethod
     def setUpClass(cls):
-        super(TestMixin, cls).setUpClass()
+        super().setUpClass()
+        cls.env = cls.env(
+            context=dict(
+                cls.env.context,
+                mail_create_nolog=True,
+                mail_create_nosubscribe=True,
+                mail_notrack=True,
+                no_reset_password=True,
+                tracking_disable=True,
+            )
+        )
         cls.loader = FakeModelLoader(cls.env, cls.__module__)
         cls.addClassCleanup(cls.loader.restore_registry)
         cls.loader.backup_registry()
