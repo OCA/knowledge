@@ -96,6 +96,9 @@ class DocumentPage(models.Model):
         compute="_compute_backend_url",
     )
 
+    image = fields.Binary("Image", attachment=True)
+    color = fields.Integer(string="Color Index")
+
     @api.depends("menu_id", "parent_id.menu_id")
     def _compute_backend_url(self):
         tmpl = "/web#id={}&model=document.page&view_type=form"

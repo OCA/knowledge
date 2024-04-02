@@ -46,9 +46,12 @@
                     />
                     <field name="active" invisible="1" />
                     <field name="type" invisible="1" />
-                    <h1>
-                        <field name="name" placeholder="Name" />
-                    </h1>
+                    <field name="image" widget="image" class="oe_avatar" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name" />
+                        </h1>
+                    </div>
                     <group>
                         <div>
                             <field
