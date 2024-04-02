@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2024-02-01 09:40+0000\n"
+"PO-Revision-Date: 2024-04-02 11:04+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -554,14 +554,13 @@ msgstr "Utilizzato per collegare univocamente le risorse"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
-#, fuzzy
 msgid "Website Messages"
-msgstr "Pagine"
+msgstr "Messaggi sito web"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Cronologia comunicazioni sito web"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
