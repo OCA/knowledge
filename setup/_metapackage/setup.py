@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-attachment_preview>=15.0dev,<15.1dev',
+        'odoo-addon-attachment_zipped_download>=15.0dev,<15.1dev',
         'odoo-addon-document_page>=15.0dev,<15.1dev',
         'odoo-addon-document_page_access_group>=15.0dev,<15.1dev',
         'odoo-addon-document_page_approval>=15.0dev,<15.1dev',

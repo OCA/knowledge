@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_preview](attachment_preview/) | 15.0.1.0.0 |  | Preview attachments supported by Viewer.js
+[attachment_zipped_download](attachment_zipped_download/) | 15.0.1.0.0 |  | Attachment Zipped Download
 [document_page](document_page/) | 15.0.1.5.0 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 15.0.1.0.0 |  | Choose groups to access document pages
 [document_page_approval](document_page_approval/) | 15.0.1.1.0 |  | Document Page Approval
