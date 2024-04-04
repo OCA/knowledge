@@ -9,9 +9,12 @@
             <form string="Category">
                 <sheet>
                     <field name="type" invisible="1" />
-                    <h1>
-                        <field name="name" placeholder="Name" />
-                    </h1>
+                    <field name="image" widget="image" class="oe_avatar" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name" />
+                        </h1>
+                    </div>
                     <group>
                         <group>
                             <field
@@ -53,6 +56,171 @@
                     <field name="message_ids" widget="mail_thread" />
                 </div>
             </form>
+        </field>
+    </record>
+    <record id="view_browse_top_document_filter" model="ir.ui.view">
+        <field name="name">document.page.category.search</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="view_wiki_filter" />
+        <field name="arch" type="xml">
+            <field name="content_uid" position="after">
+                <separator />
+                <filter
+                    string="Top Level Ressources"
+                    name="no_parent_id"
+                    domain="[('parent_id', '=', False)]"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="action_browse_top_content" model="ir.actions.act_window">
+        <field name="name">Browse Wiki Content</field>
+        <field name="res_model">document.page</field>
+        <field name="domain">[]</field>
+        <field
+            name="context"
+        >{'default_type': 'content', 'search_default_no_parent_id':1, }</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_browse_top_document_filter" />
+    </record>
+    <record id="action_browse_all_content" model="ir.actions.act_window">
+        <field name="name">Browse Wiki Content</field>
+        <field name="res_model">document.page</field>
+        <field name="domain">[]</field>
+        <field
+            name="context"
+        >{'default_type': 'content', 'search_default_parent_id': [active_id] }</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_wiki_filter" />
+    </record>
+    <record id="view_browse_content_kanban" model="ir.ui.view">
+        <field name="name">document.page.browse.kanban</field>
+        <field name="model">document.page</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id" />
+                <field name="name" />
+                <field name="display_name" />
+                <field name="create_uid" />
+                <field name="write_date" />
+                <field name="parent_id" />
+                <field name="content_uid" />
+                <field name="image" />
+                <field name="type" />
+                <field name="color" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div
+                            t-att-class="'oe_kanban_global_area'  + ' oe_kanban_color_'+ (kanban_getcolor(record.color.raw_value)) + ' oe_kanban_global_click' "
+                        >
+                            <div class="o_kanban_image">
+                                <div class="o_kanban_image_wrapper">
+                                    <t t-if="record.type.raw_value == 'category'">
+                                        <img
+                                            class="o_kanban_image"
+                                            t-if="record.image.raw_value"
+                                            t-att-src="kanban_image('document.page', 'image', record.id.raw_value)"
+                                            t-att-alt="record.display_name"
+                                        />
+                                        <span
+                                            style="font-size: 64px; color: lightslategray"
+                                        >
+                                            <i
+                                                t-if="!record.image.raw_value"
+                                                class="o_kanban_image fa fa-folder-open"
+                                            />
+                                        </span>
+                                    </t>
+                                    <t t-if="record.type.raw_value == 'content'">
+                                        <span style="font-size: 64px; color: lightgray">
+                                            <i class="o_kanban_image fa fa-file" />
+                                        </span>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="o_kanban_details">
+                                <div class="o_kanban_details_wrapper">
+                                    <div class="o_kanban_record_top">
+                                        <div
+                                            class="o_kanban_record_title o_text_overflow"
+                                        >
+                                            <strong>
+                                                <field name="name" />
+                                            </strong>
+                                            <br />
+                                            <small t-if="record.parent_id.raw_value">
+                                                <img
+                                                    t-att-src="kanban_image('document.page', 'image', record.parent_id.raw_value)"
+                                                    t-att-alt="record.parent_id.display_name"
+                                                    width="24"
+                                                    height="24"
+                                                />
+                                                <field name="parent_id" />
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="o_dropdown_kanban dropdown"
+                                        groups="base.group_user"
+                                    >
+                                        <a
+                                            role="button"
+                                            class="dropdown-toggle o-no-caret btn"
+                                            data-toggle="dropdown"
+                                            data-display="static"
+                                            href="#"
+                                            aria-label="Dropdown menu"
+                                            title="Dropdown menu"
+                                        >
+                                            <span class="fa fa-ellipsis-v" />
+                                        </a>
+                                        <div class="dropdown-menu" role="menu">
+                                            <ul
+                                                class="oe_kanban_colorpicker"
+                                                data-field="color"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_record_body">
+                                        <div class="o_kanban_tags_section">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="o_kanban_record_bottom"
+                                        t-if="record.type.raw_value == 'content'"
+                                    >
+                                        <div class="oe_kanban_bottom_left">
+                                            <field name="write_date" widget="date" />
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <img
+                                                t-att-src="kanban_image('res.users', 'image_small', record.content_uid.raw_value)"
+                                                t-att-title="record.content_uid.value"
+                                                t-att-alt="record.content_uid.value"
+                                                width="24"
+                                                height="24"
+                                                class="oe_kanban_avatar"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                t-if="record.type.raw_value == 'category'"
+                                class="o_document_page_kanban_boxes"
+                            >
+                                <a
+                                    class="o_document_page_kanban_box"
+                                    name="%(action_browse_all_content)d"
+                                    type="action"
+                                >
+                                </a>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
     <record id="view_category_tree" model="ir.ui.view">
@@ -132,4 +300,12 @@
         action="action_category"
         sequence="20"
     />
+    <menuitem
+        id="menu_browse_content"
+        parent="knowledge.menu_document_root"
+        name="Browse Wiki Content"
+        action="action_browse_top_content"
+        sequence="5"
+    />
+
 </odoo>

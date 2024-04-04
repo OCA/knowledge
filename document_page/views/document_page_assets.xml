@@ -11,6 +11,10 @@
                 type="text/scss"
                 href="/document_page/static/src/scss/document_page.scss"
             />
+            <script
+                type="text/javascript"
+                src="/document_page/static/src/js/document_page_kanban.js"
+            />
         </xpath>
     </template>
 </odoo>
