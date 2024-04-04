@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-01 19:51+0000\n"
-"PO-Revision-Date: 2024-01-18 10:35+0000\n"
+"PO-Revision-Date: 2024-04-04 09:44+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-9-0/"
 "language/it/)\n"
@@ -243,7 +243,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_content_uid
 #: model:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
-msgstr "Ultimo collaboratore"
+msgstr "Ultimo contributore"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_message_last_post
