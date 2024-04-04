@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2024-01-18 10:36+0000\n"
+"PO-Revision-Date: 2024-04-04 09:43+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -316,7 +316,7 @@ msgstr "Data ultima contribuzione"
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
-msgstr "Ultimo Contributore"
+msgstr "Ultimo contributore"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page____last_update
