@@ -20,6 +20,14 @@ msgid "%s (copy)"
 msgstr ""
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_content_kanban
+msgid ""
+"<span style=\"font-size: 64px; color: lightgray\">\n"
+"                                            <i title=\"File\" class=\"o_kanban_image fa fa-file\"/>\n"
+"                                        </span>"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
 msgid "Action Needed"
 msgstr ""
@@ -230,6 +238,11 @@ msgstr ""
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
 msgid "Editor"
+msgstr ""
+
+#. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_content_kanban
+msgid "Folder"
 msgstr ""
 
 #. module: document_page
