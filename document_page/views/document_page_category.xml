@@ -127,13 +127,17 @@
                                         >
                                             <i
                                                 t-if="!record.image.raw_value"
+                                                title="Folder"
                                                 class="o_kanban_image fa fa-folder-open"
                                             />
                                         </span>
                                     </t>
                                     <t t-if="record.type.raw_value == 'content'">
                                         <span style="font-size: 64px; color: lightgray">
-                                            <i class="o_kanban_image fa fa-file" />
+                                            <i
+                                                title="File"
+                                                class="o_kanban_image fa fa-file"
+                                            />
                                         </span>
                                     </t>
                                 </div>
