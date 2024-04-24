@@ -20,6 +20,7 @@
             "attachment_preview/static/src/js/mail_models/attachment_card.esm.js",
             "attachment_preview/static/src/js/mail_models/attachment_list.esm.js",
             "attachment_preview/static/src/js/web_views/binary_field.esm.js",
+            "attachment_preview/static/src/js/web_views/form_controller.esm.js",
             "attachment_preview/static/src/js/web_views/form_renderer.esm.js",
             "attachment_preview/static/src/scss/attachment_preview.scss",
             "attachment_preview/static/src/xml/attachment_preview.xml",
