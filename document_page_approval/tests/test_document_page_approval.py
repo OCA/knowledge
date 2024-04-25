@@ -13,6 +13,18 @@ class TestDocumentPageApproval(common.TransactionCase):
             "document_page_approval.group_document_approver_user"
         )
         self.env.ref("base.user_root").write({"groups_id": [(4, self.approver_gid.id)]})
+        self.env.ref("base.user_admin").write(
+            {"groups_id": [(4, self.approver_gid.id)]}
+        )
+        self.user2 = self.env["res.users"].create(
+            {
+                "name": "Test user 2",
+                "login": "Test user 2",
+                "groups_id": [
+                    (6, 0, [self.env.ref("base.group_user").id, self.approver_gid.id])
+                ],
+            }
+        )
         # demo_approval
         self.category2 = self.page_obj.create(
             {
@@ -44,6 +56,9 @@ class TestDocumentPageApproval(common.TransactionCase):
 
         # It should automatically be in 'to approve' state
         self.assertEqual(chreq.state, "to approve")
+        user_admin = self.env.ref("base.user_admin")
+        self.assertTrue(user_admin.partner_id.id in chreq.message_partner_ids.ids)
+        self.assertTrue(self.user2.partner_id.id in chreq.message_partner_ids.ids)
 
         # Needed to compute calculated fields
         page.refresh()
