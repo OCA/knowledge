@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2024-04-04 09:42+0000\n"
+"PO-Revision-Date: 2024-04-29 14:39+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -34,6 +34,10 @@ msgid ""
 "\"o_kanban_image fa fa-file\"/>\n"
 "                                        </span>"
 msgstr ""
+"<span style=\"font-size: 64px; color: lightgray\">\n"
+"                                            <i title=\"File\" class="
+"\"o_kanban_image fa fa-file\"/>\n"
+"                                        </span>"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
@@ -87,7 +91,7 @@ msgstr "URL backend"
 #: model:ir.actions.act_window,name:document_page.action_browse_top_content
 #: model:ir.ui.menu,name:document_page.menu_browse_content
 msgid "Browse Wiki Content"
-msgstr ""
+msgstr "Naviga il contenuto della Wiki"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -135,7 +139,7 @@ msgstr "Chiudi"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__color
 msgid "Color Index"
-msgstr ""
+msgstr "Indice colore"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
@@ -241,7 +245,7 @@ msgstr "Documenti"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_browse_content_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "Menu a tendina"
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
@@ -251,7 +255,7 @@ msgstr "Editor"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_browse_content_kanban
 msgid "Folder"
-msgstr ""
+msgstr "Cartella"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_follower_ids
@@ -329,7 +333,7 @@ msgstr "Se impostata, la pagina è accessibile solo da questa azienda"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__image
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -582,7 +586,7 @@ msgstr "Titolo"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
 msgid "Top Level Ressources"
-msgstr ""
+msgstr "Risorse di alto livello"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
