@@ -13,11 +13,15 @@ class IrAttachmentCategory(models.Model):
     display_name = fields.Char(
         compute="_compute_display_name",
         store=True,
+        recursive=True,
     )
     parent_id = fields.Many2one(
         "ir.attachment.category",
     )
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(
+        index=True,
+        unaccent=False,
+    )
     attachment_ids = fields.Many2many(
         compute="_compute_attachment_count", comodel_name="ir.attachment"
     )
