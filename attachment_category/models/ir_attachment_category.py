@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class IrAttachmentCategory(models.Model):
-
     _name = "ir.attachment.category"
     _description = "Attachment Category"
     _parent_store = True
