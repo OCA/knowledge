@@ -46,6 +46,7 @@ msgstr "Conteo de Anexos"
 
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__category_ids
+#: model:ir.model.fields,field_description:attachment_category.field_product_document__category_ids
 msgid "Category"
 msgstr "Categoría"
 
@@ -65,22 +66,14 @@ msgid "Created on"
 msgstr "Creado el"
 
 #. module: attachment_category
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__display_name
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
 #. module: attachment_category
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__id
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__id
 msgid "ID"
 msgstr "ID (identificación)"
-
-#. module: attachment_category
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment____last_update
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
 
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__write_uid
@@ -106,3 +99,6 @@ msgstr "Parental"
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__parent_path
 msgid "Parent Path"
 msgstr "Ruta Parental"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"

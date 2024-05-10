@@ -45,6 +45,7 @@ msgstr "Numero allegati"
 
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__category_ids
+#: model:ir.model.fields,field_description:attachment_category.field_product_document__category_ids
 msgid "Category"
 msgstr "Categoria"
 
@@ -64,22 +65,14 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: attachment_category
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__display_name
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: attachment_category
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__id
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__id
 msgid "ID"
 msgstr "ID"
-
-#. module: attachment_category
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment____last_update
-#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
 
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__write_uid
@@ -105,3 +98,6 @@ msgstr "Padre"
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__parent_path
 msgid "Parent Path"
 msgstr "Percorso padre"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
