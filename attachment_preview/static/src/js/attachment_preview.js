@@ -334,7 +334,9 @@ odoo.define("/attachment_preview/static/src/js/attachment_preview.js", function 
 
                 attachments = _.object(
                     attachments.map((att) => {
-                        return parseInt(att.localId.slice(16), 10);
+                        const tmp_id = parseInt(att.localId.slice(16), 10);
+                        if (tmp_id > 0) return tmp_id;
+                        return null;
                     }),
                     attachments.map((at) => {
                         if (at.defaultSource) {
