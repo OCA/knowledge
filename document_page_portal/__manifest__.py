@@ -6,7 +6,7 @@
     "name": "Document Page Portal",
     "summary": """
         This module enables document page portal""",
-    "version": "13.0.1.0.0",
+    "version": "15.0.1.0.0",
     "category": "Knowledge Management",
     "author": "Escodoo, Odoo Community Association (OCA)",
     "maintainers": ["marcelsavegnago"],
@@ -15,10 +15,14 @@
     "license": "AGPL-3",
     "depends": ["base", "portal", "document_page"],
     "data": [
-        "views/assets.xml",
         "views/document_page.xml",
         "security/document_page_portal_security.xml",
         "security/ir.model.access.csv",
         "views/document_page_portal_templates.xml",
     ],
+    "assets": {
+        "web.assets_tests": [
+            "document_page_portal/static/src/js/document_page_portal_tour.js"
+        ],
+    },
 }

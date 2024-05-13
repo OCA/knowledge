@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<odoo noupdate="0">
 
-    <data noupdate="0">
         <template
-            id="portal_my_home_menu_Knowledge"
-            name="Portal layout : Knowledge document_pages menu entries"
-            inherit_id="portal.portal_breadcrumbs"
-            priority="50"
-        >
+        id="portal_my_home_menu_Knowledge"
+        name="Portal layout : Knowledge document_pages menu entries"
+        inherit_id="portal.portal_breadcrumbs"
+        priority="50"
+    >
             <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
                 <li
-                    t-if="page_name == 'document_page' or document_page"
-                    t-attf-class="breadcrumb-item #{'active ' if not document_page else ''}"
-                >
+                t-if="page_name == 'document_page' or document_page"
+                t-attf-class="breadcrumb-item #{'active ' if not document_page else ''}"
+            >
                     <a
-                        t-if="document_page"
-                        t-attf-href="/my/knowledge/documents?{{ keep_query() }}"
-                    >Knowledge Documents</a>
+                    t-if="document_page"
+                    t-attf-href="/my/knowledge/documents?{{ keep_query() }}"
+                >Knowledge Documents</a>
                     <t t-else="">Knowledge Documents</t>
                 </li>
                 <li t-if="document_page" class="breadcrumb-item active">
@@ -26,11 +25,11 @@
         </template>
 
         <template
-            id="portal_my_home_Knowledge_document_page"
-            name="Portal My Home : Knowledge Documents"
-            inherit_id="portal.portal_my_home"
-            priority="50"
-        >
+        id="portal_my_home_Knowledge_document_page"
+        name="Portal My Home : Knowledge Documents"
+        inherit_id="portal.portal_my_home"
+        priority="50"
+    >
             <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
                 <t t-if="document_page_count" t-call="portal.portal_docs_entry">
                     <t t-set="title">Knowledge Documents</t>
@@ -62,18 +61,18 @@
                     <t t-foreach="document_pages" t-as="document_page">
                         <tr>
                             <td class="text-right"><a
-                                    t-attf-href="/knowledge/document/#{document_page.id}"
-                                ><small>#</small><t t-esc="document_page.id" /></a></td>
+                                t-attf-href="/knowledge/document/#{document_page.id}"
+                            ><small>#</small><t t-esc="document_page.id" /></a></td>
                             <td>
                                 <a
-                                    t-attf-href="/knowledge/document/#{document_page.id}"
-                                ><span t-field="document_page.name" /></a>
+                                t-attf-href="/knowledge/document/#{document_page.id}"
+                            ><span t-field="document_page.name" /></a>
                             </td>
                             <td />
                             <td class="text-center"><span
-                                    class="badge badge-pill badge-info"
-                                    t-field="document_page.parent_id.name"
-                                /></td>
+                                class="badge badge-pill badge-info"
+                                t-field="document_page.parent_id.name"
+                            /></td>
                         </tr>
                     </t>
                 </t>
@@ -85,14 +84,14 @@
                 <t t-set="wrapwrap_classes" t-value="'o_portal_bg_dark'" />
 
                 <t
-                    t-set="o_portal_fullwidth_alert"
-                    groups="knowledge.group_document_user"
-                >
+                t-set="o_portal_fullwidth_alert"
+                groups="knowledge.group_document_user"
+            >
                     <t t-call="portal.portal_back_in_edit_mode">
                         <t
-                            t-set="backend_url"
-                            t-value="'/web#return_label=Website&amp;model=document.page&amp;id=%s&amp;view_type=form' % (document_page.id)"
-                        />
+                        t-set="backend_url"
+                        t-value="'/web#return_label=Website&amp;model=document.page&amp;id=%s&amp;view_type=form' % (document_page.id)"
+                    />
                     </t>
                 </t>
 
@@ -103,17 +102,17 @@
                                 <h5 class="mb-1 mb-md-0">
                             <span t-field="document_page.name" />
                             <small class="text-muted"> (#<span
-                                            t-field="document_page.id"
-                                        />)</small>
+                                        t-field="document_page.id"
+                                    />)</small>
                         </h5>
                             </div>
                             <div class="col-md text-md-right">
                                 <small class="text-right">Category:</small>
                                 <span
-                                    t-field="document_page.parent_id.name"
-                                    class=" badge badge-pill badge-info"
-                                    title="Current Category of this document"
-                                />
+                                t-field="document_page.parent_id.name"
+                                class=" badge badge-pill badge-info"
+                                title="Current Category of this document"
+                            />
                             </div>
                         </div>
                     </t>
@@ -123,10 +122,10 @@
                                 <span t-field="document_page.name" />
                             </h1>
                             <div
-                                t-if="document_page.content"
-                                class="col-lg-12"
-                                t-raw="document_page.content"
-                            />
+                            t-if="document_page.content"
+                            class="col-lg-12"
+                            t-raw="document_page.content"
+                        />
                             <div t-else="" class="col-lg-10">
                                 <em class="text-muted"><small>No content</small></em>
                             </div>
@@ -137,5 +136,4 @@
 
         </template>
 
-    </data>
 </odoo>
