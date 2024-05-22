@@ -1,47 +1,51 @@
 /** @odoo-module **/
 
-import {registerPatch} from "@mail/model/model_core";
-import {AttachmentCard} from "@mail/components/attachment_card/attachment_card";
-import {patch} from "web.utils";
+import {Chatter} from "@mail/core/web/chatter";
+import {patch} from "@web/core/utils/patch";
 import {url} from "@web/core/utils/urls";
+import {AttachmentList} from "@mail/core/common/attachment_list";
 
-registerPatch({
-    name: "AttachmentBoxView",
-    recordMethods: {
-        _onAddUrl(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.env.services.action.doAction(
-                "document_url.action_ir_attachment_add_url",
-                {
-                    additionalContext: {
-                        active_id: this.chatter.thread.id,
-                        active_ids: [this.chatter.thread.id],
-                        active_model: this.chatter.thread.model,
-                    },
-                    onClose: this._onAddedUrl.bind(this),
-                }
-            );
-        },
-        _onAddedUrl() {
-            this.chatter.refresh();
-        },
+patch(Chatter.prototype, {
+    _onAddUrl(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.action.doAction("document_url.action_ir_attachment_add_url", {
+            additionalContext: {
+                active_id: this.state.thread.id,
+                active_ids: [this.state.thread.id],
+                active_model: this.state.thread.model,
+            },
+            onClose: async () => {
+                await this.updateThreadAttachments();
+            },
+        });
+    },
+    async updateThreadAttachments() {
+        const attachments = await this.orm.call("ir.attachment", "search_read", [
+            [
+                ["res_model", "=", this.state.thread.model],
+                ["res_id", "=", this.state.thread.id],
+            ],
+            ["id", "name", "mimetype", "url"],
+        ]);
+        this.state.thread.attachments = attachments.map((att) => ({
+            id: att.id,
+            name: att.name,
+            mimetype: att.mimetype,
+            url: att.url,
+        }));
+    },
+    onClickAddAttachments(ev) {
+        ev.stopPropagation();
+        this.state.isAttachmentBoxOpened = !this.state.isAttachmentBoxOpened;
+        if (this.state.isAttachmentBoxOpened) {
+            this.rootRef.el.scrollTop = 0;
+            this.state.thread.scrollTop = 0;
+        }
     },
 });
 
-registerPatch({
-    name: "Chatter",
-    recordMethods: {
-        /**
-         * Handles click on the attach button.
-         */
-        async onClickButtonAddAttachments() {
-            await this.onClickButtonToggleAttachments();
-        },
-    },
-});
-
-patch(AttachmentCard.prototype, "document_url/static/src/js/url.js", {
+patch(AttachmentList.prototype, {
     /**
      * Return the url of the attachment. Temporary attachments, a.k.a. uploading
      * attachments, do not have an url.
@@ -50,7 +54,7 @@ patch(AttachmentCard.prototype, "document_url/static/src/js/url.js", {
      */
     get attachmentUrl() {
         return url("/web/content", {
-            id: this.attachmentCard.attachment.id,
+            id: this.attachment.id,
             download: true,
         });
     },

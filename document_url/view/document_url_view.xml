@@ -24,8 +24,7 @@
                             class="oe_highlight"
                             type="object"
                         />
-                    or
-                    <button special="cancel" string="Cancel" class="oe_link" />
+                    <button special="cancel" string="Cancel" class="btn-secondary" />
                 </footer>
             </form>
         </field>
