@@ -25,5 +25,4 @@
             "document_page_portal/static/src/js/document_page_portal_tour.js"
         ],
     },
-    "external_dependencies": {"python": ["odoo-test-helper"]},
 }

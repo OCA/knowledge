@@ -1,9 +1,9 @@
 odoo.define("document_page_portal.tour", function (require) {
     "use strict";
 
-    var tour = require("web_tour.tour");
+    var webTour = require("web_tour.tour");
 
-    tour.register(
+    webTour.register(
         "document_page_portal_tour",
         {
             test: true,
@@ -23,7 +23,7 @@ odoo.define("document_page_portal.tour", function (require) {
         ]
     );
 
-    tour.register(
+    webTour.register(
         "document_page_portal_search_tour",
         {
             test: true,
