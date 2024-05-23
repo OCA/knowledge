@@ -13,7 +13,7 @@
     "images": ["static/description/banner.png"],
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
-    "depends": ["base", "portal", "document_page"],
+    "depends": ["base", "portal", "document_page", "web_tour"],
     "data": [
         "views/document_page.xml",
         "security/document_page_portal_security.xml",
