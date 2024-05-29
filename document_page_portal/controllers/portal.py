@@ -110,7 +110,7 @@ class CustomerPortal(CustomerPortal):
                 "date": date_begin,
                 "document_pages": document_pages,
                 "page_name": "document_page",
-                "default_url": "/my/knowledge/s",
+                "default_url": "/my/knowledge/documents",
                 "pager": pager,
                 "archive_groups": archive_groups,
                 "searchbar_sortings": searchbar_sortings,
@@ -127,7 +127,7 @@ class CustomerPortal(CustomerPortal):
     @http.route(
         [
             "/knowledge/document/<int:document_page_id>",
-            "/knowledge/document/<int:document_page_id>/<token>",
+            "/knowledge/document/<int:document_page_id>/<access_token>",
             "/my/knowledge/document/<int:document_page_id>",
         ],
         type="http",

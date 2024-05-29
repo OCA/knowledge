@@ -15,7 +15,6 @@ class TestPortalDocumentPage(odoo.tests.HttpCase):
                 "is_public": True,
             }
         )
-
         self.start_tour("/", "document_page_portal_tour", login="portal")
 
     def test_02_document_page_portal_tour(self):
