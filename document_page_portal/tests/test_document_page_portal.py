@@ -1,5 +1,5 @@
 # Copyright 2020 - TODAY, Marcel Savegnago - Escodoo
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
 import odoo.tests
 
@@ -16,21 +16,7 @@ class TestPortalDocumentPage(odoo.tests.HttpCase):
             }
         )
 
-        self.phantom_js(
-            "/",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".run('document_page_portal_tour')",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".tours.document_page_portal_tour.ready",
-            login="portal",
-        )
+        self.start_tour("/", "document_page_portal_tour", login="portal")
 
     def test_02_document_page_portal_tour(self):
-        self.phantom_js(
-            "/",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".run('document_page_portal_search_tour')",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".tours.document_page_portal_search_tour.ready",
-            login="portal",
-        )
+        self.start_tour("/", "document_page_portal_search_tour", login="portal")
