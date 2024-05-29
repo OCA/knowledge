@@ -1,7 +1,6 @@
 # Copyright (C) 2020 - TODAY, Marcel Savegnago - Escodoo).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-
 from odoo import http
 from odoo.exceptions import AccessError, MissingError
 from odoo.http import request
@@ -9,7 +8,6 @@ from odoo.osv.expression import OR
 from odoo.tools.translate import _
 
 from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-
 
 class CustomerPortal(CustomerPortal):
     def _prepare_portal_layout_values(self):
@@ -73,7 +71,9 @@ class CustomerPortal(CustomerPortal):
         order = searchbar_sortings[sortby]["order"]
 
         # archive groups - Default Group By 'create_date'
-        archive_groups = self._get_archive_groups("document.page", domain)
+        archive_groups = request.env["document.page"].read_group(
+            domain, ['create_date:month'], ['create_date:month']
+        )
         if date_begin and date_end:
             domain += [
                 ("create_date", ">", date_begin),
@@ -112,7 +112,7 @@ class CustomerPortal(CustomerPortal):
                 "date": date_begin,
                 "document_pages": document_pages,
                 "page_name": "document_page",
-                "default_url": "/my/knowledge/s",
+                "default_url": "/my/knowledge/documents",
                 "pager": pager,
                 "archive_groups": archive_groups,
                 "searchbar_sortings": searchbar_sortings,
