@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [document_page](document_page/) | 17.0.1.1.0 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 17.0.1.0.0 |  | Choose groups to access document pages
 [document_page_tag](document_page_tag/) | 17.0.1.0.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
+[document_url](document_url/) | 17.0.1.0.0 |  | URL attachment
 
 [//]: # (end addons)
 
