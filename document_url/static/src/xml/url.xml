@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     Copyright 2021 Tecnativa - Víctor Martínez
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates>
+
+    <t t-inherit="mail.Chatter" t-inherit-mode="extension">
+        <xpath expr="//AttachmentList//..//FileUploader/t" position="replace">
+            <t t-set-slot="toggler">
+                <div class="d-flex mx-auto">
+                    <button
+                        class="btn btn-link"
+                        type="button"
+                        t-att-disabled="!state.thread.hasWriteAccess"
+                    >
+                        <i class="fa fa-plus-square" />
+                        Attach files
+                    </button>
+                    <button
+                        class="btn btn-link"
+                        type="button"
+                        t-att-disabled="!state.thread.hasWriteAccess"
+                        t-on-click="_onAddUrl"
+                    >
+                        <i class="fa fa-plus-square" />
+                        Add URL
+                    </button>
+                </div>
+            </t>
+        </xpath>
+    </t>
+    <t t-inherit="mail.AttachmentList" t-inherit-mode="extension">
+        <xpath
+            expr="//div[contains(@class, 'o-mail-AttachmentCard-aside')]//button[@title='Download']"
+            position="attributes"
+        >
+            <attribute name="t-if">attachment.mimetype != 'application/link'</attribute>
+        </xpath>
+        <xpath
+            expr="//div[hasclass('o-mail-AttachmentCard-aside')]//button[@title='Download']"
+            position="after"
+        >
+            <button
+                class="btn d-flex justify-content-center align-items-center w-100 h-100 rounded-0"
+                t-attf-class="bg-300"
+                t-on-click="() => window.open(attachmentUrl, '_blank')"
+                title="Open"
+                t-if="attachment.mimetype === 'application/link'"
+                target="_blank"
+            >
+                <i class="fa fa-link" role="img" aria-label="Open" />
+            </button>
+        </xpath>
+        <xpath
+            expr="//div[hasclass('o-mail-AttachmentCard-image')]"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >attachment.mimetype !== 'application/link'</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('o-mail-AttachmentCard-image')]" position="before">
+            <a
+                class="o_Attachment_url_ico o_image flex-shrink-0 m-1"
+                t-att-href="attachmentUrl"
+                target="_blank"
+                t-if="attachment.mimetype === 'application/link'"
+            >
+                <i class="fa fa-link fa-2x" />
+            </a>
+        </xpath>
+    </t>
+</templates>
