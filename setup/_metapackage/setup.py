@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo-addon-document_knowledge>=16.0dev,<16.1dev',
         'odoo-addon-document_page>=16.0dev,<16.1dev',
         'odoo-addon-document_page_access_group>=16.0dev,<16.1dev',
+        'odoo-addon-document_page_access_group_user_role>=16.0dev,<16.1dev',
         'odoo-addon-document_page_approval>=16.0dev,<16.1dev',
         'odoo-addon-document_page_group>=16.0dev,<16.1dev',
         'odoo-addon-document_page_partner>=16.0dev,<16.1dev',
