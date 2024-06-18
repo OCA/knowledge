@@ -5,10 +5,11 @@ from odoo.tests.common import TransactionCase
 
 
 class TestDocumentPageGroup(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        knowledge_group = self.browse_ref("document_knowledge.group_document_user").id
-        self.user_id = self.env["res.users"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        knowledge_group = cls.env.ref("document_knowledge.group_document_user").id
+        cls.user_id = cls.env["res.users"].create(
             {
                 "name": "user",
                 "login": "login",
@@ -16,16 +17,16 @@ class TestDocumentPageGroup(TransactionCase):
                 "groups_id": [(4, knowledge_group)],
             }
         )
-        self.group = self.browse_ref("document_page.group_document_manager")
+        cls.group = cls.env.ref("document_page.group_document_manager")
 
-        self.categ_1 = self.env["document.page"].create(
+        cls.categ_1 = cls.env["document.page"].create(
             {"name": "Categ 1", "type": "category"}
         )
-        self.categ_2 = self.env["document.page"].create(
-            {"name": "Categ 2", "type": "category", "parent_id": self.categ_1.id}
+        cls.categ_2 = cls.env["document.page"].create(
+            {"name": "Categ 2", "type": "category", "parent_id": cls.categ_1.id}
         )
-        self.page = self.env["document.page"].create(
-            {"name": "Page 1", "type": "content", "parent_id": self.categ_1.id}
+        cls.page = cls.env["document.page"].create(
+            {"name": "Page 1", "type": "content", "parent_id": cls.categ_1.id}
         )
 
     def test_document_page_group(self):
