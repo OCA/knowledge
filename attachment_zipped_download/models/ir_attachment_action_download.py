@@ -27,7 +27,8 @@ class IrAttachmentActionDownloadMixin(models.AbstractModel):
         """Return action to:
         * emit a warning message if no attachment found
         * download a file if only 1 file found
-        * zip and download the list of attachment returns by `_get_downloadable_attachments`
+        * zip and download the list of attachment returns by
+          `_get_downloadable_attachments`
         """
         attachments = self._get_downloadable_attachments()
         if not attachments:
