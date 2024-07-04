@@ -1,8 +1,8 @@
 /** @odoo-module **/
 
-import {registerPatch} from "@mail/model/model_core";
 import {AttachmentCard} from "@mail/components/attachment_card/attachment_card";
 import {patch} from "web.utils";
+import {registerPatch} from "@mail/model/model_core";
 import {url} from "@web/core/utils/urls";
 
 registerPatch({
