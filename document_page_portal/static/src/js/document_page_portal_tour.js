@@ -35,11 +35,11 @@ odoo.define("document_page_portal.tour", function (require) {
                 trigger: "input[name='search']",
                 run: "text Test",
             },
-//            {
-//                content: "Click Search.",
-//                extra_trigger: "#wrap:not(:has(input[name=search]:propValue('')))",
-//                trigger: ".search-submit",
-//            },
+            {
+                content: "Click Search.",
+                extra_trigger: "#wrap:not(:has(input[name=search]:propValue('')))",
+                trigger: ".search-submit",
+            },
         ]
     );
 });
