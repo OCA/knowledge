@@ -38,7 +38,7 @@ odoo.define("document_page_portal.tour", function (require) {
             {
                 content: "Click Search.",
                 extra_trigger: "#wrap:not(:has(input[name=search]:propValue('')))",
-                trigger: ".search-submit",
+                trigger: "form.o_portal_search_panel .input-group-append .btn[type='submit']",
             },
         ]
     );
