@@ -3,7 +3,7 @@
 
 {
     "name": "Preview attachments",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "author": "Therp BV," "Onestein," "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "summary": "Preview attachments supported by Viewer.js",

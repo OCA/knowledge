@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_category](attachment_category/) | 14.0.1.0.1 |  | Adds a document category to help classification
-[attachment_preview](attachment_preview/) | 14.0.1.0.1 |  | Preview attachments supported by Viewer.js
+[attachment_preview](attachment_preview/) | 14.0.1.0.2 |  | Preview attachments supported by Viewer.js
 [attachment_zipped_download](attachment_zipped_download/) | 14.0.2.0.0 |  | Attachment Zipped Download
 [document_page](document_page/) | 14.0.1.3.1 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 14.0.1.0.0 |  | Choose groups to access document pages
