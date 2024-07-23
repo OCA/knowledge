@@ -1,29 +1,25 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo.exceptions import UserError
-from odoo.tests import common
+from odoo.tests.common import users
+
+from .common import TestDocumentPageAccessGroupBase
 
 
-class TestDocumentPageAccessGroup(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.document_user_group = self.browse_ref(
-            "document_knowledge.group_document_user"
-        ).id
-        self.test_group = self.browse_ref("base.group_erp_manager").id
-        self.user_id = self.env["res.users"].create(
-            {
-                "name": "user",
-                "login": "user_login",
-                "email": "user_email",
-                "groups_id": [(4, self.document_user_group)],
-            }
-        )
-        self.page = self.env["document.page"].create(
-            {"name": "Page 1", "type": "content"}
-        )
-
-    def test_page_access(self):
-        self.assertIsNone(self.page.with_user(self.user_id).check_access_rule("read"))
-        self.page.write({"groups_id": [(4, self.test_group)]})
+class TestDocumentPageAccessGroup(TestDocumentPageAccessGroupBase):
+    def test_page_access_constrains(self):
         with self.assertRaises(UserError):
-            self.page.with_user(self.user_id).check_access_rule("read")
+            self.knowledge_page.write({"user_ids": [(6, 0, [self.user.id])]})
+
+    @users("test-user")
+    def test_page_access_01(self):
+        pages = self.env["document.page"].search([])
+        self.assertIn(self.public_page, pages)
+        self.assertNotIn(self.knowledge_page, pages)
+        self.assertIn(self.user_page, pages)
+
+    @users("test-manager-user")
+    def test_page_access_02(self):
+        pages = self.env["document.page"].search([])
+        self.assertIn(self.public_page, pages)
+        self.assertIn(self.knowledge_page, pages)
+        self.assertNotIn(self.user_page, pages)

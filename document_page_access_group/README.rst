@@ -40,14 +40,13 @@ Usage
 =====
 
 To select the users that have access to a given document page you need
-to open a document, go to the 'Security' tab and select which groups
-will have access.
+to open a document, go to the 'Security' tab and you have 3 options:
 
-Only users that belong to the 'document_knowledge / Manager' group can
-manage access groups to documents.
-
-If no groups are selected in a document, all users that can access
-document pages can access this document.
+-  Select a group: Only users with those groups will be able to see the
+   page.
+-  Select any user: Only the selected users will be able to see the
+   page.
+-  Do not select group or user: All users will be able to see the page.
 
 Bug Tracker
 ===========
@@ -72,6 +71,10 @@ Contributors
 
 -  Manuel Regidor <manuel.regidor@sygel.es>
 -  Alberto Martínez <alberto.martinez@sygel.es>
+
+-  ``Tecnativa <https://www.tecnativa.com>``\ \_:
+
+   -  Víctor Martínez
 
 Maintainers
 -----------
