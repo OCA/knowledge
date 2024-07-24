@@ -8,24 +8,21 @@
             ref="document_page_access_group.document_page_access_group_view_wiki_form"
         />
         <field name="arch" type="xml">
-            <page name="security" position="after">
-                <page name="roles" string="Roles" groups="base.group_erp_manager">
-                    <field name="role_ids">
+            <group name="users" position="before">
+                <group
+                    name="roles"
+                    string="Roles"
+                    attrs="{'invisible': [('groups_id','!=',[])]}"
+                    groups="base.group_erp_manager"
+                >
+                    <field name="role_ids" nolabel="1" colspan="2">
                         <tree>
                             <field name="name" />
                             <field name="comment" />
                         </tree>
                     </field>
-                </page>
-                <!-- It is necessary to add the field without groups to be able to apply the readonly after. !-->
-                <field name="role_ids" invisible="1" groups="!base.group_erp_manager" />
-            </page>
-            <!-- Set groups as readonly if there is a defined roles to avoid UX confusion. !-->
-            <field name="groups_id" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'readonly': [('role_ids', '!=', [])]}</attribute>
-            </field>
+                </group>
+            </group>
         </field>
     </record>
 </odoo>
