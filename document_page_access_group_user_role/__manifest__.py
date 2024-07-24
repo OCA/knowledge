@@ -4,7 +4,7 @@
     "name": "Document Page Access Group User Role",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "depends": ["document_page_access_group", "base_user_role"],
     "license": "AGPL-3",
     "category": "Knowledge",
