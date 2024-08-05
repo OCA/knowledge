@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2022 Manuel Regidor <manuel.regidor@sygel.es>
+     Copyright 2024 Tecnativa - Víctor Martínez
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
     <record id="document_page_access_group_view_wiki_form" model="ir.ui.view">
@@ -13,7 +14,20 @@
                     string="Security"
                     groups="document_page.group_document_manager"
                 >
-                    <field name="groups_id" />
+                    <group
+                        name="groups"
+                        string="Groups"
+                        attrs="{'invisible': [('user_ids','!=',[])]}"
+                    >
+                        <field name="groups_id" nolabel="1" colspan="2" />
+                    </group>
+                    <group
+                        name="users"
+                        string="Users"
+                        attrs="{'invisible': [('groups_id','!=',[])]}"
+                    >
+                        <field name="user_ids" widget="many2many_tags" colspan="2" />
+                    </group>
                 </page>
             </xpath>
         </field>
