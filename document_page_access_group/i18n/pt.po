@@ -23,6 +23,7 @@ msgstr "Página do Documento"
 
 #. module: document_page_access_group
 #: model:ir.model.fields,field_description:document_page_access_group.field_document_page__groups_id
+#: model_terms:ir.ui.view,arch_db:document_page_access_group.document_page_access_group_view_wiki_form
 msgid "Groups"
 msgstr "Grupos"
 
@@ -30,3 +31,16 @@ msgstr "Grupos"
 #: model_terms:ir.ui.view,arch_db:document_page_access_group.document_page_access_group_view_wiki_form
 msgid "Security"
 msgstr "Segurança"
+
+#. module: document_page_access_group
+#: model:ir.model.fields,field_description:document_page_access_group.field_document_page__user_ids
+#: model_terms:ir.ui.view,arch_db:document_page_access_group.document_page_access_group_view_wiki_form
+msgid "Users"
+msgstr ""
+
+#. module: document_page_access_group
+#. odoo-python
+#: code:addons/document_page_access_group/models/document_page.py:0
+#, python-format
+msgid "You cannot set groups and users at the same time."
+msgstr ""
