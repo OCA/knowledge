@@ -19,12 +19,12 @@ msgid "Document Page"
 msgstr ""
 
 #. module: document_page_access_group_user_role
-#: model:ir.model.fields,field_description:document_page_access_group_user_role.field_document_page__groups_id
-msgid "Groups"
-msgstr ""
-
-#. module: document_page_access_group_user_role
 #: model:ir.model.fields,field_description:document_page_access_group_user_role.field_document_page__role_ids
 #: model_terms:ir.ui.view,arch_db:document_page_access_group_user_role.document_page_access_group_view_wiki_form
 msgid "Roles"
+msgstr ""
+
+#. module: document_page_access_group_user_role
+#: model:ir.model.fields,field_description:document_page_access_group_user_role.field_document_page__user_ids
+msgid "Users"
 msgstr ""
