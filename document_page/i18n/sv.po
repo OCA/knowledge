@@ -314,14 +314,6 @@ msgid "Last Contributor"
 msgstr "Senaste bidragsgivaren"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page____last_update
-#: model:ir.model.fields,field_description:document_page.field_document_page_create_menu____last_update
-#: model:ir.model.fields,field_description:document_page.field_document_page_history____last_update
-#: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff____last_update
-msgid "Last Modified on"
-msgstr "Senast ändrad den"
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__write_uid
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__write_uid
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__write_uid
@@ -336,11 +328,6 @@ msgstr "Senast uppdaterad av"
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__write_date
 msgid "Last Updated on"
 msgstr "Senast uppdaterad"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Huvudfäste"
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
@@ -585,6 +572,12 @@ msgstr "eller"
 #, python-format
 msgid "summary"
 msgstr "sammanfattning"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Senast ändrad den"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Huvudfäste"
 
 #, fuzzy
 #~ msgid "Document History"
