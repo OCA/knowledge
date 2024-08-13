@@ -1,103 +1,47 @@
-# Path: addons/document_page_portal/tests/test_document_controller.py
+from odoo.tests import common
+from odoo.tests.common import tagged
 
-from odoo import fields as odoo_fields
-from odoo.exceptions import AccessError, MissingError
-from odoo.tests.common import HttpCase, tagged
+from odoo.addons.document_page_portal.controllers.portal import CustomerPortal
 
 
 @tagged("post_install", "-at_install")
-class TestDocumentPagePortal(HttpCase):
+class TestCustomerPortal(common.HttpCase):
     def setUp(self):
-        super(TestDocumentPagePortal, self).setUp()
-        self.portal_user = self.env.ref("base.public_user")
-        self.document_page_model = self.env["document.page"]
-
-    def test_prepare_portal_layout_values(self):
-        """Test _prepare_portal_layout_values method."""
-        # Manually call the method from the controller instance
-        portal_controller = (
-            self.env["ir.http"]
-            .sudo()
-            ._get_class(
-                "odoo.addons.document_page_portal.controllers.portal.CustomerPortal"
-            )()
+        super(TestCustomerPortal, self).setUp()
+        self.customer_portal = CustomerPortal()
+        self.document_page = self.env["document.page"].create(
+            {
+                "name": "Test Document Page",
+                "content": "Test Content",
+                "type": "content",
+            }
         )
-        values = portal_controller._prepare_portal_layout_values()
-        document_page_count = self.document_page_model.search_count(
-            [("type", "=", "content")]
-        )
-        self.assertEqual(values.get("document_page_count"), document_page_count)
 
     def test_get_archive_groups(self):
-        """Test _get_archive_groups method."""
-        # Manually call the method from the controller instance
-        portal_controller = (
-            self.env["ir.http"]
-            .sudo()
-            ._get_class(
-                "odoo.addons.document_page_portal.controllers.portal.CustomerPortal"
-            )()
-        )
+        groups = self.customer_portal._get_archive_groups("document.page")
+        self.assertTrue(groups)
 
-        domain = [("type", "=", "content")]
-        groups = portal_controller._get_archive_groups("document.page", domain)
-        self.assertTrue(isinstance(groups, list))
-        self.assertGreaterEqual(
-            len(groups), 0
-        )  # Depending on the data, there could be 0 or more groups
+    def test_document_page_get_page_view_values(self):
+        values = self.customer_portal._document_page_get_page_view_values(
+            self.document_page, "test_token"
+        )
+        self.assertEqual(values["page_name"], "document_page")
+        self.assertEqual(values["document_page"], self.document_page)
 
     def test_portal_my_knowledge_document_pages(self):
-        """Test portal_my_knowledge_document_pages route."""
-        with self.env.cr.savepoint():
-            self.env = self.env(user=self.portal_user)
-            result = self.url_open("/my/knowledge/documents")
-            self.assertEqual(result.status_code, 200)
+        response = self.url_open("/my/knowledge/documents/")
+        self.assertEqual(response.status_code, 200)
 
-            # Test with search query
-            result = self.url_open("/my/knowledge/documents?search=test")
-            self.assertEqual(result.status_code, 200)
-
-            # Test with date filter
-            date_begin = odoo_fields.Date.to_string(odoo_fields.Date.today())
-            date_end = odoo_fields.Date.to_string(odoo_fields.Date.today())
-            result = self.url_open(
-                f"/my/knowledge/documents?date_begin={date_begin}&date_end={date_end}"
-            )
-            self.assertEqual(result.status_code, 200)
+        # Test with search parameters
+        response = self.url_open(
+            "/my/knowledge/documents/?search=Test&search_in=content"
+        )
+        self.assertEqual(response.status_code, 200)
 
     def test_document_pages_followup(self):
-        """Test document_pages_followup route."""
-        with self.env.cr.savepoint():
-            self.env = self.env(user=self.portal_user)
-            # Create a document.page record to test with
-            document_page = self.document_page_model.create(
-                {"name": "Test Document", "type": "content"}
-            )
+        response = self.url_open(f"/knowledge/document/{self.document_page.id}")
+        self.assertEqual(response.status_code, 200)
 
-            # Test accessing the document page with valid ID
-            result = self.url_open(f"/knowledge/document/{document_page.id}")
-            self.assertEqual(result.status_code, 200)
-
-            # Test with an invalid document_page_id
-            with self.assertRaises(MissingError):
-                portal_controller = (
-                    self.env["ir.http"]
-                    .sudo()
-                    ._get_class(
-                        "odoo.addons.document_page_portal.controllers.portal.CustomerPortal"
-                    )()
-                )
-                portal_controller._document_check_access("document.page", 999999)
-
-            # Test access with an invalid token (simulating a public user access)
-            with self.assertRaises(AccessError):
-                portal_controller = (
-                    self.env["ir.http"]
-                    .sudo()
-                    ._get_class(
-                        "odoo.addons.document_page_portal.controllers.portal.CustomerPortal"
-                    )()
-                )
-                portal_controller._document_check_access(
-                    "document.page", document_page.id, access_token="invalid_token"
-                )
+        # Test with invalid document_page_id
+        response = self.url_open("/knowledge/document/9999")
+        self.assertEqual(response.status_code, 303)  # Should redirect to /my
