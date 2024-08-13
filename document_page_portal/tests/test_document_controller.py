@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 from odoo.tests import common
 from odoo.tests.common import tagged
 
@@ -17,11 +19,22 @@ class TestCustomerPortal(common.HttpCase):
             }
         )
 
-    def test_get_archive_groups(self):
+    def _mock_request(self):
+        mock_request = type("MockRequest", (), {})()
+        mock_request.env = self.env
+        mock_request.session = {}
+        return mock_request
+
+    @patch("odoo.http.request")
+    def test_get_archive_groups(self, mock_request):
+        mock_request.env = self.env
         groups = self.customer_portal._get_archive_groups("document.page")
         self.assertTrue(groups)
 
-    def test_document_page_get_page_view_values(self):
+    @patch("odoo.http.request")
+    def test_document_page_get_page_view_values(self, mock_request):
+        mock_request.env = self.env
+        mock_request.session = {}
         values = self.customer_portal._document_page_get_page_view_values(
             self.document_page, "test_token"
         )
@@ -29,6 +42,7 @@ class TestCustomerPortal(common.HttpCase):
         self.assertEqual(values["document_page"], self.document_page)
 
     def test_portal_my_knowledge_document_pages(self):
+        self.authenticate("admin", "admin")
         response = self.url_open("/my/knowledge/documents/")
         self.assertEqual(response.status_code, 200)
 
@@ -39,6 +53,7 @@ class TestCustomerPortal(common.HttpCase):
         self.assertEqual(response.status_code, 200)
 
     def test_document_pages_followup(self):
+        self.authenticate("admin", "admin")
         response = self.url_open(f"/knowledge/document/{self.document_page.id}")
         self.assertEqual(response.status_code, 200)
 
