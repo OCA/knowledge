@@ -8,15 +8,28 @@ from odoo.tools.misc import mute_logger
 
 class TestDocumentPageTag(TransactionCase):
     def test_document_page_tag(self):
-        testtag = self.env["document.page.tag"].name_create("test")
+        test_tag = self.env["document.page.tag"].name_create("test")
         # check we're charitable on duplicates
         self.assertEqual(
-            testtag,
+            test_tag,
             self.env["document.page.tag"].name_create("Test"),
         )
+        # check multiple record creation
+        test_tag1 = self.env["document.page.tag"].create(
+            [{"name": "test1"}, {"name": "test"}, {"name": "test2"}]
+        )
+        self.assertEqual(len(test_tag1), 2)
+        self.assertEqual(test_tag1[0].name, "test1")
+        self.assertEqual(test_tag1[1].name, "test2")
+
+        # check single record creation where record already exist
+        test_tag2 = self.env["document.page.tag"].create([{"name": "test"}])
+        self.assertEqual(len(test_tag2), 1)
+        self.assertEqual(test_tag2[0].name, "test")
+
         # check we can't create nonunique tags
         with self.assertRaises(IntegrityError):
             with mute_logger("odoo.sql_db"):
-                testtag2 = self.env["document.page.tag"].create({"name": "test2"})
-                testtag2.write({"name": "test"})
-                testtag2.flush_model()
+                test_tag3 = self.env["document.page.tag"].create([{"name": "test3"}])
+                test_tag3.write({"name": "test"})
+                test_tag3.flush_model()
