@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* attachment_category
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-01-03 12:46+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: attachment_category
+#: model_terms:ir.actions.act_window,help:attachment_category.ir_attachment_category_act_window
+msgid "Also you will find here all the related document categories."
+msgstr "Inoltre qui si troveranno tutte le categorie documenti collegate."
+
+#. module: attachment_category
+#: model:ir.model,name:attachment_category.model_ir_attachment
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__attachment_ids
+msgid "Attachment"
+msgstr "Allegato"
+
+#. module: attachment_category
+#: model:ir.actions.act_window,name:attachment_category.ir_attachment_category_act_window
+#: model:ir.ui.menu,name:attachment_category.ir_attachment_category_menu
+msgid "Attachment Categories"
+msgstr "Categorie allegato"
+
+#. module: attachment_category
+#: model:ir.model,name:attachment_category.model_ir_attachment_category
+msgid "Attachment Category"
+msgstr "Categoria allegato"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__attachment_count
+msgid "Attachment Count"
+msgstr "Numero allegati"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__category_ids
+msgid "Category"
+msgstr "Categoria"
+
+#. module: attachment_category
+#: model_terms:ir.actions.act_window,help:attachment_category.ir_attachment_category_act_window
+msgid "Create a new document"
+msgstr "Crea un nuovo documento"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__id
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__id
+msgid "ID"
+msgstr "ID"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__parent_id
+msgid "Parent"
+msgstr "Padre"
+
+#. module: attachment_category
+#: model:ir.model.fields,field_description:attachment_category.field_ir_attachment_category__parent_path
+msgid "Parent Path"
+msgstr "Percorso padre"
