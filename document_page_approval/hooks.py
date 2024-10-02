@@ -5,10 +5,10 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-def post_init_hook(cr, registry):  # pragma: no cover
+def post_init_hook(env):  # pragma: no cover
     # Set all pre-existing pages history to approved
     _logger.info("Setting history to approved.")
-    cr.execute(
+    env.cr.execute(
         """
         UPDATE document_page_history
         SET state='approved',
@@ -19,7 +19,7 @@ def post_init_hook(cr, registry):  # pragma: no cover
     )
 
 
-def uninstall_hook(cr, registry):  # pragma: no cover
+def uninstall_hook(env):  # pragma: no cover
     # Remove unapproved pages
     _logger.info("Deleting unapproved Change Requests.")
-    cr.execute("DELETE FROM document_page_history WHERE state != 'approved'")
+    env.cr.execute("DELETE FROM document_page_history WHERE state != 'approved'")

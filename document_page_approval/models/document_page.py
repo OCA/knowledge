@@ -19,7 +19,6 @@ class DocumentPage(models.Model):
         related="history_head.approved_date",
         store=True,
         index=True,
-        readonly=True,
     )
 
     approved_uid = fields.Many2one(
@@ -28,7 +27,6 @@ class DocumentPage(models.Model):
         related="history_head.approved_uid",
         store=True,
         index=True,
-        readonly=True,
     )
 
     approval_required = fields.Boolean(
