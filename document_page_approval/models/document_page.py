@@ -19,7 +19,6 @@ class DocumentPage(models.Model):
         related="history_head.approved_date",
         store=True,
         index=True,
-        readonly=True,
     )
 
     approved_uid = fields.Many2one(
@@ -28,7 +27,6 @@ class DocumentPage(models.Model):
         related="history_head.approved_uid",
         store=True,
         index=True,
-        readonly=True,
     )
 
     approval_required = fields.Boolean(
@@ -137,8 +135,9 @@ class DocumentPage(models.Model):
 
     def action_changes_pending_approval(self):
         self.ensure_one()
-        action = self.env.ref("document_page_approval.action_change_requests")
-        action = action.sudo().read()[0]
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "document_page_approval.action_change_requests"
+        )
         context = literal_eval(action["context"])
         context["search_default_page_id"] = self.id
         context["default_page_id"] = self.id

@@ -22,7 +22,6 @@ class DocumentPageHistory(models.Model):
         ],
         "Status",
         default="draft",
-        readonly=True,
     )
 
     approved_date = fields.Datetime()
@@ -79,7 +78,7 @@ class DocumentPageHistory(models.Model):
                     [("groups_id", "in", guids), ("groups_id", "in", approver_gid.id)]
                 )
                 rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
-                rec.message_post_with_template(template.id)
+                rec.message_post_with_source(template)
             else:
                 # auto-approve if approval is not required
                 rec.action_approve()
