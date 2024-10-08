@@ -14,7 +14,7 @@
                         type="object"
                         string="Send to Review"
                         class="oe_highlight"
-                        invisible="not is_approval_required or not am_i_owner or state != 'draft'"
+                        invisible="not is_approval_required or not am_i_owner or state not in 'draft'"
                     />
                     <!-- approve if i am approver -->
                     <button
@@ -22,7 +22,7 @@
                         type="object"
                         string="Approve"
                         class="oe_highlight"
-                        invisible="not is_approval_required or not am_i_approver or state != 'draft' or state != 'to approve'"
+                        invisible="not is_approval_required or not am_i_approver or state not in ('draft', 'to approve')"
                     />
                     <!-- approve if it's not required and i am owner -->
                     <button
@@ -30,28 +30,28 @@
                         type="object"
                         string="Approve"
                         class="oe_highlight"
-                        invisible="is_approval_required or not am_i_owner or state != 'draft' or state != 'to approve'"
+                        invisible="is_approval_required or not am_i_owner or state not in ('draft', 'to approve')"
                     />
                     <!-- cancel if i am owner or approver -->
                     <button
                         name="action_cancel"
                         type="object"
                         string="Cancel"
-                        invisible="(not am_i_owner or not am_i_approver) and (state != 'draft' or state != 'to approve')"
+                        invisible="(not am_i_owner or not am_i_approver) and (state not in ('draft', 'to approve'))"
                     />
                     <!-- reopen if i am owner or approver -->
                     <button
                         name="action_draft"
                         type="object"
                         string="Back to draft"
-                        invisible="(not am_i_owner or not am_i_approver) and (state != 'cancelled')"
+                        invisible="(not am_i_owner or not am_i_approver) and (state not in 'cancelled')"
                     />
                     <!-- cancel & reopen, if i am owner or approver -->
                     <button
                         name="action_draft"
                         type="object"
                         string="Back to draft"
-                        invisible="(not am_i_owner or not am_i_approver) and (state != 'to approve')"
+                        invisible="(not am_i_owner or not am_i_approver) and (state not in 'to approve')"
                     />
                     <field name="am_i_owner" invisible="1" />
                     <field name="am_i_approver" invisible="1" />
