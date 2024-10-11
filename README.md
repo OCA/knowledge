@@ -9,7 +9,7 @@
 
 # knowledge
 
-Knowlesge management addons. Also has some usefull tools to handle attachments
+Knowledge management addons. Also has some useful tools to handle attachments.
 
 <!-- /!\ do not modify below this line -->
 
