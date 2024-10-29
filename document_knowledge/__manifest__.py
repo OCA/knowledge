@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Documents Knowledge",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "OpenERP SA,"
     "MONK Software, "
     "Tecnativa, "

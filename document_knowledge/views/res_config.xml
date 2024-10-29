@@ -16,17 +16,12 @@
                         name="maintenance_mode_setting"
                         title="Knowledge and Documents Management"
                     >
-                        <setting>
-                            <field name="module_attachment_indexation" />
-                        </setting>
-                        <setting>
+                        <setting
+                            id="attachment_user"
+                            help="When you set this field all users will be able to manage
+                            attachments centrally, from the Document Knowledge/Documents menu."
+                        >
                             <field name="group_ir_attachment_user" />
-                        </setting>
-                        <setting>
-                            <field name="module_document_page" />
-                        </setting>
-                        <setting>
-                            <field name="module_document_page_approval" />
                         </setting>
                     </block>
                 </app>
