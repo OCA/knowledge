@@ -20,23 +20,9 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_document_page_approval
-msgid ""
-"Add workflow on documents per category.\n"
-"- This installs the module document_page_approval."
-msgstr ""
-"Aggiungere un workflow sul documento per categoria.\n"
-"- Questo installa il modulo document_page_approval."
-
-#. module: document_knowledge
 #: model:ir.model,name:document_knowledge.model_ir_attachment
 msgid "Attachment"
 msgstr "Allegato"
-
-#. module: document_knowledge
-#: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_attachment_indexation
-msgid "Attachments List and Document Indexation"
-msgstr "Elenco allegati e indicizzazione documenti"
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__group_ir_attachment_user
@@ -58,15 +44,6 @@ msgstr "Configurazione"
 #: model:res.groups,name:document_knowledge.group_document_user
 msgid "Document Knowledge user"
 msgstr "Utente documenti conoscenza"
-
-#. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_attachment_indexation
-msgid ""
-"Document indexation, full text search of attachements.\n"
-"- This installs the module attachment_indexation."
-msgstr ""
-"Indicizzazione documenti, ricerca nel testo degli allegati.\n"
-"- Questo installa il modulo attachment_indexation."
 
 #. module: document_knowledge
 #: model:ir.actions.act_window,name:document_knowledge.knowledge_action_documents
@@ -98,11 +75,6 @@ msgid "Knowledge and Documents Management"
 msgstr "Knowledge e Gestione documentale"
 
 #. module: document_knowledge
-#: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_document_page
-msgid "Manage document pages (Wiki)"
-msgstr "Gestione pagine documenti (Wiki)"
-
-#. module: document_knowledge
 #: model:ir.module.category,description:document_knowledge.module_category_knowledge
 msgid ""
 "Manage documents and knowledge-related\n"
@@ -114,23 +86,9 @@ msgstr ""
 "        "
 
 #. module: document_knowledge
-#: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_document_page_approval
-msgid "Manage documents approval"
-msgstr "Gestione approvazione documenti"
-
-#. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.ir_attachment_view_user_documents
 msgid "Model"
 msgstr "Modello"
-
-#. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_document_page
-msgid ""
-"Provide document page and category as a wiki.\n"
-"- This installs the module document_page."
-msgstr ""
-"Fornisce pagina e categoria documento come una wiki.\n"
-"- Questo installa il modulo document_page."
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_ir_attachment__res_model
@@ -144,13 +102,49 @@ msgid "Settings"
 msgstr "Impostazioni"
 
 #. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__group_ir_attachment_user
+#: model_terms:ir.ui.view,arch_db:document_knowledge.view_knowledge_configuration
 msgid ""
-"When you set this field all users will be able to manage attachments "
-"centrally, from the Document Knowledge/Documents menu."
+"When you set this field all users will be able to "
+"manage                             attachments centrally, from the Document "
+"Knowledge/Documents menu."
 msgstr ""
-"Quando viene impostato questo campo tutti gli utenti potranno gestire gli "
-"allegati centralmente, dal menu Documento conoscenza/Documenti."
+
+#~ msgid ""
+#~ "Add workflow on documents per category.\n"
+#~ "- This installs the module document_page_approval."
+#~ msgstr ""
+#~ "Aggiungere un workflow sul documento per categoria.\n"
+#~ "- Questo installa il modulo document_page_approval."
+
+#~ msgid "Attachments List and Document Indexation"
+#~ msgstr "Elenco allegati e indicizzazione documenti"
+
+#~ msgid ""
+#~ "Document indexation, full text search of attachements.\n"
+#~ "- This installs the module attachment_indexation."
+#~ msgstr ""
+#~ "Indicizzazione documenti, ricerca nel testo degli allegati.\n"
+#~ "- Questo installa il modulo attachment_indexation."
+
+#~ msgid "Manage document pages (Wiki)"
+#~ msgstr "Gestione pagine documenti (Wiki)"
+
+#~ msgid "Manage documents approval"
+#~ msgstr "Gestione approvazione documenti"
+
+#~ msgid ""
+#~ "Provide document page and category as a wiki.\n"
+#~ "- This installs the module document_page."
+#~ msgstr ""
+#~ "Fornisce pagina e categoria documento come una wiki.\n"
+#~ "- Questo installa il modulo document_page."
+
+#~ msgid ""
+#~ "When you set this field all users will be able to manage attachments "
+#~ "centrally, from the Document Knowledge/Documents menu."
+#~ msgstr ""
+#~ "Quando viene impostato questo campo tutti gli utenti potranno gestire gli "
+#~ "allegati centralmente, dal menu Documento conoscenza/Documenti."
 
 #~ msgid "Manage documents"
 #~ msgstr "Gestione documenti"
