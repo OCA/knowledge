@@ -94,7 +94,7 @@ class DocumentPage(models.Model):
         compute="_compute_backend_url",
     )
 
-    image = fields.Binary("Image", attachment=True)
+    image = fields.Binary(attachment=True)
     color = fields.Integer(string="Color Index")
 
     @api.depends("menu_id", "parent_id.menu_id")
