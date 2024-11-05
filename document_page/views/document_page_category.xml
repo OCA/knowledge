@@ -94,7 +94,7 @@
         <field name="name">document.page.browse.kanban</field>
         <field name="model">document.page</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban js_class="document_page_kanban_view">
                 <field name="id" />
                 <field name="name" />
                 <field name="display_name" />
@@ -149,35 +149,13 @@
                                                 <img
                                                     t-att-src="kanban_image('document.page', 'image', record.parent_id.raw_value)"
                                                     t-att-alt="record.parent_id.display_name"
-                                                    width="24"
-                                                    height="24"
+                                                    style="margin-right:5px; width:24px; height:24px;"
                                                 />
                                                 <field name="parent_id" />
                                             </small>
                                         </div>
                                     </div>
-                                    <div
-                                        class="o_dropdown_kanban dropdown"
-                                        groups="base.group_user"
-                                    >
-                                        <a
-                                            role="button"
-                                            class="dropdown-toggle o-no-caret btn"
-                                            data-toggle="dropdown"
-                                            data-display="static"
-                                            href="#"
-                                            aria-label="Dropdown menu"
-                                            title="Dropdown menu"
-                                        >
-                                            <span class="fa fa-ellipsis-v" />
-                                        </a>
-                                        <div class="dropdown-menu" role="menu">
-                                            <ul
-                                                class="oe_kanban_colorpicker"
-                                                data-field="color"
-                                            />
-                                        </div>
-                                    </div>
+
                                     <div class="o_kanban_record_body">
                                         <div class="o_kanban_tags_section">
                                         </div>
@@ -215,6 +193,10 @@
                                 </a>
                             </div>
                         </div>
+                    </t>
+
+                    <t t-name="kanban-menu">
+                        <ul class="oe_kanban_colorpicker" data-field="color" />
                     </t>
                 </templates>
             </kanban>
@@ -300,7 +282,7 @@
     />
     <menuitem
         id="menu_browse_content"
-        parent="knowledge.menu_document_root"
+        parent="document_knowledge.menu_document_root"
         name="Browse Wiki Content"
         action="action_browse_top_content"
         sequence="5"
