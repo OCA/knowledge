@@ -45,9 +45,7 @@ class TestDocumentPage(common.TransactionCase):
         page.menu_id = menu
         self.assertEqual(
             page.backend_url,
-            "/web#id={}&model=document.page&view_type=form&action={}".format(
-                page.id, menu.action.id
-            ),
+            f"/web#id={page.id}&model=document.page&view_type=form&action={menu.action.id}",
         )
 
     def test_page_copy(self):
