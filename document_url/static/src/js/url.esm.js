@@ -52,6 +52,11 @@ patch(AttachmentList.prototype, {
      *
      * @returns {String}
      */
+    canDownload(attachment) {
+        return (
+            super.canDownload(attachment) && attachment.mimetype != "application/link"
+        );
+    },
     get attachmentUrl() {
         return url("/web/content", {
             id: this.attachment.id,
