@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
 <odoo>
-    <!-- wiki tree view -->
+    <!-- wiki list view -->
     <record id="view_wiki_tree_children" model="ir.ui.view">
-        <field name="name">document.page.tree</field>
+        <field name="name">document.page.list</field>
         <field name="model">document.page</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="content_uid" />
                 <field name="content_date" />
-            </tree>
+            </list>
         </field>
     </record>
     <!-- wiki list view  -->
@@ -18,14 +18,14 @@
         <field name="name">document.page.list</field>
         <field name="model">document.page</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="parent_id" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <field name="create_uid" column_invisible="1" />
                 <field name="content_uid" />
                 <field name="content_date" />
-            </tree>
+            </list>
         </field>
     </record>
     <!-- wiki Form view  -->
@@ -94,22 +94,18 @@
                         </page>
                         <page name="history" string="History">
                             <field name="history_ids">
-                                <tree>
+                                <list>
                                     <field name="id" />
                                     <field name="create_date" />
                                     <field name="name" />
                                     <field name="summary" />
                                     <field name="create_uid" />
-                                </tree>
+                                </list>
                             </field>
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -178,10 +174,11 @@
     <!-- page action -->
     <record id="action_page" model="ir.actions.act_window">
         <field name="name">Pages</field>
+        <field name="path">document_pages</field>
         <field name="res_model">document.page</field>
         <field name="domain">[('type','=','content')]</field>
         <field name="context">{'default_type': 'content'}</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="view_wiki_tree" />
         <field name="search_view_id" ref="view_wiki_filter" />
         <field name="help" type="html">
@@ -192,7 +189,7 @@
     </record>
     <record id="action_page_view_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
-        <field name="view_mode">tree</field>
+        <field name="view_mode">list</field>
         <field name="view_id" ref="view_wiki_tree" />
         <field name="act_window_id" ref="action_page" />
     </record>

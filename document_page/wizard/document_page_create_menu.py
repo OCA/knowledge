@@ -36,7 +36,7 @@ class DocumentPageCreateMenu(models.TransientModel):
         view_id = obj_model_data._xmlid_to_res_id("document_page.view_wiki_menu_form")
         value = {
             "name": "Document Page",
-            "view_mode": "form,tree",
+            "view_mode": "form,list",
             "res_model": "document.page",
             "view_id": view_id,
             "type": "ir.actions.act_window",
