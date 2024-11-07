@@ -15,11 +15,11 @@
                 </group>
                 <footer>
                     <button
-                        name="document_page_menu_create"
-                        string="Create Menu"
-                        type="object"
-                        class="oe_highlight"
-                    />
+                    name="document_page_menu_create"
+                    string="Create Menu"
+                    type="object"
+                    class="oe_highlight"
+                />
                     or
                     <button string="Cancel" class="oe_link" special="cancel" />
                 </footer>
@@ -34,5 +34,4 @@
         <field name="target">new</field>
         <field name="binding_model_id" ref="document_page.model_document_page" />
     </record>
-
 </odoo>
