@@ -1,7 +1,7 @@
 # Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, fields, models
+from odoo import fields, models
 from odoo.exceptions import UserError
 
 
@@ -24,7 +24,7 @@ class DocumentPageShowDiff(models.TransientModel):
         elif len(ids) == 1:
             diff = history.browse(ids[0]).diff
         else:
-            raise UserError(_("Select one or maximum two history revisions!"))
+            raise UserError(self.env._("Select one or maximum two history revisions!"))
         return diff
 
     diff = fields.Html(readonly=True, default=_get_diff)

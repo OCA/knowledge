@@ -1,18 +1,18 @@
 <?xml version="1.0" ?>
 <odoo>
-    <!-- History Tree view -->
+    <!-- History List view -->
     <record model="ir.ui.view" id="view_wiki_history_tree">
-        <field name="name">document.page.history.tree</field>
+        <field name="name">document.page.history.list</field>
         <field name="model">document.page.history</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="id" />
                 <field name="page_id" />
                 <field name="name" />
                 <field name="summary" />
                 <field name="create_uid" />
                 <field name="create_date" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -81,8 +81,9 @@
     <!-- History Action  -->
     <record model="ir.actions.act_window" id="action_history">
         <field name="name">Page history</field>
+        <field name="path">document_page_history_all</field>
         <field name="res_model">document.page.history</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
@@ -96,6 +97,7 @@
 
     <record id="action_related_page_history" model="ir.actions.act_window">
         <field name="name">Page History</field>
+        <field name="path">document_page_history</field>
         <field name="res_model">document.page.history</field>
         <field name="domain">[('page_id','=',active_id)]</field>
         <field
