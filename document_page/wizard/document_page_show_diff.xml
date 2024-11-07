@@ -24,5 +24,4 @@
             ref="document_page.model_document_page_history"
         />
     </record>
-
 </odoo>

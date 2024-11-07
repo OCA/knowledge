@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <odoo>
-
     <!-- History Tree view -->
     <record model="ir.ui.view" id="view_wiki_history_tree">
         <field name="name">document.page.history.tree</field>
