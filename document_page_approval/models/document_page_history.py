@@ -22,6 +22,7 @@ class DocumentPageHistory(models.Model):
         ],
         "Status",
         default="draft",
+        readonly=True,
     )
 
     approved_date = fields.Datetime()
