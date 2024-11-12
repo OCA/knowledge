@@ -1,43 +1,38 @@
-from odoo.tests import common
+from odoo.tests import new_test_user
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentPageApproval(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.page_obj = self.env["document.page"]
-        self.history_obj = self.env["document.page.history"]
+class TestDocumentPageApproval(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.page_obj = cls.env["document.page"]
+        cls.history_obj = cls.env["document.page.history"]
         # demo
-        self.category1 = self.env.ref("document_page.demo_category1")
-        self.page1 = self.env.ref("document_page.demo_page1")
-        self.approver_gid = self.env.ref(
+        cls.category1 = cls.env.ref("document_page.demo_category1")
+        cls.page1 = cls.env.ref("document_page.demo_page1")
+        cls.user2 = new_test_user(
+            cls.env,
+            login="test-user2",
+            groups="base.group_user,document_page_approval.group_document_approver_user",
+        )
+        cls.approver_gid = cls.env.ref(
             "document_page_approval.group_document_approver_user"
         )
-        self.env.ref("base.user_root").write({"groups_id": [(4, self.approver_gid.id)]})
-        self.env.ref("base.user_admin").write(
-            {"groups_id": [(4, self.approver_gid.id)]}
-        )
-        self.user2 = self.env["res.users"].create(
-            {
-                "name": "Test user 2",
-                "login": "Test user 2",
-                "groups_id": [
-                    (6, 0, [self.env.ref("base.group_user").id, self.approver_gid.id])
-                ],
-            }
-        )
         # demo_approval
-        self.category2 = self.page_obj.create(
+        cls.category2 = cls.page_obj.create(
             {
                 "name": "This category requires approval",
                 "type": "category",
                 "approval_required": True,
-                "approver_gid": self.approver_gid.id,
+                "approver_gid": cls.approver_gid.id,
             }
         )
-        self.page2 = self.page_obj.create(
+        cls.page2 = cls.page_obj.create(
             {
                 "name": "This page requires approval",
-                "parent_id": self.category2.id,
+                "parent_id": cls.category2.id,
                 "content": "This content will require approval",
             }
         )

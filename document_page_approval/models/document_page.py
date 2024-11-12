@@ -2,9 +2,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from ast import literal_eval
-
 from odoo import api, fields, models
+from odoo.tools.safe_eval import safe_eval
 
 
 class DocumentPage(models.Model):
@@ -138,7 +137,7 @@ class DocumentPage(models.Model):
         action = self.env["ir.actions.act_window"]._for_xml_id(
             "document_page_approval.action_change_requests"
         )
-        context = literal_eval(action["context"])
+        context = safe_eval(action["context"])
         context["search_default_page_id"] = self.id
         context["default_page_id"] = self.id
         action["context"] = context
