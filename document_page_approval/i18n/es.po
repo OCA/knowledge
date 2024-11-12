@@ -433,9 +433,3 @@ msgstr ""
 #, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Necesita cancelarlo antes de volver a abrirlo."
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Error de entrega de SMS"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Número de mensajes que requieren una acción"
