@@ -34,8 +34,8 @@ msgid ""
 "Change Request for <b t-out=\"object.page_id.name\"></b> and it needs your "
 "approval.</p>\n"
 "            <h1>\n"
-"                <a t-att-href=\"object.page_url\" t-out=\"object.display_name"
-"\"></a>\n"
+"                <a t-att-href=\"object.page_url\" t-out=\"object."
+"display_name\"></a>\n"
 "            </h1>\n"
 "            <p><b>Modified by:</b> <t t-out=\"object.create_uid.name\"></t></"
 "p>\n"
@@ -246,11 +246,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_main_attachment_id
-msgid "Main Attachment"
-msgstr ""
-
-#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error
 msgid "Message Delivery error"
 msgstr ""
@@ -350,16 +345,6 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
-msgstr ""
-
-#. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: document_page_approval
-#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: document_page_approval
