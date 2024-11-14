@@ -22,7 +22,6 @@ msgstr ""
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "%s (copy)"
 msgstr "%s (kopia)"
 
@@ -79,6 +78,13 @@ msgid "Backend URL"
 msgstr "URL för backend"
 
 #. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_browse_all_content
+#: model:ir.actions.act_window,name:document_page.action_browse_top_content
+#: model:ir.ui.menu,name:document_page.menu_browse_content
+msgid "Browse Wiki Content"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "Avbryt"
@@ -119,6 +125,11 @@ msgstr "Klicka för att skapa en ny webbsida."
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
 msgstr "Nära"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__color
+msgid "Color Index"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
@@ -282,6 +293,7 @@ msgstr "Om den är markerad kräver nya meddelanden din uppmärksamhet."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
+#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om kryssrutan är markerad får vissa meddelanden ett leveransfel."
 
@@ -290,6 +302,11 @@ msgstr "Om kryssrutan är markerad får vissa meddelanden ett leveransfel."
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
 msgstr "Om den är inställd är sidan endast tillgänglig från detta företag"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__image
+msgid "Image"
+msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -468,9 +485,13 @@ msgid "Revision"
 msgstr "Revision"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
-#, python-format
 msgid "Select one or maximum two history revisions!"
 msgstr "Välj en eller högst två historierevisioner!"
 
@@ -490,6 +511,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__summary
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Summary"
 msgstr "Sammanfattning"
 
@@ -511,7 +533,6 @@ msgstr ""
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page_history.py:0
-#, python-format
 msgid "There are no changes in revisions."
 msgstr "Det finns inga förändringar i revisionerna."
 
@@ -520,6 +541,11 @@ msgstr "Det finns inga förändringar i revisionerna."
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr "Titel"
+
+#. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
+msgid "Top Level Ressources"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
@@ -544,7 +570,6 @@ msgstr "Guiden Skapa meny"
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "You cannot create recursive categories."
 msgstr "Du kan inte skapa rekursiva kategorier."
 
@@ -569,7 +594,6 @@ msgstr "eller"
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "summary"
 msgstr "sammanfattning"
 
