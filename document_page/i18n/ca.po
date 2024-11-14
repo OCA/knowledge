@@ -23,7 +23,6 @@ msgstr ""
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "%s (copy)"
 msgstr "%s (còpia)"
 
@@ -80,6 +79,13 @@ msgid "Backend URL"
 msgstr "URL del backend"
 
 #. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_browse_all_content
+#: model:ir.actions.act_window,name:document_page.action_browse_top_content
+#: model:ir.ui.menu,name:document_page.menu_browse_content
+msgid "Browse Wiki Content"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "Cancel·la"
@@ -120,6 +126,11 @@ msgstr "Feu clic per crear una pàgina web nova."
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
 msgstr "Tanca"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__color
+msgid "Color Index"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
@@ -279,10 +290,12 @@ msgstr "Icona que indica una activitat d'excepció."
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si està marcat, hi ha nous missatges que requereixen la vostra atenció."
+msgstr ""
+"Si està marcat, hi ha nous missatges que requereixen la vostra atenció."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
+#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si està marcat, alguns missatges tenen un error d'entrega."
 
@@ -291,6 +304,11 @@ msgstr "Si està marcat, alguns missatges tenen un error d'entrega."
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
 msgstr "Si està marcat, la pàgina només serà accessible des d'aquesta empresa"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__image
+msgid "Image"
+msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -469,9 +487,13 @@ msgid "Revision"
 msgstr "Revisió"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
-#, python-format
 msgid "Select one or maximum two history revisions!"
 msgstr "Seleccioneu com a màxim, una o dues revisions de l'historial"
 
@@ -491,6 +513,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__summary
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Summary"
 msgstr "Resum"
 
@@ -512,7 +535,6 @@ msgstr ""
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page_history.py:0
-#, python-format
 msgid "There are no changes in revisions."
 msgstr "No hi ha canvis en les revisions."
 
@@ -521,6 +543,11 @@ msgstr "No hi ha canvis en les revisions."
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr "Títol"
+
+#. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
+msgid "Top Level Ressources"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
@@ -545,7 +572,6 @@ msgstr "Assistent per a creació de menú"
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "You cannot create recursive categories."
 msgstr "No podeu crear categories recursives."
 
@@ -570,7 +596,6 @@ msgstr "o"
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "summary"
 msgstr "resum"
 

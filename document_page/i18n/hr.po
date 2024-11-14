@@ -24,7 +24,6 @@ msgstr ""
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "%s (copy)"
 msgstr "%s (kopija)"
 
@@ -82,6 +81,13 @@ msgid "Backend URL"
 msgstr "Backend URL"
 
 #. module: document_page
+#: model:ir.actions.act_window,name:document_page.action_browse_all_content
+#: model:ir.actions.act_window,name:document_page.action_browse_top_content
+#: model:ir.ui.menu,name:document_page.menu_browse_content
+msgid "Browse Wiki Content"
+msgstr ""
+
+#. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Cancel"
 msgstr "Odustani"
@@ -122,6 +128,11 @@ msgstr "Kliknite za stvaranje nove webstranice"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
 msgstr "Zatvori"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__color
+msgid "Color Index"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
@@ -286,6 +297,7 @@ msgstr "Ako je označeno, nove poruke traže vašu pozornost."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
+#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Ako je označeno, neke poruke imaju greške pri isporuci."
 
@@ -294,6 +306,11 @@ msgstr "Ako je označeno, neke poruke imaju greške pri isporuci."
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
 msgstr "Ako je postavljeno, stranica je dostupna samo iz ove tvrtke"
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__image
+msgid "Image"
+msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -473,9 +490,13 @@ msgid "Revision"
 msgstr "Revizija"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Greška u slanju SMSa"
+
+#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
-#, python-format
 msgid "Select one or maximum two history revisions!"
 msgstr "Odaberite jednu do max. dvije revizije!"
 
@@ -495,6 +516,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__summary
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Summary"
 msgstr "Sažetak"
 
@@ -516,7 +538,6 @@ msgstr ""
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page_history.py:0
-#, python-format
 msgid "There are no changes in revisions."
 msgstr "Nema izmjena u ovoj reviziji"
 
@@ -525,6 +546,11 @@ msgstr "Nema izmjena u ovoj reviziji"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
 msgstr "Naslov"
+
+#. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
+msgid "Top Level Ressources"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
@@ -549,7 +575,6 @@ msgstr "Čarobnjak za kreiranje izbornika"
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "You cannot create recursive categories."
 msgstr "Nije moguće kreiranje rekurzivnih kategorija."
 
@@ -574,7 +599,6 @@ msgstr "ili"
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
-#, python-format
 msgid "summary"
 msgstr "sažetak"
 
@@ -583,9 +607,6 @@ msgstr "sažetak"
 
 #~ msgid "Main Attachment"
 #~ msgstr "Glavni prilog"
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Greška u slanju SMSa"
 
 #~ msgid "Document History"
 #~ msgstr "Povijest dokumenta"
