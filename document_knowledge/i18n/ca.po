@@ -21,23 +21,9 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 
 #. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_document_page_approval
-msgid ""
-"Add workflow on documents per category.\n"
-"- This installs the module document_page_approval."
-msgstr ""
-"Afegeix un flux de treball als documents per categoria.\n"
-"- Això instal·la el mòdul document_page_approval."
-
-#. module: document_knowledge
 #: model:ir.model,name:document_knowledge.model_ir_attachment
 msgid "Attachment"
 msgstr "Adjunt"
-
-#. module: document_knowledge
-#: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_attachment_indexation
-msgid "Attachments List and Document Indexation"
-msgstr "Llista d'arxius adjunts i indexació de documents"
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__group_ir_attachment_user
@@ -59,15 +45,6 @@ msgstr "Configuració"
 #: model:res.groups,name:document_knowledge.group_document_user
 msgid "Document Knowledge user"
 msgstr "Usuari dels documents de coneixement"
-
-#. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_attachment_indexation
-msgid ""
-"Document indexation, full text search of attachements.\n"
-"- This installs the module attachment_indexation."
-msgstr ""
-"Indexació de documents, cerca de text complet d'adjunts.\n"
-"- Això instal·la el mòdul attachment_indexation."
 
 #. module: document_knowledge
 #: model:ir.actions.act_window,name:document_knowledge.knowledge_action_documents
@@ -99,11 +76,6 @@ msgid "Knowledge and Documents Management"
 msgstr "Gestió de documents i de coneixement"
 
 #. module: document_knowledge
-#: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_document_page
-msgid "Manage document pages (Wiki)"
-msgstr "Gestiona les pàgines del documents (Wiki)"
-
-#. module: document_knowledge
 #: model:ir.module.category,description:document_knowledge.module_category_knowledge
 msgid ""
 "Manage documents and knowledge-related\n"
@@ -115,23 +87,9 @@ msgstr ""
 "        "
 
 #. module: document_knowledge
-#: model:ir.model.fields,field_description:document_knowledge.field_res_config_settings__module_document_page_approval
-msgid "Manage documents approval"
-msgstr "Gestiona l'aprovació de documents"
-
-#. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.ir_attachment_view_user_documents
 msgid "Model"
 msgstr "Model"
-
-#. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__module_document_page
-msgid ""
-"Provide document page and category as a wiki.\n"
-"- This installs the module document_page."
-msgstr ""
-"Proporciona les pàgines del document i les categories com a wiki.\n"
-"- Això instal·la el mòdul document_page."
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_ir_attachment__res_model
@@ -145,13 +103,49 @@ msgid "Settings"
 msgstr "Configuració"
 
 #. module: document_knowledge
-#: model:ir.model.fields,help:document_knowledge.field_res_config_settings__group_ir_attachment_user
+#: model_terms:ir.ui.view,arch_db:document_knowledge.view_knowledge_configuration
 msgid ""
-"When you set this field all users will be able to manage attachments "
-"centrally, from the Document Knowledge/Documents menu."
+"When you set this field all users will be able to "
+"manage                             attachments centrally, from the Document "
+"Knowledge/Documents menu."
 msgstr ""
-"Quan establiu aquest camp, tots els usuaris podran gestionar els adjunts de "
-"forma centralitzada, des del menú Coneixement de documents/Documents."
+
+#~ msgid ""
+#~ "Add workflow on documents per category.\n"
+#~ "- This installs the module document_page_approval."
+#~ msgstr ""
+#~ "Afegeix un flux de treball als documents per categoria.\n"
+#~ "- Això instal·la el mòdul document_page_approval."
+
+#~ msgid "Attachments List and Document Indexation"
+#~ msgstr "Llista d'arxius adjunts i indexació de documents"
+
+#~ msgid ""
+#~ "Document indexation, full text search of attachements.\n"
+#~ "- This installs the module attachment_indexation."
+#~ msgstr ""
+#~ "Indexació de documents, cerca de text complet d'adjunts.\n"
+#~ "- Això instal·la el mòdul attachment_indexation."
+
+#~ msgid "Manage document pages (Wiki)"
+#~ msgstr "Gestiona les pàgines del documents (Wiki)"
+
+#~ msgid "Manage documents approval"
+#~ msgstr "Gestiona l'aprovació de documents"
+
+#~ msgid ""
+#~ "Provide document page and category as a wiki.\n"
+#~ "- This installs the module document_page."
+#~ msgstr ""
+#~ "Proporciona les pàgines del document i les categories com a wiki.\n"
+#~ "- Això instal·la el mòdul document_page."
+
+#~ msgid ""
+#~ "When you set this field all users will be able to manage attachments "
+#~ "centrally, from the Document Knowledge/Documents menu."
+#~ msgstr ""
+#~ "Quan establiu aquest camp, tots els usuaris podran gestionar els adjunts "
+#~ "de forma centralitzada, des del menú Coneixement de documents/Documents."
 
 #~ msgid "Cancel"
 #~ msgstr "Cancel·la"
