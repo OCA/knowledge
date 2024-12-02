@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2024-04-04 11:38+0000\n"
+"PO-Revision-Date: 2024-12-02 10:06+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: document_page
 #. odoo-python
@@ -83,7 +83,7 @@ msgstr "URL backend"
 #: model:ir.actions.act_window,name:document_page.action_browse_top_content
 #: model:ir.ui.menu,name:document_page.menu_browse_content
 msgid "Browse Wiki Content"
-msgstr ""
+msgstr "Naviga il contenuto della Wiki"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -130,7 +130,7 @@ msgstr "Chiudi"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__color
 msgid "Color Index"
-msgstr ""
+msgstr "Indice colore"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
@@ -307,7 +307,7 @@ msgstr "Se impostata, la pagina è accessibile solo da questa azienda"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__image
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -548,7 +548,7 @@ msgstr "Titolo"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
 msgid "Top Level Ressources"
-msgstr ""
+msgstr "Risorse di alto livello"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
