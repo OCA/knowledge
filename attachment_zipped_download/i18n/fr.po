@@ -63,9 +63,3 @@ msgstr "Aucune pièce jointe téléchargeable trouvé."
 #, python-format
 msgid "attachments.zip"
 msgstr "pieces-jointes.zip"
-
-#~ msgid "Display Name"
-#~ msgstr "Nom affiché"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Dernière modification le"
