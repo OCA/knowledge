@@ -8,10 +8,11 @@
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
 
 See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
@@ -274,7 +275,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
 
-pre.code .ln { color: grey; } /* line numbers */
+pre.code .ln { color: gray; } /* line numbers */
 pre.code, code { background-color: #eeeeee }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
@@ -300,7 +301,7 @@ span.option {
 span.pre {
   white-space: pre }
 
-span.problematic {
+span.problematic, pre.problematic {
   color: red }
 
 span.section-subtitle {
@@ -368,10 +369,10 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:4163544eb16787f39f46edcd97305586594a6f708c1e489908d344467c82483e
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/knowledge/tree/16.0/attachment_zipped_download"><img alt="OCA/knowledge" src="https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/knowledge-16-0/knowledge-16-0-attachment_zipped_download"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/knowledge&amp;target_branch=16.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/knowledge/tree/17.0/attachment_zipped_download"><img alt="OCA/knowledge" src="https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/knowledge-17-0/knowledge-17-0-attachment_zipped_download"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/knowledge&amp;target_branch=17.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
 <p>This module allows downloading multiple attachments as a zip file.</p>
-<p>This also provide a helper class <cite>IrAttachmentActionDownloadMixin</cite>
-to be used by developer to add action method on models.</p>
+<p>This also provide a helper class IrAttachmentActionDownloadMixin to be
+used by developer to add action method on models.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -388,12 +389,14 @@ to be used by developer to add action method on models.</p>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
 <ol class="arabic simple">
-<li>Go to <em>Settings &gt; Technical &gt; Database Structure &gt; Attachments</em> and select some files.</li>
-<li>Go to <em>Actions &gt; Download</em> and a zip file containing the selected files will be downloaded.</li>
+<li>Go to <em>Settings &gt; Technical &gt; Database Structure &gt; Attachments</em> and
+select some files.</li>
+<li>Go to <em>Actions &gt; Download</em> and a zip file containing the selected
+files will be downloaded.</li>
 </ol>
 <p>## For developer</p>
-<p>You can reuse the <cite>IrAttachmentActionDownloadMixin</cite> on your
-favorite models:</p>
+<p>You can reuse the IrAttachmentActionDownloadMixin on your favorite
+models:</p>
 <pre class="literal-block">
 from odoo import models
 
@@ -402,8 +405,8 @@ class StockPicking(models.Model):
     _name = &quot;stock.picking&quot;
     _inherit = [&quot;stock.picking&quot;, &quot;ir.attachment.action_download&quot;]
 </pre>
-<p>Then you can add an action button on list view line or on the action button
-(when multiple lines are selected) to download all files:</p>
+<p>Then you can add an action button on list view line or on the action
+button (when multiple lines are selected) to download all files:</p>
 <pre class="literal-block">
 &lt;odoo&gt;
     &lt;!--
@@ -444,10 +447,11 @@ class StockPicking(models.Model):
 </pre>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Even you will be able to generate a zip file with multiple document with the
-same name it’s advice to overwrite <cite>_compute_zip_file_name</cite> to improve the
-name. When a slash (<cite>/</cite>) is present in the path it will create a directory.
-This example will create a directory per stock.picking using its name:</p>
+<p>Even you will be able to generate a zip file with multiple document
+with the same name it’s advice to overwrite _compute_zip_file_name
+to improve the name. When a slash (/) is present in the path it will
+create a directory. This example will create a directory per
+stock.picking using its name:</p>
 <pre class="last literal-block">
 class IrAttachment(models.Model):
     _inherit = &quot;ir.attachment&quot;
@@ -471,7 +475,7 @@ class IrAttachment(models.Model):
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/knowledge/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/knowledge/issues/new?body=module:%20attachment_zipped_download%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/knowledge/issues/new?body=module:%20attachment_zipped_download%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -497,11 +501,13 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <div class="section" id="maintainers">
 <h2><a class="toc-backref" href="#toc-entry-6">Maintainers</a></h2>
 <p>This module is maintained by the OCA.</p>
-<a class="reference external image-reference" href="https://odoo-community.org"><img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" /></a>
+<a class="reference external image-reference" href="https://odoo-community.org">
+<img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+</a>
 <p>OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/knowledge/tree/16.0/attachment_zipped_download">OCA/knowledge</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/knowledge/tree/17.0/attachment_zipped_download">OCA/knowledge</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>
