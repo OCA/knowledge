@@ -3,12 +3,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo_test_helper import FakeModelLoader
 
-from odoo.tests import SavepointCase
-
 from .test_attachment_zipped_download import TestAttachmentZippedDownloadBase
 
 
-class TestMixin(SavepointCase, TestAttachmentZippedDownloadBase):
+class TestMixin(TestAttachmentZippedDownloadBase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -21,26 +19,23 @@ class TestMixin(SavepointCase, TestAttachmentZippedDownloadBase):
 
         cls.loader.update_registry((ResPartner,))
 
-        cls.partner_1 = cls.env.ref("base.res_partner_1")
-        cls.partner_2 = cls.env.ref("base.res_partner_2")
-        cls.partner_3 = cls.env.ref("base.res_partner_3")
+        cls.partner_1 = cls.env["res.partner"].create({"name": "Test partner 1"})
+        cls.partner_2 = cls.env["res.partner"].create({"name": "Test partner 2"})
+        cls.partner_3 = cls.env["res.partner"].create({"name": "Test partner 3"})
 
         cls.partner_1_f1 = cls._create_attachment(
-            cls.env,
             cls.env.uid,
             "partner_1-f1.txt",
             model="res.partner",
             res_id=cls.partner_1.id,
         )
         cls.partner_1_f2 = cls._create_attachment(
-            cls.env,
             cls.env.uid,
             "partner_1-f2.txt",
             model="res.partner",
             res_id=cls.partner_1.id,
         )
         cls.partner_2_f1 = cls._create_attachment(
-            cls.env,
             cls.env.uid,
             "partner_2-f1.txt",
             model="res.partner",

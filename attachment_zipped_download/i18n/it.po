@@ -64,12 +64,3 @@ msgstr "Non sono stati trovati documenti da scaricare."
 #, python-format
 msgid "attachments.zip"
 msgstr "attachments.zip"
-
-#~ msgid "Display Name"
-#~ msgstr "Nome visualizzato"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Ultima modifica il"
