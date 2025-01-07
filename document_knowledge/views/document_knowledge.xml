@@ -2,7 +2,7 @@
 <odoo>
     <record id="knowledge_action_documents" model="ir.actions.act_window">
         <field name="name">Documents</field>
-        <field name="path">documents</field>
+        <field name="path">knowledge-documents</field>
         <field name="res_model">ir.attachment</field>
         <field name="view_mode">kanban,list,form</field>
         <field name="context">{'search_default_user_documents': True}</field>
