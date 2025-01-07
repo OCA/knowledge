@@ -1,9 +1,9 @@
 /** @odoo-module **/
 
+import {AttachmentList} from "@mail/core/common/attachment_list";
 import {Chatter} from "@mail/core/web/chatter";
 import {patch} from "@web/core/utils/patch";
 import {url} from "@web/core/utils/urls";
-import {AttachmentList} from "@mail/core/common/attachment_list";
 
 patch(Chatter.prototype, {
     _onAddUrl(event) {
@@ -50,11 +50,12 @@ patch(AttachmentList.prototype, {
      * Return the url of the attachment. Temporary attachments, a.k.a. uploading
      * attachments, do not have an url.
      *
+     * @param {Object} attachment
      * @returns {String}
      */
     canDownload(attachment) {
         return (
-            super.canDownload(attachment) && attachment.mimetype != "application/link"
+            super.canDownload(attachment) && attachment.mimetype !== "application/link"
         );
     },
     get attachmentUrl() {
