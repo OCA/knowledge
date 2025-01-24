@@ -323,6 +323,11 @@ msgid "Pending Approval"
 msgstr "In attesa di approvazione"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
 msgid "Require approval"
 msgstr "Richiede approvazione"
@@ -383,6 +388,16 @@ msgid "Users must also belong to the Approvers group"
 msgstr "Gli utenti devono anche appartenere al gruppo di approvazione"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
+
+#. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 #, python-format
@@ -425,9 +440,3 @@ msgstr "Devi cancellarlo prima di riaprirlo."
 
 #~ msgid "Main Attachment"
 #~ msgstr "Allegato principale"
-
-#~ msgid "Website Messages"
-#~ msgstr "Messaggi sito web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Cronologia comunicazioni sito web"
