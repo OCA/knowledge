@@ -1,6 +1,6 @@
-import {registry} from "@web/core/registry";
-import {kanbanView} from "@web/views/kanban/kanban_view";
 import {DocumentPageKanbanController} from "./document_page_kanban_controller.esm";
+import {kanbanView} from "@web/views/kanban/kanban_view";
+import {registry} from "@web/core/registry";
 
 export const documentPageKanbanView = {
     ...kanbanView,
