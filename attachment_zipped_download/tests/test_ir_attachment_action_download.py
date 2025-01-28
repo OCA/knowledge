@@ -52,7 +52,7 @@ class TestMixin(TestAttachmentZippedDownloadBase):
         self.assertEqual(action["type"], "ir.actions.act_url")
         self.assertEqual(action["target"], "self")
         self.assertEqual(
-            action["url"], "/web/content/%s?download=1" % self.partner_2_f1.id
+            action["url"], f"/web/content/{self.partner_2_f1.id}?download=1"
         )
 
     def test_action_download_attachments_two_attachment_one_record(self):
