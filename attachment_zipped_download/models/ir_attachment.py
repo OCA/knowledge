@@ -4,7 +4,7 @@
 import zipfile
 from io import BytesIO
 
-from odoo import _, models
+from odoo import models
 from odoo.exceptions import UserError
 
 
@@ -15,12 +15,12 @@ class IrAttachment(models.Model):
         items = self.filtered(lambda x: x.type == "binary")
         if not items:
             raise UserError(
-                _("None attachment selected. Only binary attachments allowed.")
+                self.env._("None attachment selected. Only binary attachments allowed.")
             )
         ids = ",".join(map(str, items.ids))
         return {
             "type": "ir.actions.act_url",
-            "url": "/web/attachment/download_zip?ids=%s" % (ids),
+            "url": f"/web/attachment/download_zip?ids={ids}",
             "target": "self",
         }
 

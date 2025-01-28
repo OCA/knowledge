@@ -1,7 +1,7 @@
 # Copyright 2023 Foodles (https://www.foodles.com/)
 # @author Pierre Verkest <pierreverkest84@gmail.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo import _, models
+from odoo import models
 
 
 class IrAttachmentActionDownloadMixin(models.AbstractModel):
@@ -32,8 +32,8 @@ class IrAttachmentActionDownloadMixin(models.AbstractModel):
         """
         attachments = self._get_downloadable_attachments()
         if not attachments:
-            title = _("No attachment!")
-            message = _("There is no document found to download.")
+            title = self.env._("No attachment!")
+            message = self.env._("There is no document found to download.")
             return {
                 "type": "ir.actions.client",
                 "tag": "display_notification",
@@ -49,7 +49,7 @@ class IrAttachmentActionDownloadMixin(models.AbstractModel):
             return {
                 "target": "self",
                 "type": "ir.actions.act_url",
-                "url": "/web/content/%s?download=1" % attachments.id,
+                "url": f"/web/content/{attachments.id}?download=1",
             }
         else:
             return attachments.action_attachments_download()
