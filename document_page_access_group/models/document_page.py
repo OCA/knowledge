@@ -2,7 +2,7 @@
 # Copyright 2024 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -15,5 +15,7 @@ class DocumentPage(models.Model):
     @api.constrains("groups_id", "user_ids")
     def check_document_page_groups_users(self):
         for _item in self.filtered(lambda x: x.groups_id and x.user_ids):
-            raise UserError(_("You cannot set groups and users at the same time."))
+            raise UserError(
+                self.env._("You cannot set groups and users at the same time.")
+            )
         return True

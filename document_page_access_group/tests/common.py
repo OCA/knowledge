@@ -1,4 +1,5 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from odoo import Command
 from odoo.tests import new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
@@ -17,7 +18,7 @@ class TestDocumentPageAccessGroupBase(BaseCommon):
             login="test-manager-user",
             groups="document_knowledge.group_document_user",
         )
-        cls.manager_user.write({"groups_id": [(4, cls.group.id)]})
+        cls.manager_user.write({"groups_id": [Command.link(cls.group.id)]})
         cls.public_page = cls.env["document.page"].create(
             {"name": "Public Page", "type": "content"}
         )
@@ -25,13 +26,13 @@ class TestDocumentPageAccessGroupBase(BaseCommon):
             {
                 "name": "Knowledge Page",
                 "type": "content",
-                "groups_id": [(6, 0, [cls.group.id])],
+                "groups_id": [Command.set([cls.group.id])],
             }
         )
         cls.user_page = cls.env["document.page"].create(
             {
                 "name": "User Page (basic user)",
                 "type": "content",
-                "user_ids": [(6, 0, [cls.user.id])],
+                "user_ids": [Command.set([cls.user.id])],
             }
         )
