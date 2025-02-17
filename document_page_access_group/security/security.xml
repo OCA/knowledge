@@ -8,7 +8,7 @@
         <field eval="False" name="global" />
         <field
             name="groups"
-            eval="[(4, ref('document_knowledge.group_document_user'))]"
+            eval="[Command.link(ref('document_knowledge.group_document_user'))]"
         />
         <field
             name="domain_force"
@@ -20,7 +20,7 @@
         <field eval="False" name="global" />
         <field
             name="groups"
-            eval="[(4, ref('document_page.group_document_manager'))]"
+            eval="[Command.link(ref('document_page.group_document_manager'))]"
         />
         <field name="domain_force">[(1, '=', 1)]</field>
     </record>
