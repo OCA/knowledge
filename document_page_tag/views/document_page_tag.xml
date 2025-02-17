@@ -49,10 +49,10 @@
         <field name="name">document.page.tag.tree</field>
         <field name="model">document.page.tag</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="color" widget="color_picker" string="Color" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -60,7 +60,7 @@
         <field name="name">Tags</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">document.page.tag</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
