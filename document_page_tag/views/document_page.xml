@@ -44,7 +44,7 @@
         <field name="name">document_page.tags.tree</field>
         <field name="model">document.page</field>
         <field name="inherit_id" ref="document_page.view_wiki_tree" />
-        <field name="type">tree</field>
+        <field name="type">list</field>
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
                 <field
