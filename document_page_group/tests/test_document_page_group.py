@@ -1,10 +1,12 @@
 # Copyright 2020 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+from odoo import Command
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentPageGroup(TransactionCase):
+class TestDocumentPageGroup(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -14,7 +16,7 @@ class TestDocumentPageGroup(TransactionCase):
                 "name": "user",
                 "login": "login",
                 "email": "email",
-                "groups_id": [(4, knowledge_group)],
+                "groups_id": [Command.link(knowledge_group)],
             }
         )
         cls.group = cls.env.ref("document_page.group_document_manager")
@@ -37,7 +39,7 @@ class TestDocumentPageGroup(TransactionCase):
         )
         self.assertIn(self.page.id, pages.ids)
 
-        self.categ_1.write({"direct_group_ids": [(4, self.group.id)]})
+        self.categ_1.write({"direct_group_ids": [Command.link(self.group.id)]})
         self.assertIn(self.group.id, self.categ_2.group_ids.ids)
 
         pages = (
