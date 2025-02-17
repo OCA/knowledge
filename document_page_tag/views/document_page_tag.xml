@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="view_document_page_tag_search" model="ir.ui.view">
         <field name="name">document.page.tag.search</field>
         <field name="model">document.page.tag</field>
@@ -29,9 +28,9 @@
                         bg_color="bg-danger"
                         invisible="active"
                     />
-                        <group>
-                            <field name="active" invisible="1" />
-                        </group>
+                    <group>
+                        <field name="active" invisible="1" />
+                    </group>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" />
                         <h1>
@@ -71,5 +70,4 @@
         action="document_page_tag_action"
         sequence="45"
     />
-
 </odoo>
