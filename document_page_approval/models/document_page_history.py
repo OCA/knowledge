@@ -151,8 +151,9 @@ class DocumentPageHistory(models.Model):
             )
 
             page.page_url = (
-                "{}/web#db={}&id={}&" "model=document.page.history"
-            ).format(base_url, self.env.cr.dbname, page.id)
+                f"{base_url}/web#db={self.env.cr.dbname}&id={page.id}&"
+                "model=document.page.history"
+            )
 
     def _compute_diff(self):
         """Shows a diff between this version and the previous version"""

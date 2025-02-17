@@ -15,13 +15,19 @@
         <field name="body_html" type="html">
             <p>Hello,</p>
             <p><t t-out="object.create_uid.name" /> submited a new Change Request for <b
-                    t-out="object.page_id.name"
-                /> and it needs your approval.</p>
+                t-out="object.page_id.name"
+            /> and it needs your approval.</p>
             <h1>
                 <a t-att-href="object.page_url" t-out="object.display_name" />
             </h1>
-            <p><b>Modified by:</b> <t t-out="object.create_uid.name" /></p>
-            <p><b>Date:</b> <t t-out="object.create_date" /></p>
+            <p>
+                <b>Modified by:</b>
+                <t t-out="object.create_uid.name" />
+            </p>
+            <p>
+                <b>Date:</b>
+                <t t-out="object.create_date" />
+            </p>
             <t t-if="object.summary">
                 <h3>Summary</h3>
                 <p t-out="object.summary" />

@@ -133,7 +133,7 @@
                     invisible="not has_changes_pending_approval"
                 >
                     This document has <b
-                    >Changes Pending Approval</b>. You are viewing the last approved content.
+                >Changes Pending Approval</b>. You are viewing the last approved content.
                 </div>
                 <div
                     class="alert alert-warning oe_edit_only"
@@ -142,7 +142,7 @@
                     invisible="not is_approval_required"
                 >
                     This document requires approval. If edited, you will create a new <b
-                    >Change Request</b>.
+                >Change Request</b>.
                 </div>
                 <div
                     class="alert alert-warning oe_edit_only"
