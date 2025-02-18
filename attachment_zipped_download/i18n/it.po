@@ -40,27 +40,23 @@ msgstr "Scarica"
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
-#, python-format
 msgid "No attachment!"
 msgstr "Nessun allegato!"
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
-#, python-format
 msgid "None attachment selected. Only binary attachments allowed."
 msgstr "Nessun allegato selezionato. Consentiti solo allegati binari."
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
-#, python-format
 msgid "There is no document found to download."
 msgstr "Non sono stati trovati documenti da scaricare."
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/controllers/main.py:0
-#, python-format
 msgid "attachments.zip"
 msgstr "attachments.zip"
