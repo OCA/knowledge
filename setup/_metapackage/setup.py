@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo14-addon-document_page_access_group',
         'odoo14-addon-document_page_approval',
         'odoo14-addon-document_page_group',
+        'odoo14-addon-document_page_portal',
         'odoo14-addon-document_page_project',
         'odoo14-addon-document_page_reference',
         'odoo14-addon-document_page_tag',

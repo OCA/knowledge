@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [document_page_access_group](document_page_access_group/) | 14.0.1.0.0 |  | Choose groups to access document pages
 [document_page_approval](document_page_approval/) | 14.0.1.0.3 |  | Document Page Approval
 [document_page_group](document_page_group/) | 14.0.1.0.0 |  | Define access groups on documents
+[document_page_portal](document_page_portal/) | 14.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module enables document page portal
 [document_page_project](document_page_project/) | 14.0.1.0.2 |  | This module links document pages to projects
 [document_page_reference](document_page_reference/) | 14.0.1.2.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
 [document_page_tag](document_page_tag/) | 14.0.1.2.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
