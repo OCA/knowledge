@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="ir_attachment_category_form_view">
+        <field name="name">ir.attachment.category.form (in document_category)</field>
+        <field name="model">ir.attachment.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_attachment_view"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-align-justify"
+                        >
+                            <field name="attachment_count" />
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name" />
+                        <field name="parent_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="ir_attachment_category_search_view">
+        <field name="name">ir.attachment.category.search (in document_category)</field>
+        <field name="model">ir.attachment.category</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="display_name" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="ir_attachment_category_tree_view">
+        <field name="name">ir.attachment.category.tree (in document_category)</field>
+        <field name="model">ir.attachment.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="display_name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="ir_attachment_category_act_window">
+        <field name="name">Attachment Categories</field>
+        <field name="res_model">ir.attachment.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new document</p>
+            <p>Also you will find here all the related document categories.</p>
+        </field>
+    </record>
+    <record model="ir.ui.menu" id="ir_attachment_category_menu">
+        <field name="name">Attachment Categories</field>
+        <field name="parent_id" ref="base.next_id_9" />
+        <field name="action" ref="ir_attachment_category_act_window" />
+        <field name="sequence" eval="16" />
+    </record>
+</odoo>
