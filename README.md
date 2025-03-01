@@ -23,7 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_zipped_download](attachment_zipped_download/) | 18.0.1.0.0 |  | Attachment Zipped Download
 [document_knowledge](document_knowledge/) | 18.0.1.0.0 |  | Documents Knowledge
-[document_page](document_page/) | 18.0.1.0.0 |  | Document Page
+[document_page](document_page/) | 18.0.1.0.1 |  | Document Page
 
 [//]: # (end addons)
 
