@@ -54,6 +54,7 @@
                     <field
                         name="content"
                         widget="html"
+                        style="width:75%;"
                         placeholder="e.g. Once upon a time..."
                         required="1"
                         options="{'safe': True, 'codeview': True, 'collaborative': True}"
