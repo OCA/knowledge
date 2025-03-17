@@ -45,6 +45,7 @@
                         type="object"
                         string="Back to draft"
                         invisible="(not am_i_owner or not am_i_approver) and (state not in ('cancelled', 'to approve'))"
+                        groups="document_page.group_document_manager"
                     />
                     <field name="am_i_owner" invisible="1" />
                     <field name="am_i_approver" invisible="1" />
