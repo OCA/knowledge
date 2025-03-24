@@ -1,10 +1,11 @@
 [project]
 name = "odoo-addons-oca-knowledge"
-version = "18.0.20250218.0"
+version = "18.0.20250324.0"
 dependencies = [
     "odoo-addon-attachment_zipped_download==18.0.*",
     "odoo-addon-document_knowledge==18.0.*",
     "odoo-addon-document_page==18.0.*",
+    "odoo-addon-document_page_access_group==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",
