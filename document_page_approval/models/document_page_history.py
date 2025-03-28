@@ -1,6 +1,7 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+
 from odoo import fields, models
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
@@ -93,12 +94,14 @@ class DocumentPageHistory(models.Model):
                 raise UserError(
                     _(
                         "You are not authorized to do this.\r\n"
-                        "Only approvers with these groups can approve this: "
-                    )
-                    % ", ".join(
-                        [g.display_name for g in rec.page_id.approver_group_ids]
+                        "Only approvers with these groups can approve this: {}"
+                    ).format(
+                        ", ".join(
+                            [g.display_name for g in rec.page_id.approver_group_ids]
+                        )
                     )
                 )
+
             # Update state
             rec.write(
                 {

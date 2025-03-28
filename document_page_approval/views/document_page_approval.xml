@@ -90,10 +90,7 @@
             </field>
             <!-- Chatter -->
             <sheet position="after">
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="message_ids" widget="mail_thread" />
-                </div>
+                <chatter />
             </sheet>
         </field>
     </record>
@@ -178,13 +175,13 @@
                 <field name="approved_date" />
             </field>
             <field name="history_ids" position="inside">
-                <tree>
+                <list>
                     <field name="id" />
                     <field name="approved_date" />
                     <field name="summary" />
                     <field name="create_uid" />
                     <field name="approved_uid" />
-                </tree>
+                </list>
             </field>
         </field>
     </record>
@@ -224,16 +221,16 @@
         <field name="model">document.page.history</field>
         <field name="inherit_id" ref="document_page.view_wiki_history_tree" />
         <field name="arch" type="xml">
-            <tree position="attributes">
+            <list position="attributes">
                 <attribute name="decoration-info">state=='draft'</attribute>
                 <attribute name="decoration-primary">state=='to approve'</attribute>
                 <attribute name="decoration-muted">state=='cancelled'</attribute>
-            </tree>
-            <tree position="inside">
+            </list>
+            <list position="inside">
                 <field name="state" />
                 <field name="approved_uid" />
                 <field name="approved_date" />
-            </tree>
+            </list>
         </field>
     </record>
     <!-- History Search view  -->
@@ -283,7 +280,7 @@
     <record model="ir.actions.act_window" id="action_change_requests">
         <field name="name">Change Requests</field>
         <field name="res_model">document.page.history</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="context">{'search_default_draft': 1, 'search_default_pending': 1}
         </field>
     </record>

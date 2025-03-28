@@ -33,27 +33,32 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "<p>Hello,</p>\n"
-"            <p><t t-out=\"object.create_uid.name\"></t> submited a new "
-"Change Request for <b t-out=\"object.page_id.name\"></b> and it needs your "
-"approval.</p>\n"
+"            <p><t t-out=\"object.create_uid.name\"/> submited a new Change "
+"Request for <b t-out=\"object.page_id.name\"/> and it needs your approval.</"
+"p>\n"
 "            <h1>\n"
 "                <a t-att-href=\"object.page_url\" t-out=\"object."
-"display_name\"></a>\n"
+"display_name\"/>\n"
 "            </h1>\n"
-"            <p><b>Modified by:</b> <t t-out=\"object.create_uid.name\"></t></"
-"p>\n"
-"            <p><b>Date:</b> <t t-out=\"object.create_date\"></t></p>\n"
+"            <p>\n"
+"                <b>Modified by:</b>\n"
+"                <t t-out=\"object.create_uid.name\"/>\n"
+"            </p>\n"
+"            <p>\n"
+"                <b>Date:</b>\n"
+"                <t t-out=\"object.create_date\"/>\n"
+"            </p>\n"
 "            <t t-if=\"object.summary\">\n"
 "                <h3>Summary</h3>\n"
-"                <p t-out=\"object.summary\"></p>\n"
+"                <p t-out=\"object.summary\"/>\n"
 "            </t>\n"
 "            <h3>Diff</h3>\n"
 "            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
 "bottom:2em;\">\n"
-"                <t t-out=\"object.diff\"></t>\n"
+"                <t t-out=\"object.diff\"/>\n"
 "            </div>\n"
 "            <p>Have a great day.</p>\n"
-"            <br>\n"
+"            <br/>\n"
 "            <p>Odoo</p>\n"
 "        "
 msgstr ""
@@ -137,14 +142,12 @@ msgstr "Nazad u nacrt"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Can't approve page in '%s' state."
 msgstr "Nije moguće odobriti stranicu u '%s' statusu."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Can't approve pages in '%s' state."
 msgstr "Nije moguće odobriti stranice u '%s' statusu."
 
@@ -169,14 +172,12 @@ msgstr "Zahtjevi za izmjenom"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Change request <b>%(name)s</b> has been cancelled by %(user)s."
 msgstr "Zahtjev za izmjenom <b>%(name)s</b> je otkazao %(user)s."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Change request has been approved by %s."
 msgstr "Zahtjev za izmjenom je odobrio %s."
 
@@ -260,7 +261,6 @@ msgstr "Poruke"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "New version of the document %s approved."
 msgstr "Nova verzija dokumenta %s odobrena"
 
@@ -294,11 +294,6 @@ msgstr "Broj poruka sa greškom pri isporuci"
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Pending Approval"
 msgstr "Čeka odobrenje"
-
-#. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
-msgid "Ratings"
-msgstr ""
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
@@ -359,30 +354,16 @@ msgid "Users must also belong to the Approvers group"
 msgstr "Korisnici moraju biti u grupi odobravatelja"
 
 #. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: document_page_approval
-#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: "
+"Only approvers with these groups can approve this: {}"
 msgstr ""
-"Niste ovlašteni za ovo. \n"
-"Samo odobravatelji sa sljedećim grupama mogu odobriti ovo: "
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
 "Only owners or approvers can reopen Change Requests."
@@ -393,7 +374,6 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
 "Only owners or approvers can request approval."
@@ -404,9 +384,16 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Morate otkazati prije ponovnog otvaranja."
+
+#, python-format
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only approvers with these groups can approve this: "
+#~ msgstr ""
+#~ "Niste ovlašteni za ovo. \n"
+#~ "Samo odobravatelji sa sljedećim grupama mogu odobriti ovo: "
 
 #~ msgid "Main Attachment"
 #~ msgstr "Glavni prilog"

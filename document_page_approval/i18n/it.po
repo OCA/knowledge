@@ -35,54 +35,35 @@ msgstr ""
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
 msgid ""
 "<p>Hello,</p>\n"
-"            <p><t t-out=\"object.create_uid.name\"></t> submited a new "
-"Change Request for <b t-out=\"object.page_id.name\"></b> and it needs your "
-"approval.</p>\n"
+"            <p><t t-out=\"object.create_uid.name\"/> submited a new Change "
+"Request for <b t-out=\"object.page_id.name\"/> and it needs your approval.</"
+"p>\n"
 "            <h1>\n"
 "                <a t-att-href=\"object.page_url\" t-out=\"object."
-"display_name\"></a>\n"
+"display_name\"/>\n"
 "            </h1>\n"
-"            <p><b>Modified by:</b> <t t-out=\"object.create_uid.name\"></t></"
-"p>\n"
-"            <p><b>Date:</b> <t t-out=\"object.create_date\"></t></p>\n"
+"            <p>\n"
+"                <b>Modified by:</b>\n"
+"                <t t-out=\"object.create_uid.name\"/>\n"
+"            </p>\n"
+"            <p>\n"
+"                <b>Date:</b>\n"
+"                <t t-out=\"object.create_date\"/>\n"
+"            </p>\n"
 "            <t t-if=\"object.summary\">\n"
 "                <h3>Summary</h3>\n"
-"                <p t-out=\"object.summary\"></p>\n"
+"                <p t-out=\"object.summary\"/>\n"
 "            </t>\n"
 "            <h3>Diff</h3>\n"
 "            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
 "bottom:2em;\">\n"
-"                <t t-out=\"object.diff\"></t>\n"
+"                <t t-out=\"object.diff\"/>\n"
 "            </div>\n"
 "            <p>Have a great day.</p>\n"
-"            <br>\n"
+"            <br/>\n"
 "            <p>Odoo</p>\n"
 "        "
 msgstr ""
-"<p>Salve,</p>\n"
-"            <p><t t-out=\"object.create_uid.name\"></t> ha inviato una nuova "
-"richiesta di modifica per <b t-out=\"object.page_id.name\"></b> che richiede "
-"la tua approvazione.</p>\n"
-"            <h1>\n"
-"                <a t-att-href=\"object.page_url\" t-out=\"object."
-"display_name\"></a>\n"
-"            </h1>\n"
-"            <p><b>Modificato da:</b> <t t-out=\"object.create_uid.name\"></"
-"t></p>\n"
-"            <p><b>Data:</b> <t t-out=\"object.create_date\"></t></p>\n"
-"            <t t-if=\"object.summary\">\n"
-"                <h3>Riepilogo</h3>\n"
-"                <p t-out=\"object.summary\"></p>\n"
-"            </t>\n"
-"            <h3>Differenze</h3>\n"
-"            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
-"bottom:2em;\">\n"
-"                <t t-out=\"object.diff\"></t>\n"
-"            </div>\n"
-"            <p>Buona giornata.</p>\n"
-"            <br>\n"
-"            <p>Odoo</p>\n"
-"        "
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
@@ -163,14 +144,12 @@ msgstr "Ritorna a bozza"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Can't approve page in '%s' state."
 msgstr "Non puoi approvare una pagina in stato '%s'."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Can't approve pages in '%s' state."
 msgstr "Non puoi approvare le pagine in stato '%s'."
 
@@ -195,14 +174,12 @@ msgstr "Richieste di Modifica"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Change request <b>%(name)s</b> has been cancelled by %(user)s."
 msgstr "La modifica richiesta <b>%(name)s</b> è stata annullata da %(user)s."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "Change request has been approved by %s."
 msgstr "La richiesta di modifica è stata approvata da %s."
 
@@ -286,7 +263,6 @@ msgstr "Messaggi"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "New version of the document %s approved."
 msgstr "La nuova versione del documento %s è approvata."
 
@@ -321,11 +297,6 @@ msgstr "Numero di messaggi con errore di consegna"
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Pending Approval"
 msgstr "In attesa di approvazione"
-
-#. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
-msgid "Ratings"
-msgstr "Valutazioni"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
@@ -388,30 +359,16 @@ msgid "Users must also belong to the Approvers group"
 msgstr "Gli utenti devono anche appartenere al gruppo di approvazione"
 
 #. module: document_page_approval
-#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
-msgid "Website Messages"
-msgstr "Messaggi sito web"
-
-#. module: document_page_approval
-#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
-msgid "Website communication history"
-msgstr "Cronologia comunicazioni sito web"
-
-#. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: "
+"Only approvers with these groups can approve this: {}"
 msgstr ""
-"Non si è autorizzati a compiere quest'azione.\n"
-"Solo gli approvatori in questi gruppi possono approvarlo: "
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
 "Only owners or approvers can reopen Change Requests."
@@ -423,7 +380,6 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid ""
 "You are not authorized to do this.\r\n"
 "Only owners or approvers can request approval."
@@ -434,9 +390,76 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-#, python-format
 msgid "You need to cancel it before reopening."
 msgstr "Devi cancellarlo prima di riaprirlo."
+
+#~ msgid ""
+#~ "<p>Hello,</p>\n"
+#~ "            <p><t t-out=\"object.create_uid.name\"></t> submited a new "
+#~ "Change Request for <b t-out=\"object.page_id.name\"></b> and it needs "
+#~ "your approval.</p>\n"
+#~ "            <h1>\n"
+#~ "                <a t-att-href=\"object.page_url\" t-out=\"object."
+#~ "display_name\"></a>\n"
+#~ "            </h1>\n"
+#~ "            <p><b>Modified by:</b> <t t-out=\"object.create_uid.name\"></"
+#~ "t></p>\n"
+#~ "            <p><b>Date:</b> <t t-out=\"object.create_date\"></t></p>\n"
+#~ "            <t t-if=\"object.summary\">\n"
+#~ "                <h3>Summary</h3>\n"
+#~ "                <p t-out=\"object.summary\"></p>\n"
+#~ "            </t>\n"
+#~ "            <h3>Diff</h3>\n"
+#~ "            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
+#~ "bottom:2em;\">\n"
+#~ "                <t t-out=\"object.diff\"></t>\n"
+#~ "            </div>\n"
+#~ "            <p>Have a great day.</p>\n"
+#~ "            <br>\n"
+#~ "            <p>Odoo</p>\n"
+#~ "        "
+#~ msgstr ""
+#~ "<p>Salve,</p>\n"
+#~ "            <p><t t-out=\"object.create_uid.name\"></t> ha inviato una "
+#~ "nuova richiesta di modifica per <b t-out=\"object.page_id.name\"></b> che "
+#~ "richiede la tua approvazione.</p>\n"
+#~ "            <h1>\n"
+#~ "                <a t-att-href=\"object.page_url\" t-out=\"object."
+#~ "display_name\"></a>\n"
+#~ "            </h1>\n"
+#~ "            <p><b>Modificato da:</b> <t t-out=\"object.create_uid."
+#~ "name\"></t></p>\n"
+#~ "            <p><b>Data:</b> <t t-out=\"object.create_date\"></t></p>\n"
+#~ "            <t t-if=\"object.summary\">\n"
+#~ "                <h3>Riepilogo</h3>\n"
+#~ "                <p t-out=\"object.summary\"></p>\n"
+#~ "            </t>\n"
+#~ "            <h3>Differenze</h3>\n"
+#~ "            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
+#~ "bottom:2em;\">\n"
+#~ "                <t t-out=\"object.diff\"></t>\n"
+#~ "            </div>\n"
+#~ "            <p>Buona giornata.</p>\n"
+#~ "            <br>\n"
+#~ "            <p>Odoo</p>\n"
+#~ "        "
+
+#~ msgid "Ratings"
+#~ msgstr "Valutazioni"
+
+#~ msgid "Website Messages"
+#~ msgstr "Messaggi sito web"
+
+#~ msgid "Website communication history"
+#~ msgstr "Cronologia comunicazioni sito web"
+
+#, python-format
+#~ msgid ""
+#~ "You are not authorized to do this.\r\n"
+#~ "Only approvers with these groups can approve this: "
+#~ msgstr ""
+#~ "Non si è autorizzati a compiere quest'azione.\n"
+#~ "Solo gli approvatori in questi gruppi possono approvarlo: "
 
 #~ msgid "Main Attachment"
 #~ msgstr "Allegato principale"
