@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [document_knowledge](document_knowledge/) | 17.0.1.0.0 |  | Documents Knowledge
 [document_page](document_page/) | 17.0.1.1.0 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 17.0.2.0.0 |  | Choose groups to access document pages
-[document_page_approval](document_page_approval/) | 17.0.1.0.0 |  | Document Page Approval
+[document_page_approval](document_page_approval/) | 17.0.1.1.0 |  | Document Page Approval
 [document_page_group](document_page_group/) | 17.0.1.0.0 |  | Define access groups on documents
 [document_page_partner](document_page_partner/) | 17.0.1.0.0 |  | Allows to link doucment pages to a partner
 [document_page_project](document_page_project/) | 17.0.1.0.0 |  | This module links document pages to projects
