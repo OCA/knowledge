@@ -83,7 +83,7 @@ msgstr "Adresse universelle du serveur interne"
 #: model:ir.actions.act_window,name:document_page.action_browse_top_content
 #: model:ir.ui.menu,name:document_page.menu_browse_content
 msgid "Browse Wiki Content"
-msgstr ""
+msgstr "Naviguer dans le contenu"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -546,7 +546,7 @@ msgstr "Titre"
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
 msgid "Top Level Ressources"
-msgstr ""
+msgstr "Ressources les plus consultées"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
