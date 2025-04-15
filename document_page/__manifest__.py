@@ -19,6 +19,7 @@
     "license": "AGPL-3",
     "depends": ["mail", "document_knowledge"],
     "data": [
+        "data/ir_config_parameter_data.xml",
         "security/document_page_security.xml",
         "security/ir.model.access.csv",
         "wizard/document_page_create_menu.xml",

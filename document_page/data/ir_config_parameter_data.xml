@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+<record id="document_page_wrapcolumn" model="ir.config_parameter">
+    <field name="key">document_page.wrapcolumn</field>
+    <field name="value">40</field>
+</record>
+
+</odoo>

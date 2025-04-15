@@ -54,10 +54,12 @@ class DocumentPageHistory(models.Model):
         text2 = text2.replace("</p><p>", "</p>\r\n<p>")
         line1 = text1.splitlines(True)
         line2 = text2.splitlines(True)
+        params = self.env["ir.config_parameter"].sudo()
+        wrapcolumn = int(params.get_param("document_page.wrapcolumn", None))
         if line1 == line2:
             return _("There are no changes in revisions.")
         else:
-            diff = difflib.HtmlDiff()
+            diff = difflib.HtmlDiff(wrapcolumn=wrapcolumn)
             return diff.make_table(
                 line1,
                 line2,
