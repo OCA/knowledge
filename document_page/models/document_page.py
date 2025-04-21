@@ -36,15 +36,15 @@ class DocumentPage(models.Model):
     draft_name = fields.Char(
         string="Name",
         help="Name for the changes made",
-        related="history_head.name",
-        readonly=False,
+        compute="_compute_content",
+        inverse="_inverse_content",
     )
 
     draft_summary = fields.Char(
         string="Summary",
         help="Describe the changes made",
-        related="history_head.summary",
-        readonly=False,
+        compute="_compute_content",
+        inverse="_inverse_content",
     )
 
     template = fields.Html(
@@ -132,12 +132,18 @@ class DocumentPage(models.Model):
         for rec in self:
             if rec.type == "category":
                 rec.content = rec._get_page_index(link=False)
+                rec.draft_name = False
+                rec.draft_summary = False
             else:
                 if rec.history_head:
                     rec.content = rec.history_head.content
+                    rec.draft_name = rec.history_head.name
+                    rec.draft_summary = rec.history_head.summary
                 else:
                     # html widget's default, so it doesn't trigger ghost save
                     rec.content = self._HTML_WIDGET_DEFAULT_VALUE
+                    rec.draft_name = False
+                    rec.draft_summary = False
 
     def _inverse_content(self):
         for rec in self:
