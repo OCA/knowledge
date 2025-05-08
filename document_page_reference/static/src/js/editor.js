@@ -1,34 +1,34 @@
-odoo.define("document_page_reference.backend", function (require) {
-    "use strict";
+/** @odoo-module **/
 
-    var field_registry = require("web.field_registry");
-    var FieldTextHtmlSimple = require("web_editor.field.html");
-    var FieldDocumentPage = FieldTextHtmlSimple.extend({
-        events: _.extend({}, FieldTextHtmlSimple.prototype.events, {
-            "click .oe_direct_line": "_onClickDirectLink",
-        }),
-        _onClickDirectLink: function (event) {
-            var self = this;
-            event.preventDefault();
-            event.stopPropagation();
-            var element = $(event.target).closest(".oe_direct_line")[0];
-            var default_reference = element.name;
-            var model = $(event.target).data("oe-model");
-            var id = $(event.target).data("oe-id");
-            var context = this.record.getContext(this.recordParams);
-            if (default_reference) {
-                context.default_reference = default_reference;
-            }
-            this._rpc({
-                model: model,
-                method: "get_formview_action",
-                args: [[parseInt(id, 10)]],
-                context: context,
-            }).then(function (action) {
-                self.trigger_up("do_action", {action: action});
+import {HtmlField, htmlField} from "@web/views/fields/html/html_field";
+import {registry} from "@web/core/registry";
+import {onMounted, useRef} from "@odoo/owl";
+import {useService} from "@web/core/utils/hooks";
+
+class DocumentPageReferenceField extends HtmlField {
+    setup() {
+        super.setup();
+        this.orm = useService("orm");
+        this.action = useService("action");
+        onMounted(() => {
+            const links = document.querySelectorAll(".oe_direct_line");
+            links.forEach((link) => {
+                link.addEventListener("click", (event) =>
+                    this._onClickDirectLink(event)
+                );
             });
-        },
-    });
-    field_registry.add("document_page_reference", FieldDocumentPage);
-    return FieldDocumentPage;
+        });
+    }
+    _onClickDirectLink(event) {
+        const {oeModel: model, oeId} = event.target.dataset;
+        const id = parseInt(oeId, 10);
+        this.orm.call(model, "get_formview_action", [[id]], {}).then((action) => {
+            this.action.doAction(action);
+        });
+    }
+}
+
+registry.category("fields").add("document_page_reference", {
+    ...htmlField,
+    component: DocumentPageReferenceField,
 });
