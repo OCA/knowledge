@@ -12,14 +12,14 @@
                 <group
                     name="roles"
                     string="Roles"
-                    attrs="{'invisible': [('groups_id','!=',[])]}"
+                    invisible="groups_id"
                     groups="base.group_erp_manager"
                 >
                     <field name="role_ids" nolabel="1" colspan="2">
-                        <tree>
+                        <list>
                             <field name="name" />
                             <field name="comment" />
-                        </tree>
+                        </list>
                     </field>
                 </group>
             </group>
