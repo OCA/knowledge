@@ -18,6 +18,6 @@ class DocumentPage(models.Model):
 
     @api.depends("role_ids", "role_ids.users")
     def _compute_user_ids(self):
-        """Create a compute to auto-set all the users of the related roles."""
+        """compute to auto-set all the users of the related roles."""
         for item in self:
             item.user_ids += item.mapped("role_ids.users")
