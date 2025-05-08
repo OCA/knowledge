@@ -1,11 +1,18 @@
 /** @odoo-module **/
 
 import {AttachmentList} from "@mail/core/common/attachment_list";
-import {Chatter} from "@mail/core/web/chatter";
+import {ConfirmationDialog} from "@web/core/confirmation_dialog/confirmation_dialog";
+import {Chatter} from "@mail/chatter/web_portal/chatter";
 import {patch} from "@web/core/utils/patch";
+import {useService} from "@web/core/utils/hooks";
 import {url} from "@web/core/utils/urls";
+import {_t} from "@web/core/l10n/translation";
 
 patch(Chatter.prototype, {
+    setup() {
+        super.setup();
+        this.action = useService("action");
+    },
     _onAddUrl(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -62,6 +69,17 @@ patch(AttachmentList.prototype, {
         return url("/web/content", {
             id: this.attachment.id,
             download: true,
+        });
+    },
+    onClickUnlink(attachment) {
+        if (this.env.inComposer) {
+            return this.props.unlinkAttachment(attachment);
+        }
+        this.dialog.add(ConfirmationDialog, {
+            body: _t('Do you really want to delete "%s"?', attachment.name),
+            // eslint-disable-next-line no-empty-function
+            cancel: () => {},
+            confirm: () => this.onConfirmUnlink(attachment),
         });
     },
 });
