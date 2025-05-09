@@ -1,0 +1,6 @@
+/.github/
+/coverage/
+/.eslintcache
+/.*ignore
+/yarn.lock
+/LICENSE
