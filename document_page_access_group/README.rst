@@ -64,6 +64,7 @@ Authors
 -------
 
 * Sygel
+* Creu Blanca
 
 Contributors
 ------------
@@ -78,6 +79,10 @@ Contributors
 - `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
 
   - Bhavesh Heliconia
+
+- `Dixmit <https://www.dixmit.com>`__:
+
+  - Enric Tobella
 
 Maintainers
 -----------

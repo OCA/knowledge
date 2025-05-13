@@ -7,7 +7,7 @@
     "version": "18.0.1.0.0",
     "category": "document_knowledge",
     "website": "https://github.com/OCA/knowledge",
-    "author": "Sygel, Odoo Community Association (OCA)",
+    "author": "Sygel, Creu Blanca, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
