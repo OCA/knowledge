@@ -27,6 +27,7 @@
             </field>
         </field>
     </record>
+
     <record id="view_wiki_menu_form" model="ir.ui.view">
         <field name="name">document.page.menu.form</field>
         <field name="model">document.page</field>
@@ -44,6 +45,7 @@
             </field>
         </field>
     </record>
+
     <record model="ir.ui.view" id="document_page_search_view">
         <field name="name">document.page.search (in knowledge_reference)</field>
         <field name="model">document.page</field>
@@ -54,6 +56,7 @@
             </field>
         </field>
     </record>
+
     <record model="ir.ui.view" id="document_page_tree_view">
         <field name="name">document.page.tree (in knowledge_reference)</field>
         <field name="model">document.page</field>
