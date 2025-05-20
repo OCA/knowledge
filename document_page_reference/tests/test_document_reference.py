@@ -34,12 +34,19 @@ class TestDocumentReference(TransactionCase):
         self.assertEqual(self.page1.reference, self.page2.reference)
 
     def test_check_raw(self):
+        self.env.flush_all()
+        self.page1._invalidate_cache()
+        self.page2._invalidate_cache()
         self.assertEqual(self.page2.display_name, self.page1.get_raw_content())
 
     def test_check_reference(self):
+        self.env.flush_all()
+        self.page1._invalidate_cache()
+        self.page2._invalidate_cache()
         self.page1._compute_content_parsed()
         self.assertRegex(
-            str(self.page1.content_parsed), f".*{self.page2.display_name}.*"
+            str(self.page1.content_parsed),
+            f".*{self.page2.display_name}.*"
         )
 
     def test_no_reference(self):
