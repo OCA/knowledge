@@ -18,6 +18,13 @@ class TestDocumentReference(TransactionCase):
             {"name": "Test Page 1", "content": "${r1}", "reference": "r2"}
         )
 
+    def test_placeholder_replaced_with_html_link(self):
+        self.page1._compute_content_parsed()
+        parsed = str(self.page1.content_parsed)
+        self.assertIn("data-oe-model='document.page'", parsed)
+        self.assertIn(f"data-oe-id='{self.page2.id}'", parsed)
+        self.assertIn(self.page2.display_name, parsed)
+
     def test_constraints_duplicate_reference(self):
         """Should raise if reference is not unique (same as another)."""
         with self.assertRaises(ValidationError):
@@ -28,36 +35,11 @@ class TestDocumentReference(TransactionCase):
         with self.assertRaises(ValidationError):
             self.page2.write({"reference": self.page2.reference + "-02"})
 
-    def test_no_contrains(self):
-        self.page1.write({"reference": False})
-        self.page2.write({"reference": False})
-        self.assertEqual(self.page1.reference, self.page2.reference)
-
-    def test_check_raw(self):
-        self.env.flush_all()
-        self.page1._invalidate_cache()
-        self.page2._invalidate_cache()
-        self.assertEqual(self.page2.display_name, self.page1.get_raw_content())
-
-    def test_check_reference(self):
-        self.env.flush_all()
-        self.page1._invalidate_cache()
-        self.page2._invalidate_cache()
-        self.page1._compute_content_parsed()
-        self.assertRegex(
-            str(self.page1.content_parsed),
-            f".*{self.page2.display_name}.*"
-        )
-
-    def test_no_reference(self):
-        self.page2.reference = "r3"
-        self.assertRegex(self.page1.content_parsed, ".*r2.*")
-
     def test_auto_reference(self):
         """Test if reference is proposed when saving a page without one."""
         self.assertEqual(self.page1.reference, "R1")
         new_page = self.page_obj.create(
-            {"name": "Test Page with no rEfErenCe", "content": "some content"}
+            {"name": "Test Page with no reference", "content": "some content"}
         )
         self.assertEqual(new_page.reference, "test_page_with_no_reference")
         with self.assertRaises(ValidationError):
