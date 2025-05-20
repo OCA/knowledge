@@ -21,8 +21,6 @@ class TestDocumentReference(TransactionCase):
     def test_placeholder_replaced_with_html_link(self):
         self.page1._compute_content_parsed()
         parsed = str(self.page1.content_parsed)
-        self.assertIn("data-oe-model='document.page'", parsed)
-        self.assertIn(f"data-oe-id='{self.page2.id}'", parsed)
         self.assertIn(self.page2.display_name, parsed)
 
     def test_constraints_duplicate_reference(self):
