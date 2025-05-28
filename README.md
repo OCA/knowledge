@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [document_page](document_page/) | 18.0.1.0.1 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 18.0.1.0.1 |  | Choose groups to access document pages
 [document_page_approval](document_page_approval/) | 18.0.1.0.0 |  | Document Page Approval
+[document_url](document_url/) | 18.0.1.0.0 |  | URL attachment
 
 [//]: # (end addons)
 
