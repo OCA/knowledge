@@ -31,9 +31,9 @@ addon | version | maintainers | summary
 [document_page](document_page/) | 13.0.1.1.0 |  | Document Page
 [document_page_approval](document_page_approval/) | 13.0.1.3.1 |  | Document Page Approval
 [document_page_group](document_page_group/) | 13.0.1.0.0 |  | Define access groups on documents
-[document_page_portal](document_page_portal/) | 13.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module enables document page portal
+[document_page_portal](document_page_portal/) | 13.0.1.0.0 | <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | This module enables document page portal
 [document_page_project](document_page_project/) | 13.0.1.0.2 |  | This module links document pages to projects
-[document_page_reference](document_page_reference/) | 13.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Include references on document pages
+[document_page_reference](document_page_reference/) | 13.0.1.0.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | Include references on document pages
 [document_page_tag](document_page_tag/) | 13.0.1.0.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
 [document_url](document_url/) | 13.0.1.0.1 |  | URL attachment
 [knowledge](knowledge/) | 13.0.1.1.0 |  | Knowledge
