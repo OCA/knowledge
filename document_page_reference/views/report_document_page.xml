@@ -4,11 +4,11 @@
         id="report_documentpage_doc"
         inherit_id="document_page.report_documentpage_doc"
     >
-        <xpath expr="//div[@t-raw='doc.content']" position="attributes">
+        <xpath expr="//div[@t-out='doc.content']" position="attributes">
             <attribute name="t-if">1==0</attribute>
         </xpath>
-        <xpath expr="//div[@t-raw='doc.content']" position="after">
-            <div t-raw="doc.get_raw_content()" />
+        <xpath expr="//div[@t-out='doc.content']" position="after">
+            <t t-out="doc.get_raw_content()" />
         </xpath>
     </template>
 </odoo>
