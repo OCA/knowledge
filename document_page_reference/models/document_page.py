@@ -35,6 +35,10 @@ class DocumentPage(models.Model):
         for record in self:
             try:
                 raw = record.content or ""
+                references = re.findall(r"\$\{([^}]+)\}", raw)
+                for ref in references:
+                    if not re.match(r"^[a-zA-Z_][a-zA-Z0-9_]*$", ref):
+                        raise ValidationError(_("Invalid reference: %s") % ref)
                 converted = re.sub(r"\$\{([\w_]+)\}", r"{{ resolve('\1') }}", raw)
                 template = env.from_string(converted)
                 rendered = template.render(resolve=record._resolve_reference)
