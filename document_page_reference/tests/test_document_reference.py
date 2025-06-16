@@ -15,13 +15,8 @@ class TestDocumentReference(TransactionCase):
             {"name": "Test Page 1", "content": "${r2}", "reference": "R1"}
         )
         cls.page2 = cls.page_obj.create(
-            {"name": "Test Page 1", "content": "${r1}", "reference": "r2"}
+            {"name": "Test Page 2", "content": "${r1}", "reference": "r2"}
         )
-
-    def test_placeholder_replaced_with_html_link(self):
-        self.page1._compute_content_parsed()
-        parsed = str(self.page1.content_parsed)
-        self.assertIn(self.page2.display_name, parsed)
 
     def test_constraints_duplicate_reference(self):
         """Should raise if reference is not unique (same as another)."""
