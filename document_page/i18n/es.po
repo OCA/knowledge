@@ -294,7 +294,6 @@ msgstr "Si está marcado, nuevos mensajes requieren su atención."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
@@ -486,11 +485,6 @@ msgid "Revision"
 msgstr "Revisión"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error de entrega de SMS"
-
-#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 msgid "Select one or maximum two history revisions!"
@@ -597,6 +591,9 @@ msgstr "o"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "resumen"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de entrega de SMS"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Última modificación el"

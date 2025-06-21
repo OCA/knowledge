@@ -295,7 +295,6 @@ msgstr "Se marcado, novas mensagens irão requerer a sua atenção."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcado, algumas mensagens têm erro na entrega."
 
@@ -485,11 +484,6 @@ msgstr "Rev 01"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
 msgstr "Revisão"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
 
 #. module: document_page
 #. odoo-python

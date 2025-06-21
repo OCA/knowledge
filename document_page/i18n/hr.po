@@ -297,7 +297,6 @@ msgstr "Ako je označeno, nove poruke traže vašu pozornost."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Ako je označeno, neke poruke imaju greške pri isporuci."
 
@@ -490,11 +489,6 @@ msgid "Revision"
 msgstr "Revizija"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Greška u slanju SMSa"
-
-#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 msgid "Select one or maximum two history revisions!"
@@ -601,6 +595,9 @@ msgstr "ili"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "sažetak"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Greška u slanju SMSa"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnje modificirano"
