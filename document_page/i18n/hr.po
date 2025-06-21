@@ -297,7 +297,6 @@ msgstr "Ako je označeno, nove poruke traže vašu pozornost."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Ako je označeno, neke poruke imaju greške pri isporuci."
 
@@ -474,6 +473,11 @@ msgid "Parent Menu"
 msgstr "Nadređeni izbornik"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
 msgstr "Odgovorni korisnik"
@@ -488,11 +492,6 @@ msgstr "Rev 01"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
 msgstr "Revizija"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Greška u slanju SMSa"
 
 #. module: document_page
 #. odoo-python
@@ -568,6 +567,17 @@ msgid "Use it to link resources univocally"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Stranice"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Čarobnjak za kreiranje izbornika"
@@ -602,6 +612,9 @@ msgstr "ili"
 msgid "summary"
 msgstr "sažetak"
 
+#~ msgid "SMS Delivery error"
+#~ msgstr "Greška u slanju SMSa"
+
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnje modificirano"
 
@@ -613,10 +626,6 @@ msgstr "sažetak"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Broj poruka koje zahtijevaju neku radnju"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Stranice"
 
 #~ msgid "wizard.document.page.history.show_diff"
 #~ msgstr "wizard.document.page.history.show_diff"

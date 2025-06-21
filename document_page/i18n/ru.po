@@ -295,7 +295,6 @@ msgstr "Если флажок установлен, новые сообщени�
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Если этот флажок установлен, некоторые сообщения имеют ошибку доставки."
@@ -472,6 +471,11 @@ msgid "Parent Menu"
 msgstr "Родительское меню"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
 msgstr "Ответственный пользователь"
@@ -486,11 +490,6 @@ msgstr "Ред. 01"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
 msgstr "Редакция"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Ошибка доставки SMS"
 
 #. module: document_page
 #. odoo-python
@@ -566,6 +565,16 @@ msgid "Use it to link resources univocally"
 msgstr "Используйте для ссылки на ресурсы"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+msgid "Website Messages"
+msgstr "Сообщения веб-сайта"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr "История общения на сайте"
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Мастер создания меню"
@@ -600,6 +609,9 @@ msgstr "или"
 msgid "summary"
 msgstr ""
 
+#~ msgid "SMS Delivery error"
+#~ msgstr "Ошибка доставки SMS"
+
 #~ msgid "Last Modified on"
 #~ msgstr "Последний раз изменено"
 
@@ -623,9 +635,3 @@ msgstr ""
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Подписчики (каналы)"
-
-#~ msgid "Website Messages"
-#~ msgstr "Сообщения веб-сайта"
-
-#~ msgid "Website communication history"
-#~ msgstr "История общения на сайте"

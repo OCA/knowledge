@@ -294,7 +294,6 @@ msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si coché, certains messages n’ont pas été envoyés."
 
@@ -470,6 +469,11 @@ msgid "Parent Menu"
 msgstr "Menu parent"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
 msgstr "Utilisateur responsable"
@@ -484,11 +488,6 @@ msgstr "Rév. 01"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
 msgstr "Révision"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Erreur d’envoi du minimessage"
 
 #. module: document_page
 #. odoo-python
@@ -564,6 +563,17 @@ msgid "Use it to link resources univocally"
 msgstr "À utiliser pour lier les ressources de façon univoque"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Messages"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Assistant de création de menu"
@@ -598,6 +608,9 @@ msgstr "ou"
 msgid "summary"
 msgstr "résumé"
 
+#~ msgid "SMS Delivery error"
+#~ msgstr "Erreur d’envoi du minimessage"
+
 #~ msgid "Last Modified on"
 #~ msgstr "Dernière mise à jour le"
 
@@ -621,10 +634,6 @@ msgstr "résumé"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Abonnés (Canaux)"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Messages"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr "Si coché, de nouveaux messages requièrent votre attention."

@@ -296,7 +296,6 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -472,6 +471,11 @@ msgid "Parent Menu"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
 msgstr ""
@@ -485,11 +489,6 @@ msgstr ""
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: document_page
@@ -557,6 +556,16 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: document_page

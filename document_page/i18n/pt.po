@@ -295,7 +295,6 @@ msgstr "Se marcado, novas mensagens irão requerer a sua atenção."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se marcado, algumas mensagens têm erro na entrega."
 
@@ -471,6 +470,11 @@ msgid "Parent Menu"
 msgstr "Menu Ascendente"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
 msgstr "Utilizador Responsável"
@@ -485,11 +489,6 @@ msgstr "Rev 01"
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
 msgstr "Revisão"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
 
 #. module: document_page
 #. odoo-python
@@ -565,6 +564,17 @@ msgid "Use it to link resources univocally"
 msgstr "Utilizar para vincular recursos univocamente"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Páginas"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Assistente de Criação de Menus"
@@ -607,10 +617,6 @@ msgstr "resumo"
 
 #~ msgid "Document History"
 #~ msgstr "Histórico do Documento"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Páginas"
 
 #~ msgid "wizard.document.page.history.show_diff"
 #~ msgstr "wizard.document.page.history.show_diff"
