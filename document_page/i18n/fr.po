@@ -294,7 +294,6 @@ msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si coché, certains messages n’ont pas été envoyés."
 
@@ -486,11 +485,6 @@ msgid "Revision"
 msgstr "Révision"
 
 #. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Erreur d’envoi du minimessage"
-
-#. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 msgid "Select one or maximum two history revisions!"
@@ -597,6 +591,9 @@ msgstr "ou"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "résumé"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Erreur d’envoi du minimessage"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Dernière mise à jour le"
