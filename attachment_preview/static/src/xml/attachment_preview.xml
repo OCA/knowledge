@@ -50,20 +50,26 @@
                 <div class="button-group pull-left">
                     <button
                         class="btn btn-sm btn-secondary attachment_preview_previous"
-                    ><i class="fa fa-chevron-left" /></button>
+                    >
+                        <i class="fa fa-chevron-left" />
+                    </button>
                     <button
                         class="btn btn-sm btn-secondary disabled attachment_preview_current"
                     >1 / 5</button>
-                    <button class="btn btn-sm btn-secondary attachment_preview_next"><i
-                            class="fa fa-chevron-right"
-                        /></button>
+                    <button class="btn btn-sm btn-secondary attachment_preview_next">
+                        <i class="fa fa-chevron-right" />
+                    </button>
                 </div>
                 <button
                     class="btn btn-sm btn-secondary pull-left ml8 attachment_preview_popout"
-                ><i class="fa fa-external-link" /></button>
+                >
+                    <i class="fa fa-external-link" />
+                </button>
                 <button
                     class="btn btn-sm btn-secondary pull-right attachment_preview_close"
-                ><i class="fa fa-times" /></button>
+                >
+                    <i class="fa fa-times" />
+                </button>
             </div>
             <iframe class="attachment_preview_iframe" />
         </div>
