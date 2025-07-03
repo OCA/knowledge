@@ -17,24 +17,25 @@ Preview attachments
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github
-    :target: https://github.com/OCA/knowledge/tree/15.0/attachment_preview
+    :target: https://github.com/OCA/knowledge/tree/18.0/attachment_preview
     :alt: OCA/knowledge
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/knowledge-15-0/knowledge-15-0-attachment_preview
+    :target: https://translation.odoo-community.org/projects/knowledge-18-0/knowledge-18-0-attachment_preview
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/knowledge&target_branch=15.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/knowledge&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This addon allows to preview attachments supported by http://viewerjs.org.
+This addon allows to preview attachments supported by
+http://viewerjs.org.
 
 Currently, that's most Libreoffice files and PDFs.
 
-.. image:: https://raw.githubusercontent.com/attachment_preview/static/description/screenshot-split.png
-   :alt: Screenshot of split form view
-   :width: 100%
+|Screenshot of split form view|
+
+.. |Screenshot of split form view| image:: https://raw.githubusercontent.com/attachment_preview/static/description/screenshot-split.png
 
 **Table of contents**
 
@@ -53,13 +54,15 @@ Usage
 =====
 
 The module adds a little print preview icon right of download links for
-attachments or binary fields. When a preview is opened from the attachments
-menu it's shown next to the form view. From this screen you can navigate
-through the attachments using the arrow buttons. Using the pop-out button
-next to the navigational buttons you can open the preview in a separate window.
+attachments or binary fields. When a preview is opened from the
+attachments menu it's shown next to the form view. From this screen you
+can navigate through the attachments using the arrow buttons. Using the
+pop-out button next to the navigational buttons you can open the preview
+in a separate window.
 
-.. image:: https://raw.githubusercontent.com/attachment_preview/static/description/screenshot-paginator.png
-   :alt: Screenshot navigator
+|Screenshot navigator|
+
+.. |Screenshot navigator| image:: https://raw.githubusercontent.com/attachment_preview/static/description/screenshot-paginator.png
 
 Bug Tracker
 ===========
@@ -67,7 +70,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/knowledge/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/knowledge/issues/new?body=module:%20attachment_preview%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/knowledge/issues/new?body=module:%20attachment_preview%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -75,27 +78,27 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Therp BV
 * Onestein
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Holger Brunn <mail@hunki-enterprises.com>
-* Dennis Sluijk <d.sluijk@onestein.nl>
+-  Holger Brunn <mail@hunki-enterprises.com>
+-  Dennis Sluijk <d.sluijk@onestein.nl>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
 Addon icon
-----------
+~~~~~~~~~~
 
-* courtesy of http://commons.wikimedia.org/wiki/Crystal_Clear
+-  courtesy of http://commons.wikimedia.org/wiki/Crystal_Clear
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -107,6 +110,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/15.0/attachment_preview>`_ project on GitHub.
+This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/18.0/attachment_preview>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
