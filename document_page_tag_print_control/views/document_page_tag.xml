@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Juan Alberto Raja <juan.raja@sygel.es>
+License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_document_page_tag_form_extended" model="ir.ui.view">
+        <field name="name">document.page.tag.form.extended</field>
+        <field name="model">document.page.tag</field>
+        <field name="inherit_id" ref="document_page_tag.view_document_page_tag_form" />
+        <field name="arch" type="xml">
+            <field name="color" position="before">
+                <field name="is_not_printable" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_document_page_tag_tree_extended" model="ir.ui.view">
+        <field name="name">document.page.tag.tree.extended</field>
+        <field name="model">document.page.tag</field>
+        <field name="inherit_id" ref="document_page_tag.view_document_page_tag_tree" />
+        <field name="arch" type="xml">
+            <field name="color" position="after">
+                <field name="is_not_printable" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_document_page_tag_search_extended" model="ir.ui.view">
+        <field name="name">document.page.tag.search.extended</field>
+        <field name="model">document.page.tag</field>
+        <field
+            name="inherit_id"
+            ref="document_page_tag.view_document_page_tag_search"
+        />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="is_not_printable" />
+            </field>
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator />
+                <filter
+                    name="printable_tags"
+                    string="Non-Printable Tags"
+                    domain="[('is_not_printable', '=', True)]"
+                />
+                <filter
+                    name="non_printable_tags"
+                    string="Printable Tags"
+                    domain="[('is_not_printable', '=', False)]"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
