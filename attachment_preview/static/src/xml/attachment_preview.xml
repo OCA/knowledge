@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-    <t
-        t-name="Attachment"
-        t-inherit="mail.AttachmentCard"
-        t-inherit-mode="extension"
-        owl="1"
-    >
-        <xpath expr="//div[hasclass('o_AttachmentCard_aside')]" position="before">
+    <t t-name="Attachment" t-inherit="mail.AttachmentList" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-mail-AttachmentCard-aside')]" position="before">
             <div
-                class="o_AttachmentCard_aside position-relative overflow-hidden"
-                t-att-class="{ 'o-has-multiple-action d-flex flex-column': !attachmentCard.attachmentList.composerView and attachmentCard.attachment.isEditable }"
+                t-if="attachment.downloadUrl"
+                class="o-mail-AttachmentCard-aside position-relative rounded-end overflow-hidden d-flex"
+                t-att-class="{ 'o-hasMultipleActions d-flex flex-column': showDelete and !env.inComposer }"
             >
-                <div
-                    t-if="attachmentCard.attachment.downloadUrl"
-                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4"
-                    t-att-data-id="attachmentCard.attachment.id"
-                    t-att-data-url="attachmentCard.attachment.defaultSource"
-                    t-on-click="attachmentCard._onPreviewAttachment"
-                    t-att-data-original-title="attachmentCard.attachment.name"
-                    t-attf-title="Preview {{attachmentCard.attachment.displayName}} in side panel"
-                    tabindex="0"
-                    role="menuitem"
-                    aria-label="Preview"
+                <button
+                    t-if="this._canPreviewAttachment(attachment)"
+                    class="d-flex justify-content-center align-items-center w-100 h-100 border-0 bg-300"
+                    t-att-data-id="attachment.id"
+                    t-att-data-url="attachment.defaultSource"
+                    t-on-click.stop="() => this._onPreviewAttachment(attachment)"
+                    t-att-data-original-title="attachment.name"
+                    t-attf-title="Preview {{attachment.displayName}} in side panel"
                 >
-                    <i class="fa fa-search" />
-                </div>
-                <div
-                    t-if="attachmentCard.attachment.downloadUrl"
-                    class="o_AttachmentCard_asideItem d-flex justify-content-center align-items-center ml4 o_attachment_preview_new_tab"
+                    <i class="fa fa-search" role="img" aria-label="Preview" />
+                </button>
+                <button
+                    t-if="this._canPreviewAttachment(attachment)"
+                    class="d-flex justify-content-center align-items-center w-100 h-100 border-0 bg-300"
                     data-target="new"
-                    t-att-data-id="attachmentCard.attachment.id"
-                    t-att-data-url="attachmentCard.attachment.defaultSource"
-                    t-on-click="attachmentCard._onPreviewAttachment"
-                    t-att-data-original-title="attachmentCard.attachment.name"
-                    t-attf-title="Open preview {{attachmentCard.attachment.name}} in a new tab"
-                    tabindex="0"
-                    role="menuitem"
-                    aria-label="Open in new page"
+                    t-att-data-id="attachment.id"
+                    t-att-data-url="attachment.defaultSource"
+                    t-on-click.stop="() => this._onPreviewAttachment(attachment)"
+                    t-att-data-original-title="attachment.name"
+                    t-attf-title="Open preview {{attachment.name}} in a new tab"
                 >
-                    <i class="fa fa-external-link" />
-                </div>
+                    <i
+                        class="fa fa-external-link"
+                        role="img"
+                        aria-label="Open in new page"
+                    />
+                </button>
             </div>
         </xpath>
     </t>
@@ -50,28 +44,35 @@
                 <div class="button-group pull-left">
                     <button
                         class="btn btn-sm btn-secondary attachment_preview_previous"
+                        t-on-click="_onPreviousClick"
                     >
                         <i class="fa fa-chevron-left" />
                     </button>
                     <button
                         class="btn btn-sm btn-secondary disabled attachment_preview_current"
+                        t-ref="current"
                     >1 / 5</button>
-                    <button class="btn btn-sm btn-secondary attachment_preview_next">
+                    <button
+                        class="btn btn-sm btn-secondary attachment_preview_next"
+                        t-on-click="_onNextClick"
+                    >
                         <i class="fa fa-chevron-right" />
                     </button>
                 </div>
                 <button
                     class="btn btn-sm btn-secondary pull-left ml8 attachment_preview_popout"
+                    t-on-click="_onPopoutClick"
                 >
                     <i class="fa fa-external-link" />
                 </button>
                 <button
                     class="btn btn-sm btn-secondary pull-right attachment_preview_close"
+                    t-on-click="_onCloseClick"
                 >
                     <i class="fa fa-times" />
                 </button>
             </div>
-            <iframe class="attachment_preview_iframe" />
+            <iframe class="attachment_preview_iframe" t-ref="iframe" />
         </div>
     </t>
 </templates>

@@ -1,134 +1,104 @@
-/** @odoo-module */
-import Widget from "web.Widget";
+import {Component, onWillStart, useRef, useState} from "@odoo/owl";
+import {ensureJQuery} from "@web/core/ensure_jquery";
+import {sprintf} from "@web/core/utils/strings";
 
-var active_attachment_index = 0;
-var is_first_click = true;
+export class AttachmentPreviewWidget extends Component {
+    static template = "attachment_preview.AttachmentPreviewWidget";
+    static props = {};
+    setup() {
+        super.setup();
+        Component.env.bus.addEventListener(
+            "open_attachment_preview",
+            ({detail: {attachment_id, attachment_info_list}}) =>
+                this._onAttachmentPreview(attachment_id, attachment_info_list)
+        );
+        Component.env.bus.addEventListener("hide_attachment_preview", this.hide);
+        this.state = useState({activeIndex: 0});
+        this.currentRef = useRef("current");
+        this.iframeRef = useRef("iframe");
+        onWillStart(async () => {
+            await ensureJQuery();
+        });
+    }
 
-var AttachmentPreviewWidget = Widget.extend({
-    template: "attachment_preview.AttachmentPreviewWidget",
-    activeIndex: 0,
-
-    events: {
-        "click .attachment_preview_close": "_onCloseClick",
-        "click .attachment_preview_previous": "_onPreviousClick",
-        "click .attachment_preview_next": "_onNextClick",
-        "click .attachment_preview_popout": "_onPopoutClick",
-    },
-
-    start: function () {
-        // First_click = true;
-        var res = this._super.apply(this, arguments);
-        this.$overlay = $(".attachment_preview_overlay");
-        this.$iframe = $(".attachment_preview_iframe");
-        this.$current = $(".attachment_preview_current");
-        return res;
-    },
-
-    _onCloseClick: function () {
+    _onCloseClick() {
         this.hide();
-    },
+    }
 
-    _onPreviousClick: function () {
+    _onPreviousClick() {
         this.previous();
-    },
+    }
 
-    _onNextClick: function () {
+    _onNextClick() {
         this.next();
-    },
+    }
 
-    _onPopoutClick: function () {
-        if (!this.attachments[this.activeIndex]) {
-            return;
-        }
+    _onPopoutClick() {
+        if (!this.attachments[this.state.activeIndex]) return;
+        // eslint-disable-next-line no-undef
+        window.open(this.attachments[this.state.activeIndex].previewUrl);
+    }
 
-        window.open(this.attachments[this.activeIndex].previewUrl);
-    },
-
-    next: function () {
-        if (is_first_click) {
-            is_first_click = !is_first_click;
-        }
-        var index = this.activeIndex + 1;
+    next() {
+        var index = this.state.activeIndex + 1;
         if (index >= this.attachments.length) {
             index = 0;
         }
-        this.activeIndex = index;
+        this.state.activeIndex = index;
         this.updatePaginator();
         this.loadPreview();
-    },
+    }
 
-    previous: function () {
-        if (is_first_click) {
-            is_first_click = !is_first_click;
-        }
-        var index = this.activeIndex - 1;
+    previous() {
+        var index = this.state.activeIndex - 1;
         if (index < 0) {
             index = this.attachments.length - 1;
         }
-        this.activeIndex = index;
+        this.state.activeIndex = index;
         this.updatePaginator();
         this.loadPreview();
-    },
+    }
 
-    show: function () {
-        this.$el.removeClass("d-none");
-        this.trigger("shown");
-    },
+    show() {
+        $(".attachment_preview_widget").removeClass("d-none");
+    }
 
-    hide: function () {
-        is_first_click = true;
-        this.$el.addClass("d-none");
-        this.trigger("hidden");
-    },
+    hide() {
+        $(".attachment_preview_widget").addClass("d-none");
+    }
 
-    updatePaginator: function () {
-        var value = _.str.sprintf(
+    updatePaginator() {
+        var value = sprintf(
             "%s / %s",
-            this.activeIndex + 1,
+            this.state.activeIndex + 1,
             this.attachments.length
         );
-        this.$overlay = $(".attachment_preview_overlay");
-        this.$iframe = $(".attachment_preview_iframe");
-        this.$current = $(".attachment_preview_current");
-        this.$current.html(value);
-    },
+        $(this.currentRef.el).html(value);
+    }
 
-    loadPreview: function () {
+    loadPreview() {
         if (this.attachments.length === 0) {
-            this.$iframe.attr("src", "about:blank");
+            $(this.iframeRef.el).attr("src", "about:blank");
             return;
         }
+        var att = this.attachments[this.state.activeIndex];
+        $(this.iframeRef.el).attr("src", att.previewUrl);
+    }
 
-        if (is_first_click) {
-            for (let i = 0; i < this.attachments.length; i++) {
-                if (
-                    parseInt(this.attachments[i].id, 10) === this.active_attachment_id
-                ) {
-                    active_attachment_index = i;
-                    is_first_click = false;
-                }
+    setAttachments(attachments, active_attachment_id) {
+        this.attachments = attachments;
+        if (!attachments) return;
+        for (let i = 0; i < attachments.length; ++i) {
+            if (parseInt(attachments[i].id, 10) === active_attachment_id) {
+                this.state.activeIndex = i;
             }
-        } else {
-            active_attachment_index = this.activeIndex;
         }
+        this.updatePaginator();
+        this.loadPreview();
+    }
 
-        var att = this.attachments[active_attachment_index];
-        this.$iframe.attr("src", att.previewUrl);
-    },
-
-    setAttachments: function (attachments, active_attachment_id, first_click) {
-        is_first_click = first_click;
-
-        if (active_attachment_id) {
-            this.active_attachment_id = active_attachment_id;
-        }
-        if (attachments) {
-            this.attachments = attachments;
-            this.activeIndex = 0;
-            this.updatePaginator();
-            this.loadPreview();
-        }
-    },
-});
-
-export default AttachmentPreviewWidget;
+    _onAttachmentPreview(attachment_id, attachment_info_list) {
+        this.setAttachments(attachment_info_list, attachment_id);
+        this.show();
+    }
+}
