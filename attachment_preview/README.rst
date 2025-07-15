@@ -89,14 +89,6 @@ Contributors
 -  Holger Brunn <mail@hunki-enterprises.com>
 -  Dennis Sluijk <d.sluijk@onestein.nl>
 
-Other credits
--------------
-
-Addon icon
-~~~~~~~~~~
-
--  courtesy of http://commons.wikimedia.org/wiki/Crystal_Clear
-
 Maintainers
 -----------
 
