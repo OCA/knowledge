@@ -5,11 +5,13 @@
 // OpenERP's context
 (function (original_Viewer) {
     "use strict";
+    // eslint-disable-next-line no-undef
     window.Viewer = function (plugin, parameters) {
         if (!plugin) {
-            // eslint-disable-next-line no-alert
+            // eslint-disable-next-line no-undef, no-alert
             alert("Unsupported file type");
         }
         return original_Viewer(plugin, parameters);
     };
+    // eslint-disable-next-line no-undef
 })(window.Viewer);
