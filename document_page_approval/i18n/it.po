@@ -69,8 +69,8 @@ msgstr ""
 "richiesta di modifica per <b t-out=\"object.page_id.name\"/> che richiede la "
 "tua approvazione.</p>\n"
 "            <h1>\n"
-"                <a t-att-href=\"object.page_url\" t-out="
-"\"object.display_name\"/>\n"
+"                <a t-att-href=\"object.page_url\" t-out=\"object."
+"display_name\"/>\n"
 "            </h1>\n"
 "            <p>\n"
 "                <b>Modificato da:</b>\n"
@@ -85,8 +85,8 @@ msgstr ""
 "                <p t-out=\"object.summary\"/>\n"
 "            </t>\n"
 "            <h3>Differenze</h3>\n"
-"            <div style="
-"\"overflow-x:scroll; font-size:0.85em; margin-bottom:2em;\">\n"
+"            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
+"bottom:2em;\">\n"
 "                <t t-out=\"object.diff\"/>\n"
 "            </div>\n"
 "            <p>Buona giornata.</p>\n"
@@ -328,6 +328,11 @@ msgid "Pending Approval"
 msgstr "In attesa di approvazione"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
+msgid "Ratings"
+msgstr "Valutazioni"
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
 msgid "Require approval"
 msgstr "Richiede approvazione"
@@ -386,6 +391,16 @@ msgstr "L'utente ha bozze?"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
 msgstr "Gli utenti devono anche appartenere al gruppo di approvazione"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
 
 #. module: document_page_approval
 #. odoo-python
@@ -474,15 +489,6 @@ msgstr "Devi cancellarlo prima di riaprirlo."
 #~ "            <br>\n"
 #~ "            <p>Odoo</p>\n"
 #~ "        "
-
-#~ msgid "Ratings"
-#~ msgstr "Valutazioni"
-
-#~ msgid "Website Messages"
-#~ msgstr "Messaggi sito web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Cronologia comunicazioni sito web"
 
 #, python-format
 #~ msgid ""

@@ -297,6 +297,11 @@ msgid "Pending Approval"
 msgstr "Avvaktar godkännande"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
 msgid "Require approval"
 msgstr "Kräver godkännande"
@@ -354,6 +359,16 @@ msgstr "Användaren har utkast?"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
 msgstr "Användarna måste också tillhöra gruppen Approvers"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr "Webbplatsmeddelanden"
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
+msgstr "Webbplatsens kommunikationshistorik"
 
 #. module: document_page_approval
 #. odoo-python
@@ -436,12 +451,6 @@ msgstr "Du måste avbryta det innan du öppnar igen."
 #~ " <br>\n"
 #~ " <p>Odoo</p>\n"
 #~ "        "
-
-#~ msgid "Website Messages"
-#~ msgstr "Webbplatsmeddelanden"
-
-#~ msgid "Website communication history"
-#~ msgstr "Webbplatsens kommunikationshistorik"
 
 #, python-format
 #~ msgid ""
