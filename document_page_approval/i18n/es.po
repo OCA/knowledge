@@ -297,6 +297,11 @@ msgid "Pending Approval"
 msgstr "Pendiente de aprobación"
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
 msgid "Require approval"
 msgstr "Requiere aprobación"
@@ -353,6 +358,16 @@ msgstr "¿El usuario tiene borradores?"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
 msgstr "Los usuarios también deben pertenecer al grupo de aprobadores"
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: document_page_approval
+#: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
 
 #. module: document_page_approval
 #. odoo-python
@@ -439,12 +454,6 @@ msgstr "Necesita cancelarlo antes de volver a abrirlo."
 #~ "            <br>\n"
 #~ "            <p>Odoo</p>\n"
 #~ "        "
-
-#~ msgid "Website Messages"
-#~ msgstr "Mensajes del sitio web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Historial de comunicación del sitio web"
 
 #, python-format
 #~ msgid ""
