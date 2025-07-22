@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_page_tag_print_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: document_page_tag_print_control
+#: model:ir.model,name:document_page_tag_print_control.model_document_page_tag
+msgid "A keyword for document pages"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model,name:document_page_tag_print_control.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model,name:document_page_tag_print_control.model_report_document_page_report_documentpage
+msgid "Document Page Report with Print Control"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model.fields,help:document_page_tag_print_control.field_document_page_tag__is_not_printable
+msgid "If checked, pages with this tag cannot be printed"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model.fields,help:document_page_tag_print_control.field_document_page__is_not_printable
+msgid "Indicates if the document cannot be printed based on its tags"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model.fields,field_description:document_page_tag_print_control.field_document_page__is_not_printable
+#: model:ir.model.fields,field_description:document_page_tag_print_control.field_document_page_tag__is_not_printable
+msgid "Is Not Printable"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model_terms:ir.ui.view,arch_db:document_page_tag_print_control.view_document_page_tag_search_extended
+msgid "Non-Printable Tags"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#. odoo-python
+#: code:addons/document_page_tag_print_control/models/report_document_page.py:0
+#, python-format
+msgid "None of the selected pages can be printed due to their tags."
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model_terms:ir.ui.view,arch_db:document_page_tag_print_control.view_document_page_tag_search_extended
+msgid "Printable Tags"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#. odoo-python
+#: code:addons/document_page_tag_print_control/models/report_document_page.py:0
+#, python-format
+msgid "Some pages cannot be printed due to their tags:\n"
+msgstr ""
