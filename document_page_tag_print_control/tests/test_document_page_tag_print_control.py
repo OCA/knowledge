@@ -39,6 +39,14 @@ class TestDocumentPrintControl(TransactionCase):
             }
         )
 
+        for doc in [
+            cls.doc_without_tags,
+            cls.doc_printable,
+            cls.doc_non_printable,
+            cls.doc_mixed_tags,
+        ]:
+            doc._compute_is_not_printable()
+
     def test_document_without_tags_is_printable(self):
         """Document without tags is printable."""
         self.assertFalse(self.doc_without_tags.is_not_printable)
@@ -57,6 +65,9 @@ class TestDocumentPrintControl(TransactionCase):
 
     def test_report_non_printable_raises_error(self):
         """Report fails if all documents are non-printable."""
+        self.env.user.groups_id -= self.env.ref("document_page.group_document_manager")
+        self.doc_non_printable._compute_is_not_printable()
+
         with self.assertRaises(UserError) as ctx:
             self.env["report.document_page.report_documentpage"]._get_report_values(
                 [self.doc_non_printable.id]
@@ -65,6 +76,10 @@ class TestDocumentPrintControl(TransactionCase):
 
     def test_report_mixed_docs_raises_error(self):
         """Report fails if some documents are non-printable."""
+        self.env.user.groups_id -= self.env.ref("document_page.group_document_manager")
+        self.doc_printable._compute_is_not_printable()
+        self.doc_non_printable._compute_is_not_printable()
+
         with self.assertRaises(UserError) as ctx:
             self.env["report.document_page.report_documentpage"]._get_report_values(
                 [self.doc_printable.id, self.doc_non_printable.id]

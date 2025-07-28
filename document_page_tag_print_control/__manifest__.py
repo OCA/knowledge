@@ -3,7 +3,7 @@
 {
     "name": "Document Page Tag Print Control",
     "summary": "Restricts document page printing based on assigned tags",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "author": "Sygel, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
