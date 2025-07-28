@@ -23,9 +23,12 @@ try:
     class Context(SandboxedEnvironment.context_class):
         def resolve_or_missing(self, key):
             res = super().resolve_or_missing(key)
-            if not isinstance(res, Undefined):
+            if res is not Undefined:
                 return res
-            return self.parent["ref"](key)
+            try:
+                return self.parent["ref"](key)
+            except KeyError:
+                return Undefined()
 
     class Environment(SandboxedEnvironment):
         context_class = Context
