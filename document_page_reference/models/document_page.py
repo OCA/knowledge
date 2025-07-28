@@ -22,11 +22,26 @@ try:
 
     class Context(SandboxedEnvironment.context_class):
         def resolve_or_missing(self, key):
-            res = super().resolve_or_missing(key)
-            if not isinstance(res, Undefined):
-                return res
+            # Try to get from parent context first
+            try:
+                res = super().resolve_or_missing(key)
+                if not isinstance(res, Undefined):
+                    return res
+            except AttributeError:
+                # Fallback for older Jinja2 versions
+                try:
+                    res = super().resolve(key)
+                    if not isinstance(res, Undefined):
+                        return res
+                except AttributeError:
+                    pass
+            
             # If the key is not found in the normal context, try to resolve it as a reference
             return self.parent["ref"](key)
+        
+        # Keep the old method for backward compatibility
+        def resolve(self, key):
+            return self.resolve_or_missing(key)
 
     class Environment(SandboxedEnvironment):
         context_class = Context
@@ -127,9 +142,9 @@ class DocumentPage(models.Model):
             mako_env = mako_template_env
             template = mako_env.from_string(tools.ustr(content))
             return template.render(self._get_template_variables())
-        except Exception:
+        except Exception as e:
             _logger.error(
-                "Template from page with id = %s cannot be processed" % self.id
+                "Template from page with id = %s cannot be processed: %s" % (self.id, str(e))
             )
             return self.content
 
