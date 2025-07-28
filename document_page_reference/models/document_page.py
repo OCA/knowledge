@@ -34,11 +34,13 @@ try:
                     if not isinstance(res, Undefined):
                         return res
                 except AttributeError:
-                    pass
-            
+                    _logger.debug(
+                        "Neither resolve_or_missing nor resolve method available in parent context"
+                    )
+
             # If the key is not found in the normal context, try to resolve it as a reference
             return self.parent["ref"](key)
-        
+
         # Keep the old method for backward compatibility
         def resolve(self, key):
             return self.resolve_or_missing(key)
@@ -144,7 +146,8 @@ class DocumentPage(models.Model):
             return template.render(self._get_template_variables())
         except Exception as e:
             _logger.error(
-                "Template from page with id = %s cannot be processed: %s" % (self.id, str(e))
+                "Template from page with id = %s cannot be processed: %s"
+                % (self.id, str(e))
             )
             return self.content
 
