@@ -35,7 +35,7 @@ try:
                         return res
                 except AttributeError:
                     _logger.debug(
-                        "Neither resolve_or_missing nor resolve method available in parent context"
+                        "Neither resolve_or_missing nor resolve method available"
                     )
 
             # If the key is not found in the normal context, try to resolve it as a reference
