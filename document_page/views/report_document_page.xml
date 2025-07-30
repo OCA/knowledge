@@ -4,7 +4,7 @@
         <t t-call="web.external_layout">
             <div class="page">
                 <h1 t-field="doc.name" />
-                <div t-raw="doc.content" />
+                <div t-out="doc.content" />
             </div>
         </t>
     </template>
