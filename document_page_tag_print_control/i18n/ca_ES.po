@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# 	* document_page_tag_print_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: document_page_tag_print_control
+#: model:ir.model,name:document_page_tag_print_control.model_document_page_tag
+msgid "A keyword for document pages"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model,name:document_page_tag_print_control.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model,name:document_page_tag_print_control.model_report_document_page_report_documentpage
+msgid "Document Page Report with Print Control"
+msgstr ""
+
+#. module: document_page_tag_print_control
+#: model:ir.model.fields,help:document_page_tag_print_control.field_document_page_tag__is_not_printable
+msgid "If checked, pages with this tag cannot be printed"
+msgstr "Si està marcat, les pàgines amb aquesta etiqueta no es poden imprimir"
+
+#. module: document_page_tag_print_control
+#: model:ir.model.fields,help:document_page_tag_print_control.field_document_page__is_not_printable
+msgid "Indicates if the document cannot be printed based on its tags"
+msgstr ""
+"Indica si el document no es pot imprimir basant-se en les seves etiquetes"
+
+#. module: document_page_tag_print_control
+#: model:ir.model.fields,field_description:document_page_tag_print_control.field_document_page__is_not_printable
+#: model:ir.model.fields,field_description:document_page_tag_print_control.field_document_page_tag__is_not_printable
+msgid "Is Not Printable"
+msgstr "No és imprimible"
+
+#. module: document_page_tag_print_control
+#: model_terms:ir.ui.view,arch_db:document_page_tag_print_control.view_document_page_tag_search_extended
+msgid "Non-Printable Tags"
+msgstr "Etiquetes no imprimibles"
+
+#. module: document_page_tag_print_control
+#. odoo-python
+#: code:addons/document_page_tag_print_control/models/report_document_page.py:0
+#, fuzzy, python-format
+msgid "None of the selected pages can be printed due to their tags."
+msgstr ""
+"Cap de les pàgines seleccionades es pot imprimir a causa de les seves "
+"etiquetes."
+
+#. module: document_page_tag_print_control
+#: model_terms:ir.ui.view,arch_db:document_page_tag_print_control.view_document_page_tag_search_extended
+msgid "Printable Tags"
+msgstr "Etiquetes imprimibles"
+
+#. module: document_page_tag_print_control
+#. odoo-python
+#: code:addons/document_page_tag_print_control/models/report_document_page.py:0
+#, python-format
+msgid "Some pages cannot be printed due to their tags:\n"
+msgstr "Algunes pàgines no es poden imprimir a causa de les seves etiquetes:\n"
+
+#~ msgid "Print"
+#~ msgstr "Imprimir"
