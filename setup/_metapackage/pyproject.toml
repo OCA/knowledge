@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-knowledge"
-version = "17.0.20250301.0"
+version = "17.0.20250731.0"
 dependencies = [
     "odoo-addon-attachment_category>=17.0dev,<17.1dev",
     "odoo-addon-attachment_zipped_download>=17.0dev,<17.1dev",
@@ -12,6 +12,7 @@ dependencies = [
     "odoo-addon-document_page_partner>=17.0dev,<17.1dev",
     "odoo-addon-document_page_project>=17.0dev,<17.1dev",
     "odoo-addon-document_page_tag>=17.0dev,<17.1dev",
+    "odoo-addon-document_page_tag_print_control>=17.0dev,<17.1dev",
     "odoo-addon-document_url>=17.0dev,<17.1dev",
 ]
 classifiers=[

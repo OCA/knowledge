@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [document_page_partner](document_page_partner/) | 17.0.1.0.0 |  | Allows to link doucment pages to a partner
 [document_page_project](document_page_project/) | 17.0.1.0.0 |  | This module links document pages to projects
 [document_page_tag](document_page_tag/) | 17.0.1.0.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
+[document_page_tag_print_control](document_page_tag_print_control/) | 17.0.1.0.0 |  | Restricts document page printing based on assigned tags
 [document_url](document_url/) | 17.0.1.0.1 |  | URL attachment
 
 [//]: # (end addons)
