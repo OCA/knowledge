@@ -23,12 +23,12 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_zipped_download](attachment_zipped_download/) | 18.0.1.0.0 |  | Attachment Zipped Download
 [document_knowledge](document_knowledge/) | 18.0.1.0.1 |  | Documents Knowledge
-[document_page](document_page/) | 18.0.1.0.1 |  | Document Page
+[document_page](document_page/) | 18.0.2.0.0 |  | Document Page
 [document_page_access_group](document_page_access_group/) | 18.0.1.0.1 |  | Choose groups to access document pages
 [document_page_access_group_user_role](document_page_access_group_user_role/) | 18.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Document Page Access Group User Role
 [document_page_approval](document_page_approval/) | 18.0.1.0.0 |  | Document Page Approval
 [document_page_project](document_page_project/) | 18.0.1.0.0 | <a href='https://github.com/LoisRForgeFlow'><img src='https://github.com/LoisRForgeFlow.png' width='32' height='32' style='border-radius:50%;' alt='LoisRForgeFlow'/></a> | This module links document pages to projects
-[document_page_reference](document_page_reference/) | 18.0.1.0.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | Include references on document pages
+[document_page_reference](document_page_reference/) | 18.0.2.0.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | Include references on document pages
 [document_url](document_url/) | 18.0.1.0.0 |  | URL attachment
 
 [//]: # (end addons)
