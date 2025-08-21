@@ -1,21 +1,24 @@
 # Copyright 2019 Creu Blanca
+# Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from markupsafe import Markup
 
 from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentReference(TransactionCase):
+class TestDocumentReference(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.page_obj = cls.env["document.page"]
         cls.history_obj = cls.env["document.page.history"]
         cls.page1 = cls.page_obj.create(
-            {"name": "Test Page 1", "content": "${r2}", "reference": "R1"}
+            {"name": "Test Page 1", "content": Markup("{{r2}}"), "reference": "R1"}
         )
         cls.page2 = cls.page_obj.create(
-            {"name": "Test Page 1", "content": "${r1}", "reference": "r2"}
+            {"name": "Test Page 1", "content": Markup("{{r1}}"), "reference": "r2"}
         )
 
     def test_constraints_duplicate_reference(self):
@@ -27,6 +30,15 @@ class TestDocumentReference(TransactionCase):
         """Should raise if reference does not match the required pattern."""
         with self.assertRaises(ValidationError):
             self.page2.write({"reference": self.page2.reference + "-02"})
+
+    def test_no_contrains(self):
+        self.page1.write({"reference": False})
+        self.assertFalse(self.page1.reference)
+        self.page2.write({"reference": False})
+        self.assertFalse(self.page2.reference)
+
+    def test_check_raw(self):
+        self.assertEqual(self.page2.display_name, self.page1.get_raw_content())
 
     def test_auto_reference(self):
         """Test if reference is proposed when saving a page without one."""
@@ -52,7 +64,6 @@ class TestDocumentReference(TransactionCase):
             "type": "ir.actions.act_window",
             "res_model": "document.page",
             "res_id": self.page1.id,
-            "context": {},
             "target": "current",
             "views": [(view_id, "form")],
         }
@@ -60,6 +71,5 @@ class TestDocumentReference(TransactionCase):
             self.assertEqual(res.get(key), expected_value, f"Mismatch in key: {key}")
 
     def test_compute_content_parsed(self):
-        self.page1.content = "<p></p>"
-        self.page1._compute_content_parsed()
-        self.assertEqual(str(self.page1.content_parsed), "<p></p>")
+        self.page1.content = Markup("<p></p>")
+        self.assertEqual(self.page1.content_parsed, Markup("<p></p>"))
