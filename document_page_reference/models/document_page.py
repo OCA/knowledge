@@ -1,18 +1,14 @@
 # Copyright 2019 Creu Blanca
+# Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import logging
 import re
 
-from jinja2.sandbox import SandboxedEnvironment
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.tools import html_escape
-
-_logger = logging.getLogger(__name__)
-env = SandboxedEnvironment(autoescape=False)
 
 
 class DocumentPage(models.Model):
@@ -35,15 +31,7 @@ class DocumentPage(models.Model):
     @api.depends("content")
     def _compute_content_parsed(self):
         for record in self:
-            try:
-                raw = record.content or ""
-                converted = re.sub(r"\$\{([\w_]+)\}", r"{{ resolve('\1') }}", raw)
-                template = env.from_string(converted)
-                rendered = template.render(resolve=record._resolve_reference)
-                record.content_parsed = rendered
-            except Exception as e:
-                _logger.info("Render failed for %s: %s", record.id, e)
-                record.content_parsed = record.content or ""
+            record.content_parsed = record.get_content()
 
     @api.constrains("reference")
     def _check_reference_validity(self):
@@ -52,42 +40,36 @@ class DocumentPage(models.Model):
                 continue
             regex = r"^[a-zA-Z_][a-zA-Z0-9_]*$"
             if not re.match(regex, rec.reference):
-                raise ValidationError(_("Reference is not valid"))
+                raise ValidationError(self.env._("Reference is not valid"))
             domain = [("reference", "=", rec.reference), ("id", "!=", rec.id)]
             if self.search(domain):
-                raise ValidationError(_("Reference must be unique"))
+                raise ValidationError(self.env._("Reference must be unique"))
 
     def _get_document(self, code):
         return self.search([("reference", "=", code)], limit=1)
 
     def get_content(self):
-        for record in self:
-            try:
-                raw = record.content or ""
-                converted = re.sub(r"\$\{([\w_]+)\}", r"{{ resolve('\1') }}", raw)
-                template = env.from_string(converted)
-                return template.render(resolve=record._resolve_reference)
-            except Exception:
-                _logger.error(
-                    "Template from page with id = %s cannot be processed", record.id
-                )
-                return record.content
+        self.ensure_one()
+        content_parsed = raw = self.content or ""
+        for text in re.findall(r"\{\{.*?\}\}", raw):
+            reference = text.replace("{{", "").replace("}}", "")
+            content_parsed = content_parsed.replace(
+                text, self._resolve_reference(reference)
+            )
+        return content_parsed
 
     def _resolve_reference(self, code):
         doc = self._get_document(code)
         if self.env.context.get("raw_reference", False):
             return html_escape(doc.display_name if doc else code)
         sanitized_code = html_escape(code)
-        if not doc:
-            return (
-                f"<i><a href='#' class='oe_direct_line' "
-                f"data-oe-model='document.page' data-oe-id='' "
-                f"name='{sanitized_code}'>{sanitized_code}</a></i>"
-            )
+        oe_model = doc._name if doc else self._name
+        oe_id = doc.id if doc else ""
+        name = html_escape(doc.display_name) if doc else sanitized_code
         return (
-            f"<a href='#' class='oe_direct_line' data-oe-model='{doc._name}' "
-            f"data-oe-id='{doc.id}' name='{sanitized_code}'>"
-            f"{html_escape(doc.display_name)}</a>"
+            f"<a href='#' class='oe_direct_line' data-oe-model='{oe_model}' "
+            f"data-oe-id='{oe_id}' name='{sanitized_code}'>"
+            f"{name}</a>"
         )
 
     def get_raw_content(self):
