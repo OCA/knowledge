@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-24 22:33+0000\n"
-"PO-Revision-Date: 2024-06-19 15:35+0000\n"
+"PO-Revision-Date: 2025-09-18 16:42+0000\n"
 "Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
@@ -63,6 +63,35 @@ msgid ""
 "            <p>Odoo</p>\n"
 "        "
 msgstr ""
+"<p>Hej,</p>\n"
+"            <p><t t-out=\"object.create_uid.name\"/> har skickat in en ny "
+"ändringsbegäran för <b t-out=\"object.page_id.name\"/> och den behöver ditt "
+"godkännande.</p>\n"
+"            <h1>\n"
+"                <a t-att-href=\"object.page_url\" t-out="
+"\"object.display_name\"/>\n"
+"            </h1>\n"
+"            <p>\n"
+"                <b>Modifierad av:</b>\n"
+"                <t t-out=\"object.create_uid.name\"/>\n"
+"            </p>\n"
+"            <p>\n"
+"                <b>Datum:</b>\n"
+"                <t t-out=\"object.create_date\"/>\n"
+"            </p>\n"
+"            <t t-if=\"object.summary\">\n"
+"                <h3>Sammanfattning</h3>\n"
+"                <p t-out=\"object.summary\"/>\n"
+"            </t>\n"
+"            <h3>Diff</h3>\n"
+"            <div style="
+"\"overflow-x:scroll; font-size:0.85em; margin-bottom:2em;\">\n"
+"                <t t-out=\"object.diff\"/>\n"
+"            </div>\n"
+"            <p>Ha en bra dag.</p>\n"
+"            <br/>\n"
+"            <p>Odoo</p>\n"
+"        "
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
@@ -299,7 +328,7 @@ msgstr "Avvaktar godkännande"
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Betyg"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
@@ -377,6 +406,8 @@ msgid ""
 "You are not authorized to do this.\r\n"
 "Only approvers with these groups can approve this: {}"
 msgstr ""
+"Du har inte behörighet att göra detta.\n"
+"Endast godkännare med dessa grupper kan godkänna detta: {}"
 
 #. module: document_page_approval
 #. odoo-python
