@@ -380,6 +380,7 @@ msgstr ""
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__name
+msgctxt "field_label"
 msgid "Name"
 msgstr "Chủ đề"
 
@@ -387,6 +388,7 @@ msgstr "Chủ đề"
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
+msgctxt "view_label"
 msgid "Name"
 msgstr "Tên"
 
