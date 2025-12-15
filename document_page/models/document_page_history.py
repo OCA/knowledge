@@ -1,9 +1,12 @@
 # Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import difflib
 
 from odoo import api, fields, models
+
+from odoo.addons.web_editor.models.diff_utils import (
+    generate_comparison,
+)
 
 
 class DocumentPageHistory(models.Model):
@@ -17,7 +20,7 @@ class DocumentPageHistory(models.Model):
     name = fields.Char(index=True)
     summary = fields.Char(index=True)
     content = fields.Html(sanitize=False)
-    diff = fields.Html(compute="_compute_diff")
+    diff = fields.Html(compute="_compute_diff", sanitize_tags=False)
 
     company_id = fields.Many2one(
         "res.company",
@@ -43,28 +46,10 @@ class DocumentPageHistory(models.Model):
             )
             rec.diff = self._get_diff(prev.id, rec.id)
 
-    @api.model
     def _get_diff(self, v1, v2):
-        """Return the difference between two version of document version."""
         text1 = v1 and self.browse(v1).content or ""
         text2 = v2 and self.browse(v2).content or ""
-        # Include line breaks to make it more readable
-        # TODO: consider using a beautify library directly on the content
-        text1 = text1.replace("</p><p>", "</p>\r\n<p>")
-        text2 = text2.replace("</p><p>", "</p>\r\n<p>")
-        line1 = text1.splitlines(True)
-        line2 = text2.splitlines(True)
-        if line1 == line2:
-            return self.env._("There are no changes in revisions.")
-        else:
-            diff = difflib.HtmlDiff()
-            return diff.make_table(
-                line1,
-                line2,
-                f"Revision-{v1}",
-                f"Revision-{v2}",
-                context=True,
-            )
+        return generate_comparison(text1, text2)
 
     @api.depends("page_id")
     def _compute_display_name(self):
