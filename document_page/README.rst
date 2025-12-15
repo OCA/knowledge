@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 =============
 Document Page
 =============
@@ -17,7 +13,7 @@ Document Page
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github
@@ -61,6 +57,12 @@ To use this module, you need to:
 - Click on Pages to create pages and select the previous category to use
   the template
 
+Improve diff of history
+-----------------------
+
+If you want to improve how history is shown, you can install html_diff
+python library. A new comparison method will be installed.
+
 Bug Tracker
 ===========
 
@@ -83,22 +85,33 @@ Contributors
 ------------
 
 - Gervais Naoussi <gervaisnaoussi@gmail.com>
+
 - Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+
 - Iván Todorovich <ivan.todorovich@gmail.com>
+
 - Jose Maria Alzaga <jose.alzaga@aselcis.com>
+
 - Lois Rilo <lois.rilo@forgeflow.com>
+
 - Simone Orsi <simone.orsi@camptocamp.com>
+
 - `Tecnativa <https://www.tecnativa.com>`__:
 
   - Ernesto Tejeda
   - Víctor Martínez
 
-Trobz
+- Trobz
 
-- Dung Tran <dungtd@trobz.com>
+  - Dung Tran <dungtd@trobz.com>
+
 - `Sygel <https://www.sygel.es>`__:
 
   - Ángel García de la Chica Herrera
+
+- `Dixmit <https://www.dixmit.com>`__:
+
+  - Enric Tobella
 
 Other credits
 -------------
