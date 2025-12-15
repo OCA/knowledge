@@ -530,12 +530,6 @@ msgstr ""
 "kategori."
 
 #. module: document_page
-#. odoo-python
-#: code:addons/document_page/models/document_page_history.py:0
-msgid "There are no changes in revisions."
-msgstr "Det finns inga förändringar i revisionerna."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
@@ -605,6 +599,9 @@ msgstr "eller"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "sammanfattning"
+
+#~ msgid "There are no changes in revisions."
+#~ msgstr "Det finns inga förändringar i revisionerna."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Senast ändrad den"

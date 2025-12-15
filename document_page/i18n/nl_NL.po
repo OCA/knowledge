@@ -528,12 +528,6 @@ msgid ""
 msgstr ""
 
 #. module: document_page
-#. odoo-python
-#: code:addons/document_page/models/document_page_history.py:0
-msgid "There are no changes in revisions."
-msgstr "Er zijn geen wijzigingen in revisies."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
@@ -604,6 +598,9 @@ msgstr "of"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr ""
+
+#~ msgid "There are no changes in revisions."
+#~ msgstr "Er zijn geen wijzigingen in revisies."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Laatst aangepast op"

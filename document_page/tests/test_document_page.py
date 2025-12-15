@@ -31,12 +31,16 @@ class TestDocumentPage(common.TransactionCase):
         self.assertEqual(page.content, self.category1.template)
 
     def test_page_history_diff(self):
-        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
-        page.content = "New content"
+        page = self.page_obj.create(
+            {"name": "Test Page 3", "content": "<div>Test content</div>"}
+        )
+        page.content = "<div>New content</div>"
         self.assertIsNotNone(page.history_ids[0].diff)
 
     def test_page_link(self):
-        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
+        page = self.page_obj.create(
+            {"name": "Test Page 3", "content": "<div>Test content</div>"}
+        )
         self.assertEqual(
             page.backend_url,
             f"/web#id={page.id}&model=document.page&view_type=form",
@@ -49,7 +53,9 @@ class TestDocumentPage(common.TransactionCase):
         )
 
     def test_page_copy(self):
-        page = self.page_obj.create({"name": "Test Page 3", "content": "Test content"})
+        page = self.page_obj.create(
+            {"name": "Test Page 3", "content": "<div>Test content</div>"}
+        )
         page_copy = page.copy()
         self.assertEqual(page_copy.name, page.name + " (copy)")
         self.assertEqual(page_copy.content, page.content)

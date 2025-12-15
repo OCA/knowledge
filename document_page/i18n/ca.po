@@ -532,12 +532,6 @@ msgstr ""
 "noves pàgines d'aquesta categoria."
 
 #. module: document_page
-#. odoo-python
-#: code:addons/document_page/models/document_page_history.py:0
-msgid "There are no changes in revisions."
-msgstr "No hi ha canvis en les revisions."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
@@ -607,6 +601,9 @@ msgstr "o"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "resum"
+
+#~ msgid "There are no changes in revisions."
+#~ msgstr "No hi ha canvis en les revisions."
 
 #, fuzzy
 #~ msgid "Document History"

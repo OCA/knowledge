@@ -69,6 +69,7 @@
                             <field
                                 name="diff"
                                 widget="html"
+                                class="o_document_page_diff"
                                 style="overflow-x: scroll"
                             />
                         </page>
