@@ -533,12 +533,6 @@ msgstr ""
 "новых страниц этой категории."
 
 #. module: document_page
-#. odoo-python
-#: code:addons/document_page/models/document_page_history.py:0
-msgid "There are no changes in revisions."
-msgstr "В редакциях изменений нет."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
@@ -608,6 +602,9 @@ msgstr "или"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr ""
+
+#~ msgid "There are no changes in revisions."
+#~ msgstr "В редакциях изменений нет."
 
 #~ msgid "SMS Delivery error"
 #~ msgstr "Ошибка доставки SMS"
