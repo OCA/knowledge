@@ -42,7 +42,7 @@ class TestDocumentPageApproval(BaseCommon):
             {
                 "name": "This page requires approval",
                 "parent_id": cls.category2.id,
-                "content": "This content will require approval",
+                "content": "<p>This content will require approval</p>",
             }
         )
 
@@ -73,7 +73,7 @@ class TestDocumentPageApproval(BaseCommon):
         self.assertEqual(chreq.content, page.content)
 
         # Create new change request
-        page.write({"content": "New content"})
+        page.write({"content": "<p>New content</p>"})
         page.invalidate_model()  # Recompute fields
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")], limit=1
@@ -81,14 +81,14 @@ class TestDocumentPageApproval(BaseCommon):
 
         # Approve new changes
         chreq.with_user(self.user2).action_approve()
-        self.assertEqual(page.content, "New content")
+        self.assertEqual(page.content, "<p>New content</p>")
 
     def test_change_request_auto_approve(self):
         """Test that a page without approval required auto-approves changes."""
         page = self.page1
         self.assertFalse(page.is_approval_required)
-        page.write({"content": "New content"})
-        self.assertEqual(page.content, "New content")
+        page.write({"content": "<p>New content</p>"})
+        self.assertEqual(page.content, "<p>New content</p>")
 
     def test_change_request_from_scratch(self):
         """Test a full change request lifecycle from draft to approval."""
@@ -104,7 +104,7 @@ class TestDocumentPageApproval(BaseCommon):
             {
                 "page_id": page.id,
                 "summary": "Changed something",
-                "content": "New content",
+                "content": "<p>New content</p>",
             }
         )
 
@@ -245,7 +245,7 @@ class TestDocumentPageApproval(BaseCommon):
         self.history_obj.create(
             {
                 "page_id": self.page2.id,
-                "content": "Version 1",
+                "content": "<p>Version 1</p>",
                 "state": "approved",
             }
         )
@@ -253,7 +253,7 @@ class TestDocumentPageApproval(BaseCommon):
         chreq2 = self.history_obj.create(
             {
                 "page_id": self.page2.id,
-                "content": "Version 2",
+                "content": "<p>Version 2</p>",
             }
         )
         chreq2._compute_diff()
