@@ -51,8 +51,8 @@ class TestDocumentReference(BaseCommon):
             new_page_duplicated_name = self.page_obj.create(
                 {
                     "name": "test page with no reference",
-                    "content": "this should have an empty reference "
-                    "because reference must be unique",
+                    "content": "<p>this should have an empty reference "
+                    "because reference must be unique</p>",
                 }
             )
             self.assertFalse(new_page_duplicated_name.reference)
