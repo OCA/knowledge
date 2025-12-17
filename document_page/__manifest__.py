@@ -17,7 +17,7 @@
     ],
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
-    "depends": ["mail", "document_knowledge"],
+    "depends": ["mail", "document_knowledge", "web_editor"],
     "data": [
         "security/document_page_security.xml",
         "security/ir.model.access.csv",
@@ -30,6 +30,9 @@
     ],
     "demo": ["demo/document_page.xml"],
     "assets": {
+        "web._assets_primary_variables": [
+            "document_page/static/src/**/document_page_variables.scss",
+        ],
         "web.assets_backend": [
             "document_page/static/src/scss/document_page.scss",
             "document_page/static/src/js/document_page_kanban_controller.esm.js",
