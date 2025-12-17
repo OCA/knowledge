@@ -535,12 +535,6 @@ msgstr ""
 "nove stranice u ovoj kategoriji."
 
 #. module: document_page
-#. odoo-python
-#: code:addons/document_page/models/document_page_history.py:0
-msgid "There are no changes in revisions."
-msgstr "Nema izmjena u ovoj reviziji"
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
@@ -611,6 +605,9 @@ msgstr "ili"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "sažetak"
+
+#~ msgid "There are no changes in revisions."
+#~ msgstr "Nema izmjena u ovoj reviziji"
 
 #~ msgid "SMS Delivery error"
 #~ msgstr "Greška u slanju SMSa"
