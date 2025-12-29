@@ -16,8 +16,8 @@ class DocumentPage(models.Model):
         string="Roles",
     )
 
-    @api.depends("role_ids", "role_ids.users")
+    @api.depends("role_ids", "role_ids.user_ids")
     def _compute_user_ids(self):
         """compute to auto-set all the users of the related roles."""
         for item in self:
-            item.user_ids += item.mapped("role_ids.users")
+            item.user_ids += item.mapped("role_ids.user_ids")
