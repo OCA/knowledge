@@ -4,7 +4,7 @@
 {
     "name": "Document Page Access Group",
     "summary": "Choose groups to access document pages",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.0",
     "category": "document_knowledge",
     "website": "https://github.com/OCA/knowledge",
     "author": "Sygel, Creu Blanca, Odoo Community Association (OCA)",
