@@ -25,7 +25,7 @@
                 <field name="page_id" required="True" />
                 <field name="content" required="True" />
                 <field name="create_uid" />
-                <group expand="0" string="Group By...">
+                <group>
                     <filter
                         name="group_by_author"
                         string="Author"

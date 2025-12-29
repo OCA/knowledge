@@ -13,18 +13,21 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
             {"menu_name": "Wiki Test menu", "menu_parent_id": menu_parent.id}
         )
 
+        page1 = self.env["document.page"].create(
+            {
+                "name": "Odoo 15.0 Functional Demo",
+                "content": "Test Content",
+            }
+        )
+
         menu = self.env["document.page.create.menu"].search(
             [("id", "=", menu_created.id)]
         )
-        menu.with_context(
-            active_id=[self.ref("document_page.demo_page1")]
-        ).document_page_menu_create()
+        menu.with_context(active_id=[page1.id]).document_page_menu_create()
 
         fields_list = ["menu_name", "menu_name"]
 
-        res = menu.with_context(
-            active_id=[self.ref("document_page.demo_page1")]
-        ).default_get(fields_list)
+        res = menu.with_context(active_id=[page1.id]).default_get(fields_list)
 
         self.assertEqual(res["menu_name"], "Odoo 15.0 Functional Demo")
 
@@ -35,9 +38,13 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
             self.env["ir.ui.menu"]
             .with_context(**{"ir.ui.menu.authorized_list": True})
             .search([("id", "=", menu_parent.id)])
+            ._filter_visible_menus()
         )
-        no_context_results = self.env["ir.ui.menu"].search(
-            [("id", "=", menu_parent.id)]
+        no_context_results = (
+            self.env["ir.ui.menu"]
+            .search([("id", "=", menu_parent.id)])
+            ._filter_visible_menus()
         )
+
         self.assertEqual(context_results[:1].id, menu_parent.id)
-        self.assertEqual(any(no_context_results), False)
+        self.assertFalse(no_context_results)

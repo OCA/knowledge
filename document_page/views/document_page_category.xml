@@ -208,7 +208,7 @@
                 <field name="create_uid" />
                 <field name="content_uid" />
                 <field name="company_id" groups="base.group_multi_company" />
-                <group expand="0" string="Group By...">
+                <group>
                     <filter
                         name="group_by_category"
                         string="Category"

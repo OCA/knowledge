@@ -4,7 +4,7 @@
 
 from odoo import api, fields, models
 
-from odoo.addons.web_editor.models.diff_utils import (
+from odoo.addons.html_editor.models.diff_utils import (
     generate_comparison,
 )
 
