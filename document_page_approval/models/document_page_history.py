@@ -64,8 +64,9 @@ class DocumentPageHistory(models.Model):
         for rec in self:
             if rec.state != "draft":
                 raise UserError(
-                    self.env._("Can't approve pages in '%(state)s' state.")
-                    % {"state": rec.state}
+                    self.env._(
+                        "Can't approve pages in '%(state)s' state.", state=rec.state
+                    )
                 )
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
@@ -79,7 +80,7 @@ class DocumentPageHistory(models.Model):
                 rec.write({"state": "to approve"})
                 guids = [g.id for g in rec.page_id.approver_group_ids]
                 users = self.env["res.users"].search(
-                    [("groups_id", "in", guids), ("groups_id", "in", approver_gid.id)]
+                    [("group_ids", "in", guids), ("group_ids", "in", approver_gid.id)]
                 )
                 rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
                 rec.message_post_with_source(template)
@@ -91,28 +92,23 @@ class DocumentPageHistory(models.Model):
         """Set a change request as approved."""
         for rec in self:
             if rec.state not in ["draft", "to approve"]:
-                raise UserError(
-                    self.env._("Can't approve page in '%(state)s' state.")
-                    % {"state": rec.state}
-                )
+                self.env._("Can't approve page in '%(state)s' state.", state=rec.state)
             if not rec.am_i_approver:
+                groups_str = ", ".join(
+                    g.display_name for g in rec.page_id.approver_group_ids
+                )
                 raise UserError(
                     self.env._(
-                        "You are not authorized to do this.\n"
-                        "Only approvers with these groups can approve this: %(groups)s"
+                        "Only approvers with these groups can approve this: %(groups)s",
+                        groups=groups_str,
                     )
-                    % {
-                        "groups": ", ".join(
-                            g.display_name for g in rec.page_id.approver_group_ids
-                        )
-                    }
                 )
 
             # Update state
             rec.write(
                 {
                     "state": "approved",
-                    "approved_date": fields.datetime.now(),
+                    "approved_date": fields.Datetime.now(),
                     "approved_uid": self.env.uid,
                 }
             )
@@ -121,14 +117,17 @@ class DocumentPageHistory(models.Model):
             # Notify state change
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=self.env._("Change request has been approved by %(user)s.")
-                % {"user": self.env.user.name},
+                body=self.env._(
+                    "Change request has been approved by %(user)s.",
+                    user=self.env.user.name,
+                ),
             )
             # Notify followers a new version is available
             rec.page_id.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=self.env._("New version of the document {} approved.").format(
-                    rec.page_id.name
+                body=self.env._(
+                    "New version of the document %(name)s approved.",
+                    name=rec.page_id.name,
                 ),
             )
 
@@ -139,12 +138,10 @@ class DocumentPageHistory(models.Model):
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
                 body=self.env._(
-                    "Change request <b>%(name)s</b> has been cancelled by %(user)s."
-                )
-                % {
-                    "name": rec.display_name,
-                    "user": self.env.user.name,
-                },
+                    "Change request <b>%(name)s</b> has been cancelled by %(user)s.",
+                    name=rec.display_name,
+                    user=self.env.user.name,
+                ),
             )
 
     def action_cancel_and_draft(self):

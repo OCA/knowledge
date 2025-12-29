@@ -1,4 +1,3 @@
-from odoo import Command
 from odoo.exceptions import UserError
 from odoo.tests import new_test_user
 
@@ -11,23 +10,44 @@ class TestDocumentPageApproval(BaseCommon):
         super().setUpClass()
         cls.page_obj = cls.env["document.page"]
         cls.history_obj = cls.env["document.page.history"]
+        cls.category_model = cls.env["document.page"]
 
-        # Demo Data
-        cls.category1 = cls.env.ref("document_page.demo_category1")
-        cls.page1 = cls.env.ref("document_page.demo_page1")
-
-        # Create test user without groups first
+        # Create test users
+        cls.manager_user = new_test_user(
+            cls.env,
+            login="test_manager",
+            groups="document_page.group_document_manager",
+            name="Test Manager",
+            email="manager@example.com",
+        )
         cls.user2 = new_test_user(
             cls.env,
             login="test-user2",
-            groups="document_page_approval.group_document_approver_user",
+            groups="document_page_approval.group_document_approver_user,document_knowledge.group_document_user",
+            name="Test Approver",
+            email="approver@example.com",
+        )
+
+        # Create category and page
+        cls.category1 = cls.category_model.create(
+            {
+                "name": "Demo Category 1",
+                "type": "category",
+            }
+        )
+        cls.page1 = cls.page_obj.create(
+            {
+                "name": "Demo Page 1",
+                "parent_id": cls.category1.id,
+                "content": "<p>Content</p>",
+                "type": "content",
+            }
         )
 
         # Ensure user2 has the approver group
         cls.approver_gid = cls.env.ref(
             "document_page_approval.group_document_approver_user"
         )
-        cls.user2.write({"groups_id": [Command.link(cls.approver_gid.id)]})
 
         # Create category and page that require approval
         cls.category2 = cls.page_obj.create(
@@ -159,7 +179,7 @@ class TestDocumentPageApproval(BaseCommon):
         )
 
         # Remove approval group from user2
-        self.user2.write({"groups_id": [(3, self.approver_gid.id)]})
+        self.user2.write({"group_ids": [(3, self.approver_gid.id)]})
         self.assertFalse(
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
@@ -228,8 +248,12 @@ class TestDocumentPageApproval(BaseCommon):
             }
         )
 
+        # Use a random user instead of base.user_demo
+        random_user = new_test_user(
+            self.env, login="random_user", groups="base.group_user"
+        )
         with self.assertRaises(UserError):
-            chreq.with_user(self.env.ref("base.user_demo")).action_approve()
+            chreq.with_user(random_user).action_approve()
 
         # Grant approval rights
         chreq.with_user(self.user2).action_approve()

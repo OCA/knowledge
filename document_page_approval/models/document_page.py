@@ -109,7 +109,7 @@ class DocumentPage(models.Model):
         if not self.approver_group_ids:
             return True
         # to approve, user must belong to any of the approver groups
-        return len(user.groups_id & self.approver_group_ids) > 0
+        return len(user.group_ids & self.approver_group_ids) > 0
 
     def _compute_has_changes_pending_approval(self):
         history = self.env["document.page.history"]
