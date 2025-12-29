@@ -7,12 +7,11 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Ernesto Tejeda
   - Víctor Martínez
-
 - Trobz
   - Dung Tran \<<dungtd@trobz.com>\>
-
 - [Sygel](https://www.sygel.es):
   - Ángel García de la Chica Herrera
-
 - [Dixmit](https://www.dixmit.com):
   - Enric Tobella
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia

@@ -7,8 +7,27 @@ class TestDocumentPage(common.TransactionCase):
         super().setUp()
         self.page_obj = self.env["document.page"]
         self.history_obj = self.env["document.page.history"]
-        self.category1 = self.env.ref("document_page.demo_category1")
-        self.page1 = self.env.ref("document_page.demo_page1")
+        self.category1 = self.page_obj.create(
+            {
+                "name": "Odoo Features",
+                "type": "category",
+                "template": (
+                    "\nSummary of the feature\n\n"
+                    "Long explanation\n\n"
+                    "Conclusion\n\n"
+                    "Additional ressources\n\n"
+                ),
+            }
+        )
+        self.page1 = self.page_obj.create(
+            {
+                "name": "Odoo 15.0 Functional Demo",
+                "parent_id": self.category1.id,
+                "content": "Test Content",
+                "draft_name": "1.0",
+                "draft_summary": "Init",
+            }
+        )
 
     def test_page_creation(self):
         page = self.page_obj.create(
