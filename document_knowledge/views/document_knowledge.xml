@@ -20,7 +20,7 @@
                     string="Documents"
                     domain="[('res_model', 'not like', 'ir.%'), ('res_model', '!=', False)]"
                 />
-                <group string="Group by">
+                <group>
                     <filter
                         name="group_model"
                         string="Model"
