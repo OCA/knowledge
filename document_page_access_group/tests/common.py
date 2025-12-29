@@ -18,7 +18,7 @@ class TestDocumentPageAccessGroupBase(BaseCommon):
             login="test-manager-user",
             groups="document_knowledge.group_document_user",
         )
-        cls.manager_user.write({"groups_id": [Command.link(cls.group.id)]})
+        cls.manager_user.write({"group_ids": [Command.link(cls.group.id)]})
         cls.public_page = cls.env["document.page"].create(
             {"name": "Public Page", "type": "content"}
         )
