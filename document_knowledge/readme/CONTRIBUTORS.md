@@ -10,8 +10,8 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Vicent Cubells
   - Ernesto Tejeda
-
-Trobz
-
-- Dung Tran \<<dungtd@trobz.com>\>
-- Khoi (Kien Kim) <khoikk@trobz.com>
+- Trobz
+  - Dung Tran \<<dungtd@trobz.com>\>
+  - Khoi (Kien Kim) <khoikk@trobz.com>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
