@@ -4,7 +4,6 @@
 
 from odoo import fields, models
 from odoo.exceptions import UserError
-from odoo.tools.translate import _
 
 
 class DocumentPageHistory(models.Model):
@@ -44,11 +43,11 @@ class DocumentPageHistory(models.Model):
         """Set a change request as draft"""
         for rec in self:
             if not rec.state == "cancelled":
-                raise UserError(_("You need to cancel it before reopening."))
+                raise UserError(self.env._("You need to cancel it before reopening."))
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _(
-                        "You are not authorized to do this.\r\n"
+                    self.env._(
+                        "You are not authorized to do this.\n"
                         "Only owners or approvers can reopen Change Requests."
                     )
                 )
@@ -64,11 +63,14 @@ class DocumentPageHistory(models.Model):
         )
         for rec in self:
             if rec.state != "draft":
-                raise UserError(_("Can't approve pages in '%s' state.") % rec.state)
+                raise UserError(
+                    self.env._("Can't approve pages in '%(state)s' state.")
+                    % {"state": rec.state}
+                )
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _(
-                        "You are not authorized to do this.\r\n"
+                    self.env._(
+                        "You are not authorized to do this.\n"
                         "Only owners or approvers can request approval."
                     )
                 )
@@ -89,17 +91,21 @@ class DocumentPageHistory(models.Model):
         """Set a change request as approved."""
         for rec in self:
             if rec.state not in ["draft", "to approve"]:
-                raise UserError(_("Can't approve page in '%s' state.") % rec.state)
+                raise UserError(
+                    self.env._("Can't approve page in '%(state)s' state.")
+                    % {"state": rec.state}
+                )
             if not rec.am_i_approver:
                 raise UserError(
-                    _(
-                        "You are not authorized to do this.\r\n"
-                        "Only approvers with these groups can approve this: {}"
-                    ).format(
-                        ", ".join(
-                            [g.display_name for g in rec.page_id.approver_group_ids]
-                        )
+                    self.env._(
+                        "You are not authorized to do this.\n"
+                        "Only approvers with these groups can approve this: %(groups)s"
                     )
+                    % {
+                        "groups": ", ".join(
+                            g.display_name for g in rec.page_id.approver_group_ids
+                        )
+                    }
                 )
 
             # Update state
@@ -115,13 +121,15 @@ class DocumentPageHistory(models.Model):
             # Notify state change
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request has been approved by %s.")
-                % (self.env.user.name),
+                body=self.env._("Change request has been approved by %(user)s.")
+                % {"user": self.env.user.name},
             )
             # Notify followers a new version is available
             rec.page_id.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("New version of the document %s approved.") % (rec.page_id.name),
+                body=self.env._("New version of the document {} approved.").format(
+                    rec.page_id.name
+                ),
             )
 
     def action_cancel(self):
@@ -130,8 +138,13 @@ class DocumentPageHistory(models.Model):
         for rec in self:
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request <b>%(name)s</b> has been cancelled by %(user)s.")
-                % ({"name": rec.display_name, "user": self.env.user.name}),
+                body=self.env._(
+                    "Change request <b>%(name)s</b> has been cancelled by %(user)s."
+                )
+                % {
+                    "name": rec.display_name,
+                    "user": self.env.user.name,
+                },
             )
 
     def action_cancel_and_draft(self):
