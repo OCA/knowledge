@@ -2,11 +2,12 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from psycopg2 import IntegrityError
 
-from odoo.tests.common import TransactionCase
 from odoo.tools.misc import mute_logger
 
+from odoo.addons.base.tests.common import BaseCommon
 
-class TestDocumentPageTag(TransactionCase):
+
+class TestDocumentPageTag(BaseCommon):
     def test_document_page_tag(self):
         testtag = self.env["document.page.tag"].name_create("test")
         # check we're charitable on duplicates
