@@ -1,45 +1,56 @@
 # Copyright 2023 Foodles (https://www.foodles.com/)
 # @author Pierre Verkest <pierreverkest84@gmail.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo_test_helper import FakeModelLoader
 
-from .test_attachment_zipped_download import TestAttachmentZippedDownloadBase
+import base64
+
+from odoo import fields, models
+from odoo.orm.model_classes import add_to_registry
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestMixin(TestAttachmentZippedDownloadBase):
+class TestAttachmentDownload(models.TransientModel):
+    _name = "test.attachment.download"
+    _inherit = "ir.attachment.action_download"
+    _description = "Test Attachment Download"
+
+    name = fields.Char()
+
+
+class TestIrAttachmentActionDownload(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.loader = FakeModelLoader(cls.env, cls.__module__)
-        cls.addClassCleanup(cls.loader.restore_registry)
-        cls.loader.backup_registry()
 
-        # Imported Test model must be done after the backup_registry
-        from .models.res_partner import ResPartner
+        add_to_registry(cls.registry, TestAttachmentDownload)
+        model_names = [TestAttachmentDownload._name]
 
-        cls.loader.update_registry((ResPartner,))
+        cls.registry._setup_models__(cls.env.cr, model_names)
+        cls.registry.init_models(cls.env.cr, model_names, {"models_to_check": True})
 
-        cls.partner_1 = cls.env["res.partner"].create({"name": "Test partner 1"})
-        cls.partner_2 = cls.env["res.partner"].create({"name": "Test partner 2"})
-        cls.partner_3 = cls.env["res.partner"].create({"name": "Test partner 3"})
+        cls.addClassCleanup(cls.registry.__delitem__, TestAttachmentDownload._name)
 
-        cls.partner_1_f1 = cls._create_attachment(
-            cls.env.uid,
-            "partner_1-f1.txt",
-            model="res.partner",
-            res_id=cls.partner_1.id,
-        )
-        cls.partner_1_f2 = cls._create_attachment(
-            cls.env.uid,
-            "partner_1-f2.txt",
-            model="res.partner",
-            res_id=cls.partner_1.id,
-        )
-        cls.partner_2_f1 = cls._create_attachment(
-            cls.env.uid,
-            "partner_2-f1.txt",
-            model="res.partner",
-            res_id=cls.partner_2.id,
+        cls.test_model = cls.env[TestAttachmentDownload._name]
+
+        cls.partner_1 = cls.test_model.create({"name": "Test partner 1"})
+        cls.partner_2 = cls.test_model.create({"name": "Test partner 2"})
+        cls.partner_3 = cls.test_model.create({"name": "Test partner 3"})
+
+        cls.partner_1_f1 = cls._create_attachment(cls.partner_1, "partner_1-f1.txt")
+        cls.partner_1_f2 = cls._create_attachment(cls.partner_1, "partner_1-f2.txt")
+        cls.partner_2_f1 = cls._create_attachment(cls.partner_2, "partner_2-f1.txt")
+
+    @classmethod
+    def _create_attachment(cls, record, filename):
+        return cls.env["ir.attachment"].create(
+            {
+                "name": filename,
+                "res_model": record._name,
+                "res_id": record.id,
+                "type": "binary",
+                "datas": base64.b64encode(b"Content"),
+            }
         )
 
     def test_action_download_attachments_no_attachment(self):

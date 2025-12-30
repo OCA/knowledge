@@ -28,7 +28,7 @@ class IrAttachment(models.Model):
         zip_buffer = BytesIO()
         with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
             for attachment in self:
-                attachment.check("read")
+                attachment.check_access("read")
                 zip_file.writestr(
                     attachment._compute_zip_file_name(),
                     attachment.raw,
