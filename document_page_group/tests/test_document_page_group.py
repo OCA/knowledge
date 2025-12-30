@@ -16,7 +16,7 @@ class TestDocumentPageGroup(BaseCommon):
                 "name": "user",
                 "login": "login",
                 "email": "email",
-                "groups_id": [Command.link(knowledge_group)],
+                "group_ids": [Command.link(knowledge_group)],
             }
         )
         cls.group = cls.env.ref("document_page.group_document_manager")
