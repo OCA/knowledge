@@ -2,30 +2,20 @@
 <!-- Copyright 2018 Tecnativa - Ernesto Tejeda
      Copyright 2021 Tecnativa - Víctor Martínez
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-<templates>
+<templates xml:space="preserve">
     <t t-inherit="mail.Chatter" t-inherit-mode="extension">
-        <xpath expr="//AttachmentList//..//FileUploader/t" position="replace">
-            <t t-set-slot="toggler">
-                <div class="d-flex mx-auto">
-                    <button
-                        class="btn btn-link"
-                        type="button"
-                        t-att-disabled="!state.thread.hasWriteAccess"
-                    >
-                        <i class="fa fa-plus-square" />
-                        Attach files
-                    </button>
-                    <button
-                        class="btn btn-link"
-                        type="button"
-                        t-att-disabled="!state.thread.hasWriteAccess"
-                        t-on-click="_onAddUrl"
-                    >
-                        <i class="fa fa-plus-square" />
-                        Add URL
-                    </button>
-                </div>
-            </t>
+        <xpath expr="//AttachmentList//..//FileUploader/t/*" position="replace">
+            <div class="d-flex mx-auto">$0</div>
+        </xpath>
+        <xpath expr="//AttachmentList//..//FileUploader//button" position="after">
+            <button
+                class="btn btn-link"
+                type="button"
+                t-att-disabled="!state.thread.hasWriteAccess"
+                t-on-click="_onAddUrl"
+            >
+                <i class="fa fa-plus-square" /> Add URL
+            </button>
         </xpath>
     </t>
     <t t-inherit="mail.AttachmentList" t-inherit-mode="extension">
