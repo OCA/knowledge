@@ -27,12 +27,6 @@ msgid "Add URL"
 msgstr ""
 
 #. module: document_url
-#. odoo-javascript
-#: code:addons/document_url/static/src/xml/url.xml:0
-msgid "Attach files"
-msgstr ""
-
-#. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment
 msgid "Attachment"
 msgstr ""
