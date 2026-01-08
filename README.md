@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [document_page_project](document_page_project/) | 18.0.1.0.0 | <a href='https://github.com/LoisRForgeFlow'><img src='https://github.com/LoisRForgeFlow.png' width='32' height='32' style='border-radius:50%;' alt='LoisRForgeFlow'/></a> | This module links document pages to projects
 [document_page_reference](document_page_reference/) | 18.0.2.1.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | Include references on document pages
 [document_page_tag](document_page_tag/) | 18.0.1.0.0 |  | Allows you to assign tags or keywords to pages and search for them afterwards
-[document_url](document_url/) | 18.0.1.0.0 |  | URL attachment
+[document_url](document_url/) | 18.0.1.0.1 |  | URL attachment
 
 [//]: # (end addons)
 
