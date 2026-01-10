@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-05 11:50+0000\n"
-"PO-Revision-Date: 2023-06-22 15:08+0000\n"
+"PO-Revision-Date: 2026-01-10 10:42+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/it/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: attachment_preview
 #: model:ir.model,name:attachment_preview.model_ir_attachment
@@ -37,7 +37,7 @@ msgstr "Apri in una pagina nuova"
 #: code:addons/attachment_preview/static/src/xml/attachment_preview.xml:0
 #, python-format
 msgid "Open preview {{attachmentCard.attachment.name}} in a new tab"
-msgstr ""
+msgstr "Apri anteprima {{attachmentCard.attachment.name}} in una nuova scheda"
 
 #. module: attachment_preview
 #. openerp-web
@@ -59,3 +59,4 @@ msgstr "Anteprima %s"
 #, python-format
 msgid "Preview {{attachmentCard.attachment.displayName}} in side panel"
 msgstr ""
+"Anteprima {{attachmentCard.attachment.displayName}} nel pannello laterale"
