@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     Copyright 2021 Tecnativa - Víctor Martínez
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates xml:space="preserve">
+    <t t-inherit="mail.Chatter" t-inherit-mode="extension">
+        <xpath expr="//AttachmentList//..//FileUploader/t/*" position="replace">
+            <div class="d-flex mx-auto">$0</div>
+        </xpath>
+        <xpath expr="//AttachmentList//..//FileUploader//button" position="after">
+            <button
+                class="btn btn-link"
+                type="button"
+                t-att-disabled="!state.thread.hasWriteAccess"
+                t-on-click="_onAddUrl"
+            >
+                <i class="fa fa-plus-square" /> Add URL
+            </button>
+        </xpath>
+    </t>
+    <t t-inherit="mail.AttachmentList" t-inherit-mode="extension">
+        <xpath
+            expr="//div[hasclass('o-mail-AttachmentContainer')]"
+            position="attributes"
+        >
+            <attribute name="t-att-class">{
+                'o-inMessage': env.inMessage,
+                'o-isImage': attachment.isImage,
+                'o-isUploading opacity-25': attachment.uploading,
+                'o-viewable': attachment.isViewable,
+                'o_attachment_url_container': attachment.mimetype === 'application/link',
+            }</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o-mail-AttachmentCard')]" position="before">
+            <div
+                t-elif="attachment.mimetype === 'application/link'"
+                class="o_attachment_url_chip d-flex align-items-center w-100 h-100"
+                t-att-title="attachment.name"
+            >
+                <div class="d-flex align-items-center text-truncate flex-grow-1">
+                    <a
+                        t-att-href="attachment.url"
+                        target="_blank"
+                        t-on-click.stop=""
+                        class="o_attachment_url_link_icon"
+                    >
+                        <i class="fa fa-link fa-lg o_attachment_url_icon" />
+                    </a>
+                    <span class="text-truncate ms-1" t-esc="attachment.name" />
+                </div>
+                <i
+                    t-if="attachment.isDeletable"
+                    class="fa fa-trash-o o_attachment_url_delete"
+                    t-on-click.stop="() => this.onClickUnlink(attachment)"
+                    title="Remove"
+                />
+            </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o-mail-AttachmentCard')]" position="attributes">
+            <attribute
+                name="t-if"
+            >attachment.mimetype !== 'application/link'</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o-mail-Attachment-hover')]" position="attributes">
+            <attribute
+                name="t-if"
+            >!isMobileOS and attachment.mimetype !== 'application/link'</attribute>
+        </xpath>
+        <xpath expr="//Actions" position="replace">
+            <Actions
+                t-elif="isMobileOS and attachment.mimetype !== 'application/link'"
+                actions="getActions(attachment)"
+            />
+        </xpath>
+    </t>
+</templates>
