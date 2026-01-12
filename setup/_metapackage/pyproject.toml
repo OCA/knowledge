@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-knowledge"
+version = "19.0.20260112.0"
+dependencies = [
+    "odoo-addon-document_url==19.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 19.0",
+]
