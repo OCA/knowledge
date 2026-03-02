@@ -1,5 +1,6 @@
 from odoo.exceptions import UserError
 from odoo.tests import new_test_user
+from odoo.tools import mute_logger
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -73,6 +74,7 @@ class TestDocumentPageApproval(BaseCommon):
         self.assertTrue(page.has_changes_pending_approval)
         self.assertEqual(len(page.history_ids), 0)
 
+    @mute_logger("odoo.models.unlink")
     def test_change_request_approve(self):
         """Test that an approver can approve a change request."""
         page = self.page2
@@ -92,6 +94,11 @@ class TestDocumentPageApproval(BaseCommon):
         self.assertEqual(chreq.state, "approved")
         self.assertEqual(chreq.content, page.content)
 
+        # Remove the linked mail.message and define a specific context to simulate that
+        # when accessing from the category smart button, there is no error when creating
+        # the history and sending the email
+        self.env["mail.message"].browse(page.parent_id.id).unlink()
+        page = page.with_context(default_parent_id=page.parent_id.id)
         # Create new change request
         page.write({"content": "<p>New content</p>"})
         page.invalidate_model()  # Recompute fields
@@ -110,6 +117,7 @@ class TestDocumentPageApproval(BaseCommon):
         page.write({"content": "<p>New content</p>"})
         self.assertEqual(page.content, "<p>New content</p>")
 
+    @mute_logger("odoo.models.unlink")
     def test_change_request_from_scratch(self):
         """Test a full change request lifecycle from draft to approval."""
         page = self.page2
@@ -184,6 +192,7 @@ class TestDocumentPageApproval(BaseCommon):
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
 
+    @mute_logger("odoo.models.unlink")
     def test_pending_approval_detection(self):
         """Ensure the system detects pending approval changes"""
         # Reset page2 by removing previous history
