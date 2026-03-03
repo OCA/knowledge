@@ -4,6 +4,7 @@
 
 from odoo import fields, models
 from odoo.exceptions import UserError
+from odoo.tools.misc import clean_context
 from odoo.tools.translate import _
 
 
@@ -80,7 +81,10 @@ class DocumentPageHistory(models.Model):
                     [("groups_id", "in", guids), ("groups_id", "in", approver_gid.id)]
                 )
                 rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
-                rec.message_post_with_source(template)
+                # pylint: disable=W8121
+                rec.with_context(
+                    clean_context(self.env.context)
+                ).message_post_with_source(template)
             else:
                 # auto-approve if approval is not required
                 rec.action_approve()
