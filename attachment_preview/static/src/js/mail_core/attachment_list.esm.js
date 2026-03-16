@@ -4,7 +4,6 @@ import {patch} from "@web/core/utils/patch";
 
 patch(AttachmentList.prototype, {
     _onPreviewAttachment(attachment) {
-        // eslint-disable-next-line no-undef
         var $target = $(event.currentTarget);
         var split_screen = $target.attr("data-target") !== "new";
         showPreview(

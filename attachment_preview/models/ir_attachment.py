@@ -76,12 +76,13 @@ class IrAttachment(models.Model):
     def get_attachment_extension(self, ids):
         return self.get_binary_extension(self._name, ids, "datas", "name")
 
-    def _to_store(self, store: Store, /, *, fields=None, extra_fields=None):
-        """Adds extension in Store for attachments"""
-        res = super()._to_store(store=store, fields=fields, extra_fields=extra_fields)
-        attachment_extension = self.get_attachment_extension(self.ids)
-        for attachment in store.data.get("ir.attachment"):
-            store.data["ir.attachment"][attachment]["extension"] = (
-                attachment_extension.get(attachment[0], "")
+    def _to_store_defaults(self, target):
+        """Adds extension in Store defaults for attachments"""
+        defaults = super()._to_store_defaults(target)
+        defaults.append(
+            Store.Attr(
+                "extension",
+                lambda a: a.get_attachment_extension(a.id),
             )
-        return res
+        )
+        return defaults

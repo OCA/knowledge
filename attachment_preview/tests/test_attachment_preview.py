@@ -30,7 +30,7 @@ class TestAttachmentPreview(BaseCommon):
         res = self.env["ir.attachment"].get_attachment_extension(attachment.id)
         self.assertEqual(res, "txt")
         store = Store()
-        attachment._to_store(store)
+        store.add(attachment)
         store_data = store.get_result()
         self.assertIn("extension", store_data["ir.attachment"][0])
         res = self.env["ir.attachment"].get_attachment_extension(

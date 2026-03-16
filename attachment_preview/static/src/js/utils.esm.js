@@ -25,11 +25,9 @@ export function getUrl(
     var url = "";
     if (attachment_url) {
         if (attachment_url.slice(0, 21) === "/web/static/lib/pdfjs") {
-            // eslint-disable-next-line no-undef
             url = (window.location.origin || "") + attachment_url;
         } else {
             url =
-                // eslint-disable-next-line no-undef
                 (window.location.origin || "") +
                 "/attachment_preview/static/lib/ViewerJS/index.html" +
                 "?type=" +
@@ -38,13 +36,11 @@ export function getUrl(
                 encodeURIComponent(attachment_title) +
                 "&zoom=automatic" +
                 "#" +
-                // eslint-disable-next-line no-undef
                 attachment_url.replace(window.location.origin, "");
         }
         return url;
     }
     url =
-        // eslint-disable-next-line no-undef
         (window.location.origin || "") +
         "/attachment_preview/static/lib/ViewerJS/index.html" +
         "?type=" +
@@ -74,7 +70,6 @@ export function showPreview(
             attachment_info_list,
         });
     } else {
-        // eslint-disable-next-line no-undef
         window.open(
             getUrl(
                 attachment_id,
