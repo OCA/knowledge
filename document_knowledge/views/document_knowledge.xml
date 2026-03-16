@@ -12,7 +12,7 @@
         <field name="model">ir.attachment</field>
         <field name="inherit_id" ref="base.view_attachment_search" />
         <field name="arch" type="xml">
-            <search>
+            <xpath expr="//field[@name='create_date']" position="after">
                 <field name="res_model" />
                 <field name="index_content" />
                 <filter
@@ -20,14 +20,14 @@
                     string="Documents"
                     domain="[('res_model', 'not like', 'ir.%'), ('res_model', '!=', False)]"
                 />
-                <group string="Group by">
-                    <filter
-                        name="group_model"
-                        string="Model"
-                        context="{'group_by': 'res_model'}"
-                    />
-                </group>
-            </search>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter
+                    name="group_model"
+                    string="Model"
+                    context="{'group_by': 'res_model'}"
+                />
+            </xpath>
         </field>
     </record>
     <!-- Top menu item -->

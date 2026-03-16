@@ -7,4 +7,8 @@
         </field>
         <field name="sequence">30</field>
     </record>
+    <record model="res.groups.privilege" id="res_groups_privilege_knowledge">
+        <field name="name">Knowledge</field>
+        <field name="category_id" ref="module_category_knowledge" />
+    </record>
 </odoo>
