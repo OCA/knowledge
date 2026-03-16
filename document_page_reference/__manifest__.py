@@ -5,7 +5,7 @@
     "name": "Document Page Reference",
     "summary": """
         Include references on document pages""",
-    "version": "18.0.2.1.0",
+    "version": "19.0.2.1.0",
     "license": "AGPL-3",
     "author": "Creu Blanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
