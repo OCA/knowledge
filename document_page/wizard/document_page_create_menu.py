@@ -42,7 +42,7 @@ class DocumentPageCreateMenu(models.TransientModel):
             "type": "ir.actions.act_window",
             "target": "current",
         }
-        value["domain"] = "[('parent_id','=',%d)]" % page.id
+        value["domain"] = f"[('parent_id','=',{page.id})]"
         value["res_id"] = page.id
 
         # only the super user is allowed to create menu due to security rules

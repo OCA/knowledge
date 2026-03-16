@@ -15,12 +15,12 @@ class IrUiMenu(models.Model):
                 self.with_context(**{"ir.ui.menu.full_list": True}).search([]).sudo()
             )
             groups = (
-                self.env.user.groups_id
+                self.env.user.group_ids
                 if not debug
-                else self.env.user.groups_id - self.env.ref("base.group_no_one")
+                else self.env.user.group_ids - self.env.ref("base.group_no_one")
             )
             authorized_menus = menus.filtered(
-                lambda m: not m.groups_id or m.groups_id and groups
+                lambda m: not m.group_ids or m.group_ids and groups
             )
             authorized_folder_menus = authorized_menus.filtered(lambda m: not m.action)
             visible_ids = visible_ids.union(authorized_folder_menus.ids)

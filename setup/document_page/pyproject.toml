@@ -1,0 +1,7 @@
+[project]
+name = "odoo-addon-document_page"
+dynamic = ["version"]
+
+[build-system]
+requires = ["whool"]
+build-backend = "whool.buildapi"

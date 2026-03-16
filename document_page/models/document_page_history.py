@@ -4,7 +4,7 @@
 
 from odoo import api, fields, models
 
-from odoo.addons.web_editor.models.diff_utils import (
+from odoo.addons.html_editor.models.diff_utils import (
     generate_comparison,
 )
 
@@ -54,4 +54,4 @@ class DocumentPageHistory(models.Model):
     @api.depends("page_id")
     def _compute_display_name(self):
         for rec in self:
-            rec.display_name = rec.id, "%s #%i" % (rec.page_id.name, rec.id)
+            rec.display_name = f"{rec.page_id.name} #{rec.id}"
