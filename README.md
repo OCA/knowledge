@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[document_knowledge](document_knowledge/) | 19.0.1.0.0 |  | Documents Knowledge
 [document_url](document_url/) | 19.0.1.0.0 |  | URL attachment
 
 [//]: # (end addons)
