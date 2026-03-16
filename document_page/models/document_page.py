@@ -187,7 +187,7 @@ class DocumentPage(models.Model):
     def copy(self, default=None):
         default = dict(
             default or {},
-            name=self.env._("%s (copy)") % self.name,
+            name=self.env._("%s (copy)", self.name),
             content=self.content,
             draft_name="1.0",
             draft_summary=self.env._("summary"),
