@@ -5,7 +5,6 @@
 from odoo import fields, models
 from odoo.exceptions import UserError
 from odoo.tools.misc import clean_context
-from odoo.tools.translate import _
 
 
 class DocumentPageHistory(models.Model):
@@ -37,7 +36,9 @@ class DocumentPageHistory(models.Model):
 
     am_i_owner = fields.Boolean(compute="_compute_am_i_owner")
 
-    am_i_approver = fields.Boolean(related="page_id.am_i_approver", related_sudo=False)
+    am_i_approver = fields.Boolean(
+        related="page_id.am_i_approver", related_sudo=False
+    )
 
     page_url = fields.Text(compute="_compute_page_url", string="URL")
 
@@ -45,10 +46,12 @@ class DocumentPageHistory(models.Model):
         """Set a change request as draft"""
         for rec in self:
             if not rec.state == "cancelled":
-                raise UserError(_("You need to cancel it before reopening."))
+                raise UserError(
+                    self.env._("You need to cancel it before reopening.")
+                )
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _(
+                    self.env._(
                         "You are not authorized to do this.\r\n"
                         "Only owners or approvers can reopen Change Requests."
                     )
@@ -65,10 +68,12 @@ class DocumentPageHistory(models.Model):
         )
         for rec in self:
             if rec.state != "draft":
-                raise UserError(_("Can't approve pages in '%s' state.") % rec.state)
+                raise UserError(
+                    self.env._("Can't approve pages in '%s' state.", rec.state)
+                )
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _(
+                    self.env._(
                         "You are not authorized to do this.\r\n"
                         "Only owners or approvers can request approval."
                     )
@@ -78,9 +83,14 @@ class DocumentPageHistory(models.Model):
                 rec.write({"state": "to approve"})
                 guids = [g.id for g in rec.page_id.approver_group_ids]
                 users = self.env["res.users"].search(
-                    [("groups_id", "in", guids), ("groups_id", "in", approver_gid.id)]
+                    [
+                        ("group_ids", "in", guids),
+                        ("group_ids", "in", approver_gid.id),
+                    ]
                 )
-                rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
+                rec.message_subscribe(
+                    partner_ids=users.mapped("partner_id").ids
+                )
                 # pylint: disable=W8121
                 rec.with_context(
                     clean_context(self.env.context)
@@ -93,16 +103,21 @@ class DocumentPageHistory(models.Model):
         """Set a change request as approved."""
         for rec in self:
             if rec.state not in ["draft", "to approve"]:
-                raise UserError(_("Can't approve page in '%s' state.") % rec.state)
+                raise UserError(
+                    self.env._(
+                        "Can't approve page in '%s' state.", rec.state
+                    )
+                )
             if not rec.am_i_approver:
                 raise UserError(
-                    _(
+                    self.env._(
                         "You are not authorized to do this.\r\n"
-                        "Only approvers with these groups can approve this: {}"
-                    ).format(
+                        "Only approvers with these groups can approve"
+                        " this: %s",
                         ", ".join(
-                            [g.display_name for g in rec.page_id.approver_group_ids]
-                        )
+                            g.display_name
+                            for g in rec.page_id.approver_group_ids
+                        ),
                     )
                 )
 
@@ -110,7 +125,7 @@ class DocumentPageHistory(models.Model):
             rec.write(
                 {
                     "state": "approved",
-                    "approved_date": fields.datetime.now(),
+                    "approved_date": fields.Datetime.now(),
                     "approved_uid": self.env.uid,
                 }
             )
@@ -119,13 +134,18 @@ class DocumentPageHistory(models.Model):
             # Notify state change
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request has been approved by %s.")
-                % (self.env.user.name),
+                body=self.env._(
+                    "Change request has been approved by %s.",
+                    self.env.user.name,
+                ),
             )
             # Notify followers a new version is available
             rec.page_id.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("New version of the document %s approved.") % (rec.page_id.name),
+                body=self.env._(
+                    "New version of the document %s approved.",
+                    rec.page_id.name,
+                ),
             )
 
     def action_cancel(self):
@@ -134,8 +154,12 @@ class DocumentPageHistory(models.Model):
         for rec in self:
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request <b>%(name)s</b> has been cancelled by %(user)s.")
-                % ({"name": rec.display_name, "user": self.env.user.name}),
+                body=self.env._(
+                    "Change request <b>%(name)s</b> has been"
+                    " cancelled by %(user)s.",
+                    name=rec.display_name,
+                    user=self.env.user.name,
+                ),
             )
 
     def action_cancel_and_draft(self):
@@ -166,10 +190,15 @@ class DocumentPageHistory(models.Model):
         """Shows a diff between this version and the previous version"""
         history = self.env["document.page.history"]
         for rec in self:
-            domain = [("page_id", "=", rec.page_id.id), ("state", "=", "approved")]
+            domain = [
+                ("page_id", "=", rec.page_id.id),
+                ("state", "=", "approved"),
+            ]
             if rec.approved_date:
                 domain.append(("approved_date", "<", rec.approved_date))
-            prev = history.search(domain, limit=1, order="approved_date DESC")
+            prev = history.search(
+                domain, limit=1, order="approved_date DESC"
+            )
             if prev:
                 rec.diff = self._get_diff(prev.id, rec.id)
             else:

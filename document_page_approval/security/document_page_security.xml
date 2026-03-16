@@ -2,7 +2,7 @@
 <odoo>
     <record id="group_document_approver_user" model="res.groups">
         <field name="name">Approver</field>
-        <field name="category_id" ref="document_knowledge.module_category_knowledge" />
+        <field name="privilege_id" ref="document_knowledge.res_groups_privilege_knowledge" />
         <field
             name="implied_ids"
             eval="[(4, ref('document_page.group_document_editor'))]"

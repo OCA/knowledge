@@ -28,7 +28,7 @@ class TestDocumentPageApproval(BaseCommon):
         cls.approver_gid = cls.env.ref(
             "document_page_approval.group_document_approver_user"
         )
-        cls.user2.write({"groups_id": [Command.link(cls.approver_gid.id)]})
+        cls.user2.write({"group_ids": [Command.link(cls.approver_gid.id)]})
 
         # Create category and page that require approval
         cls.category2 = cls.page_obj.create(
@@ -167,7 +167,7 @@ class TestDocumentPageApproval(BaseCommon):
         )
 
         # Remove approval group from user2
-        self.user2.write({"groups_id": [(3, self.approver_gid.id)]})
+        self.user2.write({"group_ids": [(3, self.approver_gid.id)]})
         self.assertFalse(
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
