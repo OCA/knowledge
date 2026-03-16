@@ -12,7 +12,7 @@ class IrUiMenu(models.Model):
         if self._context.get("ir.ui.menu.authorized_list"):
             # Add the authorized by groups menus that does not have an action
             menus = (
-                self.with_context(**{"ir.ui.menu.full_list": True}).search([]).sudo()
+                self.with_context(**{"ir.ui.menu.full_list": True}).search([]).sudo()  # pylint: disable=no-search-all
             )
             groups = (
                 self.env.user.group_ids
