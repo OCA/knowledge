@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-oca-knowledge"
-version = "19.0.20260316.0"
+version = "19.0.20260317.0"
 dependencies = [
     "odoo-addon-document_knowledge==19.0.*",
+    "odoo-addon-document_page==19.0.*",
     "odoo-addon-document_url==19.0.*",
 ]
 classifiers=[
