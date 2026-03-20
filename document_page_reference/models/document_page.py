@@ -3,6 +3,8 @@
 
 import logging
 
+from markupsafe import Markup
+
 from odoo import _, api, fields, models, tools
 from odoo.exceptions import ValidationError
 from odoo.tools.misc import html_escape
@@ -52,24 +54,31 @@ class DocumentPage(models.Model):
     reference = fields.Char(
         help="Used to find the document, it can contain letters, numbers and _"
     )
-    content_parsed = fields.Html(compute="_compute_content_parsed")
+    content_parsed = fields.Html(compute="_compute_content_parsed", sanitize=False)
 
     def _get_page_index(self, link=True):
         """Override to use oe_direct_line links compatible with the widget."""
         self.ensure_one()
         index = [
-            "<li>" + subpage._get_page_index() + "</li>" for subpage in self.child_ids
+            Markup("<li>") + subpage._get_page_index() + Markup("</li>")
+            for subpage in self.child_ids
         ]
-        r = ""
+        r = Markup("")
         if link:
             r = (
-                '<a href="#" class="oe_direct_line"'
-                f' data-oe-model="{self._name}" data-oe-id="{self.id}">'
+                Markup(
+                    '<a href="#" class="oe_direct_line"'
+                    ' data-oe-model="%s" data-oe-id="%s">'
+                )
+                % (
+                    self._name,
+                    self.id,
+                )
                 + html_escape(self.name)
-                + "</a>"
+                + Markup("</a>")
             )
         if index:
-            r += "<ul>" + "".join(index) + "</ul>"
+            r += Markup("<ul>") + Markup("").join(index) + Markup("</ul>")
         return r
 
     def get_formview_action(self, access_uid=None):

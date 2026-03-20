@@ -75,4 +75,4 @@ class TestDocumentReference(TransactionCase):
     def test_compute_content_parsed(self):
         self.page1.content = "<p>"
         self.page1._compute_content_parsed()
-        self.assertEqual(str(self.page1.content_parsed), "<p></p>")
+        self.assertEqual(str(self.page1.content_parsed), "<p>")
