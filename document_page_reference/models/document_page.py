@@ -54,23 +54,44 @@ class DocumentPage(models.Model):
     )
     content_parsed = fields.Html(compute="_compute_content_parsed")
 
+    def _get_page_index(self, link=True):
+        """Override to use oe_direct_line links compatible with the widget."""
+        self.ensure_one()
+        index = [
+            "<li>" + subpage._get_page_index() + "</li>" for subpage in self.child_ids
+        ]
+        r = ""
+        if link:
+            r = (
+                '<a href="#" class="oe_direct_line"'
+                f' data-oe-model="{self._name}" data-oe-id="{self.id}">'
+                + html_escape(self.name)
+                + "</a>"
+            )
+        if index:
+            r += "<ul>" + "".join(index) + "</ul>"
+        return r
+
     def get_formview_action(self, access_uid=None):
         res = super().get_formview_action(access_uid)
         view_id = self.env.ref("document_page.view_wiki_form").id
         res["views"] = [(view_id, "form")]
         return res
 
-    @api.depends("history_head")
+    @api.depends("history_head", "type")
     def _compute_content_parsed(self):
         for record in self:
-            content = record.get_content()
-            if content == "<p>" and self.content != "<p>":
-                _logger.error(
-                    "Template from page with id = %s cannot be processed correctly"
-                    % self.id
-                )
-                content = self.content
-            record.content_parsed = content
+            if record.type == "category":
+                record.content_parsed = record.content
+            else:
+                content = record.get_content()
+                if content == "<p>" and record.content != "<p>":
+                    _logger.error(
+                        "Template from page with id = %s cannot be "
+                        "processed correctly" % record.id
+                    )
+                    content = record.content
+                record.content_parsed = content
 
     @api.constrains("reference")
     def _check_reference(self):
