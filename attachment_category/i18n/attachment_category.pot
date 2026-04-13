@@ -42,6 +42,7 @@ msgstr ""
 
 #. module: attachment_category
 #: model:ir.model.fields,field_description:attachment_category.field_ir_attachment__category_ids
+#: model:ir.model.fields,field_description:attachment_category.field_product_document__category_ids
 msgid "Category"
 msgstr ""
 
