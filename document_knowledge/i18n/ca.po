@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 03:35+0000\n"
 "PO-Revision-Date: 2024-09-04 18:06+0000\n"
-"Last-Translator: Esteve Blanch Sanmartí <3501974+esteveblanch@users.noreply."
-"github.com>\n"
+"Last-Translator: Esteve Blanch Sanmartí "
+"<3501974+esteveblanch@users.noreply.github.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -93,6 +93,7 @@ msgstr "Model"
 
 #. module: document_knowledge
 #: model:ir.model.fields,field_description:document_knowledge.field_ir_attachment__res_model
+#: model:ir.model.fields,field_description:document_knowledge.field_product_document__res_model
 msgid "Resource Model"
 msgstr "Model del Recurs"
 
