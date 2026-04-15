@@ -9,79 +9,80 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2018-04-17 00:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2026-04-15 11:45+0000\n"
+"Last-Translator: Marcos Chavarría Teijeiro <chavarria1991@gmail.com>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (copia)"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción Necesaria"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoración da Actividade Excepción"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Estado da actividade"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono do tipo de actividade"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Archived"
-msgstr ""
+msgstr "Arquivado"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Número de anexos"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
-msgstr ""
+msgstr "Autor/a"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
 msgid "Backend URL"
-msgstr ""
+msgstr "URL do servidor"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_browse_all_content
 #: model:ir.actions.act_window,name:document_page.action_browse_top_content
 #: model:ir.ui.menu,name:document_page.menu_browse_content
 msgid "Browse Wiki Content"
-msgstr ""
+msgstr "Buscar Contido da Wiki"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -92,7 +93,7 @@ msgstr "Cancelar"
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Categories"
-msgstr ""
+msgstr "Categorías"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_category
@@ -103,38 +104,38 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Changes"
-msgstr ""
+msgstr "Cambios"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__child_ids
 msgid "Children"
-msgstr ""
+msgstr "Fillas"
 
 #. module: document_page
 #: model_terms:ir.actions.act_window,help:document_page.action_page
 msgid "Click to create a new web page."
-msgstr ""
+msgstr "Preme para crear unha nova páxina web."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Pechar"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__color
 msgid "Color Index"
-msgstr ""
+msgstr "Índice de Cor"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__company_id
 msgid "Company"
-msgstr ""
+msgstr "Compañía"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content
@@ -144,13 +145,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
-msgstr ""
+msgstr "Contido"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
-msgstr ""
+msgstr "Crear Menú"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__create_uid
@@ -171,19 +172,19 @@ msgstr "Creado o"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_summary
 msgid "Describe the changes made"
-msgstr ""
+msgstr "Describa os cambios realizados"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__diff
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__diff
 msgid "Diff"
-msgstr ""
+msgstr "Dif."
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr ""
+msgstr "Diferencias"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__display_name
@@ -191,12 +192,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome a amosar"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 msgid "Document Category"
-msgstr ""
+msgstr "Categoría do documento"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -205,7 +206,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Document Page"
-msgstr ""
+msgstr "Páxina do Documento"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_history
