@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-24 22:33+0000\n"
-"PO-Revision-Date: 2025-02-03 17:06+0000\n"
-"Last-Translator: Víctor Martínez <victor.martinez@tecnativa.com>\n"
+"PO-Revision-Date: 2026-04-19 09:18+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
@@ -32,6 +32,7 @@ msgstr ""
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
+#, fuzzy
 msgid ""
 "<p>Hello,</p>\n"
 "            <p><t t-out=\"object.create_uid.name\"/> submited a new Change "
@@ -63,6 +64,30 @@ msgid ""
 "            <p>Odoo</p>\n"
 "        "
 msgstr ""
+"<p>Hola,</p>\n"
+"            <p><t t-out=\"object.create_uid.name\"/> envió una nueva "
+"solicitud de cambio para <b t-out=\"object.page_id.name\"/> y necesita su "
+"aprobación.</p>\n"
+"            <h1>\n"
+"                <a t-att-href=\"object.page_url\" t-"
+"out=\"object.display_name\"/>\n"
+"            </h1>\n"
+"            <p><b>Modificado por:</b> <t t-out=\"object.create_uid.name\"/></"
+"p>\n"
+"            <p><b>Fecha:</b> <t t-out=\"object.create_date\"/></p>\n"
+"            <t t-if=\"object.summary\">\n"
+"                <h3>Resumen</h3>\n"
+"                <p t-out=\"object.summary\"/>\n"
+"            </t>\n"
+"            <h3>Diferencia</h3>\n"
+"            <div style=\"overflow-x:scroll; font-size:0.85em; margin-"
+"bottom:2em;\">\n"
+"                <t t-out=\"object.diff\"/>\n"
+"            </div>\n"
+"            <p>Que tengas un gran día.</p>\n"
+"            <br/>\n"
+"            <p>Odoo</p>\n"
+"        "
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
@@ -299,7 +324,7 @@ msgstr "Pendiente de aprobación"
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Valoraciones"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
@@ -376,6 +401,8 @@ msgid ""
 "You are not authorized to do this.\r\n"
 "Only approvers with these groups can approve this: {}"
 msgstr ""
+"No está autorizado para hacer esto.\n"
+"Sólo los aprobadores con estos grupos pueden aprobarlo: {}"
 
 #. module: document_page_approval
 #. odoo-python
