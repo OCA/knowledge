@@ -91,7 +91,7 @@ class DocumentPage(models.Model):
         )
 
     def get_raw_content(self):
-        return str(self.with_context(raw_reference=True).get_content())
+        return Markup(self.with_context(raw_reference=True).get_content())
 
     @api.model_create_multi
     def create(self, vals_list):
