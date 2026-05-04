@@ -18,7 +18,7 @@ class TestDocumentReference(BaseCommon):
             {"name": "Test Page 1", "content": Markup("{{r2}}"), "reference": "R1"}
         )
         cls.page2 = cls.page_obj.create(
-            {"name": "Test Page 1", "content": Markup("{{r1}}"), "reference": "r2"}
+            {"name": "Test Page 2", "content": Markup("{{r1}}"), "reference": "r2"}
         )
 
     def test_constraints_duplicate_reference(self):
@@ -31,14 +31,16 @@ class TestDocumentReference(BaseCommon):
         with self.assertRaises(ValidationError):
             self.page2.write({"reference": self.page2.reference + "-02"})
 
-    def test_no_contrains(self):
+    def test_no_constrains(self):
         self.page1.write({"reference": False})
         self.assertFalse(self.page1.reference)
         self.page2.write({"reference": False})
         self.assertFalse(self.page2.reference)
 
     def test_check_raw(self):
-        self.assertEqual(self.page2.display_name, self.page1.get_raw_content())
+        self.assertEqual(
+            str(self.page2.display_name), str(self.page1.get_raw_content())
+        )
 
     def test_auto_reference(self):
         """Test if reference is proposed when saving a page without one."""
@@ -71,5 +73,14 @@ class TestDocumentReference(BaseCommon):
             self.assertEqual(res.get(key), expected_value, f"Mismatch in key: {key}")
 
     def test_compute_content_parsed(self):
-        self.page1.content = Markup("<p></p>")
-        self.assertEqual(self.page1.content_parsed, Markup("<p></p>"))
+        self.page1.content = Markup("<p>{{r2}}</p>")
+        self.assertIn("data-oe-model='document.page'", self.page1.content_parsed)
+        self.assertIn(f"data-oe-id='{self.page2.id}'", self.page1.content_parsed)
+        self.assertIn(f"href='{self.page2.backend_url}'", self.page1.content_parsed)
+        self.assertIn("Test Page 2", self.page1.content_parsed)
+
+    def test_inverse_content_replacement(self):
+        self.page1.content = "{{r2}}"
+        self.assertIn(f"data-oe-id='{self.page2.id}'", self.page1.content)
+        self.assertIn(f"href='{self.page2.backend_url}'", self.page1.content_parsed)
+        self.assertNotIn("&lt;a", self.page1.content)
