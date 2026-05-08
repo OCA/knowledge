@@ -88,6 +88,7 @@ class DocumentPage(models.Model):
             page.approver_group_ids = res
 
     @api.depends("is_approval_required", "approver_group_ids")
+    @api.depends_context("uid")
     def _compute_am_i_approver(self):
         """Check if the current user can approve changes to this page."""
         for rec in self:
@@ -111,6 +112,7 @@ class DocumentPage(models.Model):
         # to approve, user must belong to any of the approver groups
         return len(user.groups_id & self.approver_group_ids) > 0
 
+    @api.depends_context("uid")
     def _compute_has_changes_pending_approval(self):
         history = self.env["document.page.history"]
         for rec in self:
@@ -119,6 +121,7 @@ class DocumentPage(models.Model):
             )
             rec.has_changes_pending_approval = changes > 0
 
+    @api.depends_context("uid")
     def _compute_user_has_drafts(self):
         history = self.env["document.page.history"]
         for rec in self:
