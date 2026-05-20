@@ -50,13 +50,17 @@
                             <field name="name" placeholder="Name" />
                         </h1>
                     </div>
-                    <field
-                        name="content"
-                        widget="html"
-                        placeholder="e.g. Once upon a time..."
-                        required="1"
-                        options="{'safe': True, 'codeview': True, 'collaborative': True}"
-                    />
+                    <group colspan="2" nolabel="1">
+                        <field
+                            name="content"
+                            widget="html"
+                            placeholder="e.g. Once upon a time..."
+                            required="1"
+                            options="{'safe': True, 'codeview': True, 'collaborative': True}"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                    </group>
                     <notebook>
                         <page name="info" string="Information">
                             <group>

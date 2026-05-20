@@ -59,12 +59,16 @@
                     </group>
                     <notebook>
                         <page name="content" string="Content">
-                            <field
-                                name="content"
-                                widget="html"
-                                placeholder="e.g. Once upon a time..."
-                                options="{'safe': True, 'codeview': True}"
-                            />
+                            <group colspan="2" nolabel="1">
+                                <field
+                                    name="content"
+                                    widget="html"
+                                    placeholder="e.g. Once upon a time..."
+                                    options="{'safe': True, 'codeview': True}"
+                                    nolabel="1"
+                                    colspan="2"
+                                />
+                            </group>
                         </page>
                         <page name="diff" string="Changes">
                             <field
