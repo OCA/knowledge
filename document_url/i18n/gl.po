@@ -9,19 +9,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 13:00+0000\n"
-"PO-Revision-Date: 2016-08-13 13:00+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"PO-Revision-Date: 2026-05-23 07:54+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_url
 #: model_terms:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 msgid "Add"
-msgstr ""
+msgstr "Engadir"
 
 #. module: document_url
 #. openerp-web
@@ -30,12 +31,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
 #, python-format
 msgid "Add URL"
-msgstr ""
+msgstr "Engadir URL"
 
 #. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "Arquivo adxunto"
 
 #. module: document_url
 #: model_terms:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
@@ -55,7 +56,7 @@ msgstr "Creado o"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome mostrado"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__id
@@ -65,7 +66,7 @@ msgstr "ID"
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación o"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__write_uid
@@ -82,29 +83,29 @@ msgstr "Última actualización en"
 #: code:addons/document_url/static/src/xml/url.xml:0
 #, python-format
 msgid "Link document by URL"
-msgstr ""
+msgstr "Enlazar documento por URL"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__url
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment_add_url
 msgid "Wizard to add URL attachment"
-msgstr ""
+msgstr "Asistente para engadir URL do arquivo adxunto"
 
 #. module: document_url
 #. openerp-web
 #: code:addons/document_url/static/src/xml/url.xml:0
 #, python-format
 msgid "attachmentCard.attachment.mimetype != 'application/link'"
-msgstr ""
+msgstr "attachmentCard.attachment.mimetype != 'application/link'"
 
 #. module: document_url
 #: model_terms:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
