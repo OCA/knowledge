@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class DocumentPage(models.Model):
-
     _inherit = "document.page"
 
     is_public = fields.Boolean(

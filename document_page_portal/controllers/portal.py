@@ -8,15 +8,19 @@ from odoo.http import request
 from odoo.osv.expression import OR
 from odoo.tools.translate import _
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(CustomerPortal):
-    def _prepare_portal_layout_values(self):
-        values = super(CustomerPortal, self)._prepare_portal_layout_values()
-        values["document_page_count"] = request.env["document.page"].search_count(
-            [("type", "=", "content")]
-        )
+    def _prepare_home_portal_values(self, counters):
+        values = super()._prepare_home_portal_values(counters)
+        if "document_page_count" in counters:
+            values["document_page_count"] = (
+                request.env["document.page"].search_count([("type", "=", "content")])
+                if request.env["document.page"].has_access("read")
+                else 0
+            )
         return values
 
     def _document_page_get_page_view_values(
@@ -32,7 +36,7 @@ class CustomerPortal(CustomerPortal):
             values,
             "my_document_pages_history",
             False,
-            **kwargs
+            **kwargs,
         )
 
     @http.route(
@@ -49,7 +53,7 @@ class CustomerPortal(CustomerPortal):
         sortby=None,
         search=None,
         search_in="content",
-        **kw
+        **kw,
     ):
         values = self._prepare_portal_layout_values()
         domain = [("type", "=", "content")]

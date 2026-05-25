@@ -1,5 +1,5 @@
 # Copyright 2020 - TODAY, Marcel Savegnago - Escodoo
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import odoo.tests
 
@@ -15,22 +15,19 @@ class TestPortalDocumentPage(odoo.tests.HttpCase):
                 "is_public": True,
             }
         )
+        self.start_tour("/my", "document_page_portal_tour", login="portal")
 
-        self.browser_js(
-            "/",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".run('document_page_portal_tour')",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".tours.document_page_portal_tour.ready",
-            login="portal",
+    def test_02_document_page_portal_search_tour(self):
+        # Create a public document
+        self.env["document.page"].create(
+            {
+                "name": "Test Public Page 1",
+                "content": "Test content",
+                "is_public": True,
+            }
         )
-
-    def test_02_document_page_portal_tour(self):
-        self.browser_js(
-            "/",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".run('document_page_portal_search_tour')",
-            "odoo.__DEBUG__.services['web_tour.tour']"
-            ".tours.document_page_portal_search_tour.ready",
+        self.start_tour(
+            "/my/knowledge/documents",
+            "document_page_portal_search_tour",
             login="portal",
         )
