@@ -28,7 +28,17 @@ Document Page Portal
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module allows documents to be made available on the portal.
+This module publishes Knowledge document pages (``document.page``
+records of type *Content*) to the website portal, so that logged-in
+portal users can read them from their *My Account* area.
+
+A *Knowledge Documents* entry is added to the portal home, listing the
+pages each user is allowed to see, with search and category badges.
+
+Visibility is controlled per page: a page can be shared with **all
+portal users** (the *Public* flag) or restricted to the page's
+**followers**. Note that *Public* here means "any logged-in portal
+user"; it does **not** expose pages to anonymous website visitors.
 
 **Table of contents**
 
@@ -43,8 +53,17 @@ No configuration required.
 Usage
 =====
 
-- Add a user as a follower of the document or configure the document as
-  public so that it is visible through the user portal.
+To make a document page available on the portal:
+
+1. Open a document page in the backend (under *Knowledge*). Only pages
+   of type *Content* appear on the portal.
+2. Choose who can see it: either tick **Public** to share it with every
+   portal user, or add the relevant portal user(s) as **followers** of
+   the page.
+
+Portal users then find their documents under **My Account > Knowledge
+Documents** (``/my/knowledge/documents``), where they can browse,
+search, and open each page.
 
 Bug Tracker
 ===========
@@ -80,8 +99,7 @@ Other credits
 
 The development of this module has been financially supported by:
 
-- Escodoo
-  <`https://www.escodoo.com.br\\> <https://www.escodoo.com.br\>>`__
+- `Escodoo <https://www.escodoo.com.br>`__
 
 Maintainers
 -----------
