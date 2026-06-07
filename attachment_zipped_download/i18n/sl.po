@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-07 19:46+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment_action_download
@@ -22,37 +24,40 @@ msgid ""
 "        Mixin to help download attachments linked to record(s).\n"
 "    "
 msgstr ""
+"\n"
+"        Mixin za pomoč pri prenosu priponk vezanih na zapis(e).\n"
+"    "
 
 #. module: attachment_zipped_download
 #: model:ir.model,name:attachment_zipped_download.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "Priponka"
 
 #. module: attachment_zipped_download
 #: model:ir.actions.server,name:attachment_zipped_download.action_attachments_download
 msgid "Download"
-msgstr ""
+msgstr "Prenos"
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
 msgid "No attachment!"
-msgstr ""
+msgstr "Ni priponk!"
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment.py:0
 msgid "None attachment selected. Only binary attachments allowed."
-msgstr ""
+msgstr "Priponka ni izbrana. Dovoljene so le binarne priponke."
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/models/ir_attachment_action_download.py:0
 msgid "There is no document found to download."
-msgstr ""
+msgstr "Ni bilo najdenih dokumentov za prenos."
 
 #. module: attachment_zipped_download
 #. odoo-python
 #: code:addons/attachment_zipped_download/controllers/main.py:0
 msgid "attachments.zip"
-msgstr ""
+msgstr "attachments.zip"
