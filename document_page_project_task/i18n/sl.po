@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-07 11:41+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_page_project_task
 #. odoo-python
@@ -22,39 +24,41 @@ msgid ""
 "All linked tasks must belong to the document's project '%(project)s'. The "
 "following tasks belong to a different project: %(tasks)s."
 msgstr ""
+"Vse povezane naloge morajo pripadati projektu dokumenta '%(project)s'. "
+"Naslednja opravila pripadajo drugemu projektu: %(tasks)s."
 
 #. module: document_page_project_task
 #: model_terms:ir.actions.act_window,help:document_page_project_task.action_document_page_tasks
 msgid "Click to create a new web page."
-msgstr ""
+msgstr "Ustvari novo stran."
 
 #. module: document_page_project_task
 #: model:ir.model,name:document_page_project_task.model_document_page
 msgid "Document Page"
-msgstr ""
+msgstr "Stran dokumenta"
 
 #. module: document_page_project_task
 #: model:ir.model.fields,field_description:document_page_project_task.field_project_task__document_page_count
 msgid "Document Page Count"
-msgstr ""
+msgstr "Število dokumentov"
 
 #. module: document_page_project_task
 #: model:ir.model,name:document_page_project_task.model_project_task
 msgid "Task"
-msgstr ""
+msgstr "Opravilo"
 
 #. module: document_page_project_task
 #: model:ir.actions.act_window,name:document_page_project_task.action_document_page_tasks
 msgid "Task Wiki"
-msgstr ""
+msgstr "Wiki opravila"
 
 #. module: document_page_project_task
 #: model:ir.model.fields,field_description:document_page_project_task.field_document_page__task_ids
 msgid "Tasks"
-msgstr ""
+msgstr "Opravila"
 
 #. module: document_page_project_task
 #: model:ir.model.fields,field_description:document_page_project_task.field_project_task__document_page_ids
 #: model_terms:ir.ui.view,arch_db:document_page_project_task.view_task_form2
 msgid "Wiki Pages"
-msgstr ""
+msgstr "Wiki strani"
