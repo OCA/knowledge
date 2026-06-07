@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-13 13:00+0000\n"
-"PO-Revision-Date: 2026-06-07 09:39+0000\n"
+"PO-Revision-Date: 2026-06-07 11:38+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -36,7 +36,7 @@ msgstr "Dodaj URL povezavo"
 #. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "Priponka"
 
 #. module: document_url
 #: model_terms:ir.ui.view,arch_db:document_url.view_ir_attachment_add_url_form
@@ -62,7 +62,7 @@ msgstr "Prikazani naziv"
 #. odoo-javascript
 #: code:addons/document_url/static/src/js/url.esm.js:0
 msgid "Do you really want to delete \"%s\"?"
-msgstr ""
+msgstr "Ali res želite izbrisati \"%s\"?"
 
 #. module: document_url
 #: model:ir.model.fields,field_description:document_url.field_ir_attachment_add_url__id
@@ -92,7 +92,7 @@ msgstr "URL povezava"
 #. module: document_url
 #: model:ir.model,name:document_url.model_ir_attachment_add_url
 msgid "Wizard to add URL attachment"
-msgstr ""
+msgstr "Čarovnik za dodajanje URL priponk"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
