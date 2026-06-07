@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-04 02:39+0000\n"
-"PO-Revision-Date: 2026-06-07 09:39+0000\n"
+"PO-Revision-Date: 2026-06-07 11:38+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/sl/)\n"
@@ -40,7 +40,7 @@ msgstr "Arhivirano"
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_tree
 msgid "Color"
-msgstr ""
+msgstr "Barva"
 
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__color
@@ -113,7 +113,7 @@ msgstr "Oznake"
 #. module: document_page_tag
 #: model:ir.model.constraint,message:document_page_tag.constraint_document_page_tag_unique_name
 msgid "Tags must be unique"
-msgstr ""
+msgstr "Oznake morajo biti unikatne"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
