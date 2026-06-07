@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-07 17:07+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,57 +15,58 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_page_product
 #: model_terms:ir.actions.act_window,help:document_page_product.action_document_page_products
 msgid "Click to create a new web page."
-msgstr ""
+msgstr "Ustvari novo stran."
 
 #. module: document_page_product
 #: model:ir.model,name:document_page_product.model_document_page
 msgid "Document Page"
-msgstr ""
+msgstr "Stran dokumenta"
 
 #. module: document_page_product
 #: model:ir.model.fields,field_description:document_page_product.field_product_product__document_page_count
 #: model:ir.model.fields,field_description:document_page_product.field_product_template__document_page_count
 msgid "Document Page Count"
-msgstr ""
+msgstr "Število dokumentov"
 
 #. module: document_page_product
 #: model:ir.model.fields,field_description:document_page_product.field_product_product__document_page_ids
 #: model:ir.model.fields,field_description:document_page_product.field_product_template__document_page_ids
 msgid "Document Pages"
-msgstr ""
+msgstr "Strani dokumentov"
 
 #. module: document_page_product
 #: model:ir.actions.act_window,name:document_page_product.action_document_page_products
 #: model_terms:ir.ui.view,arch_db:document_page_product.product_normal_form_view
 #: model_terms:ir.ui.view,arch_db:document_page_product.product_template_only_form_view
 msgid "Knowledge"
-msgstr ""
+msgstr "Baza znanja"
 
 #. module: document_page_product
 #: model:ir.model,name:document_page_product.model_product_template
 msgid "Product"
-msgstr ""
+msgstr "Proizvod"
 
 #. module: document_page_product
 #: model:ir.model.fields,field_description:document_page_product.field_document_page__product_template_count
 msgid "Product Template Count"
-msgstr ""
+msgstr "Št. predlog proizvodov"
 
 #. module: document_page_product
 #: model:ir.model.fields,field_description:document_page_product.field_document_page__product_tmpl_ids
 msgid "Product Templates"
-msgstr ""
+msgstr "Predloge proizvodov"
 
 #. module: document_page_product
 #: model:ir.model,name:document_page_product.model_product_product
 msgid "Product Variant"
-msgstr ""
+msgstr "Različica proizvoda"
 
 #. module: document_page_product
 #: model_terms:ir.ui.view,arch_db:document_page_product.view_wiki_form
 msgid "Products"
-msgstr ""
+msgstr "Proizvodi"
