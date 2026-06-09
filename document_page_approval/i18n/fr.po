@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-24 22:33+0000\n"
-"PO-Revision-Date: 2018-04-24 22:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2026-06-09 14:24+0000\n"
+"Last-Translator: Yann Papouin <ypa@decgroupe.com>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
@@ -25,6 +26,10 @@ msgid ""
 "                    It is highly recommended that you edit that one instead "
 "of creating a new one."
 msgstr ""
+"<b>Il existe déjà un brouillon de demande de modification pour cette page.</"
+"b>\n"
+"                    Il est vivement recommandé de modifier celui-ci plutôt "
+"que d'en créer un nouveau."
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
@@ -59,29 +64,57 @@ msgid ""
 "            <p>Odoo</p>\n"
 "        "
 msgstr ""
+"<p>Bonjour,</p>\n"
+"            <p><t t-out=\"object.create_uid.name\"/> une nouvelle demande de "
+"modification a été soumise pour <b t-out=\"object.page_id.name\"/> et elle "
+"nécessite votre approbation.</p>\n"
+"            <h1>\n"
+"                <a t-att-href=\"object.page_url\" t-"
+"out=\"object.display_name\"/>\n"
+"            </h1>\n"
+"            <p>\n"
+"               <b>Modifié par :</b>\n"
+"               <t t-out=\"object.create_uid.name\"/> \n"
+"            </p>\n"
+"            <p>\n"
+"               <b>Date :</b>\n"
+"               <t t-out=\"object.create_date\"/> \n"
+"            </p>\n"
+"            <t t-if=\"object.summary\">\n"
+"                <h3>Résumé</h3>\n"
+"                <p t-out=\"object.summary\"/>\n"
+"            </t>\n"
+"            <h3>Diff</h3>\n"
+"            <div style=\"overflow-x :scroll ; font-size :0.85em ; margin-"
+"bottom :2em ;\">\n"
+"                <t t-out=\"object.diff\"/>\n"
+"            </div>\n"
+"            <p>Bonne journée.</p>\n"
+"            <br/>\n"
+"            <p>Odoo</p>\n"
+"        "
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Nécessite une action"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__am_i_approver
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__am_i_approver
-#, fuzzy
 msgid "Am I Approver"
-msgstr "Approuver"
+msgstr "Suis-je l'approbateur"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__am_i_owner
 msgid "Am I Owner"
-msgstr ""
+msgstr "Suis-je propriétaire"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__is_approval_required
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__is_approval_required
 msgid "Approval required"
-msgstr ""
+msgstr "Approbation obligatoire"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -104,13 +137,13 @@ msgstr "Date d'approbation"
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approved_uid
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__approved_uid
 msgid "Approved by"
-msgstr ""
+msgstr "Approuvé par"
 
 #. module: document_page_approval
 #: model:res.groups,name:document_page_approval.group_document_approver_user
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Approver"
-msgstr ""
+msgstr "Approbateur"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approver_gid
@@ -120,34 +153,35 @@ msgstr "Groupe approbateur"
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approver_group_ids
 msgid "Approver groups"
-msgstr ""
+msgstr "Groupes d'approbateurs"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 #. module: document_page_approval
 #: model:mail.template,name:document_page_approval.email_template_new_draft_need_approval
 msgid "Automated new draft need approval Notification Mail"
 msgstr ""
+"E-mail de notification automnatisé : le nouveau brouillon doit être approuvé"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Back to draft"
-msgstr ""
+msgstr "Remettre en brouillon"
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid "Can't approve page in '%s' state."
-msgstr ""
+msgstr "Impossible de valider la page lorsqu'elle est à l'état « %s »."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid "Can't approve pages in '%s' state."
-msgstr ""
+msgstr "Impossible de valider les pages dont l'état est « %s »."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -158,26 +192,26 @@ msgstr "Annuler"
 #: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__cancelled
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Cancelled"
-msgstr ""
+msgstr "Annulé"
 
 #. module: document_page_approval
 #: model:ir.actions.act_window,name:document_page_approval.action_change_requests
 #: model:ir.ui.menu,name:document_page_approval.menu_page_change_requests
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
 msgid "Change Requests"
-msgstr ""
+msgstr "Demandes de modification"
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid "Change request <b>%(name)s</b> has been cancelled by %(user)s."
-msgstr ""
+msgstr "La demande de modification <b>%(name)s</b> a été annulée par %(user)s."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid "Change request has been approved by %s."
-msgstr ""
+msgstr "La demande de modification a été approuvée par %s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -198,105 +232,106 @@ msgstr "Brouillon"
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_group_ids
 msgid "Groups that can approve changes to this document"
-msgstr ""
+msgstr "Groupes habilités à approuver les modifications apportées à ce document"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__has_changes_pending_approval
 msgid "Has changes pending approval"
-msgstr ""
+msgstr "Des modifications sont en attente d'approbation"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__history_ids
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si coché, certains messages ont une erreur de livraison."
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__is_approval_required
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__is_approval_required
 msgid "If true, changes of this page require approval"
-msgstr ""
+msgstr "Si cela est vrai, toute modification de cette page doit être approuvée"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est abonné"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur de livraison du message"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid "New version of the document %s approved."
-msgstr ""
+msgstr "Nouvelle version du document %s approuvée."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
 msgid "New version of {{object.display_name}} needs your approval"
 msgstr ""
+"La nouvelle version de {{object.display_name}} nécessite votre approbation"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d'actions"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Nombre d'erreurs"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Nombre de messages nécessitant une action"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec erreur de livraison"
 
 #. module: document_page_approval
 #: model:ir.model.fields.selection,name:document_page_approval.selection__document_page_history__state__to_approve
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "Pending Approval"
-msgstr ""
+msgstr "En attente d'approbation"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Évaluations"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__approval_required
@@ -307,16 +342,18 @@ msgstr "Nécessite une approbation"
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approval_required
 msgid "Require approval for changes on this page or its child pages."
 msgstr ""
+"Exiger une validation pour toute modification apportée à cette page ou à ses "
+"sous-pages."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
 msgid "Send to Review"
-msgstr ""
+msgstr "Soumettre pour révision"
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.view_wiki_history_filter
 msgid "State"
-msgstr ""
+msgstr "État"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__state
@@ -329,6 +366,8 @@ msgid ""
 "This document has <b>Changes Pending Approval</b>. You are viewing the last "
 "approved content."
 msgstr ""
+"Ce document comporte <b>des modifications en attente de validation</b>. Vous "
+"consultez la dernière version validée."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_form_inherit
@@ -336,6 +375,8 @@ msgid ""
 "This document requires approval. If edited, you will create a new <b>Change "
 "Request</b>."
 msgstr ""
+"Ce document doit être approuvé. Si vous le modifiez, vous allez créer une "
+"nouvelle <b>demande de modification</b>."
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__page_url
@@ -345,22 +386,23 @@ msgstr "URL"
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__user_has_drafts
 msgid "User has drafts?"
-msgstr ""
+msgstr "L'utilisateur a-t-il des brouillons ?"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page__approver_gid
 msgid "Users must also belong to the Approvers group"
 msgstr ""
+"Les utilisateurs doivent également faire partie du groupe « Approbateurs »"
 
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site web"
 
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique de communication du site web"
 
 #. module: document_page_approval
 #. odoo-python
@@ -369,6 +411,9 @@ msgid ""
 "You are not authorized to do this.\r\n"
 "Only approvers with these groups can approve this: {}"
 msgstr ""
+"Vous n'êtes pas autorisé à effectuer cette action.\n"
+"Seuls les approbateurs appartenant à ces groupes peuvent approuver cette "
+"demande : {}"
 
 #. module: document_page_approval
 #. odoo-python
@@ -377,6 +422,9 @@ msgid ""
 "You are not authorized to do this.\r\n"
 "Only owners or approvers can reopen Change Requests."
 msgstr ""
+"Vous n'êtes pas autorisé à effectuer cette opération.\n"
+"Seuls les propriétaires ou les approbateurs peuvent rouvrir les demandes de "
+"modification."
 
 #. module: document_page_approval
 #. odoo-python
@@ -385,9 +433,11 @@ msgid ""
 "You are not authorized to do this.\r\n"
 "Only owners or approvers can request approval."
 msgstr ""
+"Vous n'êtes pas autorisé à effectuer cette opération.\n"
+"Seuls les propriétaires ou les approbateurs peuvent demander une validation."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid "You need to cancel it before reopening."
-msgstr ""
+msgstr "Vous devez l'annuler avant la réouverture."
