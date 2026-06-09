@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2022-09-29 14:19+0000\n"
-"Last-Translator: Vincent Hatakeyama <vincent+github@hatakeyama.fr>\n"
+"PO-Revision-Date: 2026-06-09 14:24+0000\n"
+"Last-Translator: Yann Papouin <ypa@decgroupe.com>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_knowledge
 #: model:ir.model,name:document_knowledge.model_ir_attachment
@@ -42,9 +42,8 @@ msgstr "Configuration"
 
 #. module: document_knowledge
 #: model:res.groups,name:document_knowledge.group_document_user
-#, fuzzy
 msgid "Document Knowledge user"
-msgstr "Utilisateur de connaissances"
+msgstr "Utilisateur de la base de connaissances"
 
 #. module: document_knowledge
 #: model:ir.actions.act_window,name:document_knowledge.knowledge_action_documents
@@ -56,9 +55,8 @@ msgstr "Documents"
 
 #. module: document_knowledge
 #: model:ir.module.category,name:document_knowledge.module_category_knowledge
-#, fuzzy
 msgid "Documents Knowledge"
-msgstr "Configurer la base de connaissances"
+msgstr "Base de connaissances"
 
 #. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.ir_attachment_view_user_documents
@@ -111,6 +109,9 @@ msgid ""
 "manage                             attachments centrally, from the Document "
 "Knowledge/Documents menu."
 msgstr ""
+"Lorsque vous activez ce champ, tous les utilisateurs pourront gérer les "
+"pièces jointes de manière centralisée, à partir du menu « Connaissances / "
+"Documents »."
 
 #~ msgid ""
 #~ "Add workflow on documents per category.\n"
