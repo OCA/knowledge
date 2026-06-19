@@ -23,7 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_zipped_download](attachment_zipped_download/) | 19.0.1.0.0 |  | Attachment Zipped Download
 [document_knowledge](document_knowledge/) | 19.0.1.0.1 |  | Documents Knowledge
-[document_page](document_page/) | 19.0.1.0.0 |  | Document Page
+[document_page](document_page/) | 19.0.1.0.1 |  | Document Page
 [document_page_partner](document_page_partner/) | 19.0.1.0.0 |  | Allows to link doucment pages to a partner
 [document_url](document_url/) | 19.0.1.0.0 |  | URL attachment
 
