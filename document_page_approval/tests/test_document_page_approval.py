@@ -81,8 +81,6 @@ class TestDocumentPageApproval(BaseCommon):
         self.assertEqual(chreq.state, "approved")
         self.assertEqual(chreq.content, page.content)
 
-        self.env["mail.message"].browse(page.parent_id.id).unlink()
-        page = page.with_context(default_parent_id=page.parent_id.id)
         page.write({"content": "<p>New content</p>"})
         page.invalidate_model()
         chreq = self.history_obj.search(
