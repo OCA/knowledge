@@ -35,7 +35,7 @@ export class AttachmentPreviewWidget extends Component {
 
     _onPopoutClick() {
         if (!this.attachments[this.state.activeIndex]) return;
-        // eslint-disable-next-line no-undef
+
         window.open(this.attachments[this.state.activeIndex].previewUrl);
     }
 

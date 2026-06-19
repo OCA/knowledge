@@ -9,7 +9,6 @@ class DocumentPageReferenceField extends HtmlField {
         this.orm = useService("orm");
         this.action = useService("action");
         onMounted(() => {
-            // eslint-disable-next-line no-undef
             const links = document.querySelectorAll(".oe_direct_line");
             links.forEach((link) => {
                 link.addEventListener("click", (event) =>
