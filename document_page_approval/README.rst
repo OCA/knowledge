@@ -21,19 +21,21 @@ Document Page Approval
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github
-    :target: https://github.com/OCA/knowledge/tree/18.0/document_page_approval
+    :target: https://github.com/OCA/knowledge/tree/19.0/document_page_approval
     :alt: OCA/knowledge
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/knowledge-18-0/knowledge-18-0-document_page_approval
+    :target: https://translation.odoo-community.org/projects/knowledge-19-0/knowledge-19-0-document_page_approval
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/knowledge&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/knowledge&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds a workflow to approve page modifications and show the
-approved version by default.
+This module adds an approval workflow for document page changes in the
+Knowledge app. When a category requires approval, edits create change
+requests that approvers must review before the approved content is shown
+to readers.
 
 **Table of contents**
 
@@ -46,21 +48,25 @@ Configuration
 To configure this module, you need to:
 
 1. Set a valid email address on the company settings.
-2. Go to Knowledge > Categories.
-3. Create a new page category and set an approver group. Make sure users
-   belonging to that group have valid email addresses.
+2. Go to **Knowledge > Configuration > Categories**.
+3. Create or open a category and enable **Require approval**.
+4. Select an **Approver group**. Users in that group must also belong to
+   the **Approver** security group and have valid email addresses.
 
 Usage
 =====
 
 To use this module, you need to:
 
-1. Go to Knowledge > Pages
-2. Create a new page and choose the previously created category.
-3. A notification is sent to the approvers group with a link to the page
-   history to review.
-4. Depending on the review, the page history is approved or not.
-5. Users reading the page see the last approved version.
+1. Go to **Knowledge > Pages** and create or edit a page under a
+   category that requires approval.
+2. Saving changes creates a **Change Request** in draft or pending
+   approval state.
+3. Send the request for review. Approvers receive an email with a link
+   to the change request.
+4. An approver opens **Knowledge > Change Requests**, reviews the
+   request, and approves or cancels it.
+5. Readers see the last approved version of the page content.
 
 Bug Tracker
 ===========
@@ -68,7 +74,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/knowledge/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/knowledge/issues/new?body=module:%20document_page_approval%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/knowledge/issues/new?body=module:%20document_page_approval%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -89,7 +95,7 @@ Contributors
 
 - Gervais Naoussi <gervaisnaoussi@gmail.com>
 
-- Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+- Maxime Chambreuil <maxime.chambreuil@graymatterlogic.com>
 
 - Iván Todorovich <ivan.todorovich@gmail.com>
 
@@ -106,6 +112,10 @@ Contributors
 
   - Bhavesh Heliconia
 
+- `Gray Matter Logic <https://www.graymatterlogic.com>`__:
+
+  - Maxime Chambreuil <maxime.chambreuil@graymatterlogic.com>
+
 Maintainers
 -----------
 
@@ -119,6 +129,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/18.0/document_page_approval>`_ project on GitHub.
+This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/19.0/document_page_approval>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

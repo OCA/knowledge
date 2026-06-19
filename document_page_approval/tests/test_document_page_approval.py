@@ -1,4 +1,3 @@
-from odoo import Command
 from odoo.exceptions import UserError
 from odoo.tests import new_test_user
 from odoo.tools import mute_logger
@@ -10,27 +9,38 @@ class TestDocumentPageApproval(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
         cls.page_obj = cls.env["document.page"]
         cls.history_obj = cls.env["document.page.history"]
+        cls.category_model = cls.env["document.page"]
 
-        # Demo Data
-        cls.category1 = cls.env.ref("document_page.demo_category1")
-        cls.page1 = cls.env.ref("document_page.demo_page1")
-
-        # Create test user without groups first
         cls.user2 = new_test_user(
             cls.env,
             login="test-user2",
-            groups="document_page_approval.group_document_approver_user",
+            groups="document_page_approval.group_document_approver_user,document_knowledge.group_document_user",
+            name="Test Approver",
+            email="approver@example.com",
         )
 
-        # Ensure user2 has the approver group
+        cls.category1 = cls.category_model.create(
+            {
+                "name": "Demo Category 1",
+                "type": "category",
+            }
+        )
+        cls.page1 = cls.page_obj.create(
+            {
+                "name": "Demo Page 1",
+                "parent_id": cls.category1.id,
+                "content": "<p>Content</p>",
+                "type": "content",
+            }
+        )
+
         cls.approver_gid = cls.env.ref(
             "document_page_approval.group_document_approver_user"
         )
-        cls.user2.write({"groups_id": [Command.link(cls.approver_gid.id)]})
 
-        # Create category and page that require approval
         cls.category2 = cls.page_obj.create(
             {
                 "name": "This category requires approval",
@@ -59,34 +69,26 @@ class TestDocumentPageApproval(BaseCommon):
         """Test that an approver can approve a change request."""
         page = self.page2
 
-        # Get the change request for this page
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")], limit=1
         )
 
         self.assertEqual(chreq.state, "to approve")
 
-        # Ensure user2 is listed as an approver
         self.assertTrue(chreq.with_user(self.user2).am_i_approver)
 
-        # Approve the request as user2 (approver)
         chreq.with_user(self.user2).action_approve()
         self.assertEqual(chreq.state, "approved")
         self.assertEqual(chreq.content, page.content)
 
-        # Remove the linked mail.message and define a specific context to simulate that
-        # when accessing from the category smart button, there is no error when creating
-        # the history and sending the email
         self.env["mail.message"].browse(page.parent_id.id).unlink()
         page = page.with_context(default_parent_id=page.parent_id.id)
-        # Create new change request
         page.write({"content": "<p>New content</p>"})
-        page.invalidate_model()  # Recompute fields
+        page.invalidate_model()
         chreq = self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")], limit=1
         )
 
-        # Approve new changes
         chreq.with_user(self.user2).action_approve()
         self.assertEqual(page.content, "<p>New content</p>")
 
@@ -102,12 +104,10 @@ class TestDocumentPageApproval(BaseCommon):
         """Test a full change request lifecycle from draft to approval."""
         page = self.page2
 
-        # Approve all pending change requests
         self.history_obj.search(
             [("page_id", "=", page.id), ("state", "!=", "approved")]
         ).with_user(self.user2).action_approve()
 
-        # Create new change request
         chreq = self.history_obj.create(
             {
                 "page_id": page.id,
@@ -120,7 +120,6 @@ class TestDocumentPageApproval(BaseCommon):
         chreq.action_to_approve()
         self.assertEqual(chreq.state, "to approve")
 
-        # Cancel and return to draft
         chreq.with_user(self.user2).action_cancel()
         self.assertEqual(chreq.state, "cancelled")
 
@@ -166,8 +165,7 @@ class TestDocumentPageApproval(BaseCommon):
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
 
-        # Remove approval group from user2
-        self.user2.write({"groups_id": [(3, self.approver_gid.id)]})
+        self.user2.write({"group_ids": [(3, self.approver_gid.id)]})
         self.assertFalse(
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
@@ -175,13 +173,11 @@ class TestDocumentPageApproval(BaseCommon):
     @mute_logger("odoo.models.unlink")
     def test_pending_approval_detection(self):
         """Ensure the system detects pending approval changes"""
-        # Reset page2 by removing previous history
         self.history_obj.search([("page_id", "=", self.page2.id)]).unlink()
 
         self.page2.invalidate_model()
         self.assertFalse(self.page2.has_changes_pending_approval)
 
-        # Create a new change request
         self.history_obj.create(
             {
                 "page_id": self.page2.id,
@@ -237,10 +233,12 @@ class TestDocumentPageApproval(BaseCommon):
             }
         )
 
+        random_user = new_test_user(
+            self.env, login="random_user", groups="base.group_user"
+        )
         with self.assertRaises(UserError):
-            chreq.with_user(self.env.ref("base.user_demo")).action_approve()
+            chreq.with_user(random_user).action_approve()
 
-        # Grant approval rights
         chreq.with_user(self.user2).action_approve()
         self.assertEqual(chreq.state, "approved")
 

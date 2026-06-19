@@ -4,7 +4,7 @@
 
 - Gervais Naoussi \<<gervaisnaoussi@gmail.com>\>
 
-- Maxime Chambreuil \<<mchambreuil@opensourceintegrators.com>\>
+- Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
 
 - Iván Todorovich \<<ivan.todorovich@gmail.com>\>
 
@@ -18,3 +18,5 @@
   - Fernando La Chica \<<fernando.lachica@guadaltech.es>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>

@@ -1,11 +1,8 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-
 from odoo import fields, models
 from odoo.exceptions import UserError
-from odoo.tools.misc import clean_context
-from odoo.tools.translate import _
 
 
 class DocumentPageHistory(models.Model):
@@ -45,10 +42,10 @@ class DocumentPageHistory(models.Model):
         """Set a change request as draft"""
         for rec in self:
             if not rec.state == "cancelled":
-                raise UserError(_("You need to cancel it before reopening."))
+                raise UserError(self.env._("You need to cancel it before reopening."))
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _(
+                    self.env._(
                         "You are not authorized to do this.\r\n"
                         "Only owners or approvers can reopen Change Requests."
                     )
@@ -65,10 +62,14 @@ class DocumentPageHistory(models.Model):
         )
         for rec in self:
             if rec.state != "draft":
-                raise UserError(_("Can't approve pages in '%s' state.") % rec.state)
+                raise UserError(
+                    self.env._(
+                        "Can't approve pages in '%(state)s' state.", state=rec.state
+                    )
+                )
             if not (rec.am_i_owner or rec.am_i_approver):
                 raise UserError(
-                    _(
+                    self.env._(
                         "You are not authorized to do this.\r\n"
                         "Only owners or approvers can request approval."
                     )
@@ -78,13 +79,10 @@ class DocumentPageHistory(models.Model):
                 rec.write({"state": "to approve"})
                 guids = [g.id for g in rec.page_id.approver_group_ids]
                 users = self.env["res.users"].search(
-                    [("groups_id", "in", guids), ("groups_id", "in", approver_gid.id)]
+                    [("group_ids", "in", guids), ("group_ids", "in", approver_gid.id)]
                 )
                 rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
-                # pylint: disable=W8121
-                rec.with_context(
-                    clean_context(self.env.context)
-                ).message_post_with_source(template)
+                rec.message_post_with_source(template)
             else:
                 # auto-approve if approval is not required
                 rec.action_approve()
@@ -93,16 +91,21 @@ class DocumentPageHistory(models.Model):
         """Set a change request as approved."""
         for rec in self:
             if rec.state not in ["draft", "to approve"]:
-                raise UserError(_("Can't approve page in '%s' state.") % rec.state)
-            if not rec.am_i_approver:
                 raise UserError(
-                    _(
+                    self.env._(
+                        "Can't approve page in '%(state)s' state.", state=rec.state
+                    )
+                )
+            if not rec.am_i_approver:
+                groups_str = ", ".join(
+                    g.display_name for g in rec.page_id.approver_group_ids
+                )
+                raise UserError(
+                    self.env._(
                         "You are not authorized to do this.\r\n"
-                        "Only approvers with these groups can approve this: {}"
-                    ).format(
-                        ", ".join(
-                            [g.display_name for g in rec.page_id.approver_group_ids]
-                        )
+                        "Only approvers with these groups can approve this: "
+                        "%(groups)s",
+                        groups=groups_str,
                     )
                 )
 
@@ -110,7 +113,7 @@ class DocumentPageHistory(models.Model):
             rec.write(
                 {
                     "state": "approved",
-                    "approved_date": fields.datetime.now(),
+                    "approved_date": fields.Datetime.now(),
                     "approved_uid": self.env.uid,
                 }
             )
@@ -119,13 +122,18 @@ class DocumentPageHistory(models.Model):
             # Notify state change
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request has been approved by %s.")
-                % (self.env.user.name),
+                body=self.env._(
+                    "Change request has been approved by %(user)s.",
+                    user=self.env.user.name,
+                ),
             )
             # Notify followers a new version is available
             rec.page_id.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("New version of the document %s approved.") % (rec.page_id.name),
+                body=self.env._(
+                    "New version of the document %(name)s approved.",
+                    name=rec.page_id.name,
+                ),
             )
 
     def action_cancel(self):
@@ -134,8 +142,11 @@ class DocumentPageHistory(models.Model):
         for rec in self:
             rec.message_post(
                 subtype_xmlid="mail.mt_comment",
-                body=_("Change request <b>%(name)s</b> has been cancelled by %(user)s.")
-                % ({"name": rec.display_name, "user": self.env.user.name}),
+                body=self.env._(
+                    "Change request <b>%(name)s</b> has been cancelled by %(user)s.",
+                    name=rec.display_name,
+                    user=self.env.user.name,
+                ),
             )
 
     def action_cancel_and_draft(self):
