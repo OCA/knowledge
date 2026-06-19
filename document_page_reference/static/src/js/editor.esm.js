@@ -1,6 +1,6 @@
 import {HtmlField, htmlField} from "@web/views/fields/html/html_field";
-import {onMounted} from "@odoo/owl";
 import {registry} from "@web/core/registry";
+import {useExternalListener} from "@odoo/owl";
 import {useService} from "@web/core/utils/hooks";
 
 class DocumentPageReferenceField extends HtmlField {
@@ -8,18 +8,22 @@ class DocumentPageReferenceField extends HtmlField {
         super.setup();
         this.orm = useService("orm");
         this.action = useService("action");
-        onMounted(() => {
-            const links = document.querySelectorAll(".oe_direct_line");
-            links.forEach((link) => {
-                link.addEventListener("click", (event) =>
-                    this._onClickDirectLink(event)
-                );
-            });
+        // Delegate: one listener that resolves the link at click time, so it
+        // survives the html field re-rendering and is auto-removed on unmount.
+        useExternalListener(document, "click", (event) => {
+            const link = event.target.closest?.(".oe_direct_line");
+            if (link) {
+                this._onClickDirectLink(event, link);
+            }
         });
     }
-    _onClickDirectLink(event) {
-        const {oeModel: model, oeId} = event.target.dataset;
+    _onClickDirectLink(event, link) {
+        const {oeModel: model, oeId} = link.dataset;
         const id = parseInt(oeId, 10);
+        if (!model || !id) {
+            return;
+        }
+        event.preventDefault();
         this.orm.call(model, "get_formview_action", [[id]], {}).then((action) => {
             this.action.doAction(action);
         });

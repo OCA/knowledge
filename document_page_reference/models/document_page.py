@@ -50,11 +50,22 @@ class DocumentPage(models.Model):
 
     def get_content(self):
         self.ensure_one()
-        content_parsed = raw = self.content or ""
+        raw = str(self.content or "")
+        content_parsed = Markup(raw)
         for text in re.findall(r"\{\{.*?\}\}", raw):
-            reference = text.replace("{{", "").replace("}}", "")
+            reference = re.sub(r"<[^>]*>", "", text).replace("{{", "").replace("}}", "")
             content_parsed = content_parsed.replace(
                 text, self._resolve_reference(reference)
+            )
+        link_regex = (
+            r"<a[^>]*class=['\"][^'\"]*oe_direct_line[^'\"]*['\"]"
+            r"[^>]*name=['\"]([^'\"]*)['\"][^>]*>.*?</a>"
+        )
+        for match in re.finditer(link_regex, raw):
+            full_link = match.group(0)
+            reference = match.group(1)
+            content_parsed = content_parsed.replace(
+                Markup(full_link), self._resolve_reference(reference)
             )
         return content_parsed
 
@@ -66,8 +77,9 @@ class DocumentPage(models.Model):
         oe_model = doc._name if doc else self._name
         oe_id = doc.id if doc else ""
         name = html_escape(doc.display_name) if doc else sanitized_code
-        return (
-            f"<a href='#' class='oe_direct_line' data-oe-model='{oe_model}' "
+        href = doc.backend_url if doc else "#"
+        return Markup(
+            f"<a href='{href}' class='oe_direct_line' data-oe-model='{oe_model}' "
             f"data-oe-id='{oe_id}' name='{sanitized_code}'>"
             f"{name}</a>"
         )
