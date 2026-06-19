@@ -3,7 +3,7 @@
     <record id="base.user_demo" model="res.users">
         <field
             eval="[(4, ref('document_knowledge.group_document_user'))]"
-            name="groups_id"
+            name="group_ids"
         />
     </record>
 

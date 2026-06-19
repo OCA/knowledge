@@ -191,6 +191,7 @@ msgstr "Diferencias"
 #: model:ir.model.fields,field_description:document_page.field_document_page__display_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__display_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__display_name
+#: model:ir.model.fields,field_description:document_page.field_ir_ui_menu__display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
@@ -247,13 +248,6 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Icono de fuente impresionante, por ejemplo fa-tasks"
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
-msgid "Group By..."
-msgstr "Agrupar por..."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
 msgstr "CABECERA"
@@ -273,6 +267,7 @@ msgstr "Historial"
 #: model:ir.model.fields,field_description:document_page.field_document_page__id
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__id
+#: model:ir.model.fields,field_description:document_page.field_ir_ui_menu__id
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__id
 msgid "ID"
 msgstr "ID"
@@ -601,6 +596,9 @@ msgstr "o"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "resumen"
+
+#~ msgid "Group By..."
+#~ msgstr "Agrupar por..."
 
 #~ msgid "There are no changes in revisions."
 #~ msgstr "No hay cambios en las revisiones."
