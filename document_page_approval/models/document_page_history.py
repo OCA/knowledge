@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 from odoo.tools.misc import clean_context
 from odoo.tools.translate import _
@@ -143,6 +143,7 @@ class DocumentPageHistory(models.Model):
         self.action_cancel()
         self.action_draft()
 
+    @api.depends_context("uid")
     def _compute_am_i_owner(self):
         """Check if current user is the owner"""
         for rec in self:

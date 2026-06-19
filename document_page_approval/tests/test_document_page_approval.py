@@ -23,6 +23,20 @@ class TestDocumentPageApproval(BaseCommon):
             login="test-user2",
             groups="document_page_approval.group_document_approver_user",
         )
+        cls.user_normal = new_test_user(
+            cls.env,
+            login="test_normal",
+            groups="document_knowledge.group_document_user,document_page.group_document_editor",
+            name="Test Normal User",
+            email="normal@example.com",
+        )
+        cls.manager_user = new_test_user(
+            cls.env,
+            login="test_manager",
+            groups="document_page.group_document_manager",
+            name="Test Manager",
+            email="manager@example.com",
+        )
 
         # Ensure user2 has the approver group
         cls.approver_gid = cls.env.ref(
@@ -267,3 +281,64 @@ class TestDocumentPageApproval(BaseCommon):
         )
         chreq2._compute_diff()
         self.assertIsNotNone(chreq2.diff)
+
+    def test_cache_am_i_approver(self):
+        """Ensure 'am_i_approver' is computed per-user and not cached globally."""
+        page = self.page2
+
+        # Normal user evaluates the field first (Calculates and caches: False)
+        self.assertFalse(page.with_user(self.user_normal).am_i_approver)
+
+        # Approver user evaluates it next.
+        self.assertTrue(page.with_user(self.user2).am_i_approver)
+
+    def test_cache_am_i_owner(self):
+        """Ensure 'am_i_owner' is computed per-user and not cached globally."""
+        page = self.page2
+        # Normal user creates the change request (they are the owner)
+        chreq = self.history_obj.with_user(self.user_normal).create(
+            {
+                "page_id": page.id,
+                "summary": "Cache Test",
+                "content": "<p>User Normal Changes</p>",
+            }
+        )
+
+        # Approver user evaluates the field first (Calculates and caches: False)
+        self.assertFalse(chreq.with_user(self.user2).am_i_owner)
+
+        # Normal user evaluates it next
+        self.assertTrue(chreq.with_user(self.user_normal).am_i_owner)
+
+    def test_cache_user_has_drafts(self):
+        """Ensure 'user_has_drafts' is computed per-user and not cached globally."""
+        page = self.page2
+        # Normal user creates a draft change request
+        self.history_obj.with_user(self.user_normal).create(
+            {
+                "page_id": page.id,
+                "state": "draft",
+            }
+        )
+
+        # Approver evaluates the field first
+        self.assertFalse(page.with_user(self.user2).user_has_drafts)
+
+        # Normal user evaluates it next
+        self.assertTrue(page.with_user(self.user_normal).user_has_drafts)
+
+    def test_cache_has_changes_pending_approval(self):
+        """Ensure 'has_changes_pending_approval' is computed per-user and not cached."""
+        page = self.page2
+        # Create a pending approval change request using the Manager
+        # so it's NOT owned by the normal user.
+        chreq = self.history_obj.with_user(self.manager_user).create(
+            {"page_id": page.id, "content": "<p>Manager Change</p>"}
+        )
+        chreq.with_user(self.manager_user).action_to_approve()
+
+        # Normal user evaluates the field.
+        self.assertFalse(page.with_user(self.user_normal).has_changes_pending_approval)
+
+        # Approver user evaluates it.
+        self.assertTrue(page.with_user(self.user2).has_changes_pending_approval)
