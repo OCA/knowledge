@@ -172,14 +172,14 @@ msgstr "Tillbaka till utkast"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "Kan inte godkänna sidan i \"%s\"-status."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "Kan inte godkänna sidan i \"%(state)s\"-status."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "Kan inte godkänna sidor i \"%s\"-status."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "Kan inte godkänna sidor i \"%(state)s\"-status."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -208,8 +208,8 @@ msgstr "Ändringsbegäran <b>%(name)s</b> har annullerats av %(user)s."
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "Ändringsbegäran har godkänts av %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "Ändringsbegäran har godkänts av %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -291,8 +291,8 @@ msgstr "Meddelanden"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "Ny version av dokumentet %s godkänd."
+msgid "New version of the document %(name)s approved."
+msgstr "Ny version av dokumentet %(name)s godkänd."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -404,7 +404,7 @@ msgstr "Webbplatsens kommunikationshistorik"
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 "Du har inte behörighet att göra detta.\n"
 "Endast godkännare med dessa grupper kan godkänna detta: {}"

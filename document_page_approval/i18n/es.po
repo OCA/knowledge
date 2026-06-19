@@ -32,7 +32,6 @@ msgstr ""
 
 #. module: document_page_approval
 #: model:mail.template,body_html:document_page_approval.email_template_new_draft_need_approval
-#, fuzzy
 msgid ""
 "<p>Hello,</p>\n"
 "            <p><t t-out=\"object.create_uid.name\"/> submited a new Change "
@@ -168,14 +167,14 @@ msgstr "Devolver a borrador"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "No se puede aprobar la página en estado '%s'."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "No se puede aprobar la página en estado '%(state)s'."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "No se pueden aprobar páginas en estado %s'."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "No se pueden aprobar páginas en estado %(state)s'."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -204,8 +203,8 @@ msgstr "El cambio solicitado <b>%(name)s</b> ha sido cancelado por %(user)s."
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "La solicitud de modificaciones ha sido aprobada por %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "La solicitud de modificaciones ha sido aprobada por %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -287,8 +286,8 @@ msgstr "Mensajes"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "Nueva versión del documento %s aprobada."
+msgid "New version of the document %(name)s approved."
+msgstr "Nueva versión del documento %(name)s aprobada."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -399,7 +398,7 @@ msgstr "Historial de comunicación del sitio web"
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 "No está autorizado para hacer esto.\n"
 "Sólo los aprobadores con estos grupos pueden aprobarlo: {}"

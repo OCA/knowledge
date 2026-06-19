@@ -173,14 +173,14 @@ msgstr "Ritorna a bozza"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "Non puoi approvare una pagina in stato '%s'."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "Non puoi approvare una pagina in stato '%(state)s'."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "Non puoi approvare le pagine in stato '%s'."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "Non puoi approvare le pagine in stato '%(state)s'."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -209,8 +209,8 @@ msgstr "La modifica richiesta <b>%(name)s</b> è stata annullata da %(user)s."
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "La richiesta di modifica è stata approvata da %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "La richiesta di modifica è stata approvata da %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -292,8 +292,8 @@ msgstr "Messaggi"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "La nuova versione del documento %s è approvata."
+msgid "New version of the document %(name)s approved."
+msgstr "La nuova versione del documento %(name)s è approvata."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -407,7 +407,7 @@ msgstr "Cronologia comunicazioni sito web"
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 "Non si è autorizzati a compiere quest'azione.\n"
 "Solo gli approvatori in questi gruppi possono approvarlo: {}"

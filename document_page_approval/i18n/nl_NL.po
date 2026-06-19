@@ -69,7 +69,6 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page__am_i_approver
 #: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__am_i_approver
-#, fuzzy
 msgid "Am I Approver"
 msgstr "Goedkeuren"
 
@@ -141,13 +140,13 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
+msgid "Can't approve page in '%(state)s' state."
 msgstr ""
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
+msgid "Can't approve pages in '%(state)s' state."
 msgstr ""
 
 #. module: document_page_approval
@@ -177,7 +176,7 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
+msgid "Change request has been approved by %(user)s."
 msgstr ""
 
 #. module: document_page_approval
@@ -260,7 +259,7 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
+msgid "New version of the document %(name)s approved."
 msgstr ""
 
 #. module: document_page_approval
@@ -368,7 +367,7 @@ msgstr ""
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 
 #. module: document_page_approval

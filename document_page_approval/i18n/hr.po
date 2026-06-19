@@ -142,14 +142,14 @@ msgstr "Nazad u nacrt"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "Nije moguće odobriti stranicu u '%s' statusu."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "Nije moguće odobriti stranicu u '%(state)s' statusu."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "Nije moguće odobriti stranice u '%s' statusu."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "Nije moguće odobriti stranice u '%(state)s' statusu."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -178,8 +178,8 @@ msgstr "Zahtjev za izmjenom <b>%(name)s</b> je otkazao %(user)s."
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "Zahtjev za izmjenom je odobrio %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "Zahtjev za izmjenom je odobrio %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -261,8 +261,8 @@ msgstr "Poruke"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "Nova verzija dokumenta %s odobrena"
+msgid "New version of the document %(name)s approved."
+msgstr "Nova verzija dokumenta %(name)s odobrena"
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -373,7 +373,7 @@ msgstr ""
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 
 #. module: document_page_approval

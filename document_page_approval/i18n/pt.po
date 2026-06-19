@@ -146,14 +146,14 @@ msgstr "Voltar ao rascunho"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "Não é possível aprovar a página no estado '%s'."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "Não é possível aprovar a página no estado '%(state)s'."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "Não é possível aprovar páginas no estado \"%s\"."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "Não é possível aprovar páginas no estado \"%(state)s\"."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -182,8 +182,8 @@ msgstr "A solicitação de alteração <b>%(name)s</b> foi cancelada por %(user)
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "A solicitação de alteração foi aprovada por %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "A solicitação de alteração foi aprovada por %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -265,8 +265,8 @@ msgstr "Mensagens"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "Nova versão do documento %s aprovada."
+msgid "New version of the document %(name)s approved."
+msgstr "Nova versão do documento %(name)s aprovada."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -379,7 +379,7 @@ msgstr ""
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 
 #. module: document_page_approval

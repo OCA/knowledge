@@ -174,14 +174,14 @@ msgstr "Remettre en brouillon"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "Impossible de valider la page lorsqu'elle est à l'état « %s »."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "Impossible de valider la page lorsqu'elle est à l'état « %(state)s »."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "Impossible de valider les pages dont l'état est « %s »."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "Impossible de valider les pages dont l'état est « %(state)s »."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -210,8 +210,8 @@ msgstr "La demande de modification <b>%(name)s</b> a été annulée par %(user)s
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "La demande de modification a été approuvée par %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "La demande de modification a été approuvée par %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -293,8 +293,8 @@ msgstr "Messages"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "Nouvelle version du document %s approuvée."
+msgid "New version of the document %(name)s approved."
+msgstr "Nouvelle version du document %(name)s approuvée."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -409,7 +409,7 @@ msgstr "Historique de communication du site web"
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 "Vous n'êtes pas autorisé à effectuer cette action.\n"
 "Seuls les approbateurs appartenant à ces groupes peuvent approuver cette "

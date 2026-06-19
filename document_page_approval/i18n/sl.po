@@ -173,14 +173,14 @@ msgstr "Vrni v osnutek"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
-msgstr "Ne morem odobriti strani v stanju '%s'."
+msgid "Can't approve page in '%(state)s' state."
+msgstr "Ne morem odobriti strani v stanju '%(state)s'."
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
-msgstr "Ne morem odobriti strani v stanju '%s'."
+msgid "Can't approve pages in '%(state)s' state."
+msgstr "Ne morem odobriti strani v stanju '%(state)s'."
 
 #. module: document_page_approval
 #: model_terms:ir.ui.view,arch_db:document_page_approval.wiki_history_form_inherit
@@ -209,8 +209,8 @@ msgstr "Zahtevo po spremembi <b>%(name)s</b> je preklical %(user)s."
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
-msgstr "Zahtevo po spremembi je odobril %s."
+msgid "Change request has been approved by %(user)s."
+msgstr "Zahtevo po spremembi je odobril %(user)s."
 
 #. module: document_page_approval
 #: model:ir.model,name:document_page_approval.model_document_page
@@ -294,8 +294,8 @@ msgstr "Sporočila"
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
-msgstr "Nova verzija dokumenta %s odobrena."
+msgid "New version of the document %(name)s approved."
+msgstr "Nova verzija dokumenta %(name)s odobrena."
 
 #. module: document_page_approval
 #: model:mail.template,subject:document_page_approval.email_template_new_draft_need_approval
@@ -406,7 +406,7 @@ msgstr "Kronologija komunikacij spletne strani"
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
 "You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
+"Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 "Za to niste pooblaščeni.\n"
 "Le odobritelji iz teh skupin lahko to odobrijo: {}"
