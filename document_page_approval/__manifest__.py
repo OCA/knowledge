@@ -3,7 +3,7 @@
 
 {
     "name": "Document Page Approval",
-    "version": "18.0.1.1.1",
+    "version": "18.0.1.2.0",
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
