@@ -15,15 +15,18 @@
                     />
                 </h2>
             </xpath>
-            <field name="content" position="attributes">
-                <attribute name="class">oe_edit_only</attribute>
-            </field>
             <field name="content" position="before">
                 <field
                     name="content_parsed"
-                    class="oe_read_only"
+                    readonly="1"
                     widget="document_page_reference"
                 />
+            </field>
+            <field name="content" position="attributes">
+                <attribute name="attrs">
+                    {'invisible': [('type', '=', 'category')],
+                     'required': [('type', '!=', 'category')]}
+                </attribute>
             </field>
         </field>
     </record>
@@ -32,15 +35,15 @@
         <field name="model">document.page</field>
         <field name="inherit_id" ref="document_page.view_wiki_menu_form" />
         <field name="arch" type="xml">
-            <field name="content" position="attributes">
-                <attribute name="class">oe_edit_only</attribute>
-            </field>
             <field name="content" position="before">
                 <field
                     name="content_parsed"
-                    class="oe_read_only"
+                    readonly="1"
                     widget="document_page_reference"
                 />
+            </field>
+            <field name="content" position="attributes">
+                <attribute name="invisible">1</attribute>
             </field>
         </field>
     </record>

@@ -18,6 +18,9 @@
         "web.assets_backend": [
             "document_page_reference/static/src/js/**/*",
         ],
+        "web.assets_tests": [
+            "document_page_reference/static/tests/**/*",
+        ],
     },
     "maintainers": ["etobella"],
 }
