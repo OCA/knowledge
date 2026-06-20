@@ -75,4 +75,41 @@ class TestDocumentReference(TransactionCase):
     def test_compute_content_parsed(self):
         self.page1.content = "<p>"
         self.page1._compute_content_parsed()
-        self.assertEqual(str(self.page1.content_parsed), "<p></p>")
+        self.assertEqual(str(self.page1.content_parsed), "<p>")
+
+    def test_content_parsed_category(self):
+        """A category page exposes its raw content as content_parsed."""
+        category = self.page_obj.create(
+            {
+                "name": "Category",
+                "type": "category",
+                "content": "<p>category body</p>",
+                "reference": "cat_ref",
+            }
+        )
+        self.assertEqual(category.content_parsed, category.content)
+
+    def test_get_page_index(self):
+        """_get_page_index renders an oe_direct_line anchor and nests
+        children in a list; a leaf page with link=False renders nothing."""
+        parent = self.page_obj.create(
+            {"name": "Index Parent", "content": "x", "reference": "idx_parent"}
+        )
+        self.page_obj.create(
+            {
+                "name": "Index Child",
+                "content": "y",
+                "reference": "idx_child",
+                "parent_id": parent.id,
+            }
+        )
+        rendered = str(parent._get_page_index())
+        self.assertIn('class="oe_direct_line"', rendered)
+        self.assertIn('data-oe-id="%s"' % parent.id, rendered)
+        self.assertIn("Index Parent", rendered)
+        self.assertIn("<ul>", rendered)
+        self.assertIn("Index Child", rendered)
+        leaf = self.page_obj.create(
+            {"name": "Leaf", "content": "z", "reference": "leaf_ref"}
+        )
+        self.assertEqual(str(leaf._get_page_index(link=False)), "")

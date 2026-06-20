@@ -3,6 +3,8 @@
 
 import logging
 
+from markupsafe import Markup
+
 from odoo import _, api, fields, models, tools
 from odoo.exceptions import ValidationError
 from odoo.tools.misc import html_escape
@@ -52,7 +54,36 @@ class DocumentPage(models.Model):
     reference = fields.Char(
         help="Used to find the document, it can contain letters, numbers and _"
     )
-    content_parsed = fields.Html(compute="_compute_content_parsed")
+    # sanitize=False keeps the rendered oe_direct_line anchors
+    # (data-oe-model/-id) the widget binds to, which html_sanitize strips.
+    # Safe: the source ``content`` is still sanitized and page names are
+    # html_escape'd, so no unsanitized user input reaches this field.
+    content_parsed = fields.Html(compute="_compute_content_parsed", sanitize=False)
+
+    def _get_page_index(self, link=True):
+        """Override to use oe_direct_line links compatible with the widget."""
+        self.ensure_one()
+        index = [
+            Markup("<li>") + subpage._get_page_index() + Markup("</li>")
+            for subpage in self.child_ids
+        ]
+        r = Markup("")
+        if link:
+            r = (
+                Markup(
+                    '<a href="#" class="oe_direct_line"'
+                    ' data-oe-model="%s" data-oe-id="%s">'
+                )
+                % (
+                    self._name,
+                    self.id,
+                )
+                + html_escape(self.name)
+                + Markup("</a>")
+            )
+        if index:
+            r += Markup("<ul>") + Markup("").join(index) + Markup("</ul>")
+        return r
 
     def get_formview_action(self, access_uid=None):
         res = super().get_formview_action(access_uid)
@@ -60,17 +91,20 @@ class DocumentPage(models.Model):
         res["views"] = [(view_id, "form")]
         return res
 
-    @api.depends("history_head")
+    @api.depends("history_head", "type")
     def _compute_content_parsed(self):
         for record in self:
-            content = record.get_content()
-            if content == "<p>" and self.content != "<p>":
-                _logger.error(
-                    "Template from page with id = %s cannot be processed correctly"
-                    % self.id
-                )
-                content = self.content
-            record.content_parsed = content
+            if record.type == "category":
+                record.content_parsed = record.content
+            else:
+                content = record.get_content()
+                if content == "<p>" and record.content != "<p>":
+                    _logger.error(
+                        "Template from page with id = %s cannot be "
+                        "processed correctly" % record.id
+                    )
+                    content = record.content
+                record.content_parsed = content
 
     @api.constrains("reference")
     def _check_reference(self):
