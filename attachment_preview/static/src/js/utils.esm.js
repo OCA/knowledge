@@ -1,31 +1,94 @@
 import {Component} from "@odoo/owl";
 
-// Extensions rendered natively by ViewerJS (PDF + ODF formats)
-const VIEWERJS_EXTENSIONS = [
+// PDFs are rendered directly by Odoo's native PDF.js viewer.
+const PDF_EXTENSIONS = ["pdf"];
+
+// Office formats (ODF + OOXML + legacy) are converted to PDF server-side via
+// the /attachment_preview/office_to_pdf endpoint, then rendered through the
+// same native PDF.js viewer. ViewerJS is no longer used.
+const OFFICE_EXTENSIONS = [
     "odt",
-    "odp",
     "ods",
+    "odp",
+    "odg",
     "fodt",
-    "pdf",
-    "ott",
-    "fodp",
-    "otp",
     "fods",
+    "fodp",
+    "ott",
     "ots",
+    "otp",
+    "doc",
+    "docx",
+    "xls",
+    "xlsx",
+    "ppt",
+    "pptx",
 ];
 
-// Extensions converted to PDF server-side via LibreOffice (if installed).
-// These use the /attachment_preview/office_to_pdf endpoint.
-const OFFICE_EXTENSIONS = ["docx", "xlsx", "pptx", "doc", "xls", "ppt", "odg"];
-
 export function canPreview(extension) {
-    return (
-        VIEWERJS_EXTENSIONS.includes(extension) || OFFICE_EXTENSIONS.includes(extension)
-    );
+    return PDF_EXTENSIONS.includes(extension) || OFFICE_EXTENSIONS.includes(extension);
 }
 
 export function isOfficeExtension(extension) {
     return OFFICE_EXTENSIONS.includes(extension);
+}
+
+// Build a URL to Odoo core's bundled PDF.js viewer — the very viewer its native
+// FileViewer uses for PDF attachments (see web .../core/file_viewer/file_model.js).
+function pdfViewerUrl(pdfRoute) {
+    const origin = window.location.origin || "";
+    return (
+        origin +
+        "/web/static/lib/pdfjs/web/viewer.html?file=" +
+        encodeURIComponent(pdfRoute) +
+        "#pagemode=none"
+    );
+}
+
+// Build the LibreOffice->PDF conversion route for an office attachment.
+function officeConversionRoute(
+    attachment_id,
+    attachment_url,
+    attachment_extension,
+    attachment_filename
+) {
+    const origin = window.location.origin || "";
+    const filename = attachment_filename || "file." + attachment_extension;
+
+    if (attachment_url) {
+        // Derive model/field/id from the binary field URL,
+        // e.g. /web/content?model=dms.file&field=content&id=42
+        try {
+            const parsed = new URL(origin + attachment_url);
+            const model = parsed.searchParams.get("model");
+            const field = parsed.searchParams.get("field");
+            const id = parsed.searchParams.get("id");
+            if (model && field && id) {
+                return (
+                    "/attachment_preview/office_to_pdf?model=" +
+                    encodeURIComponent(model) +
+                    "&field=" +
+                    encodeURIComponent(field) +
+                    "&id=" +
+                    encodeURIComponent(id) +
+                    "&filename=" +
+                    encodeURIComponent(filename)
+                );
+            }
+        } catch {
+            // Fall through to the attachment_id path.
+        }
+    }
+    if (attachment_id) {
+        return (
+            "/attachment_preview/office_to_pdf?model=ir.attachment" +
+            "&field=datas&id=" +
+            attachment_id +
+            "&filename=" +
+            encodeURIComponent(filename)
+        );
+    }
+    return "";
 }
 
 export function getUrl(
@@ -35,97 +98,35 @@ export function getUrl(
     attachment_title,
     attachment_filename
 ) {
-    var origin = window.location.origin || "";
+    const origin = window.location.origin || "";
 
-    // Office formats: route through LibreOffice → PDF conversion endpoint
+    // Office formats (ODF + OOXML): convert to PDF, then render via PDF.js.
     if (isOfficeExtension(attachment_extension)) {
-        var conversionUrl = "";
-        if (attachment_url) {
-            // Derive model/field/id from the binary field URL
-            // e.g. /web/content?model=dms.file&field=content&id=42
-            try {
-                var parsed = new URL(origin + attachment_url);
-                var model = parsed.searchParams.get("model");
-                var field = parsed.searchParams.get("field");
-                var id = parsed.searchParams.get("id");
-                if (model && field && id) {
-                    conversionUrl =
-                        origin +
-                        "/attachment_preview/office_to_pdf" +
-                        "?model=" +
-                        encodeURIComponent(model) +
-                        "&field=" +
-                        encodeURIComponent(field) +
-                        "&id=" +
-                        encodeURIComponent(id) +
-                        "&filename=" +
-                        encodeURIComponent(
-                            attachment_filename || "file." + attachment_extension
-                        );
-                }
-            } catch {
-                // URL parsing failed — fall through to attachment_id path
-            }
-        }
-        if (!conversionUrl && attachment_id) {
-            conversionUrl =
-                origin +
-                "/attachment_preview/office_to_pdf" +
-                "?model=ir.attachment&field=datas&id=" +
-                attachment_id +
-                "&filename=" +
-                encodeURIComponent(
-                    attachment_filename || "file." + attachment_extension
-                );
-        }
-        if (conversionUrl) {
-            // Tell ViewerJS the converted output is PDF
-            return (
-                origin +
-                "/attachment_preview/static/lib/ViewerJS/index.html" +
-                "?type=pdf" +
-                "&title=" +
-                encodeURIComponent(attachment_title) +
-                "&zoom=automatic" +
-                "#" +
-                conversionUrl.replace(origin, "")
-            );
+        const route = officeConversionRoute(
+            attachment_id,
+            attachment_url,
+            attachment_extension,
+            attachment_filename
+        );
+        if (route) {
+            return pdfViewerUrl(route);
         }
     }
 
-    // Native ViewerJS path (PDF + ODF)
-    var url = "";
+    // PDFs render directly through the native viewer.
+    let pdfRoute = "";
     if (attachment_url) {
-        if (attachment_url.slice(0, 21) === "/web/static/lib/pdfjs") {
-            url = origin + attachment_url;
-        } else {
-            url =
-                origin +
-                "/attachment_preview/static/lib/ViewerJS/index.html" +
-                "?type=" +
-                encodeURIComponent(attachment_extension) +
-                "&title=" +
-                encodeURIComponent(attachment_title) +
-                "&zoom=automatic" +
-                "#" +
-                attachment_url.replace(origin, "");
+        // Already a fully-built pdf.js viewer URL -> use as-is.
+        if (attachment_url.indexOf("/web/static/lib/pdfjs") !== -1) {
+            return attachment_url.startsWith("http")
+                ? attachment_url
+                : origin + attachment_url;
         }
-        return url;
+        pdfRoute = attachment_url.replace(origin, "");
+    } else if (attachment_id) {
+        pdfRoute = "/web/content/" + attachment_id + "?model=ir.attachment";
     }
-    url =
-        origin +
-        "/attachment_preview/static/lib/ViewerJS/index.html" +
-        "?type=" +
-        encodeURIComponent(attachment_extension) +
-        "&title=" +
-        encodeURIComponent(attachment_title) +
-        "&zoom=automatic" +
-        "#" +
-        "/web/content/" +
-        attachment_id +
-        "?model%3Dir.attachment";
-
-    return url;
+    return pdfViewerUrl(pdfRoute);
 }
 
 export function showPreview(

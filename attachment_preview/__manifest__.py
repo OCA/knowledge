@@ -7,7 +7,7 @@
     "author": "Therp BV," "Onestein," "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
-    "summary": "Preview attachments supported by Viewer.js",
+    "summary": "Preview attachments (PDF + office) via the native PDF.js viewer",
     "category": "Knowledge Management",
     "depends": ["web", "mail"],
     "data": [],

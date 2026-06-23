@@ -200,3 +200,57 @@ class TestOfficeToPdfController(BaseCommon):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(res.get_data(), b"%PDF-1.4 ok")
         self.assertEqual(res.headers["Content-Type"], "application/pdf")
+
+    def test_route_odf_extension_accepted(self):
+        """ODF formats (e.g. .ods) are converted, not just OOXML."""
+        ods = self.env["ir.attachment"].create(
+            {"name": "sheet.ods", "datas": base64.b64encode(b"fake ods")}
+        )
+        with patch(
+            "odoo.addons.attachment_preview.controllers.main."
+            "AttachmentPreviewOfficeController._libreoffice_to_pdf",
+            return_value=b"%PDF-1.4 ok",
+        ):
+            res = self._call_route(id=ods.id, filename="sheet.ods")
+        self.assertEqual(res.status_code, 200)
+
+    def test_route_non_binary_field_rejected(self):
+        """A non-binary field name yields HTTP 400 (no arbitrary field read)."""
+        self.assertEqual(self._call_route(field="name").status_code, 400)
+
+    def test_route_unknown_field_rejected(self):
+        """An unknown field name yields HTTP 400."""
+        self.assertEqual(self._call_route(field="does_not_exist").status_code, 400)
+
+    def test_route_oversized_rejected(self):
+        """Documents over the size cap are rejected with HTTP 413."""
+        from ..controllers import main as ctrl
+
+        big = self.env["ir.attachment"].create(
+            {
+                "name": "big.docx",
+                "datas": base64.b64encode(b"x" * 16),
+            }
+        )
+        with patch.object(ctrl, "MAX_CONTENT_BYTES", 8):
+            res = self._call_route(id=big.id, filename="big.docx")
+        self.assertEqual(res.status_code, 413)
+
+    def test_libreoffice_uses_isolated_profile(self):
+        """Conversion passes an isolated UserInstallation profile to avoid the
+        shared LibreOffice profile-lock collision under concurrency."""
+        captured = {}
+
+        def fake_run(cmd, **kwargs):
+            captured["cmd"] = cmd
+            return self._make_fake_completed_process(returncode=1)
+
+        with patch(
+            "odoo.addons.attachment_preview.controllers.main.subprocess.run",
+            side_effect=fake_run,
+        ):
+            self.controller._libreoffice_to_pdf(b"content", "docx")
+        self.assertTrue(
+            any(str(a).startswith("-env:UserInstallation=") for a in captured["cmd"]),
+            "LibreOffice must run with an isolated UserInstallation profile",
+        )
