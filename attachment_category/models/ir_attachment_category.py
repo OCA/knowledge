@@ -20,7 +20,6 @@ class IrAttachmentCategory(models.Model):
     )
     parent_path = fields.Char(
         index=True,
-        unaccent=False,
     )
     attachment_ids = fields.Many2many(
         compute="_compute_attachment_count", comodel_name="ir.attachment"

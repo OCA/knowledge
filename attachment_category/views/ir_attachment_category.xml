@@ -42,15 +42,15 @@
         <field name="name">ir.attachment.category.tree (in document_category)</field>
         <field name="model">ir.attachment.category</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="display_name" />
-            </tree>
+            </list>
         </field>
     </record>
     <record model="ir.actions.act_window" id="ir_attachment_category_act_window">
         <field name="name">Attachment Categories</field>
         <field name="res_model">ir.attachment.category</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Create a new document</p>
             <p>Also you will find here all the related document categories.</p>
