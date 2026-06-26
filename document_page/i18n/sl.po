@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2026-06-07 11:46+0000\n"
+"PO-Revision-Date: 2026-06-26 11:17+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -24,66 +24,66 @@ msgstr ""
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (kopija)"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Potrebno ukrepanje"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__active
 msgid "Active"
-msgstr ""
+msgstr "Aktivno"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktivnosti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Dekoracija izjeme"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Stanje aktivnosti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Ikona tipa aktivnosti"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Archived"
-msgstr ""
+msgstr "Arhivirano"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Št. priponk"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
 msgid "Author"
-msgstr ""
+msgstr "Avtor"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__backend_url
 msgid "Backend URL"
-msgstr ""
+msgstr "URL strežnika"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_browse_all_content
 #: model:ir.actions.act_window,name:document_page.action_browse_top_content
 #: model:ir.ui.menu,name:document_page.menu_browse_content
 msgid "Browse Wiki Content"
-msgstr ""
+msgstr "Brskaj po Wiki vsebini"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -94,7 +94,7 @@ msgstr "Preklic"
 #: model:ir.ui.menu,name:document_page.menu_category
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Categories"
-msgstr ""
+msgstr "Kategorije"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_category
@@ -105,38 +105,38 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Category"
-msgstr ""
+msgstr "Kategorija"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Changes"
-msgstr ""
+msgstr "Spremembe"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__child_ids
 msgid "Children"
-msgstr ""
+msgstr "Podrejeni"
 
 #. module: document_page
 #: model_terms:ir.actions.act_window,help:document_page.action_page
 msgid "Click to create a new web page."
-msgstr ""
+msgstr "Ustvari novo stran."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Close"
-msgstr ""
+msgstr "Zaključi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__color
 msgid "Color Index"
-msgstr ""
+msgstr "Barvni indeks"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__company_id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__company_id
 msgid "Company"
-msgstr ""
+msgstr "Družba"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content
@@ -146,13 +146,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Content"
-msgstr ""
+msgstr "Vsebina"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_create_menu
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Create Menu"
-msgstr ""
+msgstr "Ustvari meni"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__create_uid
@@ -173,19 +173,19 @@ msgstr "Ustvarjeno"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_summary
 msgid "Describe the changes made"
-msgstr ""
+msgstr "Opiši narejene spremembe"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__diff
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__diff
 msgid "Diff"
-msgstr ""
+msgstr "Razlika"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_view_wiki_show_diff_values
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_show_diff
 msgid "Difference"
-msgstr ""
+msgstr "Razlika"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__display_name
@@ -198,9 +198,8 @@ msgstr "Prikazani naziv"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-#, fuzzy
 msgid "Document Category"
-msgstr "Zgodovina strani dokumentov"
+msgstr "Kategorija dokumenta"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -220,9 +219,8 @@ msgstr "Zgodovina strani dokumentov"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_wizard_document_page_history_show_diff
-#, fuzzy
 msgid "Document Page Show Diff"
-msgstr "Stran dokumenta"
+msgstr "Prikaz razlik v dokumentu"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
@@ -232,38 +230,38 @@ msgstr "Dokumenti"
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_editor
 msgid "Editor"
-msgstr ""
+msgstr "Urednik"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Sledilci"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Sledilci (partnerji)"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font awesome ikona, npr. fa-tasks"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
-msgstr ""
+msgstr "GLAVA"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Vsebuje sporočilo"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_ids
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "History"
-msgstr ""
+msgstr "Zgodovina"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__id
@@ -277,55 +275,57 @@ msgstr "ID"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Ikona za prikaz izjem pri aktivnostih."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Če je označeno, nova sporočila zahtevajo vašo pozornost."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
+"Če označeno pomeni, da je pri nekaterih sporočilih prišlo do napake pri "
+"dostavi."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
-msgstr ""
+msgstr "Če je nastavljeno, je stran dosegljiva le za to družbo"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__image
 msgid "Image"
-msgstr ""
+msgstr "Slika"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Information"
-msgstr ""
+msgstr "Informacije"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Je sledilec"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content_date
 msgid "Last Contribution Date"
-msgstr ""
+msgstr "Datum zadnjega prispevka"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__content_uid
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Last Contributor"
-msgstr ""
+msgstr "Zadnji prispeval"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__write_uid
@@ -346,38 +346,38 @@ msgstr "Zadnjič posodobljeno"
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
 msgid "Manager"
-msgstr ""
+msgstr "Upravitelj"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_ir_ui_menu
 #: model:ir.model.fields,field_description:document_page.field_document_page__menu_id
 msgid "Menu"
-msgstr ""
+msgstr "Meni"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
 msgid "Menu Information"
-msgstr ""
+msgstr "Meni informacije"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__menu_name
 msgid "Menu Name"
-msgstr ""
+msgstr "Naziv menija"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Napaka ob dostavi sporočila"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Sporočila"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Rok mojih aktivnosti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
@@ -386,111 +386,111 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_menu_form
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__draft_name
 msgid "Name for the changes made"
-msgstr ""
+msgstr "Naziv za narejene spremembe"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Rok naslednje aktivnosti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Povzetek naslednje aktivnosti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tip naslednje aktivnosti"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Število ukrepov"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Število napak"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Število sporočil, ki zahtevajo ukrepanje"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Število sporočil, ki niso bila pravilno dostavljena"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__page_id
 msgid "Page"
-msgstr ""
+msgstr "Stran"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_related_page_history
 msgid "Page History"
-msgstr ""
+msgstr "Zgodovina strani"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_history
 msgid "Page history"
-msgstr ""
+msgstr "Zgodovina strani"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__type
 msgid "Page type"
-msgstr ""
+msgstr "Tip strani"
 
 #. module: document_page
 #: model:ir.actions.act_window,name:document_page.action_page
 #: model:ir.ui.menu,name:document_page.menu_page
 #: model:ir.ui.menu,name:document_page.menu_wiki
 msgid "Pages"
-msgstr ""
+msgstr "Strani"
 
 #. module: document_page
 #: model:ir.ui.menu,name:document_page.menu_page_history
 msgid "Pages history"
-msgstr ""
+msgstr "Zgodovina strani"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__menu_parent_id
 msgid "Parent Menu"
-msgstr ""
+msgstr "Nadrejeni meni"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Ocene"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Odgovorni uporabnik"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "Rev 01"
-msgstr ""
+msgstr "Rev 01"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
-msgstr ""
+msgstr "Revizija"
 
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/wizard/document_page_show_diff.py:0
 msgid "Select one or maximum two history revisions!"
-msgstr ""
+msgstr "Izberite eno do največ dve reviziji!"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_state
@@ -500,19 +500,23 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status glede na aktivnosti\n"
+"Prekoračeno: rok izvedbe je že prekoračen\n"
+"Danes: Datum aktivnosti je današnji dan\n"
+"Planirano: Bodoče aktivnosti."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__summary
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Summary"
-msgstr ""
+msgstr "Povzetek"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__template
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
 msgid "Template"
-msgstr ""
+msgstr "Predloga"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__template
@@ -520,66 +524,68 @@ msgid ""
 "Template that will be used as a content template for all new page of this "
 "category."
 msgstr ""
+"Predloga, ki bo uporabljena kot predloga vsebine za vse strani v tej "
+"kategoriji."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__name
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_browse_top_document_filter
 msgid "Top Level Ressources"
-msgstr ""
+msgstr "Viri najvišjega nivoja"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__type
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tip izjeme pri aktivnosti na zapisu."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
 msgid "Use it to link resources univocally"
-msgstr ""
+msgstr "Uporabite ga za vsebinsko povezavo virov"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Sporočila spletne strani"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Kronologija komunikacij spletne strani"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
-msgstr ""
+msgstr "Čarovnik za ustvarjanje menija"
 
 #. module: document_page
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 msgid "You cannot create recursive categories."
-msgstr ""
+msgstr "Rekurzivne kategorije niso dovoljene."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_category_form
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "e.g. Once upon a time..."
-msgstr ""
+msgstr "npr. Nekoč pred davnimi časi..."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 #: model_terms:ir.ui.view,arch_db:document_page.wiki_history_form
 msgid "eg: Changed ... for ..."
-msgstr ""
+msgstr "npr. Spremenjeno ... za ..."
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
@@ -590,7 +596,7 @@ msgstr "ali"
 #. odoo-python
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
-msgstr ""
+msgstr "povzetek"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
