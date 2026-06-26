@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -129,13 +129,13 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve page in '%s' state."
+msgid "Can't approve page in '%(state)s' state."
 msgstr ""
 
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Can't approve pages in '%s' state."
+msgid "Can't approve pages in '%(state)s' state."
 msgstr ""
 
 #. module: document_page_approval
@@ -165,7 +165,13 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "Change request has been approved by %s."
+msgid "Change request has been approved by %(user)s."
+msgstr ""
+
+#. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page__display_name
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: document_page_approval
@@ -215,6 +221,12 @@ msgid "History"
 msgstr ""
 
 #. module: document_page_approval
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page__id
+#: model:ir.model.fields,field_description:document_page_approval.field_document_page_history__id
+msgid "ID"
+msgstr ""
+
+#. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_needaction
 msgid "If checked, new messages require your attention."
 msgstr ""
@@ -248,7 +260,7 @@ msgstr ""
 #. module: document_page_approval
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
-msgid "New version of the document %s approved."
+msgid "New version of the document %(name)s approved."
 msgstr ""
 
 #. module: document_page_approval
@@ -274,6 +286,12 @@ msgstr ""
 #. module: document_page_approval
 #: model:ir.model.fields,help:document_page_approval.field_document_page_history__message_has_error_counter
 msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: document_page_approval
+#. odoo-python
+#: code:addons/document_page_approval/models/document_page_history.py:0
+msgid "Only approvers with these groups can approve this: %(groups)s"
 msgstr ""
 
 #. module: document_page_approval
@@ -355,15 +373,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
-"You are not authorized to do this.\r\n"
-"Only approvers with these groups can approve this: {}"
-msgstr ""
-
-#. module: document_page_approval
-#. odoo-python
-#: code:addons/document_page_approval/models/document_page_history.py:0
-msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only owners or approvers can reopen Change Requests."
 msgstr ""
 
@@ -371,7 +381,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/document_page_approval/models/document_page_history.py:0
 msgid ""
-"You are not authorized to do this.\r\n"
+"You are not authorized to do this.\n"
 "Only owners or approvers can request approval."
 msgstr ""
 
