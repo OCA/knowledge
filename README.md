@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [document_knowledge](document_knowledge/) | 19.0.1.0.1 |  | Documents Knowledge
 [document_page](document_page/) | 19.0.1.0.1 |  | Document Page
 [document_page_partner](document_page_partner/) | 19.0.1.0.0 |  | Allows to link doucment pages to a partner
+[document_page_project](document_page_project/) | 19.0.1.0.0 | <a href='https://github.com/LoisRForgeFlow'><img src='https://github.com/LoisRForgeFlow.png' width='32' height='32' style='border-radius:50%;' alt='LoisRForgeFlow'/></a> | This module links document pages to projects
 [document_url](document_url/) | 19.0.1.0.0 |  | URL attachment
 
 [//]: # (end addons)
