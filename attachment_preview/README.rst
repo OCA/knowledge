@@ -28,10 +28,14 @@ Preview attachments
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This addon allows to preview attachments supported by
-http://viewerjs.org.
+This addon previews attachments and binary fields directly in Odoo's
+backend.
 
-Currently, that's most Libreoffice files and PDFs.
+PDF files are rendered with Odoo's native PDF.js viewer. Office
+documents — both ODF (ODT/ODS/ODP) and OOXML (DOCX/XLSX/PPTX), plus
+legacy DOC/XLS/PPT — are converted to PDF on the server with LibreOffice
+and then rendered through that same native viewer, so spreadsheets and
+slide decks can be previewed without leaving Odoo.
 
 |Screenshot of split form view|
 
@@ -45,10 +49,24 @@ Currently, that's most Libreoffice files and PDFs.
 Installation
 ============
 
-For filetype recognition, you'll get the best results by installing
-``python-magic``:
+Office-document preview (DOCX, XLSX, PPTX, ODT, ODS, ODP, and legacy
+formats) requires **LibreOffice** to be installed on the Odoo server —
+it is used in headless mode to convert documents to PDF. It is *not*
+part of the standard Odoo image, so install it on the host/container
+running Odoo:
 
-sudo apt-get install python-magic
+::
+
+   sudo apt-get install libreoffice
+
+Without LibreOffice the office-preview endpoint returns HTTP 503 and
+only PDF files can be previewed. PDF preview needs no extra packages.
+
+For best filetype recognition, also install ``python-magic``:
+
+::
+
+   sudo apt-get install python-magic
 
 Usage
 =====
