@@ -190,6 +190,7 @@ msgstr "Fark"
 #: model:ir.model.fields,field_description:document_page.field_document_page__display_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__display_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__display_name
+#: model:ir.model.fields,field_description:document_page.field_ir_ui_menu__display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__display_name
 msgid "Display Name"
 msgstr "Görünen Ad"
@@ -246,13 +247,6 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
-msgid "Group By..."
-msgstr "Gruplama..."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
 msgstr ""
@@ -272,6 +266,7 @@ msgstr "Geçmiş"
 #: model:ir.model.fields,field_description:document_page.field_document_page__id
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__id
+#: model:ir.model.fields,field_description:document_page.field_ir_ui_menu__id
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__id
 msgid "ID"
 msgstr "ID"
@@ -599,6 +594,9 @@ msgstr "ya da"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr ""
+
+#~ msgid "Group By..."
+#~ msgstr "Gruplama..."
 
 #~ msgid "There are no changes in revisions."
 #~ msgstr "Revizyonlarda herhangi bir değişiklik yoktur."

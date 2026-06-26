@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
 "PO-Revision-Date: 2024-09-04 18:06+0000\n"
-"Last-Translator: Esteve Blanch Sanmartí <3501974+esteveblanch@users.noreply."
-"github.com>\n"
+"Last-Translator: Esteve Blanch Sanmartí "
+"<3501974+esteveblanch@users.noreply.github.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -191,6 +191,7 @@ msgstr "Diferència"
 #: model:ir.model.fields,field_description:document_page.field_document_page__display_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__display_name
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__display_name
+#: model:ir.model.fields,field_description:document_page.field_ir_ui_menu__display_name
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__display_name
 msgid "Display Name"
 msgstr "Nom mostrat"
@@ -247,13 +248,6 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Icona Font Awesome p.e. fa-tasks"
 
 #. module: document_page
-#: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_filter
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_history_filter
-msgid "Group By..."
-msgstr "Agrupa per..."
-
-#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__history_head
 msgid "HEAD"
 msgstr "CAPÇAL"
@@ -273,6 +267,7 @@ msgstr "Historial"
 #: model:ir.model.fields,field_description:document_page.field_document_page__id
 #: model:ir.model.fields,field_description:document_page.field_document_page_create_menu__id
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__id
+#: model:ir.model.fields,field_description:document_page.field_ir_ui_menu__id
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__id
 msgid "ID"
 msgstr "ID"
@@ -601,6 +596,9 @@ msgstr "o"
 #: code:addons/document_page/models/document_page.py:0
 msgid "summary"
 msgstr "resum"
+
+#~ msgid "Group By..."
+#~ msgstr "Agrupa per..."
 
 #~ msgid "There are no changes in revisions."
 #~ msgstr "No hi ha canvis en les revisions."
