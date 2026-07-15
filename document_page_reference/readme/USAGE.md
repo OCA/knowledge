@@ -1,3 +1,4 @@
-When editing a document page add elements like {{XXX}} where XXX is the
-reference of another page. Now, when viewing the document, it will link
-directly to the page. Also, the name will be parsed as the display name.
+When editing a document page, set a reference to identify it uniquely.
+If no reference is provided, one is generated automatically from the
+page name. References can only contain letters, numbers and underscores,
+and must be unique.
