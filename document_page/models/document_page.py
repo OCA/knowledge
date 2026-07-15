@@ -21,7 +21,7 @@ class DocumentPage(models.Model):
         help="Page type",
         default="content",
     )
-    active = fields.Boolean(default=True)
+    active = fields.Boolean(default=True, tracking=True)
     parent_id = fields.Many2one(
         "document.page", "Category", domain=[("type", "=", "category")]
     )
