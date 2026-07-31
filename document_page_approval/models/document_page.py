@@ -135,6 +135,24 @@ class DocumentPage(models.Model):
         res.action_to_approve()
         return res
 
+    def copy(self, default=None):
+        self.ensure_one()
+        # Do not trigger _inverse_content during copy; otherwise _create_history
+        # would move the new record straight to "to approve". Create the initial
+        # change request as draft so the duplicated page starts in the approval
+        # workflow.
+        default = dict(default or {}, content=False)
+        new_page = super().copy(default=default)
+        self.env["document.page.history"].create(
+            {
+                "page_id": new_page.id,
+                "name": new_page.draft_name,
+                "summary": new_page.draft_summary,
+                "content": self.content,
+            }
+        )
+        return new_page
+
     def action_changes_pending_approval(self):
         self.ensure_one()
         action = self.env["ir.actions.act_window"]._for_xml_id(
