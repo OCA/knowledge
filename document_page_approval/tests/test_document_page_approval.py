@@ -342,3 +342,31 @@ class TestDocumentPageApproval(BaseCommon):
 
         # Approver user evaluates it.
         self.assertTrue(page.with_user(self.user2).has_changes_pending_approval)
+
+    def test_history_copy(self):
+        """Duplicating a page must not copy history or approval metadata."""
+        page = self.page2
+        chreq = self.history_obj.with_user(self.user2).create(
+            {
+                "page_id": page.id,
+                "content": "<p>Version 1</p>",
+                "state": "approved",
+                "approved_date": "2026-07-31 10:00:00",
+                "approved_uid": self.user2.id,
+            }
+        )
+        original_history = page.history_ids
+        page_copy = page.copy()
+        self.assertFalse(page_copy.history_ids & original_history)
+        # The duplicated page starts with a single draft change request that
+        # carries the original content but no approval metadata.
+        all_copy_hist = self.history_obj.search([("page_id", "=", page_copy.id)])
+        self.assertEqual(len(all_copy_hist), 1)
+        self.assertEqual(all_copy_hist.state, "draft")
+        self.assertEqual(all_copy_hist.content, page.content)
+        self.assertFalse(all_copy_hist.approved_date)
+        self.assertFalse(all_copy_hist.approved_uid)
+        chreq_copy = chreq.copy()
+        self.assertEqual(chreq_copy.state, "draft")
+        self.assertFalse(chreq_copy.approved_date)
+        self.assertFalse(chreq_copy.approved_uid)
