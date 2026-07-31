@@ -59,6 +59,13 @@ class TestDocumentReference(BaseCommon):
             )
             self.assertFalse(new_page_duplicated_name.reference)
 
+    def test_duplicate_page_clears_reference(self):
+        """Duplicating a page must not reuse the original reference."""
+        new_page = self.page1.copy()
+        self.assertNotEqual(new_page.reference, self.page1.reference)
+        self.assertTrue(new_page.reference)
+        self.assertIn("copy", new_page.reference)
+
     def test_get_formview_action(self):
         res = self.page1.get_formview_action()
         view_id = self.env.ref("document_page.view_wiki_form").id
