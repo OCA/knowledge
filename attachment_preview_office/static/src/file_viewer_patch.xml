@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web.FileViewer" t-inherit-mode="extension">
+        <xpath expr="//iframe[@t-ref='iframeViewerPdf']" position="attributes">
+            <attribute name="t-if">state.file.isPdf and !state.officeLoading</attribute>
+        </xpath>
+        <xpath expr="//iframe[@t-ref='iframeViewerPdf']" position="before">
+            <div
+                t-if="state.officeLoading"
+                class="d-flex flex-column align-items-center text-white"
+                t-on-click.stop=""
+            >
+                <i
+                    class="fa fa-circle-o-notch fa-spin fa-3x mb-3"
+                    role="img"
+                    aria-label="Loading"
+                />
+                <span>Generating preview…</span>
+                <span class="small">Large files can take several seconds.</span>
+            </div>
+        </xpath>
+    </t>
+</templates>
