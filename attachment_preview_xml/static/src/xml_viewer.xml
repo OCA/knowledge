@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="attachment_preview_xml.XmlViewer">
+        <div
+            class="o-FileViewer-view o_xml_viewer w-75 h-100 overflow-auto p-3"
+            t-att-class="{'w-100': ui.isSmall}"
+            t-on-click.stop=""
+        >
+            <div t-if="state.loading" class="text-center p-4">
+                <i
+                    class="fa fa-circle-o-notch fa-spin fa-2x"
+                    role="img"
+                    aria-label="Loading"
+                />
+            </div>
+            <pre t-elif="state.raw" class="o_xml_viewer_raw" t-esc="state.raw" />
+            <t t-else="" t-call="attachment_preview_xml.XmlNode">
+                <t t-set="node" t-value="state.node" />
+            </t>
+        </div>
+    </t>
+
+    <t t-name="attachment_preview_xml.XmlNode">
+        <t t-if="node.type === 'element'">
+            <details t-if="node.isBranch" class="o_xml_node" open="open">
+                <summary><span class="o_xml_tag">&lt;<t t-esc="node.tag" /></span><t
+                        t-call="attachment_preview_xml.XmlAttributes"
+                    /><span class="o_xml_tag">&gt;</span></summary>
+                <div class="o_xml_children">
+                    <t t-foreach="node.children" t-as="child" t-key="child_index"><t
+                            t-call="attachment_preview_xml.XmlNode"
+                        ><t t-set="node" t-value="child" /></t></t>
+                </div>
+                <div class="o_xml_tag">&lt;/<t t-esc="node.tag" />&gt;</div>
+            </details>
+            <div t-else="" class="o_xml_node"><span class="o_xml_tag">&lt;<t
+                        t-esc="node.tag"
+                    /></span><t t-call="attachment_preview_xml.XmlAttributes" /><t
+                    t-if="node.text"
+                ><span class="o_xml_tag">&gt;</span><span class="o_xml_text"><t
+                            t-esc="node.text"
+                        /></span><span class="o_xml_tag">&lt;/<t
+                            t-esc="node.tag"
+                        />&gt;</span></t><span
+                    t-else=""
+                    class="o_xml_tag"
+                > /&gt;</span></div>
+        </t>
+        <div t-elif="node.type === 'comment'" class="o_xml_comment">&lt;!-- <t
+                t-esc="node.value"
+            /> --&gt;</div>
+        <div t-else="" class="o_xml_text"><t t-esc="node.value" /></div>
+    </t>
+
+    <t t-name="attachment_preview_xml.XmlAttributes"><t
+            t-foreach="node.attrs"
+            t-as="attr"
+            t-key="attr.name"
+        ><span class="o_xml_attr_name"> <t t-esc="attr.name" /></span>=<span
+                class="o_xml_attr_value"
+            >"<t t-esc="attr.value" />"</span></t></t>
+
+</templates>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web.FileViewer" t-inherit-mode="extension">
+        <xpath expr="//iframe[@t-ref='iframeViewerPdf']" position="before">
+            <XmlViewer t-if="state.file.isXml" file="state.file" />
+        </xpath>
+    </t>
+</templates>
