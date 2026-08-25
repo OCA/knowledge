@@ -22,8 +22,8 @@
             </field>
         </field>
     </record>
-    <record model="ir.ui.view" id="ir_attachment_tree_view">
-        <field name="name">ir.attachment.tree (in attachment_category)</field>
+    <record model="ir.ui.view" id="ir_attachment_list_view">
+        <field name="name">ir.attachment.list (in attachment_category)</field>
         <field name="model">ir.attachment</field>
         <field name="inherit_id" ref="base.view_attachment_tree" />
         <field name="arch" type="xml">
