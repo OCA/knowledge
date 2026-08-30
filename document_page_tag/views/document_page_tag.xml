@@ -57,7 +57,7 @@
         <field name="name">document.page.tag.tree</field>
         <field name="model">document.page.tag</field>
         <field name="arch" type="xml">
-            <list>
+            <list multi_edit="1">
                 <field name="name" />
                 <field name="parent_id" domain="[('id', '!=', id)]" />
                 <field name="color" widget="color_picker" string="Color" />
