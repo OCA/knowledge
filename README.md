@@ -22,6 +22,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[attachment_category](attachment_category/) | 19.0.1.0.0 |  | Atachment Category
 [attachment_zipped_download](attachment_zipped_download/) | 19.0.1.0.0 |  | Attachment Zipped Download
 [document_knowledge](document_knowledge/) | 19.0.1.0.1 |  | Documents Knowledge
 [document_page](document_page/) | 19.0.1.0.2 |  | Document Page
