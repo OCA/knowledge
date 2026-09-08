@@ -1,7 +1,7 @@
 # Copyright 2025 Marcel Savegnago - Escodoo <https://escodoo.com.br>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -42,7 +42,7 @@ class DocumentPage(models.Model):
                 )
                 if invalid_tasks:
                     raise ValidationError(
-                        _(
+                        self.env._(
                             "All linked tasks must belong to the document's project "
                             "'%(project)s'. The following tasks belong to a different "
                             "project: %(tasks)s.",
