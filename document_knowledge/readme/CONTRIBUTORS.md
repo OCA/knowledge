@@ -15,3 +15,4 @@
   - Khoi (Kien Kim) <khoikk@trobz.com>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- Don Kendall \<<dkendall@ledoweb.com>\>
