@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_knowledge_configuration" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.knowledge</field>
