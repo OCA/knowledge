@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Create Menu From view -->
     <record id="view_wiki_create_menu" model="ir.ui.view">
@@ -27,7 +27,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="action_related_page_create_menu">
+    <record id="action_related_page_create_menu" model="ir.actions.act_window">
         <field name="name">Create Menu</field>
         <field name="res_model">document.page.create.menu</field>
         <field name="view_mode">form</field>

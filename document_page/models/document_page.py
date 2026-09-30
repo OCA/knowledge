@@ -60,10 +60,9 @@ class DocumentPage(models.Model):
     history_ids = fields.One2many(
         "document.page.history",
         "page_id",
-        "History",
         readonly=True,
     )
-    menu_id = fields.Many2one("ir.ui.menu", "Menu", readonly=True)
+    menu_id = fields.Many2one("ir.ui.menu", readonly=True)
     content_date = fields.Datetime(
         "Last Contribution Date",
         related="history_head.create_date",
@@ -81,7 +80,6 @@ class DocumentPage(models.Model):
     )
     company_id = fields.Many2one(
         "res.company",
-        "Company",
         help="If set, page is accessible only from this company",
         index=True,
         ondelete="cascade",

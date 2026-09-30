@@ -4,7 +4,7 @@
     <record id="view_category_form" model="ir.ui.view">
         <field name="name">document.page.category.form</field>
         <field name="model">document.page</field>
-        <field name="priority">16</field>
+        <field name="priority" eval="16" />
         <field name="arch" type="xml">
             <form string="Category">
                 <sheet>
@@ -147,8 +147,8 @@
                                 </small>
                             </div>
                             <div
-                                class="d-flex justify-content-between align-items-center"
                                 t-if="record.type.raw_value == 'content'"
+                                class="d-flex justify-content-between align-items-center"
                             >
                                 <field name="write_date" widget="date" />
                                 <field

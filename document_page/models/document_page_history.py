@@ -16,7 +16,7 @@ class DocumentPageHistory(models.Model):
     _description = "Document Page History"
     _order = "id DESC"
 
-    page_id = fields.Many2one("document.page", "Page", ondelete="cascade")
+    page_id = fields.Many2one("document.page", ondelete="cascade")
     name = fields.Char(index=True)
     summary = fields.Char(index=True)
     content = fields.Html(sanitize=False)

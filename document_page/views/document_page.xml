@@ -1,10 +1,10 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- wiki list view -->
     <record id="view_wiki_tree_children" model="ir.ui.view">
         <field name="name">document.page.list</field>
         <field name="model">document.page</field>
-        <field name="priority">100</field>
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <list>
                 <field name="name" />
@@ -32,11 +32,11 @@
     <record id="view_wiki_form" model="ir.ui.view">
         <field name="name">document.page.form</field>
         <field name="model">document.page</field>
-        <field name="priority">10</field>
+        <field name="priority" eval="10" />
         <field name="arch" type="xml">
             <form string="Document Page">
                 <sheet>
-                    <div name="button_box" id="button_box" class="oe_button_box" />
+                    <div id="button_box" class="oe_button_box" name="button_box" />
                     <widget
                         name="web_ribbon"
                         title="Archived"

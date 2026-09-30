@@ -1,7 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- History List view -->
-    <record model="ir.ui.view" id="view_wiki_history_tree">
+    <record id="view_wiki_history_tree" model="ir.ui.view">
         <field name="name">document.page.history.list</field>
         <field name="model">document.page.history</field>
         <field name="arch" type="xml">
@@ -37,7 +37,7 @@
     </record>
 
     <!-- History Form view  -->
-    <record model="ir.ui.view" id="wiki_history_form">
+    <record id="wiki_history_form" model="ir.ui.view">
         <field name="name">document.page.history.form</field>
         <field name="model">document.page.history</field>
         <field name="arch" type="xml">
@@ -84,7 +84,7 @@
     </record>
 
     <!-- History Action  -->
-    <record model="ir.actions.act_window" id="action_history">
+    <record id="action_history" model="ir.actions.act_window">
         <field name="name">Page history</field>
         <field name="path">document_page_history_all</field>
         <field name="res_model">document.page.history</field>
