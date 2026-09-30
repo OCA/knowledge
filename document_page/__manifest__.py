@@ -4,7 +4,7 @@
 
 {
     "name": "Document Page",
-    "version": "19.0.1.0.2",
+    "version": "20.0.1.0.0",
     "category": "Knowledge Management",
     "author": "OpenERP SA, Odoo Community Association (OCA)",
     "images": [
@@ -20,7 +20,7 @@
     "depends": ["mail", "document_knowledge", "html_editor"],
     "data": [
         "security/document_page_security.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "wizard/document_page_create_menu.xml",
         "wizard/document_page_show_diff.xml",
         "views/document_page.xml",
