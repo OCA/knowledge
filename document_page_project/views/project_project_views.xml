@@ -9,6 +9,7 @@
                     class="o_project_kanban_box"
                     name="%(action_document_page_projects)d"
                     type="action"
+                    groups="document_knowledge.group_document_user"
                 >
                     <div>
                         <b>
@@ -35,6 +36,7 @@
                     type="action"
                     name="%(action_document_page_projects)d"
                     icon="fa-book"
+                    groups="document_knowledge.group_document_user"
                 >
                     <field
                         string="Wiki Pages"
