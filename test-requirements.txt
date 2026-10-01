@@ -1,0 +1,3 @@
+# DO NOT MERGE — temporary pin until OCA/knowledge#647 and #646 land.
+odoo-addon-document_page @ git+https://github.com/OCA/knowledge.git@refs/pull/647/head#subdirectory=document_page
+odoo-addon-document_knowledge @ git+https://github.com/OCA/knowledge.git@refs/pull/646/head#subdirectory=document_knowledge
