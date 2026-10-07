@@ -6,7 +6,11 @@
         <field name="model">wizard.document.page.history.show_diff</field>
         <field name="arch" type="xml">
             <form string="Difference">
-                <field name="diff" widget="html" class="overflow-x: scroll" />
+                <field
+                    name="diff"
+                    widget="html"
+                    class="o_document_page_diff overflow-auto"
+                />
                 <footer>
                     <button string="Close" class="oe_link" special="cancel" />
                 </footer>
