@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [document_page_access_group](document_page_access_group/) | 19.0.1.0.0 |  | Choose groups to access document pages
 [document_page_access_group_user_role](document_page_access_group_user_role/) | 19.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Document Page Access Group User Role
 [document_page_approval](document_page_approval/) | 19.0.1.0.0 |  | Document Page Approval
+[document_page_group](document_page_group/) | 19.0.1.0.0 |  | Define access groups on documents
 [document_page_partner](document_page_partner/) | 19.0.1.0.0 |  | Allows to link doucment pages to a partner
 [document_page_project](document_page_project/) | 19.0.1.1.0 | <a href='https://github.com/LoisRForgeFlow'><img src='https://github.com/LoisRForgeFlow.png' width='32' height='32' style='border-radius:50%;' alt='LoisRForgeFlow'/></a> | This module links document pages to projects
 [document_url](document_url/) | 19.0.1.0.0 |  | URL attachment
