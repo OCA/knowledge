@@ -162,11 +162,10 @@ class DocumentPage(models.Model):
 
     @api.depends("history_ids")
     def _compute_history_head(self):
+        # history_ids is not sorted by _order in cache: a revision created
+        # during write() comes last, so pick the newest one explicitly.
         for rec in self:
-            if rec.history_ids:
-                rec.history_head = rec.history_ids[0]
-            else:
-                rec.history_head = False
+            rec.history_head = rec.history_ids.sorted("id", reverse=True)[:1]
 
     @api.onchange("parent_id")
     def _onchange_parent_id(self):
