@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+signage_read,Permission to read signage,model_signage,base.group_user,1,0,0,0
+signage_manager,Permission to modify signage,model_signage,document_page.group_document_editor,1,1,1,1
+signage_category_read,Permission to read signage_category,model_signage_category,base.group_user,1,0,0,0
+signage_category_manager,Permission to modify signage_category,model_signage_category,document_page.group_document_editor,1,1,1,1

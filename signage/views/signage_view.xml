@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2025 Dimitrios Tanis
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem
+        id="menu_signage_section"
+        name="Signage"
+        groups="base.group_user"
+        parent="document_knowledge.menu_document_root"
+        sequence="160"
+    />
+
+    <record id="signage_tree" model="ir.ui.view">
+        <field name="name">signage.tree</field>
+        <field name="model">signage</field>
+        <field name="arch" type="xml">
+            <list string="signage">
+                <field name="display_name" />
+                <field name="category_id" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="signage_form">
+        <field name="name">signage.form</field>
+        <field name="model">signage</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="signage">
+                <sheet>
+                    <group>
+                        <group name="left-group">
+                            <field
+                                name="image"
+                                nolabel="1"
+                                widget="image"
+                                class="oe_center"
+                            />
+                            <field
+                                name="name"
+                                nolabel="1"
+                                options="{'codeview': true }"
+                            />
+                            <field name="description" />
+                            <field name="category_id" />
+                        </group>
+                        <group name="right-group" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="signage_kanban_view" model="ir.ui.view">
+        <field name="name">signage Kanban</field>
+        <field name="model">signage</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="category_id">
+                <templates>
+                    <t t-name="card">
+                        <aside t-if="record.image.raw_value">
+                            <field
+                                name="image"
+                                widget="image"
+                                options="{'img_class': 'object-fit-contain w-100 h-100 bg-transparent'}"
+                            />
+                        </aside>
+                        <field name="name" widget="html" class="overflow-hidden" />
+                        <small class="pt-2">
+                            <field name="category_id" class="badge text-bg-secondary" />
+                        </small>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="signage_action" model="ir.actions.act_window">
+        <field name="name">Signage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">signage</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_signage"
+        action="signage_action"
+        parent="menu_signage_section"
+        sequence="10"
+        groups="base.group_user"
+    />
+</odoo>

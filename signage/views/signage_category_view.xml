@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2025 Dimitrios Tanis
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="signage_category_tree" model="ir.ui.view">
+        <field name="name">signage.category.tree</field>
+        <field name="model">signage.category</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="description" />
+                <field name="fold" />
+                <field name="font_color_hex" widget="color" />
+                <field name="background_color_hex" widget="color" />
+            </list>
+        </field>
+    </record>
+
+    <record id="signage_category_form" model="ir.ui.view">
+        <field name="name">signage.category.form</field>
+        <field name="model">signage.category</field>
+        <field name="arch" type="xml">
+            <form string="Signage Categories">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="fold" />
+                        <field name="font_color_hex" widget="color" />
+                        <field name="background_color_hex" widget="color" />
+                        <field name="signage_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="signage_category_action" model="ir.actions.act_window">
+        <field name="name">Signage Categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">signage.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_signage_category"
+        action="signage_category_action"
+        parent="menu_signage_section"
+        sequence="20"
+        groups="document_page.group_document_editor"
+    />
+</odoo>
