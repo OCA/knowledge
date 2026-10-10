@@ -61,3 +61,4 @@ class TestDocumentPage(common.TransactionCase):
         self.assertEqual(page_copy.content, page.content)
         self.assertEqual(page_copy.draft_name, "1.0")
         self.assertEqual(page_copy.draft_summary, "summary")
+        self.assertFalse(page_copy.history_ids & page.history_ids)

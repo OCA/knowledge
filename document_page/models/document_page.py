@@ -63,6 +63,7 @@ class DocumentPage(models.Model):
         "page_id",
         "History",
         readonly=True,
+        copy=False,
     )
     menu_id = fields.Many2one("ir.ui.menu", "Menu", readonly=True)
     content_date = fields.Datetime(
