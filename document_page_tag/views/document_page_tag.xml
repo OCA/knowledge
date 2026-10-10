@@ -12,6 +12,13 @@
                 />
                 <separator />
                 <field name="name" filter_domain="[('name', 'ilike', self)]" />
+                <group string="Group By">
+                    <filter
+                        string="Parent Tag"
+                        name="group_parent_id"
+                        context="{'group_by': 'parent_id'}"
+                    />
+                </group>
             </search>
         </field>
     </record>
@@ -38,6 +45,7 @@
                         </h1>
                     </div>
                     <group name="main">
+                        <field name="parent_id" domain="[('id', '!=', id)]" />
                         <field name="color" widget="color_picker" />
                     </group>
                 </sheet>
@@ -49,8 +57,9 @@
         <field name="name">document.page.tag.tree</field>
         <field name="model">document.page.tag</field>
         <field name="arch" type="xml">
-            <list>
+            <list multi_edit="1">
                 <field name="name" />
+                <field name="parent_id" domain="[('id', '!=', id)]" />
                 <field name="color" widget="color_picker" string="Color" />
             </list>
         </field>
