@@ -16,11 +16,20 @@ class DocumentPage(models.Model):
     _description = "Document Page"
 
     reference = fields.Char(
-        help="Used to find the document, it can contain letters, numbers and _"
+        copy=False,
+        help="Used to find the document, it can contain letters, numbers and _",
     )
     content_parsed = fields.Html(
         "Parsed Content", compute="_compute_content_parsed", sanitize=False, store=True
     )
+
+    _sql_constraints = [
+        (
+            "document_page_reference_unique",
+            "UNIQUE(reference)",
+            "The reference must be unique.",
+        )
+    ]
 
     def get_formview_action(self, access_uid=None):
         res = super().get_formview_action(access_uid)
