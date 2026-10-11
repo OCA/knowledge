@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="module_category_knowledge" model="ir.module.category">
+        <field name="name">Documents Knowledge</field>
+        <field name="description">Manage documents and knowledge-related
+            applications
+        </field>
+        <field name="sequence" eval="30" />
+    </record>
+</odoo>
