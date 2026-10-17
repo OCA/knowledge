@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- not noupdate: the function must run again at each update -->
+<odoo noupdate="0">
+    <function
+        model="help.section"
+        name="_load_markdown"
+        eval="['screen_help', 'demo_help']"
+    />
+</odoo>
