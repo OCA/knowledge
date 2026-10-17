@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="group_editor" model="res.groups">
+        <field name="name">Help Editor</field>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[Command.link(ref('group_editor'))]" />
+    </record>
+
+    <!-- enabled by the "Multilingual Help" setting -->
+    <record id="group_multilang" model="res.groups">
+        <field name="name">Multilingual Help</field>
+    </record>
+</odoo>
