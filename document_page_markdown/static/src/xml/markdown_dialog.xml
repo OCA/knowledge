@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="document_page_markdown.MarkdownDialog" owl="1">
+        <Dialog title="'Markdown'" size="'lg'">
+            <div class="o_markdown_dialog">
+                <ul class="nav nav-tabs o_markdown_tabs">
+                    <li class="nav-item">
+                        <a
+                            href="#"
+                            class="nav-link"
+                            data-tab="write"
+                            t-att-class="{active: !state.previewing}"
+                            t-on-click.prevent="() => this.showTab(false)"
+                        >Write</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="#"
+                            class="nav-link"
+                            data-tab="preview"
+                            t-att-class="{active: state.previewing}"
+                            t-on-click.prevent="() => this.showTab(true)"
+                        >Preview</a>
+                    </li>
+                </ul>
+                <div class="o_markdown_body">
+                    <div
+                        class="o_markdown_toolbar btn-toolbar"
+                        t-att-class="{'d-none': state.previewing}"
+                    >
+                        <button
+                            t-foreach="toolbar"
+                            t-as="command"
+                            t-key="command.name"
+                            type="button"
+                            class="btn btn-light btn-sm"
+                            t-att-title="command.title"
+                            t-att-data-command="command.name"
+                            t-on-click="() => this.applyCommand(command)"
+                        >
+                            <i class="fa" t-att-class="command.icon" />
+                        </button>
+                    </div>
+                    <textarea
+                        class="o_input o_markdown_source"
+                        t-att-class="{'d-none': state.previewing}"
+                        placeholder="# Title&#10;&#10;- first item&#10;- second item"
+                        t-on-input="onInput"
+                        t-ref="textarea"
+                    />
+                    <div
+                        t-if="state.previewing"
+                        class="o_markdown_preview"
+                        t-out="state.preview"
+                    />
+                </div>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="onInsert">Insert</button>
+                <button class="btn btn-secondary" t-on-click="() => this.props.close()">
+                    Discard
+                </button>
+            </t>
+        </Dialog>
+    </t>
+</templates>
