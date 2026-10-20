@@ -37,7 +37,7 @@
                         name="action_cancel"
                         type="object"
                         string="Cancel"
-                        invisible="(not am_i_owner or not am_i_approver) and (state not in ('draft', 'to approve'))"
+                        invisible="(not am_i_owner and not am_i_approver) or state not in ('draft', 'to approve')"
                     />
                     <!-- reopen if i am owner or approver -->
                     <button
