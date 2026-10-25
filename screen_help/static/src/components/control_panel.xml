@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-    <!-- Extend the standard control panel template -->
     <t
         t-name="screen_help.ControlPanel"
         t-inherit="web.ControlPanel"
         t-inherit-mode="extension"
     >
-        <!-- At the end of the right part (pager, view switcher) -->
         <xpath expr="//div[hasclass('o_control_panel_navigation')]" position="inside">
-            <!-- Help button: when there is help, or for the help editors (edit button
-                 in the help window); not on mobile (env.isSmall: small screen) -->
             <button
                 t-if="!env.isSmall and (help.content or help.canEdit)"
                 class="btn btn-secondary o_screen_help_button d-print-none"
                 title="Help"
                 t-on-click="onClickHelp"
             >
-                <!-- Book icon: documentation of the screen -->
-                <i class="fa fa-book" />
+                <i class="fa fa-question-circle" />
             </button>
         </xpath>
     </t>

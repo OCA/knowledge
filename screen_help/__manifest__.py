@@ -17,7 +17,7 @@
         "security/ir.model.access.csv",
         "views/help_section.xml",
         "views/res_config_settings.xml",
-        "report/help.xml",
+        "views/help_page.xml",
     ],
     "demo": [
         "data/demo.xml",

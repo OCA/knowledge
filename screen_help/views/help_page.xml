@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- help of one action: `action`, `body` (its html) -->
     <template id="help_action_body">
         <section class="mb-5" t-att-id="'help_%s' % action.id">
             <h2 t-out="action.name" />
@@ -8,7 +6,6 @@
         </section>
     </template>
 
-    <!-- sidebar table of contents: `toc` [(level, anchor, title)] -->
     <template id="help_toc">
         <t t-set="min_level" t-value="min(e[0] for e in toc)" />
         <nav
@@ -29,15 +26,11 @@
         </nav>
     </template>
 
-    <!-- page of the detached help window: sidebar `toc` + content (t-out="0");
-         `menu_id`: link to the help of the application -->
     <template id="help_page">
         <!-- the report assets always hide .d-print-none (wkhtmltopdf workaround) -->
         <style>
             @media print { .o_help_noprint { display: none !important; } }
-            /* page on 95% of the window instead of the centered fixed width */
             @media screen { body.container { max-width: 95%; } }
-            /* compact headings */
             .o_help_content h1 { font-size: 1.4rem; }
             .o_help_content h2 { font-size: 1.2rem; }
             .o_help_content h3 { font-size: 1.05rem; }
@@ -46,7 +39,6 @@
                 font-weight: 600;
             }
             .o_help_content section { margin-bottom: 1.5rem !important; }
-            /* tables of the Markdown help (no class on them) */
             .o_help_content table { border-collapse: collapse; margin-bottom: 1rem; }
             .o_help_content th, .o_help_content td {
                 border: 1px solid #dee2e6;
@@ -54,7 +46,6 @@
                 vertical-align: top;
             }
             .o_help_content th { font-weight: 600; background-color: #f3f4f6; }
-            /* screenshots of the help: fit the width of the content */
             .o_help_content img {
                 max-width: 100%;
                 height: auto;
@@ -62,7 +53,6 @@
                 border: 1px solid #dee2e6;
                 border-radius: 4px;
             }
-            /* toolbar buttons: small pills in the Odoo color */
             .o_help_btn {
                 display: inline-flex;
                 align-items: center;
@@ -79,8 +69,8 @@
             }
             .o_help_btn:hover { background-color: #714b67; color: #fff; }
         </style>
-        <!-- dark color scheme of the user (report assets have no dark mode) -->
-        <style t-if="dark">
+        <!-- the report assets have no dark mode -->
+        <style t-if="color_scheme == 'dark'">
             @media screen {
                 body { background-color: #1f2228; color: #d6d8dc; }
                 h1, h2, h3, h4, h5, h6 { color: #eceef1 !important; }
@@ -93,12 +83,23 @@
                 code { color: #f28b9b; }
                 .o_help_btn { border-color: #c39bb8; color: #d9b8cf; }
                 .o_help_btn:hover { background-color: #8f6385; border-color: #8f6385; color: #fff; }
-                /* the company logo is designed for a light background */
                 .o_help_logo { background-color: #e4e6ea; padding: 2px 4px; border-radius: 4px; }
             }
         </style>
+        <!-- links to Odoo screens (e.g. /odoo/action-sale.action_orders)
+             open in the Odoo tab which opened this window -->
+        <script>
+            document.addEventListener("click", (ev) => {
+                const link = ev.target.closest("a[href^='/odoo']");
+                const odoo = window.opener;
+                if (link &amp;&amp; odoo &amp;&amp; !odoo.closed) {
+                    ev.preventDefault();
+                    odoo.location.href = link.href;
+                    odoo.focus();
+                }
+            });
+        </script>
         <div class="o_help_noprint d-flex align-items-center gap-2 mb-3">
-            <!-- discreet company logo -->
             <img
                 t-if="res_company.logo"
                 class="o_help_logo"
@@ -116,8 +117,7 @@
             >
                 <i class="fa fa-th-large" /> Application Help
             </a>
-            <!-- edit: the Odoo tab which opened this window opens the sections
-                 (help_service.esm.js); without it, the list of all the sections -->
+            <!-- handled by help_service.esm.js in the Odoo tab -->
             <button
                 t-if="can_edit"
                 class="o_help_btn"
@@ -148,7 +148,6 @@
         </div>
     </template>
 
-    <!-- detached help window of a screen: `title`, `body`, `toc`, `menu_id` -->
     <template id="screen_help_page">
         <t t-call="web.basic_layout">
             <div class="page">
@@ -161,52 +160,24 @@
         </t>
     </template>
 
-    <template id="report_help_action">
+    <template id="app_help_page">
+        <t t-set="title" t-value="menu.name" />
         <t t-call="web.basic_layout">
             <div class="page">
-                <t t-foreach="docs" t-as="action">
-                    <t t-set="body" t-value="action._help_html()[0]" />
-                    <t t-call="screen_help.help_action_body" />
+                <t t-set="help" t-value="menu._help_html()" />
+                <t t-set="toc" t-value="help[1]" />
+                <t t-set="menu_id" t-value="False" />
+                <t t-call="screen_help.help_page">
+                    <!-- the root menu often has the name of one of its screens -->
+                    <h1>Application Help: <t t-out="menu.name" /></h1>
+                    <p t-if="not help[0]">No help for this menu.</p>
+                    <t t-foreach="help[0]" t-as="action_help">
+                        <t t-set="action" t-value="action_help[0]" />
+                        <t t-set="body" t-value="action_help[1]" />
+                        <t t-call="screen_help.help_action_body" />
+                    </t>
                 </t>
             </div>
         </t>
     </template>
-
-    <template id="report_help_menu">
-        <t t-call="web.basic_layout">
-            <t t-foreach="docs" t-as="menu">
-                <div class="page">
-                    <t t-set="help" t-value="menu._help_html()" />
-                    <t t-set="toc" t-value="help[1]" />
-                    <!-- no link to the application help: it is this page -->
-                    <t t-set="menu_id" t-value="False" />
-                    <t t-call="screen_help.help_page">
-                        <!-- explicit title: the root menu often has the name
-                             of one of its screens (e.g. Settings) -->
-                        <h1>Application Help: <t t-out="menu.name" /></h1>
-                        <p t-if="not help[0]">No help for this menu.</p>
-                        <t t-foreach="help[0]" t-as="action_help">
-                            <t t-set="action" t-value="action_help[0]" />
-                            <t t-set="body" t-value="action_help[1]" />
-                            <t t-call="screen_help.help_action_body" />
-                        </t>
-                    </t>
-                </div>
-            </t>
-        </t>
-    </template>
-
-    <record id="action_report_help_action" model="ir.actions.report">
-        <field name="name">Help</field>
-        <field name="model">ir.actions.act_window</field>
-        <field name="report_type">qweb-html</field>
-        <field name="report_name">screen_help.report_help_action</field>
-    </record>
-
-    <record id="action_report_help_menu" model="ir.actions.report">
-        <field name="name">Application Help</field>
-        <field name="model">ir.ui.menu</field>
-        <field name="report_type">qweb-html</field>
-        <field name="report_name">screen_help.report_help_menu</field>
-    </record>
 </odoo>

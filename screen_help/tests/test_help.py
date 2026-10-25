@@ -4,8 +4,6 @@ from odoo import Command as cmd
 from odoo.exceptions import UserError
 from odoo.tests import HttpCase, TransactionCase, tagged
 
-from ..models.help_section import front_matter
-
 
 @tagged("post_install", "-at_install")
 class TestHelp(TransactionCase):
@@ -60,10 +58,10 @@ class TestHelp(TransactionCase):
         self.assertFalse(self.Section._import_help_popup())
 
     def test_front_matter(self):
-        header, text = front_matter("---\nsequence: 20\n---\n## Title\n")
+        header, text = self.Section._front_matter("---\nsequence: 20\n---\n## Title\n")
         self.assertEqual(header, {"sequence": "20"})
         self.assertEqual(text, "## Title\n")
-        self.assertEqual(front_matter("## Title\n"), ({}, "## Title\n"))
+        self.assertEqual(self.Section._front_matter("## Title\n"), ({}, "## Title\n"))
 
     def test_menu(self):
         menu = self.env["ir.ui.menu"].create(
@@ -82,10 +80,10 @@ class TestHelp(TransactionCase):
         self.assertFalse(menu._help_actions())
         self.Section.create({"action_id": self.action.id, "content": "<p>Hi</p>"})
         self.assertEqual(menu._help_actions(), self.action)
-        html, _ = self.env["ir.actions.report"]._render_qweb_html(
-            "screen_help.action_report_help_menu", menu.ids
+        html = self.env["ir.ui.view"]._render_template(
+            "screen_help.app_help_page", {"menu": menu}
         )
-        self.assertIn(b"Hi", html)
+        self.assertIn("Hi", html)
         # sidebar: the action, then its headings
         self.assertEqual(
             menu._help_html()[1], [(1, f"help_{self.action.id}", self.action.name)]

@@ -154,8 +154,7 @@ Contributors
 
 - `Akretion <https://www.akretion.com>`__:
 
-  - David Beal david.beal@akretion.com Original help_popup author
-    augmented and renamed to screen_help Assisted-by: Claude Opus 5.5
+  - David Beal david.beal@akretion.com Assisted-by: Claude Opus 5.5
 
 Maintainers
 -----------

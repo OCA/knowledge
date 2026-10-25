@@ -21,21 +21,7 @@ except ImportError:
     _logger.debug("markdown not installed")
 
 LANG_RE = re.compile(r"^[a-z]{2,3}_[A-Z]{2}(@\w+)?$")
-# header of a Markdown file: "---" line, "key: value" lines, "---" line
 FRONT_MATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.DOTALL)
-
-
-def front_matter(text):
-    """Split a Markdown file into its header ({key: value}) and its content"""
-    match = FRONT_MATTER_RE.match(text)
-    if not match:
-        return {}, text
-    header = {}
-    for line in match.group(1).splitlines():
-        key, sep, value = line.partition(":")
-        if sep:
-            header[key.strip()] = value.strip()
-    return header, text[match.end() :]
 
 
 class HelpSection(models.Model):
@@ -73,8 +59,15 @@ class HelpSection(models.Model):
         readonly=True, help="Checksum of the Markdown file the section comes from."
     )
 
-    # fields of a section loaded from a file: only changed by the file
     _file_fields = ("action_id", "model_id", "lang", "content")
+
+    def _compute_display_name(self):
+        for rec in self:
+            if rec.action_id:
+                main = rec.action_id.name
+            else:
+                main = rec.model_id.name
+            rec.display_name = f"{main} - {rec.module}"
 
     @api.constrains("action_id", "model_id")
     def _check_target(self):
@@ -85,9 +78,9 @@ class HelpSection(models.Model):
                 )
 
     def write(self, vals):
-        # install_module: set by _load_markdown, when the files are loaded
+        # install_mode: help files and xml data files of the modules
         if (
-            not self.env.context.get("install_module")
+            not self.env.context.get("install_mode")
             and set(vals) & set(self._file_fields)
             and any(self.mapped("file"))
         ):
@@ -192,15 +185,14 @@ class HelpSection(models.Model):
             xml_id = "{}.help_{}".format(module, file.stem.replace(".", "_"))
             current = self.env.ref(xml_id, raise_if_not_found=False)
             if current is None or current.checksum != checksum:
-                header, text = front_matter(text)
+                header, text = self._front_matter(text)
                 values.update(content=self._md_to_html(text), checksum=checksum)
                 if header.get("sequence", "").lstrip("-").isdigit():
                     values["sequence"] = int(header["sequence"])
             records.append({"xml_id": xml_id, "values": values})
-        # records of `module`: no warning about a record of another module
-        return self.with_context(install_module=module)._load_records(
-            records, update=True
-        )
+        return self.with_context(
+            install_mode=True, install_module=module
+        )._load_records(records, update=True)
 
     @api.model
     def _import_help_popup(self):
@@ -219,7 +211,6 @@ class HelpSection(models.Model):
         ]
         if not columns:
             return self.browse()
-        # column names from the list above, not from the user
         where = " OR ".join(f"COALESCE({col}, '') != ''" for col in columns)
         query = f"SELECT id, {', '.join(columns)} FROM ir_act_window WHERE {where}"
         done = set(self.search([("file", "=", False)]).action_id.ids)
@@ -245,6 +236,19 @@ class HelpSection(models.Model):
                 )
         _logger.info("help_popup: %s help sections imported", len(vals_list))
         return self.create(vals_list)
+
+    @api.model
+    def _front_matter(self, text):
+        """Split a Markdown file into its header ({key: value}) and its content"""
+        match = FRONT_MATTER_RE.match(text)
+        if not match:
+            return {}, text
+        header = {}
+        for line in match.group(1).splitlines():
+            key, sep, value = line.partition(":")
+            if sep:
+                header[key.strip()] = value.strip()
+        return header, text[match.end() :]
 
     @api.model
     def _md_to_html(self, text):
