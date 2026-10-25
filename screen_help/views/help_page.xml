@@ -1,0 +1,183 @@
+<odoo>
+    <template id="help_action_body">
+        <section class="mb-5" t-att-id="'help_%s' % action.id">
+            <h2 t-out="action.name" />
+            <t t-out="body" />
+        </section>
+    </template>
+
+    <template id="help_toc">
+        <t t-set="min_level" t-value="min(e[0] for e in toc)" />
+        <nav
+            class="o_help_noprint border-end pe-3 me-4"
+            style="position: sticky; top: 1rem; align-self: flex-start; width: 220px; flex-shrink: 0; max-height: calc(100vh - 2rem); overflow-y: auto;"
+        >
+            <ul class="list-unstyled small mb-0">
+                <li
+                    t-foreach="toc"
+                    t-as="entry"
+                    class="mb-1"
+                    t-att-class="'fw-bold mt-2' if entry[0] == min_level else None"
+                    t-att-style="'padding-left: %srem' % (entry[0] - min_level)"
+                >
+                    <a t-att-href="'#%s' % entry[1]" t-out="entry[2]" />
+                </li>
+            </ul>
+        </nav>
+    </template>
+
+    <template id="help_page">
+        <!-- the report assets always hide .d-print-none (wkhtmltopdf workaround) -->
+        <style>
+            @media print { .o_help_noprint { display: none !important; } }
+            @media screen { body.container { max-width: 95%; } }
+            .o_help_content h1 { font-size: 1.4rem; }
+            .o_help_content h2 { font-size: 1.2rem; }
+            .o_help_content h3 { font-size: 1.05rem; }
+            .o_help_content h1, .o_help_content h2, .o_help_content h3 {
+                margin: 1rem 0 0.4rem;
+                font-weight: 600;
+            }
+            .o_help_content section { margin-bottom: 1.5rem !important; }
+            .o_help_content table { border-collapse: collapse; margin-bottom: 1rem; }
+            .o_help_content th, .o_help_content td {
+                border: 1px solid #dee2e6;
+                padding: 0.25rem 0.5rem;
+                vertical-align: top;
+            }
+            .o_help_content th { font-weight: 600; background-color: #f3f4f6; }
+            .o_help_content img {
+                max-width: 100%;
+                height: auto;
+                margin: 0.5rem 0 1rem;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+            }
+            .o_help_btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+                padding: 0.2rem 0.75rem;
+                font-size: 0.85rem;
+                border: 1px solid #714b67;
+                border-radius: 999px;
+                background: transparent;
+                color: #714b67;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.15s, color 0.15s;
+            }
+            .o_help_btn:hover { background-color: #714b67; color: #fff; }
+        </style>
+        <!-- the report assets have no dark mode -->
+        <style t-if="color_scheme == 'dark'">
+            @media screen {
+                body { background-color: #1f2228; color: #d6d8dc; }
+                h1, h2, h3, h4, h5, h6 { color: #eceef1 !important; }
+                a { color: #8ab4f8; }
+                .text-muted { color: #9aa0a6 !important; }
+                .border-end { border-color: #3a3f4a !important; }
+                .o_help_content th, .o_help_content td { border-color: #3a3f4a; }
+                .o_help_content th { background-color: #2a2e36; }
+                .o_help_content img { border-color: #3a3f4a; }
+                code { color: #f28b9b; }
+                .o_help_btn { border-color: #c39bb8; color: #d9b8cf; }
+                .o_help_btn:hover { background-color: #8f6385; border-color: #8f6385; color: #fff; }
+                .o_help_logo { background-color: #e4e6ea; padding: 2px 4px; border-radius: 4px; }
+            }
+        </style>
+        <!-- links to Odoo screens (e.g. /odoo/action-sale.action_orders)
+             open in the Odoo tab which opened this window -->
+        <script>
+            document.addEventListener("click", (ev) => {
+                const link = ev.target.closest("a[href^='/odoo']");
+                const odoo = window.opener;
+                if (link &amp;&amp; odoo &amp;&amp; !odoo.closed) {
+                    ev.preventDefault();
+                    odoo.location.href = link.href;
+                    odoo.focus();
+                }
+            });
+        </script>
+        <div class="o_help_noprint d-flex align-items-center gap-2 mb-3">
+            <img
+                t-if="res_company.logo"
+                class="o_help_logo"
+                t-att-src="image_data_uri(res_company.logo)"
+                t-att-alt="res_company.name"
+                style="max-height: 28px; max-width: 120px; opacity: 0.6;"
+            />
+            <button class="o_help_btn ms-auto" onclick="window.print()">
+                <i class="fa fa-print" /> Print
+            </button>
+            <a
+                t-if="menu_id"
+                class="o_help_btn"
+                t-att-href="'/screen_help/app/%s' % menu_id"
+            >
+                <i class="fa fa-th-large" /> Application Help
+            </a>
+            <!-- handled by help_service.esm.js in the Odoo tab -->
+            <button
+                t-if="can_edit"
+                class="o_help_btn"
+                title="Edit Help"
+                t-att-data-action-id="action_id or ''"
+                t-att-data-model="model or ''"
+                onclick="
+                    var odoo = window.opener;
+                    if (odoo &amp;&amp; !odoo.closed) {
+                        odoo.postMessage({
+                            type: 'screen_help_edit',
+                            actionId: Number(this.dataset.actionId) || false,
+                            model: this.dataset.model || false,
+                        }, window.location.origin);
+                        odoo.focus();
+                    } else {
+                        window.open('/odoo/action-screen_help.help_section_action', '_blank');
+                    }"
+            >
+                <i class="fa fa-pencil" /> Edit
+            </button>
+        </div>
+        <div class="d-flex">
+            <t t-if="toc" t-call="screen_help.help_toc" />
+            <div class="o_help_content flex-grow-1" style="min-width: 0;">
+                <t t-out="0" />
+            </div>
+        </div>
+    </template>
+
+    <template id="screen_help_page">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-call="screen_help.help_page">
+                    <h2 t-out="title" />
+                    <t t-if="body" t-out="body" />
+                    <p t-else="" class="text-muted">No help yet for this screen.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="app_help_page">
+        <t t-set="title" t-value="menu.name" />
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-set="help" t-value="menu._help_html()" />
+                <t t-set="toc" t-value="help[1]" />
+                <t t-set="menu_id" t-value="False" />
+                <t t-call="screen_help.help_page">
+                    <!-- the root menu often has the name of one of its screens -->
+                    <h1>Application Help: <t t-out="menu.name" /></h1>
+                    <p t-if="not help[0]">No help for this menu.</p>
+                    <t t-foreach="help[0]" t-as="action_help">
+                        <t t-set="action" t-value="action_help[0]" />
+                        <t t-set="body" t-value="action_help[1]" />
+                        <t t-call="screen_help.help_action_body" />
+                    </t>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>
