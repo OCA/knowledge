@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2024-09-04 18:06+0000\n"
-"Last-Translator: Esteve Blanch Sanmartí <3501974+esteveblanch@users.noreply."
-"github.com>\n"
+"PO-Revision-Date: 2026-10-28 23:46+0000\n"
+"Last-Translator: Eric Antones <eantones@nuobit.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/ca/)\n"
 "Language: ca\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page_tag
@@ -64,7 +63,7 @@ msgstr "Veure el nom"
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page
 msgid "Document Page"
-msgstr "Pàgina del document"
+msgstr "Pàgina de document"
 
 #. module: document_page_tag
 #: model_terms:ir.ui.view,arch_db:document_page_tag.view_document_page_tag_search
