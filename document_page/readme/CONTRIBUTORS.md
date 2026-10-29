@@ -16,3 +16,6 @@
 
 - [Dixmit](https://www.dixmit.com):
   - Enric Tobella
+
+- [NuoBiT Solutions SL](https://www.nuobit.com):
+  - Deniz Gallo \<<dgallo@nuobit.com>\>
