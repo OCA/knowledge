@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knowledge (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-31 02:38+0000\n"
-"PO-Revision-Date: 2026-10-28 23:46+0000\n"
+"PO-Revision-Date: 2026-10-29 09:22+0000\n"
 "Last-Translator: Eric Antones <eantones@nuobit.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-knowledge-8-0/"
 "language/ca/)\n"
@@ -58,7 +58,7 @@ msgstr "Creat el"
 #. module: document_page_tag
 #: model:ir.model.fields,field_description:document_page_tag.field_document_page_tag__display_name
 msgid "Display Name"
-msgstr "Veure el nom"
+msgstr "Nom a mostrar"
 
 #. module: document_page_tag
 #: model:ir.model,name:document_page_tag.model_document_page
