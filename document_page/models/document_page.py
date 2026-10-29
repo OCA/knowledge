@@ -1,5 +1,6 @@
 # Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 # Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
+# Copyright 2026 NuoBiT Solutions SL - Eric Antones <eantones@nuobit.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
@@ -197,12 +198,12 @@ class DocumentPage(models.Model):
 
     def action_view_children(self):
         self.ensure_one()
-        action = self.env["ir.actions.act_window"]._for_xml_id(
-            "document_page.action_browse_all_content"
+        action = (
+            self.env["ir.actions.act_window"]
+            .with_context(
+                active_model=self._name, active_id=self.id, active_ids=self.ids
+            )
+            ._for_xml_id("document_page.action_browse_all_content")
         )
-        action["context"] = {
-            "default_type": "content",
-            "search_default_parent_id": [self.id],
-        }
         action["display_name"] = self.name
         return action
