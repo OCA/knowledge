@@ -1,3 +1,4 @@
+# Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo.tests import common
 
@@ -67,3 +68,15 @@ class TestDocumentPage(common.TransactionCase):
         self.assertEqual(page_copy.content, page.content)
         self.assertEqual(page_copy.draft_name, "1.0")
         self.assertEqual(page_copy.draft_summary, "summary")
+
+    def test_category_view_children(self):
+        action = self.category1.action_view_children()
+        self.assertEqual(action["xml_id"], "document_page.action_browse_all_content")
+        self.assertEqual(action["display_name"], self.category1.name)
+        self.assertEqual(
+            action["context"],
+            {
+                "default_type": "content",
+                "search_default_parent_id": [self.category1.id],
+            },
+        )
