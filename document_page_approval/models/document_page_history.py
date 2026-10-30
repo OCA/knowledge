@@ -2,8 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
+from odoo.tools.misc import clean_context
 
 
 class DocumentPageHistory(models.Model):
@@ -83,7 +84,10 @@ class DocumentPageHistory(models.Model):
                     [("group_ids", "in", guids), ("group_ids", "in", approver_gid.id)]
                 )
                 rec.message_subscribe(partner_ids=users.mapped("partner_id").ids)
-                rec.message_post_with_source(template)
+                # pylint: disable=W8121
+                rec.with_context(
+                    clean_context(self.env.context)
+                ).message_post_with_source(template)
             else:
                 # auto-approve if approval is not required
                 rec.action_approve()
@@ -149,6 +153,7 @@ class DocumentPageHistory(models.Model):
         self.action_cancel()
         self.action_draft()
 
+    @api.depends_context("uid")
     def _compute_am_i_owner(self):
         """Check if current user is the owner"""
         for rec in self:
