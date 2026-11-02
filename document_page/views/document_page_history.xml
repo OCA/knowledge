@@ -44,6 +44,7 @@
         <field name="arch" type="xml">
             <form string="Document Page History">
                 <sheet>
+                    <div name="button_box" class="oe_button_box" />
                     <h1>
                         <field name="page_id" readonly="1" />
                     </h1>
