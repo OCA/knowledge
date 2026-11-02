@@ -132,26 +132,23 @@ class DocumentPage(models.Model):
 
     def _create_history(self, vals):
         res = super()._create_history(vals)
-        res.action_to_approve()
+        if not (
+            self.env.context.get("document_page_copy") and res.is_approval_required
+        ):
+            res.action_to_approve()
         return res
 
     def copy(self, default=None):
         self.ensure_one()
-        # Do not trigger _inverse_content during copy; otherwise _create_history
-        # would move the new record straight to "to approve". Create the initial
-        # change request as draft so the duplicated page starts in the approval
-        # workflow.
-        default = dict(default or {}, content=False)
-        new_page = super().copy(default=default)
-        self.env["document.page.history"].create(
-            {
-                "page_id": new_page.id,
-                "name": new_page.draft_name,
-                "summary": new_page.draft_summary,
-                "content": self.content,
-            }
-        )
-        return new_page
+        # Duplicating a page writes its content, whose inverse creates a
+        # change request through _create_history. When the page requires
+        # approval, that request must remain in draft so the copy starts
+        # the approval workflow from scratch instead of firing approval
+        # requests or inheriting the state of the original history. When
+        # approval is not required, the record is auto-approved as usual,
+        # so the duplicated page keeps displaying its content.
+        self = self.with_context(document_page_copy=True)
+        return super().copy(default=default)
 
     def action_changes_pending_approval(self):
         self.ensure_one()
