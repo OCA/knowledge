@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2023 Cetmix OÜ
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates xml:space="preserve">
+    <t t-name="document_url_google_drive.GooglePickerUrl">
+        <button
+            t-att-style="'display: ' + (checkActive() ? 'inline-block' : 'none') + ';'"
+            type="button"
+            class="o_add_url_button btn btn-link"
+            t-on-click="_onAddGooglePickerUrl"
+        >
+            <i class="fa fa-plus-square" />
+            Add GDrive link
+        </button>
+        <button
+            t-if="state.accessToken"
+            type="button"
+            class="btn btn-link"
+            title="Log out from Google"
+            aria-label="Log out from Google"
+            t-on-click="_onSignOut"
+        >
+            <i class="fa fa-sign-out" aria-hidden="true" />
+        </button>
+    </t>
+</templates>
