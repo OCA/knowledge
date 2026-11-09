@@ -6,4 +6,4 @@ from odoo import fields, models
 class DocumentPage(models.Model):
     _inherit = "document.page"
 
-    partner_id = fields.Many2one("res.partner", "Partner", index=True)
+    partner_id = fields.Many2one("res.partner", index=True)
