@@ -16,8 +16,7 @@ class TestDocumentPageTag(BaseCommon):
             self.env["document.page.tag"].name_create("Test"),
         )
         # check we can't create nonunique tags
-        with self.assertRaises(IntegrityError):
-            with mute_logger("odoo.sql_db"):
-                testtag2 = self.env["document.page.tag"].create({"name": "test2"})
-                testtag2.write({"name": "test"})
-                testtag2.flush_model()
+        with self.assertRaises(IntegrityError), mute_logger("odoo.sql_db"):
+            testtag2 = self.env["document.page.tag"].create({"name": "test2"})
+            testtag2.write({"name": "test"})
+            testtag2.flush_model()
