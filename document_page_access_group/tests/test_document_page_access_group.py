@@ -3,6 +3,8 @@ from odoo import Command
 from odoo.exceptions import UserError
 from odoo.tests.common import users
 
+from odoo.addons.document_page_access_group import uninstall_hook
+
 from .common import TestDocumentPageAccessGroupBase
 
 
@@ -24,3 +26,11 @@ class TestDocumentPageAccessGroup(TestDocumentPageAccessGroupBase):
         self.assertIn(self.public_page, pages)
         self.assertIn(self.knowledge_page, pages)
         self.assertNotIn(self.user_page, pages)
+
+    def test_uninstall_hook(self):
+        accesses = self.env.ref("document_page.document_page_user") + self.env.ref(
+            "document_page.document_page_editor"
+        )
+        self.assertFalse(any(accesses.mapped("active")))
+        uninstall_hook(self.env)
+        self.assertTrue(all(accesses.mapped("active")))

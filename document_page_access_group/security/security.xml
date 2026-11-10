@@ -2,26 +2,15 @@
 <!-- Copyright 2022 Manuel Regidor <manuel.regidor@sygel.es>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo noupdate="1">
-    <record id="document_page_rule" model="ir.rule">
-        <field name="name">Document Page Access</field>
-        <field name="model_id" ref="model_document_page" />
-        <field eval="False" name="global" />
-        <field
-            name="groups"
-            eval="[Command.link(ref('document_knowledge.group_document_user'))]"
-        />
-        <field
-            name="domain_force"
-        >['|', ('groups_id', 'in', [g.id for g in user.group_ids]), '|', ('user_ids', 'in', [user.id]), '&amp;', ('groups_id', '=', False), ('user_ids', '=', False)]</field>
+    <!-- Permissions are OR-ed together, so the unrestricted permissions of
+         document_page have to be disabled for the ones of this module (which
+         carry the groups/users domain) to restrict anything. Managers keep
+         full access through document_page.document_page_manager. These
+         records are enabled again by the uninstall hook. -->
+    <record id="document_page.document_page_user" model="ir.access">
+        <field name="active" eval="False" />
     </record>
-    <record id="document_page_rule_full_access" model="ir.rule">
-        <field name="name">Document Page Full Access</field>
-        <field name="model_id" ref="model_document_page" />
-        <field eval="False" name="global" />
-        <field
-            name="groups"
-            eval="[Command.link(ref('document_page.group_document_manager'))]"
-        />
-        <field name="domain_force">[(1, '=', 1)]</field>
+    <record id="document_page.document_page_editor" model="ir.access">
+        <field name="active" eval="False" />
     </record>
 </odoo>
