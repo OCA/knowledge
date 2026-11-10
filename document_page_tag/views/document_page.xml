@@ -24,7 +24,7 @@
                 <field
                     name="tag_ids"
                     select="multi"
-                    icon="fa-folder"
+                    icon="folder"
                     string="Tags"
                     enable_counters="1"
                 />
