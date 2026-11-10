@@ -8,6 +8,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestDocumentPageTag(BaseCommon):
+    _test_user_groups = ("document_page.group_document_manager",)
+
     def test_document_page_tag(self):
         testtag = self.env["document.page.tag"].name_create("test")
         # check we're charitable on duplicates
