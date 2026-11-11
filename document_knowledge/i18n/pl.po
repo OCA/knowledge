@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 03:35+0000\n"
-"PO-Revision-Date: 2026-11-11 10:46+0000\n"
+"PO-Revision-Date: 2026-11-11 13:46+0000\n"
 "Last-Translator: leszekszczepkowski <leszekszczepkowski@gmail.com>\n"
 "Language-Team: Polish (https://www.transifex.com/oca/teams/23907/pl/)\n"
 "Language: pl\n"
@@ -62,7 +62,7 @@ msgstr "Wiedza i dokumenty"
 #. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.ir_attachment_view_user_documents
 msgid "Group by"
-msgstr ""
+msgstr "Grupuj wg"
 
 #. module: document_knowledge
 #: model:ir.ui.menu,name:document_knowledge.menu_document_root
