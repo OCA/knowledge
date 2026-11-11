@@ -176,7 +176,8 @@
                 <searchpanel>
                     <field
                         name="parent_id"
-                        icon="fa-folder"
+                        icon="folder"
+                        icon_class="oi-filled"
                         string="Categories"
                         enable_counters="1"
                     />

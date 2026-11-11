@@ -123,7 +123,8 @@
                                 />
                                 <i
                                     t-if="!record.image.raw_value"
-                                    t-attf-class="o_field_image fa #{record.type.raw_value === 'category' ? 'fa-folder-open' : 'fa-file'}"
+                                    class="o_field_image oi oi-filled"
+                                    t-attf-data-icon="#{record.type.raw_value === 'category' ? 'folder_open' : 'description'}"
                                     t-attf-style="font-size: 64px; color: #{record.type.raw_value === 'category' ? 'lightslategray' : 'lightgray'};"
                                 />
                             </t>
