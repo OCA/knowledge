@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 00:50+0000\n"
-"PO-Revision-Date: 2026-11-11 10:46+0000\n"
+"PO-Revision-Date: 2026-11-11 13:46+0000\n"
 "Last-Translator: leszekszczepkowski <leszekszczepkowski@gmail.com>\n"
 "Language-Team: Polish (https://www.transifex.com/oca/teams/23907/pl/)\n"
 "Language: pl\n"
@@ -30,7 +30,7 @@ msgstr "%s (kopia)"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction
 msgid "Action Needed"
-msgstr "Wymagana akcja"
+msgstr "Wymagane działanie"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__active
@@ -45,17 +45,17 @@ msgstr "Czynności"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Dekoracja wyjątku czynności"
+msgstr "Dekoracja wyjątku aktywności"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_state
 msgid "Activity State"
-msgstr "Stan czynności"
+msgstr "Stan aktywności"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_icon
 msgid "Activity Type Icon"
-msgstr "Ikona typu czynności"
+msgstr "Ikona typu aktywności"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
@@ -161,7 +161,7 @@ msgstr "Utwórz menu"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__create_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__create_uid
 msgid "Created by"
-msgstr "Utworzone przez"
+msgstr "Utworzył(a)"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__create_date
@@ -281,7 +281,7 @@ msgstr "Ikona"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Ikona wskazująca wyjątek czynności."
+msgstr "Ikona wskazująca na wyjątek aktywności."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction
@@ -291,7 +291,8 @@ msgstr "Jeśli zaznaczone, nowe wiadomości wymagają twojej uwagi."
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Jeśli zaznaczone, część wiadomości ma błąd doręczenia."
+msgstr ""
+"Jeśli zaznaczone, niektóre wiadomości napotkały błędy podczas doręczenia."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
@@ -332,7 +333,7 @@ msgstr "Autor ostatniej zmiany"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__write_uid
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__write_uid
 msgid "Last Updated by"
-msgstr "Ostatnio modyfikowane przez"
+msgstr "Ostatnio aktualizowane przez"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__write_date
@@ -340,7 +341,7 @@ msgstr "Ostatnio modyfikowane przez"
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__write_date
 #: model:ir.model.fields,field_description:document_page.field_wizard_document_page_history_show_diff__write_date
 msgid "Last Updated on"
-msgstr "Data ostatniej modyfikacji"
+msgstr "Data ostatniej aktualizacji"
 
 #. module: document_page
 #: model:res.groups,name:document_page.group_document_manager
@@ -376,7 +377,7 @@ msgstr "Wiadomości"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr "Termin mojej czynności"
+msgstr "Ostateczny termin moich aktywności"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_name
@@ -395,17 +396,17 @@ msgstr "Nazwa wprowadzonych zmian"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Termin następnej czynności"
+msgstr "Termin kolejnej aktywności"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_summary
 msgid "Next Activity Summary"
-msgstr "Podsumowanie następnej czynności"
+msgstr "Podsumowanie kolejnej aktywności"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__activity_type_id
 msgid "Next Activity Type"
-msgstr "Typ następnej czynności"
+msgstr "Typ następnej aktywności"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_needaction_counter
@@ -425,7 +426,7 @@ msgstr "Liczba wiadomości wymagających akcji"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "Liczba wiadomości z błędem doręczenia"
+msgstr "Liczba wiadomości z błędami przy doręczeniu"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page_history__page_id
@@ -500,9 +501,9 @@ msgid ""
 "Planned: Future activities."
 msgstr ""
 "Status na podstawie czynności\n"
-"Zaległe: termin już minął\n"
-"Dzisiaj: czynność zaplanowana na dziś\n"
-"Zaplanowane: przyszłe czynności."
+"Zaległe: Termin już minął\n"
+"Dzisiaj: Data czynności przypada na dzisiaj\n"
+"Zaplanowane: Przyszłe czynności."
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__draft_summary
@@ -543,7 +544,7 @@ msgstr "Typ"
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr "Typ wyjątku czynności w rekordzie."
+msgstr "Typ wyjątku aktywności na rekordzie."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__backend_url
@@ -553,12 +554,12 @@ msgstr "Służy do jednoznacznego łączenia zasobów"
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
 msgid "Website Messages"
-msgstr "Wiadomości ze strony"
+msgstr "Wiadomości"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
 msgid "Website communication history"
-msgstr "Historia komunikacji ze strony"
+msgstr "Historia komunikacji"
 
 #. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
