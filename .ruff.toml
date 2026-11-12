@@ -11,6 +11,11 @@ extend-select = [
     "UP",  # pyupgrade
 ]
 extend-safe-fixes = ["UP008"]
+# Odoo declares `_inherit`/`_depends` as plain class-level lists — core 20.0 does
+# it too (e.g. addons/project/models/project_task.py:96). ruff 0.16.8, which the
+# 20.0 skeleton pins, turned RUF012 on by default, so that idiom now fails
+# pre-commit in every OCA 20.0 repo.
+ignore = ["RUF012"]
 exclude = ["setup/*"]
 
 [format]
