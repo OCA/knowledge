@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="view_wiki_form_task" model="ir.ui.view">
+        <field name="name">document.page.form - document_page_project_task</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <field name="project_id" position="after">
+                <field
+                    name="task_ids"
+                    domain="project_id and [('project_id', '=', project_id)] or []"
+                    widget="many2many_tags"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="action_document_page_tasks" model="ir.actions.act_window">
+        <field name="name">Task Wiki</field>
+        <field name="res_model">document.page</field>
+        <field
+            name="domain"
+        >[('type','=','content'), ('task_ids', 'in', [active_id])]</field>
+        <field name="context">{
+            'default_type': 'content',
+            'default_task_id': active_id}</field>
+        <field name="view_mode">list,form</field>
+        <field
+            name="view_ids"
+            eval="[(5,0,0),
+              (0,0,{'view_mode':'list', 'view_id': ref('document_page.view_wiki_tree')}),
+              (0,0,{'view_mode':'form', 'view_id': ref('document_page.view_wiki_form')})]"
+        />
+        <field name="search_view_id" ref="document_page.view_wiki_filter" />
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new web page.
+            </p>
+        </field>
+    </record>
+</odoo>

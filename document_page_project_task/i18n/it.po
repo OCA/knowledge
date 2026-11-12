@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_page_project_task
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-04-21 10:45+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: document_page_project_task
+#. odoo-python
+#: code:addons/document_page_project_task/models/document_page.py:0
+msgid ""
+"All linked tasks must belong to the document's project '%(project)s'. The "
+"following tasks belong to a different project: %(tasks)s."
+msgstr ""
+"Tutte le attività collegate devono appartenere al progetto del documento '%"
+"(project)s'. Le seguenti attività appartengono a un progetto diverso: %"
+"(tasks)s."
+
+#. module: document_page_project_task
+#: model_terms:ir.actions.act_window,help:document_page_project_task.action_document_page_tasks
+msgid "Click to create a new web page."
+msgstr "Fare clic per creare una nuova pagina web."
+
+#. module: document_page_project_task
+#: model:ir.model,name:document_page_project_task.model_document_page
+msgid "Document Page"
+msgstr "Pagina documento"
+
+#. module: document_page_project_task
+#: model:ir.model.fields,field_description:document_page_project_task.field_project_task__document_page_count
+msgid "Document Page Count"
+msgstr "Conteggio pagina documento"
+
+#. module: document_page_project_task
+#: model:ir.model,name:document_page_project_task.model_project_task
+msgid "Task"
+msgstr "Lavoro"
+
+#. module: document_page_project_task
+#: model:ir.actions.act_window,name:document_page_project_task.action_document_page_tasks
+msgid "Task Wiki"
+msgstr "WiKi lavoro"
+
+#. module: document_page_project_task
+#: model:ir.model.fields,field_description:document_page_project_task.field_document_page__task_ids
+msgid "Tasks"
+msgstr "Lavori"
+
+#. module: document_page_project_task
+#: model:ir.model.fields,field_description:document_page_project_task.field_project_task__document_page_ids
+#: model_terms:ir.ui.view,arch_db:document_page_project_task.view_task_form2
+msgid "Wiki Pages"
+msgstr "Pagine Wiki"
