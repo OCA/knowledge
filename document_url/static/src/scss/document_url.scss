@@ -1,0 +1,45 @@
+.o-mail-AttachmentContainer.o_attachment_url_container {
+    width: auto !important;
+    height: 36px !important;
+    min-width: 100px;
+    max-width: 200px;
+    background: linear-gradient(135deg, #e8e9ed 0%, #dfe1e6 100%);
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    overflow: hidden;
+    display: inline-flex !important;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    animation: slideInScale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+}
+
+.o_attachment_url_link_icon {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.o_attachment_url_delete {
+    padding: 4px 6px 4px 8px;
+    margin-left: 8px;
+    font-size: 1.1em;
+    opacity: 0.6;
+    color: #000000;
+    border-left: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+        color: #ef4444;
+    }
+}
