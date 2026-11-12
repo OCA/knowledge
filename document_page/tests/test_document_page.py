@@ -1,4 +1,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from odoo.exceptions import AccessError
+from odoo.tests import Form
+
 from odoo.addons.base.tests.common import BaseCommon
 
 
@@ -87,6 +90,58 @@ class TestDocumentPage(BaseCommon):
             page.backend_url,
             f"/web#id={page.id}&model=document.page&view_type=form&action={menu.action.id}",
         )
+
+    def test_open_folder_unreadable_parent(self):
+        other_company = self._create_company(name="Other company")
+        pages = self.page_obj.sudo()
+        hidden_root = pages.create(
+            {
+                "name": "Root folder of the other company",
+                "type": "category",
+                "company_id": other_company.id,
+            }
+        )
+        hidden_folder = pages.create(
+            {
+                "name": "Folder of the other company",
+                "type": "category",
+                "parent_id": hidden_root.id,
+                "company_id": other_company.id,
+            }
+        )
+        shared_folder = pages.create(
+            {
+                "name": "Folder shared by all companies",
+                "type": "category",
+                "parent_id": hidden_folder.id,
+                "company_id": False,
+            }
+        )
+        pages.create(
+            {
+                "name": "Page of my company",
+                "parent_id": shared_folder.id,
+                "company_id": self.env.company.id,
+                "content": "<p>Content</p>",
+            }
+        )
+        pages.create(
+            {
+                "name": "Page of the other company",
+                "parent_id": shared_folder.id,
+                "company_id": other_company.id,
+                "content": "<p>Content</p>",
+            }
+        )
+        self.env.flush_all()
+        self.env.invalidate_all()
+        with self.assertRaises(AccessError):
+            hidden_folder.with_env(self.env).read(["name"])
+        folder_form = Form(
+            shared_folder.with_env(self.env), view="document_page.view_category_form"
+        )
+        self.assertIn("Page of my company", folder_form.content)
+        self.assertNotIn("Page of the other company", folder_form.content)
 
     def test_page_copy(self):
         page = self.page_obj.create(
