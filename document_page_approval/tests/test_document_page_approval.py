@@ -1,3 +1,4 @@
+from odoo.exceptions import AccessError
 from odoo.tests import common
 
 
@@ -146,3 +147,51 @@ class TestDocumentPageApproval(common.TransactionCase):
         pages = self.env["document.page.history"].search([])
         page = pages[0]
         self.assertIsNotNone(page.page_url)
+
+    def test_approval_required_unreadable_parent(self):
+        """A user files a page under a shared folder of another company's tree."""
+        other_company = self.env["res.company"].create({"name": "Other company"})
+        user = self.env["res.users"].create(
+            {
+                "name": "Page editor",
+                "login": "page_editor",
+                "groups_id": [
+                    (6, 0, [self.env.ref("document_page.group_document_editor").id])
+                ],
+            }
+        )
+        hidden_folder = self.page_obj.create(
+            {
+                "name": "Folder of the other company",
+                "type": "category",
+                "company_id": other_company.id,
+                "approval_required": True,
+                "approver_gid": self.approver_gid.id,
+            }
+        )
+        shared_folder = self.page_obj.create(
+            {
+                "name": "Folder shared by all companies",
+                "type": "category",
+                "parent_id": hidden_folder.id,
+                "company_id": False,
+            }
+        )
+        self.page_obj.flush()
+        self.page_obj.invalidate_cache()
+        with self.assertRaises(AccessError):
+            hidden_folder.with_user(user).read(["name"])
+        page_form = common.Form(
+            self.page_obj.with_user(user), view="document_page.view_wiki_form"
+        )
+        page_form.parent_id = shared_folder
+        page_form.name = "Page of my company"
+        page_form.content = "<p>Content</p>"
+        page_form.draft_name = "1.0"
+        page_form.draft_summary = "First version"
+        page = page_form.save()
+        change_request = self.history_obj.search([("page_id", "=", page.id)])
+        self.assertEqual(change_request.state, "to approve")
+        self.assertTrue(page.is_approval_required)
+        self.page_obj.invalidate_cache()
+        self.assertEqual(page.approver_group_ids, self.approver_gid)

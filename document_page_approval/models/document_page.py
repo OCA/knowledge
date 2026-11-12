@@ -46,6 +46,7 @@ class DocumentPage(models.Model):
         "Approval required",
         help="If true, changes of this page require approval",
         compute="_compute_is_approval_required",
+        compute_sudo=True,
     )
 
     am_i_approver = fields.Boolean(compute="_compute_am_i_approver")
@@ -55,6 +56,7 @@ class DocumentPage(models.Model):
         string="Approver groups",
         help="Groups that can approve changes to this document",
         compute="_compute_approver_group_ids",
+        compute_sudo=True,
     )
 
     has_changes_pending_approval = fields.Boolean(
