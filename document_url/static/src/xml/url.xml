@@ -11,27 +11,15 @@
             <button
                 class="btn btn-link"
                 type="button"
-                t-att-disabled="!state.thread.hasWriteAccess"
-                t-on-click="_onAddUrl"
+                t-att-disabled="!this.state.thread.hasWriteAccess"
+                t-on-click.stop="() => this._onAddUrl()"
             >
-                <i class="fa fa-plus-square" /> Add URL
+                <i class="oi me-1" data-icon="add" />
+                Add URL
             </button>
         </xpath>
     </t>
     <t t-inherit="mail.AttachmentList" t-inherit-mode="extension">
-        <xpath
-            expr="//div[hasclass('o-mail-AttachmentContainer')]"
-            position="attributes"
-        >
-            <attribute name="t-att-class">{
-                'o-inMessage': env.inMessage,
-                'o-isImage': attachment.isImage,
-                'o-isUploading opacity-25': attachment.uploading,
-                'o-viewable': attachment.isViewable,
-                'o_attachment_url_container': attachment.mimetype === 'application/link',
-            }</attribute>
-        </xpath>
-
         <xpath expr="//div[hasclass('o-mail-AttachmentCard')]" position="before">
             <div
                 t-elif="attachment.mimetype === 'application/link'"
@@ -40,40 +28,35 @@
             >
                 <div class="d-flex align-items-center text-truncate flex-grow-1">
                     <a
+                        t-if="!this.props.isSelecting"
+                        class="o_attachment_url_link_icon"
                         t-att-href="attachment.url"
                         target="_blank"
                         t-on-click.stop=""
-                        class="o_attachment_url_link_icon"
                     >
-                        <i class="fa fa-link fa-lg o_attachment_url_icon" />
+                        <i class="oi oi-filled me-1" data-icon="link" />
                     </a>
-                    <span class="text-truncate ms-1" t-esc="attachment.name" />
+                    <span class="text-truncate ms-1" t-out="attachment.name" />
                 </div>
                 <i
-                    t-if="attachment.isDeletable"
-                    class="fa fa-trash-o o_attachment_url_delete"
+                    t-if="!this.props.isSelecting and this.showDelete(attachment)"
+                    class="oi oi-filled o_attachment_url_delete"
+                    data-icon="delete"
                     t-on-click.stop="() => this.onClickUnlink(attachment)"
                     title="Remove"
                 />
             </div>
         </xpath>
 
-        <xpath expr="//div[hasclass('o-mail-AttachmentCard')]" position="attributes">
-            <attribute
-                name="t-if"
-            >attachment.mimetype !== 'application/link'</attribute>
-        </xpath>
-
         <xpath expr="//div[hasclass('o-mail-Attachment-hover')]" position="attributes">
             <attribute
                 name="t-if"
-            >!isMobileOS and attachment.mimetype !== 'application/link'</attribute>
+            >!this.isMobileOS and attachment.mimetype !== 'application/link'</attribute>
         </xpath>
-        <xpath expr="//Actions" position="replace">
-            <Actions
-                t-elif="isMobileOS and attachment.mimetype !== 'application/link'"
-                actions="getActions(attachment)"
-            />
+        <xpath expr="//Actions" position="attributes">
+            <attribute
+                name="t-elif"
+            >!this.props.isSelecting and attachment.mimetype !== 'application/link'</attribute>
         </xpath>
     </t>
 </templates>

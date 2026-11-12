@@ -2,15 +2,15 @@
 # Copyright 2020 Tecnativa - Manuel Calero
 {
     "name": "URL attachment",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Tools",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
     "depends": ["mail"],
     "data": [
-        "security/ir.model.access.csv",
         "view/document_url_view.xml",
+        "security/ir.access.csv",
     ],
     "assets": {
         "web.assets_backend": [

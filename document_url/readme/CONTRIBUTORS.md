@@ -4,6 +4,7 @@
   - Ernesto Tejeda
   - Manuel Calero
   - Víctor Martínez
+  - Adasat Torres
 - Matias Peralta - Adhoc SA
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia

@@ -1,17 +1,16 @@
-.o-mail-AttachmentContainer.o_attachment_url_container {
+.o-mail-AttachmentContainer[data-mimetype="application/link"] {
     width: auto !important;
     height: 36px !important;
     min-width: 100px;
     max-width: 200px;
+}
+
+.o_attachment_url_chip {
     background: linear-gradient(135deg, #e8e9ed 0%, #dfe1e6 100%);
     border: 1.5px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-right: 10px;
-    margin-bottom: 10px;
     padding: 0 10px;
     overflow: hidden;
-    display: inline-flex !important;
-    align-items: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: all 0.2s ease;
     animation: slideInScale 0.3s cubic-bezier(0.4, 0, 0.2, 1);

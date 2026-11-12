@@ -1,21 +1,14 @@
-/** @odoo-module **/
-
 import {AttachmentList} from "@mail/core/common/attachment_list";
-import {ConfirmationDialog} from "@web/core/confirmation_dialog/confirmation_dialog";
-import {Chatter} from "@mail/chatter/web_portal/chatter";
+import {Chatter} from "@mail/chatter/web_portal_project/chatter";
 import {patch} from "@web/core/utils/patch";
 import {useService} from "@web/core/utils/hooks";
-import {url} from "@web/core/utils/urls";
-import {_t} from "@web/core/l10n/translation";
 
 patch(Chatter.prototype, {
     setup() {
         super.setup();
         this.action = useService("action");
     },
-    _onAddUrl(event) {
-        event.preventDefault();
-        event.stopPropagation();
+    _onAddUrl() {
         this.action.doAction("document_url.action_ir_attachment_add_url", {
             additionalContext: {
                 active_id: this.state.thread.id,
@@ -43,43 +36,23 @@ patch(Chatter.prototype, {
         }));
     },
     onClickAddAttachments(ev) {
-        ev.stopPropagation();
-        this.state.isAttachmentBoxOpened = !this.state.isAttachmentBoxOpened;
-        if (this.state.isAttachmentBoxOpened) {
-            this.rootRef.el.scrollTop = 0;
-            this.state.thread.scrollTop = 0;
+        if (this.attachments.length) {
+            return super.onClickAddAttachments(...arguments);
         }
+        ev.stopPropagation();
+        this.closeSearch();
+        this.discardAttachmentSelection();
+        this.state.activePanel =
+            this.state.activePanel === this.CHATTER_PANEL.ATTACHMENT
+                ? this.CHATTER_PANEL.NONE
+                : this.CHATTER_PANEL.ATTACHMENT;
     },
 });
 
 patch(AttachmentList.prototype, {
-    /**
-     * Return the url of the attachment. Temporary attachments, a.k.a. uploading
-     * attachments, do not have an url.
-     *
-     * @param {Object} attachment
-     * @returns {String}
-     */
     canDownload(attachment) {
         return (
             super.canDownload(attachment) && attachment.mimetype !== "application/link"
         );
-    },
-    get attachmentUrl() {
-        return url("/web/content", {
-            id: this.attachment.id,
-            download: true,
-        });
-    },
-    onClickUnlink(attachment) {
-        if (this.env.inComposer) {
-            return this.props.unlinkAttachment(attachment);
-        }
-        this.dialog.add(ConfirmationDialog, {
-            body: _t('Do you really want to delete "%s"?', attachment.name),
-            // eslint-disable-next-line no-empty-function
-            cancel: () => {},
-            confirm: () => this.onConfirmUnlink(attachment),
-        });
     },
 });
