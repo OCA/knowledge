@@ -15,10 +15,14 @@ class DocumentPageTag(models.Model):
         ("unique_name", "unique(name)", "Tags must be unique"),
     ]
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Be nice when trying to create duplicates"""
-        existing = self.search([("name", "=ilike", vals["name"])], limit=1)
-        if existing:
-            return existing
-        return super().create(vals)
+        result = self.env["document.page.tag"]
+        for vals in vals_list:
+            existing = self.search([("name", "=ilike", vals.get("name", ""))], limit=1)
+            if existing:
+                result |= existing
+            else:
+                result |= super().create(vals)
+        return result
