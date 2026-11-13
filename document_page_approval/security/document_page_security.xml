@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="group_document_approver_user" model="res.groups">
         <field name="name">Approver</field>
@@ -10,7 +10,7 @@
     <record id="document_page.group_document_manager" model="res.groups">
         <field name="implied_ids" eval="[(4, ref('group_document_approver_user'))]" />
     </record>
-    <record model="ir.rule" id="rule_change_request_global">
+    <record id="rule_change_request_global" model="ir.rule">
         <field name="name">Change Request Global</field>
         <field name="model_id" ref="model_document_page_history" />
         <field
@@ -25,7 +25,7 @@
         <field name="perm_unlink" eval="True" />
         <field name="perm_create" eval="True" />
     </record>
-    <record model="ir.rule" id="rule_change_request_approver">
+    <record id="rule_change_request_approver" model="ir.rule">
         <field name="name">Change Request Approver</field>
         <field name="model_id" ref="model_document_page_history" />
         <field name="groups" eval="[(6, 0, [ref('group_document_approver_user')])]" />
@@ -35,7 +35,7 @@
         <field name="perm_unlink" eval="True" />
         <field name="perm_create" eval="True" />
     </record>
-    <record model="ir.rule" id="rule_change_request_manager">
+    <record id="rule_change_request_manager" model="ir.rule">
         <field name="name">Change Request Manager</field>
         <field name="model_id" ref="model_document_page_history" />
         <field

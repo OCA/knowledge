@@ -277,7 +277,7 @@
         </field>
     </record>
     <!-- Change Requests Action  -->
-    <record model="ir.actions.act_window" id="action_change_requests">
+    <record id="action_change_requests" model="ir.actions.act_window">
         <field name="name">Change Requests</field>
         <field name="res_model">document.page.history</field>
         <field name="view_mode">list,form</field>
