@@ -1,10 +1,12 @@
-from odoo.exceptions import UserError
+from odoo.exceptions import AccessError, UserError
 from odoo.tests import new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestDocumentPageApproval(BaseCommon):
+    _test_user_groups = ("document_page.group_document_manager",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -174,20 +176,21 @@ class TestDocumentPageApproval(BaseCommon):
 
     def test_can_user_approve_this_page(self):
         """Check different approval conditions"""
-        self.assertTrue(
-            self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
-        )
+        self.assertTrue(self.page2.can_user_approve_this_page(self.user2))
 
-        # Remove approval group from user2
-        self.user2.write({"group_ids": [(3, self.approver_gid.id)]})
-        self.assertFalse(
-            self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
+        editor = new_test_user(
+            self.env,
+            login="non_approver_editor",
+            groups="document_page.group_document_editor",
         )
+        self.assertFalse(self.page2.can_user_approve_this_page(editor))
 
     def test_pending_approval_detection(self):
         """Ensure the system detects pending approval changes"""
-        # Reset page2 by removing previous history
-        self.history_obj.search([("page_id", "=", self.page2.id)]).unlink()
+        # Approve existing requests so the page has no pending changes.
+        self.history_obj.search(
+            [("page_id", "=", self.page2.id), ("state", "=", "to approve")]
+        ).action_approve()
 
         self.page2.invalidate_model()
         self.assertFalse(self.page2.has_changes_pending_approval)
@@ -241,17 +244,18 @@ class TestDocumentPageApproval(BaseCommon):
 
     def test_approval_permission_check(self):
         """Ensure approval is restricted to approvers"""
-        chreq = self.history_obj.create(
+        random_user = new_test_user(
+            self.env,
+            login="random_user",
+            groups="document_page.group_document_editor",
+        )
+        chreq = self.history_obj.with_user(random_user).create(
             {
                 "page_id": self.page2.id,
                 "state": "to approve",
             }
         )
 
-        # Use a random user instead of base.user_demo
-        random_user = new_test_user(
-            self.env, login="random_user", groups="base.group_user"
-        )
         with self.assertRaises(UserError):
             chreq.with_user(random_user).action_approve()
 
@@ -263,6 +267,48 @@ class TestDocumentPageApproval(BaseCommon):
         """Ensure page URLs are generated correctly"""
         chreq = self.history_obj.create({"page_id": self.page2.id})
         self.assertIn("web#db=", chreq.page_url)
+
+    def test_history_access_by_role(self):
+        """Access domains apply to users, editors, approvers and managers."""
+        reader = new_test_user(
+            self.env,
+            login="history_reader",
+            groups="document_knowledge.group_document_user",
+        )
+        editor = new_test_user(
+            self.env,
+            login="history_editor",
+            groups="document_page.group_document_editor",
+        )
+        histories = self.history_obj.create(
+            [
+                {"page_id": self.page2.id, "state": state}
+                for state in ("draft", "to approve", "approved", "cancelled")
+            ]
+        )
+        own_draft = self.history_obj.with_user(editor).create(
+            {"page_id": self.page2.id}
+        )
+        domain = [("id", "in", (histories | own_draft).ids)]
+        approved = histories.filtered(lambda rec: rec.state == "approved")
+        for user, expected in (
+            (reader, approved),
+            (editor, approved | own_draft),
+            (self.user2, histories.filtered(lambda rec: rec.state != "draft")),
+            (self.manager_user, histories | own_draft),
+        ):
+            with self.subTest(user=user.login):
+                self.assertEqual(
+                    set(self.history_obj.with_user(user).search(domain).ids),
+                    set(expected.ids),
+                )
+        own_draft.with_user(editor).write({"summary": "Own draft"})
+        with self.assertRaises(AccessError):
+            approved.with_user(reader).check_access("write")
+        with self.assertRaises(AccessError):
+            histories.filtered(lambda rec: rec.state == "draft").with_user(
+                editor
+            ).check_access("write")
 
     def test_diff_computation(self):
         """Ensure document diff is calculated properly"""

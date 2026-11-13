@@ -162,7 +162,8 @@
                     string="Change Requests"
                     type="object"
                     invisible="not has_changes_pending_approval and not user_has_drafts"
-                    icon="fa-edit"
+                    icon="edit"
+                    icon_class="oi-filled"
                 />
             </xpath>
             <field name="content_uid" position="after">
