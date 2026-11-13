@@ -3,7 +3,7 @@
 
 
 from odoo import fields, models
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 
 
 class DocumentPageHistory(models.Model):
@@ -92,7 +92,11 @@ class DocumentPageHistory(models.Model):
         """Set a change request as approved."""
         for rec in self:
             if rec.state not in ["draft", "to approve"]:
-                self.env._("Can't approve page in '%(state)s' state.", state=rec.state)
+                raise ValidationError(
+                    self.env._(
+                        "Can't approve page in '%(state)s' state.", state=rec.state
+                    )
+                )
             if not rec.am_i_approver:
                 groups_str = ", ".join(
                     g.display_name for g in rec.page_id.approver_group_ids
@@ -160,7 +164,7 @@ class DocumentPageHistory(models.Model):
             base_url = (
                 self.env["ir.config_parameter"]
                 .sudo()
-                .get_param("web.base.url", default="http://localhost:8069")
+                .get_str("web.base.url", default="http://localhost:8069")
             )
 
             page.page_url = (
