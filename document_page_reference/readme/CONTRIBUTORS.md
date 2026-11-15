@@ -1,1 +1,2 @@
 - Enric Tobella \<etobella@creublanca.es\>
+- Miquel Rosell \<miquelroselltarrago@gmail.com\>
