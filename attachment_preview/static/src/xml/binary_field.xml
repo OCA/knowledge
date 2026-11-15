@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 Sobware
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<templates xml:space="preserve">
+    <t
+        t-name="attachment_preview.BinaryField"
+        t-inherit="web.BinaryField"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//t[@name='download']" position="after">
+            <t t-call="attachment_preview.BinaryPreviewButton" />
+        </xpath>
+        <xpath expr="//a[hasclass('o_form_uri')]" position="after">
+            <t t-call="attachment_preview.BinaryPreviewButton" />
+        </xpath>
+    </t>
+
+    <t t-name="attachment_preview.BinaryPreviewButton">
+        <button
+            t-if="canPreviewBinary"
+            type="button"
+            class="btn btn-link btn-sm lh-1 fa fa-external-link o_attachment_preview_button"
+            data-tooltip="Preview"
+            aria-label="Preview"
+            t-on-click.stop.prevent="_onPreview"
+        />
+    </t>
+</templates>
