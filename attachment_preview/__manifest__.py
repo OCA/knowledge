@@ -24,6 +24,7 @@
             "attachment_preview/static/src/js/web_views/form/form_renderer.esm.js",
             "attachment_preview/static/src/scss/attachment_preview.scss",
             "attachment_preview/static/src/xml/attachment_preview.xml",
+            "attachment_preview/static/src/xml/binary_field.xml",
         ],
     },
     "installable": True,

@@ -1,5 +1,3 @@
-import {Component} from "@odoo/owl";
-
 export function canPreview(extension) {
     const supported_extensions = [
         "odt",
@@ -62,10 +60,11 @@ export function showPreview(
     attachment_extension,
     attachment_title,
     split_screen,
-    attachment_info_list
+    attachment_info_list,
+    preview_bus = null
 ) {
-    if (split_screen && attachment_info_list) {
-        Component.env.bus.trigger("open_attachment_preview", {
+    if (split_screen && attachment_info_list && preview_bus) {
+        preview_bus.trigger("open_attachment_preview", {
             attachment_id,
             attachment_info_list,
         });
