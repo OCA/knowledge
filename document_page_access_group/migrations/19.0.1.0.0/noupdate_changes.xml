@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.rule" id="document_page_rule">
+        <field
+            name="domain_force"
+        >['|', ('groups_id', 'in', [g.id for g in user.group_ids]), '|', ('user_ids', 'in', [user.id]), '&amp;', ('groups_id', '=', False), ('user_ids', '=', False)]</field>
+    </record>
+</odoo>
