@@ -54,4 +54,7 @@ class DocumentPageHistory(models.Model):
     @api.depends("page_id")
     def _compute_display_name(self):
         for rec in self:
-            rec.display_name = (rec.id, f"{rec.page_id.name} #{rec.id}")
+            if isinstance(rec.id, api.NewId):
+                rec.display_name = rec.page_id.name or ""
+            else:
+                rec.display_name = f"{rec.page_id.name} #{rec.id}"

@@ -1,5 +1,6 @@
 from odoo.exceptions import UserError
 from odoo.tests import new_test_user
+from odoo.tools import mute_logger
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -43,6 +44,13 @@ class TestDocumentPageApproval(BaseCommon):
                 "type": "content",
             }
         )
+        cls.user_normal = new_test_user(
+            cls.env,
+            login="test_normal",
+            groups="document_knowledge.group_document_user,document_page.group_document_editor",
+            name="Test Normal User",
+            email="normal@example.com",
+        )
 
         # Ensure user2 has the approver group
         cls.approver_gid = cls.env.ref(
@@ -73,6 +81,7 @@ class TestDocumentPageApproval(BaseCommon):
         self.assertTrue(page.has_changes_pending_approval)
         self.assertEqual(len(page.history_ids), 0)
 
+    @mute_logger("odoo.models.unlink")
     def test_change_request_approve(self):
         """Test that an approver can approve a change request."""
         page = self.page2
@@ -92,6 +101,11 @@ class TestDocumentPageApproval(BaseCommon):
         self.assertEqual(chreq.state, "approved")
         self.assertEqual(chreq.content, page.content)
 
+        # Remove the linked mail.message and define a specific context to simulate that
+        # when accessing from the category smart button, there is no error when creating
+        # the history and sending the email
+        self.env["mail.message"].browse(page.parent_id.id).unlink()
+        page = page.with_context(default_parent_id=page.parent_id.id)
         # Create new change request
         page.write({"content": "<p>New content</p>"})
         page.invalidate_model()  # Recompute fields
@@ -110,6 +124,7 @@ class TestDocumentPageApproval(BaseCommon):
         page.write({"content": "<p>New content</p>"})
         self.assertEqual(page.content, "<p>New content</p>")
 
+    @mute_logger("odoo.models.unlink")
     def test_change_request_from_scratch(self):
         """Test a full change request lifecycle from draft to approval."""
         page = self.page2
@@ -184,6 +199,7 @@ class TestDocumentPageApproval(BaseCommon):
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
 
+    @mute_logger("odoo.models.unlink")
     def test_pending_approval_detection(self):
         """Ensure the system detects pending approval changes"""
         # Reset page2 by removing previous history
@@ -282,3 +298,64 @@ class TestDocumentPageApproval(BaseCommon):
         )
         chreq2._compute_diff()
         self.assertIsNotNone(chreq2.diff)
+
+    def test_cache_am_i_approver(self):
+        """Ensure 'am_i_approver' is computed per-user and not cached globally."""
+        page = self.page2
+
+        # Normal user evaluates the field first (Calculates and caches: False)
+        self.assertFalse(page.with_user(self.user_normal).am_i_approver)
+
+        # Approver user evaluates it next.
+        self.assertTrue(page.with_user(self.user2).am_i_approver)
+
+    def test_cache_am_i_owner(self):
+        """Ensure 'am_i_owner' is computed per-user and not cached globally."""
+        page = self.page2
+        # Normal user creates the change request (they are the owner)
+        chreq = self.history_obj.with_user(self.user_normal).create(
+            {
+                "page_id": page.id,
+                "summary": "Cache Test",
+                "content": "<p>User Normal Changes</p>",
+            }
+        )
+
+        # Approver user evaluates the field first (Calculates and caches: False)
+        self.assertFalse(chreq.with_user(self.user2).am_i_owner)
+
+        # Normal user evaluates it next
+        self.assertTrue(chreq.with_user(self.user_normal).am_i_owner)
+
+    def test_cache_user_has_drafts(self):
+        """Ensure 'user_has_drafts' is computed per-user and not cached globally."""
+        page = self.page2
+        # Normal user creates a draft change request
+        self.history_obj.with_user(self.user_normal).create(
+            {
+                "page_id": page.id,
+                "state": "draft",
+            }
+        )
+
+        # Approver evaluates the field first
+        self.assertFalse(page.with_user(self.user2).user_has_drafts)
+
+        # Normal user evaluates it next
+        self.assertTrue(page.with_user(self.user_normal).user_has_drafts)
+
+    def test_cache_has_changes_pending_approval(self):
+        """Ensure 'has_changes_pending_approval' is computed per-user and not cached."""
+        page = self.page2
+        # Create a pending approval change request using the Manager
+        # so it's NOT owned by the normal user.
+        chreq = self.history_obj.with_user(self.manager_user).create(
+            {"page_id": page.id, "content": "<p>Manager Change</p>"}
+        )
+        chreq.with_user(self.manager_user).action_to_approve()
+
+        # Normal user evaluates the field.
+        self.assertFalse(page.with_user(self.user_normal).has_changes_pending_approval)
+
+        # Approver user evaluates it.
+        self.assertTrue(page.with_user(self.user2).has_changes_pending_approval)
