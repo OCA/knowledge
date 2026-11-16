@@ -1,18 +1,19 @@
 import {canPreview, showPreview} from "../../utils.esm";
+import {useLayoutEffect} from "@web/owl2/utils";
 import {BinaryField} from "@web/views/fields/binary/binary_field";
 import {_t} from "@web/core/l10n/translation";
 import {patch} from "@web/core/utils/patch";
 import {sprintf} from "@web/core/utils/strings";
-import {useEffect, useState} from "@odoo/owl";
+import {proxy} from "@odoo/owl";
 import {useService} from "@web/core/utils/hooks";
 
 patch(BinaryField.prototype, {
     setup() {
         super.setup();
         this.orm = useService("orm");
-        this.previewState = useState({extension: ""});
+        this.previewState = proxy({extension: ""});
         // Recheck saved files after uploads and navigation, without previewing stale data.
-        useEffect(
+        useLayoutEffect(
             () => {
                 let active = true;
                 this.previewState.extension = "";

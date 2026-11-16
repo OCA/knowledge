@@ -1,13 +1,12 @@
-import {Component, useState} from "@odoo/owl";
+import {Component, proxy} from "@odoo/owl";
 import {useBus} from "@web/core/utils/hooks";
 
 export class AttachmentPreviewWidget extends Component {
     static template = "attachment_preview.AttachmentPreviewWidget";
-    static props = {};
 
     setup() {
         super.setup();
-        this.state = useState({attachments: [], activeIndex: 0, visible: false});
+        this.state = proxy({attachments: [], activeIndex: 0, visible: false});
         useBus(
             this.env.bus,
             "open_attachment_preview",

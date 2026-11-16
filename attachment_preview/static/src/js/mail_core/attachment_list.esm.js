@@ -5,7 +5,8 @@ import {patch} from "@web/core/utils/patch";
 
 patch(AttachmentList.prototype, {
     _onPreviewAttachment(attachment, newWindow = false) {
-        const attachments = this.props.attachments
+        const attachments = this.props.attachmentGroups
+            .map((group) => group.attachment)
             .filter((item) => this._canPreviewAttachment(item))
             .map((item) => ({
                 id: item.id,
@@ -37,12 +38,12 @@ patch(AttachmentList.prototype, {
         if (this._canPreviewAttachment(attachment)) {
             actions.push({
                 label: _t("Preview"),
-                icon: "fa fa-search",
+                icon: "search",
                 onSelect: () => this._onPreviewAttachment(attachment),
             });
             actions.push({
                 label: _t("Open preview in a new tab"),
-                icon: "fa fa-external-link",
+                icon: "open_in_new",
                 onSelect: () => this._onPreviewAttachment(attachment, true),
             });
         }

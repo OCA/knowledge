@@ -17,12 +17,13 @@
 
     <t t-name="attachment_preview.BinaryPreviewButton">
         <button
-            t-if="canPreviewBinary"
-            class="btn btn-link btn-sm lh-1 fa fa-external-link o_attachment_preview_button"
+            t-if="this.canPreviewBinary"
+            class="oi btn btn-link btn-sm lh-1 o_attachment_preview_button"
+            data-icon="open_in_new"
             type="button"
             data-tooltip="Preview"
             aria-label="Preview"
-            t-on-click.stop.prevent="_onPreview"
+            t-on-click.stop.prevent="this._onPreview"
         />
     </t>
 </templates>

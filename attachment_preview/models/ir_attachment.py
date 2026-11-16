@@ -29,7 +29,7 @@ class IrAttachment(models.Model):
             ):
                 extension = ""
                 if hasattr(this, filename_field) and this[filename_field]:
-                    filename, extension = os.path.splitext(this[filename_field])
+                    extension = os.path.splitext(this[filename_field])[1]
                 if this[binary_field] and extension:
                     result[this.id] = extension
                     _logger.debug(
@@ -47,42 +47,35 @@ class IrAttachment(models.Model):
                 import magic
 
                 if (
-                    model == self._name and binary_field == "datas" and this.store_fname
+                    model == self._name and binary_field == "raw" and this.store_fname
                 ):  # pragma: no cover
                     mimetype = magic.from_file(
                         this._full_path(this.store_fname), mime=True
                     )
                 else:  # pragma: no cover
-                    mimetype = magic.from_buffer(this[binary_field], mime=True)
+                    mimetype = magic.from_buffer(bytes(this[binary_field]), mime=True)
                     _logger.debug("Magic determined mimetype %s from buffer", mimetype)
-            except (ImportError, Exception):
+            except (ImportError, Exception):  # noqa: BLE001
                 try:
-                    (mimetype, encoding) = mimetypes.guess_type(
-                        "data:;base64," + this[binary_field].decode("utf-8"),
-                        strict=False,
-                    )
-                except Exception as e:
+                    # Binary fields hold a BinaryValue, which guesses its mimetype.
+                    mimetype = this[binary_field].mimetype
+                except Exception as e:  # noqa: BLE001
                     _logger.debug("Error when guessing mimetype: %s", str(e))
             if mimetype:
                 extension = mimetypes.guess_extension(
                     mimetype.split(";")[0], strict=False
                 )
                 result[this.id] = extension
-        for _id in result:
-            result[_id] = (result[_id] or "").lstrip(".").lower()
+        for _id, extension in result.items():
+            result[_id] = (extension or "").lstrip(".").lower()
         return result if isinstance(ids, collections.abc.Iterable) else result[ids]
 
     @api.model
     def get_attachment_extension(self, ids):
-        return self.get_binary_extension(self._name, ids, "datas", "name")
+        return self.get_binary_extension(self._name, ids, "raw", "name")
 
-    def _to_store_defaults(self, target):
-        """Adds extension in Store defaults for attachments"""
-        defaults = super()._to_store_defaults(target)
-        defaults.append(
-            Store.Attr(
-                "extension",
-                lambda a: a.get_attachment_extension(a.id),
-            )
-        )
-        return defaults
+    def _store_attachment_fields(self, res: Store.FieldList, **kwargs):
+        """Adds extension to the attachment fields sent to the web client"""
+        result = super()._store_attachment_fields(res, **kwargs)
+        res.attr("extension", lambda a: a.get_attachment_extension(a.id))
+        return result

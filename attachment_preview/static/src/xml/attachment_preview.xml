@@ -13,7 +13,12 @@
                 t-on-click.stop="() => this._onPreviewAttachment(attachment)"
                 title="Preview"
             >
-                <i class="fa fa-search o-text-white" role="img" aria-label="Preview" />
+                <i
+                    class="oi o-text-white"
+                    data-icon="search"
+                    role="img"
+                    aria-label="Preview"
+                />
             </button>
             <button
                 t-if="this._canPreviewAttachment(attachment)"
@@ -23,7 +28,8 @@
                 title="Open preview in a new tab"
             >
                 <i
-                    class="fa fa-external-link o-text-white"
+                    class="oi o-text-white"
+                    data-icon="open_in_new"
                     role="img"
                     aria-label="Open preview in a new tab"
                 />
@@ -32,17 +38,20 @@
     </t>
 
     <t t-name="attachment_preview.AttachmentPreviewWidget">
-        <div class="attachment_preview_widget" t-att-class="{'d-none': !state.visible}">
+        <div
+            class="attachment_preview_widget"
+            t-att-class="{'d-none': !this.state.visible}"
+        >
             <div class="attachment_preview_buttons">
                 <div class="button-group pull-left">
                     <button
                         type="button"
                         class="btn btn-sm btn-secondary attachment_preview_previous"
-                        t-att-disabled="state.attachments.length &lt; 2"
-                        t-on-click="_onPreviousClick"
+                        t-att-disabled="this.state.attachments.length &lt; 2"
+                        t-on-click="this._onPreviousClick"
                         aria-label="Previous attachment"
                     >
-                        <i class="fa fa-chevron-left" />
+                        <i class="oi" data-icon="chevron_left" />
                     </button>
                     <button
                         type="button"
@@ -50,40 +59,40 @@
                         disabled="disabled"
                     >
                         <t
-                        t-esc="state.attachments.length ? state.activeIndex + 1 : 0"
+                        t-out="this.state.attachments.length ? this.state.activeIndex + 1 : 0"
                     />
-                        / <t t-esc="state.attachments.length" />
+                        / <t t-out="this.state.attachments.length" />
                     </button>
                     <button
                         type="button"
                         class="btn btn-sm btn-secondary attachment_preview_next"
-                        t-att-disabled="state.attachments.length &lt; 2"
-                        t-on-click="_onNextClick"
+                        t-att-disabled="this.state.attachments.length &lt; 2"
+                        t-on-click="this._onNextClick"
                         aria-label="Next attachment"
                     >
-                        <i class="fa fa-chevron-right" />
+                        <i class="oi" data-icon="chevron_right" />
                     </button>
                 </div>
                 <button
                     type="button"
                     class="btn btn-sm btn-secondary pull-left ml8 attachment_preview_popout"
-                    t-on-click="_onPopoutClick"
+                    t-on-click="this._onPopoutClick"
                     aria-label="Open preview in a new tab"
                 >
-                    <i class="fa fa-external-link" />
+                    <i class="oi" data-icon="open_in_new" />
                 </button>
                 <button
                     type="button"
                     class="btn btn-sm btn-secondary pull-right attachment_preview_close"
-                    t-on-click="_onCloseClick"
+                    t-on-click="this._onCloseClick"
                     aria-label="Close preview"
                 >
-                    <i class="fa fa-times" />
+                    <i class="oi" data-icon="close" />
                 </button>
             </div>
             <iframe
                 class="attachment_preview_iframe"
-                t-att-src="currentAttachment?.previewUrl || 'about:blank'"
+                t-att-src="this.currentAttachment?.previewUrl || 'about:blank'"
                 title="Attachment preview"
             />
         </div>
