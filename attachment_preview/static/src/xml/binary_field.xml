@@ -18,8 +18,8 @@
     <t t-name="attachment_preview.BinaryPreviewButton">
         <button
             t-if="canPreviewBinary"
-            type="button"
             class="btn btn-link btn-sm lh-1 fa fa-external-link o_attachment_preview_button"
+            type="button"
             data-tooltip="Preview"
             aria-label="Preview"
             t-on-click.stop.prevent="_onPreview"

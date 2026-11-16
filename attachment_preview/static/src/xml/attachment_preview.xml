@@ -8,8 +8,8 @@
         <xpath expr="//div[hasclass('o-mail-AttachmentButtons')]" position="inside">
             <button
                 t-if="this._canPreviewAttachment(attachment)"
-                type="button"
                 class="btn bg-500 ms-2 o-p-1_5 shadow-sm"
+                type="button"
                 t-on-click.stop="() => this._onPreviewAttachment(attachment)"
                 title="Preview"
             >
@@ -17,8 +17,8 @@
             </button>
             <button
                 t-if="this._canPreviewAttachment(attachment)"
-                type="button"
                 class="btn bg-500 ms-2 o-p-1_5 shadow-sm"
+                type="button"
                 t-on-click.stop="() => this._onPreviewAttachment(attachment, true)"
                 title="Open preview in a new tab"
             >
