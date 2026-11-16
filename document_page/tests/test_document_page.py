@@ -42,6 +42,20 @@ class TestDocumentPage(common.TransactionCase):
         page.content = "<p>New content for Demo Page</p>"
         self.assertEqual(len(page.history_ids), 2)
 
+    def test_page_edit_keeps_new_content(self):
+        page = self.page_obj.create(
+            {
+                "name": "Test Page 2",
+                "parent_id": self.category1.id,
+                "content": "<p>v1</p>",
+            }
+        )
+        page.write({"content": "<p>v2</p>"})
+        self.env.flush_all()
+        self.env.invalidate_all()
+        self.assertEqual(page.history_head, page.history_ids.sorted("id")[-1])
+        self.assertEqual(page.content, "<p>v2</p>")
+
     def test_category_template(self):
         page = self.page_obj.create(
             {"name": "Test Page 2", "parent_id": self.category1.id}
