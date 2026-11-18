@@ -9,7 +9,7 @@
                     class="oe_stat_button"
                     type="object"
                     name="action_product_templates"
-                    icon="fa-tag"
+                    icon="tag"
                     invisible="product_template_count==0"
                 >
                     <field

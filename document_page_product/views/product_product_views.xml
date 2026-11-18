@@ -9,7 +9,7 @@
                     class="oe_stat_button"
                     type="object"
                     name="action_document_page_products"
-                    icon="fa-book"
+                    icon="book"
                 >
                     <field
                         string="Knowledge"

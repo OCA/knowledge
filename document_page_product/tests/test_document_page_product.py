@@ -6,6 +6,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestDesguaceparisCustom(BaseCommon):
+    _test_user_groups = ("document_page.group_document_manager",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
