@@ -1,10 +1,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo.exceptions import UserError
-from odoo.tests import common
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentPageShowDiff(common.TransactionCase):
+class TestDocumentPageShowDiff(BaseCommon):
     """document_page_show_diff test class."""
+
+    _test_user_groups = ("document_page.group_document_manager",)
 
     def test_show_demo_page1_diff(self):
         """Show test page history difference."""

@@ -1,9 +1,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo.tests import common
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentPageCreateMenu(common.TransactionCase):
+class TestDocumentPageCreateMenu(BaseCommon):
     """document_page_create_menu test class."""
+
+    _test_user_groups = ("document_page.group_document_manager",)
 
     def test_page_menu_creation(self):
         """Test page menu creation."""
@@ -33,7 +35,7 @@ class TestDocumentPageCreateMenu(common.TransactionCase):
 
     def test_page_menu_parent_id_context(self):
         """Test page menu parent_id context."""
-        menu_parent = self.env["ir.ui.menu"].create({"name": "Test Folder Menu"})
+        menu_parent = self.env["ir.ui.menu"].sudo().create({"name": "Test Folder Menu"})
         context_results = (
             self.env["ir.ui.menu"]
             .with_context(**{"ir.ui.menu.authorized_list": True})
