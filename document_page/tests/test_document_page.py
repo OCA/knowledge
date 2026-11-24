@@ -1,13 +1,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo.tests import common
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentPage(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.page_obj = self.env["document.page"]
-        self.history_obj = self.env["document.page.history"]
-        self.category1 = self.page_obj.create(
+class TestDocumentPage(BaseCommon):
+    _test_user_groups = ("document_page.group_document_manager",)
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.page_obj = cls.env["document.page"]
+        cls.history_obj = cls.env["document.page.history"]
+        cls.category1 = cls.page_obj.create(
             {
                 "name": "Odoo Features",
                 "type": "category",
@@ -19,10 +22,10 @@ class TestDocumentPage(common.TransactionCase):
                 ),
             }
         )
-        self.page1 = self.page_obj.create(
+        cls.page1 = cls.page_obj.create(
             {
                 "name": "Odoo 15.0 Functional Demo",
-                "parent_id": self.category1.id,
+                "parent_id": cls.category1.id,
                 "content": "Test Content",
                 "draft_name": "1.0",
                 "draft_summary": "Init",

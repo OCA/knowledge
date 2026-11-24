@@ -1,8 +1,10 @@
-from odoo.tests import common
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestDocumentPageHistory(common.TransactionCase):
+class TestDocumentPageHistory(BaseCommon):
     """document_page_history test class."""
+
+    _test_user_groups = ("document_page.group_document_manager",)
 
     def test_page_history_demo_page1(self):
         """Test page history demo page1."""
