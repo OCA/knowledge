@@ -23,7 +23,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [document_knowledge](document_knowledge/) | 20.0.1.0.0 |  | Documents Knowledge
-[document_page](document_page/) | 20.0.1.0.0 |  | Document Page
+[document_page](document_page/) | 20.0.1.0.1 |  | Document Page
 [document_page_partner](document_page_partner/) | 20.0.1.0.0 |  | Allows to link doucment pages to a partner
 
 [//]: # (end addons)
