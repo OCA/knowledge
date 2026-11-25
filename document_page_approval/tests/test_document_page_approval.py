@@ -203,6 +203,15 @@ class TestDocumentPageApproval(BaseCommon):
         self.page2.invalidate_model()
         self.assertTrue(self.page2.has_changes_pending_approval)
 
+    def test_pending_approval_detection_unsaved_page(self):
+        """Ensure the system detects pending approval changes of unsaved pages"""
+        self.assertTrue(self.page2.has_changes_pending_approval)
+        with self.assertNoLogs("odoo.domains", level="WARNING"):
+            self.assertTrue(
+                self.page_obj.new(origin=self.page2).has_changes_pending_approval
+            )
+            self.assertFalse(self.page_obj.new().has_changes_pending_approval)
+
     def test_user_has_drafts(self):
         """Ensure the system detects drafts correctly"""
         self.page2.invalidate_model()
@@ -216,6 +225,18 @@ class TestDocumentPageApproval(BaseCommon):
         )
         self.page2.invalidate_model()
         self.assertTrue(self.page2.user_has_drafts)
+
+    def test_user_has_drafts_unsaved_page(self):
+        """Ensure the system detects drafts of unsaved pages"""
+        self.history_obj.create(
+            {
+                "page_id": self.page2.id,
+                "state": "draft",
+            }
+        )
+        with self.assertNoLogs("odoo.domains", level="WARNING"):
+            self.assertTrue(self.page_obj.new(origin=self.page2).user_has_drafts)
+            self.assertFalse(self.page_obj.new().user_has_drafts)
 
     def test_action_draft_requires_cancellation(self):
         """Ensure a change request must be cancelled before setting to draft"""

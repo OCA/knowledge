@@ -115,7 +115,7 @@ class DocumentPage(models.Model):
         history = self.env["document.page.history"]
         for rec in self:
             changes = history.search_count(
-                [("page_id", "=", rec.id), ("state", "=", "to approve")]
+                [("page_id", "in", rec.ids), ("state", "=", "to approve")]
             )
             rec.has_changes_pending_approval = changes > 0
 
@@ -123,7 +123,7 @@ class DocumentPage(models.Model):
         history = self.env["document.page.history"]
         for rec in self:
             changes = history.search_count(
-                [("page_id", "=", rec.id), ("state", "=", "draft")]
+                [("page_id", "in", rec.ids), ("state", "=", "draft")]
             )
             rec.user_has_drafts = changes > 0
 
