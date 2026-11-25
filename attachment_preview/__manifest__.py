@@ -7,9 +7,20 @@
     "author": "Therp BV," "Onestein," "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
-    "summary": "Preview attachments supported by Viewer.js",
+    "summary": "Preview attachments (PDF + office) via the native PDF.js viewer",
     "category": "Knowledge Management",
     "depends": ["web", "mail"],
+    # Office preview (DOCX/XLSX/PPTX + ODF) converts to PDF with LibreOffice
+    # headless. Declared as a "deb" external dependency so OCA CI / runboat
+    # apt-install it; on other deployments it degrades gracefully (HTTP 503)
+    # when LibreOffice is absent, so PDF preview still works without it.
+    "external_dependencies": {
+        "deb": [
+            "libreoffice-calc",
+            "libreoffice-impress",
+            "libreoffice-writer",
+        ],
+    },
     "data": [],
     "qweb": [],
     "assets": {

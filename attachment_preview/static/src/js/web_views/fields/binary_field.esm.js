@@ -57,7 +57,8 @@ patch(BinaryField.prototype, {
             $(event.currentTarget).attr("data-extension"),
             sprintf(_t("Preview %s"), this.fileName),
             false,
-            null
+            null,
+            this.fileName
         );
         event.stopPropagation();
     },
