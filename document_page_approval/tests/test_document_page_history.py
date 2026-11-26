@@ -3,6 +3,8 @@
 
 from lxml import etree
 
+from odoo import Command
+from odoo.exceptions import UserError
 from odoo.tests import new_test_user
 from odoo.tools.safe_eval import safe_eval
 
@@ -22,6 +24,13 @@ class TestDocumentPageHistory(BaseCommon):
             "document_page.group_document_editor",
             name="Test owner",
         )
+        cls.approver = new_test_user(
+            cls.env,
+            login="test_approver",
+            groups="document_page_approval.group_document_approver_user",
+            name="Test approver",
+        )
+        cls.approver.write({"group_ids": [Command.link(cls.page_approvers.id)]})
         cls.other_approver = new_test_user(
             cls.env,
             login="test_other_approver",
@@ -114,3 +123,81 @@ class TestDocumentPageHistory(BaseCommon):
         chreq.action_cancel()
         self._click(chreq, "Back to draft")
         self.assertEqual(chreq.state, "draft")
+
+    def test_other_approver_no_cancel_and_draft_pending(self):
+        """Ensure who is neither owner nor approver cannot cancel and reopen"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_to_approve()
+        chreq = self._with_user(chreq, self.other_approver)
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel_and_draft()
+        self.assertEqual(
+            error.exception.args[0],
+            "You are not authorized to do this.\n"
+            "Only owners or approvers can cancel Change Requests.",
+        )
+        self.assertEqual(chreq.state, "to approve")
+
+    def test_owner_no_cancel_approved(self):
+        """Ensure an approved request cannot be cancelled"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_to_approve()
+        self._with_user(chreq, self.approver).action_approve()
+        chreq = self._with_user(chreq, self.owner)
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel()
+        self.assertEqual(
+            error.exception.args[0],
+            "Can't cancel change requests in 'approved' state.",
+        )
+        self.assertEqual(chreq.state, "approved")
+
+    def test_owner_no_cancel_cancelled(self):
+        """Ensure a cancelled request cannot be cancelled again"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_cancel()
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel()
+        self.assertEqual(
+            error.exception.args[0],
+            "Can't cancel change requests in 'cancelled' state.",
+        )
+        self.assertEqual(chreq.state, "cancelled")
+
+    def test_other_approver_no_cancel_pending(self):
+        """Ensure who is neither owner nor approver cannot cancel"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_to_approve()
+        chreq = self._with_user(chreq, self.other_approver)
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel()
+        self.assertEqual(
+            error.exception.args[0],
+            "You are not authorized to do this.\n"
+            "Only owners or approvers can cancel Change Requests.",
+        )
+        self.assertEqual(chreq.state, "to approve")
+
+    def test_owner_cancel_draft(self):
+        """Ensure the owner cancels their draft request"""
+        chreq = self._create_change_request(self.owner)
+        self._click(chreq, "Cancel")
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertIn("has been cancelled by Test owner.", chreq.message_ids[0].body)
+
+    def test_owner_cancel_pending(self):
+        """Ensure the owner cancels their pending request"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_to_approve()
+        self._click(chreq, "Cancel")
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertIn("has been cancelled by Test owner.", chreq.message_ids[0].body)
+
+    def test_approver_cancel_pending(self):
+        """Ensure an approver cancels a pending request"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_to_approve()
+        chreq = self._with_user(chreq, self.approver)
+        self._click(chreq, "Cancel")
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertIn("has been cancelled by Test approver.", chreq.message_ids[0].body)
