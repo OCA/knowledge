@@ -5,6 +5,7 @@ import json
 
 from lxml import etree
 
+from odoo.exceptions import UserError
 from odoo.tests import common
 
 
@@ -134,3 +135,74 @@ class TestDocumentPageHistory(common.TransactionCase):
         chreq.action_cancel()
         self._click(chreq, "Back to draft")
         self.assertEqual(chreq.state, "draft")
+
+    def test_other_approver_no_cancel_and_draft_pending(self):
+        chreq = self._create_change_request()
+        chreq.action_to_approve()
+        chreq = self._with_user(chreq, self.other_approver)
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel_and_draft()
+        self.assertEqual(
+            error.exception.args[0],
+            "You are not authorized to do this.\r\n"
+            "Only owners or approvers can cancel Change Requests.",
+        )
+        self.assertEqual(chreq.state, "to approve")
+
+    def test_owner_no_cancel_approved(self):
+        chreq = self._create_change_request()
+        chreq.action_to_approve()
+        self._with_user(chreq, self.approver).action_approve()
+        chreq = self._with_user(chreq, self.owner)
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel()
+        self.assertEqual(
+            error.exception.args[0],
+            "Can't cancel change requests in 'approved' state.",
+        )
+        self.assertEqual(chreq.state, "approved")
+
+    def test_owner_no_cancel_cancelled(self):
+        chreq = self._create_change_request()
+        chreq.action_cancel()
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel()
+        self.assertEqual(
+            error.exception.args[0],
+            "Can't cancel change requests in 'cancelled' state.",
+        )
+        self.assertEqual(chreq.state, "cancelled")
+
+    def test_other_approver_no_cancel_pending(self):
+        chreq = self._create_change_request()
+        chreq.action_to_approve()
+        chreq = self._with_user(chreq, self.other_approver)
+        with self.assertRaises(UserError) as error:
+            chreq.action_cancel()
+        self.assertEqual(
+            error.exception.args[0],
+            "You are not authorized to do this.\r\n"
+            "Only owners or approvers can cancel Change Requests.",
+        )
+        self.assertEqual(chreq.state, "to approve")
+
+    def test_owner_cancel_draft(self):
+        chreq = self._create_change_request()
+        self._click(chreq, "Cancel")
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertIn("has been cancelled by Test owner.", chreq.message_ids[0].body)
+
+    def test_owner_cancel_pending(self):
+        chreq = self._create_change_request()
+        chreq.action_to_approve()
+        self._click(chreq, "Cancel")
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertIn("has been cancelled by Test owner.", chreq.message_ids[0].body)
+
+    def test_approver_cancel_pending(self):
+        chreq = self._create_change_request()
+        chreq.action_to_approve()
+        chreq = self._with_user(chreq, self.approver)
+        self._click(chreq, "Cancel")
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertIn("has been cancelled by Test approver.", chreq.message_ids[0].body)

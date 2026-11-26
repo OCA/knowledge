@@ -12,3 +12,7 @@
 * `Guadaltech <https://www.guadaltech.es>`_:
 
   * Fernando La Chica <fernando.lachica@guadaltech.es>
+
+* `NuoBiT Solutions SL <https://www.nuobit.com>`__:
+
+  * Deniz Gallo <dgallo@nuobit.com>
