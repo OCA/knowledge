@@ -1,0 +1,4 @@
+- [Escodoo](https://www.escodoo.com.br):
+  - Marcel Savegnago \<marcel.savegnago@escodoo.com.br\>
+- [BPM Integrations Inc.](https://bpmint.com):
+  - Ken Woychesko \<kwoychesko@bpmint.com\>
