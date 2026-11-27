@@ -201,3 +201,28 @@ class TestDocumentPageHistory(BaseCommon):
         self._click(chreq, "Cancel")
         self.assertEqual(chreq.state, "cancelled")
         self.assertIn("has been cancelled by Test approver.", chreq.message_ids[0].body)
+
+    def test_other_approver_no_cancel_button_pending(self):
+        """Ensure Cancel is hidden from who is neither owner nor approver"""
+        chreq = self._create_change_request(self.owner)
+        chreq.action_to_approve()
+        self.assertEqual(chreq.state, "to approve")
+        chreq = self._with_user(chreq, self.other_approver)
+        self.assertEqual(self._visible_buttons(chreq, "Cancel"), [])
+
+    def test_manager_owner_no_cancel_button_approved(self):
+        """Ensure Cancel is hidden on an approved request"""
+        chreq = self._create_change_request(self.manager)
+        self.assertTrue(chreq.am_i_owner and chreq.am_i_approver)
+        chreq.action_to_approve()
+        chreq.action_approve()
+        self.assertEqual(chreq.state, "approved")
+        self.assertEqual(self._visible_buttons(chreq, "Cancel"), [])
+
+    def test_manager_owner_no_cancel_button_cancelled(self):
+        """Ensure Cancel is hidden on a cancelled request"""
+        chreq = self._create_change_request(self.manager)
+        self.assertTrue(chreq.am_i_owner and chreq.am_i_approver)
+        chreq.action_cancel()
+        self.assertEqual(chreq.state, "cancelled")
+        self.assertEqual(self._visible_buttons(chreq, "Cancel"), [])
