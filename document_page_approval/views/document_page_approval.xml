@@ -1,4 +1,6 @@
 <?xml version="1.0" ?>
+<!-- Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
     <!-- History Form View -->
     <record id="wiki_history_form_inherit" model="ir.ui.view">
@@ -48,7 +50,7 @@
                     />
                     <!-- cancel & reopen, if i am owner or approver -->
                     <button
-                        name="action_draft"
+                        name="action_cancel_and_draft"
                         type="object"
                         string="Back to draft"
                         attrs="{'invisible':['|','&amp;',('am_i_owner','=',False),('am_i_approver','=',False),('state','not in',['to approve'])]}"
