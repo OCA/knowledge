@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [document_knowledge](document_knowledge/) | 20.0.1.0.0 |  | Documents Knowledge
 [document_page](document_page/) | 20.0.1.0.1 |  | Document Page
 [document_page_partner](document_page_partner/) | 20.0.1.0.0 |  | Allows to link doucment pages to a partner
+[document_page_reference](document_page_reference/) | 20.0.1.0.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | Include references on document pages
 
 [//]: # (end addons)
 
