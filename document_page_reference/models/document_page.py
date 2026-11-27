@@ -16,7 +16,8 @@ class DocumentPage(models.Model):
     _description = "Document Page"
 
     reference = fields.Char(
-        help="Used to find the document, it can contain letters, numbers and _"
+        copy=False,
+        help="Used to find the document, it can contain letters, numbers and _",
     )
     content_parsed = fields.Html(
         "Parsed Content", compute="_compute_content_parsed", sanitize=False, store=True
