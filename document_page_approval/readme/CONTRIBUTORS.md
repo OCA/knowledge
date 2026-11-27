@@ -18,3 +18,5 @@
   - Fernando La Chica \<<fernando.lachica@guadaltech.es>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- [NuoBiT Solutions SL](https://www.nuobit.com):
+  - Deniz Gallo <dgallo@nuobit.com>
