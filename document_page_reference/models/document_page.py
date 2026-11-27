@@ -23,8 +23,8 @@ class DocumentPage(models.Model):
         "Parsed Content", compute="_compute_content_parsed", sanitize=False, store=True
     )
 
-    def get_formview_action(self, access_uid=None):
-        res = super().get_formview_action(access_uid)
+    def get_record_default_action(self, access_uid=None):
+        res = super().get_record_default_action(access_uid)
         view_id = self.env.ref("document_page.view_wiki_form").id
         res["views"] = [(view_id, "form")]
         return res

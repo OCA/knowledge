@@ -9,11 +9,12 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestDocumentReference(BaseCommon):
+    _test_user_groups = ("document_page.group_document_manager",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.page_obj = cls.env["document.page"]
-        cls.history_obj = cls.env["document.page.history"]
         cls.page1 = cls.page_obj.create(
             {"name": "Test Page 1", "content": Markup("{{r2}}"), "reference": "R1"}
         )
@@ -48,17 +49,16 @@ class TestDocumentReference(BaseCommon):
         )
         self.assertEqual(new_page.reference, "test_page_with_no_reference")
         with self.assertRaises(ValidationError):
-            new_page_duplicated_name = self.page_obj.create(
+            self.page_obj.create(
                 {
                     "name": "test page with no reference",
-                    "content": "<p>this should have an empty reference "
-                    "because reference must be unique</p>",
+                    "content": "<p>This page cannot be created because "
+                    "the automatically generated reference already exists.</p>",
                 }
             )
-            self.assertFalse(new_page_duplicated_name.reference)
 
-    def test_get_formview_action(self):
-        res = self.page1.get_formview_action()
+    def test_get_record_default_action(self):
+        res = self.page1.get_record_default_action()
         view_id = self.env.ref("document_page.view_wiki_form").id
         expected_keys = {
             "type": "ir.actions.act_window",
