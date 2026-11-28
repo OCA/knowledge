@@ -38,5 +38,8 @@
             "document_page/static/src/js/document_page_kanban_controller.esm.js",
             "document_page/static/src/js/document_page_kanban_view.esm.js",
         ],
+        "web.assets_tests": [
+            "document_page/static/tests/tours/document_page_browse_content.esm.js",
+        ],
     },
 }
