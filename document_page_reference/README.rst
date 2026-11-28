@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 =======================
 Document Page Reference
 =======================
@@ -17,7 +13,7 @@ Document Page Reference
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fknowledge-lightgray.png?logo=github
@@ -32,8 +28,10 @@ Document Page Reference
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module allows to add a reference name on documents and simplifies
-the link between document pages.
+This module allows to add a reference name on documents.
+
+If you also want to link pages between them using those references,
+install ``document_page_reference_link``.
 
 **Table of contents**
 
@@ -43,9 +41,10 @@ the link between document pages.
 Usage
 =====
 
-When editing a document page add elements like {{XXX}} where XXX is the
-reference of another page. Now, when viewing the document, it will link
-directly to the page. Also, the name will be parsed as the display name.
+When editing a document page, set a reference to identify it uniquely.
+If no reference is provided, one is generated automatically from the
+page name. References can only contain letters, numbers and underscores,
+and must be unique.
 
 Bug Tracker
 ===========
@@ -69,6 +68,7 @@ Contributors
 ------------
 
 - Enric Tobella <etobella@creublanca.es>
+- Miquel Rosell <miquelroselltarrago@gmail.com>
 
 Maintainers
 -----------
