@@ -1,6 +1,6 @@
 from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import new_test_user
+from odoo.exceptions import AccessError, UserError
+from odoo.tests import Form, new_test_user
 from odoo.tools import mute_logger
 
 from odoo.addons.base.tests.common import BaseCommon
@@ -342,3 +342,51 @@ class TestDocumentPageApproval(BaseCommon):
 
         # Approver user evaluates it.
         self.assertTrue(page.with_user(self.user2).has_changes_pending_approval)
+
+    def test_approval_required_unreadable_parent(self):
+        """A user files a page under a shared folder of another company's tree."""
+        other_company = self.env["res.company"].create({"name": "Other company"})
+        user = self.env["res.users"].create(
+            {
+                "name": "Page editor",
+                "login": "page_editor",
+                "groups_id": [
+                    (6, 0, [self.env.ref("document_page.group_document_editor").id])
+                ],
+            }
+        )
+        hidden_folder = self.page_obj.create(
+            {
+                "name": "Folder of the other company",
+                "type": "category",
+                "company_id": other_company.id,
+                "approval_required": True,
+                "approver_gid": self.approver_gid.id,
+            }
+        )
+        shared_folder = self.page_obj.create(
+            {
+                "name": "Folder shared by all companies",
+                "type": "category",
+                "parent_id": hidden_folder.id,
+                "company_id": False,
+            }
+        )
+        self.env.flush_all()
+        self.env.invalidate_all()
+        with self.assertRaises(AccessError):
+            hidden_folder.with_user(user).read(["name"])
+        page_form = Form(
+            self.page_obj.with_user(user), view="document_page.view_wiki_form"
+        )
+        page_form.parent_id = shared_folder
+        page_form.name = "Page of my company"
+        page_form.content = "<p>Content</p>"
+        page_form.draft_name = "1.0"
+        page_form.draft_summary = "First version"
+        page = page_form.save()
+        change_request = self.history_obj.search([("page_id", "=", page.id)])
+        self.assertEqual(change_request.state, "to approve")
+        self.assertTrue(page.is_approval_required)
+        self.env.invalidate_all()
+        self.assertEqual(page.approver_group_ids, self.approver_gid)
