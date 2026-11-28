@@ -1,4 +1,5 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from odoo.exceptions import AccessError
 from odoo.tests import common
 
 
@@ -57,6 +58,66 @@ class TestDocumentPage(common.TransactionCase):
                 page.id, menu.action.id
             ),
         )
+
+    def test_open_folder_unreadable_parent(self):
+        other_company = self.env["res.company"].create({"name": "Other company"})
+        user = self.env["res.users"].create(
+            {
+                "name": "Page reader",
+                "login": "page_reader",
+                "groups_id": [
+                    (6, 0, [self.env.ref("knowledge.group_document_user").id])
+                ],
+            }
+        )
+        hidden_root = self.page_obj.create(
+            {
+                "name": "Root folder of the other company",
+                "type": "category",
+                "company_id": other_company.id,
+            }
+        )
+        hidden_folder = self.page_obj.create(
+            {
+                "name": "Folder of the other company",
+                "type": "category",
+                "parent_id": hidden_root.id,
+                "company_id": other_company.id,
+            }
+        )
+        shared_folder = self.page_obj.create(
+            {
+                "name": "Folder shared by all companies",
+                "type": "category",
+                "parent_id": hidden_folder.id,
+                "company_id": False,
+            }
+        )
+        self.page_obj.create(
+            {
+                "name": "Page of my company",
+                "parent_id": shared_folder.id,
+                "company_id": user.company_id.id,
+                "content": "<p>Content</p>",
+            }
+        )
+        self.page_obj.create(
+            {
+                "name": "Page of the other company",
+                "parent_id": shared_folder.id,
+                "company_id": other_company.id,
+                "content": "<p>Content</p>",
+            }
+        )
+        self.page_obj.flush()
+        self.page_obj.invalidate_cache()
+        with self.assertRaises(AccessError):
+            hidden_folder.with_user(user).read(["name"])
+        folder_form = common.Form(
+            shared_folder.with_user(user), view="document_page.view_category_form"
+        )
+        self.assertIn("Page of my company", folder_form.content)
+        self.assertNotIn("Page of the other company", folder_form.content)
 
     def test_page_copy(self):
         page = self.page_obj.create(
