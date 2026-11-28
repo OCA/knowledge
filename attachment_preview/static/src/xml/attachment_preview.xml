@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t
+        t-name="attachment_preview.AttachmentList"
+        t-inherit="mail.AttachmentList"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[hasclass('o-mail-AttachmentButtons')]" position="inside">
+            <button
+                t-if="this._canPreviewAttachment(attachment)"
+                type="button"
+                class="btn bg-500 ms-2 o-p-1_5 shadow-sm"
+                t-on-click.stop="() => this._onPreviewAttachment(attachment)"
+                title="Preview"
+            >
+                <i class="fa fa-search o-text-white" role="img" aria-label="Preview" />
+            </button>
+            <button
+                t-if="this._canPreviewAttachment(attachment)"
+                type="button"
+                class="btn bg-500 ms-2 o-p-1_5 shadow-sm"
+                t-on-click.stop="() => this._onPreviewAttachment(attachment, true)"
+                title="Open preview in a new tab"
+            >
+                <i
+                    class="fa fa-external-link o-text-white"
+                    role="img"
+                    aria-label="Open preview in a new tab"
+                />
+            </button>
+        </xpath>
+    </t>
+
+    <t t-name="attachment_preview.AttachmentPreviewWidget">
+        <div class="attachment_preview_widget" t-att-class="{'d-none': !state.visible}">
+            <div class="attachment_preview_buttons">
+                <div class="button-group pull-left">
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-secondary attachment_preview_previous"
+                        t-att-disabled="state.attachments.length &lt; 2"
+                        t-on-click="_onPreviousClick"
+                        aria-label="Previous attachment"
+                    >
+                        <i class="fa fa-chevron-left" />
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-secondary attachment_preview_current"
+                        disabled="disabled"
+                    >
+                        <t
+                        t-esc="state.attachments.length ? state.activeIndex + 1 : 0"
+                    />
+                        / <t t-esc="state.attachments.length" />
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-secondary attachment_preview_next"
+                        t-att-disabled="state.attachments.length &lt; 2"
+                        t-on-click="_onNextClick"
+                        aria-label="Next attachment"
+                    >
+                        <i class="fa fa-chevron-right" />
+                    </button>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-sm btn-secondary pull-left ml8 attachment_preview_popout"
+                    t-on-click="_onPopoutClick"
+                    aria-label="Open preview in a new tab"
+                >
+                    <i class="fa fa-external-link" />
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-sm btn-secondary pull-right attachment_preview_close"
+                    t-on-click="_onCloseClick"
+                    aria-label="Close preview"
+                >
+                    <i class="fa fa-times" />
+                </button>
+            </div>
+            <iframe
+                class="attachment_preview_iframe"
+                t-att-src="currentAttachment?.previewUrl || 'about:blank'"
+                title="Attachment preview"
+            />
+        </div>
+    </t>
+</templates>
