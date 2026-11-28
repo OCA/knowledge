@@ -1,5 +1,5 @@
-from odoo.exceptions import UserError
-from odoo.tests import new_test_user
+from odoo.exceptions import AccessError, UserError
+from odoo.tests import Form, new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -203,6 +203,15 @@ class TestDocumentPageApproval(BaseCommon):
         self.page2.invalidate_model()
         self.assertTrue(self.page2.has_changes_pending_approval)
 
+    def test_pending_approval_detection_unsaved_page(self):
+        """Ensure the system detects pending approval changes of unsaved pages"""
+        self.assertTrue(self.page2.has_changes_pending_approval)
+        with self.assertNoLogs("odoo.domains", level="WARNING"):
+            self.assertTrue(
+                self.page_obj.new(origin=self.page2).has_changes_pending_approval
+            )
+            self.assertFalse(self.page_obj.new().has_changes_pending_approval)
+
     def test_user_has_drafts(self):
         """Ensure the system detects drafts correctly"""
         self.page2.invalidate_model()
@@ -216,6 +225,18 @@ class TestDocumentPageApproval(BaseCommon):
         )
         self.page2.invalidate_model()
         self.assertTrue(self.page2.user_has_drafts)
+
+    def test_user_has_drafts_unsaved_page(self):
+        """Ensure the system detects drafts of unsaved pages"""
+        self.history_obj.create(
+            {
+                "page_id": self.page2.id,
+                "state": "draft",
+            }
+        )
+        with self.assertNoLogs("odoo.domains", level="WARNING"):
+            self.assertTrue(self.page_obj.new(origin=self.page2).user_has_drafts)
+            self.assertFalse(self.page_obj.new().user_has_drafts)
 
     def test_action_draft_requires_cancellation(self):
         """Ensure a change request must be cancelled before setting to draft"""
@@ -282,3 +303,51 @@ class TestDocumentPageApproval(BaseCommon):
         )
         chreq2._compute_diff()
         self.assertIsNotNone(chreq2.diff)
+
+    def test_approval_required_unreadable_parent(self):
+        """A user files a page under a shared folder of another company's tree."""
+        other_company = self.env["res.company"].create({"name": "Other company"})
+        user = self.env["res.users"].create(
+            {
+                "name": "Page editor",
+                "login": "page_editor",
+                "group_ids": [
+                    (6, 0, [self.env.ref("document_page.group_document_editor").id])
+                ],
+            }
+        )
+        hidden_folder = self.page_obj.create(
+            {
+                "name": "Folder of the other company",
+                "type": "category",
+                "company_id": other_company.id,
+                "approval_required": True,
+                "approver_gid": self.approver_gid.id,
+            }
+        )
+        shared_folder = self.page_obj.create(
+            {
+                "name": "Folder shared by all companies",
+                "type": "category",
+                "parent_id": hidden_folder.id,
+                "company_id": False,
+            }
+        )
+        self.env.flush_all()
+        self.env.invalidate_all()
+        with self.assertRaises(AccessError):
+            hidden_folder.with_user(user).read(["name"])
+        page_form = Form(
+            self.page_obj.with_user(user), view="document_page.view_wiki_form"
+        )
+        page_form.parent_id = shared_folder
+        page_form.name = "Page of my company"
+        page_form.content = "<p>Content</p>"
+        page_form.draft_name = "1.0"
+        page_form.draft_summary = "First version"
+        page = page_form.save()
+        change_request = self.history_obj.search([("page_id", "=", page.id)])
+        self.assertEqual(change_request.state, "to approve")
+        self.assertTrue(page.is_approval_required)
+        self.env.invalidate_all()
+        self.assertEqual(page.approver_group_ids, self.approver_gid)

@@ -89,6 +89,7 @@ class DocumentPage(models.Model):
         string="Backend URL",
         help="Use it to link resources univocally",
         compute="_compute_backend_url",
+        compute_sudo=True,
     )
 
     image = fields.Binary(attachment=True)
