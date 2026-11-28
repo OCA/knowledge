@@ -2,8 +2,10 @@
 # Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from markupsafe import Markup
+from psycopg2 import IntegrityError
 
 from odoo.exceptions import ValidationError
+from odoo.tools import mute_logger
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -22,8 +24,12 @@ class TestDocumentReference(BaseCommon):
         )
 
     def test_constraints_duplicate_reference(self):
-        """Should raise if reference is not unique (same as another)."""
-        with self.assertRaises(ValidationError):
+        """Should raise if reference is not unique (same as another).
+
+        Uniqueness is enforced by a SQL constraint, which fails on the
+        UPDATE itself with an IntegrityError.
+        """
+        with self.assertRaises(IntegrityError), mute_logger("odoo.sql_db"):
             self.page2.write({"reference": self.page1.reference})
 
     def test_constraints_invalid_reference(self):
@@ -49,15 +55,23 @@ class TestDocumentReference(BaseCommon):
             {"name": "Test Page with no reference", "content": "some content"}
         )
         self.assertEqual(new_page.reference, "test_page_with_no_reference")
-        with self.assertRaises(ValidationError):
-            new_page_duplicated_name = self.page_obj.create(
+        # The auto-generated reference collides with the existing page, and
+        # the SQL unique constraint rejects the insert with an IntegrityError.
+        with self.assertRaises(IntegrityError), mute_logger("odoo.sql_db"):
+            self.page_obj.create(
                 {
                     "name": "test page with no reference",
-                    "content": "<p>this should have an empty reference "
+                    "content": "<p>this should not be created "
                     "because reference must be unique</p>",
                 }
             )
-            self.assertFalse(new_page_duplicated_name.reference)
+
+    def test_duplicate_page_clears_reference(self):
+        """Duplicating a page must not reuse the original reference."""
+        new_page = self.page1.copy()
+        self.assertNotEqual(new_page.reference, self.page1.reference)
+        self.assertTrue(new_page.reference)
+        self.assertIn("copy", new_page.reference)
 
     def test_get_formview_action(self):
         res = self.page1.get_formview_action()
