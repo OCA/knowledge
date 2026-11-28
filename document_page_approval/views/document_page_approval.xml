@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
     <!-- History Form View -->
     <record id="wiki_history_form_inherit" model="ir.ui.view">
@@ -37,14 +39,22 @@
                         name="action_cancel"
                         type="object"
                         string="Cancel"
-                        invisible="(not am_i_owner or not am_i_approver) and (state not in ('draft', 'to approve'))"
+                        invisible="(not am_i_owner and not am_i_approver) or state not in ('draft', 'to approve')"
                     />
                     <!-- reopen if i am owner or approver -->
                     <button
                         name="action_draft"
                         type="object"
                         string="Back to draft"
-                        invisible="(not am_i_owner or not am_i_approver) and (state not in ('cancelled', 'to approve'))"
+                        invisible="(not am_i_owner and not am_i_approver) or state != 'cancelled'"
+                        groups="document_page.group_document_manager"
+                    />
+                    <!-- cancel & reopen, if i am owner or approver -->
+                    <button
+                        name="action_cancel_and_draft"
+                        type="object"
+                        string="Back to draft"
+                        invisible="(not am_i_owner and not am_i_approver) or state != 'to approve'"
                         groups="document_page.group_document_manager"
                     />
                     <field name="am_i_owner" invisible="1" />

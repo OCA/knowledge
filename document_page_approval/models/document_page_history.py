@@ -1,4 +1,5 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
@@ -133,6 +134,21 @@ class DocumentPageHistory(models.Model):
 
     def action_cancel(self):
         """Set a change request as cancelled."""
+        for rec in self:
+            if rec.state not in ["draft", "to approve"]:
+                raise UserError(
+                    self.env._(
+                        "Can't cancel change requests in '%(state)s' state.",
+                        state=rec.state,
+                    )
+                )
+            if not (rec.am_i_owner or rec.am_i_approver):
+                raise UserError(
+                    self.env._(
+                        "You are not authorized to do this.\n"
+                        "Only owners or approvers can cancel Change Requests."
+                    )
+                )
         self.write({"state": "cancelled"})
         for rec in self:
             rec.message_post(
