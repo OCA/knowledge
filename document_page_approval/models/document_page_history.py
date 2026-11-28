@@ -25,11 +25,12 @@ class DocumentPageHistory(models.Model):
         "Status",
         default="draft",
         readonly=True,
+        copy=False,
     )
 
-    approved_date = fields.Datetime()
+    approved_date = fields.Datetime(copy=False)
 
-    approved_uid = fields.Many2one("res.users", "Approved by")
+    approved_uid = fields.Many2one("res.users", "Approved by", copy=False)
 
     is_approval_required = fields.Boolean(
         related="page_id.is_approval_required", string="Approval required"
