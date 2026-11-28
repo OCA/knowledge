@@ -1,4 +1,5 @@
 # Copyright (C) 2013 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
@@ -92,7 +93,11 @@ class DocumentPageHistory(models.Model):
         """Set a change request as approved."""
         for rec in self:
             if rec.state not in ["draft", "to approve"]:
-                self.env._("Can't approve page in '%(state)s' state.", state=rec.state)
+                raise UserError(
+                    self.env._(
+                        "Can't approve page in '%(state)s' state.", state=rec.state
+                    )
+                )
             if not rec.am_i_approver:
                 groups_str = ", ".join(
                     g.display_name for g in rec.page_id.approver_group_ids

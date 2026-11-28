@@ -239,6 +239,24 @@ class TestDocumentPageApproval(BaseCommon):
         with self.assertRaises(UserError):
             chreq.action_to_approve()
 
+    def test_action_approve_only_from_draft_or_pending(self):
+        """Ensure approved or cancelled requests cannot be approved"""
+        for state in ("approved", "cancelled"):
+            with self.subTest(state=state):
+                chreq = self.history_obj.create(
+                    {
+                        "page_id": self.page2.id,
+                        "state": state,
+                    }
+                )
+                with self.assertRaises(UserError) as error:
+                    chreq.with_user(self.user2).action_approve()
+                self.assertEqual(
+                    error.exception.args[0],
+                    f"Can't approve page in '{state}' state.",
+                )
+                self.assertEqual(chreq.state, state)
+
     def test_approval_permission_check(self):
         """Ensure approval is restricted to approvers"""
         chreq = self.history_obj.create(
