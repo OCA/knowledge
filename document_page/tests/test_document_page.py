@@ -1,3 +1,5 @@
+# Copyright 2026 NuoBiT Solutions SL - Deniz Gallo <dgallo@nuobit.com>
+# Copyright 2026 NuoBiT Solutions SL - Eric Antones <eantones@nuobit.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo.tests import common
 
@@ -67,3 +69,22 @@ class TestDocumentPage(common.TransactionCase):
         self.assertEqual(page_copy.content, page.content)
         self.assertEqual(page_copy.draft_name, "1.0")
         self.assertEqual(page_copy.draft_summary, "summary")
+
+    def test_category_view_children(self):
+        reader = common.new_test_user(
+            self.env,
+            login="reader_test",
+            groups="knowledge.group_document_user",
+            context={"no_reset_password": True},
+        )
+        action = self.category1.with_user(reader).action_view_children()
+        self.assertEqual(action["xml_id"], "document_page.action_browse_all_content")
+        self.assertEqual(action["display_name"], self.category1.name)
+        self.assertEqual(
+            action["context"],
+            self.env.ref("document_page.action_browse_all_content").context,
+        )
+
+    def test_category_view_children_no_record(self):
+        with self.assertRaises(ValueError):
+            self.page_obj.action_view_children()
