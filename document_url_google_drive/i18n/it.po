@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_url_google_drive
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-02-08 09:36+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: document_url_google_drive
+#. odoo-javascript
+#: code:addons/document_url_google_drive/static/src/xml/attachment_google_picker.xml:0
+#, python-format
+msgid "Add GDrive link"
+msgstr "Aggiungi link GDrive"
+
+#. module: document_url_google_drive
+#: model:ir.model,name:document_url_google_drive.model_res_config_settings
+msgid "Config Settings"
+msgstr "Impostazioni configurazione"
+
+#. module: document_url_google_drive
+#: model_terms:ir.ui.view,arch_db:document_url_google_drive.res_users_google_picker_view_form
+#: model_terms:ir.ui.view,arch_db:document_url_google_drive.res_users_google_picker_view_form_simple_modif
+msgid "Google API"
+msgstr "API Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_config_settings__google_picker_api_key
+msgid "Google API Key"
+msgstr "Chiave API Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_config_settings__is_active_google_api
+msgid "Google APIs"
+msgstr "API Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_users__google_picker_access_token
+msgid "Google Access Token"
+msgstr "Token accesso Google"
+
+#. module: document_url_google_drive
+#: model_terms:ir.ui.view,arch_db:document_url_google_drive.res_config_settings_view_form
+msgid "Google Api Key"
+msgstr "Chiave API Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_config_settings__google_picker_app_id
+msgid "Google App ID"
+msgstr "ID app Google"
+
+#. module: document_url_google_drive
+#: model_terms:ir.ui.view,arch_db:document_url_google_drive.res_config_settings_view_form
+msgid "Google App Id"
+msgstr "ID app Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_config_settings__google_picker_client_id
+#: model_terms:ir.ui.view,arch_db:document_url_google_drive.res_config_settings_view_form
+msgid "Google Client ID"
+msgstr "ID client Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_users__google_picker_expires_date
+msgid "Google Expires Date"
+msgstr "Data scadenza Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_users__google_picker_mime_types
+msgid "Google Mime Types"
+msgstr "Tipi MIME Google"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_users__google_picker_active
+msgid "Google Picker Active"
+msgstr "Picker Google attivo"
+
+#. module: document_url_google_drive
+#: model:ir.model.fields,field_description:document_url_google_drive.field_res_users__google_picker_scope
+msgid "Google Scope"
+msgstr "Ambito Google"
+
+#. module: document_url_google_drive
+#: model_terms:ir.ui.view,arch_db:document_url_google_drive.res_config_settings_view_form
+msgid "Use google integration."
+msgstr "Usa integrazione Google."
+
+#. module: document_url_google_drive
+#: model:ir.model,name:document_url_google_drive.model_res_users
+msgid "User"
+msgstr "Utente"
+
+#. module: document_url_google_drive
+#: model:ir.model,name:document_url_google_drive.model_ir_attachment_add_url
+msgid "Wizard to add URL attachment"
+msgstr "Procedura guidata per aggiungere l'URL di un allegato"

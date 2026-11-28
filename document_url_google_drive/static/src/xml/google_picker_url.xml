@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2023 Cetmix OÜ
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates xml:space="preserve">
+    <t t-inherit="mail.Chatter" t-inherit-mode="extension">
+        <xpath expr="//button[@t-on-click='_onAddUrl']" position="after">
+            <AttachmentGooglePicker
+                thread="state.thread"
+                onAdded.bind="updateThreadAttachments"
+            />
+        </xpath>
+    </t>
+</templates>
