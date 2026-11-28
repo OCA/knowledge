@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+        t-name="screen_help.ControlPanel"
+        t-inherit="web.ControlPanel"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[hasclass('o_control_panel_navigation')]" position="inside">
+            <button
+                t-if="!env.isSmall and (help.content or help.canEdit)"
+                class="btn btn-secondary o_screen_help_button d-print-none"
+                title="Help"
+                t-on-click="onClickHelp"
+            >
+                <i class="fa fa-question-circle" />
+            </button>
+        </xpath>
+    </t>
+</templates>

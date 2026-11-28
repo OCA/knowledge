@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block name="languages_setting_container" position="after">
+                <block title="Help" name="screen_help_setting_container">
+                    <setting
+                        id="help_multilang"
+                        help="Write help sections per language"
+                    >
+                        <field name="group_help_multilang" />
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>

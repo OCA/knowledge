@@ -1,0 +1,21 @@
+<odoo noupdate="1">
+    <!-- section written in Odoo (editable), not shipped as a Markdown file -->
+    <record id="demo_section_users" model="help.section">
+        <field name="action_id" ref="base.action_res_users" />
+        <field name="content" type="html">
+            <h2>Help written in Odoo</h2>
+            <p>Unlike the other sections of the demo, this one is not a file
+                of a module: it is written in Odoo, with the HTML editor.</p>
+            <h3>Who can write the help</h3>
+            <ul>
+                <li>the users of the <strong>Help Editor</strong> group
+                    (the administrators are in it)</li>
+                <li>with the <em>Edit</em> button of this window, or
+                    <em>Settings &gt; Technical &gt; User Interface &gt;
+                    Help Sections</em></li>
+            </ul>
+            <h3>Next</h3>
+            <p>Open <em>Settings &gt; Users &amp; Companies &gt; Companies</em>.</p>
+        </field>
+    </record>
+</odoo>

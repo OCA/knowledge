@@ -1,0 +1,101 @@
+<odoo>
+    <record id="help_section_form" model="ir.ui.view">
+        <field name="model">help.section</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="file" invisible="1" />
+                <div class="alert alert-info mb-0" role="status" invisible="not file">
+                    This help comes from the file <strong>
+                    <field name="file" class="d-inline" />
+                </strong>
+                    of the module <strong>
+                    <field name="module" class="d-inline" />
+                </strong>:
+                    edit the file, it is reloaded at the next update of the module.
+                </div>
+                <sheet>
+                    <group>
+                        <group>
+                            <field
+                                name="action_id"
+                                invisible="model_id"
+                                required="not model_id"
+                                readonly="file"
+                            />
+                            <field
+                                name="model_id"
+                                invisible="action_id"
+                                required="not action_id"
+                                readonly="file"
+                            />
+                            <field
+                                name="lang"
+                                groups="screen_help.group_multilang"
+                                readonly="file"
+                            />
+                        </group>
+                        <group>
+                            <field name="sequence" />
+                            <field name="module" invisible="not module" />
+                        </group>
+                    </group>
+                    <field name="content" readonly="file" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="help_section_list" model="ir.ui.view">
+        <field name="model">help.section</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle" />
+                <field name="action_id" />
+                <field name="model_id" />
+                <field name="lang" groups="screen_help.group_multilang" />
+                <field name="module" optional="show" />
+            </list>
+        </field>
+    </record>
+
+    <record id="help_section_search" model="ir.ui.view">
+        <field name="model">help.section</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="action_id" />
+                <field name="model_id" />
+                <field name="module" />
+                <filter
+                    name="manual"
+                    string="Written in Odoo"
+                    domain="[('module', '=', False)]"
+                />
+                <group>
+                    <filter
+                        name="group_action"
+                        string="Action"
+                        context="{'group_by': 'action_id'}"
+                    />
+                    <filter
+                        name="group_model"
+                        string="Model"
+                        context="{'group_by': 'model_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="help_section_action" model="ir.actions.act_window">
+        <field name="name">Help Sections</field>
+        <field name="res_model">help.section</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="help_section_menu"
+        action="help_section_action"
+        parent="base.next_id_2"
+        groups="group_editor"
+    />
+</odoo>
